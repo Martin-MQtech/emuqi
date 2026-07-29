@@ -107,6 +107,12 @@ emuqi/
 - [ ] Content platform decision (Ghost vs alternative)
 - [ ] Social media integration strategy
 - [ ] 4 remaining blog thumbnail images need original replacements
+- [x] **Footer consistency**: Blog article footer is synchronized with navigation; the compact footer in `hydrogen-patch-opportunity.html` now includes Water Filter Cartridge, Foot Bath Tablet, Store, and H2 Health Hub.
+- [x] **blog/index.html footer**: Corrected the YouTube link label from "X" to "YT".
+- [ ] **Blog dead link investigation**: User reports article links are dead; all 17 URLs tested HTTP 200 on both emuqi.com and GitHub Pages — pending user clarification on specific broken URLs
+- [x] **AdSense site script**: Added the approved publisher script (`ca-pub-8740168077394877`) to all 36 HTML documents so Google can verify and serve the site.
+- [x] **Blog ad inventory**: Removed duplicate consecutive end-of-article placeholders. Each of the 17 articles now has one reserved ad position after the share section and before the footer.
+- [ ] **AdSense display unit**: Create one manual responsive Display ad unit in AdSense, then replace the single blog placeholder with its `data-ad-slot` code. Keep Auto ads disabled until manual placement performance is reviewed.
 
 ---
 
