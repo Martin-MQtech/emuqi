@@ -223,6 +223,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://emuqi.com/h2-wellness-hub/topics.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://emuqi.com/h2-wellness-hub/zh/topics.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://emuqi.com/h2-wellness-hub/cases/ahha-industry-standards.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -244,6 +256,18 @@
     <loc>https://emuqi.com/h2-wellness-hub/zh/cases/keio-exercise-hydrogen-study.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://emuqi.com/h2-wellness-hub/cases/solid-state-materials-productization.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://emuqi.com/h2-wellness-hub/zh/cases/solid-state-materials-productization.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>

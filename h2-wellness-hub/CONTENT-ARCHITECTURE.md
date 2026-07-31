@@ -517,3 +517,54 @@ The operating rule is: no single registration, record, licence, standard, labora
 - Australia: HUVE and Opal Water were identified from official product pages but returned automated-access rate limits during this review. Keep as manual-verification candidates before publication.
 - South Africa: `hydrogenhealth.co.za` was unreachable during link verification and was excluded.
 - Latin America and South Africa: no suitable molecular-hydrogen-specific hospital, university, regulator, or authoritative trial-registry case was located in this batch. Published entries are therefore visibly labelled company-reported market/product cases.
+
+### Tag-network normalization and SEO/GEO operating plan — 2026-07-31
+
+#### Verified Hub tag baseline
+
+The Hub has 16 English and 16 Simplified-Chinese tag pages. Every tag has exactly one reciprocal language counterpart and canonical URL. The audit corrected 13 live English internal links whose slugs had lost their hyphens (`testing-and-labeling`, `industry-governance`, `research-transparency`, and `clinical-trial-registry`); those links previously led to non-existent URLs.
+
+All tag pages now use the same navigation, reciprocal `hreflang`, English `x-default`, Open Graph page metadata, and a controlled related-topic graph. Related links must reflect the taxonomy below rather than an arbitrary list copied from an earlier page batch.
+
+| Layer | Topics | Editorial role |
+|---|---|---|
+| Industry governance | Hydrogen Wellness Industry; Industry Governance; Testing and Labeling; Research Transparency | Commercial category, verification, disclosure, and responsible-marketing context |
+| Research interpretation | Hydrogen Health; Hydrogen Medicine; Molecular Hydrogen Biology; Clinical Trial Registry; Exercise Recovery | Research and evidence-navigation context, never a treatment or outcome claim |
+| Technology and products | Solid-State Hydrogen Technology; Hydrogen Water Cup; Hydrogen Dressing; Hydrogen Soap; Hydrogen Eye Patch; Hydrogen Facial Mask | Product/technology classification; specifications and testing remain item-specific |
+| Cross-domain topic | Hydrogen + Traditional Chinese Medicine | Experimental cross-domain discussion; does not establish a clinical protocol or product efficacy |
+
+Every new tag must have a reviewed English/Chinese pair, an explicit related-topic placement in this graph, a source-backed definition, and a published Casebook item before it is promoted from `Coming soon` to an article collection.
+
+#### SEO and GEO publishing requirements
+
+SEO and GEO have different jobs and must be handled together:
+
+| Layer | Required implementation | Reason |
+|---|---|---|
+| Discoverability | Crawlable static HTML, 200 response, self-canonical URL, sitemap entry, and contextual internal links from a hub/index page | Gives search systems a clear discovery and canonicalization path |
+| Indexability | Google Search Console property, sitemap submission, URL Inspection, and a request-indexing action only after a material update | A sitemap can suggest a URL but cannot confirm indexing; Search Console is the authority for this status |
+| Search relevance | One focused intent per page, native-language title/H1/description, descriptive internal anchor text, and a maintained topic cluster | Makes the page's query and audience legible without keyword stuffing |
+| GEO citation readiness | Named author or editorial owner, visible publish/updated dates, primary-source links, source-type labels, explicit boundaries, and concise answer-first summaries | Lets generative systems attribute, quote, and accurately qualify the page |
+| Claim safety | Separate research status, result, product specification, regulatory status, and opinion; do not manufacture FAQ or schema answers that make unsupported medical claims | Health-adjacent pages are evaluated for trust and can be misrepresented by unsupported structured content |
+
+#### Immediate operational checklist
+
+1. Verify `emuqi.com` in Google Search Console and submit `https://emuqi.com/sitemap.xml` once. Use URL Inspection for any priority page, including `/blog/hydrogen-patch-opportunity.html`; record the exact exclusion reason if Google reports one.
+2. After a material revision, use Request Indexing once for that exact canonical URL. Do not use repeated requests as a substitute for content, links, or time.
+3. For priority commercial blog articles, add an evidence ledger: source URL, source type, publication date, what the source supports, and what it does not support. Replace unsupported market-size, technical-performance, safety, and efficacy wording before adding FAQ schema.
+4. Add `dateModified`, `mainEntityOfPage`, article image, author URL/editorial-owner page, `BreadcrumbList`, and relevant `sameAs`/publisher identity fields to newly revised articles. Use Article schema only when it matches visible page content.
+5. Each substantial new article must link to one parent Hub topic, two or three adjacent topic pages, and its source material. Each tag page links only to content that genuinely belongs in that collection.
+6. Track monthly in Search Console: indexed pages, excluded reasons, impressions, clicks, query clusters, countries, and pages gaining impressions without clicks. Improve those pages from the actual queries, not from a guessed keyword list.
+
+#### Target article diagnosis: hydrogen-patch-opportunity
+
+As checked on 2026-07-31, `https://emuqi.com/blog/hydrogen-patch-opportunity.html` returns HTTP 200, is allowed by `robots.txt`, uses a self-canonical URL, and appears in the XML sitemap. These facts mean it is eligible for discovery, not that Google has indexed or ranked it. Only Google Search Console URL Inspection can distinguish a crawl delay from `Crawled - currently not indexed`, `Discovered - currently not indexed`, duplicate/canonical conflict, quality assessment, or another exclusion.
+
+The page currently has baseline title, description, Open Graph, image, and Article JSON-LD. Before pushing it harder for search or generative visibility, revise it into a clearly disclosed B2B market-analysis article: add dated, linkable sources for market and technical assertions; distinguish company information from independent evidence; identify author/editorial ownership; add a visible updated date; and connect it to the `Hydrogen Dressing`, `Solid-State Hydrogen Technology`, `Testing and Labeling`, and `Hydrogen Wellness Industry` topic cluster. Do not represent product opportunity, material properties, transdermal delivery, or health implications as independently established without an appropriate primary source.
+
+### Casebook expansion and topic map — 2026-07-31
+
+- Added the bilingual Casebook pair `cases/solid-state-materials-productization.html` and `zh/cases/solid-state-materials-productization.html` as a disclosed Emuqi/MUQI internal case. It treats the company product page as a company source, separates material, product, use case, and evidence layers, and does not independently validate performance or infer medical efficacy.
+- Added bilingual `/h2-wellness-hub/topics.html` and `/h2-wellness-hub/zh/topics.html` as a crawlable topic-map entry point. The homepage and article navigation now link to this index; it does not add a fourth homepage content section.
+- Connected the new Casebook item to the exact-matching topic collections: `Solid-State Hydrogen Technology` / `固态氢技术`, `Hydrogen Water Cup` / `富氢杯`, `Hydrogen Dressing` / `氢敷料`, `Hydrogen Facial Mask` / `氢面膜`, and `Hydrogen Soap` / `氢皂`. It is intentionally not attached to `Hydrogen Medicine`, `Molecular Hydrogen Biology`, or `Hydrogen Traditional Chinese Medicine`.
+- Added the two topic-map URLs and two Casebook URLs to `sitemap.xml`. The production deployment must include these files together with the Hub navigation changes; verify the main-site header label as `H2 Wellness Hub` after publishing.
