@@ -33,7 +33,7 @@ Hydrogen health · AI+manufacturing · Cross-border trade. "MUQI Inside" — bra
 |------|---------|-------|
 | Primary domain | `emuqi.com` | DNS pointing to Hostinger (147.79.79.250) |
 | GitHub repo | `mqtech-martin/emuqi` (SSH) | Source of truth for all code |
-| Hostinger | `peru-eagle-941015.hostingersite.com` | Git auto-deploy from GitHub; pending emuqi.com binding |
+| Hostinger | `peru-eagle-941015.hostingersite.com` | Primary-domain origin; Git integration can lag behind GitHub Pages and must be verified after each push |
 | GitHub Pages | `mqtech-martin.github.io/emuqi/` | Backup/mirror, also auto-deploys on push |
 | Blog/content | **Undecided** — Ghost Pro is one option under consideration; may use alternative platform | Not committed |
 
@@ -45,7 +45,7 @@ Hydrogen health · AI+manufacturing · Cross-border trade. "MUQI Inside" — bra
 | Styles | `style.css` (shared) + inline `<style>` (blog) | DM Sans + Inter, orange VI |
 | Hosting A | Hostinger (PHP/HTML) | Primary — Git auto-deploy |
 | Hosting B | GitHub Pages | Mirror/backup |
-| Deploy trigger | `git push origin main` | Both Hostinger and GitHub Pages auto-sync |
+| Deploy trigger | `git push origin main` | GitHub Pages deploys automatically; Hostinger Git/CDN sync must be checked independently |
 | Content platform | TBD (Ghost / other) | Blog, newsletter — not yet committed |
 
 ### 0.5 Directory structure
@@ -60,7 +60,7 @@ emuqi/
 ├── solutions-*.html       # Solutions (3 pillars)
 ├── contact-*.html         # Contact page
 ├── store.html             # Store placeholder
-├── hub.html               # H2 Health Hub
+├── hub.html               # H2 Wellness Hub
 ├── blog-list-*.html       # Blog listing
 ├── hydrogen-*.html (×8)   # Product detail pages
 ├── blog/*.html (×16)      # Blog article pages
@@ -97,7 +97,7 @@ emuqi/
 - [x] Footer unified (5-column, orange headings, social icons)
 - [x] DESIGN.md V3.0 (this file — merged PROJECT.md + README.md)
 - [x] Hostinger Git auto-deploy configured
-- [x] GitHub → Hostinger auto-sync verified
+- [ ] **Hostinger deployment verification**: GitHub Pages deployed commit `9d14a23` successfully, but `emuqi.com` still returned the pre-AdSense source. Trigger/review Hostinger Git deployment and purge the Hostinger CDN cache before AdSense verification.
 
 **Pending:**
 - [ ] Bind `emuqi.com` to Hostinger PHP/HTML site (currently shows old Zyrosite)
@@ -107,12 +107,13 @@ emuqi/
 - [ ] Content platform decision (Ghost vs alternative)
 - [ ] Social media integration strategy
 - [ ] 4 remaining blog thumbnail images need original replacements
-- [x] **Footer consistency**: Blog article footer is synchronized with navigation; the compact footer in `hydrogen-patch-opportunity.html` now includes Water Filter Cartridge, Foot Bath Tablet, Store, and H2 Health Hub.
+- [x] **Footer consistency**: Blog article footer is synchronized with navigation; the compact footer in `hydrogen-patch-opportunity.html` now includes Water Filter Cartridge, Foot Bath Tablet, Store, and H2 Wellness Hub.
 - [x] **blog/index.html footer**: Corrected the YouTube link label from "X" to "YT".
 - [ ] **Blog dead link investigation**: User reports article links are dead; all 17 URLs tested HTTP 200 on both emuqi.com and GitHub Pages — pending user clarification on specific broken URLs
 - [x] **AdSense site script**: Added the approved publisher script (`ca-pub-8740168077394877`) to all 36 HTML documents so Google can verify and serve the site.
 - [x] **Blog ad inventory**: Removed duplicate consecutive end-of-article placeholders. Each of the 17 articles now has one reserved ad position after the share section and before the footer.
 - [ ] **AdSense display unit**: Create one manual responsive Display ad unit in AdSense, then replace the single blog placeholder with its `data-ad-slot` code. Keep Auto ads disabled until manual placement performance is reviewed.
+- [x] **Future blog ad default**: `templates/blog-article-template.html` includes the publisher script and exactly one end-of-article AdSense placeholder. All new articles must be created from this template.
 
 ---
 
@@ -274,7 +275,7 @@ Confirmed dimensions (measured via CDP JavaScript):
 3. Nav links must never change `font-weight` on hover — only background and color.
 4. Store uses class `nav-store` with orange bottom accent.
 5. Contact uses class `nav-contact` with deep navy background and 16px left margin.
-6. `white-space: nowrap` on `H2 Health Hub` and other long labels.
+6. `white-space: nowrap` on `H2 Wellness Hub` and other long labels.
 
 Default link state: `#4a4a5a` on the metallic gray header (`linear-gradient(180deg,#f2f3f5 0%,#e9eaec 100%)`).  
 Hover/active state: deep navy `#0a1628` background with white text.  
@@ -433,6 +434,14 @@ For product detail pages and application cards:
 
 Water Bottle image set: 11 images downloaded from original site, stored in `assets/images/water-bottle/bottle-01.png` through `bottle-11.png`.
 
+### 6.3.1 AdSense for Blog Articles
+
+- Every published article in `blog/` must include exactly **one** ad placement, after related/share content and before the footer or back link.
+- The approved publisher script is `ca-pub-8740168077394877`; it must remain in the document `<head>`.
+- Do not enable Auto ads while manual placement is being reviewed.
+- When Google provides an approved Display unit `data-ad-slot`, replace the placeholder in every article with one responsive `<ins class="adsbygoogle">` block. Do not add a second consecutive unit.
+- Before each blog release, audit the new article for one publisher script and one ad placement. Periodically audit all `blog/*.html` as a fallback.
+
 ### 6.4 Solutions page structure (V2.0)
 
 The Solutions page should present three clearly defined solution pillars:
@@ -515,6 +524,45 @@ When a future model is unsure:
 - Use stable CSS classes (`nav-store`, `nav-contact`) or a generated shared fragment; do not hand-tune one page only.
 - Keep temporary image substitutions explicitly documented.
 - Use `object-fit: contain` for any image containing text, specifications, or labels.
+
+### New Blog Article Workflow
+
+Every new article must start from `templates/blog-article-template.html`. Do not copy an older article as a shortcut unless its metadata, navigation, footer, and AdSense configuration are audited first.
+
+1. Create the article at `blog/<descriptive-slug>.html` from the template.
+2. Keep the approved Publisher Script (`ca-pub-8740168077394877`) in the document `<head>`.
+3. Include exactly one end-of-article ad placement after the CTA/related-content area and before the back link or footer.
+4. Before an approved `data-ad-slot` exists, retain the single `<!-- GOOGLE ADS PLACEHOLDER -->` block. After approval, replace it with one responsive manual Display unit. Never add a second consecutive unit.
+5. Add the article to `blog-list-hydrogen-health.html`, with a verified image, title, description, URL, and publication date.
+6. Verify locally that the article has one publisher script, one ad placement, correct relative links, and no missing assets.
+7. Before a batch release, audit all article pages. The expected result is one publisher script and one ad placement for every `blog/*.html` article, excluding `blog/index.html`.
+
+Reference audit commands:
+
+```bash
+# New article: one publisher script and one article-end placement.
+rg -c 'ca-pub-8740168077394877' blog/<slug>.html
+rg -c -F '<!-- GOOGLE ADS PLACEHOLDER -->' blog/<slug>.html
+
+# Whole blog: review script and placement coverage before release.
+for file in blog/*.html; do
+  [ "$(basename "$file")" = "index.html" ] && continue
+  printf '%s script=%s placement=%s\n' "$(basename "$file")" \
+    "$(rg -c 'ca-pub-8740168077394877' "$file")" \
+    "$(rg -c -F '<!-- GOOGLE ADS PLACEHOLDER -->' "$file")"
+done
+```
+
+### H2 Wellness Hub
+
+H2 Wellness Hub is a lightweight, independently maintainable Emuqi sub-branch located in `h2-wellness-hub/`. It is not a product landing page, research institution, comprehensive directory, or product-ranking site.
+
+It inherits Emuqi’s global brand, navigation, deployment, and shared technical rules. Keep its stable subdirectory and URLs so it can later move to an independent domain without redesigning its content model.
+
+**Hub documentation hierarchy:**
+
+- `h2-wellness-hub/CONTENT-ARCHITECTURE.md` — the single Hub document: visual identity, content sections, bilingual publishing, SEO/GEO, source policy, update workflow, and expansion rules.
+- `h2-wellness-hub/data/` — source research and structured working data.
 
 ### After editing
 
