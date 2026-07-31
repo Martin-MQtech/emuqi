@@ -381,6 +381,54 @@ Future generated banners should stay in the same palette and depict a credible b
 
 ## 10. Terminology and content-build log
 
+### Project control and deployment record — 2026-07-31
+
+This document is the required running record for H2 Wellness Hub decisions, content milestones, information architecture, and deployments. Every material change to the Hub must be reflected here alongside its affected pages and verification state.
+
+#### Brand and route migration
+
+- The public name changed from **H2 Health Hub** to **H2 Wellness Hub**. The operating industry term is **Hydrogen Wellness Industry**.
+- The local/public route changed from `/h2-health-hub/` to `/h2-wellness-hub/`, including the Chinese edition, Casebook articles, methodology page, and tag collections.
+- `hub.html` remains an entry bridge and redirects readers to `/h2-wellness-hub/`.
+- Commit `b9069af` (`feat: launch H2 Wellness Hub`) was pushed to `origin/main` on 2026-07-31.
+
+#### User-directed keyword system
+
+The following Chinese industry keywords are canonical user-specified Hub terms and must be kept exactly as written in Chinese topic titles, article hashtags, and Chinese keyword-page H1s:
+
+| Chinese keyword | English keyword page |
+|---|---|
+| 氢健康 | Hydrogen Health |
+| 氢医学 | Hydrogen Medicine |
+| 氢分子生物学 | Molecular Hydrogen Biology |
+| 固态氢技术 | Solid-State Hydrogen Technology |
+| 氢中药 | Hydrogen + Traditional Chinese Medicine |
+| 氢敷料 | Hydrogen Dressing |
+| 富氢杯 | Hydrogen Water Cup |
+| 氢皂 | Hydrogen Soap |
+| 氢气眼贴 | Hydrogen Eye Patch |
+| 氢面膜 | Hydrogen Facial Mask |
+
+For every new keyword page or Casebook article:
+
+1. Use the exact Chinese term when it is the Chinese subject.
+2. Add its chosen English counterpart to the English edition.
+3. Give the page a unique title, meta description, canonical URL, reciprocal `hreflang`, and `CollectionPage`/`ItemList` structured data when the page is a collection.
+4. Use internal Hashtag links in article text only where they help the reader find a genuinely related topic.
+5. Add the new bilingual URLs to `sitemap.xml`.
+
+#### Current published content inventory
+
+- 2 bilingual Casebook article pairs: AHHA industry-governance case and Keio UMIN000058083 exercise-study case.
+- 16 English and 16 Chinese tag pages, including the ten user-specified keyword pairs and the initial editorial navigation topics.
+- 39 H2 Wellness Hub URLs entered in the sitemap at this release.
+
+#### Deployment verification status
+
+- GitHub push: completed (`b9069af`).
+- Local static preview: previously verified for Hub home, Chinese home, Casebook, and keyword pages.
+- `emuqi.com` / GitHub Pages remote HTTP verification: pending from this environment because the shell has no `curl` executable. Recheck with an HTTP-capable tool after the Hostinger/GitHub deployment window; confirm the page title, canonical URL, Chinese keyword page, sitemap, and old-path bridge behavior.
+
 ### Editorial terminology decision — 2026-07-29
 
 Use **Hydrogen Wellness Industry** as the preferred English term for the commercial category commonly called “氢健康产业”: products, consumer and professional wellness services, channels, quality practices, standards in use, and market cases.
