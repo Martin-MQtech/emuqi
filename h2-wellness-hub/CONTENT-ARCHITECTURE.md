@@ -390,6 +390,7 @@ This document is the required running record for H2 Wellness Hub decisions, cont
 - The public name changed from **H2 Health Hub** to **H2 Wellness Hub**. The operating industry term is **Hydrogen Wellness Industry**.
 - The local/public route changed from `/h2-health-hub/` to `/h2-wellness-hub/`, including the Chinese edition, Casebook articles, methodology page, and tag collections.
 - `hub.html` remains an entry bridge and redirects readers to `/h2-wellness-hub/`.
+- Legacy `/h2-health-hub/` and `/h2-health-hub/zh/` entry pages provide client-side compatibility redirects to the new English and Chinese routes. Static hosting cannot emit server-side 301 redirects without host-level redirect configuration.
 - Commit `b9069af` (`feat: launch H2 Wellness Hub`) was pushed to `origin/main` on 2026-07-31.
 
 #### User-directed keyword system
