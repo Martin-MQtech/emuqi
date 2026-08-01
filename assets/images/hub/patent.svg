@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+<title id="title">IP</title><desc id="desc">Patent search</desc>
+<rect width="800" height="500" fill="#4a304c"/><path d="M0 390 C150 330 210 465 370 390 S590 300 800 365" fill="none" stroke="#d9a4db" stroke-width="3" opacity=".85"/><path d="M0 415 C150 355 230 485 390 410 S610 325 800 385" fill="none" stroke="#d9a4db" stroke-width="1" opacity=".45"/>
+<circle cx="650" cy="135" r="86" fill="none" stroke="#d9a4db" stroke-width="2" opacity=".5"/><circle cx="650" cy="135" r="11" fill="#d9a4db"/><circle cx="650" cy="135" r="128" fill="none" stroke="#d9a4db" stroke-width="1" opacity=".25"/>
+<text x="58" y="105" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="4">IP</text><text x="60" y="145" fill="#d9a4db" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="2">PATENT SEARCH</text><path d="M60 178h190" stroke="#d9a4db" stroke-width="4"/><text x="60" y="445" fill="#d8e5f2" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="1">H2 WELLNESS HUB</text>
+</svg>
