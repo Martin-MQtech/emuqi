@@ -100,6 +100,17 @@ html[lang="zh-Hans"] .hub-resource-feature-image::after { content: "官方页面
 .hub-resource-catalogue-label { display: block; margin: 0 0 14px; color: var(--hub-ink); font: 700 12px/1.3 var(--font-heading); letter-spacing: .08em; text-transform: uppercase; }
 .hub-resource-grid .hub-resource h3 { margin-top: 13px; }
 
+/* The resource directory is a single, visual research ledger — no mixed icon and text-card systems. */
+.hub-resource-grid--ledger { display: block; border: 0; }
+.hub-resource--preview { display: grid; grid-template-columns: minmax(420px, .95fr) minmax(0, 1fr); min-height: 0; padding: 0; border: 0; border-top: 1px solid var(--hub-line); }
+.hub-resource--preview:last-child { border-bottom: 1px solid var(--hub-line); }
+.hub-resource-preview { min-height: 280px; overflow: hidden; background: #e8edf3; border-right: 1px solid var(--hub-line); }
+.hub-resource-preview img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .25s ease; }
+.hub-resource--preview:hover .hub-resource-preview img { transform: scale(1.018); }
+.hub-resource-copy { display: flex; flex-direction: column; justify-content: center; padding: 38px 44px; }
+.hub-resource-copy h3 { margin: 15px 0 11px; color: var(--hub-ink); font: 600 28px/1.12 var(--font-heading); letter-spacing: -.04em; }
+.hub-resource-copy p { max-width: 560px; margin: 0; color: var(--hub-muted); font-size: 15px; line-height: 1.72; }
+
 .hub-case { display: grid; grid-template-columns: 94px minmax(0, 1fr); gap: 25px; padding: 28px 0; border-bottom: 1px solid var(--hub-line); }
 .hub-case-number { color: var(--hub-orange); font: 700 22px/1 var(--font-heading); }
 .hub-case h3 { margin: 7px 0 9px; font: 600 25px/1.15 var(--font-heading); letter-spacing: -.035em; }
@@ -268,6 +279,10 @@ html[lang="zh-Hans"] .hub-resource-feature-image::after { content: "官方页面
   .hub-content-section { padding: 58px 0; }
   .hub-post { grid-template-columns: 1fr; gap: 12px; }
   .hub-resource-grid { grid-template-columns: 1fr; }
+  .hub-resource--preview { grid-template-columns: 1fr; }
+  .hub-resource-preview { min-height: 225px; border-right: 0; border-bottom: 3px solid var(--hub-orange); }
+  .hub-resource-copy { padding: 25px 0 31px; }
+  .hub-resource-copy h3 { font-size: 24px; }
   .hub-resource-featured { grid-template-columns: 1fr; gap: 20px; margin-bottom: 38px; }
   .hub-case { grid-template-columns: 56px minmax(0, 1fr); gap: 15px; }
   .hub-article-hero { padding: 58px 0 43px; }
