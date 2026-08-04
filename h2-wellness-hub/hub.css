@@ -105,14 +105,54 @@ html[lang="zh-Hans"] .hub-resource-feature-image::after { content: "官方页面
 
 /* The resource directory is a single, visual research ledger — no mixed icon and text-card systems. */
 .hub-resource-grid--ledger { display: block; border: 0; }
-.hub-resource--preview { display: grid; grid-template-columns: minmax(420px, .95fr) minmax(0, 1fr); min-height: 0; padding: 0; border: 0; border-top: 1px solid var(--hub-line); }
-.hub-resource--preview:last-child { border-bottom: 1px solid var(--hub-line); }
-.hub-resource-preview { min-height: 280px; overflow: hidden; background: #e8edf3; border-right: 1px solid var(--hub-line); }
-.hub-resource-preview img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .25s ease; }
-.hub-resource--preview:hover .hub-resource-preview img { transform: scale(1.018); }
-.hub-resource-copy { display: flex; flex-direction: column; justify-content: center; padding: 38px 44px; }
-.hub-resource-copy h3 { margin: 15px 0 11px; color: var(--hub-ink); font: 600 28px/1.12 var(--font-heading); letter-spacing: -.04em; }
-.hub-resource-copy p { max-width: 560px; margin: 0; color: var(--hub-muted); font-size: 15px; line-height: 1.72; }
+.hub-resource-directory { border-top: 2px solid var(--hub-ink); }
+.hub-resource-group { padding: 30px 0 36px; border-bottom: 1px solid var(--hub-line); }
+.hub-resource-group-head { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 18px; align-items: start; margin-bottom: 22px; }
+.hub-resource-group-head > span { color: var(--hub-orange); font: 700 22px/1 var(--font-heading); padding-top: 4px; }
+.hub-resource-group-head h3 { margin: 0 0 5px; color: var(--hub-ink); font: 600 25px/1.15 var(--font-heading); letter-spacing: -.035em; }
+.hub-resource-group-head p { margin: 0; color: var(--hub-muted); font-size: 14px; line-height: 1.55; }
+.hub-resource-group-head strong { padding: 6px 9px; color: var(--hub-blue); background: #edf4fc; font: 700 10px/1 var(--font-heading); letter-spacing: .08em; text-transform: uppercase; }
+.hub-resource-directory-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--hub-line); border-left: 1px solid var(--hub-line); }
+.hub-resource-directory-item { display: grid; grid-template-columns: 118px minmax(0, 1fr); min-height: 132px; color: inherit; background: #fff; border-right: 1px solid var(--hub-line); border-bottom: 1px solid var(--hub-line); text-decoration: none; transition: background .2s ease, box-shadow .2s ease; }
+.hub-resource-directory-item:hover { background: #fff8f1; box-shadow: inset 3px 0 0 var(--hub-orange); }
+.hub-resource-directory-thumb { overflow: hidden; background: #e8edf3; border-right: 1px solid var(--hub-line); }
+.hub-resource-directory-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.hub-resource-directory-copy { position: relative; padding: 18px 30px 16px 18px; }
+.hub-resource-directory-copy span { display: block; margin-bottom: 7px; color: var(--hub-orange-deep); font: 700 9px/1.2 var(--font-heading); letter-spacing: .09em; text-transform: uppercase; }
+.hub-resource-directory-copy h3 { margin: 0 0 6px; color: var(--hub-ink); font: 700 16px/1.22 var(--font-heading); letter-spacing: -.02em; }
+.hub-resource-directory-copy p { margin: 0; color: var(--hub-muted); font-size: 12px; line-height: 1.5; }
+.hub-resource-directory-copy b { position: absolute; right: 13px; top: 15px; color: var(--hub-blue); font: 700 15px/1 var(--font-heading); }
+
+/* Resources is a directory first. Thumbnails are optional signals, never the
+   primary information carrier on the Hub homepage. */
+.hub-resource-grid--ledger { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--hub-ink); border-left: 1px solid var(--hub-line); }
+.hub-resource-grid--ledger .hub-resource-preview { display: none; }
+.hub-resource-grid--ledger .hub-resource { min-height: 0; padding: 20px 22px 21px; border-radius: 0; }
+.hub-resource-grid--ledger .hub-resource-copy { display: block; }
+.hub-resource-grid--ledger .hub-resource-copy span { display: block; margin-bottom: 9px; }
+.hub-resource-grid--ledger .hub-resource-copy h3 { margin: 0 0 7px; font-size: 17px; line-height: 1.24; }
+.hub-resource-grid--ledger .hub-resource-copy p { font-size: 13px; line-height: 1.55; }
+.hub-resource-grid--ledger .hub-resource::after { content: "↗"; display: block; margin-top: 14px; color: var(--hub-blue); font: 700 15px/1 var(--font-heading); }
+.hub-resource-directory-link { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 25px; padding: 17px 20px; color: var(--hub-ink); background: #fff8f1; border-left: 4px solid var(--hub-orange); text-decoration: none; }
+.hub-resource-directory-link strong { font: 700 14px/1.35 var(--font-heading); }
+.hub-resource-directory-link span { color: var(--hub-blue); font: 700 12px/1.2 var(--font-heading); }
+.hub-resource-index { padding: 62px 0 90px; background: #fff; }
+.hub-resource-index-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .42fr); gap: 48px; align-items: end; margin-bottom: 38px; }
+.hub-resource-index-intro h1 { margin: 10px 0 0; color: var(--hub-ink); font: 600 clamp(36px, 5vw, 58px)/1.02 var(--font-heading); letter-spacing: -.055em; }
+.hub-resource-index-intro p { margin: 0; color: var(--hub-muted); font-size: 15px; line-height: 1.72; }
+.hub-resource-index-group { padding: 25px 0 31px; border-top: 2px solid var(--hub-ink); }
+.hub-resource-index-group + .hub-resource-index-group { border-top: 1px solid var(--hub-line); }
+.hub-resource-index-group-head { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 17px; margin-bottom: 20px; }
+.hub-resource-index-group-head > span { color: var(--hub-orange); font: 700 22px/1 var(--font-heading); }
+.hub-resource-index-group-head h2 { margin: 0 0 5px; color: var(--hub-ink); font: 600 25px/1.16 var(--font-heading); letter-spacing: -.035em; }
+.hub-resource-index-group-head p { margin: 0; color: var(--hub-muted); font-size: 14px; line-height: 1.55; }
+.hub-resource-index-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--hub-line); border-left: 1px solid var(--hub-line); }
+.hub-resource-index-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; padding: 17px 19px; color: inherit; border-right: 1px solid var(--hub-line); border-bottom: 1px solid var(--hub-line); text-decoration: none; }
+.hub-resource-index-item:hover { background: #fff8f1; box-shadow: inset 3px 0 0 var(--hub-orange); }
+.hub-resource-index-item strong { display: block; margin-bottom: 5px; color: var(--hub-ink); font: 700 15px/1.3 var(--font-heading); }
+.hub-resource-index-item small { display: block; color: var(--hub-orange-deep); font: 700 10px/1.3 var(--font-heading); letter-spacing: .08em; text-transform: uppercase; }
+.hub-resource-index-item p { margin: 0; color: var(--hub-muted); font-size: 12px; line-height: 1.5; }
+.hub-resource-index-item > span { color: var(--hub-blue); font: 700 16px/1 var(--font-heading); }
 
 .hub-case { display: grid; grid-template-columns: 94px minmax(0, 1fr); gap: 25px; padding: 28px 0; border-bottom: 1px solid var(--hub-line); }
 .hub-case-number { color: var(--hub-orange); font: 700 22px/1 var(--font-heading); }
@@ -124,6 +164,7 @@ html[lang="zh-Hans"] .hub-resource-feature-image::after { content: "官方页面
 /* Casebook article: a reading document, not a product landing page. */
 .hub-article-hero { padding: 78px 0 53px; color: #fff; background: linear-gradient(115deg, #060d19 0%, #0a1628 55%, #1a3a6e 100%); border-bottom: 5px solid var(--hub-orange); }
 .hub-article-hero .hub-wrap { max-width: 960px; }
+.hub-article-hero-img { display: block; width: min(960px, calc(100% - 48px)); height: auto; max-height: 470px; margin: 0 auto 0; object-fit: cover; object-position: center; background: #e2e8f0; border-bottom: 4px solid var(--hub-orange); }
 .hub-article-hero .hub-kicker { display: block; margin-bottom: 18px; }
 .hub-article-hero h1 { max-width: 860px; margin: 0; color: #fff; font: 600 clamp(38px, 5vw, 64px)/1.01 var(--font-heading); letter-spacing: -.055em; }
 .hub-article-dek { max-width: 720px; margin: 24px 0 0; color: #d4e1ee; font-size: 18px; line-height: 1.72; }
@@ -283,13 +324,21 @@ html[lang="zh-Hans"] .hub-resource-feature-image::after { content: "官方页面
   .hub-content-section { padding: 58px 0; }
   .hub-post { grid-template-columns: 1fr; gap: 12px; }
   .hub-resource-grid { grid-template-columns: 1fr; }
-  .hub-resource--preview { grid-template-columns: 1fr; }
-  .hub-resource-preview { min-height: 225px; border-right: 0; border-bottom: 3px solid var(--hub-orange); }
-  .hub-resource-copy { padding: 25px 0 31px; }
-  .hub-resource-copy h3 { font-size: 24px; }
+  .hub-resource-group { padding: 26px 0; }
+  .hub-resource-group-head { grid-template-columns: 38px minmax(0, 1fr); gap: 13px; }
+  .hub-resource-group-head strong { grid-column: 2; justify-self: start; }
+  .hub-resource-directory-grid { grid-template-columns: 1fr; }
+  .hub-resource-directory-item { grid-template-columns: 105px minmax(0, 1fr); min-height: 118px; }
+  .hub-resource-directory-copy { padding: 15px 27px 13px 15px; }
   .hub-resource-featured { grid-template-columns: 1fr; gap: 20px; margin-bottom: 38px; }
+  .hub-resource-grid--ledger { grid-template-columns: 1fr; border-left: 0; }
+  .hub-resource-grid--ledger .hub-resource { border-left: 1px solid var(--hub-line); }
+  .hub-resource-index-intro { grid-template-columns: 1fr; gap: 16px; }
+  .hub-resource-index-list { grid-template-columns: 1fr; }
+  .hub-resource-index-group-head { grid-template-columns: 38px minmax(0, 1fr); gap: 13px; }
   .hub-case { grid-template-columns: 56px minmax(0, 1fr); gap: 15px; }
   .hub-article-hero { padding: 58px 0 43px; }
+  .hub-article-hero-img { width: calc(100% - 32px); max-height: 280px; }
   .hub-article-layout { width: min(100% - 32px, 720px); display: block; padding: 43px 0 65px; }
   .hub-article-body > p { font-size: 16px; }
   .hub-article-body h2 { margin-top: 40px; font-size: 27px; }

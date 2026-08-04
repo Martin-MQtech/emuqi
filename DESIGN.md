@@ -564,6 +564,10 @@ It inherits Emuqi’s global brand, navigation, deployment, and shared technical
 - `h2-wellness-hub/CONTENT-ARCHITECTURE.md` — the single Hub document: visual identity, content sections, bilingual publishing, SEO/GEO, source policy, update workflow, and expansion rules.
 - `h2-wellness-hub/data/` — source research and structured working data.
 
+**Resources design rule (2026-08-03):** Section 03 is a navigation and tools directory, not a gallery. The homepage keeps a compact text-first preview and links to the bilingual full directory at `h2-wellness-hub/resources.html` and `h2-wellness-hub/zh/resources.html`. The full directory is grouped by visitor task: research/publications, trials/status, standards/regulation/labels, and testing/laboratories/patents. Images are optional small source signals only; they must not determine the height or hierarchy of resource entries. Every entry needs an official URL, scope/region label, one-line use case, and a limitation when it could be mistaken for evidence, approval, or certification.
+
+**Project Cases image rule (2026-08-03):** Section 02 retains its numbered editorial structure. Every case article must have a stable local hero image when a relevant source or case image is available. When no original image is available, use a clearly relevant local category image and keep the source/evidence boundary visible; never leave a broken remote image or a blank image slot.
+
 ### After editing
 
 - Run local server: `python3 -m http.server 8080` from this directory.

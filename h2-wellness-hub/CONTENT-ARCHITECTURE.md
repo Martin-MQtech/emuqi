@@ -51,6 +51,14 @@ The homepage has exactly three sections, in this order:
 
 Do not add Phase 1 navigation sections for evidence, markets, standards, organizations, companies, events, or country maps. These are content types/tags inside the three sections.
 
+### Resources directory model (2026-08-03)
+
+Resources is a navigation surface, not a gallery. The homepage section is a compact directory preview with text-first entries and a clear link to the full bilingual directory at `/h2-wellness-hub/resources.html` and `/h2-wellness-hub/zh/resources.html`. The full directory is grouped by the visitor's question: research and publications; trials and research status; standards, regulation, and labels; testing, laboratories, and patents.
+
+Resource entries must carry the maintained source URL, region/scope label, one-line use case, and a limitation where the source could be mistaken for evidence, approval, or certification. Images are optional and may only be used as small, verified source signals. They must never control the height or hierarchy of the directory.
+
+The homepage is intentionally not a complete catalogue. It should reserve visual space for navigation and make the next action obvious: choose a category, open the original source, or enter the full directory.
+
 Japan, the United States, China, and other regions are tags on individual items, not homepage silos.
 
 ## 3. Independent bilingual URLs
