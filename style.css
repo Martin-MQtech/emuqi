@@ -32,6 +32,9 @@
   --success:       #10b981;
   --warning:       #f59e0b;
   --error:         #ef4444;
+  --surface-dark:   #07111f;
+  --surface-deep:   #0a1628;
+  --surface-raised: #14233a;
 
   /* Typography */
   --font-heading:  'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -52,6 +55,41 @@
   --shadow-xl:     0 12px 48px rgba(0,0,0,0.15);
   --transition:    0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.dd {
+  background: linear-gradient(145deg, #07111f 0%, #0a1628 56%, #14233a 100%) !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+  box-shadow: 0 18px 44px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+.dark-surface { background: linear-gradient(135deg, #07111f 0%, #0a1628 52%, #14233a 100%); color: #fff; }
+.agriculture-hero { position:relative; min-height:550px; display:flex; align-items:center; justify-content:center; overflow:hidden; isolation:isolate; background:#07111f url('assets/images/agriculture/silicon-hydrogen-bao-hero.png') center/cover no-repeat; }
+.agriculture-hero::before { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(100deg,rgba(7,17,31,.96) 0%,rgba(7,17,31,.77) 49%,rgba(10,22,40,.46) 100%); }
+.agriculture-hero::after { content:''; position:absolute; inset:0; z-index:-1; opacity:.5; background-image:linear-gradient(rgba(0,212,255,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.10) 1px,transparent 1px); background-size:48px 48px; mask-image:linear-gradient(90deg,#000,transparent 76%); }
+.agriculture-product { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(340px,.8fr); overflow:hidden; border:1px solid rgba(244,123,32,.28); border-radius:8px; background:#fff; box-shadow:0 20px 42px rgba(7,17,31,.12); }
+.agriculture-product-image { min-height:390px; background:#eef1f1; }
+.agriculture-product-image img { width:100%; height:100%; object-fit:cover; object-position:center; }
+.agriculture-product-copy { padding:42px; display:flex; flex-direction:column; justify-content:center; }
+.pathway-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.pathway-card { min-height:360px; position:relative; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; padding:28px; color:#fff; text-decoration:none; border-radius:8px; background:#0a1628; box-shadow:0 12px 28px rgba(7,17,31,.16); isolation:isolate; }
+.pathway-card::before { content:''; position:absolute; inset:0; z-index:-2; background:var(--pathway-image) center/cover no-repeat; transition:transform .35s ease; }
+.pathway-card::after { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(7,17,31,.14) 0%,rgba(7,17,31,.94) 88%); }
+.pathway-card:hover { color:#fff; }
+.pathway-card:hover::before { transform:scale(1.045); }
+.pathway-number { color:#00d4ff; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; margin-bottom:auto; }
+.pathway-card:nth-child(1) .pathway-number { color:#f47b20; }
+.pathway-card:nth-child(3) .pathway-number { color:#00ffc8; }
+.pathway-card h3 { font-size:25px; line-height:1.18; margin:0 0 10px; color:#fff; }
+.pathway-card p { margin:0 0 18px; color:#d2d9e4; line-height:1.6; }
+.pathway-action { align-self:flex-start; padding-bottom:5px; border-bottom:2px solid currentColor; color:#fff; font-size:14px; font-weight:700; }
+.agriculture-video { padding:48px; border-radius:8px; overflow:hidden; }
+.agriculture-video-poster { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.16); border-radius:6px; background:#07111f url('assets/images/agriculture/silicon-hydrogen-bao-material.jpg') center/cover no-repeat; box-shadow:0 18px 42px rgba(0,0,0,.28); }
+.agriculture-video-poster::before { content:''; position:absolute; inset:0; background:linear-gradient(110deg,rgba(7,17,31,.7),rgba(7,17,31,.25) 60%,rgba(7,17,31,.6)); }
+.video-play { position:relative; width:74px; height:74px; display:grid; place-items:center; border:2px solid rgba(255,255,255,.9); border-radius:50%; background:rgba(7,17,31,.72); box-shadow:0 0 0 12px rgba(0,212,255,.12); }
+.video-play svg { margin-left:4px; }
+.about-video { max-width:1100px; margin:64px auto 0; padding:48px; border-radius:8px; }
+.about-video-frame { position:relative; width:min(440px,100%); margin:28px auto 0; aspect-ratio:9/16; overflow:hidden; border:1px solid rgba(255,255,255,.14); border-radius:6px; background:#07111f url('assets/images/hero-bg.png') center/cover no-repeat; box-shadow:0 24px 60px rgba(0,0,0,.3); }
+.about-video-frame iframe { display:block; width:100%; height:100%; border:0; }
+@media (max-width:760px) { .agriculture-hero{min-height:470px;padding:0 24px}.agriculture-product,.pathway-grid{grid-template-columns:1fr}.agriculture-product-image{min-height:270px}.agriculture-product-copy,.agriculture-video,.about-video{padding:28px 22px}.pathway-card{min-height:310px} }
 
 /* ── Reset & Base ── */
 *, *::before, *::after {
