@@ -1963,3 +1963,13 @@ a.category-banner p { margin: 0 0 18px; color: #d2d9e4 !important; font-size: 15
   a.category-banner h3 { font-size: 26px; }
   .inside-note { padding: 26px 22px; }
 }
+
+/* Agriculture detail page image heroes */
+.agri-hero { position:relative; isolation:isolate; overflow:hidden; background:#07111f !important; }
+.agri-hero::before { content:''; position:absolute; inset:0; z-index:-2; background:var(--agri-hero-image) center/cover no-repeat; }
+.agri-hero::after { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(7,17,31,.96) 0%,rgba(7,17,31,.78) 55%,rgba(7,17,31,.28) 100%); }
+.agri-hero-crop { --agri-hero-image:url('assets/images/agriculture/category-crop.jpg'); }
+.agri-hero-livestock { --agri-hero-image:url('assets/images/agriculture/category-livestock.jpg'); }
+.agri-hero-aquaculture { --agri-hero-image:url('assets/images/agriculture/category-aquaculture.jpg'); }
+.agri-hero-companion { --agri-hero-image:url('assets/images/agriculture/category-companion.jpg'); }
+.inside-note-product { margin-top:-10px; margin-bottom:28px; }
