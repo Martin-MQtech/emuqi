@@ -678,4 +678,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url><loc>https://emuqi.com/solutions-hydrogen-agriculture/crop-resilience.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emuqi.com/solutions-hydrogen-agriculture/livestock-hydrogen-research.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emuqi.com/solutions-hydrogen-agriculture/aquaculture-hydrogen-research.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://emuqi.com/solutions-hydrogen-agriculture/companion-animal-health-care.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
