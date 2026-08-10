@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "ohy",
+    "company_name": "oHy",
+    "country": "US",
+    "product_type": "RTD",
+    "primary_url": "https://www.ohydration.com/",
+    "alt_url": "https://www.prnewswire.com/news-releases/",
+    "editorial_value": "oHy sells ready-to-drink hydrogen-infused water cans targeting the US wellness retail channel, demonstrating mass-market H2 beverage viability."
+  },
+  {
+    "slug": "h2factory",
+    "company_name": "H2FACTORY",
+    "country": "JP",
+    "product_type": "device",
+    "primary_url": "https://www.h2factory.co.jp/",
+    "alt_url": "https://prtimes.jp/main/html/searchrlp/company_id/37567",
+    "editorial_value": "H2FACTORY manufactures compact hydrogen-water generators for home and commercial use, anchoring Japan's mature consumer H2 device market."
+  },
+  {
+    "slug": "suiso-japan",
+    "company_name": "SUISO JAPAN",
+    "country": "JP",
+    "product_type": "RTD",
+    "primary_url": "https://suisojapan.com/",
+    "alt_url": "https://prtimes.jp/",
+    "editorial_value": "SUISO JAPAN produces canned hydrogen water for retail distribution, showcasing Japan's premium-packaged H2 beverage segment."
+  },
+  {
+    "slug": "melodyian",
+    "company_name": "Melodyian",
+    "country": "JP",
+    "product_type": "RTD",
+    "primary_url": "https://melodyian.com/",
+    "alt_url": "https://prtimes.jp/",
+    "editorial_value": "Melodyian positions hydrogen water as a lifestyle wellness product with elegant branding, targeting Japan's health-conscious female demographic."
+  },
+  {
+    "slug": "opal-water",
+    "company_name": "OPAL Water",
+    "country": "AU",
+    "product_type": "device",
+    "primary_url": "https://www.opalwater.com.au/",
+    "alt_url": "https://www.businesswire.com/",
+    "editorial_value": "OPAL Water provides hydrogen water purification systems for Australian households, blending filtration technology with H2 enrichment."
+  },
+  {
+    "slug": "h2h2o",
+    "company_name": "H2H2O",
+    "country": "EU",
+    "product_type": "distributor",
+    "primary_url": "https://www.h2h2o.eu/",
+    "alt_url": "https://www.businesswire.com/",
+    "editorial_value": "H2H2O operates as a European distributor aggregating multiple hydrogen-water brands across the EU market."
+  },
+  {
+    "slug": "oh2plus",
+    "company_name": "OH2Plus",
+    "country": "BR",
+    "product_type": "RTD",
+    "primary_url": "https://oh2plus.com.br/",
+    "alt_url": "https://www.prnewswire.com/",
+    "editorial_value": "OH2Plus brings hydrogen-infused beverages to Brazil's growing functional-drinks market, representing Latin American H2 adoption."
+  },
+  {
+    "slug": "designer-water",
+    "company_name": "Designer Water",
+    "country": "ZA",
+    "product_type": "packaging",
+    "primary_url": "https://www.designerwater.co.za/",
+    "alt_url": "https://www.businesswire.com/",
+    "editorial_value": "Designer Water offers custom-branded hydrogen water packaging solutions for South African and African retail channels."
+  },
+  {
+    "slug": "inhaleh2",
+    "company_name": "InhaleH2",
+    "country": "US",
+    "product_type": "inhalation",
+    "primary_url": "https://www.inhaleh2.com/",
+    "alt_url": "https://www.prnewswire.com/",
+    "editorial_value": "InhaleH2 sells portable hydrogen-gas inhalation devices for wellness and athletic recovery, representing the US H2 inhalation niche."
+  },
+  {
+    "slug": "revive-hydrogen",
+    "company_name": "Revive Hydrogen",
+    "country": "US",
+    "product_type": "device",
+    "primary_url": "https://www.revivehydrogen.com/",
+    "alt_url": "https://www.businesswire.com/",
+    "editorial_value": "Revive Hydrogen produces premium hydrogen-water generators targeting the US biohacking and longevity communities."
+  },
+  {
+    "slug": "boundless-molecular-research",
+    "company_name": "Boundless / Molecular Hydrogen Research",
+    "country": "AU",
+    "product_type": "academic-linked",
+    "primary_url": "https://www.boundless.com.au/",
+    "alt_url": "https://www.businesswire.com/",
+    "editorial_value": "Boundless links commercial H2 products with Australian university research, bridging academic validation and consumer wellness."
+  },
+  {
+    "slug": "ibottle",
+    "company_name": "iBottle",
+    "country": "AU",
+    "product_type": "retail",
+    "primary_url": "https://www.ibottle.com.au/",
+    "alt_url": "https://www.businesswire.com/",
+    "editorial_value": "iBottle retails portable hydrogen-generating water bottles through Australian wellness retailers, demonstrating DTC H2 hardware distribution."
+  }
+]
