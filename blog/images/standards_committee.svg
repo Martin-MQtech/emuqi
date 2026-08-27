@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420">
+  <defs>
+    <linearGradient id="goldCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="borderGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3d082"/>
+      <stop offset="50%" stop-color="#c89a3c"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="420" fill="url(#goldCard)" rx="12" stroke="url(#borderGold)" stroke-width="2.5"/>
+  
+  <rect x="40" y="30" width="920" height="40" rx="6" fill="#c89a3c" fill-opacity="0.15" stroke="#c89a3c" stroke-dasharray="4 4"/>
+  <text x="500" y="56" fill="#fef08a" font-size="15" font-weight="bold" text-anchor="middle" letter-spacing="2">国家级标准委员会权威入选 · 行业地位硬核见证</text>
+
+  <text x="80" y="120" fill="#ffffff" font-size="24" font-weight="bold">全国抗菌表面性能标准化技术委员会 (SAC/TC621)</text>
+  <text x="80" y="155" fill="#94a3b8" font-size="14">国家标准化管理委员会 2026 年 4 月正式批准成立 · 汇聚顶尖科研机构与龙头企业</text>
+
+  <line x1="80" y1="180" x2="920" y2="180" stroke="#334155" stroke-width="1"/>
+
+  <g transform="translate(80, 205)">
+    <rect width="400" height="170" rx="8" fill="#1e293b" stroke="#c89a3c" stroke-width="1.5"/>
+    <text x="20" y="35" fill="#fef08a" font-size="16" font-weight="bold">★ 山东木齐健康科技有限公司</text>
+    <text x="20" y="65" fill="#38bdf8" font-size="14" font-weight="bold">第一届委员单位出任委员</text>
+    <text x="20" y="98" fill="#e2e8f0" font-size="13">【行业唯一】陶瓷球行业唯一入选委员企业！</text>
+    <text x="20" y="128" fill="#94a3b8" font-size="12">与中科院理化所、中国科技大学等 44 名顶尖委员共同</text>
+    <text x="20" y="148" fill="#94a3b8" font-size="12">制定国家无机抗菌表面性能标准规范体系。</text>
+  </g>
+
+  <g transform="translate(520, 205)">
+    <rect width="400" height="170" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+    <text x="20" y="35" fill="#38bdf8" font-size="16" font-weight="bold">★ 赋能 B 端品牌客户的三重硬核底气</text>
+    <text x="20" y="68" fill="#e2e8f0" font-size="13">1. 合规无忧：国家级标准参编企业，规避虚标与抽检风险</text>
+    <text x="20" y="102" fill="#e2e8f0" font-size="13">2. 研发赋能：专利 ICR 智控缓释技术，99.9% 抗菌率保真</text>
+    <text x="20" y="136" fill="#e2e8f0" font-size="13">3. 供应链定制：支持除氯、富氢、矿化多合一模块化量产</text>
+  </g>
+</svg>

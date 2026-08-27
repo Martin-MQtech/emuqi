@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520">
+  <rect width="1000" height="520" fill="#f8fafc" rx="12" stroke="#cbd5e1" stroke-width="1.5"/>
+  
+  <rect x="30" y="25" width="940" height="55" rx="8" fill="#1a3a6e"/>
+  <text x="500" y="60" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">从“单一抑菌”到“四维合一”：功能陶瓷材料进化路径</text>
+
+  <!-- 底部基底 -->
+  <g transform="translate(80, 110)">
+    <!-- 阶段 1：1.0 时代 -->
+    <rect x="0" y="0" width="180" height="350" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="180" height="45" rx="10" fill="#e2e8f0"/>
+    <text x="90" y="28" fill="#334155" font-size="15" font-weight="bold" text-anchor="middle">1.0 基础时代</text>
+    <circle cx="90" cy="90" r="32" fill="#cbd5e1"/>
+    <text x="90" y="96" fill="#1e293b" font-size="13" font-weight="bold" text-anchor="middle">单一抗菌</text>
+    <text x="20" y="150" fill="#475569" font-size="12" font-weight="bold">基础功能：</text>
+    <text x="20" y="175" fill="#64748b" font-size="12">· 纳米银离子抑菌</text>
+    <text x="20" y="198" fill="#64748b" font-size="12">· 解决水质发臭</text>
+    <text x="20" y="221" fill="#64748b" font-size="12">· 基础防霉菌滋生</text>
+    <rect x="15" y="270" width="150" height="60" rx="6" fill="#f1f5f9"/>
+    <text x="90" y="295" fill="#475569" font-size="11" text-anchor="middle">定位：安全水阶段</text>
+    <text x="90" y="315" fill="#94a3b8" font-size="11" text-anchor="middle">同质化竞争严重</text>
+
+    <!-- 阶段 2：2.0 时代 -->
+    <rect x="220" y="0" width="180" height="350" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <rect x="220" y="0" width="180" height="45" rx="10" fill="#e0f2fe"/>
+    <text x="310" y="28" fill="#0369a1" font-size="15" font-weight="bold" text-anchor="middle">2.0 除氯复合</text>
+    <circle cx="310" cy="90" r="32" fill="#bae6fd"/>
+    <text x="310" y="96" fill="#0284c7" font-size="13" font-weight="bold" text-anchor="middle">抗菌 + 除氯</text>
+    <text x="240" y="150" fill="#0369a1" font-size="12" font-weight="bold">技术升级：</text>
+    <text x="240" y="175" fill="#475569" font-size="12">· 食品级亚硫酸钙</text>
+    <text x="240" y="198" fill="#475569" font-size="12">· 0.2s 瞬间脱氯 99%</text>
+    <text x="240" y="221" fill="#475569" font-size="12">· 保护敏感肌皮脂</text>
+    <rect x="235" y="270" width="150" height="60" rx="6" fill="#f0f9ff"/>
+    <text x="310" y="295" fill="#0369a1" font-size="11" text-anchor="middle">代表：美肤花洒</text>
+    <text x="310" y="315" fill="#0284c7" font-size="11" text-anchor="middle">婴儿洗浴过滤器</text>
+
+    <!-- 阶段 3：3.0 时代 -->
+    <rect x="440" y="0" width="180" height="350" rx="10" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.5"/>
+    <rect x="440" y="0" width="180" height="45" rx="10" fill="#dbeafe"/>
+    <text x="530" y="28" fill="#1e40af" font-size="15" font-weight="bold" text-anchor="middle">3.0 活化赋能</text>
+    <circle cx="530" cy="90" r="32" fill="#bfdbfe"/>
+    <text x="530" y="96" fill="#1d4ed8" font-size="13" font-weight="bold" text-anchor="middle">富氢+小分子</text>
+    <text x="460" y="150" fill="#1e40af" font-size="12" font-weight="bold">技术升级：</text>
+    <text x="460" y="175" fill="#475569" font-size="12">· 单质硅水解制氢</text>
+    <text x="460" y="198" fill="#475569" font-size="12">· 无需通电产氢</text>
+    <text x="460" y="221" fill="#475569" font-size="12">· 稀土活化小分子团</text>
+    <rect x="455" y="270" width="150" height="60" rx="6" fill="#eff6ff"/>
+    <text x="530" y="295" fill="#1d4ed8" font-size="11" text-anchor="middle">代表：富氢水机</text>
+    <text x="530" y="315" fill="#1e40af" font-size="11" text-anchor="middle">稀土养生茶杯</text>
+
+    <!-- 阶段 4：4.0 时代 (旗舰) -->
+    <rect x="660" y="0" width="180" height="350" rx="10" fill="#ffffff" stroke="#c89a3c" stroke-width="2"/>
+    <rect x="660" y="0" width="180" height="45" rx="10" fill="#fef3c7"/>
+    <text x="750" y="28" fill="#92400e" font-size="15" font-weight="bold" text-anchor="middle">4.0 全能旗舰</text>
+    <circle cx="750" cy="90" r="32" fill="#fde68a"/>
+    <text x="750" y="96" fill="#b45309" font-size="13" font-weight="bold" text-anchor="middle">ICR 四维智控</text>
+    <text x="680" y="150" fill="#92400e" font-size="12" font-weight="bold">木齐科技 ICR 矩阵：</text>
+    <text x="680" y="175" fill="#b45309" font-size="12">★ 抗菌率 &gt;99.9%</text>
+    <text x="680" y="198" fill="#b45309" font-size="12">★ 0.2s 极速除氯</text>
+    <text x="680" y="221" fill="#b45309" font-size="12">★ 富氢 + 偏硅酸生成</text>
+    <text x="680" y="244" fill="#b45309" font-size="12">★ 矿化微量元素活化</text>
+    <rect x="675" y="270" width="150" height="60" rx="6" fill="#fffbeb" stroke="#fde68a"/>
+    <text x="750" y="295" fill="#b45309" font-size="11" font-weight="bold" text-anchor="middle">健康水时代核心引擎</text>
+    <text x="750" y="315" fill="#92400e" font-size="10" text-anchor="middle">全场景定制解决方案</text>
+  </g>
+</svg>

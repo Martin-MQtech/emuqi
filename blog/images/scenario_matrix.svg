@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="1000" height="650">
+  <rect width="1000" height="650" fill="#f8fafc" rx="12"/>
+  
+  <!-- 标题 -->
+  <rect x="40" y="30" width="920" height="60" rx="8" fill="#1a3a6e"/>
+  <text x="500" y="68" fill="#ffffff" font-size="22" font-weight="bold" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">抗菌陶瓷球 · 四大全场景应用生态矩阵</text>
+  
+  <!-- 4 个大卡片 -->
+  <!-- 卡片 1：水处理 -->
+  <g transform="translate(40, 110)">
+    <rect width="445" height="240" rx="10" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.5"/>
+    <rect width="445" height="42" rx="10" fill="#eff6ff"/>
+    <rect x="0" y="32" width="445" height="10" fill="#eff6ff"/>
+    <text x="20" y="27" fill="#1d4ed8" font-size="17" font-weight="bold">01 | 水处理领域（最大应用基本盘）</text>
+    
+    <text x="20" y="72" fill="#1e293b" font-size="14" font-weight="bold">▶ 核心产品：净水器滤芯 / 售水机 / 储水罐</text>
+    <text x="36" y="96" fill="#64748b" font-size="13">· 美的专利应用：银麦饭球双重抑菌净水生态系统</text>
+    <text x="36" y="120" fill="#64748b" font-size="13">· 解决储水桶/管路二次微生物污染难题</text>
+    
+    <text x="20" y="156" fill="#1e293b" font-size="14" font-weight="bold">▶ 创新延伸：稀土抗菌陶瓷杯壶 / 泡茶师保温杯</text>
+    <text x="36" y="180" fill="#64748b" font-size="13">· 白云鄂博稀土元素 + 景德镇工艺，瓷质润泽细腻</text>
+    <text x="36" y="204" fill="#64748b" font-size="13">· 幽门螺杆菌、肺炎链球菌杀灭率 &gt; 90%</text>
+  </g>
+
+  <!-- 卡片 2：健康家电 -->
+  <g transform="translate(515, 110)">
+    <rect width="445" height="240" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <rect width="445" height="42" rx="10" fill="#f0f9ff"/>
+    <rect x="0" y="32" width="445" height="10" fill="#f0f9ff"/>
+    <text x="20" y="27" fill="#0284c7" font-size="17" font-weight="bold">02 | 健康家电领域（爆发式增长赛道）</text>
+    
+    <text x="20" y="72" fill="#1e293b" font-size="14" font-weight="bold">▶ 加湿器水箱：ICR 智控嵌银，防雾化气溶胶细菌</text>
+    <text x="36" y="96" fill="#64748b" font-size="13">· 木齐科技 ICR 智控释溶，实验室抗菌率 99.9%</text>
+    
+    <text x="20" y="132" fill="#1e293b" font-size="14" font-weight="bold">▶ 扫地机/洗地机：污水箱防臭抑菌模块（木齐已合作头部）</text>
+    <text x="36" y="156" fill="#64748b" font-size="13">· 银离子持续缓释，彻底解决拖地异味与滚刷发酸</text>
+    
+    <text x="20" y="192" fill="#1e293b" font-size="14" font-weight="bold">▶ 空调/洗衣机/冰箱：冷凝水盘抑菌 + 光催化防霉</text>
+  </g>
+
+  <!-- 卡片 3：卫浴洁具 -->
+  <g transform="translate(40, 370)">
+    <rect width="445" height="240" rx="10" fill="#ffffff" stroke="#c89a3c" stroke-width="1.5"/>
+    <rect width="445" height="42" rx="10" fill="#fefce8"/>
+    <rect x="0" y="32" width="445" height="10" fill="#fefce8"/>
+    <text x="20" y="27" fill="#a16207" font-size="17" font-weight="bold">03 | 卫浴洁具领域（健康洗浴第二极）</text>
+    
+    <text x="20" y="72" fill="#1e293b" font-size="14" font-weight="bold">▶ 增压抗菌花洒 / 沐浴前置过滤器</text>
+    <text x="36" y="96" fill="#64748b" font-size="13">· 抑制花洒腔体死角细菌滋生，保障敏感肌洗浴安全</text>
+    <text x="36" y="120" fill="#64748b" font-size="13">· 复合食品级亚硫酸钙，0.2 秒极速除氯保护皮脂膜</text>
+    
+    <text x="20" y="156" fill="#1e293b" font-size="14" font-weight="bold">▶ 智能马桶水箱与釉料抗菌</text>
+    <text x="36" y="180" fill="#64748b" font-size="13">· 水路系统内置抗菌球，清洗喷头水质长效无菌</text>
+    <text x="36" y="204" fill="#64748b" font-size="13">· 稀土复合釉料表面长效自洁抑菌</text>
+  </g>
+
+  <!-- 卡片 4：宠物与家居 -->
+  <g transform="translate(515, 370)">
+    <rect width="445" height="240" rx="10" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+    <rect width="445" height="42" rx="10" fill="#ecfdf5"/>
+    <rect x="0" y="32" width="445" height="10" fill="#ecfdf5"/>
+    <text x="20" y="27" fill="#059669" font-size="17" font-weight="bold">04 | 宠物与日化日居（新兴高复购新宠）</text>
+    
+    <text x="20" y="72" fill="#1e293b" font-size="14" font-weight="bold">▶ 宠物循环饮水机：木齐光催化长效抗菌方案</text>
+    <text x="36" y="96" fill="#64748b" font-size="13">· 解决循环水黏膜、细菌滋生导致宠物黑下巴/泌尿病</text>
+    <text x="36" y="120" fill="#64748b" font-size="13">· 全水路保护：管路、水箱、滤芯三维抑菌</text>
+    
+    <text x="20" y="156" fill="#1e293b" font-size="14" font-weight="bold">▶ 宠物猫砂与日化消臭</text>
+    <text x="36" y="180" fill="#64748b" font-size="13">· 纳米银除臭抗菌球，物理吸附+离子分解异味分子</text>
+    <text x="36" y="204" fill="#64748b" font-size="13">· 母婴洗护、洗涤去垢物理活水球</text>
+  </g>
+</svg>
