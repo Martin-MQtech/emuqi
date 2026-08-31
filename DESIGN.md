@@ -32,9 +32,9 @@ Hydrogen health · AI+manufacturing · Cross-border trade. "MUQI Inside" — bra
 | Role | Current | Notes |
 |------|---------|-------|
 | Primary domain | `emuqi.com` | DNS pointing to Hostinger (147.79.79.250) |
-| GitHub repo | `mqtech-martin/emuqi` (SSH) | Source of truth for all code |
+| GitHub repo | `Martin-MQtech/emuqi` (SSH) | Source of truth for all code |
 | Hostinger | `peru-eagle-941015.hostingersite.com` | Primary-domain origin; Git integration can lag behind GitHub Pages and must be verified after each push |
-| GitHub Pages | `mqtech-martin.github.io/emuqi/` | Backup/mirror, also auto-deploys on push |
+| GitHub Pages | `martin-mqtech.github.io/emuqi/` | Backup/mirror, also auto-deploys on push |
 | Blog/content | **Undecided** — Ghost Pro is one option under consideration; may use alternative platform | Not committed |
 
 ### 0.4 Tech stack

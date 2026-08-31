@@ -6,7 +6,7 @@
 *Built from scratch with AI Agents & Codex*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/mqtech-martin/emuqi/deploy.yml?branch=main&label=GitHub%20Pages%20Deploy)](https://github.com/mqtech-martin/emuqi/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Martin-MQtech/emuqi/deploy.yml?branch=main&label=GitHub%20Pages%20Deploy)](https://github.com/Martin-MQtech/emuqi/actions)
 [![Built with Codex](https://img.shields.io/badge/Built_with-OpenAI_Codex_%26_AI_Agents-00A67E.svg)](https://openai.com)
 [![Live Site](https://img.shields.io/badge/Live_Site-emuqi.com-f47b20.svg)](https://emuqi.com)
 
@@ -93,7 +93,7 @@ Because the core site is designed for maximum speed and portability with zero bu
 
 ```bash
 # Clone the repository
-git clone https://github.com/mqtech-martin/emuqi.git
+git clone https://github.com/Martin-MQtech/emuqi.git
 cd emuqi
 
 # Start a local web server (Python 3)
@@ -103,7 +103,7 @@ Open `http://localhost:8000` in your browser.
 
 ### CI/CD & Deployment Pipeline
 - **Primary Domain (`emuqi.com`)**: Automatically deployed via Hostinger Git integration upon push to `main`.
-- **Mirror / Staging (`mqtech-martin.github.io/emuqi/`)**: Deployed via GitHub Actions workflow (`.github/workflows/deploy.yml`).
+- **Mirror / Staging (`martin-mqtech.github.io/emuqi/`)**: Deployed via GitHub Actions workflow (`.github/workflows/deploy.yml`).
 
 ---
 
