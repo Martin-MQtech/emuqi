@@ -1,0 +1,20 @@
+# emuqi.com — Canonical host enforcement (SEO/AEO)
+# Single source of truth: https://www.emuqi.com (matches sitemap.xml + rel=canonical)
+# Fixes duplicate-site dilution: emuqi.com previously served 200 directly.
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# 1) Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://www.emuqi.com%{REQUEST_URI} [L,R=301]
+
+# 2) Force www (non-www -> www), preserving path and query
+RewriteCond %{HTTP_HOST} ^emuqi\.com$ [NC]
+RewriteRule ^ https://www.emuqi.com%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Crawl hygiene: never index dotfiles
+<FilesMatch "^\.">
+Require all denied
+</FilesMatch>
