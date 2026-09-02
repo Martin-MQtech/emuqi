@@ -695,6 +695,31 @@ WebMCP 工具集绝非静态死板的代码，而是随着木齐项目、产品�
    - 在 `muqi-webmcp.js` 中正式上线 `calculate_antimicrobial_dosage` 接口；
    - 采购智能体传入设备类型（如 `robot_vacuum_wastewater`）与水箱容量（如 2.5L），系统自动给出精确的投放克重、物料规格编码（`MACA-KDF-5MM`）与预期维护寿命建议。
 
+---
+
+## 🔍 第 14 章：全球搜索引擎站长平台登记与索引加速 SOP（2026-09-03 已执行）
+
+> **账号基线**：GSC 验证账号 `muqizb@gmail.com`（Chrome 账号槽位 `/u/1/`，注意与默认槽位 cntoworld@gmail.com 区分，直连必须带 `/u/1/` 路径）。验证方式：HTML Meta 标签（`google-site-verification` 已固化在 `index.html` 验证区）。
+
+### 14.1 完成状态总表
+| 平台 | 覆盖引擎 | 状态 |
+|---|---|:---:|
+| Google Search Console (`search.google.com/search-console`) | Google | ✅ 已验证（Meta 标签）· sitemap.xml 已提交（122 URL 已发现）· 首页/产品页已请求编入索引 · 抗菌旗舰博文已确认收录 |
+| Bing Webmaster (`bing.com/webmasters`) | Bing + Yahoo + DuckDuckGo + Ecosia | ✅ 经「从 GSC 导入」一键完成（Google OAuth muqizb@gmail.com），仪表盘已显示历史 28 曝光/1 点击 |
+| Yandex Webmaster (`webmaster.yandex.com`) | Yandex（俄/东欧/中亚） | ⏳ 待 Martin 注册 Yandex ID 后 5 分钟完成（Meta 标签占位已预埋 index.html） |
+| 百度/360/搜狗 (`ziyuan.baidu.com` 等) | 国内引擎 | 占位已预埋，服务器在境外收录慢，暂缓 |
+
+### 14.2 本轮 SEO 技术修复（已全部上线并实测验证）
+1. **Product 结构化数据 offers 修复**：GSC 报「产品摘要 1 项无效内容/严重问题」，根因为 Product 缺少 `offers/review/aggregateRating`。已注入合规 `Offer`（免费 B2B 送样 + OEM 报价模式，availability=InStock，price 0.00 诚实标注）；GSC 实时测试（02:45）确认变为「**1 项有效内容**」。
+2. **全站 13 页 JSON-LD 重复块去重**：重复 `@id` 会混淆解析器，已全部清除，全站 JSON 校验 0 错误。
+3. **www 规范主机 301 强制**：实测 `emuqi.com` 与 `www.emuqi.com` 双主机均 200（权重分裂，GSC 判首页为「备用网页」）。已部署根目录 `.htaccess`（非 www→www 301 + HTTP→HTTPS），curl 实测 301 生效。**宿主为 LiteSpeed，支持 .htaccess**。
+4. **验证区预埋**：`index.html` 头部已预埋 7 大引擎验证 Meta 占位（含注释指南），后续平台验证只需替换 content 值推送即可。
+
+### 14.3 后续索引维护规范
+- 每发布新博文/新页面：GSC「网址检查」→ 请求编入索引（每日限额约 10 次，优先首页与核心产品页）；
+- 产品页剩余「非严重问题」为可选字段建议（review/aggregateRating），有真实客户评价后补录即可；
+- 每月检查 GSC「编制索引→网页」覆盖报告与 Bing「站点资源管理器」，发现收录缺口即时补提交。
+
 
 
 
