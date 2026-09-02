@@ -1,4 +1,71 @@
+# MUQI Tech (emuqi.com) — robots.txt
+# Search engines: full access
 User-agent: *
 Allow: /
-Sitemap: https://emuqi.com/sitemap.xml
 Disallow: /templates/
+
+# ── Generative AI crawlers (GEO): welcome ─────────────────────────────
+# We WANT our technical content cited by AI answer engines.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# ── Aggressive scrapers: throttle to protect hosting ─────────────────
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# ── Training-only crawlers (no search/index value): blocked ──────────
+User-agent: CCBot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+# ── AI-readable site map for LLMs ─────────────────────────────────────
+# llmstxt.org convention: https://www.emuqi.com/llms.txt
+
+Sitemap: https://www.emuqi.com/sitemap.xml
