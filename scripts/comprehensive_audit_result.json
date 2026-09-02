@@ -1,0 +1,210 @@
+{
+  "total_html_files": 123,
+  "broken_internal_links": [],
+  "missing_images": [],
+  "schema_issues": [
+    {
+      "file": "templates/blog-article-template.html",
+      "issue": "Invalid JSON-LD syntax: Expecting property name enclosed in double quotes: line 28 column 3 (char 741)"
+    }
+  ],
+  "language_mismatches": [
+    {
+      "file": "h2-wellness-hub/topics.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/index.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/resources.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/methodology.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/opal-hydrogen-water-au.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/revive-hydrogen-generator-us.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/boundless-hydrogen-water-au.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/ahha-industry-standards.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/suiso-japan-suilive.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/melodyian-hydrogen-water-jp.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/ibottle-hydrogen-bottle-au.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/keio-exercise-hydrogen-study.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/inhaleh2-device.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/h2h2o-eu-hydrogen-devices.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/solid-state-materials-productization.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/designer-water-hydrogen-za.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/echo-icryo-partnership.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/ohy-meijer-retail.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/ohy-hydrogen-sparkling-water.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/h2factory-lourdes-hydrofix.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/oh2plus-hydrogen-bottle.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/cases/vital-reaction-h2-tablets.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/hydrogen-soap.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/research-transparency.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/molecular-hydrogen-biology.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/clinical-trial-registry.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/hydrogen-health.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/solid-state-hydrogen-technology.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/exercise-recovery.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/industry-governance.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/hydrogen-dressing.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/hydrogen-medicine.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/testing-and-labeling.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/hydrogen-traditional-chinese-medicine.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/hydrogen-facial-mask.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/hydrogen-water-cup.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/hydrogen-eye-patch.html",
+      "location": "header",
+      "sample": "中文"
+    },
+    {
+      "file": "h2-wellness-hub/tags/hydrogen-wellness-industry.html",
+      "location": "header",
+      "sample": "中文"
+    }
+  ],
+  "navigation_issues": [
+    {
+      "file": "templates/blog-article-template.html",
+      "issue": "English page top nav 'Blog' points to Chinese list '../blog-list-hydrogen-health.html' instead of 'blog/index.html'"
+    }
+  ],
+  "canonical_hreflang_issues": []
+}
