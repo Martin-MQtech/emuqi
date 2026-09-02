@@ -48,3 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
     panels.forEach(p => io.observe(p));
   }
 });
+
+// Load MUQI WebMCP Agentic Web Engine
+(function() {
+  const mcpScript = document.createElement('script');
+  mcpScript.src = 'assets/js/muqi-webmcp.js';
+  mcpScript.defer = true;
+  document.head.appendChild(mcpScript);
+})();
