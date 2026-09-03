@@ -706,14 +706,15 @@ WebMCP 工具集绝非静态死板的代码，而是随着木齐项目、产品�
 |---|---|:---:|
 | Google Search Console (`search.google.com/search-console`) | Google | ✅ 已验证（Meta 标签）· sitemap.xml 已提交（122 URL 已发现）· 首页/产品页已请求编入索引 · 抗菌旗舰博文已确认收录 |
 | Bing Webmaster (`bing.com/webmasters`) | Bing + Yahoo + DuckDuckGo + Ecosia | ✅ 经「从 GSC 导入」一键完成（Google OAuth muqizb@gmail.com），仪表盘已显示历史 28 曝光/1 点击 |
-| Yandex Webmaster (`webmaster.yandex.com`) | Yandex（俄/东欧/中亚） | ⏳ 待 Martin 注册 Yandex ID 后 5 分钟完成（Meta 标签占位已预埋 index.html） |
+| Yandex Webmaster (`webmaster.yandex.com`) | Yandex（俄/东欧/中亚） | ✅ 已完成（Meta 标签验证 b0823e1f9716551d）· Owner 权限已锁定 · `sitemap.xml` 已进入处理队列（1-2 周全量索引） |
 | 百度/360/搜狗 (`ziyuan.baidu.com` 等) | 国内引擎 | 占位已预埋，服务器在境外收录慢，暂缓 |
 
 ### 14.2 本轮 SEO 技术修复（已全部上线并实测验证）
 1. **Product 结构化数据 offers 修复**：GSC 报「产品摘要 1 项无效内容/严重问题」，根因为 Product 缺少 `offers/review/aggregateRating`。已注入合规 `Offer`（免费 B2B 送样 + OEM 报价模式，availability=InStock，price 0.00 诚实标注）；GSC 实时测试（02:45）确认变为「**1 项有效内容**」。
-2. **全站 13 页 JSON-LD 重复块去重**：重复 `@id` 会混淆解析器，已全部清除，全站 JSON 校验 0 错误。
-3. **www 规范主机 301 强制**：实测 `emuqi.com` 与 `www.emuqi.com` 双主机均 200（权重分裂，GSC 判首页为「备用网页」）。已部署根目录 `.htaccess`（非 www→www 301 + HTTP→HTTPS），curl 实测 301 生效。**宿主为 LiteSpeed，支持 .htaccess**。
-4. **验证区预埋**：`index.html` 头部已预埋 7 大引擎验证 Meta 占位（含注释指南），后续平台验证只需替换 content 值推送即可。
+2. **Product brand 字段类型合规**：将引用式的 `{"@id": "#organization"}` 升级为标准 `{"@type": "Brand", "name": "MUQI Tech"}`，消除 GSC「字段 brand 的对象类型无效」非严重警告。
+3. **全站 13 页 JSON-LD 重复块去重**：重复 `@id` 会混淆解析器，已全部清除，全站 JSON 校验 0 错误。
+4. **www 规范主机 301 强制**：实测 `emuqi.com` 与 `www.emuqi.com` 双主机均 200（权重分裂，GSC 判首页为「备用网页」）。已部署根目录 `.htaccess`（非 www→www 301 + HTTP→HTTPS），curl 实测 301 生效。**宿主为 LiteSpeed，支持 .htaccess**。
+5. **验证区预埋**：`index.html` 头部已集成 Google (`qtaS4...`) 与 Yandex (`b0823...`) 真实验证标签，其余引擎预留占位备用。
 
 ### 14.3 后续索引维护规范
 - 每发布新博文/新页面：GSC「网址检查」→ 请求编入索引（每日限额约 10 次，优先首页与核心产品页）；
