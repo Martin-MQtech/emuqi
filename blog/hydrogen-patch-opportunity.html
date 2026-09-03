@@ -15,6 +15,86 @@
 <meta property="og:url" content="https://www.emuqi.com/blog/hydrogen-patch-opportunity.html">
 <meta property="og:image" content="https://www.emuqi.com/assets/images/hydrogen-patch/hydrogen-patch-1.jpg">
 <meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="../style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f6f8; color: #1a1a2e; }
+.hero { background: linear-gradient(135deg,rgba(10,22,40,0.72) 0%,rgba(26,58,110,0.55) 60%,rgba(10,22,40,0.65) 100%),url('../assets/images/hydrogen-patch/hydrogen-patch-1.jpg?v=1') center/cover no-repeat; padding: 160px 40px 100px; text-align: center; }
+.hero h1 { font-size: 38px; font-weight: 700; color: #fff; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 16px; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+.hero .meta { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 24px; }
+.hero .meta span { color: #f47b20; }
+.hero .sub { font-size: 17px; color: rgba(255,255,255,0.85); max-width: 640px; margin: 0 auto; line-height: 1.7; font-weight: 300; text-shadow: 0 1px 8px rgba(0,0,0,0.3); }
+.wrap { max-width: 780px; margin: -48px auto 80px; padding: 0 24px; }
+.card { background: #fff; border-radius: 16px; padding: 56px; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
+.card h2 { font-size: 22px; color: #1a3a6e; font-weight: 700; margin: 48px 0 20px; line-height: 1.3; }
+.card h3 { font-size: 17px; color: #1d4ed8; font-weight: 600; margin: 28px 0 12px; }
+.card p { font-size: 16px; line-height: 1.85; color: #2d3748; margin-bottom: 20px; }
+.card .cn { font-size: 14px; color: #94a3b8; line-height: 1.7; display: block; margin-top: 4px; }
+.card img { width: 100%; border-radius: 12px; margin: 32px 0; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.card .box { background: #f0f4ff; border-radius: 12px; padding: 24px 28px; margin-bottom: 32px; border-left: 4px solid #1d4ed8; }
+.card .box p { margin: 0; font-size: 15px; color: #2d3a5e; }
+.card .highlight { background: #EFF4FF; border-left: 4px solid #1d4ed8; border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 24px 0; }
+.card .highlight p { margin: 0; font-size: 15px; line-height: 1.85; }
+.card .key-point { background: #F3F4F6; border-left: 4px solid #1a3a6e; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 24px 0; }
+.card .key-point .label { display: inline-block; background: #1a3a6e; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 4px; letter-spacing: 1px; margin-bottom: 8px; }
+.card .key-point p { margin: 0; font-size: 14px; line-height: 1.85; }
+.card table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 24px 0; }
+.card table th { padding: 10px 12px; border: 1px solid #E5E7EB; background: #1d4ed8; color: #fff; font-weight: 600; text-align: left; font-size: 13px; }
+.card table td { padding: 9px 12px; border: 1px solid #E5E7EB; color: #374151; font-size: 13px; }
+.card table tr:nth-child(even) td { background: #F3F4F6; }
+.card .step { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.card .step .num { display: inline-block; background: #1a3a6e; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 12px; letter-spacing: 1px; }
+.card .step h4 { font-size: 15px; font-weight: 800; color: #111827; margin: 0; }
+.card .bullet { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 12px; }
+.card .bullet .dot { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: rgba(29,78,216,0.1); color: #1d4ed8; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.card .bullet p { margin: 0; font-size: 15px; line-height: 1.85; color: #374151; flex: 1; }
+.card .section-header { display: flex; align-items: center; gap: 14px; margin: 44px 0 22px; }
+.card .section-header .num-box { text-align: center; flex-shrink: 0; }
+.card .section-header .num-box .num { font-size: 24px; font-weight: 900; color: #1d4ed8; line-height: 1; letter-spacing: -1px; }
+.card .section-header .num-box .part { font-size: 8px; font-weight: 700; color: #c89a3c; letter-spacing: 2px; }
+.card .section-header .divider { width: 1px; height: 34px; background: #E5E7EB; flex-shrink: 0; }
+.card .section-header h2 { margin: 0; font-size: 18px; }
+.card .section-header .en { font-size: 11px; font-weight: 600; color: #9CA3AF; letter-spacing: 1.5px; margin-top: 2px; }
+.card .img-caption { font-size: 12px; color: #9CA3AF; text-align: center; margin: -20px 0 24px; }
+.card .cta-box { background: #0a1628; border-radius: 12px; padding: 40px; text-align: center; margin: 40px 0; }
+.card .cta-box h3 { color: #f47b20; font-size: 18px; margin: 0 0 8px; }
+.card .cta-box p { color: rgba(240,236,228,0.6); font-size: 14px; margin-bottom: 20px; }
+.card .cta-box a { display: inline-block; padding: 12px 32px; background: #f47b20; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; }
+.card .cta-box a:hover { background: #d4a84b; }
+.faq-item { padding: 20px 0; border-bottom: 1px solid #f0f0f2; }
+.faq-item:last-child { border: none; }
+.faq-item h4 { font-size: 15px; color: #1a3a6e; font-weight: 600; margin-bottom: 6px; }
+.faq-item p { font-size: 14px; color: #6b7280; margin: 0; }
+.footer { background: #0a1628; margin-top: 80px; }
+.footer-in { max-width: 1200px; margin: 0 auto; padding: 60px 40px 0; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 36px; }
+.footer-in h4 { font-size: 12px; font-weight: 600; color: #f47b20; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
+.footer-in a { display: block; font-size: 14px; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+.footer-in a:hover { color: #f0ece4; }
+.footer-in p { font-size: 14px; color: #94a3b8; line-height: 1.7; }
+.footer-in .brand { font-size: 18px; font-weight: 700; color: #f0ece4; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+.footer-in .brand img { border-radius: 4px; }
+.footer-b { border-top: 1px solid rgba(255,255,255,0.06); text-align: center; padding: 24px; font-size: 13px; color: #475569; margin-top: 48px; }
+@media (max-width: 768px) {
+  .hero h1 { font-size: 28px; }
+  .card { padding: 28px 20px; }
+  .card table { font-size: 12px; }
+  .footer-in { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+</style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8740168077394877" crossorigin="anonymous"></script>
+<link rel="alternate" hreflang="en" href="https://www.emuqi.com/blog/hydrogen-patch-opportunity.html">
+<link rel="alternate" hreflang="x-default" href="https://www.emuqi.com/blog/hydrogen-patch-opportunity.html">
+
+
+
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+
+<script src="../assets/js/analytics.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -128,92 +208,6 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="../style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f6f8; color: #1a1a2e; }
-.hero { background: linear-gradient(135deg,rgba(10,22,40,0.72) 0%,rgba(26,58,110,0.55) 60%,rgba(10,22,40,0.65) 100%),url('../assets/images/hydrogen-patch/hydrogen-patch-1.jpg?v=1') center/cover no-repeat; padding: 160px 40px 100px; text-align: center; }
-.hero h1 { font-size: 38px; font-weight: 700; color: #fff; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 16px; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
-.hero .meta { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 24px; }
-.hero .meta span { color: #f47b20; }
-.hero .sub { font-size: 17px; color: rgba(255,255,255,0.85); max-width: 640px; margin: 0 auto; line-height: 1.7; font-weight: 300; text-shadow: 0 1px 8px rgba(0,0,0,0.3); }
-.wrap { max-width: 780px; margin: -48px auto 80px; padding: 0 24px; }
-.card { background: #fff; border-radius: 16px; padding: 56px; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
-.card h2 { font-size: 22px; color: #1a3a6e; font-weight: 700; margin: 48px 0 20px; line-height: 1.3; }
-.card h3 { font-size: 17px; color: #1d4ed8; font-weight: 600; margin: 28px 0 12px; }
-.card p { font-size: 16px; line-height: 1.85; color: #2d3748; margin-bottom: 20px; }
-.card .cn { font-size: 14px; color: #94a3b8; line-height: 1.7; display: block; margin-top: 4px; }
-.card img { width: 100%; border-radius: 12px; margin: 32px 0; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-.card .box { background: #f0f4ff; border-radius: 12px; padding: 24px 28px; margin-bottom: 32px; border-left: 4px solid #1d4ed8; }
-.card .box p { margin: 0; font-size: 15px; color: #2d3a5e; }
-.card .highlight { background: #EFF4FF; border-left: 4px solid #1d4ed8; border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 24px 0; }
-.card .highlight p { margin: 0; font-size: 15px; line-height: 1.85; }
-.card .key-point { background: #F3F4F6; border-left: 4px solid #1a3a6e; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 24px 0; }
-.card .key-point .label { display: inline-block; background: #1a3a6e; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 4px; letter-spacing: 1px; margin-bottom: 8px; }
-.card .key-point p { margin: 0; font-size: 14px; line-height: 1.85; }
-.card table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 24px 0; }
-.card table th { padding: 10px 12px; border: 1px solid #E5E7EB; background: #1d4ed8; color: #fff; font-weight: 600; text-align: left; font-size: 13px; }
-.card table td { padding: 9px 12px; border: 1px solid #E5E7EB; color: #374151; font-size: 13px; }
-.card table tr:nth-child(even) td { background: #F3F4F6; }
-.card .step { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-.card .step .num { display: inline-block; background: #1a3a6e; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 12px; letter-spacing: 1px; }
-.card .step h4 { font-size: 15px; font-weight: 800; color: #111827; margin: 0; }
-.card .bullet { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 12px; }
-.card .bullet .dot { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: rgba(29,78,216,0.1); color: #1d4ed8; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
-.card .bullet p { margin: 0; font-size: 15px; line-height: 1.85; color: #374151; flex: 1; }
-.card .section-header { display: flex; align-items: center; gap: 14px; margin: 44px 0 22px; }
-.card .section-header .num-box { text-align: center; flex-shrink: 0; }
-.card .section-header .num-box .num { font-size: 24px; font-weight: 900; color: #1d4ed8; line-height: 1; letter-spacing: -1px; }
-.card .section-header .num-box .part { font-size: 8px; font-weight: 700; color: #c89a3c; letter-spacing: 2px; }
-.card .section-header .divider { width: 1px; height: 34px; background: #E5E7EB; flex-shrink: 0; }
-.card .section-header h2 { margin: 0; font-size: 18px; }
-.card .section-header .en { font-size: 11px; font-weight: 600; color: #9CA3AF; letter-spacing: 1.5px; margin-top: 2px; }
-.card .img-caption { font-size: 12px; color: #9CA3AF; text-align: center; margin: -20px 0 24px; }
-.card .cta-box { background: #0a1628; border-radius: 12px; padding: 40px; text-align: center; margin: 40px 0; }
-.card .cta-box h3 { color: #f47b20; font-size: 18px; margin: 0 0 8px; }
-.card .cta-box p { color: rgba(240,236,228,0.6); font-size: 14px; margin-bottom: 20px; }
-.card .cta-box a { display: inline-block; padding: 12px 32px; background: #f47b20; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s; }
-.card .cta-box a:hover { background: #d4a84b; }
-.faq-item { padding: 20px 0; border-bottom: 1px solid #f0f0f2; }
-.faq-item:last-child { border: none; }
-.faq-item h4 { font-size: 15px; color: #1a3a6e; font-weight: 600; margin-bottom: 6px; }
-.faq-item p { font-size: 14px; color: #6b7280; margin: 0; }
-.footer { background: #0a1628; margin-top: 80px; }
-.footer-in { max-width: 1200px; margin: 0 auto; padding: 60px 40px 0; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 36px; }
-.footer-in h4 { font-size: 12px; font-weight: 600; color: #f47b20; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
-.footer-in a { display: block; font-size: 14px; color: #94a3b8; text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
-.footer-in a:hover { color: #f0ece4; }
-.footer-in p { font-size: 14px; color: #94a3b8; line-height: 1.7; }
-.footer-in .brand { font-size: 18px; font-weight: 700; color: #f0ece4; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
-.footer-in .brand img { border-radius: 4px; }
-.footer-b { border-top: 1px solid rgba(255,255,255,0.06); text-align: center; padding: 24px; font-size: 13px; color: #475569; margin-top: 48px; }
-@media (max-width: 768px) {
-  .hero h1 { font-size: 28px; }
-  .card { padding: 28px 20px; }
-  .card table { font-size: 12px; }
-  .footer-in { grid-template-columns: 1fr 1fr; gap: 24px; }
-}
-</style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8740168077394877" crossorigin="anonymous"></script>
-<link rel="alternate" hreflang="en" href="https://www.emuqi.com/blog/hydrogen-patch-opportunity.html">
-<link rel="alternate" hreflang="x-default" href="https://www.emuqi.com/blog/hydrogen-patch-opportunity.html">
-
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-    {"@type": "Question", "name": "氢气眼贴属于医疗器械吗？", "acceptedAnswer": {"@type": "Answer", "text": "不属于。木齐氢贴类概念产品定位为日常美容护理与健康消费品，不能代替药物或医疗器械，不具有疾病预防及治疗功能。"}},
-    {"@type": "Question", "name": "固态氢材料如何在外用贴类产品中释放氢？", "acceptedAnswer": {"@type": "Answer", "text": "材料接触水分或皮肤表面水汽后缓释氢分子，无需电源与产氢设备，可与现有贴膏产线直接结合，不改动核心工序。"}},
-    {"@type": "Question", "name": "品牌方如何与木齐合作开发氢贴类产品？", "acceptedAnswer": {"@type": "Answer", "text": "支持 OEM/ODM 与联合品牌模式，打样周期约 5-22 天，可按品类定制基质、克重与封装形式。"}},
-    {"@type": "Question", "name": "氢贴类产品出海需要注意什么？", "acceptedAnswer": {"@type": "Answer", "text": "宣传需遵守当地法规并避免医疗功效承诺，海外销售页面须标注标准免责声明（FDA disclaimer），并完成材料安全评估。"}}
-  ]}
-</script>
-
-<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
-<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
-
-<script src="../assets/js/analytics.js" defer></script>
 </head>
 <body>
 

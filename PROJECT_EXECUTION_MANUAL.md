@@ -724,3 +724,53 @@ WebMCP 工具集绝非静态死板的代码，而是随着木齐项目、产品�
 
 
 
+
+
+---
+
+## 第 15 章：新内容与新网页兼顾 SEO / GEO / AEO 的出厂生产质量标准 (SSOT Quality Gate)
+
+> **核心宗旨**：未来无论人工还是 AI Agent 在木齐官网（`emuqi.com`）撰写、新增或重构任何新页面、新产品、新博文，**严禁盲目上线**！必须 100% 逐项通过以下 6 大出厂卡点（Quality Gate），确保兼顾传统 SEO 排名、生成式引擎 GEO 权威引用与 Agentic 智能体 AEO 原生可调用性。
+
+### 15.1 基础规范与 URL 唯一性卡点 (SEO Foundation)
+1. **Canonical 规范标签（全小写、带 www、HTTPS）**：
+   - 每个新页面头部必须包含唯一规范链接：
+     `<link rel="canonical" href="https://www.emuqi.com/your-clean-slug.html">`
+   - 严禁缺失、严禁带参数、严禁使用 `emuqi.com`（非 www 会被 301 重定向，稀释权重）。
+2. **Title 与 Meta Description 黄金长度**：
+   - `<title>`：控制在 50-65 个字符以内，必须点明**核心产品/技术词 + 核心应用 + MUQI Tech**；
+   - `<meta name="description">`：控制在 130-160 个字符，包含具体实验参数（如 `1500 ppb`、`ORP -800 mV`、`99.99% antibacterial`），吸引海外买家点击；
+   - 语言标记：`<html>` 根标签必须声明 `<html lang="en">`。
+3. **H1 标签唯一性**：每个 HTML 文件有且仅有 1 个 `<h1>` 标签，严禁缺失或出现多个。
+
+### 15.2 Schema.org 结构化数据出厂标准 (GEO Knowledge Graph)
+1. **单个页面内 JSON-LD 块唯一性**：
+   - 严禁在页面不同区域插入多个 `<script type="application/ld+json">` 碎片！
+   - 必须统一封装为单个 `@graph` 树状结构，根节点通过 `@id: "https://www.emuqi.com/#organization"` 建立实体血缘。
+2. **产品页 (Product) 必填字段与 B2B 价格区间**：
+   - 只要声明 `@type: "Product"`，必须包含 `brand`（必须为 `Brand` 类型：`{"@type": "Brand", "name": "MUQI Tech"}`）；
+   - 必须包含标准 `offers`（选用 `AggregateOffer` 价格区间，如 `lowPrice: 12.00, highPrice: 28.00, priceCurrency: USD`）；
+   - 必须在描述中附带**参考免责声明**：`"Indicative reference price for initial budgeting. Final tier pricing confirmed upon direct RFQ inquiry."`。
+3. **博文页 (Article / TechArticle) 必填字段**：
+   - 必须声明 `headline`、`image`、`datePublished`、`author`、`publisher`；
+   - 重点技术论文须声明 `about` 关联 ICR 固态氢材料与微孔陶瓷晶格专利。
+
+### 15.3 AEO 与 WebMCP 智能体原生适配标准 (Agentic Web)
+1. **根相对路径加载 WebMCP 运行时**：
+   - 页面引用的公共脚本必须使用根绝对路径：`/assets/js/muqi-webmcp.js`；
+   - 严禁使用相对路径 `assets/js/...`，否则子目录（如 `/blog/`、`/h2-health-hub/`）会发生 404 脚本丢失！
+2. **数据自省标签 (Data Attributes)**：
+   - 新产品卡片或物料参数区域建议附带 `data-webmcp-*` 属性（如 `data-webmcp-code="H2-BALL-PRO" data-webmcp-ppb="1500"`），WebMCP 会在页面载入时自动将其吸纳为智能体可调用的候选工具库。
+
+### 15.4 商业免责与客户引导卡点 (Commercial Compliance)
+1. **前端 UI 必须附带 B2B 价格参考免责卡片**：
+   - 凡涉及价格区间的页面，前端必须呈现浅蓝色或灰色独立提示容器：
+     `"💡 Note: Indicative reference price for initial budgeting only. Final tier pricing, bulk discounts, and custom formulations are confirmed upon direct consultation."`
+2. **FDA/合规免责声明**：
+   - 涉及氢健康功效（抗氧化、护眼、改善微循环）的页面，页脚必须保留合规声明：
+     `"These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease."`
+
+### 15.5 站点地图与索引闭环卡点 (Indexing Loop)
+1. **同步挂载 sitemap.xml**：新页面生成后，必须立即将其写入 `emuqi/sitemap.xml`，标注正确权重（如核心产品 `0.9`，普通博客 `0.7-0.8`）与 `lastmod`。
+2. **同步更新 llms.txt**：如果是战略级新产品或技术白皮书，必须在 `emuqi/llms.txt` 的清单中追加 Markdown 格式的链接与语义摘要。
+3. **搜索引擎主动握手**：页面部署上线后，在 GSC（Google Search Console）执行一次「网址检查」→「请求编入索引」，缩短爬取等待周期。

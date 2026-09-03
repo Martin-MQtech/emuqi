@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Load MUQI WebMCP Agentic Web Engine
+// Load MUQI WebMCP Agentic Web Engine (Root-relative path to ensure support in /blog/ and subdirectories)
 (function() {
   const mcpScript = document.createElement('script');
-  mcpScript.src = 'assets/js/muqi-webmcp.js';
+  mcpScript.src = '/assets/js/muqi-webmcp.js';
   mcpScript.defer = true;
   document.head.appendChild(mcpScript);
 })();

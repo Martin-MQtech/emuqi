@@ -123,17 +123,19 @@
         }
       ],
       "offers": {
-        "@type": "Offer",
+        "@type": "AggregateOffer",
         "url": "https://www.emuqi.com/hydrogen-generate-ceramic-ball.html",
-        "availability": "https://schema.org/InStock",
-        "businessFunction": "http://purl.org/goodrelations/v1#Sell",
         "priceCurrency": "USD",
-        "price": "0.00",
-        "priceValidUntil": "2027-12-31",
-        "seller": {
-          "@id": "https://www.emuqi.com/#organization"
+        "lowPrice": "12.00",
+        "highPrice": "28.00",
+        "offerCount": "10",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceType": "https://schema.org/Sample",
+          "description": "FOB Qingdao. Volume tier pricing for bulk orders (100kg - 10,000kg+). Free 200g evaluation sample available."
         },
-        "description": "Free B2B evaluation samples available (freight collect); production volume pricing by OEM/ODM quotation."
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
       }
     },
     {
@@ -272,8 +274,25 @@
 
     <img src="assets/images/ceramic-ball-packaging-2.png" alt="Ceramic Ball Packaging" style="width:100%;max-width:800px;display:block;margin:40px auto" loading="lazy">
 
+    <!-- B2B Pricing Tier & Indicative Reference Disclaimer Card -->
+    <div style="max-width:800px;margin:36px auto;background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #f47b20;border-radius:8px;padding:24px 28px">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px">
+        <span style="font-size:14px;font-weight:700;letter-spacing:1px;color:#0a1628;text-transform:uppercase">B2B Indicative Volume Pricing</span>
+        <span style="background:#fef3c7;color:#92400e;font-size:12px;font-weight:600;padding:4px 10px;border-radius:12px">Reference Range</span>
+      </div>
+      <div style="font-size:28px;font-weight:700;color:#0a1628;margin-bottom:8px">
+        $12.00 – $28.00 <span style="font-size:15px;font-weight:400;color:#64748b">/ kg (FOB Qingdao)</span>
+      </div>
+      <p style="font-size:13.5px;color:#475569;line-height:1.6;margin:0 0 16px">
+        ⚠️ <strong>Commercial Notice:</strong> Pricing is indicative for project budgeting only and varies based on order volume, particle size customization (3–10mm), packaging specifications, and delivery terms. Final contract pricing, tiered volume discounts, and complimentary B2B evaluation samples are confirmed upon consultation with our engineering & sales team.
+      </p>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <a href="contact-mqtech-hydrogen-health.html" class="btn" style="padding:10px 24px;font-size:14px">Request Official Quote & Sample Kit</a>
+        <span style="font-size:13px;color:#64748b">Direct response within 12 business hours</span>
+      </div>
+    </div>
+
     <div class="text-center" style="margin-top:24px">
-      <a href="contact-mqtech-hydrogen-health.html" class="btn">Inquire Now</a>
       <p style="font-size:14px;margin-top:16px"><a href="solid-state-hydrogen-vs-pem-electrolysis.html" style="color:#f47b20;text-decoration:none;font-weight:600">Compare: Solid-State Hydrogen vs. PEM Electrolysis →</a></p>
     </div>
   </div>
