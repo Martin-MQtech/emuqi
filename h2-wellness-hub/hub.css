@@ -786,12 +786,363 @@
 }
 
 /* =========================================
-   9. Responsive Breakpoints
+   9. Company & Enterprise Archive Styles
+   ========================================= */
+.hub-company-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.hub-company-card {
+  background: #ffffff;
+  border: 1px solid var(--hub-line);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hub-company-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
+}
+
+.hub-disclosed-company {
+  border-left: 4px solid var(--hub-orange);
+  background: #fffaf5;
+}
+
+.hub-company-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hub-company-region {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.hub-company-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.hub-company-title a {
+  color: var(--hub-navy);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.hub-company-title a:hover {
+  color: var(--hub-blue);
+}
+
+.hub-company-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.hub-company-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0 0 16px;
+  flex-grow: 1;
+}
+
+.hub-company-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.hub-company-tag {
+  font-size: 11.5px;
+  background: #f8fafc;
+  color: #475569;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.hub-company-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.hub-company-link {
+  font-weight: 600;
+  color: var(--hub-blue);
+  text-decoration: none;
+}
+
+.hub-company-link:hover {
+  text-decoration: underline;
+}
+
+.hub-company-note {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* =========================================
+   10. Research Database Paper Cards
+   ========================================= */
+.hub-paper-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.hub-paper-card {
+  background: #ffffff;
+  border: 1px solid var(--hub-line);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hub-paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
+}
+
+.hub-paper-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.hub-paper-meta {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.hub-paper-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.badge-rct { background: #dcfce7; color: #166534; }
+.badge-animal { background: #fef3c7; color: #92400e; }
+.badge-review { background: #e0e7ff; color: #3730a3; }
+.badge-trial { background: #ffedd5; color: #9a3412; }
+
+.hub-paper-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 10px;
+}
+
+.hub-paper-title a {
+  color: var(--hub-navy);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.hub-paper-title a:hover {
+  color: var(--hub-blue);
+}
+
+.hub-paper-excerpt {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 14px;
+}
+
+.hub-paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.hub-paper-tag {
+  font-size: 11px;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.hub-paper-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.hub-paper-link {
+  font-weight: 600;
+  color: var(--hub-blue);
+  text-decoration: none;
+}
+
+.hub-paper-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   11. Statistics & Overview Strip
+   ========================================= */
+.hub-stat-strip {
+  background: #ffffff;
+  border-bottom: 1px solid var(--hub-line);
+  padding: 20px 0;
+}
+
+.hub-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.hub-stat-box {
+  border-right: 1px solid #e2e8f0;
+  padding-right: 16px;
+}
+
+.hub-stat-box:last-child {
+  border-right: none;
+}
+
+.hub-stat-num {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--hub-navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hub-stat-num em {
+  font-style: normal;
+  color: var(--hub-orange);
+  font-size: 20px;
+}
+
+.hub-stat-label {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* =========================================
+   12. Pillar Navigation Cards
+   ========================================= */
+.hub-pillars-section {
+  padding: 32px 0 16px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--hub-line);
+}
+
+.hub-pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.hub-pillar-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hub-pillar-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--hub-teal);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.hub-pillar-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--hub-teal-deep);
+  margin-bottom: 8px;
+}
+
+.hub-pillar-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--hub-navy);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hub-pillar-card p {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.hub-pillar-action {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hub-teal);
+}
+
+/* =========================================
+   13. Responsive Breakpoints
    ========================================= */
 @media (max-width: 1024px) {
   .hub-pulse-grid { grid-template-columns: repeat(2, 1fr); }
   .hub-cases-grid { grid-template-columns: repeat(2, 1fr); }
   .hub-directory-grid { grid-template-columns: repeat(2, 1fr); }
+  .hub-company-grid { grid-template-columns: 1fr; }
+  .hub-paper-grid { grid-template-columns: 1fr; }
+  .hub-pillar-grid { grid-template-columns: repeat(2, 1fr); }
+  .hub-stat-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .hub-stat-box { border-right: none; }
   .hub-footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -800,7 +1151,12 @@
   .hub-pulse-grid { grid-template-columns: 1fr; }
   .hub-cases-grid { grid-template-columns: 1fr; }
   .hub-directory-grid { grid-template-columns: 1fr; }
+  .hub-company-grid { grid-template-columns: 1fr; }
+  .hub-paper-grid { grid-template-columns: 1fr; }
+  .hub-pillar-grid { grid-template-columns: 1fr; }
+  .hub-stat-grid { grid-template-columns: 1fr; }
   .hub-sec-head { flex-direction: column; align-items: flex-start; }
   .hub-footer-grid { grid-template-columns: 1fr; }
   .hub-footer-bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
 }
+
