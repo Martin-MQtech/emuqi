@@ -45,11 +45,19 @@
         "@id": "https://www.emuqi.com/blog/hydrogen-water-technology-comparison.html#article",
         "headline": "固态氢 vs 质子膜电解：品牌方技术选型实战指南",
         "datePublished": "2026-09-03",
-        "dateModified": "2026-09-04",
+        "dateModified": "2026-09-05",
         "author": { "@id": "https://www.emuqi.com/#author-martin" },
         "publisher": { "@id": "https://www.emuqi.com/#organization" },
         "image": "https://www.emuqi.com/assets/images/blog/hydrogen-water-comparison/cover-solid-state-vs-pem-zh.png",
-        "inLanguage": "zh-CN"
+        "inLanguage": "zh-CN",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "xpath": [
+            "/html/head/title",
+            "/html/body//h1",
+            "/html/body//aside[@class='tl-dr']"
+          ]
+        }
       },
       {
         "@type": "FAQPage",
@@ -149,9 +157,6 @@
     .custom-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 14.5px; }
     .custom-table th, .custom-table td { padding: 14px 16px; border: 1px solid var(--border); text-align: left; }
     .custom-table th { background: #f1f5f9; color: var(--navy); font-weight: 700; }
-    .faq-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 22px 26px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
-    .faq-q { font-size: 16px; color: #0f172a; font-weight: 700; margin-bottom: 8px; }
-    .faq-a { font-size: 15px; color: var(--text); line-height: 1.85; margin: 0; }
     .tl-dr { background: linear-gradient(135deg, #EFF4FF 0%, #DBEAFE 100%); border-left: 5px solid #1d4ed8; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 24px 0 32px; }
     .tl-dr .label { display: inline-block; font-size: 11px; font-weight: 800; color: #1d4ed8; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
     .tl-dr p { font-size: 16px; line-height: 1.8; color: #1a3a6e; margin: 0; font-weight: 500; }
@@ -179,6 +184,16 @@
     }
     .share-btn:hover { background: var(--navy); color: #ffffff; }
     .topic-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+
+    .qa-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 22px 26px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
+    .qa-card .qa-q { font-size: 16px; color: #1a3a6e; font-weight: 700; margin-bottom: 8px; }
+    .qa-card .qa-a { font-size: 15px; color: #2d3748; line-height: 1.85; margin: 0; }
+    .data-card { background: #EFF4FF; border-radius: 12px; padding: 24px; margin: 20px 0; display: flex; align-items: center; gap: 18px; }
+    .data-card .data-figure { font-size: 28px; font-weight: 800; color: #1d4ed8; line-height: 1; flex-shrink: 0; min-width: 160px; }
+    .data-card .data-label { font-size: 14px; color: #475569; line-height: 1.6; }
+    @media (max-width: 768px) {
+      .data-card { flex-direction: column; align-items: flex-start; }
+    }
     .topic-pill {
       display: inline-block; padding: 5px 12px; background: #f1f5f9; color: #475569;
       font-size: 13px; border-radius: 20px; text-decoration: none; border: 1px solid #e2e8f0;
@@ -225,7 +240,7 @@
     <!-- SSOT §11.3.1 TL;DR 直答盒 -->
     <aside class="tl-dr">
       <span class="label">💡 直答</span>
-      <p>固态氢材料（ICR）与质子膜电解（SPE/PEM）是品牌产品团队的两条互补技术路线——材料路线服务免插电、耗材复购形态，电解路线服务即时、插电设备形态。</p>
+      <p>固态氢材料（ICR）与质子膜电解是互补路线——材料免插电复购，电解即时设备。</p>
     </aside>
 
     <div class="key-takeaways">
@@ -265,6 +280,23 @@
       <div class="stat-card"><div class="stat-num">18–24 h</div><div class="stat-label">氢半衰期</div></div>
       <div class="stat-card"><div class="stat-num">−800 mV</div><div class="stat-label">负电位 ORP</div></div>
       <div class="stat-card"><div class="stat-num">0 W</div><div class="stat-label">全程耗电</div></div>
+        <div class="data-card" data-citation="emuqi-2026-h2-concentration-zh">
+      <span class="data-figure">1,000–1,500 ppb</span>
+      <span class="data-label">ICR 固态氢材料可持续溶氢浓度——数据来源：木齐实验室实测</span>
+    </div>
+    <div class="data-card" data-citation="emuqi-2026-h2-half-life-zh">
+      <span class="data-figure">18–24 小时</span>
+      <span class="data-label">密封容器中氢半衰期——为 PEM 电解水（2–4 小时）的 6–8 倍</span>
+    </div>
+    <div class="data-card" data-citation="emuqi-2026-cost-advantage-zh">
+      <span class="data-figure">35–50%</span>
+      <span class="data-label">较日系 PEM 电解方案的成本优势——木齐 OEM 基准测算</span>
+    </div>
+    <div class="data-card" data-citation="emuqi-2026-orp-zh">
+      <span class="data-figure">−800 mV</span>
+      <span class="data-label">ICR 材料可实现的负电位 ORP——强还原力，适用于抗氧化应用</span>
+    </div>
+
     </div>
     <p>行业背景：2026 年市场分析显示，全球氢水市场正从约 12 亿美元（2024）迈向 38 亿美元（2034），其中便携形态增速最快——选择哪条技术路线，决定了品牌搭上哪条增长曲线。</p>
 
@@ -277,21 +309,21 @@
     <p>完整的长青版对比——含参数总表与 OEM 集成清单——见我们的永久参考页：<a href="../solid-state-hydrogen-vs-pem-electrolysis.html" style="color:var(--primary);font-weight:600;">固态氢 vs SPE/PEM 电解技术对比</a>。</p>
 
     <h2>七、买家最常问哪些问题？</h2>
-    <div class="faq-card">
-      <div class="faq-q">Q：固态氢水的氢浓度能达到电解水机的水平吗？</div>
-      <div class="faq-a">A：木齐 ICR 固态氢材料可提供 1000–1500 ppb 溶解氢，半衰期 18–24 小时；PEM 电解机通电时瞬时浓度可达 1000–3000 ppb。但在真实饮用场景中，从制备到入口通常间隔数分钟至数小时，缓释型固态氢水的残余浓度往往不低于 2–4 小时内快速衰减的电解水。两者各有优势，取决于使用场景。</div>
+    <div class="qa-card" data-qa-id="h2-concentration-zh">
+      <div class="qa-q">Q：固态氢水的氢浓度能达到电解水机的水平吗？</div>
+      <div class="qa-a">A：木齐 ICR 固态氢材料可提供 1000–1500 ppb 溶解氢，半衰期 18–24 小时；PEM 电解机通电时瞬时浓度可达 1000–3000 ppb。但在真实饮用场景中，从制备到入口通常间隔数分钟至数小时，缓释型固态氢水的残余浓度往往不低于 2–4 小时内快速衰减的电解水。两者各有优势，取决于使用场景。</div>
     </div>
-    <div class="faq-card">
-      <div class="faq-q">Q：品牌做氢产品线，选材料路线还是整机路线？</div>
-      <div class="faq-a">A：取决于产品形态。氢水杯、滤芯、条包、压片、氢皂、浴包等形态适合固态氢材料路线——无需电子件即可集成，并形成耗材复购收入；台式电解机与吸氢机适合 PEM 电解路线。不少品牌采取双线并行：家庭场景用电解设备，移动场景用固态氢产品。</div>
+    <div class="qa-card" data-qa-id="media-vs-machine-zh">
+      <div class="qa-q">Q：品牌做氢产品线，选材料路线还是整机路线？</div>
+      <div class="qa-a">A：取决于产品形态。氢水杯、滤芯、条包、压片、氢皂、浴包等形态适合固态氢材料路线——无需电子件即可集成，并形成耗材复购收入；台式电解机与吸氢机适合 PEM 电解路线。不少品牌采取双线并行：家庭场景用电解设备，移动场景用固态氢产品。</div>
     </div>
-    <div class="faq-card">
-      <div class="faq-q">Q：固态氢能开辟哪些电解设备做不到的新品类？</div>
-      <div class="faq-a">A：ICR 材料遇水即反应，无需供电，因此可以服务插电设备难以覆盖的形态：面向 SPA、度假村与银发康养的足浴片与浴包；氢皂、面膜、眼贴等个护新品；酒店客供与冷泡茶条包；以及灌溉试验、畜牧养殖用水、水产系统与宠物功能水等农业与动物护理新兴方向。</div>
+    <div class="qa-card" data-qa-id="new-categories-zh">
+      <div class="qa-q">Q：固态氢能开辟哪些电解设备做不到的新品类？</div>
+      <div class="qa-a">A：ICR 材料遇水即反应，无需供电，因此可以服务插电设备难以覆盖的形态：面向 SPA、度假村与银发康养的足浴片与浴包；氢皂、面膜、眼贴等个护新品；酒店客供与冷泡茶条包；以及灌溉试验、畜牧养殖用水、水产系统与宠物功能水等农业与动物护理新兴方向。</div>
     </div>
-    <div class="faq-card">
-      <div class="faq-q">Q：固态氢材料制得的氢水能维持多久？</div>
-      <div class="faq-a">A：木齐 ICR 固态氢材料处理的氢水，溶解氢半衰期约 18–24 小时，密封容器中 3 天后仍可检出残余氢。电解水因缺乏持续释放源，通常 2–4 小时即回落至背景水平。</div>
+    <div class="qa-card" data-qa-id="h2-retention-zh">
+      <div class="qa-q">Q：固态氢材料制得的氢水能维持多久？</div>
+      <div class="qa-a">A：木齐 ICR 固态氢材料处理的氢水，溶解氢半衰期约 18–24 小时，密封容器中 3 天后仍可检出残余氢。电解水因缺乏持续释放源，通常 2–4 小时即回落至背景水平。</div>
     </div>
 
     <div class="cta-box">
@@ -312,6 +344,11 @@
       <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison.html" target="_blank" class="share-btn">LinkedIn</a>
       <a href="https://wa.me/?text=https://www.emuqi.com/blog/hydrogen-water-technology-comparison.html" target="_blank" class="share-btn">WhatsApp</a>
       <a href="https://t.me/share/url?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison.html" target="_blank" class="share-btn">Telegram</a>
+      <a href="https://reddit.com/submit?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison.html" target="_blank" class="share-btn">Reddit</a>
+      <a href="https://www.instagram.com/" target="_blank" class="share-btn">Instagram</a>
+      <a href="https://www.pinterest.com/pin/create/button/?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison.html" target="_blank" class="share-btn">Pinterest</a>
+      <a href="https://www.tiktok.com/" target="_blank" class="share-btn">TikTok</a>
+      <a href="https://service.weibo.com/share/share.php?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison.html" target="_blank" class="share-btn">微博</a>
     </div>
 
     <div style="margin-top:28px;">
