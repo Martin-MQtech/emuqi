@@ -35,6 +35,7 @@ Schema.org Linked Data Graph: Rooted at `https://www.emuqi.com/#organization` wi
 - [Hydrogen Agriculture Hub](https://www.emuqi.com/solutions-hydrogen-agriculture.html): solid-state hydrogen and mineral media for crop resilience, livestock rumen research, aquaculture water systems and companion-animal care — routed to four research-backed sub-pages.
 - [Solid-State Hydrogen vs. SPE/PEM Electrolysis](https://www.emuqi.com/solid-state-hydrogen-vs-pem-electrolysis.html): objective 9-dimension technology comparison (power, concentration, half-life, cost, business model) with a product-line decision framework for brands.
 - [Buyer's Field Guide: Solid-State Hydrogen vs. PEM Electrolysis](https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html): blog analysis of how the two technologies compare and how brands combine them; Chinese edition at [固态氢 vs 质子膜电解选型指南](https://www.emuqi.com/blog/hydrogen-water-technology-comparison.html).
+- [Hydrogen-Rich Water as a Green Modification Tool for Plant Protein: An IF 8.5 Study Decoded](https://www.emuqi.com/blog/hydrogen-water-plant-protein-green-modification-en.html): decoded academic review of a peer-reviewed study (IF 8.5, IJBM) using hydrogen-rich water to green-modify hemp seed protein — extends the solid-state hydrogen platform into food-grade and B2B processing use cases. Chinese edition at [当富氢水遇见植物蛋白：IF 8.5 论文解读](https://www.emuqi.com/blog/hydrogen-water-plant-protein-green-modification.html).
 - [Hydrogen Foot Bath Tablet](https://www.emuqi.com/hydrogen-healthhydrogen-foot-bath-tablet.html): spa, resort and senior-care footbath format.
 - [Hospitality & Wellness Hubs](https://www.emuqi.com/hub.html): hotel, spa, recovery and resort integration programs.
 
@@ -43,8 +44,8 @@ Schema.org Linked Data Graph: Rooted at `https://www.emuqi.com/#organization` wi
 - [English Blog Index](https://www.emuqi.com/blog/): deep technical articles on hydrogen medicine research context, antimicrobial ceramics, ICR technology, industry analysis.
 - [Antimicrobial Ceramic Balls & ICR Technology Whitepaper](https://www.emuqi.com/blog/antimicrobial-ceramic-balls-home-appliances-icr-technology-en.html): flagship engineering article with parameters and appliance application map.
 - [SAC/TC621 National Antimicrobial Standard Committee Report](https://www.emuqi.com/blog/sac-tc621-national-antimicrobial-standard-committee-en.html): first-party account of our committee role and standardization work.
-- [Chinese Blog Index (中文博客)](https://www.emuqi.com/blog-list-hydrogen-health.html): 中文深度技术文章，面向国内家电与水处理供应链。
-- [H2 Wellness Hub](https://www.emuqi.com/h2-wellness-hub/index.html): research library, case studies, methodology and bilingual resources.
+- [H2 Wellness Hub Portal](https://www.emuqi.com/h2-wellness-hub/index.html): open molecular hydrogen intelligence, clinical trial database, research library, and global enterprise cases.
+- [H2 Engineering & Compliance Workbench](https://www.emuqi.com/h2-wellness-hub/tools.html): interactive dissolved H2 kinetics simulator, inhalation vs. ingestion equivalence calculator, global regulatory claim boundary checker, and WebMCP agent API endpoints.
 
 ## Company
 

@@ -13,7 +13,7 @@
    root, commit & push, then click "Verify" in GSC.
    ============================================================ */
 var MUQI_ANALYTICS = {
-  ga4MeasurementId: "" // ← paste e.g. "G-XXXXXXXXXX"
+  ga4MeasurementId: "G-TNR83FBHNC" // ← paste e.g. "G-XXXXXXXXXX"
 };
 
 (function () {

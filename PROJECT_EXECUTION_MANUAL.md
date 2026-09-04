@@ -884,21 +884,44 @@ WebMCP 工具集绝非静态死板的代码，而是随着木齐项目、产品�
 
 ---
 
-## 第 16 章：H2 Wellness Hub 设计与运维专章 — 统一 Header/Footer 与全球导航中枢 (SSOT)
+## 第 16 章：H2 Wellness Hub 独立中枢全栈规划规范 (SSOT)
 
-> **生效日期**：2026-09-04 立  
-> **定位**：H2 Wellness Hub 是 `emuqi.com` 的行业导航中枢，不是木齐宣传栏；承载**行业动态(Pulse) / 企业案例(Enterprise Archive) / 研究导航(Research Database)** 三大板块
+> **生效日期**：2026-09-04  
+> **核心定位**：H2 Wellness Hub 是全球氢健康产业（Hydrogen Wellness Industry）的**中立、高价值、产业级商业观察、案例库与权威资源导航平台**。绝非单一厂商宣传册，具备未来随时独立拆分至新域名的完全解耦能力；木齐科技（MUQI Tech）仅作为固态氢材料与功能陶瓷供应链的代表性案例平权收录。
+> **核心原则**：坚决摒弃虚无噱头的工程动力学模拟器、剂量换算器与低价值泛展会播报。聚焦真实的商业信号、企业商业化模式与权威一手资源直达。
 
-### 16.1 统一 Header / Footer 设计铁律
-- **Header 统一模板**：`h2-wellness-hub/hub.css` 定义 `.hub-header`，所有 Hub 子页（`index.html / research-database.html / enterprise-archive.html / zh/*`）必须复用同一 `<header class="hub-header">`，含 `H₂ Wellness Hub` 品牌 + `Pulse/Cases/Resources` 导航 + `中英切换胶囊`，严禁各页自成一体
-- **Footer 统一模板**：复用同一 `<footer class="hub-footer">`，含 `Industry pulse · project cases · resources` 标识与 `Topics / About` 入口
-- **Hero 视觉规范**：行业中枢禁用木齐实验室反复贴图；Hero 采用 `about-expo.jpg` 等中性行业图 + 深蓝渐变蒙版，保持行业黄页的中立感
+### 16.1 三大核心板块与信息架构
+1. **01 行业动态 (Global Industry Pulse)**：
+   - 覆盖中国、北美、日韩/亚太、欧洲四大核心市场；
+   - 聚焦真实商业动作：大型商超铺货（Meijer 等）、康复连锁合作（iCRYO 等）、行业自律组织（AHHA 等）与学术转化平台（山口大学 H2TREC 等）。
+2. **02 项目案例 (Project Cases)**：
+   - 深入剖析真实商业化路径与经验教训：
+     - **连锁加盟场景**：Echo × iCRYO（体验式康复服务 + 线下即时零售）；
+     - **快消即饮零售**：oHy（罐装气泡氢水进驻大型商超 Meijer 货架）；
+     - **高端消费硬件**：H2FACTOR Lourdes Hydrofix（吸氢+氢水一体设备产品架构）；
+     - **预包装锁氢仓储**：Naturally Plus IZUMIO（铝箔袋装饮品与仓储保持率）；
+     - **拉美本地供给**：OH2Plus（巴西便携水杯本地化供给信号）；
+     - **已披露供应链案例**：木齐科技固态氢材料与功能陶瓷在免插电消费场景的赋能应用。
+3. **03 工具资源 (Resources & Testing Directory)**：
+   - 直达维护一手原始资料的权威公共服务平台与学术源头：
+     - **临床试验**：中国临床试验注册中心 (ChiCTR)、ClinicalTrials.gov；
+     - **标准规范**：全国标准信息公共服务平台 (SAMR)；
+     - **监管公开数据**：国家市监总局 (SAMR) 特殊食品与生产许可查询；
+     - **实验室资质**：中国合格评定国家认可委员会 (CNAS) 认证机构系统；
+     - **学者与高校档案**：上海交通大学氢科学中心孙学军教授专栏；
+     - **专利分析**：国家知识产权局 (CNIPA) 专利检索及分析系统。
 
-### 16.2 双轨内容架构与窗口机会
-- **研究导航（Research Database）**：链回原库的论文黄页，中英物理分离（`/h2-wellness-hub/research-database.html` 英文 8 库 + `/h2-wellness-hub/zh/research-database.html` 中文 6 库），不混排，各自 `hreflang` 独立 SEO/GEO
-- **企业档案（Enterprise Archive）**：`h2-wellness-hub/enterprise-archive.html` 图文卡（左图 96×96 圆角 + 右文），代表性动态遴选，不固定 80 数量，不与论文库混排
-- **窗口机会**：中英均缺“氢医学/氢生物学一站式查询入口”，全球五区（日韩/欧美/中东/南美/非洲）研究散落，Hub 以**只做汇总、不存原文、链回原库**卡位，配合 `GEO/AEO` 成为行业查询入口
+### 16.2 独立中枢 UI 与技术解耦规范
+- **中立编辑设计系统**：采用专属 `hub.css` 与 `hub.js`，纯白与浅灰报刊式排版，完全独立于 MUQI 厂商主站样式；
+- **双语物理双轨**：英文门户 `/h2-wellness-hub/` 与中文门户 `/h2-wellness-hub/zh/` 结构 100% 对齐；
+- **Logo 规范**：独立双节点 Sigil 标识，固定副标题：
+  - 英文：`Industry pulse · project cases · resources`
+  - 中文：`行业动态 · 项目案例 · 工具资源`
+- **严禁事项**：严禁将 Logo 副标题或导航改回带有“工具箱/Workbench/工程动力学”等噱头描述。
 
-### 16.3 本次进度（2026-09-04）
-- `research-database.html` 英文 8 库 + 中文 6 库分离完成，`EGO http://127.0.0.1:8011` 本地验证通过，`enterprise-archive.html` 图文版完成，双页 `link-only` 链回原库
-- 待办：`Header/Footer` 已在 `research-database.html / enterprise-archive.html` 统一，下一步将 Hub 首页 `index.html` 的 Header/Footer 同步对齐，并补 `sitemap.xml` 与 `llms.txt` 索引
+### 16.3 落地成果（2026-09-04 已执行）
+- ✅ 完成 `h2-wellness-hub/index.html`（英文版）与 `zh/index.html`（中文版）全新 3-Section 极简高价值重构；
+- ✅ 完成 `h2-wellness-hub/hub.css` 与 `hub.js` 清理，剔除冗余计算器与展会样式，仅保留极速轻量分类筛选与平滑锚点交互；
+- ✅ 彻底移除临时及噱头文件（`tools.html` / `zh/tools.html`）；
+- ✅ EGO 浏览器本地环境（`http://127.0.0.1:8011/h2-wellness-hub/` & `/zh/`）双语及交互验证通过；
+- ✅ `PROJECT_EXECUTION_MANUAL.md`、`sitemap.xml` 与 `llms.txt` 全量同步更新。

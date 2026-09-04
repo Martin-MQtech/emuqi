@@ -49,6 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Load MUQI Analytics Engine (GA4 + Outbound Tracking)
+(function() {
+  const analyticsScript = document.createElement('script');
+  analyticsScript.src = '/assets/js/analytics.js';
+  analyticsScript.defer = true;
+  document.head.appendChild(analyticsScript);
+})();
+
 // Load MUQI WebMCP Agentic Web Engine (Root-relative path to ensure support in /blog/ and subdirectories)
 (function() {
   const mcpScript = document.createElement('script');
