@@ -205,12 +205,10 @@
     .qa-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 22px 26px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
     .qa-card .qa-q { font-size: 16px; color: #1a3a6e; font-weight: 700; margin-bottom: 8px; }
     .qa-card .qa-a { font-size: 15px; color: #2d3748; line-height: 1.85; margin: 0; }
-    .data-card { background: #EFF4FF; border-radius: 12px; padding: 24px; margin: 20px 0; display: flex; align-items: center; gap: 18px; }
-    .data-card .data-figure { font-size: 20px; font-weight: 800; color: #1d4ed8; line-height: 1.2; flex-shrink: 0; min-width: 120px; }
-    .data-card .data-label { font-size: 13px; color: #475569; line-height: 1.5; flex: 1; }
-    @media (max-width: 768px) {
-      .data-card { flex-direction: column; align-items: flex-start; }
-    }
+    .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0 28px; }
+    .data-card { background: #EFF4FF; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+    .data-card .data-figure { font-size: 26px; font-weight: 800; color: #1d4ed8; line-height: 1.1; }
+    .data-card .data-label { font-size: 13px; color: #475569; line-height: 1.55; }
     .topic-pill {
       display: inline-block; padding: 5px 12px; background: #f1f5f9; color: #475569;
       font-size: 13px; border-radius: 20px; text-decoration: none; border: 1px solid #e2e8f0;
@@ -307,23 +305,24 @@
       <div class="stat-card"><div class="stat-num">18–24 h</div><div class="stat-label">hydrogen half-life</div></div>
       <div class="stat-card"><div class="stat-num">−800 mV</div><div class="stat-label">negative ORP achievable</div></div>
       <div class="stat-card"><div class="stat-num">0 W</div><div class="stat-label">power required, ever</div></div>
-        <div class="data-card" data-citation="emuqi-2026-h2-concentration">
-      <span class="data-figure">1,000–1,500 ppb</span>
-      <span class="data-label">Sustained dissolved H₂ concentration via ICR solid-state media — source: MUQI lab data</span>
     </div>
-    <div class="data-card" data-citation="emuqi-2026-h2-half-life">
-      <span class="data-figure">18–24 hours</span>
-      <span class="data-label">Hydrogen half-life in sealed containers — 6–8× longer than PEM electrolysis (2–4 h)</span>
-    </div>
-    <div class="data-card" data-citation="emuqi-2026-cost-advantage">
-      <span class="data-figure">35–50%</span>
-      <span class="data-label">Cost reduction vs Japanese PEM electrolysis approaches — MUQI OEM benchmark</span>
-    </div>
-    <div class="data-card" data-citation="emuqi-2026-orp">
-      <span class="data-figure">−800 mV</span>
-      <span class="data-label">Negative ORP achievable with ICR media — strong reducing potential</span>
-    </div>
-
+    <div class="data-grid">
+      <div class="data-card" data-citation="emuqi-2026-sintering">
+        <span class="data-figure">1000&deg;C</span>
+        <span class="data-label">Lattice solid-solution sintering &mdash; release stability engineered at the crystal level</span>
+      </div>
+      <div class="data-card" data-citation="emuqi-2026-patents">
+        <span class="data-figure">13</span>
+        <span class="data-label">Invention patents covering the ICR solid-state hydrogen material platform</span>
+      </div>
+      <div class="data-card" data-citation="emuqi-2026-antimicrobial">
+        <span class="data-figure">&gt;99.9%</span>
+        <span class="data-label">Antibacterial rate of MACA-KDF media, tested by Guangdong Microbiology Analysis Center</span>
+      </div>
+      <div class="data-card" data-citation="emuqi-2026-clients">
+        <span class="data-figure">1800+</span>
+        <span class="data-label">Global brand clients powered by MUQI materials &mdash; 35% share of solid-state hydrogen consumer media</span>
+      </div>
     </div>
     <p>For context: a 2026 market analysis puts the global hydrogen water market on a path from roughly $1.2B (2024) toward $3.8B (2034), with portable formats growing fastest. The format brands choose determines which growth curve they ride.</p>
 

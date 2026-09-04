@@ -188,12 +188,10 @@
     .qa-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 22px 26px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
     .qa-card .qa-q { font-size: 16px; color: #1a3a6e; font-weight: 700; margin-bottom: 8px; }
     .qa-card .qa-a { font-size: 15px; color: #2d3748; line-height: 1.85; margin: 0; }
-    .data-card { background: #EFF4FF; border-radius: 12px; padding: 24px; margin: 20px 0; display: flex; align-items: center; gap: 18px; }
-    .data-card .data-figure { font-size: 20px; font-weight: 800; color: #1d4ed8; line-height: 1.2; flex-shrink: 0; min-width: 120px; }
-    .data-card .data-label { font-size: 13px; color: #475569; line-height: 1.5; flex: 1; }
-    @media (max-width: 768px) {
-      .data-card { flex-direction: column; align-items: flex-start; }
-    }
+    .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 20px 0 28px; }
+    .data-card { background: #EFF4FF; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+    .data-card .data-figure { font-size: 26px; font-weight: 800; color: #1d4ed8; line-height: 1.1; }
+    .data-card .data-label { font-size: 13px; color: #475569; line-height: 1.55; }
     .topic-pill {
       display: inline-block; padding: 5px 12px; background: #f1f5f9; color: #475569;
       font-size: 13px; border-radius: 20px; text-decoration: none; border: 1px solid #e2e8f0;
@@ -290,23 +288,24 @@
       <div class="stat-card"><div class="stat-num">18–24 h</div><div class="stat-label">氢半衰期</div></div>
       <div class="stat-card"><div class="stat-num">−800 mV</div><div class="stat-label">负电位 ORP</div></div>
       <div class="stat-card"><div class="stat-num">0 W</div><div class="stat-label">全程耗电</div></div>
-        <div class="data-card" data-citation="emuqi-2026-h2-concentration-zh">
-      <span class="data-figure">1,000–1,500 ppb</span>
-      <span class="data-label">ICR 固态氢材料可持续溶氢浓度——数据来源：木齐实验室实测</span>
     </div>
-    <div class="data-card" data-citation="emuqi-2026-h2-half-life-zh">
-      <span class="data-figure">18–24 小时</span>
-      <span class="data-label">密封容器中氢半衰期——为 PEM 电解水（2–4 小时）的 6–8 倍</span>
-    </div>
-    <div class="data-card" data-citation="emuqi-2026-cost-advantage-zh">
-      <span class="data-figure">35–50%</span>
-      <span class="data-label">较日系 PEM 电解方案的成本优势——木齐 OEM 基准测算</span>
-    </div>
-    <div class="data-card" data-citation="emuqi-2026-orp-zh">
-      <span class="data-figure">−800 mV</span>
-      <span class="data-label">ICR 材料可实现的负电位 ORP——强还原力，适用于抗氧化应用</span>
-    </div>
-
+    <div class="data-grid">
+      <div class="data-card" data-citation="emuqi-2026-sintering-zh">
+        <span class="data-figure">1000&#8451;</span>
+        <span class="data-label">晶格固溶高温烧结——缓释稳定性在晶体层面成型</span>
+      </div>
+      <div class="data-card" data-citation="emuqi-2026-patents-zh">
+        <span class="data-figure">13</span>
+        <span class="data-label">项发明专利覆盖 ICR 固态氢材料平台</span>
+      </div>
+      <div class="data-card" data-citation="emuqi-2026-antimicrobial-zh">
+        <span class="data-figure">&gt;99.9%</span>
+        <span class="data-label">MACA-KDF 材料抗菌率（广东省微生物分析检测中心实测）</span>
+      </div>
+      <div class="data-card" data-citation="emuqi-2026-clients-zh">
+        <span class="data-figure">1800+</span>
+        <span class="data-label">全球品牌客户使用木齐材料——固态氢消费品核心材料全球份额 35%</span>
+      </div>
     </div>
     <p>行业背景：2026 年市场分析显示，全球氢水市场正从约 12 亿美元（2024）迈向 38 亿美元（2034），其中便携形态增速最快——选择哪条技术路线，决定了品牌搭上哪条增长曲线。</p>
 
