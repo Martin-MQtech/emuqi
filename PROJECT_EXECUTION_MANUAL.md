@@ -2,7 +2,7 @@
 
 > **文档性质**: 项目唯一根控制指导手册 (Single Source of Truth)  
 > **管理方**: Martin Bin Chen (陈滨) & ZCode / Antigravity AI Agent 协同运维小组  
-> **更新时间**: 2026-08-31 (V3.1 仓库地址勘误 + 全站审计修复)  
+> **更新时间**: 2026-09-04 (V3.2 氢健康+功能陶瓷双主线 SEO/GEO/AEO 定调 + 首页/抗菌页 SUGGEST 优化)  
 > **内容来源**: 已吸收合并三份企业档案（国际市场执行手册 v3.0 / 项目背景与产品服务汇总 v2.1 / 固态氢产品合规策略报告 PDF）  
 > **精简原则**: 项目根目录下严禁创建多余、临时或重复的 `.md` 文件。所有背景、环境配置、部署 SOP、企业情报与重要里程碑统一收拢归档于本手册。
 
@@ -303,6 +303,18 @@ git push origin main   # 触发 GitHub Pages + Hostinger 双部署
 - **GA4 配置化加载器**：新建 `assets/js/analytics.js`，124 页统一接入；在文件内 `ga4MeasurementId` 粘贴 `G-XXXXXXXXXX` 即全站生效（当前为空＝未激活，待建号后配置）。GSC 建议采用 HTML 文件验证法。
 - **验证结果**：372 个 favicon/analytics 资源引用 0 断链；全站 JSON-LD 有效性抽查通过；robots.txt 22 条规则解析正常。
 
+### 9.6 双主线 SEO/GEO/AEO 定调与氢健康+功能陶瓷协同落地 (2026-09-04)
+- **决策背景**：与 Martin 研判 `H1 = MQ TECHNOLOGY` 无关键词且 `solid-state hydrogen` 零搜索量，确立 **“氢健康(氢保健) + 功能陶瓷”** 为真实业务双主线；技术词 `Solid-State Hydrogen / ICR` 下沉至 H2/副标题与正文，兼顾 SEO 搜索量与专业纵深。
+- **首页 SEO 重写（EGO 验证）**：
+  - `Title` 82→52 字符：`Hydrogen Wellness & Functional Ceramic Water Media Manufacturer | MUQI Tech`
+  - `Description` 313→152 字符：`MUQI Tech — Hydrogen wellness & functional ceramic water media manufacturer. ICR solid-state hydrogen, 37 patents, 1800+ clients. OEM/ODM hydrogen & filter solutions for global brands.`
+  - `Keywords` 新增 `Hydrogen Wellness, Hydrogen Health, 氢健康, 功能陶瓷`
+  - `OG Title/Desc` 同步；`Schema Organization knowsAbout` 与 `WebSite/WebPage name/description` 同步更新
+  - `H1` 从 `MQ TECHNOLOGY` 改为 `Hydrogen Wellness & Functional Ceramic Water Media Manufacturer`（40px/700），副标题改为 `ICR Solid-State Hydrogen Platform · 37 Patents · 1800+ Global Clients · OEM/ODM Hydrogen & Water Solutions`
+- **抗菌单独 SUGGEST 优化（传统刚需赛道）**：`maca-kdf-antibacterial-ceramic-ball.html` Title 改 `MACA Antibacterial Ceramic Ball | KDF Microporous Media — 99.9% Rate | MUQI Tech`，Description 注入 `≥99.9% / 12-24 months ICR / robot vacuum & humidifier & water filter`，Keywords 补 `99.9% Antibacterial Rate, KDF Microporous` 等联想词
+- **GEO/AEO 同步**：`llms.txt` 与 `robots.txt` 已在 9.5 完成 GEO 爬虫欢迎；本轮 H1/Title 改动后需在 GSC 请求编入索引并观察 AI Overview 引用
+- **执行方式**：EGO 浏览器 `muqi-ego-test` 隔离验证快照与 SEO 长度校验 → GitHub `Martin-MQtech/emuqi` 提交 → Hostinger + GitHub Pages 双部署
+
 *本手册由 ZCode AI Coding Agent 统一精炼维护，为全项目唯一指导手册。*
 
 
@@ -514,9 +526,104 @@ git push origin main   # 触发 GitHub Pages + Hostinger 双部署
 </script>
 ```
 
+### 11.3 AEO（Answer Engine Optimization）进阶规范 — 答案引擎首选位铁律
+
+> **生效日期**：2026-09-04 立  
+> **适用范围**：全站所有旗舰级博客（TechArticle / BlogPosting）、解决方案（Service）、案例（CaseStudy）类内容页面  
+> **战略意图**：从"被搜索到"升级为"被 AI 当作标准答案念给用户听"，抢占 Google SGE / Perplexity / ChatGPT Search / 必应 Copilot 的"AI Overview 答案卡片"首位。
+
+AEO 与 SEO、GEO 的本质区别：
+- **SEO** 让人找到你（10 条蓝色链接）；
+- **GEO** 让 AI 引用你（一段长答案 + 引用源）；
+- **AEO** 让 AI 把你的句子**逐字念给终端用户**（即首选位 Zero-Click 答案）。
+
+#### 11.3.1 TL;DR 60 字直答盒（Direct Answer Box）【强制】
+- 位置：H1 标题**正下方**，第一屏顶部，紧贴 Hero 之后；
+- 长度：**严格 50-80 字符**（中文 ≤ 60 字 / 英文 ≤ 80 字符）；
+- 形态：醒目蓝底浅色卡片 `<aside class="tl-dr">` + 蓝色高亮标签 `💡 Direct Answer / 直接答案`；
+- 内容约束：必须以**完整句**直接回答"这篇研究 / 这款产品 / 这项技术在做什么"，**禁止使用问句**，**禁止使用"本文将介绍"等过渡语**；
+- AI 引擎行为：Google SGE / Perplexity / 必应 Copilot 抓取时**仅读取这一段**作为摘要答案。
+
+#### 11.3.2 H2 问题句式（Question Headings）【强制】
+- 所有 H2 标题**必须采用疑问句或完整问句**形式（便于 AI 引擎直接作为 Q→A 答案对展示）；
+- 反例（陈述式）：`Hydrogen-Rich Water in Food & Wellness Industrial Use` ❌
+- 正例（问题式）：`How Does Hydrogen-Rich Water Improve Plant Protein?` ✅
+- 反例：`Four Key Highlights from the Paper` ❌
+- 正例：`What Did the Researchers Find in the Four Highlight Results?` ✅
+
+#### 11.3.3 结构化 Q&A 对（Q/A Pairing）【强制】
+- 凡涉及"提问—回答"型内容，**必须**使用以下任一标准结构：
+
+  **方案 A — HTML 语义标签**（Google 官方推荐）：
+  ```html
+  <dl itemscope itemtype="https://schema.org/FAQPage">
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <dt itemprop="name">Q: How does HRW improve plant protein solubility?</dt>
+      <dd itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">A: Hydrogen molecules ...</p>
+      </dd>
+    </div>
+  </dl>
+  ```
+
+  **方案 B — 视觉胶囊对**（如使用 FAQ 卡片 UI）：
+  ```html
+  <div class="qa-card" data-qa-id="hrw-solubility">
+    <h3 class="qa-q">Q: How does hydrogen-rich water improve plant protein solubility?</h3>
+    <p class="qa-a">A: The dissolved molecular hydrogen ...</p>
+  </div>
+  ```
+
+- 前端卡片与 JSON-LD `FAQPage.mainEntity` **必须一一对应**（id 锚点保持同步）；
+- AEO 引擎行为：直接提取 Q→A 作为对话答案。
+
+#### 11.3.4 可引用数据卡片（Citation Hooks）【强制】
+- 每篇旗舰长文**必须**包含 **3-5 个**独立的数据 Callout 卡片，格式：
+  ```html
+  <div class="data-card" data-citation="emuqi-2026-<slug>">
+    <span class="data-figure">1,000–1,500 ppb</span>
+    <span class="data-label">Dissolved H₂ concentration, source: MUQI solid-state platform</span>
+  </div>
+  ```
+- 设计规范：浅色背景 (`#EFF4FF`) + 蓝色高亮数字 + 灰色说明文字 + 圆角 12px；
+- 数据必须为**第一手可验证数值**（如 1000℃、1500ppb、-800mV、0.2 秒、12-24 个月、>99.9%）；
+- AEO 引擎行为：**逐字引用数值**而非重新概括，大幅提升权威性。
+
+#### 11.3.5 `speakable` Schema 语音搜索标记【强制】
+- 每篇旗舰文章 JSON-LD `Article` 实体中**必须**包含 `speakable` 子结构：
+  ```json
+  {
+    "@type": "TechArticle",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "xpath": [
+        "/html/head/title",
+        "/html/body//h1",
+        "/html/body//aside[@class='tl-dr']"
+      ]
+    }
+  }
+  ```
+- 作用：Google Assistant / Siri / Alexa 语音搜索**直接播报** TL;DR 摘要与标题；
+- 注：`speakable` 仅对 `Article` / `TechArticle` / `BlogPosting` 生效，与 `FAQPage` 并存。
+
+#### 11.3.6 5 项 AEO 协议合规自检卡（发布前必跑）
+每篇旗舰文章发布前，必须在 PR / Commit 中确认以下 5 项 ✅：
+- [ ] TL;DR 60 字直答盒已挂载（字符数校验：50-80）；
+- [ ] 所有 H2 均为疑问句式；
+- [ ] Q/A 使用 `<dl><dt><dd>` 或 `data-qa-id` 锚点卡片；
+- [ ] 至少 3 个 `data-citation` 数据卡片可被引用；
+- [ ] JSON-LD `Article` 实体含 `speakable` 标记。
+
+#### 11.3.7 AEO 与 SSOT 既定 5 大支柱的协同关系
+- AEO 5 项协议**不取代**而是**叠加于** §11.2.5 的 5 大底层标准之上；
+- 5 大支柱 = 通用基线（每个新增页面都遵守）；  
+- AEO 5 项 = 旗舰特化（旗舰博客 / 解决方案 / 案例 额外强化）；
+- 实施时建议先按 5 大支柱完成基础页面，再按 AEO 5 项补强。
+
 ---
 
-### 11.3 中英文独立双轨「内容生长飞轮」长期执行机制
+### 11.4 中英文独立双轨「内容生长飞轮」长期执行机制
 
 为了让木齐科技站点在后续长期运营中形成强大的持续流量与 AI 引用壁垒，特确立**以 Blog 技术长文为引擎的双轨生长机制**：
 
