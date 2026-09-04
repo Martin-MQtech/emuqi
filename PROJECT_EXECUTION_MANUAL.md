@@ -881,3 +881,24 @@ WebMCP 工具集绝非静态死板的代码，而是随着木齐项目、产品�
 1. **同步挂载 sitemap.xml**：新页面生成后，必须立即将其写入 `emuqi/sitemap.xml`，标注正确权重（如核心产品 `0.9`，普通博客 `0.7-0.8`）与 `lastmod`。
 2. **同步更新 llms.txt**：如果是战略级新产品或技术白皮书，必须在 `emuqi/llms.txt` 的清单中追加 Markdown 格式的链接与语义摘要。
 3. **搜索引擎主动握手**：页面部署上线后，在 GSC（Google Search Console）执行一次「网址检查」→「请求编入索引」，缩短爬取等待周期。
+
+---
+
+## 第 16 章：H2 Wellness Hub 设计与运维专章 — 统一 Header/Footer 与全球导航中枢 (SSOT)
+
+> **生效日期**：2026-09-04 立  
+> **定位**：H2 Wellness Hub 是 `emuqi.com` 的行业导航中枢，不是木齐宣传栏；承载**行业动态(Pulse) / 企业案例(Enterprise Archive) / 研究导航(Research Database)** 三大板块
+
+### 16.1 统一 Header / Footer 设计铁律
+- **Header 统一模板**：`h2-wellness-hub/hub.css` 定义 `.hub-header`，所有 Hub 子页（`index.html / research-database.html / enterprise-archive.html / zh/*`）必须复用同一 `<header class="hub-header">`，含 `H₂ Wellness Hub` 品牌 + `Pulse/Cases/Resources` 导航 + `中英切换胶囊`，严禁各页自成一体
+- **Footer 统一模板**：复用同一 `<footer class="hub-footer">`，含 `Industry pulse · project cases · resources` 标识与 `Topics / About` 入口
+- **Hero 视觉规范**：行业中枢禁用木齐实验室反复贴图；Hero 采用 `about-expo.jpg` 等中性行业图 + 深蓝渐变蒙版，保持行业黄页的中立感
+
+### 16.2 双轨内容架构与窗口机会
+- **研究导航（Research Database）**：链回原库的论文黄页，中英物理分离（`/h2-wellness-hub/research-database.html` 英文 8 库 + `/h2-wellness-hub/zh/research-database.html` 中文 6 库），不混排，各自 `hreflang` 独立 SEO/GEO
+- **企业档案（Enterprise Archive）**：`h2-wellness-hub/enterprise-archive.html` 图文卡（左图 96×96 圆角 + 右文），代表性动态遴选，不固定 80 数量，不与论文库混排
+- **窗口机会**：中英均缺“氢医学/氢生物学一站式查询入口”，全球五区（日韩/欧美/中东/南美/非洲）研究散落，Hub 以**只做汇总、不存原文、链回原库**卡位，配合 `GEO/AEO` 成为行业查询入口
+
+### 16.3 本次进度（2026-09-04）
+- `research-database.html` 英文 8 库 + 中文 6 库分离完成，`EGO http://127.0.0.1:8011` 本地验证通过，`enterprise-archive.html` 图文版完成，双页 `link-only` 链回原库
+- 待办：`Header/Footer` 已在 `research-database.html / enterprise-archive.html` 统一，下一步将 Hub 首页 `index.html` 的 Header/Footer 同步对齐，并补 `sitemap.xml` 与 `llms.txt` 索引
