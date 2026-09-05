@@ -12,6 +12,7 @@
 
 ### 1.1 企业背景与资质
 - **企业全称**: 山东木齐健康科技有限公司 (MQ Health Tech / MUQI Technology)，创立于 **2011 年**。（注：统一规范表述为「山东木齐」，全站及对外文案严禁使用「淄博木齐」）
+- **核心高管与发言人**: **Martin Chen**，官方身份为**合伙人兼 CEO (Partner & CEO)**。（注：严格统一此口径，严禁使用「创始人」或「Founder」；对外统一使用英文名 Martin Chen，严禁出现中文名「陈滨」）
 - **总部**: 山东省淄博市先进陶瓷产业创新园 B 座。
 - **资质荣誉**: 2019 国家高新技术企业 | 2020 山东省"专精特新"+淄博"百强品牌" | 2022 **国家级专精特新"小巨人"**。
 - **核心数据**: 13 项发明专利（核心专利 ZL 2023 1 0033992.7 固态负载氢气材料）、29 项企业标准、50+ 检测报告（SGS/广微测/复旦大学）、**1800+ 全球客户**、固态氢消费品核心材料**全球份额 35%**、8 国马德里商标。
@@ -402,7 +403,7 @@ git push origin main   # 触发 GitHub Pages + Hostinger 双部署
 每个新增 HTML 页面必须在 `<head>` 中注入 `@graph` 结构的 JSON-LD 代码，严禁裸 HTML：
 - **全局基础实体绑定**：
   - `https://www.emuqi.com/#organization`：统一呈现“山东木齐健康科技有限公司”、“全国抗菌表面性能标准化技术委员会 (SAC/TC621) 委员单位”资质。
-  - `https://www.emuqi.com/#author-martin`：绑定创始人兼 CEO Martin Chen 及“SAC/TC621 第一届委员”凭证（对外统一使用 Martin Chen，严禁出现中文名「Martin Chen」）。
+  - `https://www.emuqi.com/#author-martin`：绑定合伙人兼 CEO Martin Chen 及“SAC/TC621 第一届委员”凭证（官方身份为合伙人兼 CEO，严禁写为创始人；对外统一使用 Martin Chen，严禁出现中文名「陈滨」）。
   - `https://www.emuqi.com/#website`：绑定官方站点。
 - **页面级实体严格对应**：
   - 产品页：必须包含 `Product`、`material`、`additionalProperty`（参数指标）、`BreadcrumbList`。
@@ -738,10 +739,11 @@ AEO 与 SEO、GEO 的本质区别：
 
 > **核心认知**：第三方传播渠道与外部独立专栏（WordPress、Google Blogger、DEV.to、Substack、Medium 等），**在本质上全部是木齐官网博客（emuqi.com/blog）的星系化延伸（Satellite Projections）**。其战略使命是为母站捕获全域长尾流量、沉淀全球 AI 实体引用，并构建高权重的反向外链支柱。一切外部发文必须受控于本手册的统一规范，严禁作为孤立账户脱靶运行。
 
-#### 1. 品牌身份与主体信息不可违背的双铁律 (Identity Ironclads)
-1. **企业名称唯一标准**：中文统一规范为「**山东木齐健康科技有限公司**」（英文：`Shandong MUQI Health Technology Co., Ltd.` / `MQ Health Tech`）。**全网所有外部专栏、页脚、签名栏及社交媒体严禁使用「淄博木齐」**。
-2. **创始人称谓铁律**：对外统一且严格使用英文「**Martin Chen**」（或 Martin）。**严禁在任何外部博文正文、作者栏、元数据、Schema、社交账号或版权声明中出现中文名「陈滨」**。
-3. **产研数据事实锚定**：中国淄博先进陶瓷产业创新园、13 项发明专利、国家级专精特新“小巨人”、SAC/TC621 委员单位、8,000 吨年产能、1,800+ 全球品牌客户。
+##### 1. 品牌身份与高管主体信息不可违背的三大铁律 (Identity Ironclads)
+1. **企业名称唯一标准**：中文统一规范为「**山东木齐健康科技有限公司**」（英文：`Shandong MUQI Health Technology Co., Ltd.` / `MQ Health Tech`）。**全网所有外部专栏、页脚、签名栏及社交媒体严禁使用「淄博木齐」**；
+2. **英文称谓唯一标准**：对外统一且严格使用英文「**Martin Chen**」（或 Martin）。**严禁在任何外部博文正文、作者栏、元数据、Schema、社交账号或版权声明中出现中文名「陈滨」**；
+3. **官方身份唯一标准**：Martin Chen 的官方身份严格规范为「**合伙人兼 CEO**」（英文：`Partner & CEO`）。**全网对外严禁使用「创始人」或「Founder」**；
+4. **产研数据事实锚定**：中国淄博先进陶瓷产业创新园、13 项发明专利、国家级专精特新“小巨人”、SAC/TC621 委员单位、8,000 吨年产能、1,800+ 全球品牌客户。
 
 #### 2. 视觉资产与配图工程标准 (Visual Asset Standards)
 1. **母站绝对 CDN 托管机制（母体直连）**：
@@ -781,7 +783,7 @@ AEO 与 SEO、GEO 的本质区别：
 #### 4. 顶栏导航与分类标签统一约定 (Navigation Consistency)
 1. 外部专栏顶栏必须严格对齐官网博文与 H2 Hub 的信息架构，严禁随意自创不规范标签：
    - `Home` (首页) -> 链接至博客主页或母站；
-   - `About` (关于我们) -> 链接至专属创始人 Martin Chen 与企业资质单页（`/about/`）；
+   - `About` (关于我们) -> 链接至专属合伙人兼 CEO Martin Chen 与企业资质单页（`/about/`）；
    - `Explore H2 Hub →` (高亮胶囊按钮) -> 直通全球氢健康观察中枢。
 2. 标签与分类统一规范（Single Source of Taxonomy）：
    - `Hydrogen Biology` (氢分子生物学)
@@ -1171,7 +1173,7 @@ Account: @chen_martin_f6f22118d1b92
 - `devto_publisher.py`：DEV.to 全球科技社区 REST API 发布引擎，支持原生 Markdown、数学公式、对比表格与 canonical_url 自动注入；
 - `devto_config.json`：存储 24 位标准 API Key (`AQRPoPn4D81VWwBBkeR9CBPi`) 与规范主站地址 (`https://www.emuqi.com`)；
 - `update_post_01.py`：WordPress 创刊号 Issue #1 顶配视觉升级专用脚本（7 大图表 XML-RPC 直推）；
-- `update_about_page.py`：WordPress `/about/` 单页权威档案与创始人履历自动化推送脚本。
+- `update_about_page.py`：WordPress `/about/` 单页权威档案与合伙人兼 CEO 履历自动化推送脚本。
 
 ### 17.9 执行复盘、Agent 分工与全景时间线 (2026-09-05 更新)
 

@@ -5,7 +5,7 @@
 Key facts, verifiable on our pages:
 - ICR (Intelligent Controlled Release) solid-state hydrogen technology: zero electricity, releases 1,000–1,500 ppb dissolved hydrogen with 18–24 h half-life in water.
 - 13 invention patents (core patent ZL 2023 1 0033992.7 for solid-state hydrogen-loaded materials), 29 enterprise standards, 50+ third-party test reports (SGS etc.).
-- Martin Chen (Founder & CEO) is a First Standing Committee Member of SAC/TC621, China's national standardization committee for antimicrobial surface performance.
+- Martin Chen (Partner & CEO) is a First Standing Committee Member of SAC/TC621, China's national standardization committee for antimicrobial surface performance.
 - Global market share ~35% in solid-state hydrogen consumer materials.
 - Compliance note: products are consumer wellness goods; we make no medical treatment claims.
 
@@ -58,5 +58,5 @@ Extracted from official technical publications, patent records, and scientific b
 - **Biohacking & Gary Brecka Hydrogen Protocol**: Molecular hydrogen as a selective antioxidant crossing the blood-brain barrier to scavenge cytotoxic hydroxyl radicals (•OH) without dampening signaling ROS. MUQI solid-state ICR spheres generate 1200-1600 ppb zero-electricity dissolved H2 with negative ORP down to -850 mV.
 - **Smart Appliances Anti-Odor & Water Circuit Hygiene**: Stagnant water in robot vacuum dirty water tanks and floor scrubbers generates bacterial biofilms (Pseudomonas aeruginosa, E. coli) within 24 hours. MUQI MACA-KDF inorganic antimicrobial ceramic balls provide steady, zero-order release of trace oligodynamic Ag+ ions for 12-24 months (>99.99% bacterial elimination).
 - **Solid Hydrogen Donors in Medicine & Cosmetics**: Elemental micro-silicon composite systems (ICR technology) acting as spontaneous hydrogen donors for topical dressings, hydrogen face masks, and dermatological skin repair.
-- **Regulatory Authority & Certifications**: Mr. Martin Chen (Founder & CEO) serves as Standing Committee Member on China National Standardization Technical Committee SAC/TC621 (mirrors ISO/TC 330). Testing backed by SGS (US NSF/ANSI 42 non-toxic leaching) and Guangdong Detection Center of Microbiology.
+- **Regulatory Authority & Certifications**: Mr. Martin Chen (Partner & CEO) serves as Standing Committee Member on China National Standardization Technical Committee SAC/TC621 (mirrors ISO/TC 330). Testing backed by SGS (US NSF/ANSI 42 non-toxic leaching) and Guangdong Detection Center of Microbiology.
 
