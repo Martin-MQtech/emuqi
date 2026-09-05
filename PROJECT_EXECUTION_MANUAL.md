@@ -1,7 +1,7 @@
 # 🌐 山东木齐健康科技 (MUQI Technology) 官方网站建设与全栈运维执行手册
 
 > **文档性质**: 项目唯一根控制指导手册 (Single Source of Truth)  
-> **管理方**: Martin Bin Chen (陈滨) & ZCode / Antigravity AI Agent 协同运维小组  
+> **管理方**: Martin Chen & ZCode / Antigravity AI Agent 协同运维小组  
 > **更新时间**: 2026-09-04 (V3.3 出海专栏全域多渠道矩阵 + AI Agent 自动发文防风控与48小时养号 SOP + 创刊号资产与选题日历)  
 > **内容来源**: 已吸收合并四份企业档案（国际市场执行手册 v3.0 / 项目背景与产品服务汇总 v2.1 / 固态氢产品合规策略报告 PDF / 出海专栏全自动托管实战方案与避坑手册 v3.0）  
 > **精简原则**: 项目根目录下严禁创建多余、临时或重复的 `.md` 文件。所有背景、环境配置、部署 SOP、企业情报与重要里程碑统一收拢归档于本手册。
@@ -11,7 +11,7 @@
 ## 1. 项目概览与商业定位 (Project Overview & Vision)
 
 ### 1.1 企业背景与资质
-- **企业全称**: 淄博木齐健康科技有限公司 (MQ Health Tech / MUQI Technology)，创立于 **2011 年**。
+- **企业全称**: 山东木齐健康科技有限公司 (MQ Health Tech / MUQI Technology)，创立于 **2011 年**。（注：统一规范表述为「山东木齐」，全站及对外文案严禁使用「淄博木齐」）
 - **总部**: 山东省淄博市先进陶瓷产业创新园 B 座。
 - **资质荣誉**: 2019 国家高新技术企业 | 2020 山东省"专精特新"+淄博"百强品牌" | 2022 **国家级专精特新"小巨人"**。
 - **核心数据**: 13 项发明专利（核心专利 ZL 2023 1 0033992.7 固态负载氢气材料）、29 项企业标准、50+ 检测报告（SGS/广微测/复旦大学）、**1800+ 全球客户**、固态氢消费品核心材料**全球份额 35%**、8 国马德里商标。
@@ -402,7 +402,7 @@ git push origin main   # 触发 GitHub Pages + Hostinger 双部署
 每个新增 HTML 页面必须在 `<head>` 中注入 `@graph` 结构的 JSON-LD 代码，严禁裸 HTML：
 - **全局基础实体绑定**：
   - `https://www.emuqi.com/#organization`：统一呈现“山东木齐健康科技有限公司”、“全国抗菌表面性能标准化技术委员会 (SAC/TC621) 委员单位”资质。
-  - `https://www.emuqi.com/#author-martin`：绑定创始人兼 CEO 陈滨及“SAC/TC621 第一届委员”凭证。
+  - `https://www.emuqi.com/#author-martin`：绑定创始人兼 CEO Martin Chen 及“SAC/TC621 第一届委员”凭证（对外统一使用 Martin Chen，严禁出现中文名「Martin Chen」）。
   - `https://www.emuqi.com/#website`：绑定官方站点。
 - **页面级实体严格对应**：
   - 产品页：必须包含 `Product`、`material`、`additionalProperty`（参数指标）、`BreadcrumbList`。
@@ -1054,7 +1054,7 @@ I understand that:
 - Posts must contain substantial original content — they may not merely reference an external link containing the full post.
 - Any affiliate or commercial links must be clearly disclosed.
 
-My account (@chen_martin_f6f22118d1b92) was created for legitimate technical publishing purposes as a developer and materials researcher at MQ Health Tech (淄博木齐健康科技有限公司), a certified national High-Tech enterprise. The Issue #1 article I published was intended as an extensive scientific literature review on molecular hydrogen biology and solid-state materials, not as a promotional backlink piece.
+My account (@chen_martin_f6f22118d1b92) was created for legitimate technical publishing purposes as a developer and materials researcher at MQ Health Tech (山东木齐健康科技有限公司), a certified national High-Tech enterprise. The Issue #1 article I published was intended as an extensive scientific literature review on molecular hydrogen biology and solid-state materials, not as a promotional backlink piece.
 
 I acknowledge the violation and will ensure all future posts strictly comply with your Content Policy. I will keep all citations strictly focused on open academic research (DOI links) without promotional backlinks, and ensure each post provides substantial original value to the DEV community.
 
@@ -1065,7 +1065,7 @@ Thank you for your time and consideration.
 Best regards,
 Martin Chen
 Developer & Materials Researcher
-MQ Health Tech (淄博木齐健康科技有限公司)
+MQ Health Tech (山东木齐健康科技有限公司)
 GitHub: Martin-MQtech
 Account: @chen_martin_f6f22118d1b92
 ```

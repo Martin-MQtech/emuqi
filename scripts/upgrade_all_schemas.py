@@ -46,7 +46,7 @@ PERSON_SCHEMA = {
     "@type": "Person",
     "@id": "https://emuqi.com/#author-martin",
     "name": "Martin Chen",
-    "alternateName": ["陈滨", "Martin"],
+    "alternateName": ["Martin"],
     "jobTitle": "Founder & CEO",
     "worksFor": {"@id": "https://emuqi.com/#organization"},
     "hasCredential": [

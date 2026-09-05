@@ -10,7 +10,7 @@
 任何新增页面必须在 `<head>` 中注入完整的 `@graph` JSON-LD 结构化数据，严禁发布缺少图谱的裸 HTML：
 - **全局统一实体锚点**：
   - `https://www.emuqi.com/#organization`：绑定“山东木齐健康科技有限公司”、“全国抗菌表面性能标准化技术委员会 (SAC/TC621) 委员单位”资质。
-  - `https://www.emuqi.com/#author-martin`：绑定创始人兼 CEO 陈滨（Martin Chen）及“SAC/TC621 第一届委员”凭证。
+  - `https://www.emuqi.com/#author-martin`：绑定创始人兼 CEO Martin Chen（Martin Chen）及“SAC/TC621 第一届委员”凭证。
   - `https://www.emuqi.com/#website`：绑定木齐官方站点。
 - **页面级实体匹配**：
   - 产品页：必须包含 `Product`、`material`、`additionalProperty`（参数指标）、`BreadcrumbList`。
