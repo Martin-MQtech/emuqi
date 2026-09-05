@@ -2,8 +2,8 @@
 
 > **文档性质**: 项目唯一根控制指导手册 (Single Source of Truth)  
 > **管理方**: Martin Chen & ZCode / Antigravity AI Agent 协同运维小组  
-> **更新时间**: 2026-09-04 (V3.3 出海专栏全域多渠道矩阵 + AI Agent 自动发文防风控与48小时养号 SOP + 创刊号资产与选题日历)  
-> **内容来源**: 已吸收合并四份企业档案（国际市场执行手册 v3.0 / 项目背景与产品服务汇总 v2.1 / 固态氢产品合规策略报告 PDF / 出海专栏全自动托管实战方案与避坑手册 v3.0）  
+> **更新时间**: 2026-09-05 (V3.4 Contact B2B 询盘终端重构 + 泛女性健康技术专著三端全域发布 + SEO/GEO/AEO 协议全栈融合)  
+> **内容来源**: 已吸收合并五份企业档案（国际市场执行手册 v3.0 / 项目背景与产品服务汇总 v2.1 / 固态氢产品合规策略报告 PDF / 出海专栏全自动托管实战方案与避坑手册 v3.0 / 全站 SEO/GEO/AEO 协同标准规范）  
 > **精简原则**: 项目根目录下严禁创建多余、临时或重复的 `.md` 文件。所有背景、环境配置、部署 SOP、企业情报与重要里程碑统一收拢归档于本手册。
 
 ---
@@ -1195,6 +1195,10 @@ Account: @chen_martin_f6f22118d1b92
 | 2026-09-05 13:00 | Antigravity | WordPress FSE 全站去模板化：定制 Header、Footer、Home Hero 与 About 页面，彻底清除假数据 | 🟢 **WordPress 独立专栏品牌化达成**，完全对齐 emuqi.com 调性 |
 | 2026-09-05 13:20 | Antigravity | Google Blogger 专栏 (ID: 6118056740258922715) 锁定 3 篇历史博文，预制生成 3 篇独立富文本 HTML | 🟢 **Blogger 发布管线就绪**，双通道打通 |
 | 2026-09-05 13:33 | Antigravity | 全网品牌规范整肃：确立「山东木齐」与「Martin Chen」双铁律，清洗全站 43 页面与国际资产库 | 🟢 **全域身份唯一性与纯净度 100% 达成** |
+| 2026-09-05 16:30 | Antigravity | Contact Us 页面架构升级：打造高转化 B2B 询盘终端，设计“先研习、后联系”知识漏斗 | 🟢 **contact 页面重构完成**，集成高管直连、6 大专栏矩阵与 7 大社媒通道 |
+| 2026-09-05 17:15 | Antigravity | 泛女性健康技术专著英文化重构与 AI 医用高精图表重新生成并部署 | 🟢 **9 章节顶级专著交付**，产出泡腾片溶解与 3 大交付剂型 AI 医学影像 |
+| 2026-09-05 17:30 | Antigravity | 泛女性健康专著三端全域同步发布：官网博客置顶、WordPress (ID: 27)、Blogger (ID: 7606693460636594338 原帖更新) | 🟢 **三大渠道全线 HTTP 200 上线**，实现一源三端同频共振 |
+| 2026-09-05 17:40 | Antigravity | 全网 SEO/GEO/AEO 协议深度融合：注入 Schema.org `@graph` (含 FAQPage)、Key Takeaways、AEO 对话式 FAQ 与实体索引云 | 🟢 **AI 检索抓取与富媒体摘要全面打通**，sitemap.xml 顶格收录 |
 
 #### 17.9.2 Agent 权责分工确认
 - **Antigravity Agent**：本次出海矩阵搭建与自动化发布的**主操作方**，负责账号创建、Python 引擎调用、文章排版、API 调度、ego-browser 穿透自动化上线及手册全面升级。User-Agent 标识为 `MQTech-AI-Publisher/2.0`。
@@ -1210,4 +1214,89 @@ Account: @chen_martin_f6f22118d1b92
 4. **一源多端统一分发调度**：严格遵循 §12.7 延伸传播渠道统一规范，实现一份母站博客源文，高保真、去模板化辐射至各大卫星平台。
 5. **资产归档统一路径**：所有发布引擎代码、配置文件、Issue #1 源文件统一保存在：
    `~/Documents/2026 BUSINESS MTRIX /20260601 MQ TECH 国际业务/20260708 MQ TECH 国际市场市场划分/`
+
+---
+
+## 18. Contact B2B 终端重构、泛女性健康专著发布与全栈 SEO/GEO/AEO 融合规范 (2026-09-05 V3.4)
+
+### 18.1 单一执行手册管理铁律 (Single Source of Truth)
+- **根目录精简铁律**：严禁在项目根目录或业务目录随手新建零散的 `.md` 过程文件（例如各类临时的 `walkthrough.md`、`task.md` 等）。
+- **统一归口要求**：所有架构调整、视觉重构、文章发布记录、技术协议配置及 SEO 规范，必须作为章节或板块统一归纳在本手册（`PROJECT_EXECUTION_MANUAL.md`）中，确保团队与 AI Agent 拥有唯一、权威、清晰的全局上下文。
+
+---
+
+### 18.2 Contact Us 页面三级架构升级 (B2B Terminal Redesign)
+**核心落地页面**: `emuqi/contact-mqtech-hydrogen-health.html`
+
+针对旧版 Contact 页面右侧仅有 3 行纯文本、留白过大且缺乏技术说服力的缺陷，进行了 B2B 高净值客户转化漏斗重构：
+1. **左侧：高意图 B2B 询盘终端 (High-Intent B2B Terminal)**：
+   - 顶部植入“Skip the Curve. Accelerate Your Category”定制打样承诺（5–22 天极速出样）；
+   - 细分 7 大项目业务赛道（净水 OEM、固态氢美妆护肤、大宗陶瓷滤料、泡腾片/足浴耗材、农业、批发经销、定制研发）；
+   - 内置前端即时提交反馈与 WhatsApp 降级直通机制。
+2. **右侧 Tier 1：高管直连与官方资质背书 (Executive Desk)**：
+   - 突出 Martin Chen（General Manager & Chief Materials Engineer）官方身份；
+   - 挂载全国抗菌表面性能标准化技术委员会（SAC/TC621）委员资质；
+   - 提供 WhatsApp 1 键实时对话（`+86-13964416725`）、官方邮箱（`muqizb@gmail.com`）与 12 小时响应承诺。
+3. **右侧 Tier 2：“先研习、后联系”知识与专栏矩阵 (Research Before You Reach Out)**：
+   - 设立 6 大平台权威内容卡片，引导客户先阅读深度研究再发起商洽：
+     - **WordPress.com**: `https://h2welltech.wordpress.com`（固态氢材料学与 PEM 对比专著）
+     - **Google Blogger**: `https://h2welltech.blogspot.com`（植物蛋白绿色改性与应用指南）
+     - **Substack**: `https://h2welltech.substack.com`（B2B 采购决策简报）
+     - **DEV.to**: `https://dev.to/chen_martin_f6f22118d1b92`（微孔陶瓷材料化学笔记）
+     - **Medium / Quest**: `https://medium.com/@muqizb`（分子氢抗氧化白皮书）
+     - **Official Hub**: `h2-wellness-hub/`（交互式计算器与 100+ 临床研究库）
+4. **右侧 Tier 3：全球社媒与视频实测枢纽 (Global Channels & Demos)**：
+   - 整合 LinkedIn、YouTube、X (Twitter)、Instagram、TikTok、Reddit、Facebook 7 大官方渠道。
+
+---
+
+### 18.3 泛女性健康固态氢微生态技术专著多渠道发布资产总账
+**英文专著全称**: *The Convergence of Molecular Hydrogen Medicine and Microecological Therapy: A Deep Technical Report on Female Reproductive Health Resilience*  
+**学术深度**: 9 个完整技术章节（~4,000 词），详述 $MgH_2 + 2H_2O \rightarrow Mg(OH)_2 + 2H_2\uparrow$ 机理、四联专利活性乳酸菌株配比（100 Billion CFU/g：CTV-05, JV-V03, RC-14, KCCM 12071）、9 维度对比矩阵及 15 篇顶级文献引注。
+
+#### 18.3.1 AI 高精医学插图资产
+- **Figure 1（主视觉泡腾溶解图）**:
+  - 本地路径: `emuqi/assets/images/blog/female-health/hero-h2-dissolving-tablet.jpg`
+  - WordPress CDN: `https://h2welltech.wordpress.com/wp-content/uploads/2026/09/hero-h2-dissolving-tablet.jpg`
+- **Figure 2（三种女性健康剂型全景展示图）**:
+  - 本地路径: `emuqi/assets/images/blog/female-health/h2-femtech-delivery-forms.jpg`
+  - WordPress CDN: `https://h2welltech.wordpress.com/wp-content/uploads/2026/09/h2-femtech-delivery-forms.jpg`
+
+#### 18.3.2 三大渠道发布状态总表
+| 渠道平台 | 接入协议 / 机制 | 文章 / Post ID | 线上链接 | 状态 |
+| :--- | :--- | :--- | :--- | :--- |
+| **MUQI 官网博客** | 独立 HTML + sitemap.xml | `hydrogen-microecology-female-reproductive-health-en.html` | [官网英文专著页](https://www.emuqi.com/blog/hydrogen-microecology-female-reproductive-health-en.html) | 🟢 置顶上线，Sitemap 权重 0.9 |
+| **WordPress.com** | XML-RPC 官方协议 API | Post ID: `27` | [WordPress 专栏链接](https://h2welltech.wordpress.com/2026/09/05/the-convergence-of-molecular-hydrogen-medicine-and-microecological-therapy-a-deep-technical-report-on-female-reproductive-health-resilience/) | 🟢 原生排版发布，全图文支持 |
+| **Google Blogger** | CodeMirror 注入更新 | Post ID: `7606693460636594338` (Blog ID: `6118056740258922715`) | [Blogger 原帖实时链接](https://h2well.blogspot.com/2026/01/blog-post.html) | 🟢 原帖就地更新，保留历史权重与 URL |
+
+---
+
+### 18.4 全网 SEO / GEO / AEO 技术融合与协议规范标准 (落地准则)
+木齐科技所有已发及未来新增技术内容，必须 100% 贯彻以下 4 大技术协议：
+
+#### 1. GEO (Generative Engine Optimization) 事实锚定与抗幻觉
+- **「💡 结论先行」摘要卡片 (Key Takeaways)**：
+  必须紧随导读后设立独立的 `geo-takeaways-box` 模块，明确提供 5 组硬核数据指标（反应式、ORP 电位、溶氢浓度、专利菌株号、临床复发对比率、SAC/TC621 标准委员会背书），供 Perplexity / ChatGPT 等大模型直接摘录为第一事实来源。
+- **#GEO 实体关键词索引云 (Entity Knowledge Graph)**：
+  文末必须部署 `geo-entity-cloud`，建立生物医药、菌株代码、材料工业与标准机构 4 类实体标签，并建立双向内链流向官网核心产品与 B2B 询盘终端。
+
+#### 2. AEO (Answer Engine Optimization) 问答与对话式引擎优化
+- **临床级对齐 FAQ 模块**：
+  每篇长文必须设立独立 FAQ 章节，针对用户与医生常搜的 6 大完整对话意图（如“为什么抗生素导致 BV 50%~60% 复发”、“固态氢为何优于瓶装水”），采用 **“Direct Answer（2~3 句核心直答）+ 机制展开”** 的格式。
+- **Schema `FAQPage` 原生映射**：
+  所有 FAQ 必须同步在页面 `<head>` 的 JSON-LD 中声明为 `FAQPage`，确保 Google 搜索可直接展开富媒体卡片。
+
+#### 3. Schema.org 结构化数据体系 (@graph 先导)
+页面必须包含以下完整的实体知识图谱：
+- `Organization`（绑定企业与 SAC/TC621 资质）
+- `Person`（绑定 Martin Chen 高管与材料科学家画像）
+- `WebSite`（绑定 emuqi.com 域名）
+- `BreadcrumbList`（三级面包屑导航）
+- `TechArticle` / `MedicalScholarlyArticle`（含 `speakable` 语音/AI摘要抓取选择器、`about` 与 `keywords`）
+- `FAQPage`（结构化问答流）
+
+#### 4. 全生命周期内链与站点地图闭环
+- 每篇新文章必须在 `emuqi/sitemap.xml` 顶层登记，配置 `priority: 0.9` 与即时 `lastmod`。
+- 必须同步更新 `emuqi/blog/index.html` 与 `emuqi/blog-list-hydrogen-health.html`，保持首屏展示最新成果。
+
 
