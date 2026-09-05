@@ -2,7 +2,7 @@
 
 > **文档性质**: 项目唯一根控制指导手册 (Single Source of Truth)  
 > **管理方**: Martin Chen & ZCode / Antigravity AI Agent 协同运维小组  
-> **更新时间**: 2026-09-05 (V3.5 全域多渠道分发矩阵实战落地 + Substack 官方发刊 + LinkedIn 轮播 & First Comment 防降权 + X 串推 + Facebook 4图相册与 Group 垂直社群防重分发 SOP)  
+> **更新时间**: 2026-09-05 (V3.6 修正 Reddit/Quora 账号状态为⏳待注册 + 全域多渠道分发矩阵实战落地 + Substack 官方发刊 + LinkedIn 轮播 & First Comment 防降权 + X 串推 + Facebook 4图相册与 Group 垂直社群防重分发 SOP)  
 > **内容来源**: 已吸收合并五份企业档案（国际市场执行手册 v3.0 / 项目背景与产品服务汇总 v2.1 / 固态氢产品合规策略报告 PDF / 出海专栏全自动托管实战方案与避坑手册 v3.0 / 全站 SEO/GEO/AEO 协同标准规范）  
 > **精简原则**: 项目根目录下严禁创建多余、临时或重复的 `.md` 文件。所有背景、环境配置、部署 SOP、企业情报与重要里程碑统一收拢归档于本手册。
 
@@ -1255,10 +1255,10 @@ Account: @chen_martin_f6f22118d1b92
      - **Google Blogger**: `https://h2welltech.blogspot.com`（植物蛋白绿色改性与应用指南）
      - **Substack**: `https://h2welltech.substack.com`（B2B 采购决策简报）
      - **DEV.to**: `https://dev.to/chen_martin_f6f22118d1b92`（微孔陶瓷材料化学笔记）
-     - **Medium / Quest**: `https://medium.com/@muqizb`（分子氢抗氧化白皮书）
+     - **Medium / Quora**: `https://medium.com/@muqizb`（分子氢抗氧化白皮书）— Quora ⏳待注册
      - **Official Hub**: `h2-wellness-hub/`（交互式计算器与 100+ 临床研究库）
 4. **右侧 Tier 3：全球社媒与视频实测枢纽 (Global Channels & Demos)**：
-   - 整合 LinkedIn、YouTube、X (Twitter)、Instagram、TikTok、Reddit、Facebook 7 大官方渠道。
+   - 整合 LinkedIn、YouTube、X (Twitter)、Instagram、TikTok、Reddit ⏳待注册、Facebook 7 大官方渠道。
 
 ---
 
@@ -1327,8 +1327,8 @@ Account: @chen_martin_f6f22118d1b92
         ▼                              ▼                              ▼
  【第一圈层：权威专栏矩阵】    【第二圈层：商务社交与决策圈】    【第三圈层：垂直行业高价值社群】
  • WordPress.com (Post 8, 10, 27) • LinkedIn (Document 轮播)      • Facebook Groups (氢健康/电解设备)
- • Substack (h2welltech)          • X/Twitter (6-Tweet 串推)      • Reddit (r/Biohackers, r/WaterFilter)
- • Google Blogger (3历史+新博文)   • Facebook (个人主页 4图相册)   • Medium / Quora
+ • Substack (h2welltech)          • X/Twitter (6-Tweet 串推)      • Reddit ⏳待注册 (r/Biohackers等)
+ • Google Blogger (3历史+新博文)   • Facebook (个人主页 4图相册)   • Quora ⏳待注册
  • DEV.to (极客学术背书)
         │                              │                              │
         └──────────────────────────────┼──────────────────────────────┘
@@ -1394,7 +1394,7 @@ Account: @chen_martin_f6f22118d1b92
 ---
 
 ### 19.6 垂直社群分发“严格防重 (Anti-Duplication)”与同行价值导向铁律
-在 Facebook、Reddit 等海外行业社群做分发，是获取精准 B2B 买家信任的最快途径，但也存在极高风控红线：
+在 Facebook、Reddit（⏳待注册）等海外行业社群做分发，是获取精准 B2B 买家信任的最快途径，但也存在极高风控红线：
 
 1. **绝对防重原则 (Zero-Tolerance for Duplication)**:
    - 严禁对同一社群进行二次重复投递！重复发布相同帖子在海外社群被视为“低级机器人垃圾营销（Low-tier Spamming）”，会导致帖子被删、账号被管理员禁言甚至踢出群组，严重损害 Martin Chen 与 MQ TECH 的专业声誉。
