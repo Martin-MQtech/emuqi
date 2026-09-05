@@ -119,8 +119,8 @@
     }
     .article-wrap { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
     .hero {
-      background: linear-gradient(135deg, rgba(10,22,40,0.88) 0%, rgba(26,58,110,0.75) 60%, rgba(10,22,40,0.85) 100%),
-                  url('../assets/images/blog/hydrogen-water-comparison/cover-solid-state-vs-pem.png') center/cover no-repeat;
+      background: linear-gradient(135deg, rgba(8,14,26,0.85) 0%, rgba(15,31,60,0.72) 60%, rgba(8,14,26,0.82) 100%),
+                  url('../assets/images/blog/hydrogen-water-comparison/hero-solid-state-vs-pem.jpg') center/cover no-repeat;
       padding: 96px 24px 72px;
       text-align: center;
       color: #ffffff;
@@ -193,14 +193,6 @@
     }
     .cta-btn:hover { opacity: 0.9; }
     .ads-placeholder { margin: 36px 0; padding: 24px; border: 2px dashed #cbd5e1; border-radius: 12px; text-align: center; background: #f8fafc; }
-    .social-share { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 36px 0; padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .share-btn {
-      display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 20px;
-      background: var(--bg-light); color: var(--navy); text-decoration: none;
-      font-size: 13.5px; font-weight: 600; border: 1px solid var(--border); transition: all 0.2s;
-    }
-    .share-btn:hover { background: var(--navy); color: #ffffff; }
-    .topic-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 
     .qa-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 22px 26px; margin: 16px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.03); }
     .qa-card .qa-q { font-size: 16px; color: #1a3a6e; font-weight: 700; margin-bottom: 8px; }
@@ -212,6 +204,78 @@
     .topic-pill {
       display: inline-block; padding: 5px 12px; background: #f1f5f9; color: #475569;
       font-size: 13px; border-radius: 20px; text-decoration: none; border: 1px solid #e2e8f0;
+      transition: all 0.2s;
+    }
+    .topic-pill:hover { background: #fff; color: #f47b20; border-color: #f47b20; }
+    .topic-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+    .nav-store {
+      font-size: 14px;
+      font-weight: 500;
+      color: #4a4a5a;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.15s;
+    }
+    .nav-store:hover { background: #0a1628; color: #fff; }
+    .nav-contact {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background: #f47b20;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      margin-left: 8px;
+      transition: background 0.15s;
+    }
+    .nav-contact:hover { background: #d96611; }
+
+    /* ═══ FOOTER ═══ */
+    .footer { background: #0a1628; margin-top: 80px; }
+    .footer-in {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px 0;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 36px;
+    }
+    .footer-in h4 {
+      font-size: 12px;
+      font-weight: 600;
+      color: #f47b20;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-in a {
+      display: block;
+      font-size: 14px;
+      color: #94a3b8;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-in a:hover { color: #f0ece4; }
+    .footer-in p {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
+    .footer-b {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: #475569;
+      margin-top: 48px;
+    }
+    @media (max-width: 768px) {
+      .footer-in { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .hero h1 { font-size: 26px; }
+      .article-wrap { padding: 30px 16px 60px; }
     }
   </style>
 
@@ -230,12 +294,36 @@
         <span style="font-size:17px;font-weight:700;color:#1a1a2e">MQ TECH</span>
       </a>
       <nav style="display:flex;align-items:center;gap:4px">
-        <a href="../index.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s">Home</a>
-        <a href="../about-functional-ceramic-ball-water-media-manufacturer.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s">About Us</a>
-        <a href="../product-functional-ceramic-materials.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s">Products</a>
-        <a href="../hydrogen-health-application.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s">Applications</a>
-        <a href="index.html" style="font-size:14px;font-weight:600;color:#f47b20;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s">Blog</a>
-        <a href="../contact-mqtech-hydrogen-health.html" style="font-size:14px;font-weight:600;color:#fff;background:#f47b20;text-decoration:none;padding:8px 18px;border-radius:8px;margin-left:8px">Contact Us</a>
+        <div style="position:relative" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+          <a href="../index.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Home <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="dd" style="display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:linear-gradient(145deg,#07111f 0%,#0a1628 56%,#14233a 100%);border-radius:14px;box-shadow:0 12px 40px rgba(10,22,40,.35),0 0 0 1px rgba(255,255,255,.08) inset;min-width:180px;padding:8px;z-index:200;overflow:hidden">
+            <a href="../index.html" style="display:block;padding:12px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:10px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0'">Home</a>
+            <a href="../about-functional-ceramic-ball-water-media-manufacturer.html" style="display:block;padding:12px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:10px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0'">About Us</a>
+          </div>
+        </div>
+        <div style="position:relative" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+          <a href="../product-functional-ceramic-materials.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Products <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="dd" style="display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:linear-gradient(145deg,#07111f 0%,#0a1628 56%,#14233a 100%);border-radius:16px;box-shadow:0 16px 48px rgba(10,22,40,0.45),0 0 0 1px rgba(255,255,255,0.08) inset;min-width:260px;padding:10px;z-index:200;overflow:hidden">
+            <a href="../hydrogen-generate-ceramic-ball.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(244,123,32,0.3),rgba(244,123,32,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">⚪</span><div><div style="font-weight:600;color:#fff">Ceramic Ball</div><div style="font-size:12px;color:#94a3b8;margin-top:3px">Hydrogen-generating</div></div></a>
+            <a href="../maca-kdf-antibacterial-ceramic-ball.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(244,123,32,0.3),rgba(244,123,32,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🟢</span><div><div style="font-weight:600;color:#fff">MACA Antibacterial</div><div style="font-size:12px;color:#94a3b8;margin-top:3px">Microporous ceramic</div></div></a>
+            <a href="../mph-condensate-neutralizer.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(29,78,216,0.3),rgba(29,78,216,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🔵</span><div><div style="font-weight:600;color:#fff">MPH+ Condensate</div><div style="font-size:12px;color:#94a3b8;margin-top:3px">Alkaline neutralizer</div></div></a>
+          </div>
+        </div>
+        <div style="position:relative" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+          <a href="../hydrogen-health-application.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Applications <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="dd" style="display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:linear-gradient(145deg,#07111f 0%,#0a1628 56%,#14233a 100%);border-radius:16px;box-shadow:0 16px 48px rgba(10,22,40,0.45),0 0 0 1px rgba(255,255,255,0.08) inset;min-width:280px;padding:10px;z-index:200;overflow:hidden">
+            <a href="../hydrogen-water-bottle-or-hydrogen-health.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(29,78,216,0.3),rgba(29,78,216,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🍶</span><div><div style="font-weight:600;color:#fff">Hydrogen Water Bottle</div></div></a>
+            <a href="../hydrogen-health-hydrogen-alkaline-water-sachet.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(29,78,216,0.3),rgba(29,78,216,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">💧</span><div><div style="font-weight:600;color:#fff">Alkaline Water Sachet</div></div></a>
+            <a href="../hydrogen-healthceramic-hydrogen-tablet.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(29,78,216,0.3),rgba(29,78,216,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">💊</span><div><div style="font-weight:600;color:#fff">Ceramic Hydrogen Tablet</div></div></a>
+            <a href="../hydrogen-healthhydrogen-water-filter-cartridge.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(29,78,216,0.3),rgba(29,78,216,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🔬</span><div><div style="font-weight:600;color:#fff">Water Filter Cartridge</div></div></a>
+            <a href="../hydrogen-healthhydrogen-foot-bath-tablet.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(29,78,216,0.3),rgba(29,78,216,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🛁</span><div><div style="font-weight:600;color:#fff">Foot Bath Tablet</div></div></a>
+          </div>
+        </div>
+        <a href="../solutions-hydrogen-agriculture.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;background:transparent" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Solutions</a>
+        <a href="index.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;background:transparent" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Blog</a>
+        <a href="../h2-wellness-hub/" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">H2 Wellness Hub</a>
+        <a href="../store.html" class="nav-store">Store</a>
+        <a href="../contact-mqtech-hydrogen-health.html" class="nav-contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -272,7 +360,7 @@
     <p><strong>PEM electrolysis.</strong> A proton-exchange membrane electrolyzer applies DC current to split purified water into hydrogen and oxygen. Hydrogen concentrates on one side of the membrane and dissolves into the drinking stream; gases are separated and vented. Strengths: speed (high ppb within minutes), adjustability, and suitability for countertop machines and hydrogen inhalation devices. Requirements: power supply, membrane durability, electrode quality, and safe venting design.</p>
     <p><strong>Solid-state hydrogen media (ICR).</strong> Magnesium-, silicon- and calcium-based hydrogen-producing compounds are sintered with natural mineral nano-composites into ceramic media. On contact with water, a controlled chemical reaction releases molecular hydrogen together with mineral ions — no electricity anywhere in the chain. Strengths: sustained release (18–24 h half-life), zero power, mineral synergy, inherent safety (no ozone or chlorine by-products), and drop-in integration into bottles, cartridges, sachets, soaps and bath formats.</p>
     <div style="margin: 32px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.12);">
-      <img src="../assets/images/blog/hydrogen-water-comparison/body-ceramic-media-en.jpg" alt="ICR solid-state hydrogen ceramic media — zero electricity, 18–24 h sustained release" style="width: 100%; height: auto; display: block;">
+      <img src="../assets/images/blog/hydrogen-water-comparison/tech-mechanism-comparison.jpg" alt="Technical mechanism comparison: ICR Solid-State Hydrogen Media vs. SPE/PEM Electrolysis Cell" style="width: 100%; height: auto; display: block;">
     </div>
 
 
@@ -294,7 +382,7 @@
       </tbody>
     </table>
     <div style="margin: 32px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.12);">
-      <img src="../assets/images/blog/hydrogen-water-comparison/body-bottle-en.jpg" alt="Hydrogen water bottle powered by ICR solid-state media — no battery, no charging" style="width: 100%; height: auto; display: block;">
+      <img src="../assets/images/blog/hydrogen-water-comparison/portable-bottle-vs-countertop.jpg" alt="Product application comparison: Portable solid-state hydrogen tumbler vs. countertop electric electrolysis machine" style="width: 100%; height: auto; display: block;">
     </div>
 
 
@@ -329,7 +417,7 @@
     <p>The most exciting implication of solid-state hydrogen is not winning the bottle category — it is enabling <strong>new categories</strong> that electricity cannot practically reach:</p>
     <p><strong>Bath &amp; foot-bath wellness.</strong> Zero-electricity bath balls and foot-bath tablets for spas, resorts, recovery studios and senior-care — a hydrogen experience a plugged-in device cannot deliver in a tub. <strong>Skincare &amp; patches.</strong> Hydrogen soaps, facial masks and eye patches pairing hydrogen release with mineral actives — new personal-care SKUs for beauty brands. <strong>Travel &amp; beverage sachets.</strong> Lightweight dosing formats for hotel guest programs, cold-brew tea and on-the-go hydration. <strong>Agriculture &amp; animal care.</strong> An emerging research frontier spanning irrigation trials, livestock water research, aquaculture and companion-animal functional water.</p>
     <div style="margin: 32px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.12);">
-      <img src="../assets/images/blog/hydrogen-water-comparison/body-formats-en.jpg" alt="One material platform, many product formats — tablets, filter cartridges, hydrogen cups" style="width: 100%; height: auto; display: block;">
+      <img src="../assets/images/blog/hydrogen-water-comparison/solid-state-categories-en.jpg" alt="Solid-State Hydrogen Product Categories: Bath &amp; Foot-Bath, Filter Cartridges, Travel &amp; Tea Sachets, Hydrogen Tumblers" style="width: 100%; height: auto; display: block;">
     </div>
 
 
@@ -366,19 +454,29 @@
       <p style="margin:0;font-size:12px;color:#9ca3af;">Responsive Ad Unit Container</p>
     </div>
 
-    <div class="social-share">
-      <span style="font-size:14px;font-weight:700;color:#0f172a;margin-right:8px;">Share this article:</span>
-      <a href="https://twitter.com/intent/tweet?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" class="share-btn">𝕏 X</a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" class="share-btn">Facebook</a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" class="share-btn">LinkedIn</a>
-      <a href="https://wa.me/?text=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" class="share-btn">WhatsApp</a>
-      <a href="https://t.me/share/url?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" class="share-btn">Telegram</a>
-      <a href="https://reddit.com/submit?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" class="share-btn">Reddit</a>
-      <a href="https://www.instagram.com/" target="_blank" class="share-btn">Instagram</a>
-      <a href="https://www.pinterest.com/pin/create/button/?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" class="share-btn">Pinterest</a>
-      <a href="https://www.tiktok.com/" target="_blank" class="share-btn">TikTok</a>
-      <a href="https://service.weibo.com/share/share.php?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" class="share-btn">Weibo</a>
-      <a href="#" onclick="alert('WeChat: scan QR code to share');return false;" class="share-btn">WeChat</a>
+    <!-- SHARE -->
+    <div style="margin-top:40px;padding:28px 0;border-top:1px solid #E5E7EB;border-bottom:1px solid #E5E7EB;text-align:center">
+      <p style="font-size:13px;color:#94a3b8;margin:0 0 16px;letter-spacing:0.5px">Share this article</p>
+      <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap">
+        <a href="https://twitter.com/intent/tweet?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html&text=Solid-State+Hydrogen+vs.+PEM+Electrolysis" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:#000;color:#fff;border-radius:8px;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:#1877F2;color:#fff;border-radius:8px;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" onclick="navigator.clipboard.writeText('https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html').then(function(){alert('Link copied! Paste on Instagram.')});return false;" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;border-radius:8px;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:#0A66C2;color:#fff;border-radius:8px;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://wa.me/?text=Solid-State+Hydrogen+vs.+PEM+Electrolysis%20https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="https://t.me/share/url?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html&text=Solid-State+Hydrogen+vs.+PEM+Electrolysis" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:#0088CC;color:#fff;border-radius:8px;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+        <a href="https://reddit.com/submit?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html&title=Solid-State+Hydrogen+vs.+PEM+Electrolysis" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:#FF4500;color:#fff;border-radius:8px;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
+        <a href="https://pinterest.com/pin/create/button/?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html&description=Solid-State+Hydrogen+vs.+PEM+Electrolysis" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:#BD081C;color:#fff;border-radius:8px;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg></a>
+        <a href="https://www.tiktok.com/share/url?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:#000;color:#fff;border-radius:8px;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.18 8.18 0 0 0 4.79 1.53V6.83a4.84 4.84 0 0 1-.69-.14z"/></svg></a>
+        <a href="https://service.weibo.com/share/share.php?url=https://www.emuqi.com/blog/hydrogen-water-technology-comparison-en.html&title=Solid-State+Hydrogen+vs.+PEM+Electrolysis" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:#E6162D;color:#fff;border-radius:8px;text-decoration:none;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M10.098 20.323c-3.977.391-7.414-1.406-7.672-4.02-.259-2.609 2.759-5.047 6.74-5.441 3.979-.394 7.413 1.404 7.671 4.018.259 2.6-2.759 5.049-6.739 5.443zM9.05 17.219c-.384.616-1.208.884-1.829.602-.612-.279-.793-.991-.406-1.593.379-.595 1.176-.86 1.797-.584.626.279.819.972.438 1.575zm1.27-1.627c-.141.237-.449.353-.689.253-.236-.09-.313-.361-.177-.586.138-.227.436-.346.672-.24.239.09.315.345.194.573zm.408-4.579c-3.086-.799-6.586.591-7.882 3.103-1.321 2.557-.066 5.38 3.05 6.21 3.223.851 6.938-.549 8.187-3.229 1.227-2.633-.165-5.302-3.355-6.084zm7.009 1.348c-.261-.073-.437-.122-.302-.441.301-.699.333-1.3.008-1.725-.611-.794-2.283-.75-4.211-.02 0 0-.601.249-.447-.214.294-.903.251-1.658-.207-2.105-1.036-1.006-3.783.038-6.147 2.329C5.466 12.539 4.2 14.842 4.2 16.861c0 3.849 4.921 6.191 9.713 6.191 6.274 0 10.454-3.649 10.454-6.52 0-1.751-1.474-2.744-2.878-3.373z"/></svg></a>
+        <div style="position:relative;display:inline-block">
+          <button onclick="var el=document.getElementById('wechat-qr');el.style.display=el.style.display==='none'?'block':'none'" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:36px;background:#07C160;color:#fff;border-radius:8px;border:none;cursor:pointer;transition:opacity 0.2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.97 3.76c-1.278-.03-2.47.398-3.44 1.238-1.35 1.167-2.066 2.866-2.066 4.544 0 1.678.716 3.377 2.066 4.544.97.84 2.162 1.268 3.44 1.238 1.354.03 2.62-.426 3.597-1.267 1.285-1.11 1.98-2.764 1.98-4.515 0-1.751-.695-3.405-1.98-4.515-.977-.841-2.243-1.297-3.597-1.267zm-1.38 2.56c.535 0 .969.44.969.983a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.983.97-.983zm4.759 0c.535 0 .969.44.969.983a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.983.97-.983z"/></svg></button>
+          <div id="wechat-qr" style="display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.15);padding:16px;z-index:100;width:180px">
+            <p style="margin:0 0 8px;font-size:11px;color:#6b7280;text-align:center">Scan to share on WeChat</p>
+            <div style="background:#f0f0f0;border-radius:8px;padding:12px;text-align:center"><svg width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f0f0f0" rx="8"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" fill="#999" font-size="12">QR Code</text></svg></div>
+            <p style="margin:8px 0 0;font-size:10px;color:#9ca3af;text-align:center">Scan the QR code to share</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div style="margin-top:28px;">
@@ -398,6 +496,12 @@
       <div>
         <div style="font-size: 26px; font-weight: 800; color: #ffffff; letter-spacing: 1.5px; margin-bottom: 12px;">MUQI</div>
         <p>Leading manufacturer of functional mineral ceramic water media and solid-state hydrogen products for health and eco applications worldwide.</p>
+        <div style="display:flex;gap:12px;margin-top:20px">
+          <a href="https://x.com/MARTINPARK111" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
+          <a href="https://www.linkedin.com/company/72043164" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
+          <a href="https://www.youtube.com/@Martinchen1234" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">▶</a>
+          <a href="mailto:muqizb@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">@</a>
+        </div>
       </div>
       <div>
         <h4>Explore</h4>
@@ -407,6 +511,8 @@
         <a href="../hydrogen-health-application.html">Applications</a>
         <a href="../solutions-hydrogen-agriculture.html">Solutions</a>
         <a href="index.html">Blog</a>
+        <a href="../h2-wellness-hub/">H2 Wellness Hub</a>
+        <a href="../store.html">Store</a>
       </div>
       <div>
         <h4>Products</h4>
@@ -415,12 +521,21 @@
         <a href="../mph-condensate-neutralizer.html">MPH+ Condensate</a>
       </div>
       <div>
+        <h4>Applications</h4>
+        <a href="../hydrogen-water-bottle-or-hydrogen-health.html">Hydrogen Water Bottle</a>
+        <a href="../hydrogen-health-hydrogen-alkaline-water-sachet.html">Alkaline Water Sachet</a>
+        <a href="../hydrogen-healthceramic-hydrogen-tablet.html">Ceramic Hydrogen Tablet</a>
+        <a href="../hydrogen-healthhydrogen-water-filter-cartridge.html">Water Filter Cartridge</a>
+        <a href="../hydrogen-healthhydrogen-foot-bath-tablet.html">Foot Bath Tablet</a>
+      </div>
+      <div>
         <h4>Contact</h4>
+        <p>+86 1396 441 6725</p>
         <a href="mailto:muqizb@gmail.com">muqizb@gmail.com</a>
-        <a href="../contact-mqtech-hydrogen-health.html">Contact Us</a>
+        <p style="font-size:13px;color:#94a3b8;line-height:1.7;margin-top:12px">Block B, Innovation Park<br>125 Liuquan Road<br>Zibo, Shandong, China</p>
       </div>
     </div>
-    <div class="footer-b">&copy; 2026 MUQI Technology Co., Ltd. &middot; All Rights Reserved.</div>
+    <div class="footer-b">&copy; 2026 Shandong MUQI Health Technology Co., Ltd. &middot; All Rights Reserved.</div>
   </footer>
 
 </body>
