@@ -2,7 +2,7 @@
 
 > **文档性质**: 项目唯一根控制指导手册 (Single Source of Truth)  
 > **管理方**: Martin Chen & ZCode / Antigravity AI Agent 协同运维小组  
-> **更新时间**: 2026-09-05 (V3.6 修正 Reddit/Quora 账号状态为⏳待注册 + 全域多渠道分发矩阵实战落地 + Substack 官方发刊 + LinkedIn 轮播 & First Comment 防降权 + X 串推 + Facebook 4图相册与 Group 垂直社群防重分发 SOP)  
+> **更新时间**: 2026-09-05 (V3.7 Quora 国际版建号完成 + Martin Chen 认证主页 + Reddit 8个月在役账号建联与“防封号先养号后破局”风控 SOP 落地 + 全域多渠道分发矩阵实战落地 + Substack 官方发刊 + LinkedIn 轮播 & First Comment 防降权 + X 串推 + Facebook 4图相册与 Group 垂直社群防重分发 SOP)  
 > **内容来源**: 已吸收合并五份企业档案（国际市场执行手册 v3.0 / 项目背景与产品服务汇总 v2.1 / 固态氢产品合规策略报告 PDF / 出海专栏全自动托管实战方案与避坑手册 v3.0 / 全站 SEO/GEO/AEO 协同标准规范）  
 > **精简原则**: 项目根目录下严禁创建多余、临时或重复的 `.md` 文件。所有背景、环境配置、部署 SOP、企业情报与重要里程碑统一收拢归档于本手册。
 
@@ -1255,10 +1255,10 @@ Account: @chen_martin_f6f22118d1b92
      - **Google Blogger**: `https://h2welltech.blogspot.com`（植物蛋白绿色改性与应用指南）
      - **Substack**: `https://h2welltech.substack.com`（B2B 采购决策简报）
      - **DEV.to**: `https://dev.to/chen_martin_f6f22118d1b92`（微孔陶瓷材料化学笔记）
-     - **Medium / Quora**: `https://medium.com/@muqizb`（分子氢抗氧化白皮书）— Quora ⏳待注册
+     - **Medium / Quora**: `https://medium.com/@muqizb` / Quora: `https://www.quora.com/profile/Martin-Chen-169`（CEO • MQ TECH 国际版问答主页）
      - **Official Hub**: `h2-wellness-hub/`（交互式计算器与 100+ 临床研究库）
 4. **右侧 Tier 3：全球社媒与视频实测枢纽 (Global Channels & Demos)**：
-   - 整合 LinkedIn、YouTube、X (Twitter)、Instagram、TikTok、Reddit ⏳待注册、Facebook 7 大官方渠道。
+   - 整合 LinkedIn、YouTube、X (Twitter)、Instagram、TikTok、Reddit (`u/Think-Nail-5473` 社区养号)、Facebook 7 大官方渠道。
 
 ---
 
@@ -1327,8 +1327,8 @@ Account: @chen_martin_f6f22118d1b92
         ▼                              ▼                              ▼
  【第一圈层：权威专栏矩阵】    【第二圈层：商务社交与决策圈】    【第三圈层：垂直行业高价值社群】
  • WordPress.com (Post 8, 10, 27) • LinkedIn (Document 轮播)      • Facebook Groups (氢健康/电解设备)
- • Substack (h2welltech)          • X/Twitter (6-Tweet 串推)      • Reddit ⏳待注册 (r/Biohackers等)
- • Google Blogger (3历史+新博文)   • Facebook (个人主页 4图相册)   • Quora ⏳待注册
+ • Substack (h2welltech)          • X/Twitter (6-Tweet 串推)      • Reddit 🟢在役养号 (u/Think-Nail-5473)
+ • Google Blogger (3历史+新博文)   • Facebook (个人主页 4图相册)   • Quora 🟢国际版在役 (Martin-Chen-169)
  • DEV.to (极客学术背书)
         │                              │                              │
         └──────────────────────────────┼──────────────────────────────┘
@@ -1444,5 +1444,53 @@ Account: @chen_martin_f6f22118d1b92
 3. **TikTok (`@mqtech_wellness`)**:
    - **痛点反差与科普**: “你买的几百美金电解富氢水杯，为什么几个小时就漏光了？”、“0 电力、0 充电的黑科技水质瓷球怎么工作？”。
 
+---
 
+### 19.9 Quora 国际版问答矩阵建设与 Martin Chen 权威 Profile 规范
+- **官方个人主页**: `https://www.quora.com/profile/Martin-Chen-169`
+- **绑定认证邮箱**: `muqizb@gmail.com`
+- **默认语言与区域**: 强制设定为全球国际版 **English (Primary)**（已剔除 IP 默认日本区偏置）
+- **官方认证头衔 (Profile Credential)**: `CEO at MQ TECH | Solid-State Hydrogen & Functional Materials`
+- **履历背书 (Employment Credential)**: `Partner & CEO at MQ TECH (MUQI Technology)`
+- **Profile 官方简介 (Bio)**:
+  > *Partner & CEO at MQ TECH (Shandong MUQI Technology). Over 15 years engineering microporous functional ceramics, solid-state catalytic hydrogen media, and healthy water technologies. Dedicated to advancing scientific hydration and molecular hydrogen applications globally.*  
+  > *Official Website: https://www.emuqi.com | Technical Research Hub: https://www.emuqi.com/h2-wellness-hub/ | Contact: muqizb@gmail.com*
+- **Quora 定位与 SEO 协同价值**:
+  - Quora 在 Google 搜索中权重极高，且优先展示在“Discussions and forums”与 AI Overviews (SGE) 摘要中。
+  - **核心问答场景**：针对“Is hydrogen water a gimmick or science?”、“Solid-state hydrogen vs. PEM electrolysis: which is better?”、“How long does dissolved hydrogen stay in water?”等长尾痛点问题，以材料科学家身份提供深度、带文献引注的答案，并在文末权威引用母站 `https://www.emuqi.com/blog/` 及计算器工具。
+
+---
+
+### 19.10 Reddit 社区“高风控防封号、先养号后破局”铁律与 Karma 积累 SOP
+> **核心管理方针（2026-09-06 用户最高指示）**：  
+> **“Reddit 非常容易封账号，所以完成后先不发帖，先去社区互动。”**  
+> 严防商业急躁心态，坚决执行“潜水互动积累信誉 → 专业同行跟帖解惑 → 高 Karma 后自然引流”的三阶段安全破局策略。
+
+1. **已建联账号资产信息**:
+   - **Reddit 账号 Handle**: `u/Think-Nail-5473`
+   - **认证邮箱**: `muqizb@gmail.com`（Google SSO 体系关联）
+   - **资历优势**: 账号已有 8 个月以上自然资历（Reddit 对注册时间长但低活跃的账号容忍度远高于刚注册的新号）。
+
+2. **三大防封号风控红线 (Strict Anti-Ban Boundaries)**:
+   - 🚫 **红线 1：绝对禁止直接发商业主帖**。任何在 0 Karma 或低活跃期直接发表公司产品宣传帖的行为，100% 会被 Automod 判定为垃圾营销机器，触发瞬时 **Shadowban（隐形封禁）** 或封号。
+   - 🚫 **红线 2：绝对禁止在跟帖中直接带商业导流链接**。前期任何回复均严禁附带产品购买页或直接促销链接；即使提供技术解答，也必须保持纯粹的同行/极客探讨口吻。
+   - 🚫 **红线 3：严禁操纵点赞或刷 Karma**。严禁用同 IP 小号互相点赞，Reddit 的防作弊算法对协同点赞查处极严。
+
+3. **目标入驻 5 大高价值垂直 Subreddit 矩阵**:
+   - **`r/Biohackers`**（150 万+ 极客健康社群）：高频探讨线粒体优化、抗衰老长寿、分子氢水与电解技术，技术讨论深度极高。
+   - **`r/HydrogenWater`**：全球分子氢水核心消费者与爱好者大本营，集中提问“便携杯选哪个”、“溶解度浓度怎么测”。
+   - **`r/WaterFilter`**：净水水处理与滤芯技术专业论坛，探讨微孔陶瓷材料、矿化球与重金属吸附。
+   - **`r/electrolysis`**：电解水与制氢电极工程讨论，适合以材料物理学角度切入对比。
+   - **`r/Supplements`**：膳食补充剂与健康生活方式，涉及抗氧化微生态及氢药食同源。
+
+4. **安全养号 (Warm-up) 协同操作 SOP**:
+   - **阶段 1：静默浏览与点赞（第 1~2 周）**
+     - 每日/隔日登录浏览上述 5 大板块，对高质量的科普、文献探讨进行自然 Upvote（点赞）。
+     - 加入（Join）上述 5 大社群，建立正常的阅读画像。
+   - **阶段 2：高价值专业技术跟帖（第 3~5 周）**
+     - 寻找社群中关于“氢水真伪”、“PEM 留存时长”、“电解 vs 反应产氢”等争议或提问帖；
+     - 以“资深材料工程从业者”的客观口吻提供科学解答，阐述真实物理化学机制（如 $MgH_2 + 2H_2O$ 反应式、纳米微气泡物理停留机制、电解臭氧副产物成因等）；
+     - **纯干货贡献，绝不提品牌、绝不放外链**，靠专业硬核回复获取社区用户的 Upvote，将 Karma 提升至 50~100+。
+   - **阶段 3：高权重自然破局（Karma 达标后）**
+     - 当账号获得良好信誉与社区熟脸认可后，在特定深度工程讨论帖中，以“我们团队实验室实测了 24 小时水质留存曲线，写了一份对比白皮书，供同行参考”的形式自然引用 `emuqi.com/blog/` 或计算器工具。
 
