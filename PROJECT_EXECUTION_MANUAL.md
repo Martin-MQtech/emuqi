@@ -774,10 +774,11 @@ AEO 与 SEO、GEO 的本质区别：
    <blockquote class="wp-block-quote">
    <p><strong>Published by MQ Health Tech (山东木齐健康科技有限公司)</strong><br>
    <em>National "Little Giant" High-Tech Enterprise | 13 Invention Patents in Solid-State Hydrogen & Functional Ceramics</em><br>
-   🌐 <strong>Official Website:</strong> <a href="https://www.emuqi.com" target="_blank" rel="noopener">www.emuqi.com</a> | <a href="https://www.imuqi.cn" target="_blank" rel="noopener">www.imuqi.cn</a><br>
+   🌐 <strong>Official Website:</strong> <a href="https://www.emuqi.com" target="_blank" rel="noopener">www.emuqi.com</a><br>
    🔬 <strong>H2 Wellness Hub:</strong> <a href="https://www.emuqi.com/h2-wellness-hub/" target="_blank" rel="noopener">www.emuqi.com/h2-wellness-hub/</a><br>
    ✉️ <strong>Technical Whitepapers & Inquiries:</strong> <a href="mailto:muqizb@gmail.com">muqizb@gmail.com</a></p>
    </blockquote>
+   （注：官方主站唯一展示为 `www.emuqi.com`，出海专栏、外部博文及签名背书栏中**一律不体现 `www.imuqi.cn`**）
    ```
 
 #### 4. 顶栏导航与分类标签统一约定 (Navigation Consistency)
@@ -1016,7 +1017,7 @@ WebMCP 工具集绝非静态死板的代码，而是随着木齐项目、产品�
 - **专栏主标题 (Site Title)**：`MQ Tech | Hydrogen Biology Technology & Wellness Insights`
 - **专栏副标题 (Tagline)**：`Pioneering Solid-State Hydrogen Innovations, Biological Antioxidant Science & Global Wellness Solutions`
 - **官方联络邮箱**：`muqizb@gmail.com`
-- **关联企业主站**：`https://www.emuqi.com`（英文出海官网，Canonical 统一锚点） / `https://www.imuqi.cn`（中文总部）
+- **关联企业主站**：`https://www.emuqi.com`（英文出海官网，唯一 Canonical 统一锚点；出海传播渠道中一律不体现 `www.imuqi.cn`）
 - **开发者/作者身份**：`Martin Chen` (GitHub: `Martin-MQtech`)
 
 ### 17.2 全域多渠道出海矩阵架构 (五位一体新格局)
