@@ -686,5 +686,5 @@ Blog article pages add a layer between hero and footer: a centered white editori
 - Added brand favicon set: `assets/icons/favicon.svg` (navy gradient tile `#091322→#162f56`, MUQI-orange droplet `#f47b20→#ff9d4d`, white H₂ bubbles) plus 32px / 180px / 512px PNG variants with rounded-corner alpha. Injected into all 124 content pages with directory-depth-safe relative paths (Hostinger + GitHub Pages compatible).
 - Added `assets/js/analytics.js`: config-driven GA4 loader (inert until a Measurement ID is pasted), wired into all pages.
 - Added site meta: `og:site_name` = "MUQI Tech" and `og:locale` (en_US / zh_CN by page lang) across all pages.
-- Homepage: single deduplicated enriched @graph (Organization gained foundingDate, slogan, Little Giant award, knowsAbout); title/description rewritten around buyer keywords.
+- Homepage: single deduplicated enriched @graph (Organization gained foundingDate, slogan, National High-Tech Enterprise award, knowsAbout); title/description rewritten around buyer keywords.
 - No visual/layout changes; icons and scripts are head-only additions.

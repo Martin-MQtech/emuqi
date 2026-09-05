@@ -305,7 +305,7 @@ git push origin main   # 触发 GitHub Pages + Hostinger 双部署
 - **OG 标签补全**：`og:site_name` + `og:locale`（en_US/zh_CN 按 lang 自动判定）全站覆盖。
 - **Canonical 治理**：消除 `/index.html` 尾缀重复（首页、`blog/`、`blog-list` 三处），目录页 canonical 统一为斜杠根。
 - **首页元数据重写**：Title/Description 注入买家关键词（solid-state hydrogen materials manufacturer / OEM/ODM / hydrogen filter cartridges），OG 同步。
-- **首页 Schema 去重与增强**：消除 3 个完全重复的 @graph 块（重复 @id 会混淆解析器）；Organization 实体新增 foundingDate 2011 / slogan "Hydrogen. Simplified." / 小巨人 award / knowsAbout 七大知识领域。
+- **首页 Schema 去重与增强**：消除 3 个完全重复的 @graph 块（重复 @id 会混淆解析器）；Organization 实体新增 foundingDate 2011 / slogan "Hydrogen. Simplified." / 国家高新技术企业 / knowsAbout 七大知识领域。
 - **Sitemap 清理**：移除 3 个跳转占位页（hub.html、h2-health-hub 两处），121 URL 全部为真实内容页。
 - **GA4 配置化加载器**：新建 `assets/js/analytics.js`，124 页统一接入；在文件内 `ga4MeasurementId` 粘贴 `G-XXXXXXXXXX` 即全站生效（当前为空＝未激活，待建号后配置）。GSC 建议采用 HTML 文件验证法。
 - **验证结果**：372 个 favicon/analytics 资源引用 0 断链；全站 JSON-LD 有效性抽查通过；robots.txt 22 条规则解析正常。
