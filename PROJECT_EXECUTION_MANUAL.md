@@ -14,7 +14,7 @@
 - **企业全称**: 山东木齐健康科技有限公司 (MQ Health Tech / MUQI Technology)，创立于 **2011 年**。（注：统一规范表述为「山东木齐」，全站及对外文案严禁使用「淄博木齐」）
 - **核心高管与发言人**: **Martin Chen**，官方身份为**合伙人兼 CEO (Partner & CEO)**。（注：严格统一此口径，严禁使用「创始人」或「Founder」；对外统一使用英文名 Martin Chen，严禁出现中文名「陈滨」）
 - **总部**: 山东省淄博市先进陶瓷产业创新园 B 座。
-- **资质荣誉**: 2019 国家高新技术企业 | 2020 山东省"专精特新"+淄博"百强品牌" | 2022 **国家级专精特新"小巨人"**。
+- **资质荣誉**: 2019 国家高新技术企业 | 2020 山东省"专精特新"+淄博"百强品牌" | 2022 **国家级国家高新技术企业**。
 - **核心数据**: 13 项发明专利（核心专利 ZL 2023 1 0033992.7 固态负载氢气材料）、29 项企业标准、50+ 检测报告（SGS/广微测/复旦大学）、**1800+ 全球客户**、固态氢消费品核心材料**全球份额 35%**、8 国马德里商标。
 - **团队**: 12 人研发团队（硕博/留学 60%），与中科院理化所（黄勇团队）、上海交大产学研合作，拥有"固态氢功能陶瓷重点实验室"。
 
@@ -743,7 +743,7 @@ AEO 与 SEO、GEO 的本质区别：
 1. **企业名称唯一标准**：中文统一规范为「**山东木齐健康科技有限公司**」（英文：`Shandong MUQI Health Technology Co., Ltd.` / `MQ Health Tech`）。**全网所有外部专栏、页脚、签名栏及社交媒体严禁使用「淄博木齐」**；
 2. **英文称谓唯一标准**：对外统一且严格使用英文「**Martin Chen**」（或 Martin）。**严禁在任何外部博文正文、作者栏、元数据、Schema、社交账号或版权声明中出现中文名「陈滨」**；
 3. **官方身份唯一标准**：Martin Chen 的官方身份严格规范为「**合伙人兼 CEO**」（英文：`Partner & CEO`）。**全网对外严禁使用「创始人」或「Founder」**；
-4. **产研数据事实锚定**：中国淄博先进陶瓷产业创新园、13 项发明专利、国家级专精特新“小巨人”、SAC/TC621 委员单位、8,000 吨年产能、1,800+ 全球品牌客户。
+4. **产研数据事实锚定**：中国淄博先进陶瓷产业创新园、13 项发明专利、国家高新技术企业、SAC/TC621 委员单位、8,000 吨年产能、1,800+ 全球品牌客户。
 
 #### 2. 视觉资产与配图工程标准 (Visual Asset Standards)
 1. **母站绝对 CDN 托管机制（母体直连）**：
@@ -773,7 +773,7 @@ AEO 与 SEO、GEO 的本质区别：
    ```html
    <blockquote class="wp-block-quote">
    <p><strong>Published by MQ Health Tech (山东木齐健康科技有限公司)</strong><br>
-   <em>National "Little Giant" High-Tech Enterprise | 13 Invention Patents in Solid-State Hydrogen & Functional Ceramics</em><br>
+   <em>Certified National High-Tech Enterprise | Independent Inventor of Core Patented Technologies (13 Invention Patents) in Solid-State Hydrogen & Functional Ceramics</em><br>
    🌐 <strong>Official Website:</strong> <a href="https://www.emuqi.com" target="_blank" rel="noopener">www.emuqi.com</a><br>
    🔬 <strong>H2 Wellness Hub:</strong> <a href="https://www.emuqi.com/h2-wellness-hub/" target="_blank" rel="noopener">www.emuqi.com/h2-wellness-hub/</a><br>
    ✉️ <strong>Technical Whitepapers & Inquiries:</strong> <a href="mailto:muqizb@gmail.com">muqizb@gmail.com</a></p>

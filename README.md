@@ -19,7 +19,7 @@
 **EMUQI** (`emuqi.com`) is a real-world, production-grade **AI-Native B2B global trade website & automation project**. It represents a new paradigm of enterprise web architecture and operational automation designed specifically for international B2B commerce.
 
 Entirely **built with AI Agents & OpenAI Codex**, this repository serves dual roles:
-1. **Production Storefront & Portal**: The official multilingual digital presence for **Shandong MUQI Health Technology Co., Ltd.** (a national "Little Giant" enterprise in solid-state hydrogen materials & functional ceramic media).
+1. **Production Storefront & Portal**: The official multilingual digital presence for **Shandong MUQI Health Technology Co., Ltd.** (a certified National High-Tech Enterprise in solid-state hydrogen materials & functional ceramic media).
 2. **Global Trade Automation Suite**: An open-source suite of embedded B2B micro-tools and operational workflows created to bridge critical friction points in international trade.
 
 ---

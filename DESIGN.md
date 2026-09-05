@@ -16,7 +16,7 @@ Previous: V2.0 — orange VI, navigation geometry fix, About redesign, Applicati
 **山东木齐健康科技有限公司 (MUQI Technology / MQ Health Tech)** — solid-state hydrogen materials company.
 
 - CEO: Martin Chen (Martin Chen), Tsinghua MBA, 20yr international trade
-- Founded 2011, national-level "专精特新小巨人" enterprise
+- Founded 2011, national-level "国家高新技术企业" enterprise
 - Core tech: ICR solid-state hydrogen sustained-release (vs SPE/PEM electrolysis — zero power, 18-24h half-life)
 - Product matrix: 吃·喝·洗·护·泡 (eat-drink-wash-care-bath)
 - 13 invention patents, 29 enterprise standards, 50+ test reports
