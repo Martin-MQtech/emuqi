@@ -2,7 +2,7 @@
 
 > **文档性质**: 项目唯一根控制指导手册 (Single Source of Truth)  
 > **管理方**: Martin Chen & ZCode / Antigravity AI Agent 协同运维小组  
-> **更新时间**: 2026-09-05 (V3.4 Contact B2B 询盘终端重构 + 泛女性健康技术专著三端全域发布 + SEO/GEO/AEO 协议全栈融合)  
+> **更新时间**: 2026-09-05 (V3.5 全域多渠道分发矩阵实战落地 + Substack 官方发刊 + LinkedIn 轮播 & First Comment 防降权 + X 串推 + Facebook 4图相册与 Group 垂直社群防重分发 SOP)  
 > **内容来源**: 已吸收合并五份企业档案（国际市场执行手册 v3.0 / 项目背景与产品服务汇总 v2.1 / 固态氢产品合规策略报告 PDF / 出海专栏全自动托管实战方案与避坑手册 v3.0 / 全站 SEO/GEO/AEO 协同标准规范）  
 > **精简原则**: 项目根目录下严禁创建多余、临时或重复的 `.md` 文件。所有背景、环境配置、部署 SOP、企业情报与重要里程碑统一收拢归档于本手册。
 
@@ -326,6 +326,18 @@ git push origin main   # 触发 GitHub Pages + Hostinger 双部署
 - **多渠道矩阵探索**：为打破单一渠道风控卡点，联合搭建了 **WordPress (`h2welltech.wordpress.com`) + DEV.to (`@chen_martin_f6f22118d1b92`) + Google Blogger (`h2welltech.blogspot.com`) + Substack (`h2welltech.substack.com`) + 独立静态站 (`blog.emuqi.com`)** 五位一体全域矩阵。
 - **创刊号发布与风控阻断**：Agent 完成创刊号 Issue #1《The Science of Molecular Hydrogen》中英双语撰写与排版，通过 API 直接推送 DEV.to 与 WordPress。因新号缺乏前台活跃轨迹且首文包含官网商业外链，瞬发触发海外 Anti-Sybil 反女巫与防垃圾模型，导致双平台新号被临时 Suspend / 挂起。
 - **双 Agent 协同沉淀与 SOP 闭环**：Google Antigravity 与 zCode 快速复盘封禁底层逻辑，沉淀**【黄金 48 小时养号与预热强制规范】**与**【一键申诉解封标准信件模版】**；2026-09-04 成功实现 WordPress 全网正式公开上线（`blog_public=1`），并收到 DEV.to 官方认可与承诺解封通道，全面升级为五大渠道全域统一管理资产总账（详见第 17 章）。
+
+### 9.8 全域内容分发矩阵实战大演练与社媒闭环 SOP 沉淀 (2026-09-05)
+- **多渠道分发大演练**：围绕《Solid-State Hydrogen vs. PEM Electrolysis》9 维度工程选型指南，全面跑通“木齐官网 Blog ↔ 海外权威专栏 ↔ 商务决策社交圈 ↔ 垂直行业社群”多维立体分发生态。
+- **Substack 官方专栏创设**：正式建立 `https://h2welltech.substack.com`，首发长文《Solid-State Hydrogen vs. PEM Electrolysis: A Buyer's Field Guide for Product Brands》，实现高质量图文交付与海外买家私域订阅沉淀。
+- **LinkedIn 领英 Document 宽屏轮播与 First Comment 锁位**：
+  - 研发 6 页 16:9 宽屏高清 PDF 手册（`Solid-State-vs-PEM-9-Dimension-Brand-Guide.pdf`）并以 Document 形式在 Martin Chen 个人领英动态发布（Activity URN: `7501969753985581056`）；
+  - 落地 **First Comment 核心防降权机制**：正文坚决不带外部商业外链，发帖 10 秒内在评论区发布外链引导并由作者点赞锁定置顶第一位。
+- **X (Twitter) 6-Tweet Thread 深度长串推**：在官方账号 `@MARTINPARK111` 发布 6 连推文，图文穿插拆解 ICR 微反应机理、18-24h 溶氢半衰期、品类赋能及选型决策树，尾推实现技术指南闭环。
+- **Facebook 个人主页多图相册与 6 大垂直 Group 精准分发**：
+  - 在 Martin Bin Chen 个人主页发布 4 张高清工程对比图相册，匹配针对中高层商业决策者的故事化深度文案；
+  - 渗透入驻的 6 大海外氢健康与电解设备核心社群（含 `Electrolyzed water hydrogen production equipment`、`Hydrogen Innovation` 等），前台验证实时上线；
+  - **沉淀社群防重复分发铁律与一键多选机制**：对比理清“发帖前置 `Share to groups` 一键多选”与“发帖后单选转推”的底层机理，建立已发白名单日志，坚决杜绝低级重复发帖。
 
 *本手册由 ZCode & Google Antigravity AI Agent 协同运维小组统一精炼维护，为全项目唯一指导手册。*
 
@@ -1045,7 +1057,7 @@ XML-RPC+AppPass 官方REST API   Blogger API/v3 极简专栏+EDM   GitHub Pages/
      ▼              ▼              ▼              ▼              ▼
 h2welltech.      dev.to/        h2welltech.    h2welltech.    blog.
 wordpress.com    chen_martin    blogspot.com   substack.com   emuqi.com
-(🟢全网已上线)  (🟡申诉跟进中) (🆕规划接入)   (⏳待建号)     (⏳待解析)
+(🟢全网已上线)  (🟡申诉跟进中) (🟢已接入在役) (🟢正式在役)   (⏳待解析)
 ```
 
 ### 17.3 五大渠道集中管理资产总账 (Master Channel Ledger)
@@ -1055,7 +1067,7 @@ wordpress.com    chen_martin    blogspot.com   substack.com   emuqi.com
 | **01** | **WordPress.com** | `https://h2welltech.wordpress.com` | **核心专栏阵地**：全球老牌 CMS，权重极高，支持 Gutenberg 块级学术排版 | XML-RPC 官方协议；用户 `muqizb`，App Password `qvbu qqnl pyku xajg`，Blog ID `256807876` | `wp_publisher.py` / XML-RPC 原生对接 | 中 | 🟢 **正式在役**。已发布 Issue #1（配 7 张高清图）、Issue #2；全站 Header/Footer/About 已完成去模板化深度定制。 |
 | **02** | **DEV.to** | `https://dev.to/chen_martin_f6f22118d1b92` | **极客技术社区**：全球开发者传播，纯学术机理/材料科研背书，Canonical 权威权重 | 官方 REST API；24 位专用 API Key (`AQRPoPn4D81VWwBBkeR9CBPi`) | `devto_publisher.py` (发文须经 `clean_devto_content()` 剥离商业外链) | 高 (严打商业回链) | 🟡 **7天暂时挂起**。官方已给出承诺合规即解封通道，回复信件已就绪 (§17.7.1)。 |
 | **03** | **Google Blogger** | `https://www.blogger.com` (专栏 ID: `6118056740258922715`) | **Google 生态核心**：Google 官方博客，秒级收录，与 GSC/AdSense 零阻碍共振 | Google Chrome 会话 / Mail-to-Blogger 秘密邮箱 / Blogger API v3；绑定 `muqizb@gmail.com` | `blogger_publisher.py` / 预制 HTML 极速通道 | 低 | 🟢 **已打通在役**。专栏名：`MQ Technology - Hydrogen health application development and supply chain`。3 篇历史博文锁定保留，前 3 期文章 HTML 预制就绪。 |
-| **04** | **Substack** | `https://h2welltech.substack.com` (规划) | **B2B 私域之王**：专栏沉淀+自动转为精美 Newsletter 群发推送到海外采购商邮箱 | Webhook / RSS / 无头免密邮件分发 | 邮件订阅直推 / 自动广播 | 零 (无外链封控) | ⏳ **待建号接入**。作为零风控、免人工 EDM 触达的核心私域资产。 |
+| **04** | **Substack** | `https://h2welltech.substack.com` | **B2B 私域之王**：专栏沉淀+自动转为精美 Newsletter 群发推送到海外采购商邮箱 | Webhook / 官方 Web 编排 / 邮件推送 | 邮件订阅直推 / 自动广播 | 零 (无外链封控) | 🟢 **正式在役**。已发布 Issue #2 固态氢 vs PEM 9 维度选型实战长文（含 4 大高精工程对比图表与 OEM 规格）。 |
 | **05** | **独立静态站** | `https://blog.emuqi.com` | **自主产权护城河**：100% 产权自主，全球 Cloudflare 极速 CDN，母站 `emuqi.com` 权重直接沉淀 | GitHub 仓库 (`Martin-MQtech`) + Cloudflare Pages 自动构建 | Git push 自动 CI/CD 部署 | 零 (绝对不可封禁) | ⏳ **待挂载二级域名**。作为永久性、不受任何第三方政策影响的终极备份。 |
 
 ### 17.4 专栏核心文章资产档案与发行日历
@@ -1298,5 +1310,139 @@ Account: @chen_martin_f6f22118d1b92
 #### 4. 全生命周期内链与站点地图闭环
 - 每篇新文章必须在 `emuqi/sitemap.xml` 顶层登记，配置 `priority: 0.9` 与即时 `lastmod`。
 - 必须同步更新 `emuqi/blog/index.html` 与 `emuqi/blog-list-hydrogen-health.html`，保持首屏展示最新成果。
+
+---
+
+## 19. 全域内容多渠道分发矩阵实战与社交媒体闭环 SOP (Social & Distribution SOP 2026-09-05)
+
+### 19.1 全域分发渠道矩阵全景图 (Cross-Platform Landscape)
+木齐科技（MQ TECH）已构建覆盖“官方私域权威中枢 ↔ 海外独立专栏 ↔ 主流商业决策社交 ↔ 垂直行业群组 ↔ 视听多媒体”的立体化分发体系，实现**一源多端、因地制宜、环环相扣**：
+
+```text
+                               【母站官方核心中枢】
+                      https://www.emuqi.com/blog/ (Blog 官方母版)
+                      https://www.emuqi.com/h2-wellness-hub/ (技术计算器与临床研究库)
+                                       │
+        ┌──────────────────────────────┼──────────────────────────────┐
+        ▼                              ▼                              ▼
+ 【第一圈层：权威专栏矩阵】    【第二圈层：商务社交与决策圈】    【第三圈层：垂直行业高价值社群】
+ • WordPress.com (Post 8, 10, 27) • LinkedIn (Document 轮播)      • Facebook Groups (氢健康/电解设备)
+ • Substack (h2welltech)          • X/Twitter (6-Tweet 串推)      • Reddit (r/Biohackers, r/WaterFilter)
+ • Google Blogger (3历史+新博文)   • Facebook (个人主页 4图相册)   • Medium / Quora
+ • DEV.to (极客学术背书)
+        │                              │                              │
+        └──────────────────────────────┼──────────────────────────────┘
+                                       ▼
+                       【第四圈层：视听多媒体与短视频】
+                       • YouTube (拆解长视频 + Shorts)
+                       • Instagram (视觉图文 + Reels)
+                       • TikTok (微反应实验 + 极速科普)
+```
+
+---
+
+### 19.2 Substack 官方科技专栏建立与 B2B 私域沉淀规范
+- **官方专栏主页**: `https://h2welltech.substack.com`
+- **定位与价值**: B2B 私域邮件之王。作为无外链审查封控、100% 触达海外采购商邮箱的终极内容蓄水池。
+- **首发案例 (Issue #2)**:
+  - 标题: *Solid-State Hydrogen vs. PEM Electrolysis: A Buyer's Field Guide for Product Brands*
+  - 线上链接: `https://h2welltech.substack.com/p/solid-state-hydrogen-vs-pem-electrolysis`
+  - 配图规范: 内嵌 4 张自研高精矢量对比图表（微观反应机理、半衰期曲线、衍生品类矩阵、决策选型树）。
+  - 转化闭环: 篇末提供完整的 9 维度参数总表、打样交付周期及 OEM 定制直联通道（`muqizb@gmail.com`）。
+
+---
+
+### 19.3 LinkedIn 领英 Document 轮播与 First Comment 防降权发布 SOP
+- **发布账号**: Martin Chen 个人认证账号（`Partner & CEO • MQ TECH`）
+- **发帖形态**: **PDF Document 轮播动态**（非普通图文或外部链接分享）。
+- **实战案例 (Activity URN: `7501969753985581056`)**:
+  - 文档载体: 6 页 16:9 宽屏高清专业 PDF（`Solid-State-vs-PEM-9-Dimension-Brand-Guide.pdf`）。
+  - 展现优势: 在 LinkedIn 信息流中直接呈现可左右滑动的交互式画册，停留时间（Dwell Time）大幅提升。
+- **First Comment 核心防降权机制 (Anti-Downranking Protocol)**:
+  1. **正文绝不包含外部链接**：LinkedIn 算法对正文带出站外链的动态有极高惩罚权重（降权约 50%~70% 曝光）；
+  2. **正文末尾设立指引锚点**：正文最后一行统一提示：`📖 Sourcing specs & 9-dimension comparison table linked in the first comment below.`；
+  3. **发帖后 10 秒内发布首评**：帖子一经发布，立即在评论区发送包含 Substack 与官网 Blog 链接的导读评论；
+  4. **作者自点 1 赞锁位**：作者用本账号给该条评论点赞，确保该评论始终锁定在所有读者可见的 Top #1 顶部位置。
+
+---
+
+### 19.4 X (Twitter) 深度长串推 (6-Tweet Thread) 编排规范
+- **官方推特账号**: `@MARTINPARK111`
+- **串推结构逻辑 (Thread Architecture)**:
+  - **Tweet 1 (Root Tweet)**: 抛出行业痛点与灵魂拷问（`https://x.com/MARTINPARK111/status/2096205622031319176`），引发制造端与品牌方共鸣；
+  - **Tweet 2 (电解痛点与机理)**: 配插图 Figure 1（电解 vs 固态催化微观机理对比图），剖析高 BOM 与锂电池认证门槛；
+  - **Tweet 3 (半衰期与留存优势)**: 配插图 Figure 2（18-24h 溶氢半衰期曲线），阐释 0 功耗与全天候恒定富氢；
+  - **Tweet 4 (品类衍生矩阵)**: 配插图 Figure 3（从便携杯到美妆敷贴的四大应用品类），展示耗材复购商业模式；
+  - **Tweet 5 (选型决策树)**: 配插图 Figure 4（品类选型决策矩阵），给出台式机用 PEM、便携/日化用固态氢的双轨战略；
+  - **Tweet 6 (Tail Tweet)**: 呼应主旨并引导至 Substack 与官网 Blog 完整专栏，提供 OEM 样件申请联络（`https://x.com/MARTINPARK111/status/2096206302544629791`）。
+
+---
+
+### 19.5 Facebook 商业决策者图文相册与 Group 垂直社群分发 SOP
+- **发布账号**: Martin Bin Chen 个人 Facebook 专页 (`https://www.facebook.com/martinchen2010/`)
+- **主帖链接**: `https://www.facebook.com/martinchen2010/posts/10165287579338162`
+- **内容形态**: **4 图高清相册 + 故事化商业长文**。针对 Facebook 平台 40+ 岁及海外中小企业主偏好的口吻，以“20 年行业老兵的技术真心话”切入。
+
+#### 19.5.1 Facebook 社群分发“发帖时多选 vs 发帖后单选转推”底层机理
+这是 Facebook 平台极为关键但常被忽略的交互机制，AI Agent 与运营者必须透彻掌握：
+
+| 阶段 | 操作路径 | 机制特征 | 适用场景 |
+|---|---|---|---|
+| **模式 A：发帖时预选<br>(Create Post 阶段)** | 编写主帖 → 传图 → 点 `Next` → 在 `Post settings` 中开启 **`Share to groups`** | **支持多选勾选框 (Checkboxes)**，可一次性勾选多个公开群组；点击 `Post` 同时向个人主页和所有选中群组群发。 | **全新内容发布时首选**。效率极高、零耗时、绝无漏发或重复发。 |
+| **模式 B：发帖后转推<br>(Post-publishing 阶段)** | 在已发布的帖子下方点击 **`Share` → `Group (Share to a group)`** | **单次单选转推**。每次只能点选一个群组，且允许为该群填写一段定制的同行分享导语。 | **补充定向分发时使用**。适合针对特定私密群或需针对性导语的细分场景。 |
+
+---
+
+### 19.6 垂直社群分发“严格防重 (Anti-Duplication)”与同行价值导向铁律
+在 Facebook、Reddit 等海外行业社群做分发，是获取精准 B2B 买家信任的最快途径，但也存在极高风控红线：
+
+1. **绝对防重原则 (Zero-Tolerance for Duplication)**:
+   - 严禁对同一社群进行二次重复投递！重复发布相同帖子在海外社群被视为“低级机器人垃圾营销（Low-tier Spamming）”，会导致帖子被删、账号被管理员禁言甚至踢出群组，严重损害 Martin Chen 与 MQ TECH 的专业声誉。
+   - **执行前必检**：分发前必须对照《已分发社群台账》，确认未曾向目标群组推送过同质内容。
+2. **同行价值先行，严禁叫卖 (Value-First, Non-Promotional Tone)**:
+   - 导语一律使用同行工程/学术研讨口吻，例如：  
+     *“Sharing an engineering field guide & 9-dimension comparison table comparing electric PEM electrolysis vs. solid-state catalytic hydrogen media (dissolved H2 retention half-life, reaction mechanisms, and form factor trade-offs). Hope this provides useful data and reference for fellow practitioners and researchers in the group!”*
+3. **首批已入驻并完成分发的 6 大高价值社群白名单档案 (2026-09-05)**:
+
+| # | 目标社群名称 | 社群 URL / 标识 | 性质 / 规模 | 状态 | 价值分析 |
+|:---:|:---|:---|:---:|:---:|:---|
+| **1** | **Electrolyzed water hydrogen production equipment** | `/groups/5667062716707164/` | 公开 (1.2K) | 🟢 **已上线并前台验证** | 100% 垂直重合（全球电解制氢与水处理设备厂商聚集地） |
+| **2** | **Hydrogen Innovation** | `/groups/1614850882046955/` | 公开群 | 🟢 **已上线并前台验证** | 探讨氢技术前沿与健康应用创新，高管活跃度高 |
+| **3** | **Hydrogen therapy, PEMF pain relief, body grounding** | `/groups/h2therapy/` | 私密 (4.4K) | 🟢 **已提交管理员审核** | 欧美理疗、抗衰诊所与替代医学从业者集中地 |
+| **4** | **Hydrogen Water Health** | `/groups/garybreckahydrogenwater/` | 公开群 | 🟢 **已提交发布** | 关注 Gary Brecka 及高浓度氢水健康应用的精准群体 |
+| **5** | **Hydrogen Water Heals UK** | `/groups/937997144147671/` | 公开群 | 🟢 **已提交发布** | 英国与西欧氢健康产品消费与渠道社群 |
+| **6** | **H2 Molecular Hydrogen and Alkaline Water** | 搜索直达 | 公开群 | 🟢 **已提交发布** | 分子氢与碱性水工程技术交流群 |
+
+> **待开拓群组备忘（防重库备选）**：`Molecular Hydrogen` (私密)、`Hydrogen water` (私密)、`Hydrogen is the answer` (私密)、`Alkaline Hydrogen Antioxidant Biocera WATER` (公开)。下次新主题文章发布时优先轮换使用。
+
+---
+
+### 19.7 品牌名称与高管身份全球统一规范（MQ TECH 纯净背书）
+为保证在所有海外渠道中传递出高度专业、统一、国际化的企业形象，所有文案严守以下规范：
+1. **企业与品牌名称**：
+   - 统一使用 **MQ TECH** 或 **山东木齐 (MQ Health Tech / MUQI Technology)**；
+   - 严禁出现「淄博木齐」等地方性口径。
+2. **高管官方署名规范**：
+   - 统一使用 **Martin Chen, CEO • MQ TECH** 或 **Martin Chen, Partner & CEO / General Manager & Chief Materials Engineer**；
+   - **严禁体现个人学历等刻意标签（如 Tsinghua MBA、NBA 等），保持纯粹的材料科学家、资深制造业专家与技术领军人形象**；
+   - 严格使用英文名 Martin Chen，严禁出现中文名「陈滨」。
+3. **联络通道统一锚点**：
+   - 官方邮箱：`muqizb@gmail.com`
+   - 官方主站：`https://www.emuqi.com`
+   - 商务直连：`+86-13964416725` (WhatsApp)
+
+---
+
+### 19.8 视听与短视频平台结合规划 (Next-Gen Multi-Media Roadmap)
+后续专栏内容将进一步结合视频形式，实现“文字+图表+实拍动态演示”的全域引流：
+1. **YouTube (`@MQTECH-Hydrogen`)**:
+   - **长视频 (Long-form)**: 5~10 分钟深度工程拆解（如《实测对比：PEM 便携杯 vs 固态氢材料水质留存 24 小时延时摄影》）；
+   - **YouTube Shorts**: 60 秒硬核微反应实验，展示 $MgH_2$ 遇水剧烈产生纳米微气泡过程。
+2. **Instagram (`@mqtech_hydrogen`)**:
+   - **Feed 视觉**: 高质感微观材料扫描电镜图、高净值生活方式及 SPA 水疗应用场景；
+   - **Reels 短视频**: 欧美受众偏好的极简护肤、日常便携水素水杯冲泡展示。
+3. **TikTok (`@mqtech_wellness`)**:
+   - **痛点反差与科普**: “你买的几百美金电解富氢水杯，为什么几个小时就漏光了？”、“0 电力、0 充电的黑科技水质瓷球怎么工作？”。
+
 
 
