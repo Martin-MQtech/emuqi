@@ -695,7 +695,17 @@ AEO 与 SEO、GEO 的本质区别：
 5. **图表完整性**：正文中的所有架构图、数据图与实验实拍图必须置入独立卡片容器，绝不擅自删减。
 
 ### 12.4 博文页面标准组件层次 (Mandatory Component Hierarchy)
-1. **标准全功能导航 `<header>`**：继承主站 Home, Products, Applications, Solutions, Blog, H2 Hub, Store, Contact 下拉菜单；
+1. **标准全功能导航 `<header>`**：继承主站 8 大核心导航槽位。**严禁随意自创中文文案**，中文页与英文页必须严格遵循下表权威映射（Single Source of Truth）：
+   | 槽位 (Slot) | 英文文案 (EN) | 中文文案 (ZH) | 核心链接目标 (Canonical Target) | 下拉菜单 / 子菜单规范 (Dropdown Items) |
+   |---|---|---|---|---|
+   | 1 | Home | **首页** | `index.html` / `index.html#about` | 首页 / 关于木齐 |
+   | 2 | Products | **核心材料** | `product-functional-ceramic-materials.html` | 富氢陶瓷球 / MACA 抗菌合金球 / MPH+ 冷凝水中和颗粒 |
+   | 3 | Applications | **应用方案** | `hydrogen-health-application.html` | 便携固态氢水杯 / 弱碱性富氢水包 / 陶瓷富氢压片 / 净水机富氢滤芯 / 富氢足浴泡腾片 |
+   | 4 | Solutions | **解决方案** | `solutions-hydrogen-agriculture.html` | 氢农业与全产业链方案 |
+   | 5 | Blog | **技术博客** | `blog/index.html` (EN) / `blog-list-hydrogen-health.html` (ZH) | 行业洞察与前沿文献解读 |
+   | 6 | H2 Wellness Hub | **氢健康观察** | `/h2-wellness-hub/` (EN) / `/h2-wellness-hub/zh/` (ZH) | 全球产业观察与案例库（**严禁写成“体验中心”**） |
+   | 7 | Store | **样品商城** | `store.html` (类名: `nav-store`) | B2B 样品采购与快速寄样 |
+   | 8 | Contact | **联系我们** | `contact-mqtech-hydrogen-health.html` (类名: `nav-contact`) | 商务洽谈与合作 |
 2. **Hero Banner**：真实大图 + 渐变蒙版 + 极简元数据（`Published: Date · By: Martin · Category · Time`），**严禁在 Hero 居中放置突兀的语言切换胶囊**；
 3. **核心摘要盒**：首屏高质感 Key Takeaways / 写在前面；
 4. **结构化正文**：数据指标卡 + 序号圆点 + 呼吸感行高 (1.9) + 核心材料超链接；
