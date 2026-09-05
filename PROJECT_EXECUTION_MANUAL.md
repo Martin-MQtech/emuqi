@@ -734,6 +734,62 @@ AEO 与 SEO、GEO 的本质区别：
    - 检查项：嵌入图片数量 == 原文实拍数量；图片说明 == 事实真相；语言属性 == 100% 纯净。
    - 必须在完成全盘自检后方可交付并推送到生产服务器。
 
+### 12.7 延伸传播渠道全景规范：外部专栏作为官网博客延伸的统一法则 (Extended Channels as Blog Projections)
+
+> **核心认知**：第三方传播渠道与外部独立专栏（WordPress、Google Blogger、DEV.to、Substack、Medium 等），**在本质上全部是木齐官网博客（emuqi.com/blog）的星系化延伸（Satellite Projections）**。其战略使命是为母站捕获全域长尾流量、沉淀全球 AI 实体引用，并构建高权重的反向外链支柱。一切外部发文必须受控于本手册的统一规范，严禁作为孤立账户脱靶运行。
+
+#### 1. 品牌身份与主体信息不可违背的双铁律 (Identity Ironclads)
+1. **企业名称唯一标准**：中文统一规范为「**山东木齐健康科技有限公司**」（英文：`Shandong MUQI Health Technology Co., Ltd.` / `MQ Health Tech`）。**全网所有外部专栏、页脚、签名栏及社交媒体严禁使用「淄博木齐」**。
+2. **创始人称谓铁律**：对外统一且严格使用英文「**Martin Chen**」（或 Martin）。**严禁在任何外部博文正文、作者栏、元数据、Schema、社交账号或版权声明中出现中文名「陈滨」**。
+3. **产研数据事实锚定**：中国淄博先进陶瓷产业创新园、13 项发明专利、国家级专精特新“小巨人”、SAC/TC621 委员单位、8,000 吨年产能、1,800+ 全球品牌客户。
+
+#### 2. 视觉资产与配图工程标准 (Visual Asset Standards)
+1. **母站绝对 CDN 托管机制（母体直连）**：
+   - 外部专栏（WordPress、Blogger、DEV.to 等）文章内嵌入的所有插图与多媒体，**必须 100% 引用 emuqi.com 绝对 CDN 链接**（格式：`https://www.emuqi.com/assets/images/...`）；
+   - 严禁使用第三方临时图床、本地临时路径或低清压缩图；
+   - **战略价值**：确保全球 CDN 毫秒级极速渲染，同时确保每一张外域抓取的图片都天然带有木齐官网域名的权威实体指纹。
+2. **单篇旗舰博文核心配图金字塔（5 大层级，拒绝粗糙与 AI 假图）**：
+   - **层级 1：Hero 顶部科研宽幅大图**（16:9，深色科技渐变蒙版，严禁使用廉价蜂窝网格假图）；
+   - **层级 2：科学机理/微反应信息图**（系统阐述分子生物学机制或材料释氢原理，如 2 Da 穿透、ROS 清除、Nrf2 通路、ICR vs PEM 对比）；
+   - **层级 3：微观工业实拍与材料微距**（功能陶瓷微孔球颗粒、高倍显微照片、产线实景）；
+   - **层级 4：落地应用品类矩阵**（四大应用场景、Eat/Drink/Wash/Care/Soak 全产业链全景）；
+   - **层级 5：国家级权威背书凭证**（SAC/TC621 委员单位铜牌、发明专利证书、SGS 报告）。
+3. **中英文图文严格对齐机制**：
+   - 双语博文中，图表与正文语言必须绝对纯净对应；英文博文中的信息图必须全部使用矢量英文字标与说明，严禁中英文混乱穿插；图号（Figure 1, Figure 2）与上下文逻辑必须严密咬合。
+
+#### 3. 外部专栏去模板化与页脚/签名栏标准 (Anti-Template & Footer Hygiene)
+1. **严禁保留平台默认占位假数据**：
+   - 任何新建博客系统（如 WordPress FSE 块级模板）初始自带的假地址（旧金山等）、假电话、假邮箱或占位文案，必须在发布首篇文章前彻底清洗清空；
+2. **外部专栏 4 栏式深色科技页脚标准**：
+   - **Column 1（品牌背书）**：山东木齐科技企业介绍、SAC/TC621 国标委委员单位资质；
+   - **Column 2（全球生态导航）**：直达 `emuqi.com` 国际母站、`H2 Wellness Hub` 产业案例库、技术选型矩阵；
+   - **Column 3（产研中心与产能）**：中国淄博先进陶瓷产业园总部、年产 8,000 吨级产能、SGS NSF/ANSI 42、RoHS、REACH 合规；
+   - **Column 4（商务直通对接）**：Martin Chen 直通对接、官方邮箱 `muqizb@gmail.com`、商务热线 / WhatsApp `+86 139 6441 6725`；
+   - **版权声明**：`© 2026 Shandong MQ Health Technology Co., Ltd. (山东木齐健康科技有限公司) & Martin Chen · All Rights Reserved`。
+3. **正文末尾标准发布背书块（Publisher Blockquote）**：
+   - 每篇外部博文末尾必须附带标准签名引用块：
+   ```html
+   <blockquote class="wp-block-quote">
+   <p><strong>Published by MQ Health Tech (山东木齐健康科技有限公司)</strong><br>
+   <em>National "Little Giant" High-Tech Enterprise | 13 Invention Patents in Solid-State Hydrogen & Functional Ceramics</em><br>
+   🌐 <strong>Official Website:</strong> <a href="https://www.emuqi.com" target="_blank" rel="noopener">www.emuqi.com</a> | <a href="https://www.imuqi.cn" target="_blank" rel="noopener">www.imuqi.cn</a><br>
+   🔬 <strong>H2 Wellness Hub:</strong> <a href="https://www.emuqi.com/h2-wellness-hub/" target="_blank" rel="noopener">www.emuqi.com/h2-wellness-hub/</a><br>
+   ✉️ <strong>Technical Whitepapers & Inquiries:</strong> <a href="mailto:muqizb@gmail.com">muqizb@gmail.com</a></p>
+   </blockquote>
+   ```
+
+#### 4. 顶栏导航与分类标签统一约定 (Navigation Consistency)
+1. 外部专栏顶栏必须严格对齐官网博文与 H2 Hub 的信息架构，严禁随意自创不规范标签：
+   - `Home` (首页) -> 链接至博客主页或母站；
+   - `About` (关于我们) -> 链接至专属创始人 Martin Chen 与企业资质单页（`/about/`）；
+   - `Explore H2 Hub →` (高亮胶囊按钮) -> 直通全球氢健康观察中枢。
+2. 标签与分类统一规范（Single Source of Taxonomy）：
+   - `Hydrogen Biology` (氢分子生物学)
+   - `Materials Science` (功能陶瓷与固态材料)
+   - `Technology Comparison` (技术选型指南)
+   - `Product Applications` (应用场景与消费品)
+   - `Standardization` (行业标准与学术论文)
+
 ---
 
 ## 🤖 第 13 章：木齐科技 AEO（Agent Engine Optimization）与 WebMCP 智能体协议规范 (SSOT)
@@ -991,29 +1047,37 @@ wordpress.com    chen_martin    blogspot.com   substack.com   emuqi.com
 
 ### 17.3 五大渠道集中管理资产总账 (Master Channel Ledger)
 
-| 渠道序号 | 渠道名称 | 站点 URL / 标识 | 核心定位与价值 | 访问协议与鉴权凭据 | 自动化发布引擎 | 风控等级 | 当前状态 (2026-09-04) |
+| 渠道序号 | 渠道名称 | 站点 URL / 标识 | 核心定位与价值 | 访问协议与鉴权凭据 | 自动化发布引擎 | 风控等级 | 当前状态 (2026-09-05) |
 |:---:|:---|:---|:---|:---|:---|:---:|:---|
-| **01** | **WordPress.com** | `https://h2welltech.wordpress.com` | **核心专栏阵地**：全球老牌 CMS，权重极高，支持 Gutenberg 块级学术排版 | XML-RPC 官方协议；用户 `muqizb`，App Password `qvbu qqnl pyku xajg`，Blog ID `256807876` | `wp_publisher.py` (主通道 XML-RPC，备通道 Post by Email) | 中 | 🟢 **100% 解封且全网正式公开在役 (`blog_public=1`)**。首发文章免登完全可见。 |
+| **01** | **WordPress.com** | `https://h2welltech.wordpress.com` | **核心专栏阵地**：全球老牌 CMS，权重极高，支持 Gutenberg 块级学术排版 | XML-RPC 官方协议；用户 `muqizb`，App Password `qvbu qqnl pyku xajg`，Blog ID `256807876` | `wp_publisher.py` / XML-RPC 原生对接 | 中 | 🟢 **正式在役**。已发布 Issue #1（配 7 张高清图）、Issue #2；全站 Header/Footer/About 已完成去模板化深度定制。 |
 | **02** | **DEV.to** | `https://dev.to/chen_martin_f6f22118d1b92` | **极客技术社区**：全球开发者传播，纯学术机理/材料科研背书，Canonical 权威权重 | 官方 REST API；24 位专用 API Key (`AQRPoPn4D81VWwBBkeR9CBPi`) | `devto_publisher.py` (发文须经 `clean_devto_content()` 剥离商业外链) | 高 (严打商业回链) | 🟡 **7天暂时挂起**。官方已给出承诺合规即解封通道，回复信件已就绪 (§17.7.1)。 |
-| **03** | **Google Blogger** | `https://h2welltech.blogspot.com` (规划) | **Google 生态核心**：Google 亲儿子，秒级爬取与收录，终身零成本抗风控，与 GSC/AdSense 无缝共振 | Google Blogger API v3 / OAuth 2.0 / Post by Email；绑定 `muqizb@gmail.com` | `blogger_publisher.py` (规划接入) / ego-browser 会话发布 | 低 | 🆕 **已纳入统一资产管理总账**，作为 Google 搜索自然权重的关键落脚点。 |
+| **03** | **Google Blogger** | `https://www.blogger.com` (专栏 ID: `6118056740258922715`) | **Google 生态核心**：Google 官方博客，秒级收录，与 GSC/AdSense 零阻碍共振 | Google Chrome 会话 / Mail-to-Blogger 秘密邮箱 / Blogger API v3；绑定 `muqizb@gmail.com` | `blogger_publisher.py` / 预制 HTML 极速通道 | 低 | 🟢 **已打通在役**。专栏名：`MQ Technology - Hydrogen health application development and supply chain`。3 篇历史博文锁定保留，前 3 期文章 HTML 预制就绪。 |
 | **04** | **Substack** | `https://h2welltech.substack.com` (规划) | **B2B 私域之王**：专栏沉淀+自动转为精美 Newsletter 群发推送到海外采购商邮箱 | Webhook / RSS / 无头免密邮件分发 | 邮件订阅直推 / 自动广播 | 零 (无外链封控) | ⏳ **待建号接入**。作为零风控、免人工 EDM 触达的核心私域资产。 |
 | **05** | **独立静态站** | `https://blog.emuqi.com` | **自主产权护城河**：100% 产权自主，全球 Cloudflare 极速 CDN，母站 `emuqi.com` 权重直接沉淀 | GitHub 仓库 (`Martin-MQtech`) + Cloudflare Pages 自动构建 | Git push 自动 CI/CD 部署 | 零 (绝对不可封禁) | ⏳ **待挂载二级域名**。作为永久性、不受任何第三方政策影响的终极备份。 |
 
-### 17.4 创刊号 Issue #1 资产档案与 6 期专栏选题日历
-1. **创刊号 Issue #1 资产定位**：
-   - **标题**：*The Science of Molecular Hydrogen: How Biological Antioxidant Mechanisms & Solid-State Materials Are Redefining Modern Wellness*
-   - **DEV.to 发布源文件 (Markdown)**：`20260601 MQ TECH 国际业务/20260708 MQ TECH 国际市场市场划分/devto_issue_01.md`
-   - **WordPress 发布源文件 (Gutenberg HTML)**：`20260601 MQ TECH 国际业务/20260708 MQ TECH 国际市场市场划分/issue_01.html`
-   - **核心内容**：系统拆解分子氢三大生物学优势（选择性清除高毒性自由基 ·OH/ONOO⁻、宇宙最小分子无障碍穿透线粒体/血脑屏障、激活 Nrf2 内源抗氧化通路），对比传统 SPE/PEM 电解与木齐 ICR 免插电固态氢材料（负电位 -300~-600mV、微孔缓释、SGS/微生物安全认证），锁定功能净水、加氢中药护肤、氢泡腾浴片三大落地场景。
-2. **前 6 期专栏选题运营日历**：
-   | 期数 | 主题 (Article Title) | 核心受众与商业价值 |
-   | :---: | :--- | :--- |
-   | **Issue #1** | *The Science of Molecular Hydrogen: How Biological Antioxidant Mechanisms & Solid-State Materials Are Redefining Modern Wellness* | 创刊重磅，建立学术与技术双重壁垒（已全网发布上线） |
-   | **Issue #2** | *Selective ROS Scavenging: Understanding Cellular Protection at the Mitochondrial Level* | 氢生物学机理，面向医疗/营养/大健康品牌方 |
-   | **Issue #3** | *Solid-State Hydrogen vs. Electrolysis: A 5-Point Comparative Study* | 技术对比，面向水处理设备与滤芯采购商 |
-   | **Issue #4** | *Micro-Porous Ceramic Balls in Water Filtration: Negative ORP Explained* | 水瓷工艺与水质矿化，面向东南亚/欧美净水商 |
-   | **Issue #5** | *Hydrogen-Infused Cosmeceuticals: Transdermal Absorption & Anti-Aging* | 美妆护肤与加氢中药，面向海外护肤品 OEM 客户 |
-   | **Issue #6** | *International Safety Standards: SGS, Heavy Metal & Biosafety Compliance* | 安全报告，消除海外进口买家合规顾虑 |
+### 17.4 专栏核心文章资产档案与发行日历
+1. **已发行/就绪核心文章资产清单**：
+   - **Issue #1（创刊号·顶配视觉重构版）**：
+     - **标题**：*The Science of Molecular Hydrogen: How Biological Antioxidant Mechanisms & Solid-State Materials Are Redefining Modern Wellness*
+     - **状态**：已在 WordPress 上线（Post ID 8），内嵌 7 张高精度专业图表（2 Da 分子量穿透机制图、微孔陶瓷微观照片、技术对比、四大落地品类、SAC/TC621 委员单位铜牌）。
+     - **源文件**：`issue_01.html` / `update_post_01.py`。
+   - **Issue #2（品牌方技术选型实战指南）**：
+     - **标题**：*Solid-State Hydrogen vs. PEM Electrolysis: A Buyer's Field Guide for Product Brands*
+     - **状态**：已在 WordPress 正式发布（Post ID 10），内嵌反应机理对比、便携杯 vs 台式机、四大衍生品类图。
+     - **源文件**：`issue_02.html` / `emuqi/blog/hydrogen-water-technology-comparison-en.html`。
+   - **Issue #3（学术前沿深度解码）**：
+     - **标题**：*Hydrogen-Rich Water Meets Plant Protein: An IF 8.5 Study on Green Modification*
+     - **状态**：Blogger 同步专用富文本 HTML 已就绪，包含 4 张学术原版图表。
+     - **源文件**：`issue_03.html` / `emuqi/blog/hydrogen-water-plant-protein-green-modification-en.html`。
+2. **专栏选题推进日历**：
+   | 期数 | 主题 (Article Title) | 核心定位与商业价值 | 发行状态 |
+   | :---: | :--- | :--- | :---: |
+   | **Issue #1** | *The Science of Molecular Hydrogen & Solid-State Materials* | 创刊重磅，建立学术与技术双重壁垒 | 🟢 WordPress 已上线 (Post 8) |
+   | **Issue #2** | *Solid-State Hydrogen vs. PEM Electrolysis: A Buyer's Field Guide* | 9 维度工程对比，赋能全球消费品品牌方决策 | 🟢 WordPress 已上线 (Post 10) |
+   | **Issue #3** | *Hydrogen-Rich Water in Plant Protein Modification (IF 8.5)* | 学术前沿背书，开启食品加工与绿色工业新赛道 | 🟢 Blogger 就绪 (`issue_03.html`) |
+   | **Issue #4** | *Micro-Porous Ceramic Balls in Water Filtration: Negative ORP Explained* | 水瓷工艺与水质矿化，面向全球净水厂商 | ⏳ 规划中 |
+   | **Issue #5** | *Hydrogen-Infused Cosmeceuticals: Transdermal Absorption & Anti-Aging* | 美妆护肤与加氢中药，面向海外护肤品 OEM 客户 | ⏳ 规划中 |
+   | **Issue #6** | *International Safety Standards: SGS, Heavy Metal & Biosafety Compliance* | 安全报告与认证背书，消除海外进口买家顾虑 | ⏳ 规划中 |
 
 ### 17.5 分渠道差异化内容合规清洗机制 (Content Sanitization Rules)
 不同海外平台定位截然不同，**严禁使用同一份带商业促销性质的稿件盲目全网多发**。AI Agent 在分发前必须根据目标渠道自动执行内容清洗策略：
@@ -1070,7 +1134,7 @@ GitHub: Martin-MQtech
 Account: @chen_martin_f6f22118d1b92
 ```
 
-#### 17.7.2 WordPress.com 全自动上线实操复盘 (ego-browser 穿透落地)
+#### 17.7.2 WordPress.com 全自动上线实操复盘 (ego-browser 穿透落地与视觉/UI重构)
 2026-09-04 23:42，Agent 通过 **ego-browser** 完成全流程自动化破障：
 1. **会话桥接**：通过 CDP 注入本地已认证的 WordPress 管理员 Cookie，免除一切人机验证与密码交互；
 2. **直达阅读设置**：直接进入 `wp-admin/options-reading.php`；
@@ -1078,26 +1142,38 @@ Account: @chen_martin_f6f22118d1b92
    - 自动点击 `button[aria-label="Skip purchase and continue with h2welltech.wordpress.com"]` 跳过域名售卖；
    - 自动点击 `button` “start with a free plan” 绕过付费方案拦截；
 4. **验证落地**：`blog_public = 1`，公网免登无障碍阅读彻底生效。
+5. **2026-09-05 专栏顶配视觉与去模板化深度重构**：
+   - **创刊号 Issue #1 顶配视觉重构**：通过 XML-RPC 深度注入 7 张高精度专业图表（2 Da 分子量穿透机制信息图、微反应机理对比、微孔陶瓷显微实拍、四大落地品类矩阵、SAC/TC621 委员单位铜牌与专利），彻底解决原博文无配图问题（Post ID: 8）；
+   - **Issue #2 正式发布**：*Solid-State Hydrogen vs. PEM Electrolysis: A Buyer's Field Guide for Product Brands*（Post ID: 10），内嵌三大技术对比图；
+   - **全站 FSE 模板去模板化**：重构 Header（新增 `Explore H2 Hub →`）、重构 Hero Banner（深色科技渐变）、重构 4 栏式深色 Footer（彻底清除旧金山假地址/假电话，注入山东木齐官方背书与 Martin Chen 商务直连）、重构独立 `/about/` 页面，删除无用占位博文 `Hello World!`。
 
 #### 17.7.3 Google Blogger 渠道接入与自动化发文指南
-1. **账号归属**：与 Google 官方账号 (`muqizb@gmail.com`) 统一绑定；
-2. **API 自动化接入 (Google Blogger API v3)**：
-   - 在 Google Cloud Console 启用 **Blogger API v3**；
-   - 创建 Service Account 或 OAuth 2.0 Client ID，配置发文作用域 `https://www.googleapis.com/auth/blogger`；
-   - 通过 Python 客户端 `google-api-python-client` 实现一键发文与 HTML 渲染；
-3. **备用免 API 通道 (Post by Email)**：
-   - 在 Blogger 后台【设置】→【电子邮件】中，生成专属发布邮箱（如 `muqizb.secretWord@blogger.com`）；
-   - 通过本地 SMTP 脚本（如已有的 `send_hr_email.py` / `send_vip163.py`）发送邮件，主题即标题，邮件内容即博客正文，实现完全免风控自动化发文。
+1. **账号归属与专栏档案**：
+   - 绑定 Google 官方账号：`muqizb@gmail.com`；
+   - 专栏博客 ID：`6118056740258922715`；
+   - 专栏名称：`MQ Technology - Hydrogen health application development and supply chain`；
+2. **存量历史博文资产保护铁律**：
+   - 专栏内现存的 3 篇历史博文（2026-01-02、2026-01-03、2026-01-05）**属于既有数字资产，严格维持原貌，绝不覆盖、修改或删除**；
+   - 所有新文章全部以增量方式按顺序发布。
+3. **双发布通道规范**：
+   - **通道 A：预制 HTML 极速发布通道**：
+     已在 `20260601 MQ TECH 国际业务/20260708 MQ TECH 国际市场市场划分/` 预制生成 3 篇标准富文本 HTML（`issue_01.html`, `issue_02.html`, `issue_03.html`）。在已登录的 Chrome 标签页点击 `+ 新建博文`，切换到 `HTML 视图` 一键粘贴发布；
+   - **通道 B：Mail-to-Blogger 自动化秘密发信通道**：
+     在 Blogger 后台【设置】→【电子邮件】中配置发布邮箱（如 `muqizb.secretWord@blogger.com`）并写入 `blogger_config.json`，运行 `blogger_publisher.py` 通过邮件 SMTP 协议实现零鉴权、零风控、免人工的全自动发布。
+4. **配图绝对 CDN 托管标准**：所有 Blogger 文章插图统一引用 `https://www.emuqi.com/assets/images/...`，确保全球极速加载与母站权重沉淀。
 
 ### 17.8 生产级自动化发布引擎资产清单
 位于 `20260601 MQ TECH 国际业务/20260708 MQ TECH 国际市场市场划分/`：
 - `wp_publisher.py`：WordPress 专栏发布引擎，支持 XML-RPC 官方协议（主）与 Post by Email 秘密发信（备）双通道；**2026-09-04 联通在役**；
 - `wp_config.json`：存储站点 URL (`https://h2welltech.wordpress.com`)、用户名 (`muqizb`)、Application Password (`qvbu qqnl pyku xajg`)、Blog ID (`256807876`) 及秘密发文邮箱 (`ciwe647goze@post.wordpress.com`)；
+- `blogger_publisher.py`：Google Blogger 专属自动化发布引擎，支持 Mail-to-Blogger 秘密发信与 API v3 双通道；**2026-09-05 构建就绪**；
+- `blogger_config.json`：存储 Google 账号 (`muqizb@gmail.com`)、Blog ID (`6118056740258922715`) 及发信配置；
 - `devto_publisher.py`：DEV.to 全球科技社区 REST API 发布引擎，支持原生 Markdown、数学公式、对比表格与 canonical_url 自动注入；
 - `devto_config.json`：存储 24 位标准 API Key (`AQRPoPn4D81VWwBBkeR9CBPi`) 与规范主站地址 (`https://www.emuqi.com`)；
-- `publish-article.mjs`：基于 Chrome Cookie 与 Playwright 的无头静默发布脚本，位于 `~/.opencode/`，可作为社交媒体与第三方平台的备用发布器。
+- `update_post_01.py`：WordPress 创刊号 Issue #1 顶配视觉升级专用脚本（7 大图表 XML-RPC 直推）；
+- `update_about_page.py`：WordPress `/about/` 单页权威档案与创始人履历自动化推送脚本。
 
-### 17.9 执行复盘、Agent 分工与全景时间线 (2026-09-04 更新)
+### 17.9 执行复盘、Agent 分工与全景时间线 (2026-09-05 更新)
 
 #### 17.9.1 事件全景推进时间线
 | 时间 | 责任主体 | 动作 | 结果 |
@@ -1111,6 +1187,11 @@ Account: @chen_martin_f6f22118d1b92
 | 2026-09-04 23:28 | DEV.to 官方 | 官方回复邮件：确认属 Section 11 暂时挂起 1 周，承诺遵守规则即可解除 | 🟡 **获得解封通道**，承诺邮件模板就绪 |
 | 2026-09-04 23:42 | Antigravity (主) | 采用 **ego-browser** 模拟人工会话桥接，全自动执行 Launch Site、跳过商业加购、选取免费方案 | 🟢 **WordPress 全网公开上线完成 (`blog_public=1`)**，Issue #1 全文免登无障碍阅读验证通过 |
 | 2026-09-04 23:46 | 指挥官 / Antigravity | 统一矩阵大升级：将 Google Blogger 纳为核心矩阵，升级为**“五位一体”统一管理资产总账** | 🟢 **五大渠道资产总账、差异化风控策略与一源多发管线正式确立** |
+| 2026-09-05 12:45 | Antigravity | 通过 XML-RPC 发布 Issue #2（选型实战指南）至 WordPress | 🟢 **Post ID 10 正式上线**，含 3 张高精度工程图 |
+| 2026-09-05 12:55 | Antigravity | 重构 Issue #1 并编写图文升级脚本，植入 7 张高精度图表 | 🟢 **Post ID 8 视觉升级完成**，彻底告别纯文本 |
+| 2026-09-05 13:00 | Antigravity | WordPress FSE 全站去模板化：定制 Header、Footer、Home Hero 与 About 页面，彻底清除假数据 | 🟢 **WordPress 独立专栏品牌化达成**，完全对齐 emuqi.com 调性 |
+| 2026-09-05 13:20 | Antigravity | Google Blogger 专栏 (ID: 6118056740258922715) 锁定 3 篇历史博文，预制生成 3 篇独立富文本 HTML | 🟢 **Blogger 发布管线就绪**，双通道打通 |
+| 2026-09-05 13:33 | Antigravity | 全网品牌规范整肃：确立「山东木齐」与「Martin Chen」双铁律，清洗全站 43 页面与国际资产库 | 🟢 **全域身份唯一性与纯净度 100% 达成** |
 
 #### 17.9.2 Agent 权责分工确认
 - **Antigravity Agent**：本次出海矩阵搭建与自动化发布的**主操作方**，负责账号创建、Python 引擎调用、文章排版、API 调度、ego-browser 穿透自动化上线及手册全面升级。User-Agent 标识为 `MQTech-AI-Publisher/2.0`。
@@ -1119,11 +1200,11 @@ Account: @chen_martin_f6f22118d1b92
 
 #### 17.9.3 后续作战计划与执行路径
 1. **DEV.to 解封收尾**：在收到官方通知的邮箱中点击回复，发送 §17.7.1 承诺信，跟进解除 7 天暂挂；
-2. **WordPress.com 稳步排期**：专栏主页及首发文章已正式全网无障碍阅读；按照 §17.4 选题日历，通过 `wp_publisher.py` 稳步推进后续 Issue #2~#6，保持 48 小时间隔；
-3. **Google Blogger 与 Substack 拓展**：
-   - 建立 `h2welltech.blogspot.com`，接入 Google Blogger API，承接 Google 搜索自然流量；
-   - 建立 `h2welltech.substack.com`，沉淀 B2B 海外买家邮件私域订阅池；
-4. **一源多端统一分发调度**：编写 `matrix_publisher.py`，实现一份 Markdown 源文经过差异化清洗后，一键并行分发至各大渠道。
+2. **WordPress.com 稳步排期**：专栏主页及已发文章（Issue #1, Issue #2）稳定运营，保持 48 小时间隔稳步推进后续选题；
+3. **Google Blogger 同步上线**：
+   - 保护 3 篇历史存量博文；
+   - 通过极速 HTML 通道或 Mail-to-Blogger 通道陆续同步 Issue #2, Issue #3, Issue #1；
+4. **一源多端统一分发调度**：严格遵循 §12.7 延伸传播渠道统一规范，实现一份母站博客源文，高保真、去模板化辐射至各大卫星平台。
 5. **资产归档统一路径**：所有发布引擎代码、配置文件、Issue #1 源文件统一保存在：
    `~/Documents/2026 BUSINESS MTRIX /20260601 MQ TECH 国际业务/20260708 MQ TECH 国际市场市场划分/`
 
