@@ -30,13 +30,18 @@ if article_match:
 else:
     article_body = full_html
 
-# Convert relative image URLs to absolute CDN URLs
+# Convert relative image URLs to absolute CDN URLs cleanly
 article_body_cdn = article_body.replace(
+    'https://www.emuqi.com/https://www.emuqi.com/',
+    'https://www.emuqi.com/'
+).replace(
     '../assets/images/blog/steamer/',
     'https://www.emuqi.com/assets/images/blog/steamer/'
-).replace(
-    'assets/images/blog/steamer/',
-    'https://www.emuqi.com/assets/images/blog/steamer/'
+)
+# Fix any double domain if original already had https://www.emuqi.com/
+article_body_cdn = article_body_cdn.replace(
+    'https://www.emuqi.com/https://www.emuqi.com/',
+    'https://www.emuqi.com/'
 )
 
 # Publisher blockquote standard (§12.7)

@@ -1515,3 +1515,33 @@ Account: @chen_martin_f6f22118d1b92
     - **后续跟进**：
       - Reddit 客服/自动化审核系统将在处理后解除该 8 个月老账号的误封标记；
       - 解封后，`identity.redditor.profile` 将自动恢复挂载，Display Name (`Martin Chen`) 与 Bio 即可正常生效。
+
+---
+
+## 🏛️ 第 14 章：官网技术博客严格时间倒序与封面视觉工程规范 (2026-09-06 SSOT)
+
+> **生效日期**：2026-09-06  
+> **核心指示**：用户明确指示“所有博客文章必须严格按照最新时间倒序排列，后来发布的排在最前；核对全站封面图，彻底纠正第二篇博文封面图不对的问题”。
+
+### 14.1 官网博客全栈绝对时间倒序矩阵 (Descending Chronological Matrix)
+中英双语博客列表（`emuqi/blog/index.html` 与 `emuqi/blog-list-hydrogen-health.html`）必须保持严格的物理发布时间倒序排列，新发文章必须置于列表最前部，严禁中间插队或倒挂：
+
+| 顺位 | 发布日期 | 英文标题 (EN) | 中文标题 (ZH) | 专属核准封面图路径 | 视觉属性与防裁切说明 |
+|:---:|:---:|---|---|---|---|
+| **#1** | **2026-09-06** | The 'Nespresso Moment' for Beauty Hardware: Solid-State H2 Steamer | 熏蒸仪的“胶囊咖啡机”时刻：大功率热雾设备零改电升级分子氢 | `assets/images/blog/steamer/hero-steamer-concept.png` | 16:9 奢华科技 3D 渲染，热雾与分子氢微生态，卡片 16:10 完美居中 |
+| **#2** | **2026-09-05** | Molecular Hydrogen & Microecological Therapy: Female Health Resilience | 分子氢医学与微生态疗法：女性生殖道健康韧性专题研报 | `assets/images/blog/female-health/hero-h2-dissolving-tablet.jpg` | 16:9 高清微距实拍，富氢泡腾片水中溶氢气泡流，纯净医学质感 |
+| **#3** | **2026-09-04** | Hydrogen-Rich Water as a Green Modification Tool for Plant Protein | 当富氢水遇见植物蛋白：一篇 IF 8.5 论文把氢应用推远一步 | `assets/images/blog/hydrogen-water-protein/cover-plant-protein-hrw.jpg` | 16:9 绿色生化实验室实景，磁力搅拌器与火麻仁蛋白微气泡（彻底替换原竖版海报上下截断瑕疵） |
+| **#4** | **2026-09-03** | Solid-State Hydrogen vs. PEM Electrolysis: Buyer's Field Guide | 固态氢 vs 质子膜电解：品牌方技术选型实战指南 | `assets/images/blog/hydrogen-water-comparison/hero-solid-state-vs-pem.jpg` | 16:9 工业级实拍大片：左侧高透玻璃杯固态氢球微孔释氢，右侧 PEM 电解电极室发光（彻底废弃原切掉半边的带字 SVG 矢量图） |
+| **#5** | **2026-08-31** | Honoring Gary Brecka's Hydrogen Water Wave | 致敬 Gary Brecka 氢水科普热潮：免插电固态氢新材料生态 | `assets/images/blog/gary-brecka/gary-brecka-hydrogen-composite.jpg` | 官方播客演播室暗调肖像与参数标头 |
+| **#6** | **2026-08-29** | MUQI Tech Joins SAC/TC621 as Sole Ceramic Ball Member | 国家级标准破局：木齐科技成为抗菌陶瓷球唯一入选 SAC/TC621 单位 | `assets/images/blog/sac-tc621/sac-tc621-cover-card.jpg` | 国家标委会大会现场官方铜牌实拍原图 |
+| **#7** | **2026-08-25** | Why a Tiny Ceramic Ball Became Appliance Giants' Secret Weapon | 一颗不起眼的陶瓷球，凭什么成了家电与净水大厂的“秘密武器”？ | `assets/images/blog/antimicrobial-ceramic-balls/maca-kdf-1.png` | SGS 认证与 MACA-KDF 抗菌微孔陶瓷球微距原片 |
+| **#8** | **2026-07-13** | The Next Big Opportunity for Patch Factories: Why Hydrogen Patches? | 膏药贴牌大厂新风口：为什么必须布局固态氢敷贴？ | `assets/images/hydrogen-patch/hydrogen-patch-1.jpg` | 固态氢经皮渗透贴剂工业实物 |
+
+### 14.2 封面图片重构与纠错复盘（彻底杜绝封面截断与错位）
+1. **彻底解决“第二篇博文（固态氢 vs PEM 对比）封面不对”根因**：
+   - **历史失误溯源**：此前在部分卡片中引入了 `cover-solid-state-vs-pem.svg`，该矢量图包含密集的左右排版文本与文字标签。在响应式 16:10 容器以及各平台 CDN 缓存中，右侧 PEM 部分被强行截断，仅露出左半侧与切开的 "VS"，视觉残缺严重；
+   - **工程根治动作**：全站所有博客卡片（中英文双语）统一换用 `hero-solid-state-vs-pem.jpg`——画面纯净、无任何冗余文字干扰、左固态氢球产气与右 PEM 电解槽对称呼应，与卡片下方的标题形成完美的图文互补；同时将底层的 `.png` 衍生图亦全量覆盖为该实景无损大片。
+2. **植物蛋白研报封面重构**：
+   - 原 `hero-research-paper.jpg` 为 2:3 纵向期刊版面，置于卡片横框中上下文字严重削顶削底；
+   - 本次全新生成 16:9 横版科技大片 `cover-plant-protein-hrw.jpg`，展现纯净高分子绿色生化实验场景，完美适配卡片。
+3. **单源管理原则**：本轮修正全程维护《项目执行手册》（SSOT），严禁产生任何多余临时 `.md` 文件，保证项目根目录纯净有序。
