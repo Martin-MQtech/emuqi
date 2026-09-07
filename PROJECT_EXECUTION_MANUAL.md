@@ -1643,5 +1643,24 @@ Account: @chen_martin_f6f22118d1b92
   5. **JSON-LD Schema 结构化数据确权 (Entity Graph)**：
      - `Person` (@id: `https://www.emuqi.com/#author-martin`) 与 `Organization` 结构化数据中注入 `"url": "https://martinbinchen.github.io/"`，并将 `https://martinbinchen.github.io/` 纳入 `sameAs` 权威社交身份映射数组。
 
+---
+
+### 15.7 Google Search Console (GSC) 索引编制诊断排查与全栈提速方案 (2026-09-07)
+- **诊断溯源 (GSC 实测数据复盘)**：
+  - 用户在 Google Search Console（`https://www.emuqi.com/`）后台发现 4 种状态：
+    1. **网页会自动重定向 (1 个)**：`https://www.emuqi.com/blog` 自动 301 重定向至 `https://www.emuqi.com/blog/`，属正常规范化逻辑；
+    2. **备用网页（有适当的规范标记）(1 个)**：`https://www.emuqi.com/index.html` 遵从 canonical 标签将权重归并至根目录 `https://www.emuqi.com/`，属标准 SEO 规范；
+    3. **已抓取 - 尚未编入索引 (1 个)**：通常为标有 `noindex` 的 `404.html` 错误拦截页，爬虫评估后不编入属正常；
+    4. **已发现 - 尚未编入索引 (127 个)**：**关键焦点**。所有 URL 的“上次抓取日期”均为【不适用】，证明 Googlebot 已经发现这批 URL 但因新站配额与队列排期，**尚未实际爬取它们**。
+- **两项核心技术隐患彻底根治**：
+  1. **清除 Sitemap 中的 404 死链**：
+     - 发现并彻底剔除了原 `sitemap.xml` 和 `llms.txt` 中已废弃的 `h2-wellness-hub/tools.html` 和 `zh/tools.html` 死链；
+     - 补全了 5 个漏掉的正式学术与案例页面（`research-database.html`、`enterprise-archive.html` 等），更新后全站 104 个核心页面 100% 连通（HTTP 200 OK，0 死链）。
+  2. **清除站内 17 篇博文社交分享链接中的 non-www 域名**：
+     - 修复了 17 篇博文在 WhatsApp, Telegram, Pinterest, TikTok, Weibo, Instagram 分享中携带的 `https://emuqi.com/` 裸域，统一纠偏为规范的 `https://www.emuqi.com/`，杜绝 301 重定向对爬虫预算的空耗。
+- **GSC 站长主动提速 SOP (Break Crawl Queue Bottleneck)**：
+  1. **重新提交站点地图**：在 GSC「站点地图」处重新输入 `sitemap.xml` 提交；
+  2. **核心支柱页面主动请求编入索引**：在 GSC 顶部「网址检查」栏逐一输入前 10 大核心 URL（首页、About Us、Contact、3大核心产品、博客首页及最新研报），点击「请求编入索引」，打破被动等待，触发 Googlebot 在 24-48 小时内极速抓取。
+
 
 
