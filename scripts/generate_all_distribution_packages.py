@@ -61,7 +61,7 @@ shutil.copy(os.path.join(DIST_DIR, "blogger_steamer_post.html"), os.path.join(bl
 with open(os.path.join(blogger_dir, "README.md"), "w", encoding="utf-8") as f:
     f.write("""# 03 - Google Blogger 官方专栏
 
-- **专栏地址**: `https://h2welltech.blogspot.com`
+- **专栏地址**: `https://h2well.blogspot.com`
 - **专栏全称**: MQ Technology - Hydrogen health application development and supply chain
 - **专栏 ID**: `6118056740258922715`
 - **定位**: Google 官方博客系统，秒级收录，与 GSC / Google Discover 零阻碍共振。
@@ -660,7 +660,7 @@ master_guide = """# 木齐科技大功率氢气熏蒸仪升级：全域 13 大�
 |---|:---:|:---|:---|:---|:---:|
 | **第一圈层：权威专栏矩阵** | **01** | **WordPress.com** | `https://h2welltech.wordpress.com` | `01_WordPress/post_content.html` | 🟢 **已实时在线发布 (Post ID: 30)** |
 | | **02** | **Substack** | `https://h2welltech.substack.com` | `02_Substack/newsletter_draft.md` | 📦 **完整 Newsletter 邮件排版就绪** |
-| | **03** | **Google Blogger** | `https://h2welltech.blogspot.com` | `03_Google_Blogger/blogger_rich_post.html` | 📦 **富文本 HTML / Mail 通道就绪** |
+| | **03** | **Google Blogger** | `https://h2well.blogspot.com` | `03_Google_Blogger/blogger_rich_post.html` | 📦 **富文本 HTML / Mail 通道就绪** |
 | | **04** | **DEV.to** | `https://dev.to/chen_martin_f6f22118d1b92` | `04_DEV_to/devto_clean_engineering.md` | 📦 **去商业化极客学术技术稿就绪** |
 | **第二圈层：商业决策圈** | **05** | **LinkedIn (领英)** | `Martin Chen (Partner & CEO)` | `05_LinkedIn/linkedin_post_and_first_comment.md` | 📦 **Document轮播文案+First Comment防降权就绪** |
 | | **06** | **X (Twitter)** | `@MARTINPARK111` | `06_Twitter_X/twitter_6_tweet_thread.md` | 📦 **6-Tweet 深度长串推文案全套就绪** |

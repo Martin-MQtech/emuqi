@@ -323,7 +323,7 @@ git push origin main   # 触发 GitHub Pages + Hostinger 双部署
 - **执行方式**：EGO 浏览器 `muqi-ego-test` 隔离验证快照与 SEO 长度校验 → GitHub `Martin-MQtech/emuqi` 提交 → Hostinger + GitHub Pages 双部署
 
 ### 9.7 出海科技专栏多渠道矩阵搭建与冷启动风控复盘 (2026-08-18 ~ 09-04)
-- **多渠道矩阵探索**：为打破单一渠道风控卡点，联合搭建了 **WordPress (`h2welltech.wordpress.com`) + DEV.to (`@chen_martin_f6f22118d1b92`) + Google Blogger (`h2welltech.blogspot.com`) + Substack (`h2welltech.substack.com`) + 独立静态站 (`blog.emuqi.com`)** 五位一体全域矩阵。
+- **多渠道矩阵探索**：为打破单一渠道风控卡点，联合搭建了 **WordPress (`h2welltech.wordpress.com`) + DEV.to (`@chen_martin_f6f22118d1b92`) + Google Blogger (`h2well.blogspot.com`) + Substack (`h2welltech.substack.com`) + 独立静态站 (`blog.emuqi.com`)** 五位一体全域矩阵。
 - **创刊号发布与风控阻断**：Agent 完成创刊号 Issue #1《The Science of Molecular Hydrogen》中英双语撰写与排版，通过 API 直接推送 DEV.to 与 WordPress。因新号缺乏前台活跃轨迹且首文包含官网商业外链，瞬发触发海外 Anti-Sybil 反女巫与防垃圾模型，导致双平台新号被临时 Suspend / 挂起。
 - **双 Agent 协同沉淀与 SOP 闭环**：Google Antigravity 与 zCode 快速复盘封禁底层逻辑，沉淀**【黄金 48 小时养号与预热强制规范】**与**【一键申诉解封标准信件模版】**；2026-09-04 成功实现 WordPress 全网正式公开上线（`blog_public=1`），并收到 DEV.to 官方认可与承诺解封通道，全面升级为五大渠道全域统一管理资产总账（详见第 17 章）。
 
@@ -1252,7 +1252,7 @@ Account: @chen_martin_f6f22118d1b92
 3. **右侧 Tier 2：“先研习、后联系”知识与专栏矩阵 (Research Before You Reach Out)**：
    - 设立 6 大平台权威内容卡片，引导客户先阅读深度研究再发起商洽：
      - **WordPress.com**: `https://h2welltech.wordpress.com`（固态氢材料学与 PEM 对比专著）
-     - **Google Blogger**: `https://h2welltech.blogspot.com`（植物蛋白绿色改性与应用指南）
+     - **Google Blogger**: `https://h2well.blogspot.com`（植物蛋白绿色改性与女性健康微生态）
      - **Substack**: `https://h2welltech.substack.com`（B2B 采购决策简报）
      - **DEV.to**: `https://dev.to/chen_martin_f6f22118d1b92`（微孔陶瓷材料化学笔记）
      - **Medium / Quora**: `https://medium.com/@muqizb` / Quora: `https://www.quora.com/profile/Martin-Chen-169`（CEO • MQ TECH 国际版问答主页）
@@ -1582,4 +1582,20 @@ Account: @chen_martin_f6f22118d1b92
     2. `contact-mqtech-hydrogen-health.html` 的头部 JSON-LD 结构化数据 `sameAs` 数组；
     3. `scripts/deep_audit_report.json` 自动化审计基线；
     4. 《项目执行手册》（SSOT）全网分发档案台账。
+
+### 15.4 Google Blogger 官方博客地址确权与多平台统一 (Google Blogger URL Correction)
+- **误写与报错溯源**：
+  - 用户在访问 `https://h2welltech.blogspot.com/` 时出现 Blogger 官方“找不到博客，抱歉，您要找的博客不存在”提示；
+  - **根因确诊**：此前在梳理出海专栏矩阵时，因 WordPress (`h2welltech.wordpress.com`) 与 Substack (`h2welltech.substack.com`) 均带有 `tech` 后缀，类比推导将 Blogger 误写成了 `h2welltech.blogspot.com`；
+  - **真实确权资产**：Martin Chen 实际已在 Google Blogger 注册并持续运营的官方博客域名为：  
+    👉 **`https://h2well.blogspot.com`**（不带 `tech`）  
+    - **Blog ID**: `6118056740258922715`  
+    - **专栏全称**: *MQ Technology - Hydrogen health application development and supply chain*  
+    - **最新已发专著**: *The Convergence of Molecular Hydrogen Medicine and Microecological Therapy*（`https://h2well.blogspot.com/2026/01/blog-post.html`）  
+    - **网络状态**: `HTTP/2 200 OK`，实测访问秒开。
+- **全栈修复动作**：
+  1. `contact-mqtech-hydrogen-health.html` Tier 2 Matrix Card 链接全量更正为 `https://h2well.blogspot.com`；
+  2. `distribution_packages/03_Google_Blogger/README.md` 与分发脚本全量更新；
+  3. **品牌保护建议**：Blogger 提示“可以注册域名 h2welltech”，建议用户后续可在 Blogger 后台顺手将 `h2welltech.blogspot.com` 也注册占位，实现全矩阵统一防御。
+
 

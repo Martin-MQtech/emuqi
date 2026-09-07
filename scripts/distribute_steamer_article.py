@@ -5,7 +5,7 @@ Multi-channel distribution engine for MUQI Solid-State Hydrogen Steamer Upgrade
 Distributes to:
   1. WordPress.com (h2welltech.wordpress.com) via XML-RPC
   2. Substack (h2welltech.substack.com) Newsletter ready Markdown
-  3. Google Blogger (h2welltech.blogspot.com) Rich HTML
+  3. Google Blogger (h2well.blogspot.com) Rich HTML
   4. DEV.to / Medium sanitized technical Markdown
 """
 
