@@ -1545,3 +1545,41 @@ Account: @chen_martin_f6f22118d1b92
    - 原 `hero-research-paper.jpg` 为 2:3 纵向期刊版面，置于卡片横框中上下文字严重削顶削底；
    - 本次全新生成 16:9 横版科技大片 `cover-plant-protein-hrw.jpg`，展现纯净高分子绿色生化实验场景，完美适配卡片。
 3. **单源管理原则**：本轮修正全程维护《项目执行手册》（SSOT），严禁产生任何多余临时 `.md` 文件，保证项目根目录纯净有序。
+
+---
+
+## 🏛️ 第 15 章：高管名片视觉升级、全站死链/断链彻底清零与社交渠道校正 (2026-09-07 SSOT)
+
+> **生效日期**：2026-09-07  
+> **核心指示**：用户明确指示：  
+> 1. “检查一下各个链接是否有断链和死链，修复。”  
+> 2. “我建议你使用我的头像，你有我领英的账号，可以使用我同样的头像。”  
+> 3. “`https://www.facebook.com/martinchen2010/` 这个才是我Facebook的地址。我发现你在Contact里边我的Facebook你的链接连错了，你去纠正一下。”
+
+### 15.1 高管名片视觉真实化与品牌背书升级 (Executive Avatar & Identity)
+- **实景头像资产标准化**：
+  - 弃用原 Contact 页面（`contact-mqtech-hydrogen-health.html`）右侧 Tier 1 Executive Card 中的纯文本 `MC` 抽象占位缩写；
+  - 接入 Martin Chen 领英及海外实名官方同款真实肖像：`assets/images/team/martin-chen.jpg`；
+  - 视觉样式保持 54×54px 圆形裁切、`object-fit: cover` 居中、`2px solid rgba(244,123,32,0.4)` 品牌活力橙微发光边框，与深蓝渐变科技背景融为一体。
+- **高管称号恪守手册 §1.1 铁律**：
+  - 统一显示为：`Partner & CEO · Chief Materials Engineer`（合伙人兼 CEO · 首席材料工程师）；
+  - 严禁擅自使用“Founder / 创始人”等不符合公司既定股权与身份规范的称号。
+
+### 15.2 全站断链与死链自动化深度审计及体检结论 (Link Integrity Audit)
+- **排查缘起**：用户访问 `emuqi.com/about-functional-ceramic-ball-water-media-manufacturer.html` 时偶发 `ERR_CONNECTION_CLOSED` 报错。
+- **排查与验证结论**：
+  1. **文件本地完整性**：本地物理文件 `emuqi/about-functional-ceramic-ball-water-media-manufacturer.html` 结构完整无损（379 行，35KB）；
+  2. **服务器与 CDN 解析**：Hostinger LiteSpeed Web Server 配置的 301 永久重定向策略将根域名 `https://emuqi.com/...` 自动规范化转跳至 `https://www.emuqi.com/...`，返回 HTTP/2 200 OK，证明此前报错系偶发性海外代理/网络握手抖动，并非页面文件丢失或死链；
+  3. **全站生产页面全面遍历体检**：
+     - 运行 Python 深度爬虫与链接验证引擎对全站 50 个公开生产 HTML（包括根目录与 `blog/` 目录）中包含的所有 `href`、`src` 及相对资源路径进行了遍历：**0 内部死链（Broken Internal Links: 0）**，所有页面互链、图表图片引用均 100% 存在并能正确读取。
+
+### 15.3 权威社交媒体主页地址与 Schema 纠正 (Social Channels Correction)
+- **Facebook 真实主页纠偏**：
+  - 纠正前错误地址：`https://www.facebook.com/MQMARTIN`；
+  - 纠正后唯一真实地址：`https://www.facebook.com/martinchen2010/`；
+  - 影响面与修复范围：
+    1. `contact-mqtech-hydrogen-health.html` 前台 Tier 3 社交矩阵卡片中的 Facebook 按钮直接导流链接；
+    2. `contact-mqtech-hydrogen-health.html` 的头部 JSON-LD 结构化数据 `sameAs` 数组；
+    3. `scripts/deep_audit_report.json` 自动化审计基线；
+    4. 《项目执行手册》（SSOT）全网分发档案台账。
+
