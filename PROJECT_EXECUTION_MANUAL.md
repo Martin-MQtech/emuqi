@@ -1662,5 +1662,24 @@ Account: @chen_martin_f6f22118d1b92
   1. **重新提交站点地图**：在 GSC「站点地图」处重新输入 `sitemap.xml` 提交；
   2. **核心支柱页面主动请求编入索引**：在 GSC 顶部「网址检查」栏逐一输入前 10 大核心 URL（首页、About Us、Contact、3大核心产品、博客首页及最新研报），点击「请求编入索引」，打破被动等待，触发 Googlebot 在 24-48 小时内极速抓取。
 
+---
+
+### 15.8 多搜索引擎（Bing / Yandex / DuckDuckGo / Yahoo / Naver / GEO）同类型收录全盘核对与 IndexNow 极速推送 (2026-09-07)
+- **多引擎收录同类型问题核对结论**：
+  1. **Bing & Yahoo & DuckDuckGo (Microsoft 阵营)**：
+     - Bing Webmaster Tools 曾通过 GSC OAuth 导入，使用的是与 Google 相同的 `sitemap.xml`。因此此前 Sitemap 中的 2 个 404 死链（`tools.html`）和博文中的 non-www 裸域同样影响到了 Bing 的爬取健康度；
+     - 随着我们修复 `sitemap.xml` 和清洗 non-www，Bing 的爬取隐患已被彻底清除；
+     - **升级根治武器**：微软官方已正式废弃旧版 `/ping?sitemap=` 接口（返回 HTTP 410），全面推行 **IndexNow 协议**。我们已为官网生成专属 IndexNow 验证密钥并部署到根目录，可直接绕过爬虫排队，向 Bing 极速推送全部 104 个核心 URL。
+  2. **Yandex (俄语区及中亚/东欧市场)**：
+     - Yandex Webmaster 已通过 HTML Meta 标签 `b0823e1f9716551d` 确权。Yandex 同样支持 IndexNow，并且读取相同的 `sitemap.xml`，本次修复同步受益。
+  3. **GEO 生成式 AI 引擎 (Perplexity / ChatGPT / Claude / Applebot)**：
+     - 排查了 `llms.txt`（修复了 2 个历史废弃死链 `hub.html` 和 `tools.html`，对齐最新活跃端点）；
+     - `robots.txt` 保持全量放行（GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Applebot 均 `Allow: /`）；
+     - 全站 106 个 HTML 文件的 Schema.org JSON-LD 语法校验 100% 通过（0 错误）。
+  4. **IndexNow 基础设施与极速推送管道**：
+     - 密钥文件：`https://www.emuqi.com/531ba2233ce04366bbfc10fa232651b5.txt`；
+     - 推送脚本：`scripts/submit_indexnow.py`（同时向 IndexNow 官方中枢 `api.indexnow.org` 与微软 `bing.com/indexnow` 提交全部 104 个页面）。
+
+
 
 
