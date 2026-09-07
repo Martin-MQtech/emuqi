@@ -1598,4 +1598,20 @@ Account: @chen_martin_f6f22118d1b92
   2. `distribution_packages/03_Google_Blogger/README.md` 与分发脚本全量更新；
   3. **品牌保护建议**：Blogger 提示“可以注册域名 h2welltech”，建议用户后续可在 Blogger 后台顺手将 `h2welltech.blogspot.com` 也注册占位，实现全矩阵统一防御。
 
+### 15.5 Contact 页面全量链接与地址体检台账、缓存治理与实测验证 (2026-09-07)
+- **排查缘由**：用户反馈在 `https://www.emuqi.com/contact-mqtech-hydrogen-health.html` 前台仍看到旧版内容（未见头像和 Blogger 地址更新）。
+- **技术排查确诊**：
+  1. **服务器端状态**：Hostinger LiteSpeed CDN 早在 08:37 已部署完成最新版本。使用无缓存 Playwright 无头浏览器与 curl 对线上生产站实时抓取，确认 HTML 中早已包含 `<img src="assets/images/team/martin-chen.jpg">` 和 `https://h2well.blogspot.com/`，且头像加载状态为 `complete: True (naturalWidth: 400px)`，实景渲染完美；
+  2. **客户端本地缓存**：由于此前访问过旧版页面，用户本地 Chrome 浏览器命中 Memory/Disk Cache，未能及时请求最新 CDN 源。
+- **全方位防御与优化动作**：
+  1. **防缓存注入**：在 `<head>` 中添加 `Cache-Control: no-cache, no-store, must-revalidate`、`Pragma: no-cache`、`Expires: 0`；在头像资源追加版本号 `assets/images/team/martin-chen.jpg?v=20260907v2`；
+  2. **全页链接与地址全量深度体检与增强**：
+     - **总部地址交互化**：高管卡片与页脚中的总部物理地址（*Block B, Innovation Park, 125 Liuquan Road, Zibo, Shandong, China*）均挂载了可点击直达 Google Maps 的标准导航链接；
+     - **电话直拨**：页脚电话统一升级为可点击的 `tel:+8613964416725`；
+     - **Blogger 权威对齐**：卡片与外链全部对齐 `https://h2well.blogspot.com/`，文案对齐女性健康微生态与绿色植物蛋白专著；
+     - **DEV.to 404 换代为 Quora**：鉴于 DEV.to 新号处于申诉期返回 404，卡片替换为 Martin Chen 官方 Quora 问答主页 (`https://www.quora.com/profile/Martin-Chen-169`)，彻底清零外链 404；
+     - **Reddit 链接指向垂直社区**：原 `reddit.com/submit` 升级为氢分子垂直社区 `https://www.reddit.com/r/HydrogenWater/`；
+     - **页脚社交矩阵**：补齐 Facebook 官方主页图标直链，版权域名从 `emuqi.com` 规范化为 `www.emuqi.com`。
+
+
 
