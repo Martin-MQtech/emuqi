@@ -34,9 +34,11 @@ ORG_SCHEMA = {
         "name": "National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621) / 全国抗菌表面性能标准化技术委员会 (SAC/TC621)"
     },
     "sameAs": [
+        "https://martinbinchen.github.io/",
         "https://www.linkedin.com/company/72043164",
         "https://x.com/MARTINPARK111",
-        "https://www.youtube.com/@Martinchen1234"
+        "https://www.youtube.com/@Martinchen1234",
+        "https://www.facebook.com/martinchen2010/"
     ]
 }
 
@@ -44,9 +46,18 @@ PERSON_SCHEMA = {
     "@type": "Person",
     "@id": "https://www.emuqi.com/#author-martin",
     "name": "Martin Chen",
-    "alternateName": ["Martin"],
-    "jobTitle": "Founder & CEO",
+    "alternateName": ["Martin", "陈滨", "Martin Bin Chen"],
+    "jobTitle": "Partner & CEO · Chief Materials Engineer",
     "worksFor": {"@id": "https://www.emuqi.com/#organization"},
+    "url": "https://martinbinchen.github.io/",
+    "image": "https://www.emuqi.com/assets/images/team/martin-chen.jpg",
+    "sameAs": [
+        "https://martinbinchen.github.io/",
+        "https://www.linkedin.com/in/martin-bin-chen",
+        "https://x.com/MARTINPARK111",
+        "https://www.facebook.com/martinchen2010/",
+        "https://www.quora.com/profile/Martin-Chen-169"
+    ],
     "hasCredential": [
         {
             "@type": "EducationalOccupationalCredential",

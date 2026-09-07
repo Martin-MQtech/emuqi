@@ -1613,5 +1613,35 @@ Account: @chen_martin_f6f22118d1b92
      - **Reddit 链接指向垂直社区**：原 `reddit.com/submit` 升级为氢分子垂直社区 `https://www.reddit.com/r/HydrogenWater/`；
      - **页脚社交矩阵**：补齐 Facebook 官方主页图标直链，版权域名从 `emuqi.com` 规范化为 `www.emuqi.com`。
 
+---
+
+### 15.6 Martin Chen GitHub 官方个人学术网页 (martinbinchen.github.io) 权威融入与全站双向闭环 (2026-09-07)
+- **资产确权与背景分析**：
+  - **个人网页地址**：👉 **`https://martinbinchen.github.io/`**
+  - **内容与定位**：Martin Chen (陈滨) 个人官方 Academic & Executive Bio 门户。
+    - 权威履历：合伙人兼 CEO（Partner & CEO · Chief Materials Engineer）、20+ 年材料研发与跨国贸易实战、37 项国家授权专利（15 项核心发明专利）；
+    - 教育学术背书：清华大学经管学院 MBA (2013–2016)、美国里士满大学 Robins 商学院访问学者 (2015–2016)、山东大学生物学理学士；
+    - 行业标准制定者：全国抗菌表面性能标准化技术委员会 (SAC/TC621) 首届委员；
+    - **双向锚定闭环 (Bidirectional Entity Authority)**：`martinbinchen.github.io` 原生包含指向 `https://www.emuqi.com` 的主链接。本次在官网反向嵌入个人主页，彻底打通 Google Knowledge Graph 与 AI 搜索的闭环实体确权（EEAT Closed Loop）。
+- **官网核心融入点位设计与部署**：
+  1. **Contact 页面 Tier 1 高管直联核心卡片 (`contact-mqtech-hydrogen-health.html`)**：
+     - 在高管通道列表（原仅有 LinkedIn / WhatsApp / Email）新增第四项交互通道：
+       - 标题：`Executive Bio & Tech Portfolio`
+       - 副标：`martinbinchen.github.io`
+       - 标签：`GitHub Portal ↗`（黑底科技青色微光角标）
+       - 链接：`https://martinbinchen.github.io/`
+  2. **Contact 页面 Tier 3 全球社交矩阵网格 (`contact-mqtech-hydrogen-health.html`)**：
+     - 在 LinkedIn、YouTube、X、Instagram、TikTok、Reddit、Facebook 网格后追加专属 `GitHub Site` 按钮，展示 GitHub 官方矢量 Octocat 图标与 `Martin Bin Chen` 署名。
+  3. **About Us 页面高管领航专栏 (`about-functional-ceramic-ball-water-media-manufacturer.html`)**：
+     - 在 PRO GEO 信任区下方全新植入 **Executive Leadership Spotlight** 旗舰板块：
+       - 左侧：Martin Chen 真实高清肖像（配品牌活力橙边框与 `Verified` 认证标签）；
+       - 右侧：高管职称（`Partner & CEO · Chief Materials Engineer`）、清华 MBA / 里士满学者 / SAC/TC621 委员身份介绍；
+       - 数据矩阵：37+ 项授权专利、20+ 年行业深耕、清华经管 MBA、SAC/TC621 标委会；
+       - 行动按钮：`Visit Martin's GitHub Site ↗`（高亮直通按钮）与 `LinkedIn Profile ↗` 及联系直联。
+  4. **全站页脚社交矩阵 (Footer Global Links)**：
+     - 在 Contact 与 About Us 页面页脚社交图标中补充 `GH` 徽标直链（带 `title="Martin Chen Personal Portal"`）。
+  5. **JSON-LD Schema 结构化数据确权 (Entity Graph)**：
+     - `Person` (@id: `https://www.emuqi.com/#author-martin`) 与 `Organization` 结构化数据中注入 `"url": "https://martinbinchen.github.io/"`，并将 `https://martinbinchen.github.io/` 纳入 `sameAs` 权威社交身份映射数组。
+
 
 
