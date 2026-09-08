@@ -276,11 +276,13 @@ Confirmed dimensions (measured via CDP JavaScript):
 4. Store uses class `nav-store` with orange bottom accent.
 5. Contact uses class `nav-contact` with deep navy background and 16px left margin.
 6. `white-space: nowrap` on `H2 Wellness Hub` and other long labels.
+7. Language selector uses container `.nav-lang-wrap` and trigger `.nav-lang-btn` with globe icon, current language, chevron arrow, and extensible deep navy dropdown (`.nav-lang-menu`). Supports current English (`/`) and Chinese (`/zh/`), plus future language expansion slots without layout shifts.
 
 Default link state: `#4a4a5a` on the metallic gray header (`linear-gradient(180deg,#f2f3f5 0%,#e9eaec 100%)`).  
 Hover/active state: deep navy `#0a1628` background with white text.  
 Contact default: `#0a1628`; Contact hover: `#1a3a6e`.  
-Store default: semi-transparent white with orange bottom border; Store hover: deep navy with orange bottom border.
+Store default: semi-transparent white with orange bottom border; Store hover: deep navy with orange bottom border.  
+Language default: semi-transparent white (`rgba(255,255,255,.52)`) with dark text and globe SVG; Language hover: deep navy `#0a1628` with white text, rotating chevron, and cyber blue `#38bdf8` globe icon.
 
 ### 3.6 Dropdowns
 
