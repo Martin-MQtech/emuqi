@@ -13,6 +13,23 @@ RewriteRule ^ https://www.emuqi.com%{REQUEST_URI} [L,R=301]
 RewriteCond %{REQUEST_URI} !^/baidu_verify_ [NC]
 RewriteCond %{HTTP_HOST} ^emuqi\.com$ [NC]
 RewriteRule ^ https://www.emuqi.com%{REQUEST_URI} [L,R=301]
+
+# 3) Chinese Content Migration — 301 Permanent Redirects to /zh/ Branch
+RewriteRule ^blog-list-hydrogen-health\.html$ /zh/blog/ [R=301,L]
+RewriteRule ^solid-state-hydrogen-vs-pem-electrolysis-zh\.html$ /zh/solid-state-hydrogen-vs-pem-electrolysis.html [R=301,L]
+
+# Chinese Flagship Blog Posts Migration
+RewriteRule ^blog/solid-state-hydrogen-foot-spa-consumables\.html$ /zh/blog/solid-state-hydrogen-foot-spa-consumables.html [R=301,L]
+RewriteRule ^blog/solid-state-hydrogen-facial-steamer-upgrade\.html$ /zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html [R=301,L]
+RewriteRule ^blog/hydrogen-water-plant-protein-green-modification\.html$ /zh/blog/hydrogen-water-plant-protein-green-modification.html [R=301,L]
+RewriteRule ^blog/hydrogen-water-technology-comparison\.html$ /zh/blog/hydrogen-water-technology-comparison.html [R=301,L]
+RewriteRule ^blog/gary-brecka-hydrogen-water-solid-state-breakthrough\.html$ /zh/blog/gary-brecka-hydrogen-water-solid-state-breakthrough.html [R=301,L]
+RewriteRule ^blog/sac-tc621-national-antimicrobial-standard-committee\.html$ /zh/blog/sac-tc621-national-antimicrobial-standard-committee.html [R=301,L]
+RewriteRule ^blog/antimicrobial-ceramic-balls-home-appliances-icr-technology\.html$ /zh/blog/antimicrobial-ceramic-balls-home-appliances-icr-technology.html [R=301,L]
+
+# H2 Wellness Hub Chinese mapping
+RewriteRule ^zh/h2-wellness-hub/?$ /h2-wellness-hub/zh/ [R=301,L]
+RewriteRule ^zh/h2-wellness-hub/(.+)$ /h2-wellness-hub/zh/$1 [R=301,L]
 </IfModule>
 
 # Crawl hygiene: never index dotfiles

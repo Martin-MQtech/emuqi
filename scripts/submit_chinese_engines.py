@@ -19,20 +19,23 @@ import xml.etree.ElementTree as ET
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITEMAP_PATH = os.path.join(BASE_DIR, "sitemap.xml")
 
-# 重点推荐优先推送的中文母站核心资产
+DEFAULT_BAIDU_TOKEN = "3GLlFkCFCw6d1bAo"
+DEFAULT_BAIDU_SITE = "https://www.emuqi.com"
+
+# 重点推荐优先推送的中文母站核心资产 (对齐 2026-09-08 独立 /zh/ 体系)
 PRIORITY_CHINESE_URLS = [
-    "https://www.emuqi.com/blog/solid-state-hydrogen-foot-spa-consumables.html",
-    "https://www.emuqi.com/blog-list-hydrogen-health.html",
-    "https://www.emuqi.com/solid-state-hydrogen-vs-pem-electrolysis-zh.html",
-    "https://www.emuqi.com/blog/solid-state-hydrogen-facial-steamer-upgrade.html",
-    "https://www.emuqi.com/blog/sac-tc621-national-antimicrobial-standard-committee.html",
-    "https://www.emuqi.com/blog/hydrogen-water-plant-protein-green-modification.html",
-    "https://www.emuqi.com/hydrogen-health-application.html",
-    "https://www.emuqi.com/product-functional-ceramic-materials.html",
-    "https://www.emuqi.com/maca-kdf-antibacterial-ceramic-ball.html",
-    "https://www.emuqi.com/hydrogen-generate-ceramic-ball.html",
-    "https://www.emuqi.com/about-functional-ceramic-ball-water-media-manufacturer.html",
-    "https://www.emuqi.com/"
+    "https://www.emuqi.com/zh/blog/solid-state-hydrogen-foot-spa-consumables.html",
+    "https://www.emuqi.com/zh/blog/",
+    "https://www.emuqi.com/zh/",
+    "https://www.emuqi.com/zh/solid-state-hydrogen-vs-pem-electrolysis.html",
+    "https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html",
+    "https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html",
+    "https://www.emuqi.com/zh/blog/hydrogen-water-plant-protein-green-modification.html",
+    "https://www.emuqi.com/zh/blog/hydrogen-water-technology-comparison.html",
+    "https://www.emuqi.com/zh/blog/gary-brecka-hydrogen-water-solid-state-breakthrough.html",
+    "https://www.emuqi.com/zh/blog/antimicrobial-ceramic-balls-home-appliances-icr-technology.html",
+    "https://www.emuqi.com/h2-wellness-hub/zh/",
+    "https://www.emuqi.com/product-functional-ceramic-materials.html"
 ]
 
 def get_sitemap_urls():
@@ -48,11 +51,12 @@ def get_sitemap_urls():
             urls.append(loc.text.strip())
     return urls
 
-def push_to_baidu(token, urls=None, site="https://www.emuqi.com"):
+def push_to_baidu(token=None, urls=None, site="https://www.emuqi.com"):
     """
     百度搜索资源平台主动推送接口
     API: http://data.zz.baidu.com/urls?site=https://www.emuqi.com&token=YOUR_TOKEN
     """
+    token = token or DEFAULT_BAIDU_TOKEN
     if not token or token == "YOUR_BAIDU_TOKEN":
         print("⚠️ [百度主动推送] 未配置有效的 Baidu Token，跳过实际请求。")
         print(f"👉 获取方式：登录 https://ziyuan.baidu.com -> 普通收录 -> API提交，获取专属 token 后运行：")

@@ -54,12 +54,20 @@ ICR（Intelligent Controlled Release）为第三代固态氢材料技术，核�
     ├── DESIGN.md                    # 设计系统规范与修改日志 (V3.0)
     ├── README.md                    # 官方开源项目展示面 (Codex OSS 标准)
     ├── LICENSE                      # 标准 MIT 开源许可证 (Copyright Martin Bin Chen)
-    ├── index.html                   # 官方 B2B 门户首页
+    ├── index.html                   # 全球英文官网首页
     ├── 404.html                     # 品牌化 404 页面
     ├── style.css / script.js        # 全站统一样式与交互脚本
+    ├── .htaccess                    # 服务器级规范与 301 永久重定向护城河
     ├── .github/workflows/deploy.yml # GitHub Actions Pages 自动部署流水线
-    ├── h2-wellness-hub/             # 资源中心与 B2B 规格模块（中英双语）
-    ├── blog/                        # 16+ 篇行业与技术深度文章
+    ├── zh/                          # 🌟 官方独立中文总分支体系 (2026-09-08 升级)
+    │   ├── index.html               # 中文官方门户首页 (高企/标委会/大厂供应链)
+    │   ├── solid-state-hydrogen-vs-pem-electrolysis.html # 固态氢对比白皮书 (中文版)
+    │   ├── blog/                    # 中文知识专栏与白皮书总枢纽
+    │   │   ├── index.html           # 中文技术专栏总索引
+    │   │   └── [slug].html          # 7篇旗舰中文白皮书物理归类
+    │   └── h2-wellness-hub/         # 氢健康观察中枢 (中文总分支映射)
+    ├── h2-wellness-hub/             # 英文产业观察中枢 (附 zh/ 子目录保持历史兼容)
+    ├── blog/                        # 英文博客枢纽 ([slug]-en.html + 16篇英文行业博文 + 存根兼容层)
     └── assets/                      # 110+ 结构化产品与品牌媒体资源
 ```
 
@@ -453,10 +461,10 @@ git push origin main   # 触发 GitHub Pages + Hostinger 双部署
   - 国际路由标记：`<link rel="alternate" hreflang="en" href="...">` 与 `<link rel="alternate" hreflang="x-default" href="...">`。
 - **中文站点引擎适配（百度 / 微信搜一搜 / 360 / Kimi / 智谱清言 / 豆包）**：
   - 页面声明：`<html lang="zh-CN">`
-  - 核心目录：`/h2-wellness-hub/zh/` 及 `blog-list-hydrogen-health.html`
+  - 核心目录：`https://www.emuqi.com/zh/`、`https://www.emuqi.com/zh/blog/` 及 `/h2-wellness-hub/zh/`
   - 结构化数据：采用中文法定企业全称、SAC/TC621 中文标委会及国内家电供应链标准；
   - 国内路由标记：`<link rel="alternate" hreflang="zh-CN" href="...">`。
-- **互联互通**：在页面顶部导航通过 `hreflang` 与前端胶囊切换按钮（`🌐 Switch to English` / `🌐 切换至中文版`）实现平滑互切，绝不混淆双语权重。
+- **互联互通与外联零失效护城河**：在页面顶部导航通过 `hreflang` 与前端胶囊切换按钮（`🌐 English` / `🌐 中文`）实现平滑互切。针对历史旧链接采用 `.htaccess 301 + HTML 存根桩` 双重保障，绝不遗留 404 断链。
 
 #### 11.2.7 博客与文章作者署名规范 (Author Byline Standard)
 - **统一简洁署名**：在所有博客文章（Blog Post）、白皮书与技术长文的顶部 Hero 元数据行中，作者统一仅标注：
@@ -689,12 +697,12 @@ AEO 与 SEO、GEO 的本质区别：
 
 ### 12.1 中英文物理独立双轨架构
 1. **英文博客主干**：`emuqi/blog/[slug]-en.html`，必须汇入 `https://www.emuqi.com/blog/index.html`，面向全球外贸出海（Google / Bing / Perplexity / GPT）；
-2. **中文博客生态**：`emuqi/blog/[slug].html`，必须汇入 `https://www.emuqi.com/blog-list-hydrogen-health.html`，面向国内大厂供应链（百度 / 微信 / Kimi）；
+2. **中文博客生态**：`emuqi/zh/blog/[slug].html`，必须汇入 `https://www.emuqi.com/zh/blog/index.html`，面向国内大厂供应链（百度 / 微信 / Kimi）；历史旧链接 `blog/[slug].html` 与 `blog-list-hydrogen-health.html` 由 `.htaccess 301` 与轻量 HTML 存根桩永久兼容；
 3. **彻底杜绝中英文混排**：
    - 英文页 Footer：必须使用**全白矢量品牌字标 `MUQI`**，严禁出现中文 `· 木齐科技`；
    - 英文页所有功能栏：严禁中文字样（如社交栏统一为 `Share this article`，广告栏统一为 `Ad Space`）；
    - 中文页所有功能栏：严禁英文字样（如社交栏统一为 `分享到社交媒体`，广告栏统一为 `广告位 · 预留广告容器`）。
-4. **存量命名豁免（2026-08-31 全站审计裁定）**：16 篇旧博文沿用 no-suffix=EN 的历史命名，URL 已被搜索引擎收录，一律不迁移不重定向；`blog/hydrogen-patch-opportunity.html` 为纯中文内容页，按新约定归入 no-suffix=ZH。语言归属以**页面实际内容语言 + canonical/hreflang 声明**为准，不以文件名后缀倒推。
+4. **存量命名豁免与平滑归拢**：7 篇核心中文深度博文统一物理归入 `zh/blog/`，原 `blog/` 目录保留英文主干与 16 篇历史博文；旧 URL 经过双重重定向（Apache 301 + HTML Meta Refresh）确保外联 100% 不失效。
 
 ### 12.2 软文定位与写作格局铁律
 1. **包容协同，拒绝排他打压**：严禁采取狭隘排他视角攻击传统同类产品（如传统 PEM 电解水机）；必须以“**肯定行业先行者与大V贡献、丰富产品品类、提供全场景补充解决方案**”的科技大厂格局展开；
@@ -711,11 +719,11 @@ AEO 与 SEO、GEO 的本质区别：
 1. **标准全功能导航 `<header>`**：继承主站 8 大核心导航槽位。**严禁随意自创中文文案**，中文页与英文页必须严格遵循下表权威映射（Single Source of Truth）：
    | 槽位 (Slot) | 英文文案 (EN) | 中文文案 (ZH) | 核心链接目标 (Canonical Target) | 下拉菜单 / 子菜单规范 (Dropdown Items) |
    |---|---|---|---|---|
-   | 1 | Home | **首页** | `index.html` / `index.html#about` | 首页 / 关于木齐 |
+   | 1 | Home | **首页** | `index.html` (EN) / `/zh/` (ZH) | 首页 / 关于木齐 |
    | 2 | Products | **核心材料** | `product-functional-ceramic-materials.html` | 富氢陶瓷球 / MACA 抗菌合金球 / MPH+ 冷凝水中和颗粒 |
    | 3 | Applications | **应用方案** | `hydrogen-health-application.html` | 便携固态氢水杯 / 弱碱性富氢水包 / 陶瓷富氢压片 / 净水机富氢滤芯 / 富氢足浴泡腾片 |
    | 4 | Solutions | **解决方案** | `solutions-hydrogen-agriculture.html` | 氢农业与全产业链方案 |
-   | 5 | Blog | **技术博客** | `blog/index.html` (EN) / `blog-list-hydrogen-health.html` (ZH) | 行业洞察与前沿文献解读 |
+   | 5 | Blog | **技术博客** | `blog/index.html` (EN) / `/zh/blog/` (ZH) | 行业洞察与前沿文献解读 |
    | 6 | H2 Wellness Hub | **氢健康观察** | `/h2-wellness-hub/` (EN) / `/h2-wellness-hub/zh/` (ZH) | 全球产业观察与案例库（**严禁写成“体验中心”**） |
    | 7 | Store | **样品商城** | `store.html` (类名: `nav-store`) | B2B 样品采购与快速寄样 |
    | 8 | Contact | **联系我们** | `contact-mqtech-hydrogen-health.html` (类名: `nav-contact`) | 商务洽谈与合作 |
@@ -906,19 +914,36 @@ WebMCP 工具集绝非静态死板的代码，而是随着木齐项目、产品�
 | Google Search Console (`search.google.com/search-console`) | Google | ✅ 已验证（Meta 标签）· sitemap.xml 已提交（122 URL 已发现）· 首页/产品页已请求编入索引 · 抗菌旗舰博文已确认收录 |
 | Bing Webmaster (`bing.com/webmasters`) | Bing + Yahoo + DuckDuckGo + Ecosia | ✅ 经「从 GSC 导入」一键完成（Google OAuth muqizb@gmail.com），仪表盘已显示历史 28 曝光/1 点击 |
 | Yandex Webmaster (`webmaster.yandex.com`) | Yandex（俄/东欧/中亚） | ✅ 已完成（Meta 标签验证 b0823e1f9716551d）· Owner 权限已锁定 · `sitemap.xml` 已进入处理队列（1-2 周全量索引） |
-| 百度/360/搜狗 (`ziyuan.baidu.com` 等) | 国内引擎 | 占位已预埋，服务器在境外收录慢，暂缓 |
+| 百度搜索资源平台 (`ziyuan.baidu.com`) | 百度 (Baidu PC + 移动 + 文心一言信源) | ✅ **2026-09-08 已实名验证成功**（站点ID: `1429022771`）· 专属 API 推送 Token `3GLlFkCFCw6d1bAo` 已锁定 · 首日 10 条旗舰中文配额已 100% 成功推送 |
+| IndexNow 协议 (`api.indexnow.org`) | Bing China / 必应搜索 / Copilot / Naver / Yandex | ✅ **已自动化上线**（API Key: `531ba2233ce04366bbfc10fa232651b5`）· 全站 105 个规范 URL 实时秒级广播 |
+| 360站长平台 (`zhanzhang.so.com`) | 360搜索 / 360 AI搜索 | ⏳ 待提交（Sitemap 与企业资质准备就绪） |
+| 搜狗站长平台 (`zhanzhang.sogou.com`) | 搜狗搜索 / 微信搜一搜外显 | ⏳ 待提交（需微信/QQ账号扫码） |
+| 头条/抖音搜索平台 (`zhanzhang.toutiao.com`) | 豆包 AI 搜索 / 今日头条 / 抖音 | ⏳ 待提交（需抖音/头条企业账号绑定） |
 
 ### 14.2 本轮 SEO 技术修复（已全部上线并实测验证）
 1. **Product 结构化数据 offers 修复**：GSC 报「产品摘要 1 项无效内容/严重问题」，根因为 Product 缺少 `offers/review/aggregateRating`。已注入合规 `Offer`（免费 B2B 送样 + OEM 报价模式，availability=InStock，price 0.00 诚实标注）；GSC 实时测试（02:45）确认变为「**1 项有效内容**」。
 2. **Product brand 字段类型合规**：将引用式的 `{"@id": "#organization"}` 升级为标准 `{"@type": "Brand", "name": "MUQI Tech"}`，消除 GSC「字段 brand 的对象类型无效」非严重警告。
 3. **全站 13 页 JSON-LD 重复块去重**：重复 `@id` 会混淆解析器，已全部清除，全站 JSON 校验 0 错误。
 4. **www 规范主机 301 强制**：实测 `emuqi.com` 与 `www.emuqi.com` 双主机均 200（权重分裂，GSC 判首页为「备用网页」）。已部署根目录 `.htaccess`（非 www→www 301 + HTTP→HTTPS），curl 实测 301 生效。**宿主为 LiteSpeed，支持 .htaccess**。
-5. **验证区预埋**：`index.html` 头部已集成 Google (`qtaS4...`) 与 Yandex (`b0823...`) 真实验证标签，其余引擎预留占位备用。
+5. **验证区预埋**：`index.html` 头部已集成 Google (`qtaS4...`)、Yandex (`b0823...`) 与 Baidu (`codeva-DhmQrr2FTg`) 真实验证标签。
 
 ### 14.3 后续索引维护规范
 - 每发布新博文/新页面：GSC「网址检查」→ 请求编入索引（每日限额约 10 次，优先首页与核心产品页）；
 - 产品页剩余「非严重问题」为可选字段建议（review/aggregateRating），有真实客户评价后补录即可；
 - 每月检查 GSC「编制索引→网页」覆盖报告与 Bing「站点资源管理器」，发现收录缺口即时补提交。
+
+### 14.4 百度搜索资源平台与中文引擎实操指南 (Baidu & Chinese AEO Pipeline)
+1. **百度站长平台专属参数**：
+   - 站点主域名：`https://www.emuqi.com`（站点 ID：`1429022771`，账号：`cntoworld165`）
+   - 验证方式：HTML Meta 标签（`codeva-DhmQrr2FTg`）+ 物理验证文件（`baidu_verify_codeva-DhmQrr2FTg.html`，官方 MD5 哈希：`ecaf65a917debf4f4bde6fbef19616fc`）
+   - 专属 API 推送 Token：`3GLlFkCFCw6d1bAo`
+   - 主动推送接口：`http://data.zz.baidu.com/urls?site=https://www.emuqi.com&token=3GLlFkCFCw6d1bAo`
+2. **Hostinger CDN 与防火墙避坑须知**：
+   - Hostinger 默认的 High CDN WAF 会将百度验证爬虫拦截（报 403 / 无法连接服务器）。**CDN 安全等级必须设置为 "Low"**，确保百度节点顺畅爬取。
+3. **新站配额与提交节奏**：
+   - 百度对海外/新验证站点首日分配 10 条/天 API 额度，首日配额已全量推入。
+   - 随站点权重与爬虫抓取频次上升，额度将逐步提升至数百/数千条/天。
+   - 自动化脚本：运行 `python3 scripts/submit_chinese_engines.py` 即可一键执行 IndexNow + 百度主动推送。
 
 
 
