@@ -9,7 +9,8 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://www.emuqi.com%{REQUEST_URI} [L,R=301]
 
-# 2) Force www (non-www -> www), preserving path and query
+# 2) Force www (non-www -> www), preserving path and query (exempting verification files)
+RewriteCond %{REQUEST_URI} !^/baidu_verify_ [NC]
 RewriteCond %{HTTP_HOST} ^emuqi\.com$ [NC]
 RewriteRule ^ https://www.emuqi.com%{REQUEST_URI} [L,R=301]
 </IfModule>
