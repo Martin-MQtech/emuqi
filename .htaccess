@@ -2,11 +2,14 @@
 # Single source of truth: https://www.emuqi.com (matches sitemap.xml + rel=canonical)
 # Fixes duplicate-site dilution: emuqi.com previously served 200 directly.
 
+DirectoryIndex index.html index.htm index.php
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# 1) Force HTTPS
+# 1) Force HTTPS (proxy-aware for Hostinger/Cloudflare edge)
 RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^ https://www.emuqi.com%{REQUEST_URI} [L,R=301]
 
 # 2) Force www (non-www -> www), preserving path and query (exempting verification files)
