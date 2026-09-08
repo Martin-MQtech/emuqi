@@ -35,7 +35,8 @@
 <meta name="yandex-verification" content="b0823e1f9716551d">
 <meta name="baidu-site-verification" content="codeva-DhmQrr2FTg">
 <meta name="360-site-verification" content="XXXXX">
-<meta name="sogou_site_verification" content="XXXXX">
+<meta name="sogou_site_verification" content="lqstR5t6hl">
+<meta name="bytedance-verification-code" content="WLcFPHjiUL5T2PF8u965">
 <meta name="naver-site-verification" content="XXXXX">
 <!-- ═══ 搜索引擎验证区结束 ═══ -->
 <meta name="ai-agents" content="enabled; model-context=true; schema-org=enabled">
@@ -197,7 +198,53 @@
       <a href="h2-wellness-hub/" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">H2 Wellness Hub</a>
       <a href="store.html" class="nav-store">Store</a>
       <a href="contact-mqtech-hydrogen-health.html" class="nav-contact">Contact</a>
-      <a href="/zh/" style="display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600;color:#f47b20;background:rgba(244,123,32,0.1);border:1px solid rgba(244,123,32,0.3);text-decoration:none;padding:6px 12px;border-radius:20px;margin-left:6px;transition:all 0.2s" onmouseover="this.style.background='rgba(244,123,32,0.2)'" onmouseout="this.style.background='rgba(244,123,32,0.1)'">🌐 中文</a>
+      <div class="nav-lang-wrap" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <button type="button" class="nav-lang-btn" aria-label="Language Selector" aria-haspopup="true" onclick="var m=this.parentElement.querySelector('.dd');m.style.display=(m.style.display==='block'?'none':'block')">
+          <svg class="icon-globe" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>English</span>
+          <svg class="icon-arrow" width="9" height="5" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-lang-menu dd" role="menu">
+          <div class="nav-lang-header">Select Language / 语言选择</div>
+          <a href="index.html" class="nav-lang-item active" role="menuitem">
+            <div class="nav-lang-item-left">
+              <span class="nav-lang-item-title">English</span>
+              <span class="nav-lang-item-sub">Global / International</span>
+            </div>
+            <span class="nav-lang-badge active">✓ Current</span>
+          </a>
+          <a href="/zh/" class="nav-lang-item" role="menuitem">
+            <div class="nav-lang-item-left">
+              <span class="nav-lang-item-title">中文 (简体)</span>
+              <span class="nav-lang-item-sub">中国站 · 官方门户</span>
+            </div>
+            <span class="nav-lang-badge new">全新上线</span>
+          </a>
+          <div class="nav-lang-divider"></div>
+          <div class="nav-lang-caption">Future Branches / 规划分支</div>
+          <!-- 预留扩展多语言分支位：后续增加 /ja/ 或 /de/ 分支时，直接将 disabled 切换为正式超链接 -->
+          <div class="nav-lang-item disabled" title="Japanese branch coming soon">
+            <div class="nav-lang-item-left">
+              <span class="nav-lang-item-title">日本語</span>
+              <span class="nav-lang-item-sub">日本站点 (/ja/)</span>
+            </div>
+            <span class="nav-lang-badge soon">Soon</span>
+          </div>
+          <div class="nav-lang-item disabled" title="German branch coming soon">
+            <div class="nav-lang-item-left">
+              <span class="nav-lang-item-title">Deutsch</span>
+              <span class="nav-lang-item-sub">欧洲站点 (/de/)</span>
+            </div>
+            <span class="nav-lang-badge soon">Soon</span>
+          </div>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
