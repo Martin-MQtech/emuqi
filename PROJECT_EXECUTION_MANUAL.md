@@ -727,6 +727,9 @@ AEO 与 SEO、GEO 的本质区别：
    | 6 | H2 Wellness Hub | **氢健康观察** | `/h2-wellness-hub/` (EN) / `/h2-wellness-hub/zh/` (ZH) | 全球产业观察与案例库（**严禁写成“体验中心”**） |
    | 7 | Store | **样品商城** | `store.html` (类名: `nav-store`) | B2B 样品采购与快速寄样 |
    | 8 | Contact | **联系我们** | `contact-mqtech-hydrogen-health.html` (类名: `nav-contact`) | 商务洽谈与合作 |
+   | 9 | Language | **语言选择** | `.nav-lang-wrap` (动态分支选择器) | 预置: English (`/`)、中文 (`/zh/`)；预留扩展槽位: 日本語 (`/ja/`)、Deutsch (`/de/`) 等 |
+   
+   > **后续多语言分支扩展指南**：当新增语种（如日语 `/ja/` 或德语 `/de/`）时，只需在网站根目录建立对应语种目录，并在 `.nav-lang-menu` 预留槽中解除 `disabled` 并填入真实 URL，无需重构整站 Header 布局。
 2. **Hero Banner**：真实大图 + 渐变蒙版 + 极简元数据（`Published: Date · By: Martin · Category · Time`），**严禁在 Hero 居中放置突兀的语言切换胶囊**；
 3. **核心摘要盒**：首屏高质感 Key Takeaways / 写在前面；
 4. **结构化正文**：数据指标卡 + 序号圆点 + 呼吸感行高 (1.9) + 核心材料超链接；
@@ -915,35 +918,40 @@ WebMCP 工具集绝非静态死板的代码，而是随着木齐项目、产品�
 | Bing Webmaster (`bing.com/webmasters`) | Bing + Yahoo + DuckDuckGo + Ecosia | ✅ 经「从 GSC 导入」一键完成（Google OAuth muqizb@gmail.com），仪表盘已显示历史 28 曝光/1 点击 |
 | Yandex Webmaster (`webmaster.yandex.com`) | Yandex（俄/东欧/中亚） | ✅ 已完成（Meta 标签验证 b0823e1f9716551d）· Owner 权限已锁定 · `sitemap.xml` 已进入处理队列（1-2 周全量索引） |
 | 百度搜索资源平台 (`ziyuan.baidu.com`) | 百度 (Baidu PC + 移动 + 文心一言信源) | ✅ **2026-09-08 已实名验证成功**（站点ID: `1429022771`）· 专属 API 推送 Token `3GLlFkCFCw6d1bAo` 已锁定 · 首日 10 条旗舰中文配额已 100% 成功推送 |
+| 字节跳动/头条/抖音平台 (`zhanzhang.toutiao.com`) | **豆包 AI 搜索 (Doubao)** / 今日头条 / 抖音搜索 | ✅ **2026-09-08 已实名验证成功**（账号: `Martin陈滨木齐...`）· Sitemap (`sitemap.xml`) 已提交入库 · 全站 103 个核心 URL 已 100% 分批推送入库 |
+| 搜狗资源平台 (`zhanzhang.sogou.com`) | 搜狗搜索 / 微信搜一搜外显信源库 | ✅ **2026-09-08 已实名验证成功**（站点ID: `75665386`，账号: `13964416725`）· 首批 20 个旗舰中文页面已成功提交 |
 | IndexNow 协议 (`api.indexnow.org`) | Bing China / 必应搜索 / Copilot / Naver / Yandex | ✅ **已自动化上线**（API Key: `531ba2233ce04366bbfc10fa232651b5`）· 全站 105 个规范 URL 实时秒级广播 |
-| 360站长平台 (`zhanzhang.so.com`) | 360搜索 / 360 AI搜索 | ⏳ 待提交（Sitemap 与企业资质准备就绪） |
-| 搜狗站长平台 (`zhanzhang.sogou.com`) | 搜狗搜索 / 微信搜一搜外显 | ⏳ 待提交（需微信/QQ账号扫码） |
-| 头条/抖音搜索平台 (`zhanzhang.toutiao.com`) | 豆包 AI 搜索 / 今日头条 / 抖音 | ⏳ 待提交（需抖音/头条企业账号绑定） |
+| 360站长平台 (`zhanzhang.so.com`) | 360搜索 / 360 AI搜索 | ⚠️ 站点已添加（账号: `cntoworld`）· 360 自 2026 年 5 月起要求工信部大陆备案白名单，未备案站点暂无法点击验证按钮 |
 
 ### 14.2 本轮 SEO 技术修复（已全部上线并实测验证）
 1. **Product 结构化数据 offers 修复**：GSC 报「产品摘要 1 项无效内容/严重问题」，根因为 Product 缺少 `offers/review/aggregateRating`。已注入合规 `Offer`（免费 B2B 送样 + OEM 报价模式，availability=InStock，price 0.00 诚实标注）；GSC 实时测试（02:45）确认变为「**1 项有效内容**」。
 2. **Product brand 字段类型合规**：将引用式的 `{"@id": "#organization"}` 升级为标准 `{"@type": "Brand", "name": "MUQI Tech"}`，消除 GSC「字段 brand 的对象类型无效」非严重警告。
 3. **全站 13 页 JSON-LD 重复块去重**：重复 `@id` 会混淆解析器，已全部清除，全站 JSON 校验 0 错误。
 4. **www 规范主机 301 强制**：实测 `emuqi.com` 与 `www.emuqi.com` 双主机均 200（权重分裂，GSC 判首页为「备用网页」）。已部署根目录 `.htaccess`（非 www→www 301 + HTTP→HTTPS），curl 实测 301 生效。**宿主为 LiteSpeed，支持 .htaccess**。
-5. **验证区预埋**：`index.html` 头部已集成 Google (`qtaS4...`)、Yandex (`b0823...`) 与 Baidu (`codeva-DhmQrr2FTg`) 真实验证标签。
+5. **验证区预埋与多平台打通**：`index.html` 头部已集成 Google (`qtaS4...`)、Yandex (`b0823...`)、Baidu (`codeva-DhmQrr2FTg`)、Sogou (`lqstR5t6hl`) 与 ByteDance (`WLcFPHjiUL5T2PF8u965`) 真实验证标签。
 
 ### 14.3 后续索引维护规范
 - 每发布新博文/新页面：GSC「网址检查」→ 请求编入索引（每日限额约 10 次，优先首页与核心产品页）；
-- 产品页剩余「非严重问题」为可选字段建议（review/aggregateRating），有真实客户评价后补录即可；
+- 字节站长平台：支持每日最高 2000 条 URL 提交，新页面发布后可随时进入 `zhanzhang.toutiao.com/page/inner/link/info` 提交；
+- 搜狗资源平台：支持每次 20 条 URL 提交；
 - 每月检查 GSC「编制索引→网页」覆盖报告与 Bing「站点资源管理器」，发现收录缺口即时补提交。
 
-### 14.4 百度搜索资源平台与中文引擎实操指南 (Baidu & Chinese AEO Pipeline)
-1. **百度站长平台专属参数**：
+### 14.4 中文引擎与 AI 搜寻生态实操指南 (Chinese Search & AI Onboarding)
+1. **百度站长平台 (ziyuan.baidu.com)**：
    - 站点主域名：`https://www.emuqi.com`（站点 ID：`1429022771`，账号：`cntoworld165`）
-   - 验证方式：HTML Meta 标签（`codeva-DhmQrr2FTg`）+ 物理验证文件（`baidu_verify_codeva-DhmQrr2FTg.html`，官方 MD5 哈希：`ecaf65a917debf4f4bde6fbef19616fc`）
    - 专属 API 推送 Token：`3GLlFkCFCw6d1bAo`
-   - 主动推送接口：`http://data.zz.baidu.com/urls?site=https://www.emuqi.com&token=3GLlFkCFCw6d1bAo`
-2. **Hostinger CDN 与防火墙避坑须知**：
-   - Hostinger 默认的 High CDN WAF 会将百度验证爬虫拦截（报 403 / 无法连接服务器）。**CDN 安全等级必须设置为 "Low"**，确保百度节点顺畅爬取。
-3. **新站配额与提交节奏**：
-   - 百度对海外/新验证站点首日分配 10 条/天 API 额度，首日配额已全量推入。
-   - 随站点权重与爬虫抓取频次上升，额度将逐步提升至数百/数千条/天。
-   - 自动化脚本：运行 `python3 scripts/submit_chinese_engines.py` 即可一键执行 IndexNow + 百度主动推送。
+   - 主动推送脚本：`python3 scripts/submit_chinese_engines.py`
+2. **字节跳动 / 豆包搜索平台 (zhanzhang.toutiao.com)**：
+   - 站点：`https://www.emuqi.com`（绑定账号：`Martin陈滨木齐...`）
+   - 验证文件：`ByteDanceVerify.html`（`WLcFPHjiUL5T2PF8u965`）
+   - Sitemap 提交：`https://www.emuqi.com/sitemap.xml`
+   - 影响范围：字节跳动旗下 **豆包 (Doubao) AI 搜索**、今日头条、抖音搜索
+3. **搜狗资源平台 (zhanzhang.sogou.com)**：
+   - 站点：`https://www.emuqi.com`（站点 ID：`75665386`，账号：`13964416725`）
+   - 验证文件：`sogousiteverification.txt`（`lqstR5t6hl`）
+   - 影响范围：搜狗搜索核心索引库及微信生态搜一搜外部信源
+4. **Hostinger CDN 与防火墙避坑须知**：
+   - Hostinger CDN 安全等级必须维持在 **Low**，否则国内搜索引擎（百度、Bytespider、Sogouspider）抓取时会被 WAF 拦截（403 错误）。
 
 
 
