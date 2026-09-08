@@ -20,7 +20,18 @@
   <meta property="og:image" content="https://www.emuqi.com/assets/images/logo.jpg">
   <meta property="og:url" content="https://www.emuqi.com/zh/">
   
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css?v=20260908c">
+  <style>
+  /* Critical Language Pill Switch Styles */
+  .lang-pill-switch { display: inline-flex !important; align-items: center !important; gap: 2px !important; height: 30px !important; padding: 2px 4px 2px 7px !important; background: rgba(255,255,255,0.8) !important; border: 1px solid rgba(10,22,40,0.18) !important; border-radius: 9999px !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06) !important; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; margin-left: 6px !important; flex-shrink: 0 !important; box-sizing: border-box !important; user-select: none !important; }
+  .lang-pill-switch:hover { background: rgba(255,255,255,0.95) !important; border-color: rgba(10,22,40,0.28) !important; }
+  .lang-pill-globe { display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 14px !important; height: 14px !important; color: #1d4ed8 !important; margin-right: 2px !important; flex-shrink: 0 !important; }
+  .lang-pill-opt { display: inline-flex !important; align-items: center !important; justify-content: center !important; height: 22px !important; padding: 0 8px !important; font-size: 11.5px !important; border-radius: 9999px !important; text-decoration: none !important; white-space: nowrap !important; line-height: 22px !important; }
+  .lang-pill-opt.active { background: #0a1628 !important; color: #ffffff !important; font-weight: 700 !important; box-shadow: 0 2px 5px rgba(10,22,40,0.25) !important; }
+  .lang-pill-opt:not(.active) { color: #475569 !important; font-weight: 600 !important; }
+  .lang-pill-opt:not(.active):hover { color: #0a1628 !important; background: rgba(10,22,40,0.08) !important; }
+  .lang-pill-divider { display: inline-block !important; width: 1px !important; height: 10px !important; background: rgba(10,22,40,0.18) !important; margin: 0 1px !important; flex-shrink: 0 !important; }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -374,8 +385,8 @@
 
 <!-- TOP NAV (100% 锁留在中文总分支闭环内) -->
 <header style="background:linear-gradient(180deg,#e8eaed 0%,#d8dadf 40%,#cfd2d7 70%,#c5c8cd 100%);border-bottom:1px solid #b8bbc0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.06),inset 0 1px 0 rgba(255,255,255,0.65)">
-  <div style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 40px;height:72px">
-    <a href="/zh/" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+  <div style="display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 24px;min-height:72px">
+    <a href="/zh/" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0">
       <img src="../assets/images/logo.jpg" alt="木齐科技" height="38" style="border-radius:3px">
       <div style="display:flex;flex-direction:column">
         <span style="font-size:16px;font-weight:700;color:#1a1a2e;line-height:1.2">木齐科技</span>
@@ -383,10 +394,10 @@
       </div>
     </a>
     
-    <nav style="display:flex;align-items:center;gap:4px">
+    <nav style="display:flex;align-items:center;gap:3px;flex-wrap:nowrap;flex-shrink:0">
       <!-- 1. 首页 (Home) -->
-      <div style="position:relative" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
-        <a href="/zh/" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">首页 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/zh/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">首页 <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="dd" style="display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:linear-gradient(145deg,#07111f 0%,#0a1628 56%,#14233a 100%);border-radius:14px;box-shadow:0 12px 40px rgba(10,22,40,.35),0 0 0 1px rgba(255,255,255,.08) inset;min-width:180px;padding:8px;z-index:200;overflow:hidden">
           <a href="/zh/" style="display:block;padding:12px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:10px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0'">首页</a>
           <a href="../about-functional-ceramic-ball-water-media-manufacturer.html" style="display:block;padding:12px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:10px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0'">关于木齐</a>
@@ -394,8 +405,8 @@
       </div>
 
       <!-- 2. 核心材料 (Products) -->
-      <div style="position:relative" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
-        <a href="../product-functional-ceramic-materials.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">核心材料 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="../product-functional-ceramic-materials.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">核心材料 <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="dd" style="display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:linear-gradient(145deg,#07111f 0%,#0a1628 56%,#14233a 100%);border-radius:16px;box-shadow:0 16px 48px rgba(10,22,40,0.45),0 0 0 1px rgba(255,255,255,0.08) inset;min-width:260px;padding:10px;z-index:200;overflow:hidden">
           <a href="../hydrogen-generate-ceramic-ball.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(244,123,32,0.3),rgba(244,123,32,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">⚪</span><div><div style="font-weight:600;color:#fff">富氢陶瓷球</div><div style="font-size:12px;color:#94a3b8;margin-top:3px">微纳米单质硅固态制氢</div></div></a>
           <a href="../maca-kdf-antibacterial-ceramic-ball.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(244,123,32,0.3),rgba(244,123,32,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🟢</span><div><div style="font-weight:600;color:#fff">MACA 抗菌合金球</div><div style="font-size:12px;color:#94a3b8;margin-top:3px">微孔长效抗菌复合陶瓷</div></div></a>
@@ -404,8 +415,8 @@
       </div>
 
       <!-- 3. 应用方案 (Applications) -->
-      <div style="position:relative" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
-        <a href="../hydrogen-health-application.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">应用方案 <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="../hydrogen-health-application.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">应用方案 <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="dd" style="display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:linear-gradient(145deg,#07111f 0%,#0a1628 56%,#14233a 100%);border-radius:16px;box-shadow:0 16px 48px rgba(10,22,40,0.45),0 0 0 1px rgba(255,255,255,0.08) inset;min-width:280px;padding:10px;z-index:200;overflow:hidden">
           <a href="../hydrogen-water-bottle-or-hydrogen-health.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(29,78,216,0.3),rgba(29,78,216,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🍶</span><div><div style="font-weight:600;color:#fff">便携固态氢水杯</div></div></a>
           <a href="../hydrogen-health-hydrogen-alkaline-water-sachet.html" style="display:flex;align-items:center;gap:14px;padding:14px 16px;font-size:14px;color:#e2e8f0;text-decoration:none;border-radius:12px;transition:all 0.15s" onmouseover="this.style.background='rgba(29,78,216,0.42)';this.style.color='#fff';this.style.transform='translateX(4px)'" onmouseout="this.style.background='transparent';this.style.color='#e2e8f0';this.style.transform='translateX(0)'"><span style="width:36px;height:36px;background:linear-gradient(135deg,rgba(29,78,216,0.3),rgba(29,78,216,0.1));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">💧</span><div><div style="font-weight:600;color:#fff">弱碱性富氢水包</div></div></a>
@@ -417,32 +428,32 @@
       </div>
 
       <!-- 4. 解决方案 (Solutions) -->
-      <a href="../solutions-hydrogen-agriculture.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;background:transparent" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">解决方案</a>
+      <a href="../solutions-hydrogen-agriculture.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">解决方案</a>
 
       <!-- 5. 技术博客 (Blog) -->
-      <a href="/zh/blog/" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;background:transparent" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">技术博客</a>
+      <a href="/zh/blog/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">技术博客</a>
 
       <!-- 6. 氢健康观察 (H2 Wellness Hub) -->
-      <a href="/zh/h2-wellness-hub/" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">氢健康观察</a>
+      <a href="/zh/h2-wellness-hub/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">氢健康观察</a>
 
       <!-- 7. 样品商城 (Store) -->
-      <a href="../store.html" class="nav-store">样品商城</a>
+      <a href="../store.html" class="nav-store" style="font-size:13.5px;font-weight:600;color:#0a1628;text-decoration:none;padding:6px 14px;border-radius:8px;background:linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%);border:1px solid rgba(10,22,40,0.18);box-shadow:0 1px 2px rgba(0,0,0,0.05);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%)';this.style.color='#0a1628'">样品商城</a>
 
       <!-- 8. 联系我们 (Contact) -->
-      <a href="../contact-mqtech-hydrogen-health.html" class="nav-contact">联系我们</a>
+      <a href="../contact-mqtech-hydrogen-health.html" class="nav-contact" style="font-size:13.5px;font-weight:600;color:#fff;text-decoration:none;padding:6px 16px;border-radius:8px;background:#0a1628;border:1px solid #0a1628;box-shadow:0 2px 6px rgba(10,22,40,0.2);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#1a3a6e'" onmouseout="this.style.background='#0a1628'">联系我们</a>
       
       <!-- 9. 语言选择 (Slot 9 极简高科技微胶囊切换器) -->
-      <div class="lang-pill-switch" role="group" aria-label="语言切换">
-        <span class="lang-pill-globe" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="lang-pill-switch" role="group" aria-label="语言切换" style="display:inline-flex;align-items:center;gap:2px;height:30px;padding:2px 4px 2px 7px;background:rgba(255,255,255,0.8);border:1px solid rgba(10,22,40,0.18);border-radius:9999px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-left:6px;flex-shrink:0;box-sizing:border-box;user-select:none">
+        <span class="lang-pill-globe" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;color:#1d4ed8;margin-right:2px;flex-shrink:0">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;display:block">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
           </svg>
         </span>
-        <a href="/" class="lang-pill-opt" title="Switch to English Global Portal">EN</a>
-        <span class="lang-pill-divider" aria-hidden="true"></span>
-        <span class="lang-pill-opt active" aria-current="page">中文</span>
+        <a href="/" class="lang-pill-opt" title="Switch to English Global Portal" style="display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11.5px;font-weight:600;color:#475569;border-radius:9999px;text-decoration:none;white-space:nowrap;line-height:22px;transition:all 0.15s" onmouseover="this.style.color='#0a1628';this.style.background='rgba(10,22,40,0.08)'" onmouseout="this.style.color='#475569';this.style.background='transparent'">EN</a>
+        <span class="lang-pill-divider" aria-hidden="true" style="display:inline-block;width:1px;height:10px;background:rgba(10,22,40,0.18);margin:0 1px;flex-shrink:0"></span>
+        <span class="lang-pill-opt active" aria-current="page" style="display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans SC',sans-serif;font-size:11.5px;font-weight:700;color:#ffffff;background:#0a1628;border-radius:9999px;box-shadow:0 2px 5px rgba(10,22,40,0.25);cursor:default;white-space:nowrap;line-height:22px;text-decoration:none">中文</span>
       </div>
     </nav>
   </div>
