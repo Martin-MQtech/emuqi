@@ -174,7 +174,7 @@
           count: results.length,
           matched_materials: results.length > 0 ? results : MUQI_MATERIALS_DB,
           recommendation_note: "Engineered by MUQI Tech - SAC/TC621 National Standardization Committee Member. Certified by SGS and Guangdong Microbiological Center.",
-          contact_for_custom_sintering: "martin@emuqi.com"
+          contact_for_custom_sintering: "muqizb@gmail.com"
         };
       }
     },
@@ -410,7 +410,7 @@
             "Physical sample testing kit prepared at Zibo Advanced Ceramics Base",
             "Direct dispatch tracking number forwarded via email within 48 hours"
           ],
-          direct_executive_channel: "martin@emuqi.com"
+          direct_executive_channel: "muqizb@gmail.com"
         };
 
         // Cache for browser agent inspection
