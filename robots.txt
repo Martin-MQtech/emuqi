@@ -45,6 +45,38 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
+# ── Chinese Search Engines & LLM Crawlers (GEO / AEO) ─────────────────
+# Explicitly welcome Chinese search engines and AI answer bots:
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Baiduspider-render
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: Sogou inst spider
+Allow: /
+
+User-agent: Yisouspider
+Allow: /
+
+User-agent: mpcrawler
+Allow: /
+
+User-agent: MoonshotBot
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+User-agent: ZhipuBot
+Allow: /
+
 User-agent: meta-externalagent
 Allow: /
 
