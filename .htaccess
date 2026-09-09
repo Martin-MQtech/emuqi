@@ -35,6 +35,32 @@ RewriteRule ^blog/antimicrobial-ceramic-balls-home-appliances-icr-technology\.ht
 # H2 Wellness Hub Chinese mapping
 RewriteRule ^zh/h2-wellness-hub/?$ /h2-wellness-hub/zh/ [R=301,L]
 RewriteRule ^zh/h2-wellness-hub/(.+)$ /h2-wellness-hub/zh/$1 [R=301,L]
+
+# 4) Transparent WebP Rewrite (falls back to PNG/JPG if unsupported)
+RewriteCond %{HTTP_ACCEPT} image/webp
+RewriteCond %{REQUEST_FILENAME} (.+)\.(jpe?g|png)$
+RewriteCond %1.webp -f
+RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1,L]
+</IfModule>
+
+# Gzip Compression (HTML, CSS, JS, SVG, JSON)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# 1-Year Browser Cache Policy
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
 </IfModule>
 
 # Crawl hygiene: never index dotfiles
@@ -42,12 +68,19 @@ RewriteRule ^zh/h2-wellness-hub/(.+)$ /h2-wellness-hub/zh/$1 [R=301,L]
 Require all denied
 </FilesMatch>
 
-# Enterprise HTTP Security Headers
+# Enterprise HTTP Security Headers & Cache-Control
 <IfModule mod_headers.c>
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+    <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|js|css|svg|woff2)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=0, must-revalidate"
+    </FilesMatch>
 </IfModule>
 
