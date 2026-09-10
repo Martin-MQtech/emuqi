@@ -1098,7 +1098,7 @@ wordpress.com    chen_martin    blogspot.com   substack.com   emuqi.com
 | 渠道序号 | 渠道名称 | 站点 URL / 标识 | 核心定位与价值 | 访问协议与鉴权凭据 | 自动化发布引擎 | 风控等级 | 当前状态 (2026-09-05) |
 |:---:|:---|:---|:---|:---|:---|:---:|:---|
 | **01** | **WordPress.com** | `https://h2welltech.wordpress.com` | **核心专栏阵地**：全球老牌 CMS，权重极高，支持 Gutenberg 块级学术排版 | XML-RPC 官方协议；用户 `muqizb`，App Password `qvbu qqnl pyku xajg`，Blog ID `256807876` | `wp_publisher.py` / XML-RPC 原生对接 | 中 | 🟢 **正式在役**。已发布 Issue #1（配 7 张高清图）、Issue #2；全站 Header/Footer/About 已完成去模板化深度定制。 |
-| **02** | **DEV.to** | `https://dev.to/chen_martin_f6f22118d1b92` | **极客技术社区**：全球开发者传播，纯学术机理/材料科研背书，Canonical 权威权重 | 官方 REST API；24 位专用 API Key (`AQRPoPn4D81VWwBBkeR9CBPi`) | `devto_publisher.py` (发文须经 `clean_devto_content()` 剥离商业外链) | 高 (严打商业回链) | 🟡 **7天暂时挂起**。官方已给出承诺合规即解封通道，回复信件已就绪 (§17.7.1)。 |
+| **02** | **DEV.to** | `https://dev.to/chen_martin_f6f22118d1b92` | **极客技术社区**：全球开发者传播，纯学术机理/材料科研背书，Canonical 权威权重 | 官方 REST API；24 位专用 API Key (`AQRPoPn4D81VWwBBkeR9CBPi`) | `devto_publisher.py` (发文须经 `clean_devto_content()` 剥离商业外链) | 高 (严打商业回链) | 🟢 **正式在役 (已全面解封)**。2026-09-09 官方确认解除挂起，API HTTP 200 畅通，2 篇长文在线。严格执行纯技术/去商业外链发布规范。 |
 | **03** | **Google Blogger** | `https://www.blogger.com` (专栏 ID: `6118056740258922715`) | **Google 生态核心**：Google 官方博客，秒级收录，与 GSC/AdSense 零阻碍共振 | Google Chrome 会话 / Mail-to-Blogger 秘密邮箱 / Blogger API v3；绑定 `muqizb@gmail.com` | `blogger_publisher.py` / 预制 HTML 极速通道 | 低 | 🟢 **已打通在役**。专栏名：`MQ Technology - Hydrogen health application development and supply chain`。3 篇历史博文锁定保留，前 3 期文章 HTML 预制就绪。 |
 | **04** | **Substack** | `https://h2welltech.substack.com` | **B2B 私域之王**：专栏沉淀+自动转为精美 Newsletter 群发推送到海外采购商邮箱 | Webhook / 官方 Web 编排 / 邮件推送 | 邮件订阅直推 / 自动广播 | 零 (无外链封控) | 🟢 **正式在役**。已发布 Issue #2 固态氢 vs PEM 9 维度选型实战长文（含 4 大高精工程对比图表与 OEM 规格）。 |
 | **05** | **独立静态站** | `https://blog.emuqi.com` | **自主产权护城河**：100% 产权自主，全球 Cloudflare 极速 CDN，母站 `emuqi.com` 权重直接沉淀 | GitHub 仓库 (`Martin-MQtech`) + Cloudflare Pages 自动构建 | Git push 自动 CI/CD 部署 | 零 (绝对不可封禁) | ⏳ **待挂载二级域名**。作为永久性、不受任何第三方政策影响的终极备份。 |
@@ -1244,6 +1244,9 @@ Account: @chen_martin_f6f22118d1b92
 | 2026-09-05 17:15 | Antigravity | 泛女性健康技术专著英文化重构与 AI 医用高精图表重新生成并部署 | 🟢 **9 章节顶级专著交付**，产出泡腾片溶解与 3 大交付剂型 AI 医学影像 |
 | 2026-09-05 17:30 | Antigravity | 泛女性健康专著三端全域同步发布：官网博客置顶、WordPress (ID: 27)、Blogger (ID: 7606693460636594338 原帖更新) | 🟢 **三大渠道全线 HTTP 200 上线**，实现一源三端同频共振 |
 | 2026-09-05 17:40 | Antigravity | 全网 SEO/GEO/AEO 协议深度融合：注入 Schema.org `@graph` (含 FAQPage)、Key Takeaways、AEO 对话式 FAQ 与实体索引云 | 🟢 **AI 检索抓取与富媒体摘要全面打通**，sitemap.xml 顶格收录 |
+| 2026-09-06 21:46 | Antigravity | 熏蒸仪升级博客全网分发：WordPress (ID 32)、Blogger (ID 7798918132827660778)、LinkedIn 领英动态 (7502361562419036160 + First Comment SOP) 成功发布 | 🟢 **三大渠道正式上线**，修复全量 CDN 图像渲染 |
+| 2026-09-09 23:38 | DEV.to 官方 | 官方正式下达解封通知："Thank you for acknowledging the terms. The suspension on your account has been lifted." | 🟢 **DEV.to 封禁彻底解除**，API 权限与个人主页全面恢复活跃 |
+| 2026-09-10 21:18 | Antigravity | 调用 DEV.to REST API 验证用户 `@chen_martin_f6f22118d1b92` (ID: 4082893) 与文章列表，确认 HTTP 200 畅通 | 🟢 **账号与 2 篇长文在线，全域渠道资产账更新为完全在役** |
 
 #### 17.9.2 Agent 权责分工确认
 - **Antigravity Agent**：本次出海矩阵搭建与自动化发布的**主操作方**，负责账号创建、Python 引擎调用、文章排版、API 调度、ego-browser 穿透自动化上线及手册全面升级。User-Agent 标识为 `MQTech-AI-Publisher/2.0`。
@@ -1251,8 +1254,8 @@ Account: @chen_martin_f6f22118d1b92
 - 两者均在 §8 有协同运维标记，但专栏发布与平台运维以 Antigravity 为核心操作者。
 
 #### 17.9.3 后续作战计划与执行路径
-1. **DEV.to 解封收尾**：在收到官方通知的邮箱中点击回复，发送 §17.7.1 承诺信，跟进解除 7 天暂挂；
-2. **WordPress.com 稳步排期**：专栏主页及已发文章（Issue #1, Issue #2）稳定运营，保持 48 小时间隔稳步推进后续选题；
+1. **DEV.to 解封完成与在役维护**：官方已于 2026-09-09 解除挂起，REST API 验证完全恢复。发文须继续严格执行 §17.6「零商业容忍」铁律，纯学术极客向交付，保留 Canonical URL；
+2. **WordPress.com 稳步排期**：专栏主页及已发文章（Issue #1, Issue #2, Issue #3）稳定运营，保持 48 小时间隔稳步推进后续选题；
 3. **Google Blogger 同步上线**：
    - 保护 3 篇历史存量博文；
    - 通过极速 HTML 通道或 Mail-to-Blogger 通道陆续同步 Issue #2, Issue #3, Issue #1；

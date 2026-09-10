@@ -30,4 +30,4 @@ By relocating the reaction chamber to the delivery wand (5 to 8 cm before the no
 
 As 80-95°C thermal vapor passes through the chamber, solid-state microcrystalline hydrogen donors thermolytically release pure H2 gas, achieving 1000+ ppb equivalent dissolved concentrations at the nozzle without any active electrolysis in the water reservoir.
 
-Detailed technical specs and fluid dynamic CAD models can be explored at [MUQI Technology](https://www.emuqi.com/blog/solid-state-hydrogen-facial-steamer-upgrade-en.html).
+Further thermodynamic phase-change data, fluid dynamics modeling, and dissolution kinetics are documented in the open research repository.
