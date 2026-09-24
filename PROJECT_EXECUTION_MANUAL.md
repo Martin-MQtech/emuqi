@@ -1764,6 +1764,272 @@ Account: @chen_martin_f6f22118d1b92
   - **锚点错误：0 处**。
 
 
+---
+
+## 12. 内容增长与 SEO/GEO/AEO 方案 (Content Growth Plan · 2026-09-24)
+
+> **文档纪律 (Martin 2026-09-24)**：进度、方案、Query Bank、里程碑**只写入本执行手册**。
+> **严禁**未经用户同意新建独立 `.md`（方案册、Query Bank 等）；已有误建文件已删除并并入本章。
+> UI/样式变更仍记 `DESIGN.md`；发布 SOP 仍见 `GEO_SEO_AI_CONTENT_STANDARD.md`。
+
+### 12.1 方案全文 (原 CONTENT_GROWTH_PLAN，并入)
+
+Version: 1.0  
+Date: 2026-09-24  
+Status: Executable plan (pair with `GEO_SEO_AI_CONTENT_STANDARD.md` + `templates/blog-article-template.html`)  
+Goal: Industry authority → target-buyer attention → qualified links & RFQs  
+
+---
+
+## 1. Positioning
+
+- **For B2B buyers**: Selection encyclopedia for solid-state hydrogen and functional ceramic media — parameters you can verify, not slogans.
+- **For the industry**: Citable intelligence on materials and consumables (not a hard-sell blog).
+- **For AI engines**: Canonical answers for MUQI Inside, SAC/TC621, ICR, solid-state vs PEM.
+- **Tone**: Technical editorial; conclusion-first; orange VI `#f47b20` on navy structure; no medical cure claims.
+
+**Flywheel**: Citable content → on-site product/Hub/RFQ → GEO/AEO schema → outbound distribution → links & mentions → brand search & inbound buyers → RFQ.
+
+---
+
+## 2. Three content pillars
+
+### A. Decision-grade SEO long-form (traffic → RFQ)
+
+| Priority | Theme | Primary intent | Destination |
+|:---:|---|---|---|
+| P0 | Solid-state vs PEM procurement | Choose / combine tech | Comparison hub + ceramic ball |
+| P0 | Appliance dirty-water odor | Fix root cause | MACA-KDF |
+| P0 | Filter media lifespan testing | Spec & QA | Filter / antibacterial ball |
+| P1 | Beauty device zero-retool upgrade | OEM ROI | Steamer / eye patch |
+| P1 | Foot-spa consumable LTV | Recurring revenue | Foot spa flagship |
+| P1 | Export compliance copy | Market entry | Compliance FAQ series |
+| P2 | Agriculture four verticals | Buyer intro | `solutions-hydrogen-agriculture` children |
+
+**Spec per article**: 1,800–2,800 words EN; Bottom Line → problem → tables → params → path → FAQ×4 (1:1 `FAQPage`) → B2B CTA → `#GEO Entity Index`; Schema `TechArticle` + FAQ + Breadcrumb; ≥1 own chart/table; ≥3 verifiable numbers.
+
+**Cadence**: 1 EN flagship/week (P0 first); 1 polished ZH every 2 weeks (not machine translation).
+
+### B. Citable assets (links & mentions)
+
+| Asset | Readers who link | Hook |
+|---|---|---|
+| Buyer Benchmark (web + PDF) | Media, distributors, AI summaries | Email/RFQ for PDF |
+| Tools (life / dosage calculators) | Directories, communities | Result → sample CTA |
+| Glossary expansion | Reference links | Internal product links |
+| SAC/TC621 explainer series | Supply-chain & standards | E-E-A-T Person/Org |
+| Embeddable comparison chart | Blogs & PR | “Embed this chart” backlink |
+| OEM retrofit worksheet | LinkedIn / partners | Completed form → lead |
+
+**Hub role**: H2 Wellness Hub stays industry-neutral (Pulse / Resources / Casebook). MUQI items only as disclosed cases — never the default editorial voice.
+
+### C. GEO / AEO citation engineering
+
+1. **Answer-first** second paragraph (80–120 words) for AI Overviews / Perplexity.
+2. **Entity sync**: new fact → `llms.txt` + `@graph` (Product / Person / Organization).
+3. **AEO Query Bank**: 30 EN + 30 ZH buyer questions per pillar → mapped into FAQPage.
+4. **WebMCP**: keep RFQ/material tools; add `compare_technologies`, optional LTV helper.
+5. **Attribution style**: “According to MUQI lab data (method / lab / date)” + link to method page.
+
+---
+
+## 3. Internal linking
+
+```text
+Home → Blog long-form → Product / 9-dim compare / Hub Resources
+     → H2 Hub (authority) → Blog / Products (disclosed cases)
+     → Solutions verticals ← long-form backlinks
+     → Contact RFQ / Store samples
+```
+
+- ≥4 internal links per flagship (home or catalog + 2 related + compare/Hub).
+- EN↔ZH only with real `hreflang` pairs.
+- Within 72h: blog index, sitemap, llms.txt relevant section.
+
+---
+
+## 4. Off-site & links (compliant)
+
+| Channel | Action |
+|---|---|
+| DEV.to / eng blogs | Technical summary → full guide on emuqi.com |
+| LinkedIn | Post series + company page |
+| Substack brief | Biweekly: 1 datum + 1 case + 1 on-site link |
+| Reddit / forums | Cite tools/glossary; no hard sell |
+| Trade media | Pitch with Benchmark PDF / standards series |
+| Embed assets | Chart/data card for partners to host with credit |
+| GitHub | Open calculators → README → site |
+
+**Red lines**: no paid links; Hub stays neutral; outreach only after「确认发送」; no medical cure claims; no free-sample bait.
+
+---
+
+## 5. 90-day roadmap
+
+**D1–30 Foundation**  
+Query Bank v1 + keyword map · 3× P0 EN + 2 ZH · Benchmark web v1 · WebMCP compare tool · distribute each flagship (DEV + LinkedIn + 1 community) · GSC submits.
+
+**D31–60 Assets**  
+Benchmark PDF + chart pitch 15–20 targets · 2× SAC/TC621 pieces · glossary expand · Hub 2 Pulse + 1 Case/week · calculator page · +4 EN flagships.
+
+**D61–90 Compound**  
+UTM RFQ paths · complete ZH for all P0 · review links / brand search / AI citations / RFQ source · queue agri verticals, Benchmark v2, podcast.
+
+---
+
+## 6. Weekly rhythm
+
+| Day | Work |
+|---|---|
+| Mon | Topic lock (Query Bank + GSC) |
+| Tue–Wed | Draft EN (template + FAQ gate) |
+| Thu | Schema/visual QA → index/sitemap/llms |
+| Fri | ZH polish **or** Hub Pulse/Case |
+| Ongoing | Hub 2+1 / week; 5 link targets / week |
+
+**Monthly output target**: 4 EN + 2 ZH + 2 Hub features + 1 citable asset.
+
+---
+
+## 7. KPIs (90 days)
+
+| Layer | Metrics |
+|---|---|
+| Influence | Referring domains, media mentions, Hub citations |
+| SEO | P0 impressions/position; non-brand clicks |
+| GEO/AEO | AI citations for brand+category; llms/WebMCP hits; FAQ rich results |
+| Audience | LinkedIn follows/engagement; newsletter |
+| Pipeline | Article→RFQ with UTM; PDF/tool leads; sample requests |
+
+---
+
+## 8. Hard gates (every publish)
+
+1. Follow GEO five standards + FAQ hard rules.  
+2. Use `templates/blog-article-template.html`.  
+3. Physical EN/ZH split + hreflang.  
+4. Compliance: no cure claims; Hub neutrality; disclose MUQI cases.  
+5. Byline `By: Martin` / `作者：Martin`.  
+6. Sync list + sitemap + llms.txt + og/twitter.  
+
+---
+
+*Execute order for kickoff: (1) this file → (2) P0 flagship article → (3) Benchmark asset page → (4) Query Bank + keyword map.*
 
 
+### 12.2 AEO Query Bank & Keyword Map v1 (原 AEO_QUERY_BANK，并入)
 
+Purpose: Map buyer questions to on-site assets for FAQPage, answer-first paragraphs, and internal links.  
+Update cadence: monthly. New flagship articles must pull open questions from this bank.  
+Related: `GEO_SEO_AI_CONTENT_STANDARD.md`, `CONTENT_GROWTH_PLAN.md`.
+
+Legend — **Intent**: S = search, Q = conversational AI, B = buyer/RFP.  
+**Status**: live URL = published target; `—` = backlog.
+
+---
+
+## Pillar A — Technology selection & procurement (P0)
+
+| # | EN question | ZH question | Intent | Target URL |
+|---|-------------|-------------|:------:|------------|
+| A1 | Solid-state hydrogen vs PEM: which should we buy? | 固态氢和 PEM 电解该选哪个？ | S,Q,B | `blog/solid-hydrogen-procurement-decision-tree-en.html` |
+| A2 | How long does hydrogen stay in water with solid-state media? | 固态氢材料做的水氢气能留多久？ | S,Q | `blog/hydrogen-water-technology-comparison-en.html` |
+| A3 | What ppb should we require in an RFP? | 富氢水采购规格该写多少 ppb？ | B | `buyer-benchmark.html` |
+| A4 | Do solid-state and PEM compete or complement? | 固态氢和 PEM 是竞争还是互补？ | Q | procurement tree |
+| A5 | What is the total cost of ownership for hydrogen media vs devices? | 耗材路线和设备路线三年 TCO 怎么算？ | B | procurement tree |
+| A6 | Zero-electricity hydrogen water — is it real? | 不通电真能做出富氢水吗？ | S,Q | 9-dim page |
+| A7 | How do we score a hydrogen materials supplier? | 固态氢材料供应商怎么打分？ | B | procurement tree |
+| A8 | Sample lead time for OEM hydrogen media? | OEM 固态氢材料打样要多久？ | B | contact + materials |
+
+## Pillar B — Appliance / water media applications (P0–P1)
+
+| # | EN question | ZH question | Intent | Target URL |
+|---|-------------|-------------|:------:|------------|
+| B1 | Why do robot vacuum dirty tanks smell? | 扫地机污水箱为什么发臭？ | S,Q | antimicrobial ceramic flagship |
+| B2 | Can ceramic balls stop filter secondary contamination? | 陶瓷球能不能防净水器二次污染？ | S | MACA-KDF product |
+| B3 | Silver ion filter media — how long does it last? | 银离子滤芯材料寿命怎么测？ | B | Benchmark / MACA |
+| B4 | Humidifier filter odor control without coating peeling? | 加湿器除味如何避免涂层脱落？ | S | antimicrobial article |
+| B5 | Antimicrobial rate >99.9% — which test method? | 抗菌率 99.9% 用什么检测方法？ | Q | SAC/TC621 + MACA |
+| B6 | Shower filter dechlorination specs for OEM? | 花洒除氯 OEM 规格怎么写？ | B | — |
+| B7 | Foot bath herbal bag contamination risk? | 草本泡脚包污染风险有多大？ | S,Q | foot-spa consumables |
+| B8 | How to add hydrogen to steamers without retooling? | 熏蒸仪如何零改电加氢？ | B | steamer article |
+
+## Pillar C — Beauty / personal care OEM (P1)
+
+| # | EN question | ZH question | Intent | Target URL |
+|---|-------------|-------------|:------:|------------|
+| C1 | Hydrogen face mask OEM — how does HI embedding work? | 氢面膜 OEM 的嵌氢技术怎么工作？ | B | eye patch / face mask posts |
+| C2 | Solid hydrogen patches compliance for export? | 固态氢贴出海合规注意什么？ | B | patch opportunity |
+| C3 | Hydrogen soap foam retention time? | 氢皂泡沫里氢能留多久？ | Q | hydrogen-soap |
+| C4 | Private label hydrogen beauty devices? | 氢美容仪白牌怎么做？ | B | UK mask / steamer |
+
+## Pillar D — Agriculture & research verticals (P2)
+
+| # | EN question | ZH question | Intent | Target URL |
+|---|-------------|-------------|:------:|------------|
+| D1 | Hydrogen agriculture — materials or fertilizer additive? | 氢农业是材料还是肥料添加剂？ | S | solutions hub |
+| D2 | Aquaculture hydrogen-rich water research status? | 水产富氢水研究进展？ | Q | aquaculture subpage |
+| D3 | Livestock rumen hydrogen balance studies? | 畜牧瘤胃氢平衡研究？ | Q | livestock subpage |
+| D4 | Companion animal functional water OEM? | 伴侣动物功能水 OEM？ | B | pet subpage |
+
+## Pillar E — Authority / E-E-A-T (P0 for citations)
+
+| # | EN question | ZH question | Intent | Target URL |
+|---|-------------|-------------|:------:|------------|
+| E1 | What is SAC/TC621 and why does MUQI sit on it? | SAC/TC621 是什么？木齐为何在标委会？ | S,Q | SAC article |
+| E2 | How many patents does MUQI hold? | 木齐有多少专利？ | Q | about / llms.txt |
+| E3 | MUQI Inside — what does it mean? | MUQI Inside 是什么意思？ | Q | home / about |
+| E4 | Solid-state hydrogen market share? | 固态氢消费品材料市场份额？ | Q | llms.txt / about |
+
+## Pillar F — Hub / industry intelligence (influence & links)
+
+| # | EN question | ZH question | Intent | Target URL |
+|---|-------------|-------------|:------:|------------|
+| F1 | Where is hydrogen wellness industry news curated? | 氢健康行业动态哪里看？ | S | h2-wellness-hub/ |
+| F2 | Open molecular hydrogen trial databases? | 分子氢临床试验数据库在哪？ | Q | research-database |
+| F3 | How do brands embed MUQI benchmark tables? | 品牌如何引用木齐 Benchmark 表？ | B | buyer-benchmark.html |
+
+---
+
+## Article ↔ Query coverage matrix (flagships)
+
+| Article | Primary queries covered | Gap / next |
+|---------|-------------------------|------------|
+| Procurement Decision Tree (new) | A1–A7 | A8 sample FAQ on contact page |
+| Field Guide comparison | A2, A4 | — |
+| Buyer Benchmark page | A3, A5, F3, E3 | PDF export |
+| Antimicrobial flagship | B1, B4, B5 | B2 deeper lab method post |
+| Foot-spa consumables | B7 | B8 link from product |
+| SAC/TC621 | E1 | E2 on about schema |
+
+---
+
+## Publish gate (from GEO standard)
+
+1. FAQPage JSON-LD parses; 3–5 QA (benchmark page: 4).  
+2. Visible `.faq-item` count = `mainEntity` length; text 1:1.  
+3. Answer-first paragraph in first 120 words.  
+4. GEO entity index + ≥4 internal links.  
+5. Sitemap + blog index + llms.txt sync.  
+
+*Last updated: 2026-09-24 (MIMO content growth kickoff).*
+
+
+### 12.3 执行进度日志 (只增不删 · Append-only)
+
+| 日期 | 进度 | 产出路径 | 状态 |
+|------|------|----------|------|
+| 2026-09-24 | 内容增长方案定稿并入库本手册 | 本文件 §12.1 | ✅ |
+| 2026-09-24 | AEO Query Bank v1 入库 | 本文件 §12.2 | ✅ |
+| 2026-09-24 | P0 旗舰文：固态氢 vs PEM 采购决策树 | `blog/solid-hydrogen-procurement-decision-tree-en.html` | ✅ 已进 blog 首位 / sitemap / llms.txt |
+| 2026-09-24 | 可外链数据包 Buyer Benchmark | `buyer-benchmark.html` | ✅ 已进 sitemap / llms.txt |
+| 2026-09-24 | 删除误建 `CONTENT_GROWTH_PLAN.md` / `AEO_QUERY_BANK.md` | — | ✅ |
+| （待做） | P0 第 2 篇：家电污水箱异味 或 滤芯寿命 | — | ⬜ |
+| （待做） | Benchmark PDF 导出与外链 pitch | — | ⬜ |
+| （待做） | WebMCP `compare_technologies` | `assets/js/muqi-webmcp.js` | ⬜ |
+
+**Git 起点 commit**: `60a403a` (含误建 MD，后续 commit 已纠正) · 手册并入日: 2026-09-24
+
+---
+
+*本手册由 AI Agent 协同 Martin 维护；内容增长与发布进度以 §12 为唯一记录处。*
