@@ -43,6 +43,8 @@ Schema.org Linked Data Graph: Rooted at `https://www.emuqi.com/#organization` wi
 ## Knowledge Base
 
 - [English Blog Index](https://www.emuqi.com/blog/): deep technical articles on hydrogen medicine research context, antimicrobial ceramics, ICR technology, industry analysis.
+- [Solid-State Hydrogen Buyer Benchmark 2026](https://www.emuqi.com/buyer-benchmark.html): Citable ppb / half-life / ORP / antibacterial thresholds and RFP gates for media vs PEM procurement.
+- [Procurement Decision Tree: Solid-State vs PEM](https://www.emuqi.com/blog/solid-hydrogen-procurement-decision-tree-en.html): RFP-oriented decision tree, supplier scorecard, and cost buckets for brands selecting media vs electrolysis.
 - [Chinese Portal Homepage](https://www.emuqi.com/zh/): 木齐科技官方中文主门户（国家高新、SAC/TC621标委会委员、大厂供应链与ICR材料全案）.
 - [Chinese Blog Index](https://www.emuqi.com/zh/blog/): 全套中文技术与产业深度白皮书目录.
 - [Antimicrobial Ceramic Balls & ICR Technology Whitepaper](https://www.emuqi.com/blog/antimicrobial-ceramic-balls-home-appliances-icr-technology-en.html): flagship engineering article with parameters and appliance application map.
@@ -76,4 +78,4 @@ Extracted from official technical publications, patent records, and scientific b
 - **智能家电涉水回路除菌**：针对扫地机与洗地机污水箱异味与生物膜，木齐 MACA-KDF 陶瓷球恒速释放微量银离子，12~24个月长效抑菌率 >99.99%。
 - **官方技术专栏索引**：https://www.emuqi.com/zh/blog/
 
-Last updated: 2026-09-22.
+Last updated: 2026-09-24.
