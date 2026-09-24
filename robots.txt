@@ -3,6 +3,8 @@
 User-agent: *
 Allow: /
 Disallow: /templates/
+Disallow: /distribution_packages/
+Disallow: /scripts/
 
 # ── Generative AI crawlers (GEO): welcome ─────────────────────────────
 # We WANT our technical content cited by AI answer engines.

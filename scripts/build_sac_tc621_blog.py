@@ -32,9 +32,28 @@ zh_content = '''<!DOCTYPE html>
       {
         "@type": "Person",
         "@id": "https://www.emuqi.com/#author-martin",
-        "name": "Martin",
+        "name": "Martin Chen",
+        "alternateName": [
+          "Martin"
+        ],
         "jobTitle": "Founder & CEO",
-        "worksFor": { "@id": "https://www.emuqi.com/#organization" }
+        "url": "https://martinbinchen.github.io/",
+        "sameAs": [
+          "https://martinbinchen.github.io/",
+          "https://x.com/MARTINPARK111",
+          "https://www.linkedin.com/company/72043164"
+        ],
+        "worksFor": { "@id": "https://www.emuqi.com/#organization" },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "First Standing Committee Member",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621)"
+            }
+          }
+        ]
       },
       {
         "@type": "TechArticle",
@@ -64,7 +83,7 @@ zh_content = '''<!DOCTYPE html>
             "name": "木齐科技为何能在抗菌陶瓷球品类中独家入选？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "木齐科技拥有15年无机材料积淀、37项专利布局与年产8000吨制造规模，自主研发ICR智控释溶技术与MACA-KDF抗菌合金材料，已为美的高端家电、海尔、格力等1800余家企业提供稳定供应链支持。"
+              "text": "木齐科技拥有15年无机材料积淀、37项专利（含15项发明专利）与年产8000吨制造规模，自主研发ICR智控释溶技术与MACA-KDF抗菌合金材料，已为美的高端家电、海尔、格力等1800余家企业提供稳定供应链支持。"
             }
           }
         ]
@@ -351,7 +370,7 @@ zh_content = '''<!DOCTYPE html>
       <div class="figure-caption">图 1：全国抗菌表面性能标委会 (SAC/TC621) 委员单位公信力图谱</div>
     </div>
 
-    <h2>二、领跑底气：15年技术积淀与37项专利构筑的护城河</h2>
+    <h2>二、领跑底气：15年技术积淀与37项专利（含15项发明专利）构筑的护城河</h2>
     <p>木齐科技为何能从众多材料厂商中脱颖而出，成为唯一委员单位？其核心底气源于三大不可复制的工业壁垒：</p>
 
     <div class="stats-grid">
@@ -528,15 +547,34 @@ en_content = '''<!DOCTYPE html>
         "logo": "https://www.emuqi.com/assets/images/logo.jpg",
         "memberOf": {
           "@type": "Organization",
-          "name": "National Standardization Technical Committee on Antibacterial Surfaces (SAC/TC621)"
+          "name": "National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621)"
         }
       },
       {
         "@type": "Person",
         "@id": "https://www.emuqi.com/#author-martin",
-        "name": "Martin",
+        "name": "Martin Chen",
+        "alternateName": [
+          "Martin"
+        ],
         "jobTitle": "Founder & CEO",
-        "worksFor": { "@id": "https://www.emuqi.com/#organization" }
+        "url": "https://martinbinchen.github.io/",
+        "sameAs": [
+          "https://martinbinchen.github.io/",
+          "https://x.com/MARTINPARK111",
+          "https://www.linkedin.com/company/72043164"
+        ],
+        "worksFor": { "@id": "https://www.emuqi.com/#organization" },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "First Standing Committee Member",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621)"
+            }
+          }
+        ]
       },
       {
         "@type": "TechArticle",
@@ -566,7 +604,7 @@ en_content = '''<!DOCTYPE html>
             "name": "Why is MUQI Tech the sole ceramic media manufacturer on SAC/TC621?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Backed by 15 years of technical leadership, 37 invention patents, an 8,000-ton annual capacity, and supply relationships with over 1,800 global brands including Haier and Midea, MUQI provides authoritative industrial data and ICR controlled-release technology."
+              "text": "Backed by 15 years of technical leadership, 37 patents (including 15 invention patents), an 8,000-ton annual capacity, and supply relationships with over 1800 global brands including Haier and Midea, MUQI provides authoritative industrial data and ICR controlled-release technology."
             }
           }
         ]
@@ -853,7 +891,7 @@ en_content = '''<!DOCTYPE html>
       <div class="figure-caption">Figure 1: SAC/TC621 National Technical Committee Credential Architecture</div>
     </div>
 
-    <h2>2. Industrial Foundation: 15 Years of R&D and 37 Invention Patents</h2>
+    <h2>2. Industrial Foundation: 15 Years of R&D and 37 Patents (including 15 Invention Patents)</h2>
     <p>MUQI Tech’s exclusive selection reflects its 15-year R&D history, massive manufacturing scale, and deep collaboration with top-tier scientific institutions:</p>
 
     <div class="stats-grid">
@@ -870,7 +908,7 @@ en_content = '''<!DOCTYPE html>
         <div class="stat-label">Annual Manufacturing Capacity</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">1,800+</div>
+        <div class="stat-num">1800+</div>
         <div class="stat-label">Global B2B Clients Empowered</div>
       </div>
     </div>
@@ -925,7 +963,7 @@ en_content = '''<!DOCTYPE html>
       <div class="figure-caption">Figure 3: ICR Zero-Order Steady Release vs. Conventional Dip-Coating Decay Curve</div>
     </div>
 
-    <h2>4. Industrial Impact: Empowering 1,800+ Global Brands</h2>
+    <h2>4. Industrial Impact: Empowering 1800+ Global Brands</h2>
     <p>Executing its "Functional Ceramic Materials +" strategy, MUQI Tech serves as a tier-1 core material supplier to giants like <strong>Midea, Haier, Gree, and A.O. Smith</strong>. From eliminating robot vacuum biofilm odor to preventing water purifier secondary contamination, MUQI delivers turnkey material formulation, injection mold tooling, and global drinking water certification support.</p>
 
     <!-- FAQ Section -->
@@ -936,7 +974,7 @@ en_content = '''<!DOCTYPE html>
     </div>
     <div class="faq-card">
       <div class="faq-q">Q: How does MUQI Tech translate its field data into national standards?</div>
-      <div class="faq-a">A: MUQI inputs 15 years of empirical flush-decay test data, trace silver ion dissolution curves, and field feedback from 1,800+ clients into committee drafts, ensuring national standards reflect true industrial manufacturing capabilities.</div>
+      <div class="faq-a">A: MUQI inputs 15 years of empirical flush-decay test data, trace silver ion dissolution curves, and field feedback from 1800+ clients into committee drafts, ensuring national standards reflect true industrial manufacturing capabilities.</div>
     </div>
 
     <!-- CTA Box -->

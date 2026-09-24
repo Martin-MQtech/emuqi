@@ -667,7 +667,7 @@ en_html = f"""<!DOCTYPE html>
         ],
         "memberOf": {{
           "@type": "Organization",
-          "name": "National Standardization Technical Committee on Antibacterial Surfaces (SAC/TC621)"
+          "name": "National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621)"
         }}
       }},
       {{
@@ -683,7 +683,7 @@ en_html = f"""<!DOCTYPE html>
             "credentialCategory": "First Standing Committee Member",
             "recognizedBy": {{
               "@type": "Organization",
-              "name": "National Standardization Technical Committee on Antibacterial Surfaces (SAC/TC621)"
+              "name": "National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621)"
             }}
           }}
         ]
@@ -1169,7 +1169,7 @@ en_html = f"""<!DOCTYPE html>
         <img src="../assets/images/logo.jpg" alt="MUQI" height="28">
         <span>MQ TECH · MUQI Technology</span>
       </div>
-      <p>Shandong MUQI Health Technology Co., Ltd. (Member of National Standardization Technical Committee on Antibacterial Surfaces SAC/TC621). Specialist in functional mineral ceramics, solid-state hydrogen microcrystals, and global wellness hardware supply chains.</p>
+      <p>Shandong MUQI Health Technology Co., Ltd. (Member of National Standardization Technical Committee on Antimicrobial Surface Performance SAC/TC621). Specialist in functional mineral ceramics, solid-state hydrogen microcrystals, and global wellness hardware supply chains.</p>
     </div>
     <div>
       <h4>Core Materials</h4>

@@ -19,7 +19,7 @@ Previous: V2.0 — orange VI, navigation geometry fix, About redesign, Applicati
 - Founded 2011, national-level "国家高新技术企业" enterprise
 - Core tech: ICR solid-state hydrogen sustained-release (vs SPE/PEM electrolysis — zero power, 18-24h half-life)
 - Product matrix: 吃·喝·洗·护·泡 (eat-drink-wash-care-bath)
-- 13 invention patents, 29 enterprise standards, 50+ test reports
+- 15 invention patents (of 37 total patents), 29 enterprise standards, 50+ test reports
 - Operations: Jinan, Zibo, Hangzhou (China)
 - Group companies: Muqi New Materials, Muyi Health, Bomiao Environmental, Muxi Technology, Muqi Longxin (factory)
 
@@ -114,6 +114,14 @@ emuqi/
 - [x] **Blog ad inventory**: Removed duplicate consecutive end-of-article placeholders. Each of the 17 articles now has one reserved ad position after the share section and before the footer.
 - [ ] **AdSense display unit**: Create one manual responsive Display ad unit in AdSense, then replace the single blog placeholder with its `data-ad-slot` code. Keep Auto ads disabled until manual placement performance is reviewed.
 - [x] **Future blog ad default**: `templates/blog-article-template.html` includes the publisher script and exactly one end-of-article AdSense placeholder. All new articles must be created from this template.
+- [x] **2026-09-24 full-site audit wrap-up**: patent facts unified (15 invention / 37 total); gold residue cleared; About/Contact TDK lengthened; EN blogs AdSense restored; home + product hero CTAs; EN Blog nav → `/blog/`; incomplete footers filled; fonts preconnect + image dims + key WebP; robots disallow `/scripts/` & `/distribution_packages/`.
+- [ ] **GitHub Pages source**: working mirror is `Martin-MQtech.github.io/emuqi` (not `mqtech-martin`); confirm Pages settings after push.
+
+**Pending (post-audit residuals):**
+- [ ] Hub case/tag meta descriptions often <70 chars; a few titles >70
+- [ ] 4 blog thumbnails still need original replacements
+- [ ] AdSense display unit `data-ad-slot` after AdSense approval
+- [ ] Content platform decision (static blog vs Ghost)
 
 ---
 
@@ -336,7 +344,7 @@ Structure (top to bottom):
 
 1. **Company overview image** — full-width `company-brief.png` at the top of the page, with orange section kicker.
 2. **Intro section** — two-column grid: heading + description on left, orange-bordered dark gradient note card on right.
-3. **Dark stat band** — three columns on `#0a1628` background with orange numbers (25 patents, 15 invention patents, 12 R&D team members). Divided by vertical white rules.
+3. **Dark stat band** — three columns on `#0a1628` background with orange numbers (37 patents (including 15 invention patents), 12 R&D team members). Divided by vertical white rules.
 4. **Feature sections** (4 total, alternating left/right):
    - 01 / Company platform — Hydrogen+ strategy, subsidiaries, industry positions.
    - 02 / Research foundation — CAS collaboration, 2017/2019/2021 milestones.

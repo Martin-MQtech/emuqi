@@ -13,7 +13,7 @@
 | | **02** | **Substack** | `https://h2welltech.substack.com` | `02_Substack/newsletter_draft.md` | 📦 **完整 Newsletter 邮件排版就绪** |
 | | **03** | **Google Blogger** | `https://h2well.blogspot.com` | `03_Google_Blogger/blogger_rich_post.html` | 📦 **富文本 HTML / Mail 通道就绪** |
 | | **04** | **DEV.to** | `https://dev.to/chen_martin_f6f22118d1b92` | `04_DEV_to/devto_clean_engineering.md` | 📦 **去商业化极客学术技术稿就绪** |
-| **第二圈层：商业决策圈** | **05** | **LinkedIn (领英)** | `Martin Chen (Partner & CEO)` | `05_LinkedIn/linkedin_post_and_first_comment.md` | 📦 **Document轮播文案+First Comment防降权就绪** |
+| **第二圈层：商业决策圈** | **05** | **LinkedIn (领英)** | **双轮驱动**: 企业主页 (`company/72043164`) + `Martin Chen (Partner & CEO)` | `05_LinkedIn/` (SOP + 6套核心博客二创包) | 🟢 **SOP+6套二创包全量就绪** |
 | | **06** | **X (Twitter)** | `@MARTINPARK111` | `06_Twitter_X/twitter_6_tweet_thread.md` | 📦 **6-Tweet 深度长串推文案全套就绪** |
 | | **07** | **Facebook 个人专页** | `martinchen2010` | `07_Facebook_Personal/facebook_post_and_album_guide.md` | 📦 **4 图商业故事长文相册文案就绪** |
 | **第三圈层：垂直行业社群** | **08** | **Facebook 垂直群组** | 6 大高价值同行群组（电解设备/理疗/氢水） | `08_Facebook_Groups/facebook_groups_distribution.md` | 📦 **6 套防重、同行价值导向研讨导语就绪** |
@@ -30,7 +30,7 @@
 1. **已自动发布的渠道**：
    - **WordPress.com**: 文章已通过 XML-RPC 原生 API 自动完成全网实时发布，Post ID 为 `30`，永久链接已生成。
 2. **建议优先手动复制分发的重点渠道**：
-   - **LinkedIn**: 将 `05_LinkedIn/` 中的正文发布，并在 10 秒内在评论区发布 First Comment，自点 1 赞锁位；
+   - **LinkedIn (双轮协同)**：严格执行 `05_LinkedIn/LINKEDIN_COMPANY_SYNERGY_SOP.md`。企业主页发布官方 PDF Document 轮播画册；合伙人兼 CEO Martin Chen 账号以第一人称观点转发拆解。主帖内严禁带外链，发布后 10 秒内由发帖人在评论区发布 First Comment 并自点 1 赞锁位，回流至官网 Blog 对应文章；
    - **X (Twitter)**: 将 `06_Twitter_X/` 中的 6 条推文作为 Thread 顺序发布并挂载高清配图；
    - **Substack**: 将 `02_Substack/newsletter_draft.md` 粘贴至 Substack 后台群发海外采购商与订阅用户；
    - **Facebook 群组**: 依照 `08_Facebook_Groups/` 中对应的群组导语，使用模式 A 或模式 B 轮换发布，严禁重复推送。

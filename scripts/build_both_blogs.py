@@ -46,8 +46,17 @@ zh_html = """<!DOCTYPE html>
       {
         "@type": "Person",
         "@id": "https://www.emuqi.com/#author-martin",
-        "name": "Martin",
+        "name": "Martin Chen",
+        "alternateName": [
+          "Martin"
+        ],
         "jobTitle": "CEO",
+        "url": "https://martinbinchen.github.io/",
+        "sameAs": [
+          "https://martinbinchen.github.io/",
+          "https://x.com/MARTINPARK111",
+          "https://www.linkedin.com/company/72043164"
+        ],
         "worksFor": { "@id": "https://www.emuqi.com/#organization" },
         "hasCredential": [
           {

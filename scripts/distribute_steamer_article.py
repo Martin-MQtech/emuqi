@@ -49,7 +49,7 @@ publisher_block = """
 <hr class="wp-block-separator" style="margin:40px 0;border-top:1px solid #e2e8f0;"/>
 <blockquote class="wp-block-quote" style="background:#f8fafc;border-left:4px solid #f47b20;padding:20px 24px;border-radius:0 10px 10px 0;margin:32px 0;">
 <p><strong>Published by MQ Health Tech (Shandong MUQI Health Technology Co., Ltd.)</strong><br>
-<em>National High-Tech Enterprise | Standing Committee Member of National Standardization Technical Committee on Antibacterial Surfaces (SAC/TC621) | Pioneer in Solid-State Hydrogen & Functional Ceramics</em><br>
+<em>National High-Tech Enterprise | Standing Committee Member of National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621) | Pioneer in Solid-State Hydrogen & Functional Ceramics</em><br>
 🌐 <strong>Official Portal:</strong> <a href="https://www.emuqi.com" target="_blank" rel="noopener">www.emuqi.com</a><br>
 🔬 <strong>H2 Wellness Hub:</strong> <a href="https://www.emuqi.com/h2-wellness-hub/" target="_blank" rel="noopener">www.emuqi.com/h2-wellness-hub/</a><br>
 📑 <strong>Original Technical Whitepaper:</strong> <a href="https://www.emuqi.com/blog/solid-state-hydrogen-facial-steamer-upgrade-en.html" target="_blank" rel="noopener">https://www.emuqi.com/blog/solid-state-hydrogen-facial-steamer-upgrade-en.html</a><br>

@@ -351,7 +351,7 @@
           },
           {
             id: "CERT-SAC-TC621",
-            name: "China National Standardization Technical Committee on Antibacterial Surfaces (SAC/TC621)",
+            name: "National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621)",
             status: "First Batch Standing Committee Member & Standard Drafting Organization (Mr. Martin Chen, CEO)",
             internationalAffiliation: "Direct mirror committee to ISO/TC 330 (Surfaces with Biocidal and Antimicrobial Properties)",
             verificationUrl: "https://www.emuqi.com/blog/sac-tc621-national-antimicrobial-standard-committee-en.html"
@@ -359,7 +359,7 @@
           {
             id: "CERT-PATENT-37",
             name: "National Intellectual Property Administration Patent Portfolio",
-            count: "37 Issued Invention & Utility Patents",
+            count: "37 Patents (including 15 Invention Patents)",
             flagships: ["ZL 2018 1 0495832.X (Solid Hydrogen Generation Material)", "ZL 2020 2 1589324.8 (Microporous Sintered Alloy Ball)"],
             verificationUrl: "https://www.emuqi.com/about-functional-ceramic-ball-water-media-manufacturer.html#patents"
           }

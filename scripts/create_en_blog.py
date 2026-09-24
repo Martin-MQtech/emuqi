@@ -37,7 +37,7 @@ en_content = """<!DOCTYPE html>
         },
         "memberOf": {
           "@type": "Organization",
-          "name": "National Standardization Technical Committee on Antibacterial Surfaces (SAC/TC621)"
+          "name": "National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621)"
         }
       },
       {
@@ -52,7 +52,7 @@ en_content = """<!DOCTYPE html>
             "credentialCategory": "First Committee Member",
             "recognizedBy": {
               "@type": "Organization",
-              "name": "National Standardization Technical Committee on Antibacterial Surfaces (SAC/TC621)"
+              "name": "National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621)"
             }
           }
         ]
@@ -443,7 +443,7 @@ en_content = """<!DOCTYPE html>
       <div class="author-info">
         <h4>Martin Chen</h4>
         <div class="author-role">CEO · MUQI Technology Co., Ltd.</div>
-        <p style="margin:0 0 6px 0;font-size:14px;color:#475569;">First Committee Member of the National Standardization Technical Committee on Antibacterial Surfaces (SAC/TC621). Over 20 years of expertise in functional mineral ceramics, solid-state hydrogen generation, and global supply chain solutions for tier-1 appliance brands.</p>
+        <p style="margin:0 0 6px 0;font-size:14px;color:#475569;">First Committee Member of the National Standardization Technical Committee on Antimicrobial Surface Performance (SAC/TC621). Over 20 years of expertise in functional mineral ceramics, solid-state hydrogen generation, and global supply chain solutions for tier-1 appliance brands.</p>
         <div style="font-size:13px;color:#64748b;">
           <span>📧 <a href="mailto:muqizb@gmail.com" style="color:#0284c7;">muqizb@gmail.com</a></span> &nbsp;|&nbsp;
           <span>🌐 <a href="https://www.emuqi.com" style="color:#0284c7;">www.emuqi.com</a></span>
