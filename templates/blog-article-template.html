@@ -103,6 +103,33 @@
 }
 </script>
 
+<!-- ===== FAQ PAGE SCHEMA (required for every technical article) =====
+     Visible FAQ cards MUST match mainEntity Q&A 1:1 (no paraphrase drift). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.emuqi.com/blog/{{SLUG}}.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{FAQ_Q1}}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A1}}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{FAQ_Q2}}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A2}}" }
+    },
+    {
+      "@type": "Question",
+      "name": "{{FAQ_Q3}}",
+      "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A3}}" }
+    }
+  ]
+}
+</script>
+
 <link rel="stylesheet" href="../style.css">
 <style>
   .article-body { max-width: 780px; margin: 100px auto 60px; padding: 0 24px; }
@@ -124,6 +151,45 @@
   .article-body ul { padding-left: 20px; margin-bottom: 16px; }
   .article-body li { font-size: 15px; line-height: 1.8; color: #374151; margin-bottom: 4px; }
   .article-body img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; border: 1px solid #e5e7eb; }
+  /* Unified FAQ cards — must mirror FAQPage.mainEntity 1:1 */
+  .article-body h2 { scroll-margin-top: 90px; }
+  .faq-item {
+    padding: 18px 20px;
+    margin: 0 0 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 3px solid #f47b20;
+    border-radius: 10px;
+  }
+  .faq-item:last-child { margin-bottom: 0; }
+  .faq-item h4 {
+    font-size: 15.5px;
+    color: #0f172a;
+    font-weight: 700;
+    margin: 0 0 8px;
+    line-height: 1.45;
+  }
+  .faq-item h4::before {
+    content: "Q";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    border-radius: 6px;
+    background: #f47b20;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    vertical-align: middle;
+  }
+  .faq-item p {
+    font-size: 14.5px;
+    color: #475569;
+    margin: 0;
+    line-height: 1.75;
+  }
   @media (max-width: 768px) { .article-body { margin: 80px auto 40px; } }
 </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8740168077394877" crossorigin="anonymous"></script>
@@ -184,8 +250,20 @@
   <!-- ARTICLE BODY -->
   {{CONTENT}}
 
-  <!-- FAQ SECTION — feeds Google rich results + AI assistants -->
-  {{FAQ_SECTION}}
+  <!-- FAQ SECTION — visible cards MUST match FAQPage JSON-LD 1:1 -->
+  <h2>Frequently Asked Questions (FAQ)</h2>
+  <div class="faq-item">
+    <h4>{{FAQ_Q1}}</h4>
+    <p>{{FAQ_A1}}</p>
+  </div>
+  <div class="faq-item">
+    <h4>{{FAQ_Q2}}</h4>
+    <p>{{FAQ_A2}}</p>
+  </div>
+  <div class="faq-item">
+    <h4>{{FAQ_Q3}}</h4>
+    <p>{{FAQ_A3}}</p>
+  </div>
 
   <!-- CTA -->
   <div class="cta-box">

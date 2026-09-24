@@ -115,6 +115,7 @@ emuqi/
 - [ ] **AdSense display unit**: Create one manual responsive Display ad unit in AdSense, then replace the single blog placeholder with its `data-ad-slot` code. Keep Auto ads disabled until manual placement performance is reviewed.
 - [x] **Future blog ad default**: `templates/blog-article-template.html` includes the publisher script and exactly one end-of-article AdSense placeholder. All new articles must be created from this template.
 - [x] **2026-09-24 full-site audit wrap-up**: patent facts unified (15 invention / 37 total); gold residue cleared; About/Contact TDK lengthened; EN blogs AdSense restored; home + product hero CTAs; EN Blog nav → `/blog/`; incomplete footers filled; fonts preconnect + image dims + key WebP; robots disallow `/scripts/` & `/distribution_packages/`.
+- [x] **2026-09-24 legacy blog FAQPage retrofit**: all 17 legacy EN article posts now carry `FAQPage` in `@graph` synced 1:1 to visible `.faq-item` cards; unified FAQ card CSS (orange Q badge); template ships `{{FAQ_Q1..3}}` + FAQPage JSON-LD; `blog/index.html` listing exempt (no FAQPage).
 - [ ] **GitHub Pages source**: working mirror is `Martin-MQtech.github.io/emuqi` (not `mqtech-martin`); confirm Pages settings after push.
 
 **Pending (post-audit residuals):**

@@ -37,12 +37,22 @@
 
 ---
 
-### 4. 专为对话式 AI 设计的 FAQ 模块（Conversational Prompts）
-每篇技术长文与解决方案页底部必须设计 **FAQ 问答卡片（结合 `<script type="application/ld+json">` 中的 `FAQPage`）**，直接针对 Perplexity、ChatGPT、Kimi 用户常搜的对话式意图进行精准解答：
+### 4. 专为对话式 AI 设计的 FAQ 模块（Conversational Prompts + FAQPage）
+每篇技术长文与解决方案页底部必须设计 **FAQ 问答卡片 + `<script type="application/ld+json">` 中的 `FAQPage`**，直接针对 Perplexity、ChatGPT、Kimi 用户常搜的对话式意图进行精准解答：
 - *加湿器出雾发臭是什么原因？*
 - *扫地机器人污水箱发酸发臭如何根治？*
 - *木齐科技 ICR 智控释溶与传统涂银有什么区别？*
 - *不用电如何制备高浓度富氢水？*
+
+#### FAQ 设计硬规范（2026-09-24）
+1. **数量**：每篇技术博文 **3–5 条** QA（旧文补 schema 时多数为 3 条，氢贴机会文为 4 条）。
+2. **一一对应**：可见卡片 `.faq-item` 的 `h4`/`p` 与 `FAQPage.mainEntity[].name/acceptedAnswer.text` **必须逐字一致**（允许空白归一化，禁止改写语义）。
+3. **结构位置**：`FAQPage` 必须挂在页面 `@graph` 数组内（与 `Organization` / `Person` / `TechArticle` / `BreadcrumbList` 并列），`@id` 形如 `https://www.emuqi.com/blog/<slug>.html#faq`。
+4. **可见标题**：英文统一 `Frequently Asked Questions (FAQ)`；中文统一 `常见问题解答（FAQ）`。
+5. **视觉卡片（统一 CSS）**：`.faq-item` = 浅灰底 `#f8fafc` + 左侧橙色条 `3px solid #f47b20` + 圆角 10px；问题前缀 `Q` 徽章；答案 `#475569` / line-height 1.75。模板 `templates/blog-article-template.html` 内置该样式与 `{{FAQ_Q1..3}}` 占位。
+6. **文案质量**：问答用完整句；禁止语法残缺（如 “Can hydrogen revitalizes cancer?”）；医疗类问题用「treat/cure 研究边界」表述，不做疗效承诺。
+7. **列表页豁免**：`blog/index.html` / `zh/blog/index.html` 为列表页，**不要求** `FAQPage`。
+8. **发布门禁**：新文发布前校验 — ① 存在 `FAQPage` JSON-LD 且可 `json.loads`；② 可见 `.faq-item` 条数 = `mainEntity` 长度；③ 双方问题文案一致。
 
 ---
 
