@@ -243,23 +243,24 @@
       color: var(--navy);
       font-weight: 700;
     }
-    .faq-card {
+    .faq-item {
       background: var(--bg-light);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 20px 24px;
       margin-bottom: 16px;
     }
-    .faq-q {
+    .faq-item h4 {
       font-weight: 700;
       color: var(--navy);
-      margin-bottom: 8px;
+      margin: 0 0 8px;
       font-size: 16px;
     }
-    .faq-a {
+    .faq-item p {
       font-size: 15px;
       color: var(--text);
       line-height: 1.75;
+      margin: 0;
     }
     .cta-box {
       background: linear-gradient(135deg, #0f172a, #1e293b);
@@ -340,6 +341,46 @@
 <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
 
 <script src="../assets/js/analytics.js" defer></script>
+<style>
+/* MUQI unified FAQ cards (2026-09-24) */
+.faq-item {
+  padding: 18px 20px;
+  margin: 0 0 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #f47b20;
+  border-radius: 10px;
+}
+.faq-item:last-child { margin-bottom: 0; border-bottom: 1px solid #e2e8f0; }
+.faq-item h4 {
+  font-size: 15.5px;
+  color: #0f172a;
+  font-weight: 700;
+  margin: 0 0 8px !important;
+  line-height: 1.45;
+}
+.faq-item h4::before {
+  content: "Q";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  border-radius: 6px;
+  background: #f47b20;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  vertical-align: middle;
+}
+.faq-item p {
+  font-size: 14.5px !important;
+  color: #475569 !important;
+  margin: 0 !important;
+  line-height: 1.75 !important;
+}
+</style>
 </head>
 <body>
 
@@ -477,14 +518,8 @@
 
     <!-- FAQ Section -->
     <h2>5. Frequently Asked Questions (FAQ)</h2>
-    <div class="faq-card">
-      <div class="faq-q">Q: What does the establishment of SAC/TC621 mean for appliance and filtration brands?</div>
-      <div class="faq-a">A: Previously, the market was flooded with short-lived dip-coated pellets lacking unified testing benchmarks. SAC/TC621 establishes legal national testing standards, longevity verification protocols, and drinking water safety compliance frameworks for global OEMs.</div>
-    </div>
-    <div class="faq-card">
-      <div class="faq-q">Q: How does MUQI Tech translate its field data into national standards?</div>
-      <div class="faq-a">A: MUQI inputs 15 years of empirical flush-decay test data, trace silver ion dissolution curves, and field feedback from 1800+ clients into committee drafts, ensuring national standards reflect true industrial manufacturing capabilities.</div>
-    </div>
+    <div class="faq-item"><h4>What is the mission of SAC/TC621?</h4><p>Approved by China National Standardization Administration, SAC/TC621 directly mirrors ISO/TC330 (Biocidal & Antimicrobial Surfaces) to establish and enforce national standards for antimicrobial processing, terminology, and efficacy testing.</p></div>
+    <div class="faq-item"><h4>Why is MUQI Tech the sole ceramic media manufacturer on SAC/TC621?</h4><p>Backed by 15 years of technical leadership, 37 patents (including 15 invention patents), an 8,000-ton annual capacity, and supply relationships with over 1800 global brands including Haier and Midea, MUQI provides authoritative industrial data and ICR controlled-release technology.</p></div>
 
     
 <!-- #GEO Entity Keyword Index -->

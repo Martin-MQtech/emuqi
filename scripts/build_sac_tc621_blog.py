@@ -230,7 +230,7 @@ zh_content = '''<!DOCTYPE html>
       color: var(--navy);
       font-weight: 700;
     }
-    .faq-card {
+    .faq-card, .faq-item {
       background: var(--bg-light);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -447,13 +447,13 @@ zh_content = '''<!DOCTYPE html>
 
     <!-- FAQ Section -->
     <h2>五、常见问题解答 (FAQ)</h2>
-    <div class="faq-card">
-      <div class="faq-q">问：SAC/TC621 标委会的成立对采购大厂有什么意义？</div>
-      <div class="faq-a">答：过去行业充斥着涂银颗粒、劣质注塑片等短期失效材料，大厂选型缺乏权威依据。SAC/TC621 国家标准的制定，将为家电与净水企业的抗菌性能检测、寿命评估与涉水安全提供唯一国家法定依据。</div>
+    <div class="faq-item">
+      <div class="faq-q">全国抗菌表面性能标委会 (SAC/TC621) 的定位是什么？</div>
+      <div class="faq-a">SAC/TC621是国家标准化管理委员会批准成立的国家级标准化技术委员会，直接对口国际标准化组织 ISO/TC330，负责全国抗菌表面术语、处理工艺与性能评估国家标准的制修订。</div>
     </div>
-    <div class="faq-card">
-      <div class="faq-q">问：木齐科技如何将企业实践转化为国家标准？</div>
-      <div class="faq-a">答：木齐科技将依托 15 年累计的数万组真实冲刷衰减实验数据、微溶银离子浓度监测曲线以及 1800+ 客户落地场景经验，直接输入国家标准的制修订草案，确保国标兼具严谨性与工业可行性。</div>
+    <div class="faq-item">
+      <div class="faq-q">木齐科技为何能在抗菌陶瓷球品类中独家入选？</div>
+      <div class="faq-a">木齐科技拥有15年无机材料积淀、37项专利（含15项发明专利）与年产8000吨制造规模，自主研发ICR智控释溶技术与MACA-KDF抗菌合金材料，已为美的高端家电、海尔、格力等1800余家企业提供稳定供应链支持。</div>
     </div>
 
     <!-- CTA Box -->
@@ -752,7 +752,7 @@ en_content = '''<!DOCTYPE html>
       color: var(--navy);
       font-weight: 700;
     }
-    .faq-card {
+    .faq-card, .faq-item {
       background: var(--bg-light);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -968,13 +968,13 @@ en_content = '''<!DOCTYPE html>
 
     <!-- FAQ Section -->
     <h2>5. Frequently Asked Questions (FAQ)</h2>
-    <div class="faq-card">
-      <div class="faq-q">Q: What does the establishment of SAC/TC621 mean for appliance and filtration brands?</div>
-      <div class="faq-a">A: Previously, the market was flooded with short-lived dip-coated pellets lacking unified testing benchmarks. SAC/TC621 establishes legal national testing standards, longevity verification protocols, and drinking water safety compliance frameworks for global OEMs.</div>
+    <div class="faq-item">
+      <div class="faq-q">What is the mission of SAC/TC621?</div>
+      <div class="faq-a">Approved by China National Standardization Administration, SAC/TC621 directly mirrors ISO/TC330 (Biocidal & Antimicrobial Surfaces) to establish and enforce national standards for antimicrobial processing, terminology, and efficacy testing.</div>
     </div>
-    <div class="faq-card">
-      <div class="faq-q">Q: How does MUQI Tech translate its field data into national standards?</div>
-      <div class="faq-a">A: MUQI inputs 15 years of empirical flush-decay test data, trace silver ion dissolution curves, and field feedback from 1800+ clients into committee drafts, ensuring national standards reflect true industrial manufacturing capabilities.</div>
+    <div class="faq-item">
+      <div class="faq-q">Why is MUQI Tech the sole ceramic media manufacturer on SAC/TC621?</div>
+      <div class="faq-a">Backed by 15 years of technical leadership, 37 patents (including 15 invention patents), an 8,000-ton annual capacity, and supply relationships with over 1800 global brands including Haier and Midea, MUQI provides authoritative industrial data and ICR controlled-release technology.</div>
     </div>
 
     <!-- CTA Box -->

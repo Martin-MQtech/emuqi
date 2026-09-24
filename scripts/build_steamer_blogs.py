@@ -528,18 +528,18 @@ zh_html = f"""<!DOCTYPE html>
       <h2 style="margin-top:0;border:none;padding:0;">常见问题解答 (FAQ)</h2>
       
       <div class="faq-item">
-        <h4>Q1：外置固态氢仓出来的氢气浓度真的能达到 1000+ ppb 吗？</h4>
-        <p>A：木齐科技拥有 15 年固态储氢材料研发积淀。ICR 固态微晶在 80~95℃ 温热蒸汽冲刷下，材料中的氢供体快速与热释介质发生温控解离反应。在常规实验室密闭舱与流道测试下，出气口溶氢等效浓度稳定在 1000~1300 ppb。具体出雾浓度需根据合作机型的蒸汽风速、管道降温及散热工况进行联合工程调优。</p>
+        <h4>为什么在熏蒸仪发热锅炉内直接加装电解槽难以工程量产？</h4>
+        <p>大功率锅炉持续沸水会导致自来水中的钙镁离子在高温电极表面极速结垢，运行20-30小时即大幅钝化；且高温密闭电解存在伴生微量臭氧与酸性气体的安全风险；此外在强电底座改动水电路会导致原有CE/CB/FCC电气安全认证全部失效，推高模具与认证成本。</p>
       </div>
 
       <div class="faq-item">
-        <h4>Q2：加装外置小仓会不会导致导雾管风阻过大、甚至发生蒸汽积聚危险？</h4>
-        <p>A：这是工程联合调优的核心环节。微晶反应仓内部采用了蜂窝立体透气格栅，透气截面积大于导雾管截面积的 1.8 倍，确保排气流阻增量控制在安全裕度内（ΔP &lt; 0.15 kPa），保证蒸汽喷出顺畅不反冲。</p>
+        <h4>木齐科技的“外置长导雾管固态氢反应仓”是如何实现零改电升级的？</h4>
+        <p>原机发热底座、强电电路、加热锅炉及原厂模具100%保持不变。仅在原机外置的长导雾管出雾端前5-8厘米处加装模块化微晶反应仓，装填固态储氢微晶片。高温蒸汽流经该仓时遇热即时释放分子氢（测试浓度可达1000+ ppb），并通过下部排液槽分离冷凝水，杜绝药液倒灌底座。</p>
       </div>
 
       <div class="faq-item">
-        <h4>Q3：该方案是否符合国际小家电电气安规标准？</h4>
-        <p>A：这正是外置方案的最大优势。由于未改动机器发热盘、高压 PCB 和开关电源底座，原机的 CE、FCC、CB 及 UL 电气安全证书依然有效。外置仓体采用食品级耐高温材料（如改性 Tritan 或食品级硅胶），耐受 130℃ 蒸汽冲刷，合规风险极低。</p>
+        <h4>固态氢熏蒸仪升级对代工厂与品牌方有何商业盈利价值？</h4>
+        <p>打破了以往‘卖一台机器挣几十元’的一锤子买卖模式。重构成‘仪器作为低门槛入口+6片装硬塑固态氢片与汉方热释药包高频复购’的剃刀与刀片（Razor &amp; Blade）商业模式，单客年化耗材流水可达800-1500元，使客户终身价值（LTV）提升3-5倍。</p>
       </div>
     </div>
 
@@ -1131,18 +1131,18 @@ en_html = f"""<!DOCTYPE html>
       <h2 style="margin-top:0;border:none;padding:0;">Frequently Asked Questions (FAQ)</h2>
       
       <div class="faq-item">
-        <h4>Q1: Does the wand-mounted chamber genuinely deliver 1000+ ppb molecular hydrogen?</h4>
-        <p>A: Yes. Backed by 15 years of dedicated solid-state hydrogen research, MUQI's ICR microcrystalline formulation triggers an immediate catalytic dissolution reaction upon contact with 80–95°C thermal vapor. In closed laboratory test chambers and flow conduits, equivalent dissolved hydrogen concentrations at the nozzle consistently reach 1000 to 1300 ppb. Field concentrations depend on vapor airflow, wand length, and ambient temperature, which are calibrated during joint prototyping.</p>
+        <h4>Why is integrating electrolysis cells inside high-power steamer boilers an engineering dead-end?</h4>
+        <p>High-power steamers (500W to 800W+) boil water vigorously, causing dissolved calcium and magnesium ions in tap water to crystallize rapidly onto hot electrode surfaces. Within 20 to 30 operating hours, dense scale completely calcifies the plates, collapsing hydrogen production to near zero. Furthermore, enclosed boiling-water electrolysis risks releasing trace ozone and acidic byproducts into warm facial vapor, while redesigning high-voltage boilers destroys existing CE, FCC, and CB electrical certifications.</p>
       </div>
 
       <div class="faq-item">
-        <h4>Q2: Will adding an inline chamber create dangerous backpressure in the steamer wand?</h4>
-        <p>A: Preventing backpressure is the core priority of our structural design. The reaction chamber incorporates a radial honeycomb ventilation lattice whose effective open-air surface area is 1.8 times greater than the internal cross-section of the steam conduit. This maintains pressure differentials below safe engineering limits (&Delta;P &lt; 0.15 kPa), guaranteeing smooth vapor ejection without backflow.</p>
+        <h4>How does the wand-mounted solid-state chamber achieve a 'zero electrical modification' upgrade?</h4>
+        <p>The appliance base, heating element, internal plumbing, and high-voltage PCB remain 100% untouched. A specialized reaction chamber is mounted externally on the steam wand, 5 to 8 cm before the nozzle. Loaded with solid-state hydrogen microcrystalline tablets, the chamber thermolytically releases pure molecular hydrogen (1000+ ppb under lab test conditions) upon contact with 80-95°C steam. An integrated drainage trap purges condensation outwardly, preventing chemical backflow into the boiler.</p>
       </div>
 
       <div class="faq-item">
-        <h4>Q3: How does this design affect international household electrical compliance?</h4>
-        <p>A: This is the definitive commercial advantage of the external wand design. Because the high-voltage PCB, heating elements, power cords, and boiler chassis remain 100% untouched, existing CE, FCC, CB, and UL safety certifications remain completely intact. The external chamber is injection-molded from food-grade, high-temperature modified polymers (Tritan / food-grade silicone) rated to 130°C steam contact, ensuring minimal regulatory friction.</p>
+        <h4>How does this solution transform the economics for OEM/ODM factories and beauty brands?</h4>
+        <p>It replaces single-purchase, commoditized hardware margins ($2 to $5 per unit) with the high-margin 'Razor & Blade' model. Hardware ships with premium differentiation, while consumers and professional salons reorder 6-pack blister tablets and herbal sachets monthly ($10 to $18/box). This increases Customer Lifetime Value (LTV) by 3x to 5x, generating $120 to $220 in annual consumable cash flow per machine.</p>
       </div>
     </div>
 
