@@ -2022,6 +2022,7 @@ Legend — **Intent**: S = search, Q = conversational AI, B = buyer/RFP.
 | 2026-09-24 | 内容增长方案定稿并入库本手册 | 本文件 §12.1 | ✅ |
 | 2026-09-24 | AEO Query Bank v1 入库 | 本文件 §12.2 | ✅ |
 | 2026-09-24 | P0 旗舰文：固态氢 vs PEM 采购决策树 | `blog/solid-hydrogen-procurement-decision-tree-en.html` | ✅ 已进 blog 首位 / sitemap / llms.txt |
+| 2026-09-24 | P0 文按 §12.4 重排：标准 Header/Footer/Hero + 专属封面 + 4 图（决策流/机理/材料/品类） | `blog/solid-hydrogen-procurement-decision-tree-en.html` + `assets/images/blog/procurement-tree/` | ✅ |
 | 2026-09-24 | 可外链数据包 Buyer Benchmark | `buyer-benchmark.html` | ✅ 已进 sitemap / llms.txt |
 | 2026-09-24 | 删除误建 `CONTENT_GROWTH_PLAN.md` / `AEO_QUERY_BANK.md` | — | ✅ |
 | （待做） | P0 第 2 篇：家电污水箱异味 或 滤芯寿命 | — | ⬜ |
