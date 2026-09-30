@@ -77,7 +77,9 @@ Require all denied
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 
     <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|js|css|svg|woff2)$">
-        Header set Cache-Control "max-age=31536000, public, immutable"
+        # Only cache 200 OK responses; never cache errors or rate limits (429/404/500)
+        Header set Cache-Control "max-age=31536000, public, immutable" "expr=%{REQUEST_STATUS} == 200"
+        Header set Cache-Control "no-cache, no-store, must-revalidate" "expr=%{REQUEST_STATUS} >= 400"
     </FilesMatch>
     <FilesMatch "\.(html|htm)$">
         Header set Cache-Control "max-age=0, must-revalidate"
