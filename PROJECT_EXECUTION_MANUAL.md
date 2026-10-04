@@ -2025,6 +2025,8 @@ Legend — **Intent**: S = search, Q = conversational AI, B = buyer/RFP.
 | 2026-09-24 | P0 文按 §12.4 重排：标准 Header/Footer/Hero + 专属封面 + 4 图（决策流/机理/材料/品类） | `blog/solid-hydrogen-procurement-decision-tree-en.html` + `assets/images/blog/procurement-tree/` | ✅ |
 | 2026-09-24 | 可外链数据包 Buyer Benchmark | `buyer-benchmark.html` | ✅ 已进 sitemap / llms.txt |
 | 2026-09-24 | 删除误建 `CONTENT_GROWTH_PLAN.md` / `AEO_QUERY_BANK.md` | — | ✅ |
+| 2026-10-03 | 彻底根治全站图片纵向拉伸与导航 Logo 扁平变形问题（补齐 style.css 中 img { height: auto }，清除 logo 标签上机械注入的 width=176，通过 Playwright 视觉回测 0 畸变） | `style.css`, `index.html`, `about-....html`, `blog/index.html` | ✅ |
+| 2026-10-03 | 全站 6 维度系统性健康检测与响应式横向溢出清零修复（全站 170 页面链接死链率 0%、404 静态资源 0 丢失、Schema.org 语法 0 报错；style.css 注入响应式全局溢出断点与移动端导航滑动，Playwright 自动化回测桌面/平板/手机 100% 达成 0px 溢出） | `style.css`, `emuqi/blog/*.html`, `emuqi/zh/blog/*.html` | ✅ |
 | （待做） | P0 第 2 篇：家电污水箱异味 或 滤芯寿命 | — | ⬜ |
 | （待做） | Benchmark PDF 导出与外链 pitch | — | ⬜ |
 | （待做） | WebMCP `compare_technologies` | `assets/js/muqi-webmcp.js` | ⬜ |

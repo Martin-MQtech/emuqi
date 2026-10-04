@@ -102,6 +102,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -110,9 +112,20 @@ body {
   line-height: 1.7;
   color: var(--text);
   background: #f5f6f8;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+header a img, footer a img, footer div img {
+  height: 38px;
+  width: auto;
+}
 a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
 a:hover { color: var(--accent-dark); }
 ul, ol { list-style: none; }
@@ -2153,3 +2166,58 @@ a.category-banner p { margin: 0 0 18px; color: #d2d9e4 !important; font-size: 15
 .agri-hero-aquaculture { --agri-hero-image:url('assets/images/agriculture/category-aquaculture.jpg'); }
 .agri-hero-companion { --agri-hero-image:url('assets/images/agriculture/category-companion.jpg'); }
 .inside-note-product { margin-top:-10px; margin-bottom:28px; }
+
+/* ========================================================================
+   RESPONSIVE GLOBAL LAYOUT & MOBILE OVERFLOW PREVENTION (HEALTH AUDIT FIX)
+   ======================================================================== */
+
+@media (max-width: 992px) {
+  header > div {
+    max-width: 100% !important;
+    padding: 0 16px !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    min-height: auto !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  
+  header nav {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding-bottom: 4px !important;
+  }
+  
+  header nav::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  /* Flex items with hardcoded min-width / flex basis */
+  [style*="flex: 0 0 480px"],
+  [style*="flex:0 0 480px"],
+  [style*="flex: 0 0 420px"],
+  [style*="flex:0 0 420px"],
+  [style*="flex: 0 0 380px"],
+  [style*="flex:0 0 380px"],
+  [style*="flex: 0 0 360px"],
+  [style*="flex:0 0 360px"] {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns: repeat(4, 1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  img, svg, video, table {
+    max-width: 100% !important;
+    height: auto;
+  }
+}
