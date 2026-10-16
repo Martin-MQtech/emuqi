@@ -220,7 +220,16 @@ def build():
 
     /* Editorial Article Header (Clean, Light, Prestigious) */
     .article-header {{
-      margin-bottom: 36px;
+      display: block !important;
+      position: static !important;
+      height: auto !important;
+      min-height: 0 !important;
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      margin: 0 0 36px 0 !important;
+      padding: 0 !important;
+      clear: both !important;
     }}
     .category-pill {{
       display: inline-flex;
@@ -825,7 +834,7 @@ def build():
   </nav>
 
   <!-- 文章正统大方头部 (优雅白底 + 权威排版，告别突兀黑框) -->
-  <header class="article-header">
+  <div class="article-header">
     <div class="category-pill">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 6h2v2h-2z"/></svg>
       国家知识产权战略 · 顶格直审与多维确权
@@ -862,7 +871,7 @@ def build():
         ▲ 权威确权矩阵总装：国家版权局直属核发《国作登字-2026-A-00190677》文字作品证书（前），协同山东省版权局两项美术作品证书与商业防伪认证徽标（后）
       </p>
     </div>
-  </header>
+  </div>
 
   <!-- 核心摘要卡片 (Key Takeaways) -->
   <div class="key-takeaways">
@@ -1293,12 +1302,12 @@ def build():
   <meta property="og:site_name" content="MUQI Tech">
   <meta property="og:locale" content="en_US">
   <meta property="og:description" content="National-Level Literary Work Copyright granted by National Copyright Administration of China! Discover how MUQI Tech builds a multitier IP matrix of technical works, certified artworks, and SAC/TC621 national standards.">
-  <meta property="og:image" content="https://www.emuqi.com/assets/images/blog/copyright-certificates/hero-copyright-certificates.webp">
+  <meta property="og:image" content="https://www.emuqi.com/assets/images/blog/copyright-certificates/hero-copyright-certificates-en.webp">
   <meta property="og:url" content="{url_en}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{title_en}">
   <meta name="twitter:description" content="MUQI Tech granted National-Level Copyright for ICR™ Technical Work alongside Certified Artworks.">
-  <meta name="twitter:image" content="https://www.emuqi.com/assets/images/blog/copyright-certificates/hero-copyright-certificates.webp">
+  <meta name="twitter:image" content="https://www.emuqi.com/assets/images/blog/copyright-certificates/hero-copyright-certificates-en.webp">
 
   <!-- Canonical and Alternates -->
   <link rel="canonical" href="{url_en}">
@@ -1336,7 +1345,7 @@ def build():
         "isPartOf": {{ "@type": "WebPage", "@id": "{url_en}" }},
         "headline": "{title_en}",
         "description": "MUQI Tech is granted National-Level Copyright for ICR Intelligent Control Dissolution Release technical work by the Copyright Protection Center of China (CPCC), establishing a multitier intellectual property fortress.",
-        "image": "https://www.emuqi.com/assets/images/blog/copyright-certificates/hero-copyright-certificates.webp",
+        "image": "https://www.emuqi.com/assets/images/blog/copyright-certificates/hero-copyright-certificates-en.webp",
         "datePublished": "2026-10-16T15:50:00+08:00",
         "dateModified": "2026-10-16T16:20:00+08:00",
         "author": {{
@@ -1455,7 +1464,16 @@ def build():
 
     /* Editorial Article Header */
     .article-header {{
-      margin-bottom: 36px;
+      display: block !important;
+      position: static !important;
+      height: auto !important;
+      min-height: 0 !important;
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      margin: 0 0 36px 0 !important;
+      padding: 0 !important;
+      clear: both !important;
     }}
     .category-pill {{
       display: inline-flex;
@@ -2059,7 +2077,7 @@ def build():
   </nav>
 
   <!-- Editorial Article Header -->
-  <header class="article-header">
+  <div class="article-header">
     <div class="category-pill">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 6h2v2h-2z"/></svg>
       National IP Strategy · Multitier Copyright Certification
@@ -2091,12 +2109,12 @@ def build():
 
     <!-- Flagship Hero Banner Image -->
     <div class="hero-banner-container">
-      <img src="/assets/images/blog/copyright-certificates/hero-copyright-certificates.webp" alt="MUQI Tech Multitier IP Matrix: National Literary Work Copyright & Provincial Fine Art Certifications" class="hero-banner-image">
+      <img src="/assets/images/blog/copyright-certificates/hero-copyright-certificates-en.webp" alt="MUQI Tech Multitier IP Matrix: National Literary Work Copyright & Provincial Fine Art Certifications" class="hero-banner-image">
       <p class="hero-banner-caption">
         ▲ Multitier IP Fortress: National Copyright Administration Literary Work Certificate (Front), accompanied by Provincial Fine Art Certifications and Trust Badges (Back)
       </p>
     </div>
-  </header>
+  </div>
 
   <!-- Key Takeaways Card -->
   <div class="key-takeaways">

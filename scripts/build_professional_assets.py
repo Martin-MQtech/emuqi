@@ -241,111 +241,166 @@ def build_all_assets():
     diag_img.save(out_diag_webp, 'WEBP', quality=95)
     print("Saved infographic moat flowchart:", out_diag_png, out_diag_webp)
 
-    print("\n=== Step 4: Generating Ultra-Premium 1200x630 Executive Hero Banner ===")
-    hero_w, hero_h = 1200, 630
-    hero_img = Image.new('RGB', (hero_w, hero_h), color='#070e1a')
-    hdraw = ImageDraw.Draw(hero_img)
+    print("\n=== Step 4: Generating Ultra-Premium 1200x630 Executive Hero Banners (CN & EN) ===")
+    def make_circular_badge(pil_img, diameter=96):
+        min_dim = min(pil_img.size)
+        cx, cy = pil_img.width // 2, pil_img.height // 2
+        r = min_dim // 2
+        cropped = pil_img.crop((cx - r, cy - r, cx + r, cy + r))
+        scale = 4
+        mask = Image.new('L', (r * 2 * scale, r * 2 * scale), 0)
+        mdraw = ImageDraw.Draw(mask)
+        mdraw.ellipse([0, 0, r * 2 * scale - 1, r * 2 * scale - 1], fill=255)
+        mask = mask.resize((r * 2, r * 2), Image.Resampling.LANCZOS)
+        result = Image.new('RGBA', (r * 2, r * 2), (0, 0, 0, 0))
+        result.paste(cropped, (0, 0), mask=mask)
+        resized = result.resize((diameter, diameter), Image.Resampling.LANCZOS)
+        b_draw = ImageDraw.Draw(resized)
+        b_draw.ellipse([0, 0, diameter-1, diameter-1], outline=(244, 123, 32, 220), width=2)
+        b_draw.ellipse([2, 2, diameter-3, diameter-3], outline=(255, 255, 255, 120), width=1)
+        return resized
 
-    # Ambient radial lighting
-    for r in range(500, 0, -15):
-        alpha = int(22 * (1 - r / 500))
-        hdraw.ellipse([1000 - r, 200 - r, 1000 + r, 200 + r], fill=(244, 123, 32, alpha))
-        hdraw.ellipse([250 - r, 450 - r, 250 + r, 450 + r], fill=(29, 78, 216, alpha))
+    def create_banner(is_en=False):
+        w, h = 1200, 630
+        banner = Image.new('RGBA', (w, h), (8, 17, 30, 255))
+        draw = ImageDraw.Draw(banner)
 
-    # Grid background lines for tech feel
-    for gx in range(0, hero_w, 60):
-        hdraw.line([gx, 0, gx, hero_h], fill=(255, 255, 255, 6), width=1)
-    for gy in range(0, hero_h, 60):
-        hdraw.line([0, gy, hero_w, gy], fill=(255, 255, 255, 6), width=1)
+        # Smooth luxury studio background glow (NO distracting grids)
+        for r in range(680, 0, -8):
+            factor = 1.0 - (r / 680.0)
+            cr = int(8 + (22 - 8) * factor)
+            cg = int(17 + (38 - 17) * factor)
+            cb = int(30 + (68 - 30) * factor)
+            draw.ellipse([600 - r, 270 - int(r*0.65), 600 + r, 270 + int(r*0.65)], fill=(cr, cg, cb, 255))
 
-    # Load the rectified national cert and provincial certs for compositing
-    # National Cert thumbnail
-    nat_pil = Image.open(out_nat_webp).convert('RGBA')
-    # Resize national cert to fit left-center hero
-    nat_thumb_w = 460
-    nat_thumb_h = int(nat_pil.height * (nat_thumb_w / nat_pil.width))
-    nat_thumb = nat_pil.resize((nat_thumb_w, nat_thumb_h), Image.Resampling.LANCZOS)
+        # Center golden pedestal glow
+        aura = Image.new('RGBA', (w, h), (0, 0, 0, 0))
+        adraw = ImageDraw.Draw(aura)
+        for r in range(320, 0, -10):
+            alpha = int(22 * (1.0 - r / 320.0))
+            adraw.ellipse([600 - r, 345 - int(r*0.6), 600 + r, 345 + int(r*0.6)], fill=(244, 123, 32, alpha))
+        banner = Image.alpha_composite(banner, aura)
 
-    # Add drop shadow behind national cert
-    shadow_pad = 20
-    shadow = Image.new('RGBA', (nat_thumb_w + shadow_pad*2, nat_thumb_h + shadow_pad*2), (0, 0, 0, 0))
-    sdraw = ImageDraw.Draw(shadow)
-    sdraw.rounded_rectangle([shadow_pad, shadow_pad, shadow_pad + nat_thumb_w, shadow_pad + nat_thumb_h], radius=10, fill=(0, 0, 0, 180))
-    shadow = shadow.filter(ImageFilter.GaussianBlur(12))
+        def paste_with_shadow(canvas, element, pos, blur_r=18, offset=(0, 10), shadow_opacity=150, border_color=None):
+            ew, eh = element.size
+            pad = blur_r * 2 + max(abs(offset[0]), abs(offset[1]))
+            sh_img = Image.new('RGBA', (ew + pad*2, eh + pad*2), (0, 0, 0, 0))
+            sdraw = ImageDraw.Draw(sh_img)
+            s_box = [pad + offset[0], pad + offset[1], pad + offset[0] + ew, pad + offset[1] + eh]
+            sdraw.rectangle(s_box, fill=(0, 0, 0, shadow_opacity))
+            sh_img = sh_img.filter(ImageFilter.GaussianBlur(blur_r))
+            canvas.paste(sh_img, (pos[0] - pad, pos[1] - pad), sh_img)
+            if border_color:
+                elem_border = element.copy()
+                bdraw = ImageDraw.Draw(elem_border)
+                bdraw.rectangle([0, 0, ew-1, eh-1], outline=border_color, width=1)
+                canvas.paste(elem_border, pos, elem_border)
+            else:
+                canvas.paste(element, pos, element)
 
-    # Provincial Certs thumbnails
-    prov1_pil = Image.open(os.path.join(img_dir, 'cert-solid-hydrogen-lab.webp')).convert('RGBA')
-    prov2_pil = Image.open(os.path.join(img_dir, 'cert-icr-technology.webp')).convert('RGBA')
-    prov_thumb_w = 270
-    prov_thumb_h = int(prov1_pil.height * (prov_thumb_w / prov1_pil.width))
-    prov1_thumb = prov1_pil.resize((prov_thumb_w, prov_thumb_h), Image.Resampling.LANCZOS)
-    prov2_thumb = prov2_pil.resize((prov_thumb_w, prov_thumb_h), Image.Resampling.LANCZOS)
+        nat_raw = Image.open(out_nat_png).convert('RGBA')
+        prov1_raw = Image.open(os.path.join(img_dir, 'cert-solid-hydrogen-lab.png')).convert('RGBA')
+        prov2_raw = Image.open(os.path.join(img_dir, 'cert-icr-technology.png')).convert('RGBA')
+        badge_icr_raw = Image.open(os.path.join(img_dir, 'badge-icr-technology.png')).convert('RGBA')
+        badge_lab_raw = Image.open(os.path.join(img_dir, 'badge-solid-hydrogen-lab.png')).convert('RGBA')
 
-    # Composite images onto hero
-    # Left side: National certificate (Hero centerpiece)
-    pos_nat_x = 70
-    pos_nat_y = 175
-    hero_img.paste(shadow, (pos_nat_x - shadow_pad, pos_nat_y - shadow_pad), shadow)
-    hero_img.paste(nat_thumb, (pos_nat_x, pos_nat_y), nat_thumb)
+        badge_icr = make_circular_badge(badge_icr_raw, diameter=96)
+        badge_lab = make_circular_badge(badge_lab_raw, diameter=96)
 
-    # Right side: Two provincial certificates stacked or angled
-    pos_p1_x = 560
-    pos_p1_y = 175
-    hero_img.paste(prov1_thumb, (pos_p1_x, pos_p1_y), prov1_thumb)
+        nat_w = 480
+        nat_h = int(nat_raw.height * (nat_w / nat_raw.width))
+        nat_elem = nat_raw.resize((nat_w, nat_h), Image.Resampling.LANCZOS)
 
-    pos_p2_x = 560
-    pos_p2_y = 175 + prov_thumb_h + 15
-    hero_img.paste(prov2_thumb, (pos_p2_x, pos_p2_y), prov2_thumb)
+        prov_w = 345
+        prov1_h = int(prov1_raw.height * (prov_w / prov1_raw.width))
+        prov2_h = int(prov2_raw.height * (prov_w / prov2_raw.width))
+        prov1_elem = prov1_raw.resize((prov_w, prov1_h), Image.Resampling.LANCZOS)
+        prov2_elem = prov2_raw.resize((prov_w, prov2_h), Image.Resampling.LANCZOS)
 
-    # Floating Badges on the right
-    badge_icr = Image.open(os.path.join(img_dir, 'badge-icr-technology.png')).convert('RGBA').resize((140, 140), Image.Resampling.LANCZOS)
-    badge_lab = Image.open(os.path.join(img_dir, 'badge-solid-hydrogen-lab.png')).convert('RGBA').resize((140, 140), Image.Resampling.LANCZOS)
-    
-    hero_img.paste(badge_icr, (870, 200), badge_icr)
-    hero_img.paste(badge_lab, (1020, 200), badge_lab)
+        cx = (w - nat_w) // 2
+        cy = 168
+        lx = 50
+        ly = 208
+        rx = w - 50 - prov_w
+        ry = 208
 
-    # Hero Typography
-    font_hero_pill = ImageFont.truetype(font_bold, 13)
-    font_hero_h1 = ImageFont.truetype(font_bold, 32)
-    font_hero_sub = ImageFont.truetype(font_reg, 16)
-    font_badge_caption = ImageFont.truetype(font_bold, 12)
+        # Paste Left & Right Provincial Certs
+        paste_with_shadow(banner, prov1_elem, (lx, ly), blur_r=16, offset=(0, 8), shadow_opacity=130, border_color=(200, 215, 230, 180))
+        paste_with_shadow(banner, prov2_elem, (rx, ry), blur_r=16, offset=(0, 8), shadow_opacity=130, border_color=(200, 215, 230, 180))
 
-    # Top pill
-    pill_text = "国家版权局直审 · 国作登字-2026-A-00190677 ｜ 山东省版权局 · 鲁作登字-2026-F"
-    pill_w = hdraw.textlength(pill_text, font=font_hero_pill) + 24
-    hdraw.rounded_rectangle([70, 40, 70 + pill_w, 70], radius=15, fill="#1e293b", outline="#f47b20", width=1)
-    hdraw.text((82, 47), pill_text, fill="#f47b20", font=font_hero_pill)
+        # Paste Center National Cert (Elevated in front with prominent golden border & rich shadow)
+        paste_with_shadow(banner, nat_elem, (cx, cy), blur_r=24, offset=(0, 12), shadow_opacity=190, border_color=(244, 123, 32, 220))
 
-    # Main Title
-    hdraw.text((70, 85), "木齐科技构建立体知识产权护城河", fill="#ffffff", font=font_hero_h1)
-    # Subtitle
-    hdraw.text((70, 130), "国家级文字专论版权 ＋ 省级商业美术徽标 ＋ SAC/TC621国家标准 赋能全球B2B大厂", fill="#94a3b8", font=font_hero_sub)
+        # Paste Circular Badges in front at corners
+        paste_with_shadow(banner, badge_icr, (cx - 48, cy + nat_h - 78), blur_r=12, offset=(0, 6), shadow_opacity=160)
+        paste_with_shadow(banner, badge_lab, (cx + nat_w - 48, cy + nat_h - 78), blur_r=12, offset=(0, 6), shadow_opacity=160)
 
-    # Captions below images
-    hdraw.text((pos_nat_x + 10, pos_nat_y + nat_thumb_h + 12), "★ 国家版权局直属核发 · 《ICR智控释溶技术》文字作品证书", fill="#fcd34d", font=font_badge_caption)
-    hdraw.text((pos_p1_x + 10, pos_p2_y + prov_thumb_h + 12), "★ 山东省版权局核发 · 《固态氢实验室》《ICR》美术作品证书", fill="#60a5fa", font=font_badge_caption)
-    hdraw.text((870, 360), "商业流通防伪认证徽章", fill="#cbd5e1", font=font_badge_caption)
-    hdraw.text((870, 385), "Equipped with ICR™ ｜ Solid Hydrogen Lab", fill="#94a3b8", font=font_badge_caption)
+        f_pill = ImageFont.truetype(font_bold, 13)
+        f_title = ImageFont.truetype(font_bold, 34)
+        f_sub = ImageFont.truetype(font_reg, 15)
+        f_lbl_gold = ImageFont.truetype(font_bold, 13)
+        f_lbl_sub = ImageFont.truetype(font_bold, 12)
 
-    # Bottom Trust Indicators Bar
-    hdraw.line([70, 560, 1130, 560], fill=(255, 255, 255, 30), width=1)
-    font_trust = ImageFont.truetype(font_reg, 13)
-    trust_items = [
-        "✔ 中国版权保护中心 (CPCC) 直审",
-        "✔ 伯尔尼公约 181 成员国自动互认",
-        "✔ SAC/TC621 委员单位与国家标准",
-        "✔ 欧盟 RoHS · SGS 毒理 · FDA 食品接触"
-    ]
-    cur_x = 70
-    for item in trust_items:
-        hdraw.text((cur_x, 580), item, fill="#cbd5e1", font=font_trust)
-        cur_x += 265
+        draw = ImageDraw.Draw(banner)
 
-    out_hero_jpg = os.path.join(img_dir, 'hero-copyright-certificates.jpg')
-    out_hero_webp = os.path.join(img_dir, 'hero-copyright-certificates.webp')
-    hero_img.save(out_hero_jpg, 'JPEG', quality=95)
-    hero_img.save(out_hero_webp, 'WEBP', quality=95)
-    print("Saved executive hero banner:", out_hero_jpg, out_hero_webp)
+        if not is_en:
+            pill_str = '★ 中国版权保护中心 (CPCC) 直审 · 国家级文字作品版权 ｜ 山东省版权局 · 美术作品确权'
+            title_str = '木齐科技 · 权威知识产权矩阵'
+            sub_str = '国家级技术专论版权 ＋ 省级商业美术版权 ｜ 构筑全球B2B供应链信任壁垒'
+            lbl_left = '省级美术确权 · 固态氢实验室'
+            lbl_center = '★ 国家版权局直审 · 国作登字-2026-A-00190677 · 《ICR智控释溶技术》文字专论'
+            lbl_right = '省级美术确权 · ICR智控释溶'
+        else:
+            pill_str = '★ Reviewed by CPCC · Stamped by National Copyright Administration of PRC'
+            title_str = 'MUQI TECH · MULTITIER INTELLECTUAL PROPERTY FORTRESS'
+            sub_str = 'National-Level Literary Work Copyright + Certified Commercial Artworks | Securing Global Tier-1 OEMs'
+            lbl_left = 'Certified Artwork · Solid Hydrogen Lab'
+            lbl_center = '★ National Copyright · Reg. 国作登字-2026-A-00190677 · ICR™ Literary Work'
+            lbl_right = 'Certified Artwork · ICR Release Tech'
+
+        # Pill Tag
+        pw = draw.textlength(pill_str, font=f_pill) + 26
+        px = (w - pw) // 2
+        draw.rounded_rectangle([px, 22, px + pw, 50], radius=14, fill=(24, 38, 62, 220), outline=(244, 123, 32, 200), width=1)
+        draw.text((px + 13, 28), pill_str, fill='#fed7aa', font=f_pill)
+
+        # Title
+        draw.text((w // 2, 63), title_str, fill='#ffffff', font=f_title, anchor='mt')
+
+        # Subtitle
+        draw.text((w // 2, 110), sub_str, fill='#cbd5e1', font=f_sub, anchor='mt')
+
+        # Top labels directly above Left and Right Certificates
+        vis_l_w = cx - 10 - lx
+        tag_l_w = draw.textlength(lbl_left, font=f_lbl_sub) + 18
+        tag_l_x = lx + (vis_l_w - tag_l_w) // 2
+        draw.rounded_rectangle([tag_l_x, ly - 32, tag_l_x + tag_l_w, ly - 8], radius=5, fill=(18, 30, 50, 220), outline=(100, 130, 170, 120), width=1)
+        draw.text((tag_l_x + 9, ly - 27), lbl_left, fill='#93c5fd', font=f_lbl_sub)
+
+        vis_r_start = cx + nat_w + 10
+        vis_r_w = (rx + prov_w) - vis_r_start
+        tag_r_w = draw.textlength(lbl_right, font=f_lbl_sub) + 18
+        tag_r_x = vis_r_start + (vis_r_w - tag_r_w) // 2
+        draw.rounded_rectangle([tag_r_x, ly - 32, tag_r_x + tag_r_w, ly - 8], radius=5, fill=(18, 30, 50, 220), outline=(100, 130, 170, 120), width=1)
+        draw.text((tag_r_x + 9, ly - 27), lbl_right, fill='#93c5fd', font=f_lbl_sub)
+
+        # Center caption with gold pill backing below National Cert at Y = 550
+        c_w = draw.textlength(lbl_center, font=f_lbl_gold) + 26
+        c_x = (w - c_w) // 2
+        c_y = cy + nat_h + 16
+        draw.rounded_rectangle([c_x, c_y, c_x + c_w, c_y + 30], radius=6, fill=(30, 42, 65, 230), outline=(244, 123, 32, 190), width=1)
+        draw.text((w // 2, c_y + 6), lbl_center, fill='#fcd34d', font=f_lbl_gold, anchor='mt')
+
+        final_rgb = banner.convert('RGB')
+        name_prefix = 'hero-copyright-certificates-en' if is_en else 'hero-copyright-certificates'
+        out_jpg = os.path.join(img_dir, f'{name_prefix}.jpg')
+        out_webp = os.path.join(img_dir, f'{name_prefix}.webp')
+        final_rgb.save(out_jpg, 'JPEG', quality=95)
+        final_rgb.save(out_webp, 'WEBP', quality=95)
+        print(f"Saved executive hero banner ({name_prefix}):", out_jpg, out_webp)
+
+    create_banner(is_en=False)
+    create_banner(is_en=True)
     print("\nAll assets successfully generated!")
 
 if __name__ == '__main__':
