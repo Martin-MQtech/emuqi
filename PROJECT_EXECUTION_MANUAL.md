@@ -857,15 +857,20 @@ AEO 与 SEO、GEO 的本质区别：
 7. **高转化 CTA 行动号召区 (B2B Lead Generation Box)**：
    - 高视觉冲击力的深蓝卡片或橙色渐变底纹；
    - 包含技术白皮书索取、免费试样申领、OEM/ODM 定制咨询按钮，直链 `/contact-mqtech-hydrogen-health.html` 与 `/store.html`。
-8. **全渠道社交媒体分享栏 (中英双轨/国内主流+出海国际)**：
-   - **国内主流平台阵列**：
-     - **微信**：采用绿色渐变 Pill，点击唤起原生高质感扫码弹窗（Modal），内含动态生成的文章二维码，支持手机微信「扫一扫」直接打开网页并一键分享至朋友圈或微信群聊；
-     - **小红书 (RED)**：标志性红底白标 Pill，点击自动将【文章标题】与链接写入剪贴板，并弹出 Toast 引导提示直接粘贴发笔记；
-     - **哔哩哔哩 (B站)**：B站蓝白 Pill，点击自动写入剪贴板并直通 B站动态发布页；
-     - **新浪微博**：官方微博红 Pill，在新窗口直接调起微博分享接口；
-     - **一键复制链接**：深色科技 Pill，点击执行剪贴板写入并滑出全屏微拟物 Toast 提示；
-   - **出海国际平台阵列**：横向分布 LinkedIn、𝕏 (Twitter)、WhatsApp、Telegram、Facebook，支撑全球买家一键转推与跨境商务合作；
-   - **单点真理母版**：，同步脚本 。
+8. **全渠道社交媒体分享栏 (中英双轨社交分享母版规范)**：
+   - **中文博文规范（双层结构，母版 `templates/canonical_social_share_zh.html`）**：
+     - **第一行（国内主流矩阵）**：
+       - **微信**：绿色 Pill，点击唤起高质感毛玻璃扫码弹窗（Modal），内含动态生成的文章二维码，支持手机微信「扫一扫」直接阅读并一键分享至朋友圈或好友群聊；
+       - **小红书 (RED)**：标志性红底白标 Pill，点击自动将【文章标题】与链接写入剪贴板，弹出 Toast 引导提示直接粘贴发笔记；
+       - **哔哩哔哩 (B站)**：B站蓝白 Pill，点击自动写入剪贴板并直通 B站动态发布页；
+       - **新浪微博**：官方微博红 Pill，在新窗口直接调起微博分享接口；
+       - **一键复制链接**：深色科技 Pill，点击执行剪贴板写入并滑出全屏微拟物 Toast 提示；
+     - **第二行（国际出海矩阵）**：横向分布 LinkedIn、𝕏 (Twitter)、Facebook、WhatsApp、Telegram、Reddit；
+     - **同步脚本**：`scripts/inject_share_bars.py`。
+   - **英文博文规范（单行聚合结构，母版 `templates/canonical_social_share_en.html`）**：
+     - **单行流式排版**：不分国内外两行，以统一横向 Pill 胶囊行展示（`Share this article:`），支持移动端自适应换行；
+     - **集成平台**：`LinkedIn`、`𝕏 Twitter`、`WeChat`（英文标签与纯英扫码弹窗）、`RED Note`（英文标签，点击自动复制标题与链接至剪贴板并弹出英文 Toast）、`Facebook`、`WhatsApp`、`Telegram`、`Reddit`、`Copy Link`；
+     - **同步脚本**：`scripts/inject_en_share_bars.py`。
 9. **相关推荐阅读矩阵 (Related Articles Grid)**：
    - 挑选 3 篇同类或互补的旗舰技术博文，呈现图文卡片；
    - 所有推荐链接必须使用经过校验的站内绝对根路径。
@@ -2166,6 +2171,7 @@ Legend — **Intent**: S = search, Q = conversational AI, B = buyer/RFP.
 | 2026-10-16 | 中英文博文 Header 与 Footer 格式全站统一与模板锁定 | `templates/canonical_*.html`, `scripts/unify_blog_headers_footers.py` | ✅ 9 篇中文博文导航 21 链接、页脚 20 链接，11 篇英文博文导航 21 链接、页脚 25 链接，实现数学级一致 |
 | 2026-10-16 | 博客营销与 SEO/GEO/AEO 黄金架构标准升级入库 | 本手册 §12.8, §12.9 | ✅ 锁定 FAQ 问答、高转化 CTA、字体字号与对比度标准 |
 | 2026-10-16 | 视频号发布空文案事故深度复盘与防空发四步门禁确立 | 本手册 §19.11 | ✅ 建立输入框字数断言与视觉截屏硬核卡点，彻底终结盲目点击发布 |
+| 2026-10-16 | 全站英文博客单行社交分享栏升级（新增 WeChat 扫码与 RED Note 一键复制，27篇英文博文全量覆盖） | `templates/canonical_social_share_en.html`, `scripts/inject_en_share_bars.py` | ✅ 英文版单行流式排版，统一集成微信二维码与小红书，兼顾国内国际全渠道 |
 | （待做） | P0 第 2 篇：家电污水箱异味 或 滤芯寿命 | — | ⬜ |
 | （待做） | Benchmark PDF 导出与外链 pitch | — | ⬜ |
 | （待做） | WebMCP `compare_technologies` | `assets/js/muqi-webmcp.js` | ⬜ |
