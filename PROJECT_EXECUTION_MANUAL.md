@@ -2172,6 +2172,7 @@ Legend — **Intent**: S = search, Q = conversational AI, B = buyer/RFP.
 | 2026-10-16 | 博客营销与 SEO/GEO/AEO 黄金架构标准升级入库 | 本手册 §12.8, §12.9 | ✅ 锁定 FAQ 问答、高转化 CTA、字体字号与对比度标准 |
 | 2026-10-16 | 视频号发布空文案事故深度复盘与防空发四步门禁确立 | 本手册 §19.11 | ✅ 建立输入框字数断言与视觉截屏硬核卡点，彻底终结盲目点击发布 |
 | 2026-10-16 | 全站英文博客单行社交分享栏升级（新增 WeChat 扫码与 RED Note 一键复制，27篇英文博文全量覆盖） | `templates/canonical_social_share_en.html`, `scripts/inject_en_share_bars.py` | ✅ 英文版单行流式排版，统一集成微信二维码与小红书，兼顾国内国际全渠道 |
+| 2026-10-16 | 发布中英双语博客：双重国家级版权认证落地（固态氢实验室与ICR智控释溶技术IP确权） | `zh/blog/muqi-solid-hydrogen-lab-icr-copyright-certificates.html`, `blog/muqi-solid-hydrogen-lab-icr-copyright-certificates-en.html` | ✅ 严格执行 §12.8 黄金架构，锁定三位一体IP护城河，已更新 sitemap 及索引 |
 | （待做） | P0 第 2 篇：家电污水箱异味 或 滤芯寿命 | — | ⬜ |
 | （待做） | Benchmark PDF 导出与外链 pitch | — | ⬜ |
 | （待做） | WebMCP `compare_technologies` | `assets/js/muqi-webmcp.js` | ⬜ |
