@@ -335,231 +335,152 @@
 </head>
 <body>
 
-  <!-- Site Header -->
-  <header style="background:linear-gradient(180deg,#e8eaed 0%,#d8dadf 40%,#cfd2d7 70%,#c5c8cd 100%);border-bottom:1px solid #b8bbc0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.06),inset 0 1px 0 rgba(255,255,255,0.65)">
-  <div style="display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 24px;min-height:72px">
-    <a href="/zh/" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0">
-      <img src="/assets/images/logo.jpg" alt="MUQI" height="38" width="45" style="height:38px;width:auto;border-radius:3px">
-      <span style="font-size:17px;font-weight:700;color:#1a1a2e">木齐科技</span>
+  <!-- 全渠道社交媒体分享组件 (中英双轨/国内主流+出海国际) -->
+<div class="social-share-wrap" style="margin: 40px 0; padding: 22px 24px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px;">
+  <!-- 国内主流媒体 -->
+  <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+    <span class="social-share-label" style="font-size:14px; font-weight:700; color:#0f172a; margin-right:4px;">分享本文到：</span>
+    
+    <!-- 微信 (扫码卡片) -->
+    <button type="button" onclick="mqOpenWechatShareModal()" class="share-pill-btn share-pill-wechat" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:20px; background:#07c160; color:#ffffff; font-size:13px; font-weight:600; border:none; transition:all 0.2s; box-shadow:0 2px 6px rgba(7,193,96,0.25);" onmouseover="this.style.opacity='0.9';this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 3C4.36 3 1 5.91 1 9.5c0 2.05 1.1 3.88 2.81 5.09-.13.63-.48 2.29-.55 2.65-.09.43.16.42.33.31.25-.16 2.37-1.57 2.76-1.84.67.19 1.4.29 2.15.29.35 0 .69-.02 1.03-.07-.2-.61-.31-1.26-.31-1.93 0-3.87 3.8-7 8.5-7 .35 0 .69.02 1.03.07C18.06 6.06 13.68 3 8.5 3zm-2.25 4a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm5 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM16 11c-3.87 0-7 2.69-7 6 0 1.76.88 3.33 2.27 4.41-.1.49-.38 1.77-.44 2.05-.07.33.12.33.26.24.2-.13 1.86-1.22 2.17-1.43.52.15 1.09.23 1.74.23 3.87 0 7-2.69 7-6s-3.13-6-7-6zm-2 3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+      微信
+    </button>
+
+    <!-- 小红书 (一键复制标题+链接并提示) -->
+    <button type="button" onclick="mqShareToXhs('木齐科技为何成为抗菌陶瓷球唯一参与国家级标准化建设的委员单位？', 'https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html')" class="share-pill-btn share-pill-xhs" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:20px; background:#ff2442; color:#ffffff; font-size:13px; font-weight:600; border:none; transition:all 0.2s; box-shadow:0 2px 6px rgba(255,36,66,0.25);" onmouseover="this.style.opacity='0.9';this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+      <span style="font-weight:900; font-size:11px; letter-spacing:-0.5px; background:rgba(255,255,255,0.2); padding:1px 4px; border-radius:4px;">RED</span>
+      小红书
+    </button>
+
+    <!-- B站 (哔哩哔哩) -->
+    <button type="button" onclick="mqShareToBilibili('木齐科技为何成为抗菌陶瓷球唯一参与国家级标准化建设的委员单位？', 'https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html')" class="share-pill-btn share-pill-bili" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:20px; background:#00aeec; color:#ffffff; font-size:13px; font-weight:600; border:none; transition:all 0.2s; box-shadow:0 2px 6px rgba(0,174,236,0.25);" onmouseover="this.style.opacity='0.9';this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51 0 2.733 1.224 2.733 2.734v10.146a2.734 2.734 0 0 1-2.733 2.734H5.333a2.734 2.734 0 0 1-2.733-2.734V7.387c0-1.51 1.223-2.734 2.733-2.734h.854l-1.92-1.92a.75.75 0 0 1 1.06-1.06l2.98 2.98h7.373l2.98-2.98a.75.75 0 0 1 1.06 1.06l-1.92 1.92zM5.333 6.153a1.234 1.234 0 0 0-1.233 1.234v10.146c0 .68.553 1.234 1.233 1.234h13.334c.68 0 1.233-.553 1.233-1.234V7.387c0-.68-.553-1.234-1.233-1.234H5.333zm3.417 4.25c.69 0 1.25.56 1.25 1.25v2c0 .69-.56 1.25-1.25 1.25s-1.25-.56-1.25-1.25v-2c0-.69.56-1.25 1.25-1.25zm6.5 0c.69 0 1.25.56 1.25 1.25v2c0 .69-.56 1.25-1.25 1.25s-1.25-.56-1.25-1.25v-2c0-.69.56-1.25 1.25-1.25z"/></svg>
+      B站
+    </button>
+
+    <!-- 微博 -->
+    <a href="https://service.weibo.com/share/share.php?url=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html&title=木齐科技为何成为抗菌陶瓷球唯一参与国家级标准化建设的委员单位？" target="_blank" rel="noopener noreferrer" class="share-pill-btn share-pill-weibo" style="display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:20px; background:#e6162d; color:#ffffff; text-decoration:none; font-size:13px; font-weight:600; transition:all 0.2s; box-shadow:0 2px 6px rgba(230,22,45,0.25);" onmouseover="this.style.opacity='0.9';this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10.07 19.33c-4.42.34-8.24-1.85-8.52-4.9-.29-3.04 3.03-5.8 7.45-6.14 4.42-.34 8.23 1.86 8.52 4.9.29 3.05-3.03 5.8-7.45 6.14zm-.89-2.88c.45-.16.71-.62.59-1.02-.12-.4-.59-.59-1.04-.43-.45.16-.71.62-.59 1.02.12.4.59.59 1.04.43zm1.9-1.24c.18-.08.28-.29.23-.48-.06-.19-.26-.28-.44-.2-.18.08-.28.29-.23.48.06.19.26.28.44.2zm-.17-6.93c-.48-.12-.76-.6-.64-1.08.12-.48.6-.76 1.08-.64 1.93.48 3.39 1.94 3.87 3.87.12.48-.16.96-.64 1.08-.48.12-.96-.16-1.08-.64-.32-1.29-1.3-2.27-2.59-2.59zm3.5-2.83c-.45-.16-.7-.66-.54-1.11.16-.45.66-.7 1.11-.54 3.33 1.2 5.88 3.75 7.08 7.08.16.45-.09.95-.54 1.11-.45.16-.95-.09-1.11-.54-.99-2.75-3.1-4.86-5.85-5.85z"/></svg>
+      微博
     </a>
-    <nav style="display:flex;align-items:center;gap:3px;flex-wrap:nowrap;flex-shrink:0">
-      <!-- 1. 首页 -->
-      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
-        <a href="/zh/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">首页 <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:210px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
-          <a href="/zh/" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🏠</span> 首页</a>
-          <a href="/about-functional-ceramic-ball-water-media-manufacturer.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🏢</span> 关于木齐</a>
-        </div>
-      </div>
-      <!-- 2. 核心材料 -->
-      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
-        <a href="/product-functional-ceramic-materials.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">核心材料 <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:260px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
-          <a href="/hydrogen-generate-ceramic-ball.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚪</span> 富氢陶瓷球</a>
-          <a href="/maca-kdf-antibacterial-ceramic-ball.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🛡️</span> MACA 抗菌合金球</a>
-          <a href="/mph-condensate-neutralizer.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚗️</span> MPH+ 冷凝水中和颗粒</a>
-          <a href="/zh/solid-state-hydrogen-vs-pem-electrolysis.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s;border-top:1px solid rgba(255,255,255,0.06);margin-top:4px" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚡</span> 固态氢 vs PEM电解</a>
-        </div>
-      </div>
-      <!-- 3. 应用方案 -->
-      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
-        <a href="/hydrogen-health-application.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">应用方案 <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:240px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
-          <a href="/hydrogen-water-bottle-or-hydrogen-health.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🍶</span> 便携固态氢水杯</a>
-          <a href="/hydrogen-health-hydrogen-alkaline-water-sachet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>💧</span> 弱碱性富氢水包</a>
-          <a href="/hydrogen-healthceramic-hydrogen-tablet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>💊</span> 陶瓷富氢压片</a>
-          <a href="/hydrogen-healthhydrogen-water-filter-cartridge.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🔬</span> 净水机富氢滤芯</a>
-          <a href="/hydrogen-healthhydrogen-foot-bath-tablet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🛁</span> 富氢足浴泡腾片</a>
-        </div>
-      </div>
-      <!-- 4. 解决方案 -->
-      <a href="/solutions-hydrogen-agriculture.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">解决方案</a>
-      <!-- 5. 技术博客 -->
-      <a href="/zh/blog/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">技术博客</a>
-      <!-- 6. 氢健康观察 -->
-      <a href="/zh/h2-wellness-hub/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">氢健康观察</a>
-      <!-- 7. 样品商城 -->
-      <a href="/store.html" class="nav-store" style="font-size:13.5px;font-weight:600;color:#0a1628;text-decoration:none;padding:6px 14px;border-radius:8px;background:linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%);border:1px solid rgba(10,22,40,0.18);box-shadow:0 1px 2px rgba(0,0,0,0.05);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%)';this.style.color='#0a1628'">样品商城</a>
-      <!-- 8. 联系我们 -->
-      <a href="/contact-mqtech-hydrogen-health.html" class="nav-contact" style="font-size:13.5px;font-weight:600;color:#fff;text-decoration:none;padding:6px 14px;border-radius:8px;background:#0a1628;box-shadow:0 2px 6px rgba(10,22,40,0.25);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#0a1628'">联系我们</a>
 
-      <!-- 9. 语言选择 (Slot 9 极简高科技微胶囊切换器) -->
-      <div class="lang-pill-switch" role="group" aria-label="语言切换" style="display:inline-flex;align-items:center;gap:2px;height:30px;padding:2px 4px 2px 7px;background:rgba(255,255,255,0.8);border:1px solid rgba(10,22,40,0.18);border-radius:9999px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-left:6px;flex-shrink:0;box-sizing:border-box;user-select:none">
-        <span class="lang-pill-globe" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;color:#1d4ed8;margin-right:2px;flex-shrink:0">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;display:block">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
-          </svg>
-        </span>
-        <a href="/blog/sac-tc621-national-antimicrobial-standard-committee-en.html" class="lang-pill-opt" title="Switch to English Global Edition" style="display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11.5px;font-weight:600;color:#475569;border-radius:9999px;text-decoration:none;white-space:nowrap;line-height:22px;transition:all 0.15s" onmouseover="this.style.color='#0a1628';this.style.background='rgba(10,22,40,0.08)'" onmouseout="this.style.color='#475569';this.style.background='transparent'">EN</a>
-        <span class="lang-pill-divider" aria-hidden="true" style="display:inline-block;width:1px;height:10px;background:rgba(10,22,40,0.18);margin:0 1px;flex-shrink:0"></span>
-        <span class="lang-pill-opt active" aria-current="page" style="display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans SC',sans-serif;font-size:11.5px;font-weight:700;color:#ffffff;background:#0a1628;border-radius:9999px;box-shadow:0 2px 5px rgba(10,22,40,0.25);cursor:default;white-space:nowrap;line-height:22px;text-decoration:none">中文</span>
-      </div>
-    </nav>
+    <!-- 复制链接 -->
+    <button type="button" onclick="mqCopyArticleLink('木齐科技为何成为抗菌陶瓷球唯一参与国家级标准化建设的委员单位？', 'https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html')" class="share-pill-btn share-pill-copy" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:20px; background:#0f172a; color:#ffffff; font-size:13px; font-weight:600; border:none; transition:all 0.2s; box-shadow:0 2px 6px rgba(15,23,42,0.25);" onmouseover="this.style.background='#1e293b';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#0f172a';this.style.transform='translateY(0)'">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+      复制链接
+    </button>
   </div>
-</header>
 
+  <!-- 国际出海主流平台 -->
+  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; padding-top:12px; border-top:1px dashed #cbd5e1;">
+    <span style="font-size:12.5px; color:#64748b; font-weight:600; margin-right:4px;">出海国际渠道：</span>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:14px; background:#ffffff; border:1px solid #cbd5e1; color:#334155; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.15s;" onmouseover="this.style.borderColor='#0077b5';this.style.color='#0077b5'" onmouseout="this.style.borderColor='#cbd5e1';this.style.color='#334155'">LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html&text=木齐科技为何成为抗菌陶瓷球唯一参与国家级标准化建设的委员单位？" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:14px; background:#ffffff; border:1px solid #cbd5e1; color:#334155; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.15s;" onmouseover="this.style.borderColor='#000';this.style.color='#000'" onmouseout="this.style.borderColor='#cbd5e1';this.style.color='#334155'">𝕏 Twitter</a>
+    <a href="https://api.whatsapp.com/send?text=木齐科技为何成为抗菌陶瓷球唯一参与国家级标准化建设的委员单位？%20https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:14px; background:#ffffff; border:1px solid #cbd5e1; color:#334155; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.15s;" onmouseover="this.style.borderColor='#25d366';this.style.color='#25d366'" onmouseout="this.style.borderColor='#cbd5e1';this.style.color='#334155'">WhatsApp</a>
+    <a href="https://t.me/share/url?url=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html&text=木齐科技为何成为抗菌陶瓷球唯一参与国家级标准化建设的委员单位？" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:14px; background:#ffffff; border:1px solid #cbd5e1; color:#334155; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.15s;" onmouseover="this.style.borderColor='#0088cc';this.style.color='#0088cc'" onmouseout="this.style.borderColor='#cbd5e1';this.style.color='#334155'">Telegram</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:14px; background:#ffffff; border:1px solid #cbd5e1; color:#334155; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.15s;" onmouseover="this.style.borderColor='#1877f2';this.style.color='#1877f2'" onmouseout="this.style.borderColor='#cbd5e1';this.style.color='#334155'">Facebook</a>
+  </div>
+</div>
 
-  <!-- Hero Banner -->
-  <section class="hero">
-    <div class="hero-badge">🏛️ 国家级标准破局 · 唯一委员单位</div>
-    <h1>木齐科技为何成为抗菌陶瓷球唯一参与国家级标准化建设的委员单位？</h1>
-    <div class="article-meta">
-      <span>📅 发布日期：2026-08-29</span>
-      <span>✍️ 作者：<strong>Martin</strong></span>
-      <span>🏷️ 行业归属：<strong>全国抗菌表面标委会 (SAC/TC621)</strong></span>
-      <span>⏱️ 建议阅读：7 分钟</span>
+<!-- 微信分享扫码弹出层模态框 (WeChat Modal) -->
+<div id="mq-wechat-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10,22,40,0.65); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); z-index:99999; align-items:center; justify-content:center; padding:20px; box-sizing:border-box;" onclick="if(event.target===this) mqCloseWechatShareModal()">
+  <div style="background:#ffffff; border-radius:16px; padding:32px 28px; max-width:360px; width:100%; text-align:center; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); position:relative;">
+    <button type="button" onclick="mqCloseWechatShareModal()" style="position:absolute; top:14px; right:14px; width:30px; height:30px; border-radius:50%; background:#f1f5f9; border:none; cursor:pointer; font-size:18px; line-height:30px; color:#64748b; transition:all 0.2s;" onmouseover="this.style.background='#e2e8f0';this.style.color='#0f172a'" onmouseout="this.style.background='#f1f5f9';this.style.color='#64748b'">✕</button>
+    <div style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:50%; background:rgba(7,193,96,0.12); color:#07c160; margin-bottom:12px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 3C4.36 3 1 5.91 1 9.5c0 2.05 1.1 3.88 2.81 5.09-.13.63-.48 2.29-.55 2.65-.09.43.16.42.33.31.25-.16 2.37-1.57 2.76-1.84.67.19 1.4.29 2.15.29.35 0 .69-.02 1.03-.07-.2-.61-.31-1.26-.31-1.93 0-3.87 3.8-7 8.5-7 .35 0 .69.02 1.03.07C18.06 6.06 13.68 3 8.5 3zm-2.25 4a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm5 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM16 11c-3.87 0-7 2.69-7 6 0 1.76.88 3.33 2.27 4.41-.1.49-.38 1.77-.44 2.05-.07.33.12.33.26.24.2-.13 1.86-1.22 2.17-1.43.52.15 1.09.23 1.74.23 3.87 0 7-2.69 7-6s-3.13-6-7-6zm-2 3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
     </div>
-  </section>
-
-  <!-- Main Article Body -->
-  <main class="article-wrap">
-
-    <div class="key-takeaways">
-      <h3>💡 核心摘要</h3>
-      <p>2026年8月29日，<strong>全国抗菌表面性能标准化技术委员会（SAC/TC621）</strong>成立大会在中国科学院理化技术研究所召开。木齐科技作为<strong>抗菌陶瓷球品类唯一代表</strong>入选第一届委员会委员单位，直接参与国家标准制修订。这标志着我国抗菌陶瓷材料正式告别“无标可依”与“概念炒作”，迈入由领军企业数据与技术主导的国家标准规范化新时代！</p>
+    <h3 style="font-size:18px; font-weight:700; color:#0f172a; margin:0 0 6px;">微信扫一扫分享</h3>
+    <p style="font-size:13px; color:#64748b; margin:0 0 18px; line-height:1.5;">用微信「扫一扫」即可在手机端浏览，并可点击右上角分享给好友或朋友圈</p>
+    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px; display:inline-block; margin-bottom:18px;">
+      <img id="mq-wechat-qrcode" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" alt="微信扫码分享" width="180" height="180" style="display:block; border-radius:6px;">
     </div>
-
-    <h2>一、国家级标准破局：SAC/TC621 成立与国际对口</h2>
-    <p>全国抗菌表面性能标准化技术委员会（SAC/TC621）由国家标准化管理委员会批准成立，负责全国抗菌表面相关术语、处理工艺及性能评估测试的基础通用国家标准制修订，并<strong>直接对应国际标准化组织（ISO/TC330）</strong>。</p>
-    <p>第一届委员会汇聚了中国科学院理化技术研究所、广东省科学院微生物研究所、中国科学技术大学等国家级科研院所，以及海信、小米等产业龙头。木齐科技是<strong>整个无机陶瓷滤料领域唯一获选的委员单位</strong>。</p>
-
-    <div class="figure-container">
-      <img src="../../assets/images/blog/sac-tc621/sac-tc621-certificate-plaque.jpg" alt="山东木齐健康科技有限公司荣获全国抗菌表面性能标准化技术委员会委员单位官方铜牌证书" style="max-width:720px;box-shadow:0 8px 28px rgba(0,0,0,0.15);border-radius:12px">
-      <div class="figure-caption">图 1：国家标准化管理委员会 SAC/TC621 官方颁发 —— 山东木齐健康科技有限公司「委员单位」铜牌证书（2026年4月-2031年4月）</div>
+    <div style="display:flex; gap:10px;">
+      <button type="button" onclick="mqCopyArticleLink('木齐科技为何成为抗菌陶瓷球唯一参与国家级标准化建设的委员单位？', 'https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html')" style="flex:1; padding:10px; border-radius:8px; background:#0f172a; color:#ffffff; font-size:13px; font-weight:600; border:none; cursor:pointer; transition:background 0.2s;">复制文章链接</button>
+      <button type="button" onclick="mqCloseWechatShareModal()" style="padding:10px 18px; border-radius:8px; background:#f1f5f9; color:#475569; font-size:13px; font-weight:600; border:1px solid #cbd5e1; cursor:pointer;">关闭</button>
     </div>
+  </div>
+</div>
 
-    <div class="figure-container">
-      <img src="../../assets/images/blog/sac-tc621/sac-tc621-meeting-cas.jpg" alt="全国抗菌表面性能标准化技术委员会成立大会现场实景">
-      <div class="figure-caption">图 2：2026年8月29日，全国抗菌表面性能标准化技术委员会 (SAC/TC621) 成立大会在中国科学院理化所隆重召开</div>
-    </div>
+<!-- 浮动操作提示消息 (Toast) -->
+<div id="mq-share-toast" style="display:none; position:fixed; bottom:32px; left:50%; transform:translateX(-50%); background:rgba(15,23,42,0.92); color:#ffffff; padding:12px 24px; border-radius:30px; font-size:13.5px; font-weight:600; box-shadow:0 10px 25px rgba(0,0,0,0.25); backdrop-filter:blur(8px); z-index:999999; align-items:center; gap:8px;">
+  <span id="mq-toast-icon">✓</span>
+  <span id="mq-toast-text">已复制到剪贴板</span>
+</div>
 
-    <div class="figure-container">
-      <img src="../../assets/images/blog/sac-tc621/sac-tc621-client-cases.jpg" alt="SAC/TC621 委员证书颁发仪式现场">
-      <div class="figure-caption">图 3：全国抗菌表面性能标准化技术委员会 (SAC/TC621) 委员证书颁发仪式现场</div>
-    </div>
+<script>
+function mqShowToast(text, icon) {
+  var toast = document.getElementById('mq-share-toast');
+  var txt = document.getElementById('mq-toast-text');
+  var ico = document.getElementById('mq-toast-icon');
+  if(!toast) return;
+  txt.innerText = text;
+  ico.innerText = icon || '✓';
+  toast.style.display = 'inline-flex';
+  clearTimeout(window._mqToastTimer);
+  window._mqToastTimer = setTimeout(function() {
+    toast.style.display = 'none';
+  }, 3200);
+}
 
-    <div class="figure-container">
-      <img src="../../assets/images/blog/sac-tc621/sac-tc621-group-photo.jpg" alt="中华人民共和国全国专业标准化技术委员会委员证书与官方名录">
-      <div class="figure-caption">图 4：中华人民共和国《全国专业标准化技术委员会委员证书》与官方委员会名录（序号 32：山东木齐健康科技有限公司）</div>
-    </div>
+function mqCopyArticleLink(title, url) {
+  var targetUrl = url || window.location.href;
+  mqFallbackCopy(targetUrl, '文章链接已成功复制，可前往任意社交平台粘贴分享！');
+}
 
-    <h2>二、领跑底气：15年技术积淀与37项专利（含15项发明专利）构筑的护城河</h2>
-    <p>木齐科技为何能从众多材料厂商中脱颖而出，成为唯一委员单位？其核心底气源于三大不可复制的工业壁垒：</p>
+function mqFallbackCopy(text, msg) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(function() {
+      mqShowToast(msg || '已成功复制到剪贴板！', '✓');
+    }).catch(function() {
+      mqExecCopy(text, msg);
+    });
+  } else {
+    mqExecCopy(text, msg);
+  }
+}
 
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-num">15年</div>
-        <div class="stat-label">无机功能陶瓷专注研发</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">37项</div>
-        <div class="stat-label">专利（含15项发明专利）</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">8000吨</div>
-        <div class="stat-label">年产智能制造与规模交付</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">1800+</div>
-        <div class="stat-label">服务国内外大厂品牌</div>
-      </div>
-    </div>
+function mqExecCopy(text, msg) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.position = "fixed";
+  textArea.style.left = "-999999px";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    mqShowToast(msg || '已成功复制到剪贴板！', '✓');
+  } catch (err) {
+    prompt('请长按复制链接：', text);
+  }
+  document.body.removeChild(textArea);
+}
 
-    <p>公司依托国家工业陶瓷工程技术中心、中科院理化所与武汉理工大学，建立了完整的“无机抗菌材料实验室”。在纳米银固载、稀土协同掺杂、微孔无机胶凝成型等领域形成了完全自主的知识产权体系，主导拥有《多元合金核壳结构无机抗菌净水球》、《微孔抗菌球》等发明专利。</p>
+function mqOpenWechatShareModal() {
+  var modal = document.getElementById('mq-wechat-modal');
+  if(modal) modal.style.display = 'flex';
+}
 
-    <div class="figure-container">
-      <img src="../../assets/images/blog/sac-tc621/sac-tc621-lab-patents.jpg" alt="木齐科技四大核心抗菌矿物陶瓷材料矩阵实拍">
-      <div class="figure-caption">图 5：木齐科技四大核心无机抗菌矿物材料（纳米银、MACA-KDF、光催化、蓝色矿化陶瓷球）</div>
-    </div>
+function mqCloseWechatShareModal() {
+  var modal = document.getElementById('mq-wechat-modal');
+  if(modal) modal.style.display = 'none';
+}
 
-    <div class="figure-container">
-      <img src="../../assets/images/blog/sac-tc621/sac-tc621-products-matrix.jpg" alt="木齐科技智能制造产业园、滚球车间、展厅与自动化烘干线实景">
-      <div class="figure-caption">图 6：山东木齐健康科技智能制造基地实景（滚球车间、压片车间、科技展厅与除菌烘干线）</div>
-    </div>
+function mqShareToXhs(title, url) {
+  var shareText = '【' + title + '】' + (url || window.location.href) + ' （来自木齐科技官方博客）';
+  mqFallbackCopy(shareText, '✨ 已复制文章标题与链接！打开小红书 App 即可在发笔记或私聊时快速粘贴');
+}
 
-    <h2>三、全矩阵产品：四大核心抗菌陶瓷球技术</h2>
-    <table class="custom-table">
-      <thead>
-        <tr>
-          <th>核心产品系列</th>
-          <th>关键技术机理</th>
-          <th>实测性能指标</th>
-          <th>典型应用场景</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>纳米银抗菌球</strong></td>
-          <td>ICR 智控释溶技术，银离子晶格固溶</td>
-          <td>抑菌率 &gt;99.9%，12~24个月零阶恒速缓释</td>
-          <td>加湿器水箱、扫地机污水箱防臭</td>
-        </tr>
-        <tr>
-          <td><strong>MACA-KDF 抗菌合金球</strong></td>
-          <td>多元合金微电解复合抗菌，防金属氧化</td>
-          <td>电位协同抑制，耐沸水与酸碱冲刷</td>
-          <td>净水器后置复合滤芯、除氯花洒</td>
-        </tr>
-        <tr>
-          <td><strong>光催化抗菌球</strong></td>
-          <td>纳米级半导体光催化氧化降解</td>
-          <td>24小时抗菌率 &gt;99%，自洁除有机物</td>
-          <td>空气净化加湿、环境消杀模块</td>
-        </tr>
-        <tr>
-          <td><strong>蓝色矿化抗菌球</strong></td>
-          <td>微量元素释放与长效抑菌复合</td>
-          <td>抑菌同时溶出偏硅酸与活性矿物质</td>
-          <td>宠物智能饮水机、足浴养生桶</td>
-        </tr>
-      </tbody>
-    </table>
+function mqShareToBilibili(title, url) {
+  var shareText = '【' + title + '】' + (url || window.location.href);
+  mqFallbackCopy(shareText, '📺 已复制文案！正在为您前往 Bilibili 动态发布页面...');
+  setTimeout(function() {
+    window.open('https://t.bilibili.com/', '_blank');
+  }, 1000);
+}
+</script>
 
-    <div class="figure-container">
-      <img src="../../assets/images/blog/antimicrobial-ceramic-balls/icr_tech_principle.svg" alt="木齐科技 ICR 智控释溶技术原理与释放曲线">
-      <div class="figure-caption">图 3：ICR 智控释溶零阶恒速释放曲线 vs 传统浸涂爆发析出曲线</div>
-    </div>
-
-    <h2>四、赋能产业：为 1800+ 品牌提供一站式定制</h2>
-    <p>木齐科技践行<strong>“功能陶瓷材料+”战略</strong>，已成为<strong>美的、海尔、格力、AO史密斯</strong>等一线家电与净水龙头的核心供应链伙伴。针对净水二次污染、扫地机水箱发酸、加湿器白粉细菌等痛点，提供从材料定制、注塑结构设计到整机涉水认证的一站式解决方案。</p>
-
-    <!-- FAQ Section -->
-    <h2>五、常见问题解答 (FAQ)</h2>
-    <div class="faq-card">
-      <div class="faq-q">问：SAC/TC621 标委会的成立对采购大厂有什么意义？</div>
-      <div class="faq-a">答：过去行业充斥着涂银颗粒、劣质注塑片等短期失效材料，大厂选型缺乏权威依据。SAC/TC621 国家标准的制定，将为家电与净水企业的抗菌性能检测、寿命评估与涉水安全提供唯一国家法定依据。</div>
-    </div>
-    <div class="faq-card">
-      <div class="faq-q">问：木齐科技如何将企业实践转化为国家标准？</div>
-      <div class="faq-a">答：木齐科技将依托 15 年累计的数万组真实冲刷衰减实验数据、微溶银离子浓度监测曲线以及 1800+ 客户落地场景经验，直接输入国家标准的制修订草案，确保国标兼具严谨性与工业可行性。</div>
-    </div>
-
-    <!-- CTA Box -->
-    <div class="cta-box">
-      <h3>申领抗菌陶瓷材料样品与国家标准白皮书</h3>
-      <p>欢迎扫地机、洗地机、加湿器、净水器研发工程师与采购决策人联系我们，获取付费工程样品测试与定制化选型方案。</p>
-      <a href="/contact-mqtech-hydrogen-health.html" class="cta-btn">立即申领样品与技术对接 →</a>
-    </div>
-
-    <!-- Google AdSense Placeholder -->
-    <div class="ads-placeholder">
-      <p style="margin:0 0 4px;font-weight:600;color:#6b7280">广告位 · 预留广告容器</p>
-      <p style="margin:0;font-size:12px;color:#9ca3af">Google AdSense 规范自适应展示单元</p>
-    </div>
-
-    <!-- 10-Channel Social Share Bar -->
-    <div class="social-share">
-      <span style="font-size:14px;font-weight:700;color:#0f172a;margin-right:8px">分享到社交媒体：</span>
-      <a href="https://twitter.com/intent/tweet?url=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" target="_blank" class="share-btn">𝕏 Twitter</a>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" target="_blank" class="share-btn">Facebook</a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" target="_blank" class="share-btn">LinkedIn</a>
-      <a href="https://wa.me/?text=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" target="_blank" class="share-btn">WhatsApp</a>
-      <a href="https://t.me/share/url?url=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" target="_blank" class="share-btn">Telegram</a>
-      <a href="https://reddit.com/submit?url=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" target="_blank" class="share-btn">Reddit</a>
-      <a href="https://service.weibo.com/share/share.php?url=https://www.emuqi.com/zh/blog/sac-tc621-national-antimicrobial-standard-committee.html" target="_blank" class="share-btn">微博</a>
-    </div>
 
     <!-- Topic Clusters -->
     <div style="margin-top:28px">

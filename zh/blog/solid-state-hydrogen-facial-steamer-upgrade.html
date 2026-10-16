@@ -595,6 +595,153 @@
     </div>
 
     <!-- 标签云 -->
+    <!-- 全渠道社交媒体分享组件 (中英双轨/国内主流+出海国际) -->
+<div class="social-share-wrap" style="margin: 40px 0; padding: 22px 24px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px;">
+  <!-- 国内主流媒体 -->
+  <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+    <span class="social-share-label" style="font-size:14px; font-weight:700; color:#0f172a; margin-right:4px;">分享本文到：</span>
+    
+    <!-- 微信 (扫码卡片) -->
+    <button type="button" onclick="mqOpenWechatShareModal()" class="share-pill-btn share-pill-wechat" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:20px; background:#07c160; color:#ffffff; font-size:13px; font-weight:600; border:none; transition:all 0.2s; box-shadow:0 2px 6px rgba(7,193,96,0.25);" onmouseover="this.style.opacity='0.9';this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 3C4.36 3 1 5.91 1 9.5c0 2.05 1.1 3.88 2.81 5.09-.13.63-.48 2.29-.55 2.65-.09.43.16.42.33.31.25-.16 2.37-1.57 2.76-1.84.67.19 1.4.29 2.15.29.35 0 .69-.02 1.03-.07-.2-.61-.31-1.26-.31-1.93 0-3.87 3.8-7 8.5-7 .35 0 .69.02 1.03.07C18.06 6.06 13.68 3 8.5 3zm-2.25 4a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm5 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM16 11c-3.87 0-7 2.69-7 6 0 1.76.88 3.33 2.27 4.41-.1.49-.38 1.77-.44 2.05-.07.33.12.33.26.24.2-.13 1.86-1.22 2.17-1.43.52.15 1.09.23 1.74.23 3.87 0 7-2.69 7-6s-3.13-6-7-6zm-2 3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+      微信
+    </button>
+
+    <!-- 小红书 (一键复制标题+链接并提示) -->
+    <button type="button" onclick="mqShareToXhs('熏蒸仪的“胶囊咖啡机”时刻：大功率热雾设备如何实现“零改电、免开模”升级高浓度分子氢', 'https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html')" class="share-pill-btn share-pill-xhs" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:20px; background:#ff2442; color:#ffffff; font-size:13px; font-weight:600; border:none; transition:all 0.2s; box-shadow:0 2px 6px rgba(255,36,66,0.25);" onmouseover="this.style.opacity='0.9';this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+      <span style="font-weight:900; font-size:11px; letter-spacing:-0.5px; background:rgba(255,255,255,0.2); padding:1px 4px; border-radius:4px;">RED</span>
+      小红书
+    </button>
+
+    <!-- B站 (哔哩哔哩) -->
+    <button type="button" onclick="mqShareToBilibili('熏蒸仪的“胶囊咖啡机”时刻：大功率热雾设备如何实现“零改电、免开模”升级高浓度分子氢', 'https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html')" class="share-pill-btn share-pill-bili" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:20px; background:#00aeec; color:#ffffff; font-size:13px; font-weight:600; border:none; transition:all 0.2s; box-shadow:0 2px 6px rgba(0,174,236,0.25);" onmouseover="this.style.opacity='0.9';this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51 0 2.733 1.224 2.733 2.734v10.146a2.734 2.734 0 0 1-2.733 2.734H5.333a2.734 2.734 0 0 1-2.733-2.734V7.387c0-1.51 1.223-2.734 2.733-2.734h.854l-1.92-1.92a.75.75 0 0 1 1.06-1.06l2.98 2.98h7.373l2.98-2.98a.75.75 0 0 1 1.06 1.06l-1.92 1.92zM5.333 6.153a1.234 1.234 0 0 0-1.233 1.234v10.146c0 .68.553 1.234 1.233 1.234h13.334c.68 0 1.233-.553 1.233-1.234V7.387c0-.68-.553-1.234-1.233-1.234H5.333zm3.417 4.25c.69 0 1.25.56 1.25 1.25v2c0 .69-.56 1.25-1.25 1.25s-1.25-.56-1.25-1.25v-2c0-.69.56-1.25 1.25-1.25zm6.5 0c.69 0 1.25.56 1.25 1.25v2c0 .69-.56 1.25-1.25 1.25s-1.25-.56-1.25-1.25v-2c0-.69.56-1.25 1.25-1.25z"/></svg>
+      B站
+    </button>
+
+    <!-- 微博 -->
+    <a href="https://service.weibo.com/share/share.php?url=https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html&title=熏蒸仪的“胶囊咖啡机”时刻：大功率热雾设备如何实现“零改电、免开模”升级高浓度分子氢" target="_blank" rel="noopener noreferrer" class="share-pill-btn share-pill-weibo" style="display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:20px; background:#e6162d; color:#ffffff; text-decoration:none; font-size:13px; font-weight:600; transition:all 0.2s; box-shadow:0 2px 6px rgba(230,22,45,0.25);" onmouseover="this.style.opacity='0.9';this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M10.07 19.33c-4.42.34-8.24-1.85-8.52-4.9-.29-3.04 3.03-5.8 7.45-6.14 4.42-.34 8.23 1.86 8.52 4.9.29 3.05-3.03 5.8-7.45 6.14zm-.89-2.88c.45-.16.71-.62.59-1.02-.12-.4-.59-.59-1.04-.43-.45.16-.71.62-.59 1.02.12.4.59.59 1.04.43zm1.9-1.24c.18-.08.28-.29.23-.48-.06-.19-.26-.28-.44-.2-.18.08-.28.29-.23.48.06.19.26.28.44.2zm-.17-6.93c-.48-.12-.76-.6-.64-1.08.12-.48.6-.76 1.08-.64 1.93.48 3.39 1.94 3.87 3.87.12.48-.16.96-.64 1.08-.48.12-.96-.16-1.08-.64-.32-1.29-1.3-2.27-2.59-2.59zm3.5-2.83c-.45-.16-.7-.66-.54-1.11.16-.45.66-.7 1.11-.54 3.33 1.2 5.88 3.75 7.08 7.08.16.45-.09.95-.54 1.11-.45.16-.95-.09-1.11-.54-.99-2.75-3.1-4.86-5.85-5.85z"/></svg>
+      微博
+    </a>
+
+    <!-- 复制链接 -->
+    <button type="button" onclick="mqCopyArticleLink('熏蒸仪的“胶囊咖啡机”时刻：大功率热雾设备如何实现“零改电、免开模”升级高浓度分子氢', 'https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html')" class="share-pill-btn share-pill-copy" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px; padding:7px 16px; border-radius:20px; background:#0f172a; color:#ffffff; font-size:13px; font-weight:600; border:none; transition:all 0.2s; box-shadow:0 2px 6px rgba(15,23,42,0.25);" onmouseover="this.style.background='#1e293b';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#0f172a';this.style.transform='translateY(0)'">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+      复制链接
+    </button>
+  </div>
+
+  <!-- 国际出海主流平台 -->
+  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; padding-top:12px; border-top:1px dashed #cbd5e1;">
+    <span style="font-size:12.5px; color:#64748b; font-weight:600; margin-right:4px;">出海国际渠道：</span>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:14px; background:#ffffff; border:1px solid #cbd5e1; color:#334155; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.15s;" onmouseover="this.style.borderColor='#0077b5';this.style.color='#0077b5'" onmouseout="this.style.borderColor='#cbd5e1';this.style.color='#334155'">LinkedIn</a>
+    <a href="https://twitter.com/intent/tweet?url=https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html&text=熏蒸仪的“胶囊咖啡机”时刻：大功率热雾设备如何实现“零改电、免开模”升级高浓度分子氢" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:14px; background:#ffffff; border:1px solid #cbd5e1; color:#334155; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.15s;" onmouseover="this.style.borderColor='#000';this.style.color='#000'" onmouseout="this.style.borderColor='#cbd5e1';this.style.color='#334155'">𝕏 Twitter</a>
+    <a href="https://api.whatsapp.com/send?text=熏蒸仪的“胶囊咖啡机”时刻：大功率热雾设备如何实现“零改电、免开模”升级高浓度分子氢%20https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:14px; background:#ffffff; border:1px solid #cbd5e1; color:#334155; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.15s;" onmouseover="this.style.borderColor='#25d366';this.style.color='#25d366'" onmouseout="this.style.borderColor='#cbd5e1';this.style.color='#334155'">WhatsApp</a>
+    <a href="https://t.me/share/url?url=https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html&text=熏蒸仪的“胶囊咖啡机”时刻：大功率热雾设备如何实现“零改电、免开模”升级高浓度分子氢" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:14px; background:#ffffff; border:1px solid #cbd5e1; color:#334155; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.15s;" onmouseover="this.style.borderColor='#0088cc';this.style.color='#0088cc'" onmouseout="this.style.borderColor='#cbd5e1';this.style.color='#334155'">Telegram</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:14px; background:#ffffff; border:1px solid #cbd5e1; color:#334155; text-decoration:none; font-size:12px; font-weight:600; transition:all 0.15s;" onmouseover="this.style.borderColor='#1877f2';this.style.color='#1877f2'" onmouseout="this.style.borderColor='#cbd5e1';this.style.color='#334155'">Facebook</a>
+  </div>
+</div>
+
+<!-- 微信分享扫码弹出层模态框 (WeChat Modal) -->
+<div id="mq-wechat-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10,22,40,0.65); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); z-index:99999; align-items:center; justify-content:center; padding:20px; box-sizing:border-box;" onclick="if(event.target===this) mqCloseWechatShareModal()">
+  <div style="background:#ffffff; border-radius:16px; padding:32px 28px; max-width:360px; width:100%; text-align:center; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); position:relative;">
+    <button type="button" onclick="mqCloseWechatShareModal()" style="position:absolute; top:14px; right:14px; width:30px; height:30px; border-radius:50%; background:#f1f5f9; border:none; cursor:pointer; font-size:18px; line-height:30px; color:#64748b; transition:all 0.2s;" onmouseover="this.style.background='#e2e8f0';this.style.color='#0f172a'" onmouseout="this.style.background='#f1f5f9';this.style.color='#64748b'">✕</button>
+    <div style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:50%; background:rgba(7,193,96,0.12); color:#07c160; margin-bottom:12px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8.5 3C4.36 3 1 5.91 1 9.5c0 2.05 1.1 3.88 2.81 5.09-.13.63-.48 2.29-.55 2.65-.09.43.16.42.33.31.25-.16 2.37-1.57 2.76-1.84.67.19 1.4.29 2.15.29.35 0 .69-.02 1.03-.07-.2-.61-.31-1.26-.31-1.93 0-3.87 3.8-7 8.5-7 .35 0 .69.02 1.03.07C18.06 6.06 13.68 3 8.5 3zm-2.25 4a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm5 0a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM16 11c-3.87 0-7 2.69-7 6 0 1.76.88 3.33 2.27 4.41-.1.49-.38 1.77-.44 2.05-.07.33.12.33.26.24.2-.13 1.86-1.22 2.17-1.43.52.15 1.09.23 1.74.23 3.87 0 7-2.69 7-6s-3.13-6-7-6zm-2 3.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm4 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+    </div>
+    <h3 style="font-size:18px; font-weight:700; color:#0f172a; margin:0 0 6px;">微信扫一扫分享</h3>
+    <p style="font-size:13px; color:#64748b; margin:0 0 18px; line-height:1.5;">用微信「扫一扫」即可在手机端浏览，并可点击右上角分享给好友或朋友圈</p>
+    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px; display:inline-block; margin-bottom:18px;">
+      <img id="mq-wechat-qrcode" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html" alt="微信扫码分享" width="180" height="180" style="display:block; border-radius:6px;">
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button type="button" onclick="mqCopyArticleLink('熏蒸仪的“胶囊咖啡机”时刻：大功率热雾设备如何实现“零改电、免开模”升级高浓度分子氢', 'https://www.emuqi.com/zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html')" style="flex:1; padding:10px; border-radius:8px; background:#0f172a; color:#ffffff; font-size:13px; font-weight:600; border:none; cursor:pointer; transition:background 0.2s;">复制文章链接</button>
+      <button type="button" onclick="mqCloseWechatShareModal()" style="padding:10px 18px; border-radius:8px; background:#f1f5f9; color:#475569; font-size:13px; font-weight:600; border:1px solid #cbd5e1; cursor:pointer;">关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- 浮动操作提示消息 (Toast) -->
+<div id="mq-share-toast" style="display:none; position:fixed; bottom:32px; left:50%; transform:translateX(-50%); background:rgba(15,23,42,0.92); color:#ffffff; padding:12px 24px; border-radius:30px; font-size:13.5px; font-weight:600; box-shadow:0 10px 25px rgba(0,0,0,0.25); backdrop-filter:blur(8px); z-index:999999; align-items:center; gap:8px;">
+  <span id="mq-toast-icon">✓</span>
+  <span id="mq-toast-text">已复制到剪贴板</span>
+</div>
+
+<script>
+function mqShowToast(text, icon) {
+  var toast = document.getElementById('mq-share-toast');
+  var txt = document.getElementById('mq-toast-text');
+  var ico = document.getElementById('mq-toast-icon');
+  if(!toast) return;
+  txt.innerText = text;
+  ico.innerText = icon || '✓';
+  toast.style.display = 'inline-flex';
+  clearTimeout(window._mqToastTimer);
+  window._mqToastTimer = setTimeout(function() {
+    toast.style.display = 'none';
+  }, 3200);
+}
+
+function mqCopyArticleLink(title, url) {
+  var targetUrl = url || window.location.href;
+  mqFallbackCopy(targetUrl, '文章链接已成功复制，可前往任意社交平台粘贴分享！');
+}
+
+function mqFallbackCopy(text, msg) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(function() {
+      mqShowToast(msg || '已成功复制到剪贴板！', '✓');
+    }).catch(function() {
+      mqExecCopy(text, msg);
+    });
+  } else {
+    mqExecCopy(text, msg);
+  }
+}
+
+function mqExecCopy(text, msg) {
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.position = "fixed";
+  textArea.style.left = "-999999px";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    mqShowToast(msg || '已成功复制到剪贴板！', '✓');
+  } catch (err) {
+    prompt('请长按复制链接：', text);
+  }
+  document.body.removeChild(textArea);
+}
+
+function mqOpenWechatShareModal() {
+  var modal = document.getElementById('mq-wechat-modal');
+  if(modal) modal.style.display = 'flex';
+}
+
+function mqCloseWechatShareModal() {
+  var modal = document.getElementById('mq-wechat-modal');
+  if(modal) modal.style.display = 'none';
+}
+
+function mqShareToXhs(title, url) {
+  var shareText = '【' + title + '】' + (url || window.location.href) + ' （来自木齐科技官方博客）';
+  mqFallbackCopy(shareText, '✨ 已复制文章标题与链接！打开小红书 App 即可在发笔记或私聊时快速粘贴');
+}
+
+function mqShareToBilibili(title, url) {
+  var shareText = '【' + title + '】' + (url || window.location.href);
+  mqFallbackCopy(shareText, '📺 已复制文案！正在为您前往 Bilibili 动态发布页面...');
+  setTimeout(function() {
+    window.open('https://t.bilibili.com/', '_blank');
+  }, 1000);
+}
+</script>
+
+
     <div class="tags-cloud">
       <a href="/zh/blog/" class="tag-pill">#固态氢材料</a>
       <a href="/zh/blog/" class="tag-pill">#熏蒸仪升级</a>
