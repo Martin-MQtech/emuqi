@@ -818,6 +818,89 @@ AEO 与 SEO、GEO 的本质区别：
 
 ---
 
+### 12.8 官网博客（中英双语）标准化营销内容架构、视觉与 Header/Footer 工程锁定规范 (Single Source of Truth 2026-10-16)
+
+> **修订背景**：针对历史发布过程中出现的“博文 Header/Footer 结构参差不齐、缺少统一规范约束、每次发布形式多变、部分博文样式脱节”等问题，特在此将官网博文的营销定位、视觉风格、构件层次与 Header/Footer 模板实施**工程级锁定**，杜绝随意发挥，确保跨时间、跨语言的高度一致性与专业度。
+
+#### 1. 核心定位与业务目的：营销转化引擎 + 兼顾 SEO / GEO / AEO
+官网技术博客与行业动态博文的根本定位是**木齐科技全球 B2B 采购决策者与国内大厂供应链客户的获客与转化枢纽**，所有内容均需同时服务于以下三大算法引擎与商业闭环：
+- **SEO（传统搜索引擎检索）**：高权重行业词与技术词（Solid-state hydrogen, PEM electrolysis, Molecular hydrogen, 富氢陶瓷球, 氢能产业标准化），严格的 `<title>`（≤65字符）、`<meta description>`（150-160字符）、H1/H2/H3 语义层级、双向 `hreflang`（`zh-CN` 与 `en`）、Canonical 权威标签。
+- **GEO（Generative Engine Optimization，生成式 AI 引擎优化）**：针对 ChatGPT、Claude、Perplexity、Google AI Overviews 的知识抽取。正文必须具备高密度、确定性强的数据指标（如饱和溶氢极限 `1,200~1,500 ppb`、微纳析氢半衰期 `18~24h`、年产能 `8,000 吨`、发明专利号等），并设置醒目的 **Key Takeaways / 核心要点卡片**，让大模型在抓取时直接作为权威定义与第一信源进行引用。
+- **AEO（Answer Engine Optimization，问答引擎优化）**：每篇博文必须配置独立的 **Q&A / 常见问题解答手风琴模块**，且必须 100% 映射 Schema.org 的 `FAQPage` 结构化数据代码。当用户或 AI 提问具体采购、技术对比或机理问题时，搜索引擎与 AI Agent 直接抽取该问答作为高光答案卡片（Featured Snippets / AI Answer Cards）。
+- **营销引流与转化闭环（High-Conversion CTA）**：正文底部必须嵌入高转化的 B2B 合作导流区，引导潜在客户点击索取《企业标准与技术白皮书》、申领样品、或直通 OEM/ODM 咨询通道。
+
+#### 2. 博文页面 9 大标准构件黄金模板 (Mandatory Page Layout)
+每一篇新创建或更新的中英文博客文章，必须且仅能严格按照以下 9 大构件从上到下排列：
+1. **统一标准 Header（银灰金属科技渐变）**：
+   - 必须通过母版注入，严禁手工拼凑；
+   - 中文页采用 `templates/canonical_header_zh.html`，英文页采用 `templates/canonical_header_en.html`；
+   - 包含 8 大标准导航项（首页、核心材料[含4子项下拉]、应用方案[含5子项下拉]、解决方案、技术博客、氢健康观察、样品商城、联系我们）以及右上角专属**高科技双语微胶囊切换器 (`.lang-pill-switch`)**。
+2. **面包屑导航 (Breadcrumb)**：
+   - 位置：Header 下方、Hero 区域内；
+   - 格式：`首页 > 技术博客 > 当前文章标题`（英文：`Home > Blog > Article Title`），同时绑定 `BreadcrumbList` 结构化数据。
+3. **Hero 焦点区 (Hero Section)**：
+   - 背景采用深邃暗调科技蓝渐变（`linear-gradient(135deg, #0a1628 0%, #1e293b 100%)`）；
+   - 包含：分类标签徽章（如 `INDUSTRY NEWS` / `行业动态`）、发布日期、建议阅读时间、文章主标题 H1（文字亮白 `#ffffff`，字号 32~38px，字重 800）、简短有力的一句话副标题（`#94a3b8`）。
+4. **核心摘要盒 (Key Takeaways / 执行摘要)**：
+   - 位于首屏正文前，浅色/毛玻璃独立卡片，左侧配 4px 品牌橙色指示条（`#f47b20`）；
+   - 列出 3~4 条核心亮点（Bullet Points），首词加粗，数据明确，供高价值读者与大模型极速提取。
+5. **主体内容区与视觉排版规范 (Typography & Visual Standards)**：
+   - **字号与行高**：正文字号统一为 `16px`（中文行高 `1.8~1.9`，英文行高 `1.7~1.8`），段落间距 `20~24px`；
+   - **色彩对比度铁律**：浅色背景下正文必须使用高可读性深色字体（如 `#334155` 或 `#475569`），严禁“黑底黑字”或低对比度灰字；深色背景下正文统一采用浅灰蓝（`#cbd5e1`）；核心高亮色锁定为木齐橙（`#f47b20`）与科技蓝（`#1d4ed8`）；
+   - **标题层级**：H2 统一为 `22~26px`，粗体，带底部装饰线或左侧橘色指示块；H3 为 `18~20px`；
+   - **数据指标卡 (Metric Cards)**：核心参数（如 200+ 计量标准、1500ppb 极限、35% 全球份额）必须置入 3 栏独立数据卡片，数字 32px 加粗高亮；
+   - **多媒体展示规范**：实拍图片必须配置圆角（`border-radius: 8~12px`）、阴影与灰体居中图注；如嵌入视频，必须采用 9:16 自适应竖屏或 16:9 播放器容器，带精致毛玻璃悬浮卡片外框与关键指标侧边栏。
+6. **行业痛点与采购 Q&A 问答专区 (GEO / AEO 磁吸区)**：
+   - 每篇博文正文后必须设置 `常见问题解答 (Frequently Asked Questions)` 模块；
+   - 包含 3~5 个垂直问答（折叠或卡片展开），直击客户选型、技术机理、OEM 合作与认证合规问题；
+   - HTML 中必须同步在 `<head>` 输出对应的 Schema.org `FAQPage` JSON-LD。
+7. **高转化 CTA 行动号召区 (B2B Lead Generation Box)**：
+   - 高视觉冲击力的深蓝卡片或橙色渐变底纹；
+   - 包含技术白皮书索取、免费试样申领、OEM/ODM 定制咨询按钮，直链 `/contact-mqtech-hydrogen-health.html` 与 `/store.html`。
+8. **相关推荐阅读矩阵 (Related Articles Grid)**：
+   - 挑选 3 篇同类或互补的旗舰技术博文，呈现图文卡片；
+   - 所有推荐链接必须使用经过校验的站内绝对根路径。
+9. **统一标准 Footer（五栏经典科技深蓝）**：
+   - 中文页采用 `templates/canonical_footer_zh.html`，英文页采用 `templates/canonical_footer_en.html`；
+   - 包含：公司概况与社交媒体直通链接（X、LinkedIn、YouTube、官方邮箱）、核心导航栏、材料矩阵栏、商务对接与高新区地址、SAC/TC621 委员单位行业权威背书、版权声明与网站地图。
+
+---
+
+### 12.9 全站死链彻底根治与零死链出厂自动化门禁 SOP (Anti-Deadlink & Zero-Broken-Link Gate)
+
+> **根因分析**：过去周期性出现“死链接、断链”的本质原因在于：① 部分博文使用了相对根路径的误导写法（如在 `/zh/blog/` 下写了 `/article.html` 而漏了 `/zh/blog/`）；② 模板复制时残留了 `href="."` 或旧版占位链接（如未配置的 `instagram.com`）；③ 缺乏出厂前的强制自动化检测工具。
+
+#### 1. 站内链接三大工程铁律 (The Three Link Rules)
+- **铁律一：站内链接统一使用“根相对路径”（Root-Relative Path）**：
+  - 站内所有 `<a>` 标签与资源引用必须以斜杠 `/` 开头：
+    - 中文站点首页：`/zh/`
+    - 中文博客列表：`/zh/blog/`
+    - 中文博文单页：`/zh/blog/[slug].html`
+    - 国际站首页：`/` 或 `/index.html`
+    - 国际站博客列表：`/blog/index.html`
+    - 国际站博文单页：`/blog/[slug]-en.html`
+    - 核心产品与应用页：`/product-functional-ceramic-materials.html`、`/hydrogen-health-application.html`、`/store.html`、`/contact-mqtech-hydrogen-health.html`
+    - 静态资源路径：`/assets/images/...`
+- **铁律二：绝对禁止在子目录博文中使用 `.` 或 `./`**：
+  - 在 `/zh/blog/` 或 `/blog/` 目录下，`href="."` 在浏览器解析中会指向当前目录本身，导致点击“首页”出现死循环或停留在列表页，严禁使用！
+- **铁律三：严禁残留任何未确认的空白或死循环外链**：
+  - 严禁出现未绑定企业官方账号的通用平台根域名（如 `https://www.instagram.com/`）；官方社交链接必须统一对齐：X (`https://x.com/MARTINPARK111`)、LinkedIn (`https://www.linkedin.com/company/72043164`)、YouTube (`https://www.youtube.com/@Martinchen1234`)、Email (`mailto:muqizb@gmail.com`)。
+
+#### 2. 出厂自动化预检与门禁脚本 (Mandatory Pre-Commit Verification Gate)
+在任何新博文编写完成、修改提交或推送上线前，**必须且只能在通过以下两道自动化工具测试后方可执行 Git 提交**：
+1. **自动同步与标准化校验**：
+   ```bash
+   python3 scripts/unify_blog_headers_footers.py
+   ```
+   该脚本会自动扫描所有中英文博文，强行对齐母版 Header 与 Footer，更新中英文切换胶囊的目标 URL，并清除任何残留的相对点链接。
+2. **全站死链与静态资源健康扫描**：
+   ```bash
+   python3 scripts/verify_site_health.py
+   ```
+   该脚本会遍历全站全部 176+ 个 HTML 文件，解析所有内部超链接、图片与脚本引用。**只有在输出结果明确显示 `Broken Internal Links: 0` 且 `Missing Assets: 0` 时，出厂质检才算通过！**
+
+---
+
 ## 🤖 第 13 章：木齐科技 AEO（Agent Engine Optimization）与 WebMCP 智能体协议规范 (SSOT)
 
 > **生效日期**：2026-09-03 立  
@@ -1569,6 +1652,48 @@ Account: @chen_martin_f6f22118d1b92
 
 ---
 
+### 19.11 视频号及全域短视频发布失败深度复盘与防空发（零文案）四步强制门禁 SOP (2026-10-16)
+
+> **事故复盘（Post-Mortem）**：在 2026-10-16 执行微信视频号发布任务《20261014_标准化创新赋能氢能产业研讨会_国际新闻英文版_agy.mp4》时，Agent 自动化流程顺利完成了视频上传与发布点击，但前台最终展示的动态**完全没有注入任何文字说明与标签话题，导致成片处于“零描述空发”状态**，严重影响了品牌国际化形象与社媒传播效果。用户及时指出了这一重大疏漏。本节对此进行深度技术反思，并确立不可逾越的四步防御铁律。
+
+#### 1. 事故根因深度剖析 (Root Causes)
+1. **DOM 输入状态未持久化绑定（Virtual DOM De-sync）**：
+   微信视频号后台创作者中心（`channels.weixin.qq.com`）采用 Vue/React 等现代动态前端框架。其“动态描述/标题”输入框并非原生 HTML input，而是由 `contenteditable="true"` 的富文本容器或受控组件驱动。自动化脚本在输入文案时，仅使用了浅层按键模拟或注入值，未彻底触发框架底层的 `input`、`change`、`compositionend` 及表单状态同步事件，导致焦点移走（失焦）或点击“发布”时，框架内部 State 判定输入为空，直接将输入框复位清空。
+2. **缺乏发布前“视觉与数据双重验证门禁”（Missing Pre-flight Verification Gate）**：
+   自动化脚本在触发“发表”按钮前，**完全没有读取当前输入框的实际字符长度与内容进行二次断言**，也未在点击发表前对包含文字框的页面执行全屏截屏存档比对，直接执行了最终点击，犯下了“盲目触发”的致命错误。
+
+#### 2. 全域短视频发布四步强制门禁 SOP (The 4-Step Anti-Empty-Post Gate)
+为彻底杜绝类似“纯视频无文案空发”的重大失误，后续所有涉及视频号、YouTube Shorts、TikTok、B站、视频自媒体的自动化或半自动化发布，必须无条件执行以下四步硬性检查：
+
+- **第一步：文案与媒体资产本地全量就绪 (Asset Preparation)**
+  - 必须在执行浏览器操作前，在本地目录生成并读取标准文案文件（如 `发布文案.txt`），包含五大固定要素：
+    ① 短标题（≤30字，带行动号召词）；
+    ② 完整正文描述（包含背景、核心看点、公司定位）；
+    ③ 官方核心话题标签（如 `#木齐科技 #氢能产业标准 #固态氢 #CleanTech`）；
+    ④ 账号或企业提及（如 `@木齐科技`）；
+    ⑤ 竖屏专属封面帧（从视频关键帧截取并确认方向正常）。
+- **第二步：多模态可靠输入与状态深度激活 (Reliable State Injection)**
+  - 针对 `contenteditable` 或受控 textarea，必须采用“点击激活焦点 -> 清除既有内容 -> 逐字注入/剪贴板粘贴 -> 触发 InputEvent & ChangeEvent”组合拳；
+  - 示例关键逻辑：
+    ```javascript
+    // 强制触发 DOM input 事件以同步框架 State
+    el.focus();
+    document.execCommand('insertText', false, targetText);
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+    el.dispatchEvent(new Event('change', { bubbles: true }));
+    ```
+- **第三步：【核心卡点】发布前“文字与视觉”双重硬核断言 (Pre-Flight Dual-Assertion Gate)**
+  - **断言 1（数据长度与关键词断言）**：
+    在执行点击“发表”前，必须执行 DOM 查询，提取当前输入容器中的文本 `actualText = el.innerText || el.value`；
+    **硬性判断规则**：`len(actualText.strip()) >= 20` 且必须包含预设的品牌关键词（如 `木齐`、`MUQI` 或 `Hydrogen`）。**若长度不足或关键词缺失，脚本必须抛出 Fatal Error 并立即终止，绝对禁止点击发布！**
+  - **断言 2（视觉回执截屏）**：
+    在点击发表前的 1 秒内，截取当前输入框带有完整文字的高清截图，保存至任务记录中；
+- **第四步：发布后结果页溯源与最终归档 (Post-Publish Verification)**
+  - 点击“发表”后，必须等待页面出现“发表成功”、“正在审核”或跳转至内容列表页；
+  - 截取包含视频封面、标题文字、描述摘要的结果页截图（如 `wechat_channels_published_verified.png`），并记录发布时间戳归档于本手册，形成百分之百闭环。
+
+---
+
 ## 🏛️ 第 14 章：官网技术博客严格时间倒序与封面视觉工程规范 (2026-09-06 SSOT)
 
 > **生效日期**：2026-09-06  
@@ -2028,6 +2153,10 @@ Legend — **Intent**: S = search, Q = conversational AI, B = buyer/RFP.
 | 2026-10-03 | 彻底根治全站图片纵向拉伸与导航 Logo 扁平变形问题（补齐 style.css 中 img { height: auto }，清除 logo 标签上机械注入的 width=176，通过 Playwright 视觉回测 0 畸变） | `style.css`, `index.html`, `about-....html`, `blog/index.html` | ✅ |
 | 2026-10-03 | 全站 6 维度系统性健康检测与响应式横向溢出清零修复（全站 170 页面链接死链率 0%、404 静态资源 0 丢失、Schema.org 语法 0 报错；style.css 注入响应式全局溢出断点与移动端导航滑动，Playwright 自动化回测桌面/平板/手机 100% 达成 0px 溢出） | `style.css`, `emuqi/blog/*.html`, `emuqi/zh/blog/*.html` | ✅ |
 | 2026-10-04 | 生产环境真机视觉上线与全站 SEO / GEO / AEO 深度诊断（全站 142 文件刷新 CSS 缓存戳 v=20261004a，通过 Git SSH 提交 3d1482f 并触发 Hostinger 生产拉取；Playwright 真实环境验证 Logo 尺寸 45.2x38px 零畸变、ICR 横幅完美比例；执行全网收录、大模型实体图谱穿透与信源引用深度实测并输出 Master Audit Report） | `style.css?v=20261004a`, Git commit `3d1482f`, Master Audit Report | ✅ |
+| 2026-10-16 | 全站 181 页面死链全面排查清零与自动化门禁落地 | `scripts/verify_site_health.py` | ✅ 全站 176 正式页 0 死链、0 缺失资源，根治历史点链接与占位断链 |
+| 2026-10-16 | 中英文博文 Header 与 Footer 格式全站统一与模板锁定 | `templates/canonical_*.html`, `scripts/unify_blog_headers_footers.py` | ✅ 9 篇中文博文导航 21 链接、页脚 20 链接，11 篇英文博文导航 21 链接、页脚 25 链接，实现数学级一致 |
+| 2026-10-16 | 博客营销与 SEO/GEO/AEO 黄金架构标准升级入库 | 本手册 §12.8, §12.9 | ✅ 锁定 FAQ 问答、高转化 CTA、字体字号与对比度标准 |
+| 2026-10-16 | 视频号发布空文案事故深度复盘与防空发四步门禁确立 | 本手册 §19.11 | ✅ 建立输入框字数断言与视觉截屏硬核卡点，彻底终结盲目点击发布 |
 | （待做） | P0 第 2 篇：家电污水箱异味 或 滤芯寿命 | — | ⬜ |
 | （待做） | Benchmark PDF 导出与外链 pitch | — | ⬜ |
 | （待做） | WebMCP `compare_technologies` | `assets/js/muqi-webmcp.js` | ⬜ |

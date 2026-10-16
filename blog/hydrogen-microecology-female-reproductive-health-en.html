@@ -405,21 +405,69 @@
 
 <!-- Global Header -->
 <header style="background:linear-gradient(180deg,#e8eaed 0%,#d8dadf 40%,#cfd2d7 70%,#c5c8cd 100%);border-bottom:1px solid #b8bbc0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.06),inset 0 1px 0 rgba(255,255,255,0.65)">
-  <div style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 40px;height:72px">
-    <a href="../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-      <img src="../assets/images/logo.jpg" alt="MUQI" height="38" style="border-radius:3px">
+  <div style="display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 24px;min-height:72px">
+    <a href="/index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0">
+      <img src="/assets/images/logo.jpg" alt="MUQI" height="38" width="45" style="height:38px;width:auto;border-radius:3px">
       <span style="font-size:17px;font-weight:700;color:#1a1a2e">MQ TECH</span>
     </a>
-    <nav style="display:flex;align-items:center;gap:16px">
-      <a href="../index.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none">Home</a>
-      <a href="../product-functional-ceramic-materials.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none">Products</a>
-      <a href="../hydrogen-health-application.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none">Applications</a>
-      <a href="index.html" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none">Blog</a>
-      <a href="../h2-wellness-hub/" style="font-size:14px;font-weight:500;color:#4a4a5a;text-decoration:none">H2 Wellness Hub</a>
-      <a href="../contact-mqtech-hydrogen-health.html" class="nav-contact" style="background:#1a3a6e;color:#fff;padding:8px 16px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600">Contact</a>
+    <nav style="display:flex;align-items:center;gap:3px;flex-wrap:nowrap;flex-shrink:0">
+      <!-- 1. Home -->
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/index.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Home <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:210px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/index.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🏠</span> Home</a>
+          <a href="/about-functional-ceramic-ball-water-media-manufacturer.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🏢</span> About MUQI</a>
+        </div>
+      </div>
+      <!-- 2. Products -->
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/product-functional-ceramic-materials.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Products <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:260px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/hydrogen-generate-ceramic-ball.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚪</span> Ceramic Hydrogen Ball</a>
+          <a href="/maca-kdf-antibacterial-ceramic-ball.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🛡️</span> MACA Antibacterial Ball</a>
+          <a href="/mph-condensate-neutralizer.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚗️</span> MPH+ Condensate Neutralizer</a>
+          <a href="/solid-state-hydrogen-vs-pem-electrolysis.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s;border-top:1px solid rgba(255,255,255,0.06);margin-top:4px" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚡</span> Solid-State vs PEM</a>
+        </div>
+      </div>
+      <!-- 3. Applications -->
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/hydrogen-health-application.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Applications <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:240px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/hydrogen-water-bottle-or-hydrogen-health.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🍶</span> Hydrogen Water Bottle</a>
+          <a href="/hydrogen-health-hydrogen-alkaline-water-sachet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>💧</span> Alkaline Water Sachet</a>
+          <a href="/hydrogen-healthceramic-hydrogen-tablet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>💊</span> Ceramic Hydrogen Tablet</a>
+          <a href="/hydrogen-healthhydrogen-water-filter-cartridge.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🔬</span> Water Filter Cartridge</a>
+          <a href="/hydrogen-healthhydrogen-foot-bath-tablet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🛁</span> Foot Bath Tablet</a>
+        </div>
+      </div>
+      <!-- 4. Solutions -->
+      <a href="/solutions-hydrogen-agriculture.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Solutions</a>
+      <!-- 5. Blog -->
+      <a href="/blog/index.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Blog</a>
+      <!-- 6. H2 Wellness Hub -->
+      <a href="/h2-wellness-hub/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">H2 Wellness Hub</a>
+      <!-- 7. Store -->
+      <a href="/store.html" class="nav-store" style="font-size:13.5px;font-weight:600;color:#0a1628;text-decoration:none;padding:6px 14px;border-radius:8px;background:linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%);border:1px solid rgba(10,22,40,0.18);box-shadow:0 1px 2px rgba(0,0,0,0.05);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%)';this.style.color='#0a1628'">Store</a>
+      <!-- 8. Contact -->
+      <a href="/contact-mqtech-hydrogen-health.html" class="nav-contact" style="font-size:13.5px;font-weight:600;color:#fff;text-decoration:none;padding:6px 14px;border-radius:8px;background:#0a1628;box-shadow:0 2px 6px rgba(10,22,40,0.25);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#0a1628'">Contact</a>
+
+      <!-- 9. Language Selector -->
+      <div class="lang-pill-switch" role="group" aria-label="Language Selector" style="display:inline-flex;align-items:center;gap:2px;height:30px;padding:2px 4px 2px 7px;background:rgba(255,255,255,0.8);border:1px solid rgba(10,22,40,0.18);border-radius:9999px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-left:6px;flex-shrink:0;box-sizing:border-box;user-select:none">
+        <span class="lang-pill-globe" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;color:#1d4ed8;margin-right:2px;flex-shrink:0">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;display:block">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </span>
+        <span class="lang-pill-opt active" aria-current="page" style="display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11.5px;font-weight:700;color:#ffffff;background:#0a1628;border-radius:9999px;box-shadow:0 2px 5px rgba(10,22,40,0.25);cursor:default;white-space:nowrap;line-height:22px;text-decoration:none">EN</span>
+        <span class="lang-pill-divider" aria-hidden="true" style="display:inline-block;width:1px;height:10px;background:rgba(10,22,40,0.18);margin:0 1px;flex-shrink:0"></span>
+        <a href="/zh/blog/index.html" class="lang-pill-opt" title="切换至中文官网深度版" style="display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans SC',sans-serif;font-size:11.5px;font-weight:600;color:#475569;border-radius:9999px;text-decoration:none;white-space:nowrap;line-height:22px;transition:all 0.15s" onmouseover="this.style.color='#0a1628';this.style.background='rgba(10,22,40,0.08)'" onmouseout="this.style.color='#475569';this.style.background='transparent'">中文</a>
+      </div>
     </nav>
   </div>
 </header>
+
 
 <main class="article-container">
 
@@ -848,45 +896,61 @@
 </main>
 
 <!-- Footer -->
-<footer style="background:#0a1628;margin-top:80px">
+<footer style="background:#0a1628;margin-top:0">
   <div style="max-width:1200px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px">
     <div>
-      <div style="font-size:18px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="../assets/images/logo.jpg" alt="MUQI" height="38" style="border-radius:4px"> MQ <span style="color:#f47b20">&middot;</span> TECH</div>
+      <div style="font-size:22px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="/assets/images/logo.jpg" alt="MUQI" height="38" width="45" style="height:38px;width:auto;border-radius:4px"> MQ <span style='color:#f47b20'>·</span> TECH</div>
       <p style="font-size:14px;color:#94a3b8;line-height:1.7">Leading manufacturer of functional mineral ceramic water media and solid-state hydrogen products for health and eco applications worldwide.</p>
+      <div style="display:flex;gap:12px;margin-top:20px">
+        <a href="https://x.com/MARTINPARK111" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
+        <a href="https://www.linkedin.com/company/72043164" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
+        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
+        <a href="mailto:muqizb@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">@</a>
+      </div>
     </div>
     <div>
       <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">Explore</h4>
-      <a href="../index.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Home</a>
-      <a href="../about-functional-ceramic-ball-water-media-manufacturer.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">About</a>
-      <a href="../product-functional-ceramic-materials.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Products</a>
-      <a href="../hydrogen-health-application.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Applications</a>
-      <a href="index.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Blog</a>
-      <a href="../h2-wellness-hub/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">H2 Wellness Hub</a>
+      <a href="/index.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Home</a>
+      <a href="/about-functional-ceramic-ball-water-media-manufacturer.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">About</a>
+      <a href="/product-functional-ceramic-materials.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Products</a>
+      <a href="/hydrogen-health-application.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Applications</a>
+      <a href="/solutions-hydrogen-agriculture.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Solutions</a>
+      <a href="/blog/index.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Blog</a>
+      <a href="/h2-wellness-hub/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">H2 Wellness Hub</a>
+      <a href="/store.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Store</a>
     </div>
     <div>
       <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">Products</h4>
-      <a href="../hydrogen-generate-ceramic-ball.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Ceramic Ball</a>
-      <a href="../maca-kdf-antibacterial-ceramic-ball.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">MACA Antibacterial</a>
-      <a href="../mph-condensate-neutralizer.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">MPH+ Condensate</a>
-    <p style="font-size:14px;margin-bottom:6px"><a href="../store.html" style="color:#94a3b8;text-decoration:none;">Store</a></p>
-<p style="font-size:14px;margin-bottom:6px"><a href="../hydrogen-healthhydrogen-water-filter-cartridge.html" style="color:#94a3b8;text-decoration:none;">Water Filter Cartridge</a></p>
-<p style="font-size:14px;margin-bottom:6px"><a href="../hydrogen-healthhydrogen-foot-bath-tablet.html" style="color:#94a3b8;text-decoration:none;">Foot Bath Tablet</a></p>
-</div>
+      <a href="/hydrogen-generate-ceramic-ball.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Ceramic Hydrogen Ball</a>
+      <a href="/maca-kdf-antibacterial-ceramic-ball.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">MACA Antibacterial</a>
+      <a href="/mph-condensate-neutralizer.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">MPH+ Condensate</a>
+      <a href="/solid-state-hydrogen-vs-pem-electrolysis.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Solid-State vs PEM</a>
+    </div>
     <div>
       <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">Applications</h4>
-      <a href="../hydrogen-water-bottle-or-hydrogen-health.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Hydrogen Bottle</a>
-      <a href="../hydrogen-health-hydrogen-alkaline-water-sachet.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Alkaline Sachet</a>
-      <a href="../hydrogen-healthceramic-hydrogen-tablet.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Hydrogen Tablet</a>
+      <a href="/hydrogen-water-bottle-or-hydrogen-health.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Hydrogen Water Bottle</a>
+      <a href="/hydrogen-health-hydrogen-alkaline-water-sachet.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Alkaline Water Sachet</a>
+      <a href="/hydrogen-healthceramic-hydrogen-tablet.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Ceramic Hydrogen Tablet</a>
+      <a href="/hydrogen-healthhydrogen-water-filter-cartridge.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Water Filter Cartridge</a>
+      <a href="/hydrogen-healthhydrogen-foot-bath-tablet.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Foot Bath Tablet</a>
     </div>
     <div>
       <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">Contact</h4>
-      <p style="font-size:14px;color:#94a3b8;line-height:1.7">+86 139 6441 6725</p>
+      <a href="/contact-mqtech-hydrogen-health.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Business Inquiry</a>
       <a href="mailto:muqizb@gmail.com" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">muqizb@gmail.com</a>
-      <p style="font-size:13px;color:#94a3b8;line-height:1.7;margin-top:12px">Block B, Innovation Park<br>125 Liuquan Road, Zibo, China</p>
+      <p style="font-size:14px;color:#94a3b8;margin-bottom:6px">+86-13964416725</p>
+      <p style="font-size:13px;color:#64748b;line-height:1.5">Block B, Innovation Park, High-Tech Zone, Zibo, China</p>
     </div>
   </div>
-  <div style="border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:24px;font-size:13px;color:#475569;margin-top:48px">&copy; 2025&ndash;2026 MUQI &middot; <a href="https://www.emuqi.com" style="color:#f47b20;text-decoration:none">emuqi.com</a></div>
+  <div style="max-width:1200px;margin:0 auto;padding:24px 40px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <p style="font-size:13px;color:#64748b;margin:0">&copy; 2026 Shandong MUQI Health Technology Co., Ltd. All Rights Reserved.</p>
+    <div style="display:flex;gap:20px">
+      <a href="/privacy-policy.html" style="font-size:13px;color:#64748b;text-decoration:none">Privacy Policy</a>
+      <a href="/sitemap.xml" style="font-size:13px;color:#64748b;text-decoration:none">Sitemap</a>
+    </div>
+  </div>
 </footer>
+
 
 </body>
 </html>
