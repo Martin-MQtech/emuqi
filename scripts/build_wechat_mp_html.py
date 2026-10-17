@@ -1,0 +1,235 @@
+import os
+
+def generate_wechat_html():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.abspath(os.path.join(script_dir, '..'))
+    out_path = os.path.join(base_dir, 'scripts', 'wechat_article_content.html')
+
+    html = """
+<section style="font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; line-height: 1.85; color: #334155; word-break: break-word;">
+
+  <!-- 顶部标签分类 -->
+  <p style="text-align: center; margin: 0 0 16px 0;">
+    <span style="display: inline-block; background: #fff7ed; border: 1px solid #fed7aa; color: #c2410c; padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: bold; letter-spacing: 0.5px;">
+      ★ 国家知识产权战略 · 顶格直审与多维确权
+    </span>
+  </p>
+
+  <!-- 头部旗舰展台 Banner 大图 -->
+  <div style="text-align: center; margin: 0 0 24px 0;">
+    <img src="https://www.emuqi.com/assets/images/blog/copyright-certificates/hero-copyright-certificates.jpg" style="max-width: 100%; border-radius: 12px; display: block; margin: 0 auto; box-shadow: 0 6px 20px rgba(0,0,0,0.12);" />
+    <p style="font-size: 13px; color: #64748b; margin-top: 10px; line-height: 1.5; text-align: center;">
+      ▲ 权威确权矩阵总装：国家版权局直属核发《国作登字-2026-A-00190677》文字作品证书（前），协同山东省版权局两项美术作品证书与商业防伪认证徽标（后）
+    </p>
+  </div>
+
+  <!-- 引言金边导读卡片 -->
+  <div style="background: #f8fafc; border-left: 4px solid #1d4ed8; padding: 16px 18px; border-radius: 0 10px 10px 0; margin-bottom: 24px;">
+    <p style="font-size: 15.5px; line-height: 1.8; color: #475569; margin: 0;">
+      提到“版权”，多数人第一反应往往是影视、音乐或软件代码。当一家深耕固态储氢与功能陶瓷的硬科技新材料企业，同时斩获<strong>中华人民共和国国家版权局直属下发的“国字头”文字作品版权证书</strong>与<strong>山东省版权局核发的两项“省字头”美术作品版权证书</strong>时，这绝非简单的文书申报，而是一场旨在终结行业抄袭内卷、赋能下游品牌合规出海与大厂秒过的硬核战略升级。
+    </p>
+  </div>
+
+  <!-- 核心亮点卡片 -->
+  <div style="background: #ffffff; border: 1px solid #fed7aa; border-left: 5px solid #f47b20; border-radius: 0 12px 12px 0; padding: 20px 22px; margin-bottom: 28px; box-shadow: 0 2px 10px rgba(244,123,32,0.06);">
+    <p style="font-size: 17px; font-weight: bold; color: #0f172a; margin: 0 0 12px 0;">
+      ⚡ 执行摘要 · 核心亮点 (Key Takeaways)
+    </p>
+    <ul style="margin: 0; padding-left: 20px; font-size: 15px; color: #334155; line-height: 1.8;">
+      <li style="margin-bottom: 8px;"><strong>国家级文字作品版权顶格落地：</strong>国作登字-2026-A-00190677 号证书由国家版权局直属中国版权保护中心（CPCC）直审核发，将《ICR™智控释溶技术》底层原理、动力学模型与严苛测试规程锁定为国家级知识产权法定资产。</li>
+      <li style="margin-bottom: 8px;"><strong>双重美术标识同步确权：</strong>山东省版权局核发的鲁作登字-2026-F-00689787（固态氢实验室）与 00689788（ICR）两项美术版权，完成商业流通与品牌防伪的视觉壁垒构建。</li>
+      <li style="margin-bottom: 8px;"><strong>立体护城河四位一体：</strong>实现“国家级技术专论文字版权（护内）+ 省级商业美术版权（护外）+ 发明专利微晶制造（护底）+ SAC/TC621 国家标委会标准（话语权）”全链条闭环。</li>
+      <li style="margin-bottom: 0;"><strong>全面赋能全球 B2B 供应链：</strong>为扫地机器人大厂、智能洗碗机巨头、跨境氢健康品牌提供合规抗辩支撑与伯尔尼公约 181 成员国互认通道，实现正品溢价与秒级清关。</li>
+    </ul>
+  </div>
+
+  <!-- 第一章 -->
+  <h2 style="font-size: 21px; font-weight: bold; color: #0f172a; margin: 36px 0 16px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">
+    一、 资质背景与层级深度解构：中央直审与省级确权
+  </h2>
+  <p style="font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 16px;">
+    面对全球知识产权体系的严苛审视，很多企业常因版权概念模糊而在国际竞争中陷入被动。木齐科技本次落地的三项版权资产，呈现出高度清晰的<strong>“中央权威 + 地方协同”</strong>与<strong>“文字专论 + 美术徽标”</strong>双维矩阵：
+  </p>
+
+  <h3 style="font-size: 17.5px; font-weight: bold; color: #1e293b; margin: 24px 0 10px 0;">
+    1. 审批发证机构差异：中央国家局 vs 省级版权局
+  </h3>
+  <ul style="margin: 0 0 18px 0; padding-left: 20px; font-size: 15px; color: #334155; line-height: 1.8;">
+    <li style="margin-bottom: 8px;"><strong>国家级（“国作登字”）：</strong>直属国家版权局下设的中国版权保护中心（CPCC）直接受理审核，加盖<strong>“中华人民共和国国家版权局作品自愿登记专用章”</strong>。其审核门槛极严，具有全国顶格的法律证据效力，是大型企业集团招投标与跨国合规审计中最具说服力的法定文件。</li>
+    <li style="margin-bottom: 0;"><strong>省级（“鲁作登字”）：</strong>由山东省版权局审核发放，加盖省级作品自愿登记印章，专注于属地内品牌设计、产品外观与视觉徽标的快速确权与市场保护。</li>
+  </ul>
+
+  <h3 style="font-size: 17.5px; font-weight: bold; color: #1e293b; margin: 24px 0 10px 0;">
+    2. 作品类别维度：文字作品 (-A-) vs 美术作品 (-F-)
+  </h3>
+  <ul style="margin: 0 0 18px 0; padding-left: 20px; font-size: 15px; color: #334155; line-height: 1.8;">
+    <li style="margin-bottom: 8px;"><strong>文字作品（字母 A 代号）：保护技术理论与科学专论。</strong>木齐登记的《ICR™智控释溶技术》长达数万字的技术白皮书，凝结了多孔微晶高温相变、纳米微孔缓释动力学及严苛测试规程。任何竞品若在宣传册、产品说明书、招投标文件或官网中抄袭木齐的科学论述与工艺参数，均构成对国家级文字著作权的直接侵权，木齐可依法提起诉讼并申请秒级诉前禁令。</li>
+    <li style="margin-bottom: 0;"><strong>美术作品（字母 F 代号）：锁定商业信任符号与防伪徽标。</strong>《固态氢实验室》与《ICR》两份美术作品，将木齐研发并在产品外壳、包装、滤芯丝印上流通的视觉标识全面确权，彻底杜绝同行“盗图傍名牌”与仿冒标签行为。</li>
+  </ul>
+
+  <!-- 国家级证书单品高清图 -->
+  <div style="background: #ffffff; border: 2px solid #f47b20; border-radius: 12px; overflow: hidden; margin: 28px 0; box-shadow: 0 8px 24px rgba(244,123,32,0.12);">
+    <img src="https://www.emuqi.com/assets/images/blog/copyright-certificates/cert-icr-technology-national-text.png" style="max-width: 100%; display: block; margin: 0 auto;" />
+    <div style="padding: 18px 20px; background: #fffaf5;">
+      <p style="margin: 0 0 6px 0;">
+        <span style="display: inline-block; background: #f47b20; color: #ffffff; font-size: 12px; font-weight: bold; padding: 2px 10px; border-radius: 4px;">
+          国家级直审 · 顶格文字作品版权
+        </span>
+      </p>
+      <p style="font-size: 16px; font-weight: bold; color: #0f172a; margin: 0 0 6px 0;">
+        《ICR智控释溶技术》国家级文字作品版权证书 (国作登字-2026-A-00190677)
+      </p>
+      <p style="font-size: 13.5px; color: #64748b; margin: 0; line-height: 1.6;">
+        由中国版权保护中心（CPCC）权威审核、国家版权局监制核发。该证书将木齐独创的微晶控释机理、动态析出算法与实验测试体系纳入国家版权终极保护。
+      </p>
+    </div>
+  </div>
+
+  <!-- 两份省级证书 -->
+  <div style="margin: 28px 0;">
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
+      <img src="https://www.emuqi.com/assets/images/blog/copyright-certificates/cert-solid-hydrogen-lab.png" style="max-width: 100%; display: block; margin: 0 auto;" />
+      <div style="padding: 16px 18px;">
+        <span style="display: inline-block; background: #eff6ff; color: #1d4ed8; font-size: 12px; font-weight: bold; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px;">
+          省级商业确权 · 美术作品
+        </span>
+        <p style="font-size: 15.5px; font-weight: bold; color: #0f172a; margin: 0 0 4px 0;">
+          《固态氢实验室》美术作品版权证书 (鲁作登字-2026-F-00689787)
+        </p>
+        <p style="font-size: 13px; color: #64748b; margin: 0; line-height: 1.6;">
+          由山东省版权局核发，保护“木齐固态氢实验室”商业图形标识，为下游健康品牌提供正统实验室背书与防伪认证。
+        </p>
+      </div>
+    </div>
+
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
+      <img src="https://www.emuqi.com/assets/images/blog/copyright-certificates/cert-icr-technology.png" style="max-width: 100%; display: block; margin: 0 auto;" />
+      <div style="padding: 16px 18px;">
+        <span style="display: inline-block; background: #eff6ff; color: #1d4ed8; font-size: 12px; font-weight: bold; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px;">
+          省级商业确权 · 美术作品
+        </span>
+        <p style="font-size: 15.5px; font-weight: bold; color: #0f172a; margin: 0 0 4px 0;">
+          《ICR》美术作品版权证书 (鲁作登字-2026-F-00689788)
+        </p>
+        <p style="font-size: 13px; color: #64748b; margin: 0; line-height: 1.6;">
+          保护“Equipped with ICR™ Intelligent Release Tech”认证徽标，专用于智能家电及清洁设备水箱防伪贴标。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第二章 -->
+  <h2 style="font-size: 21px; font-weight: bold; color: #0f172a; margin: 36px 0 16px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">
+    二、 立体知识产权护城河图解：从硬核底层到商业溢价
+  </h2>
+  <p style="font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 16px;">
+    真正具有抗周期能力的硬科技企业，绝不依赖单一的专利或商标，而是构建<strong>“立体穿透式护城河（Multitier Moat）”</strong>。木齐科技在此将知识产权布局为四层环环相扣的防御体系：
+  </p>
+
+  <!-- 护城河流程图大图 -->
+  <div style="text-align: center; margin: 24px 0;">
+    <img src="https://www.emuqi.com/assets/images/blog/copyright-certificates/moat-architecture-flowchart.png" style="max-width: 100%; border-radius: 12px; display: block; margin: 0 auto; box-shadow: 0 6px 20px rgba(0,0,0,0.12);" />
+    <p style="font-size: 13px; color: #64748b; margin-top: 10px; line-height: 1.5; text-align: center;">
+      ▲ 木齐科技立体知识产权护城河架构图（发明专利 + 国家级文字专论版权 + 省级美术防伪确权 + SAC/TC621国家标准）
+    </p>
+  </div>
+
+  <div style="background: #f8fafc; border-radius: 10px; padding: 18px 20px; margin-bottom: 28px;">
+    <p style="font-size: 15px; color: #334155; margin: 0 0 10px 0;"><strong>四层防御体系核心解析：</strong></p>
+    <p style="font-size: 14.5px; color: #475569; margin: 0 0 8px 0;"><strong>1. 制造硬核 · 发明专利：</strong>微晶孔隙配方与高温相变核心烧结工艺，锁定微观制造机理，构筑底层物理防线；</p>
+    <p style="font-size: 14.5px; color: #475569; margin: 0 0 8px 0;"><strong>2. 科学原理 · 国家级文字专论版权：</strong>《ICR™智控释溶技术》（国作登字-2026-A-00190677），锁定控释机理与动力学算法，切断竞品抄袭文案借道宣传的可能；</p>
+    <p style="font-size: 14.5px; color: #475569; margin: 0 0 8px 0;"><strong>3. 商业流通 · 省级美术徽标确权：</strong>《固态氢实验室》与《ICR》（鲁作登字-2026-F），为下游品牌提供合法的正品防伪勋章与包装丝印授权；</p>
+    <p style="font-size: 14.5px; color: #475569; margin: 0;"><strong>4. 行业高地 · 国家标委会与行业标准：</strong>作为全国抗菌表面性能标准化技术委员会（SAC/TC621）委员单位，深度参与国家标准与行业规范制定，实现“技术专利化、专利标准化”。</p>
+  </div>
+
+  <!-- 第三章：Q&A 案例深度解析 -->
+  <h2 style="font-size: 21px; font-weight: bold; color: #0f172a; margin: 36px 0 16px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">
+    三、 4 大实战场景深度问答：下游企业到底如何落地与获益？
+  </h2>
+
+  <!-- 问答 1 -->
+  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #1d4ed8; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+    <p style="font-size: 14px; font-weight: bold; color: #1d4ed8; margin: 0 0 6px 0;">
+      【实战案例 1 · 智能家电与清洁电器 OEM】
+    </p>
+    <p style="font-size: 16.5px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">
+      问：智能扫地机、洗碗机等家电主机厂，采购木齐的 ICR 颗粒后，如何将这套认证转化为商业溢价？
+    </p>
+    <p style="font-size: 15px; color: #334155; line-height: 1.8; margin: 0;">
+      <strong>答：</strong>主机厂在污水箱或管路中嵌入木齐 ICR 控释抗菌模块后，获得正式知识产权授权。品牌方可直接在产品彩盒、机身丝印及电商详情页上标注<strong>“Equipped with ICR™ 智控释溶技术”</strong>官方徽标，并注明国家版权局技术专论登记号（国作登字-2026-A-00190677）。此举一方面证明该机器具备经科学验证的“长效 12~24 个月持续释放微量活性离子、实现 >99.9% 广谱抑菌”的硬核能力，彻底规避因“虚假宣传”招致的法规罚单；另一方面支撑产品打造“母婴级抑菌/健康净水”差异化卖点，赋予整机 <strong>200~500 元</strong>的终端终端溢价空间。
+    </p>
+  </div>
+
+  <!-- 问答 2 -->
+  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #f47b20; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+    <p style="font-size: 14px; font-weight: bold; color: #f47b20; margin: 0 0 6px 0;">
+      【实战案例 2 · 氢健康终端消费品牌】
+    </p>
+    <p style="font-size: 16.5px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">
+      问：氢健康品牌（如富氢水杯、吸氢沐浴仪、固态氢泡腾片）如何利用“固态氢实验室”资质打消消费者疑虑？
+    </p>
+    <p style="font-size: 15px; color: #334155; line-height: 1.8; margin: 0;">
+      <strong>答：</strong>氢健康市场过去常受制于“电解制氢易产生臭氧/重金属析出”或“宣称虚高无凭证”的信任危机。采购木齐固态氢材料的品牌方，可在包装及说明书上合法印刷<strong>“木齐科技 · 固态氢实验室 (+H2)”</strong>联名认证标识。消费者通过扫码即可直达山东省版权局登记公示，并查阅常温敞口实测饱和溶氢（<strong>1,200~1,500 ppb</strong>）、强负电位（<strong>-400~-600 mV</strong>）及食品接触级无毒检测报告，使终端转化率与代理商招商信赖度提升 <strong>40% 以上</strong>。
+    </p>
+  </div>
+
+  <!-- 问答 3 -->
+  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #059669; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+    <p style="font-size: 14px; font-weight: bold; color: #059669; margin: 0 0 6px 0;">
+      【实战案例 3 · 外贸出口与跨国出海合规】
+    </p>
+    <p style="font-size: 16.5px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">
+      问：跨境电商（亚马逊、独立站）及出口外贸商，这套资质在欧美海外市场管用吗？
+    </p>
+    <p style="font-size: 15px; color: #334155; line-height: 1.8; margin: 0;">
+      <strong>答：</strong>管用且具有极高法律抗辩力。依据国际<strong>《保护文学和艺术作品伯尔尼公约》</strong>（全球 181 个成员国互认自动保护原则），由中国国家版权局（NCAC）核发的正式证书，在欧盟、美国、日本、英国、东南亚等 181 个缔约国享有法定的原创推定力与排他权。当出海产品遭遇海外同行恶意抄袭、在亚马逊提起侵权抗辩，或在欧美海关申报查验时，木齐出具的国家级证书可直接作为无争议的知识产权物权证明；配合欧盟 RoHS、SGS 毒理检测，彻底打破海外买家对“中国制造合规资质不全”的偏见。
+    </p>
+  </div>
+
+  <!-- 问答 4 -->
+  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #7c3aed; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+    <p style="font-size: 14px; font-weight: bold; color: #7c3aed; margin: 0 0 6px 0;">
+      【实战案例 4 · 知识产权战略内幕】
+    </p>
+    <p style="font-size: 16.5px; font-weight: bold; color: #0f172a; margin: 0 0 10px 0;">
+      问：木齐科技明明有配方和工艺发明专利，为什么还要大费周章去申请国家级“文字作品版权”？
+    </p>
+    <p style="font-size: 15px; color: #334155; line-height: 1.8; margin: 0;">
+      <strong>答：</strong>这是硬科技企业极其前瞻的维权战术布局。传统发明专利虽然具有极高垄断力，但申请周期长达 2~3 年，且专利文本必须公开核心技术参数，极易引诱行业投机者通过微调配方“打擦边球”规避，同时肆无忌惮地抄袭原创企业的宣传文案、测试标准与实验机理解释。而<strong>国家级文字作品版权自创作完成之日起即自动产生法律效力</strong>，登记后由国家版权局提供法定公示。一旦竞品在招投标、展会海报或电商文案中直接复制木齐的控释科学原理、动力学曲线描述或工艺标准段落，木齐无需繁复的技术等同鉴定，凭借文字版权证书即可<strong>直接以“侵犯著作权”申请法院诉前禁令下架竞品</strong>，维权周期从数年缩短至数周。
+    </p>
+  </div>
+
+  <!-- 第四章：数据与标准 -->
+  <h2 style="font-size: 21px; font-weight: bold; color: #0f172a; margin: 36px 0 16px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">
+    四、 严守科学底线：以实测数据终结行业“伪概念”
+  </h2>
+  <p style="font-size: 16px; line-height: 1.85; color: #334155; margin-bottom: 16px;">
+    木齐科技始终恪守行业自律与科学严谨原则。在此重申固态储氢与功能陶瓷核心实测基准，协助行业树立科学认知：
+  </p>
+  <ul style="margin: 0 0 24px 0; padding-left: 20px; font-size: 15px; color: #334155; line-height: 1.8;">
+    <li style="margin-bottom: 8px;"><strong>产氢浓度物理极限：</strong>在常温敞口条件下，固态氢材料泡腾溶氢的物理近饱和极限为 <strong>1,200 ~ 1,500 ppb</strong>（严禁混淆局部气相峰值与液相稳态溶氢）；</li>
+    <li style="margin-bottom: 8px;"><strong>强还原负电位 (ORP)：</strong>实测值稳定保持在 <strong>-400 ~ -600 mV</strong>，呈现持久的抗氧化还原活性；</li>
+    <li style="margin-bottom: 0;"><strong>国际环保安全合规：</strong>全线通过欧盟 RoHS 2.0 重金属限制筛查、SGS 经口急性毒理测试与 FDA 食品接触安全规范。</li>
+  </ul>
+
+  <div style="background: #0a1628; border-radius: 12px; padding: 24px 22px; color: #ffffff; text-align: center; margin: 36px 0 20px 0;">
+    <p style="font-size: 19px; font-weight: bold; margin: 0 0 10px 0;">
+      构建大厂级合规护城河 · 携手木齐科技
+    </p>
+    <p style="font-size: 14.5px; color: #cbd5e1; line-height: 1.7; margin: 0 0 18px 0;">
+      无论您是智能扫地机器人/智能洁具产品经理，还是健康饮水与固态氢品牌主理人，木齐科技均可提供“材料+标准+检测+知识产权授权（MUQI Inside）”一站式赋能方案。
+    </p>
+    <p style="font-size: 14px; color: #f47b20; font-weight: bold; margin: 0;">
+      官方网站：www.emuqi.com ｜ 技术咨询与样品申请：B2B 专线对接
+    </p>
+  </div>
+
+</section>
+"""
+
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(html.strip())
+    print("Successfully generated WeChat MP article HTML:", out_path)
+
+if __name__ == '__main__':
+    generate_wechat_html()
