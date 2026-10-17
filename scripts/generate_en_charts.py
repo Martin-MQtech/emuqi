@@ -3,7 +3,8 @@
 """
 Generate professional English infographics for the European Hydrogen Water Cases blog post.
 Rendered via Playwright with 2x Device Pixel Ratio for crystal-clear retina display.
-Features authentic market products on the cover image alongside English title and clinical IDs.
+Uses element-level locator screenshot to eliminate any extraneous background margins,
+viewport mismatches, or dark borders.
 """
 
 import os
@@ -13,15 +14,16 @@ from playwright.sync_api import sync_playwright
 OUT_DIR = "assets/images/blog/european-hydrogen-water-cases"
 os.makedirs(OUT_DIR, exist_ok=True)
 
-# Common styling & font stack
+# Common styling & font stack - transparent body, no black margins
 BASE_STYLE = """
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #0f172a;
-    color: #f8fafc;
+    background: transparent;
+    margin: 0;
+    padding: 0;
     -webkit-font-smoothing: antialiased;
   }
 </style>
@@ -212,7 +214,6 @@ def generate_cover(page):
           max-width: 100%;
           object-fit: contain;
           filter: drop-shadow(0 10px 20px rgba(0,0,0,0.45));
-          transition: transform 0.2s;
         }}
         .prod-name {{
           font-size: 13.5px;
@@ -304,10 +305,10 @@ def generate_cover(page):
     </body>
     </html>
     """
-    page.set_viewport_size({"width": 1080, "height": 460})
+    page.set_viewport_size({"width": 1080, "height": 600})
     page.set_content(html)
-    page.screenshot(path=os.path.join(OUT_DIR, "fig5-cover-en.png"))
-    print("✓ Generated fig5-cover-en.png with real products!")
+    page.locator(".cover-container").screenshot(path=os.path.join(OUT_DIR, "fig5-cover-en.png"))
+    print("✓ Generated fig5-cover-en.png with locator screenshot")
 
 def generate_comparison_table(page):
     html = f"""
@@ -321,19 +322,22 @@ def generate_comparison_table(page):
           width: 1080px;
           background: #ffffff;
           color: #0f172a;
-          padding: 44px 48px;
-          box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+          padding: 40px 44px;
+          border: 1px solid #e2e8f0;
+          border-top: 5px solid #1d4ed8;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }}
         .header-box {{
           border-bottom: 2px solid #0f172a;
-          padding-bottom: 20px;
-          margin-bottom: 24px;
+          padding-bottom: 18px;
+          margin-bottom: 22px;
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
         }}
         .header-title {{
-          font-size: 26px;
+          font-size: 25px;
           font-weight: 800;
           color: #0f172a;
           line-height: 1.3;
@@ -349,7 +353,7 @@ def generate_comparison_table(page):
           color: #1d4ed8;
           font-size: 12px;
           font-weight: 700;
-          padding: 6px 14px;
+          padding: 5px 12px;
           border-radius: 6px;
           text-transform: uppercase;
           letter-spacing: 0.5px;
@@ -363,7 +367,7 @@ def generate_comparison_table(page):
         th {{
           background: #0f172a;
           color: #ffffff;
-          padding: 13px 16px;
+          padding: 12px 16px;
           text-align: left;
           font-weight: 700;
           letter-spacing: 0.3px;
@@ -372,7 +376,7 @@ def generate_comparison_table(page):
         th:nth-child(2) {{ width: 39%; background: #1e293b; }}
         th:nth-child(3) {{ width: 39%; background: #0284c7; border-radius: 0 6px 0 0; }}
         td {{
-          padding: 12px 16px;
+          padding: 11px 16px;
           border-bottom: 1px solid #e2e8f0;
           vertical-align: top;
         }}
@@ -418,8 +422,8 @@ def generate_comparison_table(page):
           font-weight: 700;
         }}
         .footer-note {{
-          margin-top: 24px;
-          padding-top: 16px;
+          margin-top: 20px;
+          padding-top: 14px;
           border-top: 1px solid #e2e8f0;
           display: flex;
           justify-content: space-between;
@@ -513,10 +517,11 @@ def generate_comparison_table(page):
     </body>
     </html>
     """
-    page.set_viewport_size({"width": 1080, "height": 1380})
+    page.set_viewport_size({"width": 1080, "height": 1400})
     page.set_content(html)
-    page.screenshot(path=os.path.join(OUT_DIR, "fig1-case-comparison-table-en.png"))
-    print("✓ Generated fig1-case-comparison-table-en.png")
+    # Target strictly the table container element to eliminate any excess background
+    page.locator(".table-container").screenshot(path=os.path.join(OUT_DIR, "fig1-case-comparison-table-en.png"))
+    print("✓ Generated fig1-case-comparison-table-en.png with locator screenshot (ZERO black bars)")
 
 def generate_four_endpoints_grid(page):
     html = f"""
@@ -530,28 +535,31 @@ def generate_four_endpoints_grid(page):
           width: 1080px;
           height: 1120px;
           background: #f8fafc;
-          padding: 48px;
+          padding: 44px 48px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          border: 1px solid #e2e8f0;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }}
         .grid-header {{
           border-bottom: 2px solid #e2e8f0;
-          padding-bottom: 20px;
+          padding-bottom: 18px;
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
         }}
         .grid-title {{
-          font-size: 28px;
+          font-size: 26px;
           font-weight: 800;
           color: #0f172a;
           line-height: 1.25;
         }}
         .grid-sub {{
-          font-size: 14.5px;
+          font-size: 14px;
           color: #64748b;
-          margin-top: 6px;
+          margin-top: 4px;
         }}
         .tag-pill {{
           background: #eff6ff;
@@ -559,68 +567,68 @@ def generate_four_endpoints_grid(page):
           border: 1px solid #bfdbfe;
           font-size: 12px;
           font-weight: 700;
-          padding: 6px 14px;
+          padding: 5px 12px;
           border-radius: 20px;
           text-transform: uppercase;
         }}
         .cards-wrapper {{
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 24px;
-          margin: 24px 0;
+          gap: 22px;
+          margin: 22px 0;
           flex: 1;
         }}
         .endpoint-card {{
           background: #ffffff;
           border: 1px solid #e2e8f0;
-          border-radius: 14px;
-          padding: 28px;
+          border-radius: 12px;
+          padding: 24px 26px;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-          border-top: 5px solid #cbd5e1;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+          border-top: 4px solid #cbd5e1;
         }}
         .card-top {{
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
-          margin-bottom: 16px;
+          margin-bottom: 14px;
         }}
         .card-badge {{
-          font-size: 11.5px;
+          font-size: 11px;
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.5px;
-          padding: 4px 10px;
+          padding: 4px 8px;
           border-radius: 6px;
         }}
         .badge-phys {{ background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }}
         .badge-subj {{ background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; }}
         .metric-id {{
           font-family: 'JetBrains Mono', monospace;
-          font-size: 13px;
+          font-size: 12.5px;
           color: #94a3b8;
           font-weight: 700;
         }}
         .card-title {{
-          font-size: 20px;
+          font-size: 19px;
           font-weight: 700;
           color: #0f172a;
-          margin-bottom: 12px;
+          margin-bottom: 10px;
         }}
         .card-definition {{
-          font-size: 14px;
+          font-size: 13.5px;
           color: #475569;
-          line-height: 1.6;
-          margin-bottom: 16px;
+          line-height: 1.55;
+          margin-bottom: 14px;
           flex: 1;
         }}
         .translation-box {{
           background: #f8fafc;
           border-left: 3px solid #1d4ed8;
-          padding: 12px 14px;
-          border-radius: 0 8px 8px 0;
-          font-size: 13.5px;
+          padding: 10px 12px;
+          border-radius: 0 6px 6px 0;
+          font-size: 13px;
           color: #1e293b;
           line-height: 1.5;
         }}
@@ -629,10 +637,10 @@ def generate_four_endpoints_grid(page):
         }}
         .grid-footer {{
           border-top: 1px solid #e2e8f0;
-          padding-top: 18px;
+          padding-top: 16px;
           display: flex;
           justify-content: space-between;
-          font-size: 12.5px;
+          font-size: 12px;
           color: #64748b;
         }}
       </style>
@@ -709,10 +717,10 @@ def generate_four_endpoints_grid(page):
     </body>
     </html>
     """
-    page.set_viewport_size({"width": 1080, "height": 1120})
+    page.set_viewport_size({"width": 1080, "height": 1200})
     page.set_content(html)
-    page.screenshot(path=os.path.join(OUT_DIR, "fig2-four-endpoints-grid-en.png"))
-    print("✓ Generated fig2-four-endpoints-grid-en.png")
+    page.locator(".grid-container").screenshot(path=os.path.join(OUT_DIR, "fig2-four-endpoints-grid-en.png"))
+    print("✓ Generated fig2-four-endpoints-grid-en.png with locator screenshot")
 
 def generate_axis_chart(page):
     html = f"""
@@ -730,7 +738,10 @@ def generate_axis_chart(page):
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          border: 1px solid #e2e8f0;
           border-bottom: 4px solid #0284c7;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }}
         .axis-header {{
           border-bottom: 2px solid #e2e8f0;
@@ -919,10 +930,10 @@ def generate_axis_chart(page):
     </body>
     </html>
     """
-    page.set_viewport_size({"width": 1080, "height": 760})
+    page.set_viewport_size({"width": 1080, "height": 850})
     page.set_content(html)
-    page.screenshot(path=os.path.join(OUT_DIR, "fig3-0-6-percent-axis-en.png"))
-    print("✓ Generated fig3-0-6-percent-axis-en.png")
+    page.locator(".axis-container").screenshot(path=os.path.join(OUT_DIR, "fig3-0-6-percent-axis-en.png"))
+    print("✓ Generated fig3-0-6-percent-axis-en.png with locator screenshot")
 
 def generate_timeline(page):
     html = f"""
@@ -940,7 +951,10 @@ def generate_timeline(page):
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          border: 1px solid #e2e8f0;
           border-bottom: 4px solid #1e293b;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }}
         .timeline-header {{
           border-bottom: 2px solid #e2e8f0;
@@ -1142,13 +1156,13 @@ def generate_timeline(page):
     </body>
     </html>
     """
-    page.set_viewport_size({"width": 1080, "height": 960})
+    page.set_viewport_size({"width": 1080, "height": 1050})
     page.set_content(html)
-    page.screenshot(path=os.path.join(OUT_DIR, "fig4-two-cases-timeline-en.png"))
-    print("✓ Generated fig4-two-cases-timeline-en.png")
+    page.locator(".timeline-container").screenshot(path=os.path.join(OUT_DIR, "fig4-two-cases-timeline-en.png"))
+    print("✓ Generated fig4-two-cases-timeline-en.png with locator screenshot")
 
 def main():
-    print("Starting Playwright infographic generator...")
+    print("Starting Playwright infographic generator with locator screenshots...")
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(device_scale_factor=2) # 2x DPR for ultra-crisp retina output
@@ -1160,7 +1174,7 @@ def main():
         generate_timeline(page)
         
         browser.close()
-    print("All English infographics successfully generated!")
+    print("All English infographics successfully re-generated without any black bars!")
 
 if __name__ == '__main__':
     main()
