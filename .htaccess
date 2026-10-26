@@ -23,6 +23,9 @@ RewriteRule ^ https://www.emuqi.com%{REQUEST_URI} [L,R=301]
 RewriteRule ^blog-list-hydrogen-health\.html$ /zh/blog/ [R=301,L]
 RewriteRule ^solid-state-hydrogen-vs-pem-electrolysis-zh\.html$ /zh/solid-state-hydrogen-vs-pem-electrolysis.html [R=301,L]
 
+# H2 Report Think Tank Section Rewrite
+RewriteRule ^h2report$ /h2report/ [R=301,L]
+
 # Chinese Flagship Blog Posts Migration
 RewriteRule ^blog/solid-state-hydrogen-foot-spa-consumables\.html$ /zh/blog/solid-state-hydrogen-foot-spa-consumables.html [R=301,L]
 RewriteRule ^blog/solid-state-hydrogen-facial-steamer-upgrade\.html$ /zh/blog/solid-state-hydrogen-facial-steamer-upgrade.html [R=301,L]
@@ -61,6 +64,7 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1,L]
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType application/pdf "access plus 1 month"
 </IfModule>
 
 # Crawl hygiene: never index dotfiles
@@ -83,6 +87,14 @@ Require all denied
     </FilesMatch>
     <FilesMatch "\.(html|htm)$">
         Header set Cache-Control "max-age=0, must-revalidate"
+    </FilesMatch>
+
+    # High-Performance PDF Streaming & Direct Downloads for /h2report/
+    <FilesMatch "\.pdf$">
+        Header set Content-Type "application/pdf"
+        Header set Accept-Ranges "bytes"
+        Header set Access-Control-Allow-Origin "*"
+        Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
     </FilesMatch>
 </IfModule>
 

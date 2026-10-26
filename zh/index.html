@@ -436,6 +436,9 @@
       <!-- 6. 氢健康观察 (H2 Wellness Hub) -->
       <a href="/zh/h2-wellness-hub/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">氢健康观察</a>
 
+      <!-- 6.5. 智库研报 (H2 Report) -->
+      <a href="/h2report/?lang=zh" style="font-size:13.5px;font-weight:600;color:#0284c7;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:rgba(2,132,199,0.08);white-space:nowrap;flex-shrink:0;display:inline-flex;align-items:center;gap:4px" onmouseover="this.style.background='#0284c7';this.style.color='#fff'" onmouseout="this.style.background='rgba(2,132,199,0.08)';this.style.color='#0284c7'">智库研报 <span style="font-size:10px;background:#f59e0b;color:#000;padding:1px 5px;border-radius:4px;font-weight:700">v1.0</span></a>
+
       <!-- 7. 样品商城 (Store) -->
       <a href="../store.html" class="nav-store" style="font-size:13.5px;font-weight:600;color:#0a1628;text-decoration:none;padding:6px 14px;border-radius:8px;background:linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%);border:1px solid rgba(10,22,40,0.18);box-shadow:0 1px 2px rgba(0,0,0,0.05);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%)';this.style.color='#0a1628'">样品商城</a>
 
@@ -458,6 +461,44 @@
     </nav>
   </div>
 </header>
+
+<!-- 产业研报发布顶栏横幅 (VISUAL & COMPACT TOP BANNER WITH 3D COVER) -->
+<div style="background:linear-gradient(135deg,#030914 0%,#07172c 50%,#0c2547 100%);border-bottom:1px solid rgba(56,189,248,0.35);padding:10px 24px;position:relative;z-index:90;box-shadow:0 6px 20px rgba(0,0,0,0.35)">
+  <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+    
+    <!-- 左侧：3D 书模立体微缩预览与报告信息 -->
+    <a href="/h2report/?lang=zh" style="display:flex;align-items:center;gap:16px;text-decoration:none;min-width:0;flex:1 1 680px">
+      <!-- 3D 封面小图 -->
+      <div style="flex-shrink:0;perspective:500px">
+        <img src="../h2report/assets/covers/cover_zh.webp" alt="2026 中国氢健康产业发展研究报告 (v1.0)" style="width:48px;height:auto;border-radius:4px 7px 7px 4px;box-shadow:-4px 6px 14px rgba(0,0,0,0.6),0 0 12px rgba(56,189,248,0.3);border:1px solid rgba(255,255,255,0.25);transform:rotateY(-12deg) rotateX(4deg);transition:all 0.25s ease" onmouseover="this.style.transform='rotateY(-2deg) scale(1.08)';this.style.boxShadow='-6px 8px 18px rgba(0,0,0,0.7),0 0 16px rgba(56,189,248,0.5)'" onmouseout="this.style.transform='rotateY(-12deg) rotateX(4deg)';this.style.boxShadow='-4px 6px 14px rgba(0,0,0,0.6),0 0 12px rgba(56,189,248,0.3)'">
+      </div>
+      
+      <!-- 文案信息 -->
+      <div style="min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;flex-wrap:wrap">
+          <span style="background:rgba(245,158,11,0.2);color:#fbbf24;border:1px solid rgba(245,158,11,0.45);padding:1px 7px;border-radius:9999px;font-size:10.5px;font-weight:700;letter-spacing:0.04em">欧洲氢健康学院峰会发布 · 筹备中</span>
+          <span style="font-size:11.5px;color:#94a3b8">Martin Chen ✕ Dr. Jeon Hyoung-tag 联合呈现</span>
+          <span style="font-size:10px;background:rgba(56,189,248,0.15);color:#38bdf8;padding:1px 5px;border-radius:3px;font-weight:600">v1.0 权威审定版</span>
+        </div>
+        <div style="color:#ffffff;font-size:14.5px;font-weight:700;letter-spacing:-0.01em;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+          《2026 中国氢健康产业发展研究报告 (v1.0)》
+        </div>
+      </div>
+    </a>
+
+    <!-- 右侧：交互按钮与语种支持 -->
+    <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+      <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#94a3b8">
+        <span style="background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:3px">中 · 英 · 日 · 韩 四语</span>
+      </div>
+      <a href="/h2report/?lang=zh" style="color:#ffffff;font-weight:700;font-size:12.5px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:6px 15px;background:linear-gradient(135deg,#0284c7 0%,#0369a1 100%);border:1px solid rgba(56,189,248,0.5);border-radius:8px;box-shadow:0 3px 12px rgba(2,132,199,0.35);transition:all 0.2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(56,189,248,0.5)';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='0 3px 12px rgba(2,132,199,0.35)';this.style.transform='translateY(0)'">
+        <span>进入专区 · 在线精读 &amp; 下载</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+      </a>
+    </div>
+
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="zh-hero">
@@ -491,6 +532,9 @@
     </div>
   </div>
 </div>
+
+
+
 
 <!-- LAB SHOWCASE — 研发与实验室实景 (中文主站专属中科院实拍原图) -->
 <section class="section" style="background:#0a1628;padding:80px 24px">
