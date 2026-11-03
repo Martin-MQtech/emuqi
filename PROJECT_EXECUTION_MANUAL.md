@@ -1344,6 +1344,9 @@ Account: @chen_martin_f6f22118d1b92
 | 2026-09-06 21:46 | Antigravity | 熏蒸仪升级博客全网分发：WordPress (ID 32)、Blogger (ID 7798918132827660778)、LinkedIn 领英动态 (7502361562419036160 + First Comment SOP) 成功发布 | 🟢 **三大渠道正式上线**，修复全量 CDN 图像渲染 |
 | 2026-09-09 23:38 | DEV.to 官方 | 官方正式下达解封通知："Thank you for acknowledging the terms. The suspension on your account has been lifted." | 🟢 **DEV.to 封禁彻底解除**，API 权限与个人主页全面恢复活跃 |
 | 2026-09-10 21:18 | Antigravity | 调用 DEV.to REST API 验证用户 `@chen_martin_f6f22118d1b92` (ID: 4082893) 与文章列表，确认 HTTP 200 畅通 | 🟢 **账号与 2 篇长文在线，全域渠道资产账更新为完全在役** |
+| 2026-11-04 00:30 | ZCode | 《把论文写在大地上｜从论文到田间（上海交大氢科学中心研讨纪实）》中英双语官网上线：`zh/blog/hydrogen-agriculture-papers-to-fields.html` + `blog/...-en.html`，9 大构件 + `@graph` 六实体 + FAQ 一一对应，双索引置顶、sitemap 0.9、llms.txt 增补，`verify_site_health` 0/0/0 通过，git `dc07270` 推送生产 | 🟢 **母站双语上线**（阶段零完成） |
+| 2026-11-04 01:45 | ZCode | 同文多渠道分发：WordPress XML-RPC Post ID 42、DEV.to Article 4970491（canonical 回指母站）、Google Blogger（ego-browser SSO HTML 注入 + 4 标签）、X 六连推结构化串推成链（@MARTINPARK111 首推 2117659600485003541，首版未成链已删除重发）；分发包与全链日志见 `distribution_packages/papers_to_fields/MASTER_PAPERS_TO_FIELDS_DISTRIBUTION_GUIDE.md` | 🟢 **四渠道 Live + 三平台资产就绪**（LinkedIn/Substack/知乎·头条·搜狐留人工一键贴发；LinkedIn composer 合成输入被拦截，按高风控纪律停止重试） |
+| 2026-11-04 01:45 | ZCode | `unify_blog_headers_footers.py` 根因修复：两条历史修补 `replace` 对已带 `/zh/blog/` 前缀的链接二次补前缀（此前已致 3 页断链），改为负向断言幂等正则并全站反向清洗 5 文件 | 🟢 **门禁脚本幂等化，`/zh/blog/zh/blog/` 断链清零** |
 
 #### 17.9.2 Agent 权责分工确认
 - **Antigravity Agent**：本次出海矩阵搭建与自动化发布的**主操作方**，负责账号创建、Python 引擎调用、文章排版、API 调度、ego-browser 穿透自动化上线及手册全面升级。User-Agent 标识为 `MQTech-AI-Publisher/2.0`。
