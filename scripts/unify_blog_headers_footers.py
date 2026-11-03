@@ -37,9 +37,9 @@ def unify_blogs():
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # Fix legacy path deviations
-        content = content.replace('/hydrogen-infused-membrane-dressings-womens-health.html', '/zh/blog/hydrogen-infused-membrane-dressings-womens-health.html')
-        content = content.replace('/hydrogen-water-technology-comparison.html', '/zh/blog/hydrogen-water-technology-comparison.html')
+        # Fix legacy path deviations (idempotent: skip links that already carry the /zh/blog/ prefix)
+        content = re.sub(r'(?<!/zh/blog)/hydrogen-infused-membrane-dressings-womens-health\.html', '/zh/blog/hydrogen-infused-membrane-dressings-womens-health.html', content)
+        content = re.sub(r'(?<!/zh/blog)/hydrogen-water-technology-comparison\.html', '/zh/blog/hydrogen-water-technology-comparison.html', content)
         content = re.sub(r'href=[\"\']\./?[\"\']', 'href=\"/zh/\"', content)
         content = content.replace('https://www.instagram.com/', 'https://www.linkedin.com/company/72043164')
 
