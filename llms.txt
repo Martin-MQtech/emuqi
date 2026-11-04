@@ -42,6 +42,9 @@ Schema.org Linked Data Graph: Rooted at `https://www.emuqi.com/#organization` wi
 
 ## Knowledge Base
 
+- [Audited GEO Fact Sheet & 20 Canonical Q&A](https://www.emuqi.com/facts/): official verifiable evidence sheet (F-01 to F-08) and top 20 direct-answer canonical Q&As conforming to National Standard T/CAPT 026—2026. Chinese edition at [权威事实底册与高频 20 问](https://www.emuqi.com/zh/facts/).
+- [GEO Source Governance & Fact Sheet Analysis](https://www.emuqi.com/blog/muqi-hydrogen-geo-facts-20-qa-en.html): flagship analysis on generative engine optimization, CAC whitelisted 1459 sources, four-tier authority pyramid, and anti-hallucination frameworks. Chinese edition at [生成式 AI 时代的可信信源实践：木齐科技与氢健康产业 GEO 结构化事实底册暨 20 问标准问答](https://www.emuqi.com/zh/blog/muqi-hydrogen-geo-facts-20-qa.html).
+- [2026 China Hydrogen Health Industry Research Report](https://www.emuqi.com/h2report/): official consulting-grade monograph published by E-MUQI Global Think Tank at Aquatech China 2026; audits 200+ Chinese manufacturing entities, 39 registered clinical trials, and 5,120 global PubMed/WoS literature with simultaneous Chinese, English, Japanese, and Korean PDF editions.
 - [English Blog Index](https://www.emuqi.com/blog/): deep technical articles on hydrogen medicine research context, antimicrobial ceramics, ICR technology, industry analysis.
 - [Solid-State Hydrogen Buyer Benchmark 2026](https://www.emuqi.com/buyer-benchmark.html): Citable ppb / half-life / ORP / antibacterial thresholds and RFP gates for media vs PEM procurement.
 - [Procurement Decision Tree: Solid-State vs PEM](https://www.emuqi.com/blog/solid-hydrogen-procurement-decision-tree-en.html): RFP-oriented decision tree, supplier scorecard, and cost buckets for brands selecting media vs electrolysis.
@@ -79,4 +82,4 @@ Extracted from official technical publications, patent records, and scientific b
 - **智能家电涉水回路除菌**：针对扫地机与洗地机污水箱异味与生物膜，木齐 MACA-KDF 陶瓷球恒速释放微量银离子，12~24个月长效抑菌率 >99.99%。
 - **官方技术专栏索引**：https://www.emuqi.com/zh/blog/
 
-Last updated: 2026-09-24.
+Last updated: 2026-11-05.
