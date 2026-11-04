@@ -7,7 +7,7 @@
 
 ## 结论先行
 
-站点在 2026-10 完成中文内容向 `/zh/` 分支迁移后，双语架构基本成型，但迁移收尾留下三类技术债：一是中文正文仍有一个文件躺在英文树里（`blog/hydrogen-patch-opportunity.html`，582 处中文 + `lang="zh-CN"` + 自封 `hreflang="en"`）；二是 34 个 Hub 标签/主题页的结构化数据仍写旧语言码 `zh-Hans`；三是新迁移页面的 canonical / hreflang / og 元数据存在缺失与自指错配。本轮共修复 **56 个文件**，审计问题从 **69 项降到 4 项**，且 4 项全部经核实属有意设计或规范内写法，不再改动。
+站点在 2026-10 完成中文内容向 `/zh/` 分支迁移后，双语架构基本成型，但迁移收尾留下三类技术债：一是中文正文仍有一个文件躺在英文树里（`blog/hydrogen-patch-opportunity.html`，582 处中文 + `lang="zh-CN"` + 自封 `hreflang="en"`）；二是 34 个 Hub 标签/主题页仍写旧语言码 `zh-Hans`（`hreflang` 属性与 `<html lang>` / `<a lang>` 两种载体各约一半）；三是新迁移页面的 canonical / hreflang / og 元数据存在缺失与自指错配。本轮共修复 **56 个文件**，审计问题从 **69 项降到 4 项**，且 4 项全部经核实属有意设计或规范内写法，不再改动。
 
 线上本身健康：关键路径全部 200，`.htaccess` 301 生效，`emuqi.com → www.emuqi.com` 收敛正确，TLS 有效，404 页正常。此前多次"站点打不开"的判定不成立，故障在本地 TUN 虚假 IP + 代理内核（VLESS+REALITY 在协议层超时，同机 Hysteria2 192–432ms 正常），与站点无关。
 
@@ -23,7 +23,7 @@
 | 类别 | 数量 | 具体内容 |
 |---|---|---|
 | 双语分轨收尾 | 3 | 中文长文迁入 `zh/blog/hydrogen-patch-opportunity.html`；原路径改为跳转存根（`meta refresh` + `noindex,follow` + canonical + `location.replace`）；`.htaccess` 增补对应 301 |
-| 结构化数据语言码 | 34 | `"inLanguage": "zh-Hans"` → `"zh-CN"`（Hub 标签页、主题页、中英文两套） |
+| 语言码统一 | 34 | `zh-Hans` → `zh-CN` 共 36 处：Hub 标签/主题页的 `hreflang` 声明（18 处）与 `<html lang>` / 语言切换链接 `<a lang>`（18 处） |
 | 内链与引用 | 4 | `blog/index.html` 英文卡片改指 `/zh/blog/…` 并标注 `Industry Insight · Chinese edition`；`zh/blog/index.html` 卡片由 `/blog/` 改指 `/zh/blog/`；WordPress 分发稿 4 处双协议图片 URL 修正 |
 | hreflang 自指纠错 | 16 | 删除迁移过程中遗留的 `hreflang="en"` / `x-default` 自指，补齐 `hreflang="zh-CN"` 双向配对 |
 | 元数据合规 | 12 | 8 个页面 title 收敛至 50–65 字符、description 收敛至 130–160 字符（含新增的 `papers-to-fields` 英文稿）；中文旗舰稿 title 去掉重复副标题 |
@@ -46,6 +46,6 @@ git fetch origin main && git rev-list --count HEAD..origin/main   # 必须为 0 
 git add <本次 56 个文件> && git commit && git push origin main
 ```
 
-推送后 Hostinger 自动同步，GitHub Pages 镜像另需确认构建完成。落地验收：`/blog/hydrogen-patch-opportunity.html` 应 301 到 `/zh/blog/…`（`curl -I` 看 `location`），`/h2-wellness-hub/zh/tags/*` 与 `/h2-wellness-hub/tags/*` 的 JSON-LD `inLanguage` 应为 `zh-CN`，`sitemap.xml` 应包含新中文正文 URL 且不含存根 URL。
+推送后 Hostinger 自动同步（1–2 分钟），GitHub Pages 由 `deploy.yml` 构建（数分钟，`gh api repos/Martin-MQtech/emuqi/pages --jq .status` 读到 `built` 为准）。落地验收：`/blog/hydrogen-patch-opportunity.html` 应 301 到 `/zh/blog/…`（`curl -I` 看 `location`）；全站 `grep -rl 'zh-Hans' --include='*.html' .` 应为 0；`sitemap.xml` 应包含新中文正文 URL 且不含存根 URL；`blog/index.html` 的对应卡片应指向 `/zh/blog/…` 并标注 Chinese edition。
 
 **存根页在 GitHub Pages 上的注意点：** Pages 不解析 `.htaccess`，旧中文 URL 在镜像上靠存根页的 `meta refresh` + JS 跳转兜底，不是 301。因此新加中文文章迁移时，存根 HTML 与 `.htaccess` 规则必须同批提交，缺一个镜像就会露 404 或重复内容。
