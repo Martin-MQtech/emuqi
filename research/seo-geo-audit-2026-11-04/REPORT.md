@@ -39,7 +39,9 @@
 2. **中文树页面却是英文标题与英文 H1** —— 该文实为“中文导语 + 英文正文”的双语稿，`<title>`、description、og 与 hero H1 全英文，与 `/zh/` 位置和 `zh/blog/index.html` 的中文卡片（「膏药贴牌大厂新风口：为什么必须布局固态氢敷贴？」）自相矛盾，百度/搜狗拿到的是英文快照。已把 title/description/og/H1/日期栏统一为中文（正文双语结构不动）。
 3. **`sitemap.xml` 与 `robots.txt` 被缓存 30 天** —— `.htaccess` 的 `ExpiresDefault "access plus 1 month"` 兜到了这两类文件，实测响应头 `cache-control: public, max-age=2592000`、`cf-cache-status: HIT`、`age: 32418`。新页面发布后爬虫最长可能 30 天看不到更新 sitemap。已加 `FilesMatch "^(sitemap.*\.xml|robots\.txt)$"` → `max-age=300, must-revalidate` 并 `unset Expires`，同时给 `application/xml` 单独设 5 分钟 Expires。
 
-**仍需人工处理的一项（不在仓库内）：** Cloudflare 边缘已经缓存过 30 天的 `robots.txt`/`sitemap.xml`，源站头改了也救不了已命中的副本。需要在 Cloudflare 控制台对 `www.emuqi.com/robots.txt`、`/sitemap.xml` 执行 Purge（或 Custom Cache Rule 把这两个路径设为 Cache-Control: no-cache / 短 TTL），否则新 URL 的发现延迟照旧。
+**仍需人工处理的一项（不在仓库内）：** 站点前面叠了两层缓存——Cloudflare（`cf-cache-status`）与 Hostinger 自己的 HCDN（`x-hcdn-cache-status`）。源站头已经改对，但 **Cloudflare 边缘里那个按 30 天 TTL 存进去的旧副本还在服务**：修复后实测 `GET /robots.txt` 仍返回 `cache-control: public, max-age=2592000`、`cf-cache-status: HIT`、`age: 32886`，而同一条 URL 加查询串绕过缓存（`/robots.txt?v=…`）就立刻返回 `max-age=300, must-revalidate`、`cf-cache-status: MISS`；`/sitemap.xml` 同理（`cf-cache-status: DYNAMIC` 但 `last-modified` 仍是 2026-10-18）。
+
+处置：进 Cloudflare 控制台 → Caching → Configuration → **Custom Purge**，明确列出 `https://www.emuqi.com/robots.txt`、`https://www.emuqi.com/sitemap.xml` 两个 URL 清除（比 Purge Everything 稳妥）；若 Hostinger hPanel 里启用了 HCDN/CDN 缓存，同样在其缓存设置里清一次。清完后用 `curl -I https://www.emuqi.com/robots.txt` 复验：`cache-control` 应为 `max-age=300`。若希望一劳永逸，可在 Cloudflare 建 Cache Rule：对 `/robots.txt`、`/sitemap*.xml` 设 Standard Cache 或直接设 `Cache-Control: no-cache` 的边缘覆盖。
 
 ## 剩余 4 项：均为有意，不改
 
