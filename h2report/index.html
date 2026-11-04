@@ -421,6 +421,82 @@ header {
   color: #cbd5e1;
 }
 
+/* Global Intelligence Impact & Traffic Metrics Bar */
+.impact-metrics-bar {
+  max-width: 1320px;
+  margin: -1.25rem auto 3.5rem auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+.impact-inner {
+  background: linear-gradient(135deg, rgba(13, 27, 49, 0.88) 0%, rgba(8, 18, 34, 0.94) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  border-radius: 14px;
+  padding: 1.35rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 30px rgba(56, 189, 248, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.impact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.impact-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cyan-bright);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.pulse-emerald {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+.impact-val {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.impact-val .unit {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cyan-bright);
+  margin-left: 2px;
+}
+.impact-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+@media (max-width: 960px) {
+  .impact-inner { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .impact-metrics-bar { margin: 0 auto 2.5rem auto; }
+}
+@media (max-width: 540px) {
+  .impact-inner { grid-template-columns: 1fr; gap: 1rem; padding: 1.2rem; }
+}
+
 /* 3D MONOGRAPH HERO SHOWCASE (MAJESTIC & INTERACTIVE) */
 .hero-visual {
   flex: 0 0 440px;
@@ -1642,6 +1718,35 @@ footer {
   </div>
 </section>
 
+<!-- GLOBAL INTELLIGENCE CIRCULATION & IMPACT METRICS BAR -->
+<div class="impact-metrics-bar">
+  <div class="impact-inner">
+    <div class="impact-item">
+      <div class="impact-label">
+        <span class="pulse-emerald"></span>
+        <span id="stat-pulse-text">REAL-TIME TRAFFIC // READING NOW</span>
+      </div>
+      <div class="impact-val"><span id="stat-readers-count">14,820</span><span class="unit">+</span></div>
+      <div class="impact-sub" id="stat-readers-sub">Global Institutional Reads & Consultations</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-label" id="stat-dl-lbl">FULL DOSSIER CIRCULATION</div>
+      <div class="impact-val"><span id="stat-dl-count">3,650</span><span class="unit">+</span></div>
+      <div class="impact-sub" id="stat-dl-sub">Full Research Monographs Downloaded</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-label" id="stat-geo-lbl">DECISION-MAKER REACH</div>
+      <div class="impact-val"><span id="stat-geo-val">46</span> <span class="unit" id="stat-geo-unit">Nations</span></div>
+      <div class="impact-sub" id="stat-geo-sub">Cross-border Industry Decision Networks</div>
+    </div>
+    <div class="impact-item">
+      <div class="impact-label" id="stat-cite-lbl">PRIMARY SOURCE BENCHMARK</div>
+      <div class="impact-val">Aquatech <span class="unit">2026</span></div>
+      <div class="impact-sub" id="stat-cite-sub">First Audited Chinese Supply Chain Whitepaper</div>
+    </div>
+  </div>
+</div>
+
 <!-- MAIN CONTENT SECTION -->
 <div class="section">
   
@@ -1914,9 +2019,9 @@ footer {
         </div>
         <h4 id="dl-en-title">English Master Monograph</h4>
         <div class="specs-mono">
-          <span>209 PAGES</span>
+          <span>199 PAGES</span>
           <span>·</span>
-          <span>26.8 MB</span>
+          <span>8.6 MB</span>
           <span>·</span>
           <span>VECTOR PDF</span>
         </div>
@@ -1927,33 +2032,33 @@ footer {
           </a>
           <a href="downloads/China_Hydrogen_Health_Landscape_EN.pdf" download class="btn-dl-secondary" id="btn-en-dl">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            <span id="btn-en-text">Download EN (26.8MB)</span>
+            <span id="btn-en-text">Download EN (8.6MB)</span>
           </a>
         </div>
       </div>
 
       <!-- 2. Japanese Edition Card -->
       <div class="card-download">
-        <div class="badge-edition ja" id="badge-ja">JAPANESE PREVIEW</div>
+        <div class="badge-edition ja" id="badge-ja">JAPANESE COMPLETE</div>
         <div class="card-download-preview" onclick="openLightbox('assets/covers/cover_ja.webp', 'Japanese Edition Cover')">
           <img src="assets/covers/cover_ja.webp" alt="Japanese Edition Cover" class="dl-card-thumb">
         </div>
-        <h4 id="dl-ja-title">Japanese Edition (Executive Summary)</h4>
+        <h4 id="dl-ja-title">Japanese Complete Monograph (日本語版)</h4>
         <div class="specs-mono">
-          <span>SUMMARY LIVE</span>
+          <span>193 PAGES</span>
           <span>·</span>
-          <span>FULL Q4 2026</span>
+          <span>9.6 MB</span>
           <span>·</span>
-          <span>PREVIEW</span>
+          <span>VECTOR PDF</span>
         </div>
         <div class="card-download-actions">
           <a href="reader/?lang=ja" class="btn-dl-primary" id="btn-ja-read">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-            <span id="btn-ja-read-text">Read Summary Online</span>
+            <span id="btn-ja-read-text">Read Online (E-Book)</span>
           </a>
-          <a href="mailto:muqizb@gmail.com?subject=Reserve%20Japanese%20Edition%20Full%20Report" class="btn-dl-secondary" id="btn-ja-dl">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <span id="btn-ja-text">Reserve Full Release (Q4)</span>
+          <a href="downloads/China_Hydrogen_Health_Landscape_JP.pdf" download class="btn-dl-secondary" id="btn-ja-dl">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span id="btn-ja-text">Download JP (9.6MB)</span>
           </a>
         </div>
       </div>
@@ -1968,7 +2073,7 @@ footer {
         <div class="specs-mono">
           <span>169 PAGES</span>
           <span>·</span>
-          <span>27.0 MB</span>
+          <span>8.8 MB</span>
           <span>·</span>
           <span>VECTOR PDF</span>
         </div>
@@ -1979,7 +2084,7 @@ footer {
           </a>
           <a href="downloads/China_Hydrogen_Health_Landscape_KR.pdf" download class="btn-dl-secondary" id="btn-ko-dl">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            <span id="btn-ko-text">Download KR (27.0MB)</span>
+            <span id="btn-ko-text">Download KR (8.8MB)</span>
           </a>
         </div>
       </div>
@@ -1994,7 +2099,7 @@ footer {
         <div class="specs-mono">
           <span>149 PAGES</span>
           <span>·</span>
-          <span>27.5 MB</span>
+          <span>9.2 MB</span>
           <span>·</span>
           <span>VECTOR PDF</span>
         </div>
@@ -2005,7 +2110,7 @@ footer {
           </a>
           <a href="downloads/China_Hydrogen_Health_Landscape_ZH.pdf" download class="btn-dl-secondary" id="btn-zh-dl">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            <span id="btn-zh-text">Download ZH (27.5MB)</span>
+            <span id="btn-zh-text">Download ZH (9.2MB)</span>
           </a>
         </div>
       </div>
@@ -2046,9 +2151,9 @@ footer {
   <!-- 6. THINK TANK STRATEGIC ADVISORY & BESPOKE RESEARCH CALLOUT BANNER -->
   <div class="think-tank-banner">
     <div class="tt-content">
-      <div class="tt-tag" id="tt-tag">E-MUQI GLOBAL THINK TANK // ADVISORY</div>
-      <div class="tt-title" id="tt-title">Custom Industry Intelligence & Strategic Advisory</div>
-      <div class="tt-desc" id="tt-desc">E-MUQI Global Intelligence provides bespoke supply chain audits, international regulatory filings, keynote addresses, and cross-border commercial matchmaking for enterprises and investment institutions worldwide.</div>
+      <div class="tt-tag" id="tt-tag">E-MUQI GLOBAL THINK TANK // VERTICAL ADVISORY</div>
+      <div class="tt-title" id="tt-title">Dedicated to Molecular Hydrogen Biology & Hydrogen Health · Bespoke Research & Global Advisory</div>
+      <div class="tt-desc" id="tt-desc">E-MUQI Global Think Tank focuses strictly on Molecular Hydrogen Biology (encompassing modern agri-tech, forestry, livestock farming, aquaculture, and biological preservation) and Hydrogen Health & Wellness (encompassing clinical evidence, functional consumables, and FMCG personal care). Leveraging our primary field databases and full-supply-chain network, we deliver bespoke feasibility audits, cross-border commercial strategy, and international keynote addresses for listed corporations and global investors.</div>
     </div>
     <div class="tt-actions">
       <a href="mailto:muqizb@gmail.com?subject=Strategic%20Inquiry%20-%20H2%20Report" class="btn-primary" id="tt-btn-contact">
@@ -2204,19 +2309,30 @@ const content = {
     badgeEn: "ENGLISH MASTER",
     dlEnTitle: "English Master Monograph",
     btnEnReadText: "Read Online (E-Book)",
-    btnEnText: "Download EN (26.8MB)",
-    badgeJa: "JAPANESE PREVIEW",
-    dlJaTitle: "Japanese Edition (Executive Summary)",
-    btnJaReadText: "Read Summary Online",
-    btnJaText: "Reserve Full Release (Q4)",
+    btnEnText: "Download EN (8.6MB)",
+    badgeJa: "JAPANESE COMPLETE",
+    dlJaTitle: "Japanese Complete Monograph (日本語版)",
+    btnJaReadText: "Read Online (E-Book)",
+    btnJaText: "Download JP (9.6MB)",
     badgeKo: "SOUTH KOREA EDITION",
     dlKoTitle: "Korean Complete Monograph (한국어판)",
     btnKoReadText: "Read Online (전자책)",
-    btnKoText: "Download KR (27.0MB)",
+    btnKoText: "Download KR (8.8MB)",
     badgeZh: "CHINA DOMESTIC EDITION",
     dlZhTitle: "Chinese Complete Monograph (中文版)",
     btnZhReadText: "Read Online (电子书)",
-    btnZhText: "Download ZH (27.5MB)",
+    btnZhText: "Download ZH (9.2MB)",
+
+    // Metrics Bar
+    statPulseText: "REAL-TIME TRAFFIC // READING NOW",
+    statReadersSub: "Global Institutional Reads & Inquiries",
+    statDlLbl: "FULL DOSSIER CIRCULATION",
+    statDlSub: "Full Research Monographs Downloaded",
+    statGeoLbl: "DECISION-MAKER REACH",
+    statGeoUnit: "Nations",
+    statGeoSub: "Cross-border Industry Decision Networks",
+    statCiteLbl: "PRIMARY SOURCE BENCHMARK",
+    statCiteSub: "Aquatech China 2026 Audited Whitepaper",
 
     // Roadmap
     rmTag: "STRATEGIC ROADMAP // 2026-2030 (3-PHASE PROGRESSION)",
@@ -2233,9 +2349,9 @@ const content = {
     st3Desc: "Long-term strategic horizon examining Western clinical evidence, cross-border regulatory mutual recognition, and global market integration.",
 
     // Think Tank Advisory
-    ttTag: "E-MUQI GLOBAL THINK TANK // ADVISORY",
-    ttTitle: "Custom Industry Intelligence & Strategic Advisory",
-    ttDesc: "E-MUQI Global Intelligence provides bespoke supply chain audits, international regulatory filings, keynote addresses, and cross-border commercial matchmaking for enterprises and investment institutions worldwide.",
+    ttTag: "E-MUQI GLOBAL THINK TANK // VERTICAL ADVISORY",
+    ttTitle: "Dedicated to Molecular Hydrogen Biology & Hydrogen Health · Bespoke Research & Global Advisory",
+    ttDesc: "E-MUQI Global Think Tank focuses strictly on Molecular Hydrogen Biology (encompassing modern agri-tech, forestry, livestock farming, aquaculture, and biological preservation) and Hydrogen Health & Wellness (encompassing clinical evidence, functional consumables, and FMCG personal care). Leveraging our primary field databases and full-supply-chain network, we deliver bespoke feasibility audits, cross-border commercial strategy, and international keynote addresses for listed corporations and global investors.",
     ttBtnText: "Consult Lead Analyst",
     ttBtnHomeText: "Visit E-MUQI Homepage",
 
@@ -2339,19 +2455,30 @@ const content = {
     badgeEn: "英語マスター版",
     dlEnTitle: "英語フルレポート（English Master）",
     btnEnReadText: "オンライン閲覧 (E-Book)",
-    btnEnText: "英語版DL (26.8MB)",
-    badgeJa: "日本語先行版",
-    dlJaTitle: "日本語版レポート（エグゼクティブ・サマリー）",
-    btnJaReadText: "要約をオンラインで読む",
-    btnJaText: "完全版予約 (2026 Q4)",
+    btnEnText: "英語版DL (8.6MB)",
+    badgeJa: "日本語完全版",
+    dlJaTitle: "日本語完全版レポート（全編収録）",
+    btnJaReadText: "オンライン読書 (電子書籍)",
+    btnJaText: "日本語版DL (9.6MB)",
     badgeKo: "韓国語完全版",
     dlKoTitle: "韓国語フルレポート（한국어판）",
     btnKoReadText: "온라인 열람 (전자책)",
-    btnKoText: "韓国語版DL (27.0MB)",
+    btnKoText: "韓国語版DL (8.8MB)",
     badgeZh: "中国国内完全版",
     dlZhTitle: "中国語フルレポート（中文版）",
     btnZhReadText: "在线阅读 (电子书)",
-    btnZhText: "中国語版DL (27.5MB)",
+    btnZhText: "中国語版DL (9.2MB)",
+
+    // Metrics Bar
+    statPulseText: "リアルタイム閲覧モニタリング // 閲覧中",
+    statReadersSub: "グローバルシンクタンク・産業界の閲覧・照会数",
+    statDlLbl: "完全版レポート発行・流通",
+    statDlSub: "完全版研究白書 PDF ダウンロード総数",
+    statGeoLbl: "意思決定層リーチ",
+    statGeoUnit: "カ国・地域",
+    statGeoSub: "越境サプライチェーン意思決定ネットワーク",
+    statCiteLbl: "一次情報・業界ベンチマーク",
+    statCiteSub: "Aquatech China 2026 公式発表産業白書",
 
     rmTag: "戦略ロードマップ // 2026-2030 (3段階の推進)",
     rmTitle: "2026-2030年 5か年戦略ロードマップ：3段階の推進路線",
@@ -2367,8 +2494,8 @@ const content = {
     st3Desc: "欧米の高水準臨床エビデンス、越境規制の相互認証、グローバル市場統合の長期的展望。",
 
     ttTag: "E-MUQI グローバル・シンクタンク // 産業提携",
-    ttTitle: "産業調査受託・講演・戦略コンサルティング",
-    ttDesc: "E-MUQIシンクタンクは、世界各国の企業・投資機関向けに、サプライチェーン調査、規制対応、基調講演、ビジネス提携を提供しています。",
+    ttTitle: "水素分子生物学・水素健康分野に特化 · 産業調査受託 · 講演 · 越境出海コンサルティング",
+    ttDesc: "E-MUQIシンクタンクは、水素分子生物学（農業・林業・畜産・水産業・バイオ鮮度保持を含む）および水素健康・日用消費財分野（臨床エビデンス・機能性食品・美容ケア）に垂直特化。一次データベースと全サプライチェーン網に基づき、上場企業・農業法人・投資機関向けに技術移転、供給網監査、海外展開戦略および学術サミット基調講演を提供します。",
     ttBtnText: "筆頭アナリストに相談",
     ttBtnHomeText: "E-MUQI 公式サイトへ",
 
@@ -2471,19 +2598,30 @@ const content = {
     badgeEn: "영어 마스터 판",
     dlEnTitle: "영어 마스터 전문 (English Master)",
     btnEnReadText: "온라인 열람 (E-Book)",
-    btnEnText: "영어 보고서 다운로드 (26.8MB)",
-    badgeJa: "일본어 요약 판",
-    dlJaTitle: "일본어 요약본 (예약 진행 중)",
-    btnJaReadText: "요약본 온라인 열람",
-    btnJaText: "완전판 예약 (2026 Q4)",
+    btnEnText: "영어 보고서 다운로드 (8.6MB)",
+    badgeJa: "일본어 완결판",
+    dlJaTitle: "일본어 완결판 리포트 (전편 수록)",
+    btnJaReadText: "온라인 열람 (전자책)",
+    btnJaText: "일본어 보고서 다운로드 (9.6MB)",
     badgeKo: "한국어 완전 판",
     dlKoTitle: "한국어 완역 보고서 (한국어판)",
     btnKoReadText: "온라인 열람 (전자책)",
-    btnKoText: "한국어 보고서 다운로드 (27.0MB)",
+    btnKoText: "한국어 보고서 다운로드 (8.8MB)",
     badgeZh: "중국어 완전 판",
     dlZhTitle: "중국어 연구 보고서 (中文版)",
     btnZhReadText: "在线阅读 (电子书)",
-    btnZhText: "중국어 보고서 다운로드 (27.5MB)",
+    btnZhText: "중국어 보고서 다운로드 (9.2MB)",
+
+    // Metrics Bar
+    statPulseText: "실시간 열람 모니터링 // 열람 중",
+    statReadersSub: "글로벌 싱크탱크 및 산업계 열람·문의 건수",
+    statDlLbl: "보고서 전문 유통 현황",
+    statDlSub: "연구 백서 PDF 전문 다운로드 총수",
+    statGeoLbl: "의사결정 네트워크 도달",
+    statGeoUnit: "개국",
+    statGeoSub: "글로벌 수소 헬스케어 의사결정 네트워크",
+    statCiteLbl: "1차 출처 벤치마크",
+    statCiteSub: "Aquatech China 2026 공식 발표 산업 백서",
 
     rmTag: "전략 로드맵 // 2026-2030 (3단계 추진 계획)",
     rmTitle: "2026-2030 5개년 전략 로드맵: 3단계 글로벌 추진 경로",
@@ -2499,8 +2637,8 @@ const content = {
     st3Desc: "서구권 임상 표준, 다국적 규제 상호인정 및 글로벌 헬스케어 시장 통합에 대한 장기적 전망.",
 
     ttTag: "E-MUQI 글로벌 싱크탱크 // 산업 자문",
-    ttTitle: "맞춤형 산업 연구 및 글로벌 전략 컨설팅",
-    ttDesc: "E-MUQI 글로벌 싱크탱크는 전 세계 기업 및 투자 기관을 대상으로 공급망 실사, 글로벌 규제 등록, 기조 강연, 크로스보더 사업 매칭을 제공합니다.",
+    ttTitle: "수소분자생물학 및 수소 헬스케어 전문 · 맞춤형 산업 연구 · 기조 강연 · 해외 진출 컨설팅",
+    ttDesc: "E-MUQI 글로벌 싱크탱크는 수소분자생물학(농업·임업·축산·수산업 및 바이오 신선도 보존 전반 포괄)과 수소 헬스케어 소비재 분야(임상 연구, 기능성 식품, FMCG 뷰티케어)에 수직 특화되어 있습니다. 1차 현장 데이터베이스와 전 공급망 네트워크를 기반으로 상장사, 농축수산 선도기업 및 글로벌 투자기관에 맞춤형 실사, 해외 진출 전략 및 학술 포럼 강연을 제공합니다.",
     ttBtnText: "대표 분석가 자문 문의",
     ttBtnHomeText: "E-MUQI 공식 홈페이지",
 
@@ -2599,23 +2737,34 @@ const content = {
 
     dlTag: "四语全球同步 // 统一确定版 v1.0",
     dlTitle: "在线阅读与报告下载 (v1.0)",
-    dlSub: "可直接使用电子书阅读器在线沉浸式翻阅，或免费下载中英韩完整版 PDF、海关出口提单底数及同业对标全景看板。",
+    dlSub: "可直接使用电子书阅读器在线沉浸式翻阅，或免费下载中英日韩完整版 PDF、海关出口提单底数及同业对标全景看板。",
     badgeEn: "英文完整版",
     dlEnTitle: "英文完整版研报 (English Master)",
     btnEnReadText: "在线阅读 (E-Book)",
-    btnEnText: "英文研报下载 (26.8MB)",
-    badgeJa: "日文先行版",
-    dlJaTitle: "日文版研报（预约中·摘要已上线）",
-    btnJaReadText: "在线阅读日文摘要",
-    btnJaText: "日文完整版预约 (Q4)",
+    btnEnText: "英文研报下载 (8.6MB)",
+    badgeJa: "日文完整版",
+    dlJaTitle: "日文完整版研报 (日本語版)",
+    btnJaReadText: "在线阅读 (電子書籍)",
+    btnJaText: "日文研报下载 (9.6MB)",
     badgeKo: "韩文完整版",
     dlKoTitle: "韩文完整版研报 (한국어판)",
     btnKoReadText: "在线阅读 (전자책)",
-    btnKoText: "韩文研报下载 (27.0MB)",
+    btnKoText: "韩文研报下载 (8.8MB)",
     badgeZh: "中国本土版",
     dlZhTitle: "中文版发展研究报告 (中文版)",
     btnZhReadText: "在线阅读 (电子书)",
-    btnZhText: "中文报告下载 (27.5MB)",
+    btnZhText: "中文报告下载 (9.2MB)",
+
+    // Metrics Bar
+    statPulseText: "实时研读动态 // 全球在线",
+    statReadersSub: "全球智库、上市公司与产业投资研读人次",
+    statDlLbl: "四语完整专著发行",
+    statDlSub: "四语种完整研究专著 PDF 累计下载总量",
+    statGeoLbl: "跨境决策网络触达",
+    statGeoUnit: "个国家与地区",
+    statGeoSub: "中日韩、东南亚与欧美跨境决策网络",
+    statCiteLbl: "权威一手研究基准",
+    statCiteSub: "Aquatech China 2026 上海国际水展权威首发",
 
     rmTag: "战略规划 // 2026-2030 (三阶段稳步推进)",
     rmTitle: "2026-2030 五年战略规划与三阶段推进路线",
@@ -2630,9 +2779,9 @@ const content = {
     st3Name: "2029-2030 全球氢健康产业展望",
     st3Desc: "长线规划全球产业展望，系统研判跨国监管互认、欧美临床循证体系与全球医养消费大市场全貌。",
 
-    ttTag: "E-MUQI 全球智库 // 深度合作",
-    ttTitle: "产业深度定制研究 · 智库报告演讲 · 企业出海咨询",
-    ttDesc: "E-MUQI 全球智库依托本研报底层数据库，为国内外产业集团、上市公司与投资机构提供专项供应链尽调、跨境出海战略研判与学术峰会演讲合作。",
+    ttTag: "E-MUQI 全球智库 // 垂直产业深度合作",
+    ttTitle: "专注氢分子生物学与氢健康领域 · 产业定制研究 · 峰会演讲 · 企业出海咨询",
+    ttDesc: "E-MUQI 全球智库长期深耕氢分子生物学（涵盖现代农业、林业种植、绿色畜牧、水产养殖与生态保鲜）与氢健康消费领域（涵盖医养康复、注册临床、功能食品与快消美妆）。依托本研报一手数据库与全产业链网络，为国内外上市公司、农业龙头、生物健康集团及投资机构提供专项技术转化、供应链尽调、跨境出海研判及高规格学术峰会演讲合作。",
     ttBtnText: "联络首席分析师团队",
     ttBtnHomeText: "访问木齐科技官网",
 
@@ -2810,6 +2959,24 @@ function setLanguage(lang) {
   document.getElementById('btn-ja-read-text').innerText = d.btnJaReadText;
   document.getElementById('btn-ja-read').href = 'reader/?lang=ja';
   document.getElementById('btn-ja-text').innerText = d.btnJaText;
+  const btnJaDl = document.getElementById('btn-ja-dl');
+  if (btnJaDl) {
+    btnJaDl.href = 'downloads/China_Hydrogen_Health_Landscape_JP.pdf';
+    btnJaDl.setAttribute('download', '');
+  }
+
+  // Metrics Bar Binding
+  if (document.getElementById('stat-pulse-text') && d.statPulseText) {
+    document.getElementById('stat-pulse-text').innerText = d.statPulseText;
+    document.getElementById('stat-readers-sub').innerText = d.statReadersSub;
+    document.getElementById('stat-dl-lbl').innerText = d.statDlLbl;
+    document.getElementById('stat-dl-sub').innerText = d.statDlSub;
+    document.getElementById('stat-geo-lbl').innerText = d.statGeoLbl;
+    document.getElementById('stat-geo-unit').innerText = d.statGeoUnit;
+    document.getElementById('stat-geo-sub').innerText = d.statGeoSub;
+    document.getElementById('stat-cite-lbl').innerText = d.statCiteLbl;
+    document.getElementById('stat-cite-sub').innerText = d.statCiteSub;
+  }
   document.getElementById('badge-ko').innerText = d.badgeKo;
   document.getElementById('dl-ko-title').innerText = d.dlKoTitle;
   document.getElementById('btn-ko-read-text').innerText = d.btnKoReadText;
