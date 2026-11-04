@@ -1655,8 +1655,8 @@ footer {
   <div class="grid-4">
     <!-- Card 1 -->
     <div class="card">
-      <div class="card-chart-wrap" onclick="openLightbox('assets/charts/chart_pubmed_hydrogen_literature_light.webp', 'Fig 1-2: PubMed Global Literature (5,120 papers) & China 22.3% Share')">
-        <img src="assets/charts/chart_pubmed_hydrogen_literature_light.webp" alt="PubMed Literature Trend" class="card-chart-img">
+      <div class="card-chart-wrap" id="card1-wrap" onclick="openLightbox('assets/charts/chart_pubmed_hydrogen_literature_en.webp', 'Fig 1-2: PubMed Global Literature (5,120 papers) & China 22.3% Share')">
+        <img id="card1-img" src="assets/charts/chart_pubmed_hydrogen_literature_en.webp" alt="PubMed Literature Trend" class="card-chart-img">
         <span class="card-chart-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zoom</span>
       </div>
       <div class="card-chart-caption" id="card1-chart-cap">Fig 1-2: 5,120 Global Papers & Clinical Gap</div>
@@ -1669,8 +1669,8 @@ footer {
 
     <!-- Card 2 -->
     <div class="card">
-      <div class="card-chart-wrap" onclick="openLightbox('assets/charts/chart_unit_economics_hardware_vs_consumable_trim.webp', 'Fig 4-1: Unit Economics: Hardware vs Consumables')">
-        <img src="assets/charts/chart_unit_economics_hardware_vs_consumable_trim.webp" alt="Hardware vs Consumables Economics" class="card-chart-img">
+      <div class="card-chart-wrap" id="card2-wrap" onclick="openLightbox('assets/charts/chart_unit_economics_hardware_vs_consumable_trim_en.webp', 'Fig 4-1: Unit Economics: Hardware vs Consumables')">
+        <img id="card2-img" src="assets/charts/chart_unit_economics_hardware_vs_consumable_trim_en.webp" alt="Hardware vs Consumables Economics" class="card-chart-img">
         <span class="card-chart-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zoom</span>
       </div>
       <div class="card-chart-caption" id="card2-chart-cap">Fig 4-1: Hardware vs Consumable Unit Economics</div>
@@ -1683,8 +1683,8 @@ footer {
 
     <!-- Card 3 -->
     <div class="card">
-      <div class="card-chart-wrap" onclick="openLightbox('assets/charts/emuqi_product_wheel.webp', 'Fig 5-2: E-MUQI Hydrogen Consumer Product Matrix')">
-        <img src="assets/charts/emuqi_product_wheel.webp" alt="Hydrogen Consumer Product Wheel" class="card-chart-img">
+      <div class="card-chart-wrap" id="card3-wrap" onclick="openLightbox('assets/charts/emuqi_product_wheel_en.webp', 'Fig 5-2: E-MUQI Hydrogen Consumer Product Matrix')">
+        <img id="card3-img" src="assets/charts/emuqi_product_wheel_en.webp" alt="Hydrogen Consumer Product Wheel" class="card-chart-img">
         <span class="card-chart-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zoom</span>
       </div>
       <div class="card-chart-caption" id="card3-chart-cap">Fig 5-2: FMCG Product & Application Wheel</div>
@@ -1697,8 +1697,8 @@ footer {
 
     <!-- Card 4 -->
     <div class="card">
-      <div class="card-chart-wrap" onclick="openLightbox('assets/charts/chart_market_size_tam_sam_som_light_trim.webp', 'Fig 3-1: Market Size & Regulatory Benchmarks')">
-        <img src="assets/charts/chart_market_size_tam_sam_som_light_trim.webp" alt="TAM SAM SOM Market Size" class="card-chart-img">
+      <div class="card-chart-wrap" id="card4-wrap" onclick="openLightbox('assets/charts/chart_market_size_tam_sam_som_light_trim_en.webp', 'Fig 3-1: Market Size & Regulatory Benchmarks')">
+        <img id="card4-img" src="assets/charts/chart_market_size_tam_sam_som_light_trim_en.webp" alt="TAM SAM SOM Market Size" class="card-chart-img">
         <span class="card-chart-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zoom</span>
       </div>
       <div class="card-chart-caption" id="card4-chart-cap">Fig 3-1: Market Size TAM/SAM/SOM Projection</div>
@@ -2138,18 +2138,22 @@ const content = {
     secFindingsTag: "CORE INTELLIGENCE // 4 PILLARS",
     secFindingsTitle: "Executive Intelligence Highlights",
     secFindingsSub: "Four core structural judgments distilled from 200+ corporate audits and 5,120 global research papers.",
+    card1Img: "assets/charts/chart_pubmed_hydrogen_literature_en.webp",
     card1ChartCap: "Fig 1-2: 5,120 Global Papers & Clinical Gap",
     card1Metric: "5,120",
     card1Title: "Academic Density vs. Clinical Gap",
     card1Desc: "China authors 1,143 of 5,120 global papers (22.3%), yet 24 of 39 registered clinical trials cluster in inhalation, while 80%+ commercial revenue clusters in consumer hydration.",
+    card2Img: "assets/charts/chart_unit_economics_hardware_vs_consumable_trim_en.webp",
     card2ChartCap: "Fig 4-1: Hardware vs Consumable Unit Economics",
     card2Metric: "2 Routes",
     card2Title: "Hardware vs Consumable Divergence",
     card2Desc: "One-time hardware sales suffer from long replacement cycles and high sales CAC, while fast-moving consumer consumables achieve 38-52% gross margins and high repeat velocity.",
+    card3Img: "assets/charts/emuqi_product_wheel_en.webp",
     card3ChartCap: "Fig 5-2: FMCG Product & Application Wheel",
     card3Metric: "FMCG",
     card3Title: "Rapid Migration to Beauty & Consumables",
     card3Desc: "Industry center of gravity is decisively pivoting from one-off kitchen appliances to high-frequency repurchase items: effervescent tablets, facial mists, bath care, and soaps.",
+    card4Img: "assets/charts/chart_market_size_tam_sam_som_light_trim_en.webp",
     card4ChartCap: "Fig 3-1: Market Size TAM/SAM/SOM Projection",
     card4Metric: "4 Gates",
     card4Title: "Quadruple Regulatory Benchmarks",
@@ -2272,18 +2276,22 @@ const content = {
     secFindingsTag: "コアインテリジェンス // 4つの柱",
     secFindingsTitle: "エグゼクティブ・サマリーの核心分析",
     secFindingsSub: "200社以上の企業実地調査と世界5,120編の研究論文から抽出された4つの構造的判断。",
+    card1Img: "assets/charts/chart_pubmed_hydrogen_literature_en.webp",
     card1ChartCap: "図 1-2: 世界論文5,120編と臨床試験の偏り",
     card1Metric: "5,120",
     card1Title: "学術密度の高さと臨床応用の乖離",
     card1Desc: "中国は世界5,120編中1,143編（22.3%）を執筆。しかし39件の登録臨床試験中24件が吸入療法に集中し、市場売上の80%超は飲用水が占めています。",
+    card2Img: "assets/charts/chart_unit_economics_hardware_vs_consumable_trim_en.webp",
     card2ChartCap: "図 4-1: 機器販売 vs 消耗品リピート収益性",
     card2Metric: "2つの道",
     card2Title: "機器型と消耗品型の収益モデル分岐",
     card2Desc: "高額な一回性機器販売は買い替えサイクルが長く顧客獲得コストが高止まりする一方、消費財・消耗品は38〜52%の高粗利益率と高頻度リピートを実現。",
+    card3Img: "assets/charts/emuqi_product_wheel_en.webp",
     card3ChartCap: "図 5-2: FMCG消費財・水素コスメ製品群",
     card3Metric: "FMCG",
     card3Title: "日用品・コスメ・FMCGへの重心移行",
     card3Desc: "産業の重心は厨房機器から高頻度リピート消費財へ決定的にシフト：発泡錠、水素ミスト、入浴料、洗顔石鹸が主役に浮上。",
+    card4Img: "assets/charts/chart_market_size_tam_sam_som_light_trim_en.webp",
     card4ChartCap: "図 3-1: TAM/SAM/SOM 市場規模推計モデル",
     card4Metric: "4つの関門",
     card4Title: "4重の規制・承認ベンチマーク",
@@ -2400,18 +2408,22 @@ const content = {
     secFindingsTag: "핵심 인텔리전스 // 4대 기둥",
     secFindingsTitle: "핵심 산업 인사이트 요약",
     secFindingsSub: "200개 이상 기업 실사와 글로벌 5,120편 연구 논문에서 도출된 4가지 구조적 판단.",
+    card1Img: "assets/charts/chart_pubmed_hydrogen_literature_en.webp",
     card1ChartCap: "그림 1-2: 글로벌 논문 5,120편과 임상시험 격차",
     card1Metric: "5,120",
     card1Title: "학술적 밀도와 임상 응용의 불균형",
     card1Desc: "중국은 글로벌 5,120편 중 1,143편(22.3%)을 발표했으나, 39건의 임상 중 24건이 흡입기에 편중되어 있으며 시장 매출의 80% 이상은 수소수 음용에 집중되어 있습니다.",
+    card2Img: "assets/charts/chart_unit_economics_hardware_vs_consumable_trim_en.webp",
     card2ChartCap: "그림 4-1: 하드웨어 vs 소모품 단가 및 마진 구조",
     card2Metric: "2개 경로",
     card2Title: "하드웨어와 소모품의 수익성 경로 분기",
     card2Desc: "단발성 하드웨어는 교체 주기가 길고 고객 유치 비용이 높으나, 빠른 회전의 소비재·소모품은 38~52%의 높은 마진율과 고빈도 재구매를 달성합니다.",
+    card3Img: "assets/charts/emuqi_product_wheel_en.webp",
     card3ChartCap: "그림 5-2: FMCG 소비재 및 수소 뷰티 제품 휠",
     card3Metric: "FMCG",
     card3Title: "뷰티·소비재로의 중심축 대이동",
     card3Desc: "산업의 중심축이 주방 가전에서 고빈도 재구매 소비재로 확고히 이동: 발포정, 수소 미스트, 입욕제, 기능성 비누 등이 시장을 견인하고 있습니다.",
+    card4Img: "assets/charts/chart_market_size_tam_sam_som_light_trim_en.webp",
     card4ChartCap: "그림 3-1: TAM/SAM/SOM 시장 규모 추정",
     card4Metric: "4대 관문",
     card4Title: "4중 규제 및 인허가 벤치마크",
@@ -2528,18 +2540,22 @@ const content = {
     secFindingsTag: "核心研判 // 4大支柱",
     secFindingsTitle: "报告核心战略洞察与研判",
     secFindingsSub: "基于中国 200+ 实体企业一手实证调研与全球 5,120 篇学术文献提炼的核心商业逻辑。",
+    card1Img: "assets/charts/chart_pubmed_hydrogen_literature_light.webp",
     card1ChartCap: "图 1-2: 全球 5,120 篇文献与临床断层",
     card1Metric: "5,120 篇",
     card1Title: "学术文献井喷 vs 临床转化结构断层",
     card1Desc: "中国学者贡献全球 22.3% 论文（1,143 篇），但 39 项注册临床中 24 项扎堆吸氢，而产业 80%+ 商业营收高度集中在常压富氢水饮，呈现严重供需错位。",
+    card2Img: "assets/charts/chart_unit_economics_hardware_vs_consumable_trim.webp",
     card2ChartCap: "图 4-1: 硬件耐用品 vs 快消耗材单品经济模型",
     card2Metric: "两大路径",
     card2Title: "重设备会销承压 vs 轻量快消爆发",
     card2Desc: "单台数千至数万元的重型吸氢机因长换机周期和极高获客成本增长乏力；而微孔固态氢快消耗材凭借 38%~52% 稳定毛利与高频复购成为增长核心极。",
+    card3Img: "assets/charts/emuqi_product_wheel.webp",
     card3ChartCap: "图 5-2: 固态氢“吃喝洗护泡”快消产品矩阵",
     card3Metric: "FMCG 跃迁",
     card3Title: "向氢美妆与健康快消品全面迁移",
     card3Desc: "行业重心正从一次性低频耐用家电决绝转向高频复购快消品：泡腾片、富氢喷雾、草本足浴片、冷制氢皂与温灸贴构建全生命周期消费闭环。",
+    card4Img: "assets/charts/chart_market_size_tam_sam_som_light_trim.webp",
     card4ChartCap: "图 3-1: 2020-2030E 市场规模演变 TAM/SAM/SOM",
     card4Metric: "四道门禁",
     card4Title: "四重监管门禁与合规破局分水岭",
@@ -2689,18 +2705,46 @@ function setLanguage(lang) {
   document.getElementById('sec-findings-tag').innerText = d.secFindingsTag;
   document.getElementById('sec-findings-title').innerText = d.secFindingsTitle;
   document.getElementById('sec-findings-sub').innerText = d.secFindingsSub;
+  
+  if (d.card1Img) {
+    const c1Img = document.getElementById('card1-img');
+    const c1Wrap = document.getElementById('card1-wrap');
+    if (c1Img) c1Img.src = d.card1Img;
+    if (c1Wrap) c1Wrap.onclick = () => openLightbox(d.card1Img, d.card1ChartCap);
+  }
   document.getElementById('card1-chart-cap').innerText = d.card1ChartCap;
   document.getElementById('card1-metric').innerText = d.card1Metric;
   document.getElementById('card1-title').innerText = d.card1Title;
   document.getElementById('card1-desc').innerText = d.card1Desc;
+  
+  if (d.card2Img) {
+    const c2Img = document.getElementById('card2-img');
+    const c2Wrap = document.getElementById('card2-wrap');
+    if (c2Img) c2Img.src = d.card2Img;
+    if (c2Wrap) c2Wrap.onclick = () => openLightbox(d.card2Img, d.card2ChartCap);
+  }
   document.getElementById('card2-chart-cap').innerText = d.card2ChartCap;
   document.getElementById('card2-metric').innerText = d.card2Metric;
   document.getElementById('card2-title').innerText = d.card2Title;
   document.getElementById('card2-desc').innerText = d.card2Desc;
+  
+  if (d.card3Img) {
+    const c3Img = document.getElementById('card3-img');
+    const c3Wrap = document.getElementById('card3-wrap');
+    if (c3Img) c3Img.src = d.card3Img;
+    if (c3Wrap) c3Wrap.onclick = () => openLightbox(d.card3Img, d.card3ChartCap);
+  }
   document.getElementById('card3-chart-cap').innerText = d.card3ChartCap;
   document.getElementById('card3-metric').innerText = d.card3Metric;
   document.getElementById('card3-title').innerText = d.card3Title;
   document.getElementById('card3-desc').innerText = d.card3Desc;
+  
+  if (d.card4Img) {
+    const c4Img = document.getElementById('card4-img');
+    const c4Wrap = document.getElementById('card4-wrap');
+    if (c4Img) c4Img.src = d.card4Img;
+    if (c4Wrap) c4Wrap.onclick = () => openLightbox(d.card4Img, d.card4ChartCap);
+  }
   document.getElementById('card4-chart-cap').innerText = d.card4ChartCap;
   document.getElementById('card4-metric').innerText = d.card4Metric;
   document.getElementById('card4-title').innerText = d.card4Title;
