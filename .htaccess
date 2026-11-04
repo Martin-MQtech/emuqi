@@ -35,6 +35,8 @@ RewriteRule ^blog/gary-brecka-hydrogen-water-solid-state-breakthrough\.html$ /zh
 RewriteRule ^blog/sac-tc621-national-antimicrobial-standard-committee\.html$ /zh/blog/sac-tc621-national-antimicrobial-standard-committee.html [R=301,L]
 RewriteRule ^blog/antimicrobial-ceramic-balls-home-appliances-icr-technology\.html$ /zh/blog/antimicrobial-ceramic-balls-home-appliances-icr-technology.html [R=301,L]
 
+RewriteRule ^blog/hydrogen-patch-opportunity\.html$ /zh/blog/hydrogen-patch-opportunity.html [R=301,L]
+
 # H2 Wellness Hub Chinese mapping
 RewriteRule ^zh/h2-wellness-hub/?$ /h2-wellness-hub/zh/ [R=301,L]
 RewriteRule ^zh/h2-wellness-hub/(.+)$ /h2-wellness-hub/zh/$1 [R=301,L]
