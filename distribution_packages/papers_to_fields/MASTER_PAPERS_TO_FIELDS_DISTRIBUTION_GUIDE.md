@@ -54,6 +54,8 @@
 | 2026-11-04 (用户在线指令) | 知乎专栏 | ✅ 上线（Draft.js 编辑器 HTML paste 注入，28 块结构完整） | https://zhuanlan.zhihu.com/p/2101226470999863502 |
 | 2026-11-04 (用户在线指令) | 微博 | ✅ 上线（@Martin木齐科技CEO，208 字 + emuqi 链接 + 双话题，sinaurl 包装） | https://weibo.com/u/1671664707 |
 | 2026-11-04 (用户在线指令) | Substack | ⏸ 草稿 223407258 内容完整（标题/副标/正文/SEO 全注入，受众=Everyone）。用户改口「不群发」→ 含邮件的发布已及时取消（回到草稿态），改 web-only 重发时 Substack 触发安全门并临时拒绝连接；恢复后最后一步=Continue → 取消勾选 "Send via email and the Substack app" → Publish（按钮自动变为 web-only） | — |
+| 2026-11-04 (用户在线指令) | Substack | ✅ **上线（含邮件）**：换节点日本04 后 Continue → Send to everyone now → Gmail 取验证码 482712 过安全门 → 自动提交完成；公开链接已验证 200 | https://h2welltech.substack.com/p/from-papers-to-fields-2026-hydrogen |
+| 2026-11-04 (网络事件) | 本地代理 | 修复：出口节点整体中断（百度直连OK/外网全断）→ 全节点延迟探测（7活12死）→ `节点选择` 切至 🇯🇵Japan 04（204/0.67s）恢复；未动「独享专线/Gemini组」避免登录态 IP 漂移；领英长文母版 `05_LinkedIn/pulse_article.html` 同步交付 | — |
 
 ### X 串推六条链谱（存档）
 1. https://x.com/MARTINPARK111/status/2117659600485003541
