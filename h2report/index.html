@@ -2163,6 +2163,10 @@ footer {
       <a href="/" class="btn-secondary" id="tt-btn-home">
         <span id="tt-btn-home-text">Visit E-MUQI Homepage</span>
       </a>
+      <a href="/facts/" class="btn-secondary" id="tt-btn-facts" style="border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <span id="tt-btn-facts-text">Audited Fact Sheet & 20 QA</span>
+      </a>
     </div>
   </div>
 
@@ -2354,6 +2358,7 @@ const content = {
     ttDesc: "E-MUQI Global Think Tank focuses strictly on Molecular Hydrogen Biology (encompassing modern agri-tech, forestry, livestock farming, aquaculture, and biological preservation) and Hydrogen Health & Wellness (encompassing clinical evidence, functional consumables, and FMCG personal care). Leveraging our primary field databases and full-supply-chain network, we deliver bespoke feasibility audits, cross-border commercial strategy, and international keynote addresses for listed corporations and global investors.",
     ttBtnText: "Consult Lead Analyst",
     ttBtnHomeText: "Visit E-MUQI Homepage",
+    ttBtnFactsText: "Audited Fact Sheet & 20 QA (GEO Standard)",
 
     // Share & Footer
     shareBoxTitle: "Share This Intelligence Dossier",
@@ -2498,6 +2503,7 @@ const content = {
     ttDesc: "E-MUQIシンクタンクは、水素分子生物学（農業・林業・畜産・水産業・バイオ鮮度保持を含む）および水素健康・日用消費財分野（臨床エビデンス・機能性食品・美容ケア）に垂直特化。一次データベースと全サプライチェーン網に基づき、上場企業・農業法人・投資機関向けに技術移転、供給網監査、海外展開戦略および学術サミット基調講演を提供します。",
     ttBtnText: "筆頭アナリストに相談",
     ttBtnHomeText: "E-MUQI 公式サイトへ",
+    ttBtnFactsText: "公式検証ファクトシート & 20の標準Q&A (GEO基準)",
 
     shareBoxTitle: "このレポートを共有する",
     shareBoxSub: "QRコードをスキャンするかリンクをコピーして、同僚やパートナーと共有してください。",
@@ -2641,6 +2647,7 @@ const content = {
     ttDesc: "E-MUQI 글로벌 싱크탱크는 수소분자생물학(농업·임업·축산·수산업 및 바이오 신선도 보존 전반 포괄)과 수소 헬스케어 소비재 분야(임상 연구, 기능성 식품, FMCG 뷰티케어)에 수직 특화되어 있습니다. 1차 현장 데이터베이스와 전 공급망 네트워크를 기반으로 상장사, 농축수산 선도기업 및 글로벌 투자기관에 맞춤형 실사, 해외 진출 전략 및 학술 포럼 강연을 제공합니다.",
     ttBtnText: "대표 분석가 자문 문의",
     ttBtnHomeText: "E-MUQI 공식 홈페이지",
+    ttBtnFactsText: "공식 검증 팩트시트 & 20대 표준 Q&A (GEO 기준)",
 
     shareBoxTitle: "보고서 공유하기",
     shareBoxSub: "QR 코드를 스캔하거나 링크를 복사하여 동료 및 파트너와 공유하세요.",
@@ -2784,6 +2791,7 @@ const content = {
     ttDesc: "E-MUQI 全球智库长期深耕氢分子生物学（涵盖现代农业、林业种植、绿色畜牧、水产养殖与生态保鲜）与氢健康消费领域（涵盖医养康复、注册临床、功能食品与快消美妆）。依托本研报一手数据库与全产业链网络，为国内外上市公司、农业龙头、生物健康集团及投资机构提供专项技术转化、供应链尽调、跨境出海研判及高规格学术峰会演讲合作。",
     ttBtnText: "联络首席分析师团队",
     ttBtnHomeText: "访问木齐科技官网",
+    ttBtnFactsText: "权威事实底册与高频 20 问 (GEO 标准库)",
 
     shareBoxTitle: "智库研报扫码与分享",
     shareBoxSub: "扫描二维码或复制网址即可将本研报直接分享给全球同行与合作伙伴。",
@@ -3008,6 +3016,11 @@ function setLanguage(lang) {
   document.getElementById('tt-desc').innerText = d.ttDesc;
   document.getElementById('tt-btn-text').innerText = d.ttBtnText;
   document.getElementById('tt-btn-home-text').innerText = d.ttBtnHomeText;
+  const factsBtn = document.getElementById('tt-btn-facts');
+  if (factsBtn) {
+    document.getElementById('tt-btn-facts-text').innerText = d.ttBtnFactsText || 'Audited Fact Sheet & 20 QA';
+    factsBtn.href = (lang === 'zh') ? '/zh/facts/' : '/facts/';
+  }
 
   // Share & Footer
   document.getElementById('share-box-title').innerText = d.shareBoxTitle;

@@ -18,9 +18,11 @@
 | Substack | B2B 邮件私域 | EN | `09_Substack/newsletter_draft.md` | Newsletter 资产包（广播需 Martin 授权后发送） | 📦 就绪待发 |
 | LinkedIn | 国际商务决策 | EN | `05_LinkedIn/article_linkedin.md` | 公司主页长文 + 个人号 First Comment 双轮 | 📦 就绪（高风控，会话健康则发） |
 | X (Twitter) | 国际短讯穿透 | EN | `06_Twitter_X/thread_x.txt` | 6-Tweet 结构化串推 | 📦 就绪（会话健康则发） |
-| 知乎 | 国内知识 | ZH | `01_Zhihu/article_zhihu.md` | 专栏/想法（拟人化） | 📦 资产就绪 |
-| 今日头条 | 国内资讯 | ZH | `02_Toutiao/article_toutiao.txt`（标题 22 字 ≤30 红线） | 头条号后台 | 📦 资产就绪 |
-| 搜狐号 | 百度高权重门户 | ZH | `03_Sohu/article_sohu.html` | 搜狐号后台 | 📦 资产就绪 |
+| 知乎 | 国内知识 | ZH | `01_Zhihu/article_zhihu.md` | 专栏/想法（拟人化） | 🟢 已上线 |
+| 今日头条 | 国内资讯 | ZH | `02_Toutiao/article_toutiao.txt`（标题 22 字 ≤30 红线） | 头条号后台 | 🟢 已上线（审核中） |
+| 搜狐号 | 百度高权重门户 | ZH | `03_Sohu/article_sohu.html` | 搜狐号后台 | 🟢 已上线（审核中） |
+| Quora | 海外知识社区（养号） | EN | 5 篇纯科普答案（见下方链谱） | ego 登录态 + ClipboardEvent paste | 🟢 5 篇已上线 |
+| Medium | 海外长文 / SEO·AEO·GEO | EN | 结构化英文长文（H1 + 8 H2 + 13 H3 含 FAQ） | ego 登录态 + paste 抓取外链图自动转 CDN | 🟢 已发布 |
 | 微信公众号 | 官方矩阵 | ZH | 原文即本篇公众号头条（2026-11-03 已发布） | — | ✅ 已上线 |
 
 ## 二、核心素材（母站绝对 CDN，铁律 §12.7）
@@ -57,6 +59,21 @@
 | 2026-11-04 (用户在线指令) | Substack | ⏸ 草稿 223407258 内容完整（标题/副标/正文/SEO 全注入，受众=Everyone）。用户改口「不群发」→ 含邮件的发布已及时取消（回到草稿态），改 web-only 重发时 Substack 触发安全门并临时拒绝连接；恢复后最后一步=Continue → 取消勾选 "Send via email and the Substack app" → Publish（按钮自动变为 web-only） | — |
 | 2026-11-04 (用户在线指令) | Substack | ✅ **上线（含邮件）**：换节点日本04 后 Continue → Send to everyone now → Gmail 取验证码 482712 过安全门 → 自动提交完成；公开链接已验证 200 | https://h2welltech.substack.com/p/from-papers-to-fields-2026-hydrogen |
 | 2026-11-04 (网络事件) | 本地代理 | 修复：出口节点整体中断（百度直连OK/外网全断）→ 全节点延迟探测（7活12死）→ `节点选择` 切至 🇯🇵Japan 04（204/0.67s）恢复；未动「独享专线/Gemini组」避免登录态 IP 漂移；领英长文母版 `05_LinkedIn/pulse_article.html` 同步交付 | — |
+| 2026-11-04 14:55 | 搜狐号 | ✅ 上线（审核中）：article id 1097071986 / accountId 121371755；属性「知识科普」+ 封面 + 正文配图；发布按钮抗拒合成点击，最终由 Vue 组件 `handlePublish()` 直接调用成功 | https://mp.sohu.com/mpfe/v4/contentManagement/news/articlepreview?id=1097071986&accountId=121371755 |
+| 2026-11-04 15:01 | 今日头条 | ✅ 上线（审核中，作品列表「首发」标记）：标题 22 字合规；正文 682 字 + 4 张中文图表（timeline/routes/smile-curve/four-gates-zh）；单图封面 `cover-card.jpg`（1200×750）；`预览并发布` → `确认发布` 两步 | https://mp.toutiao.com/profile_v4/graphic/articles |
+| 2026-11-04 (用户确认「百家号 成功」) | 百家号 | ✅ 上线（审核中，后台显示「提交成功，正在审核中...」）：标题《把 1500 篇论文写在大地上：氢农业产业观察与上海交大研讨纪实》；正文 466 字（与头条/搜狐差异化）；封面 `cover-card.jpg` + 正文 5 图（timeline/routes/smile-curve/six-questions/four-gates-zh）；发布触发百度安全验证旋转滑块，由 Martin 人工完成验证后提交成功 | https://baijiahao.baidu.com/builder/rc/home |
+| 2026-11-04 (用户在线指令) | Substack 补图 | ✅ **已闭环**：已发布文章 223407258 补入 6 图（hero + 5 张英文图表，均为 1684×947）。关键教训：ProseMirror 合成 `ClipboardEvent('paste')` + `text/html` 插图后仅存为**编辑器草稿**，公开页仍只有旧 2 图；必须再点顶栏 `Update` → 面板 `Update now` 才会推送到线上（该流程只有 Audience 选项、无 Send via email，不会二次群发）。终验：公开页 6 个 `<figure>` / 6 张大图，已核验 | https://h2welltech.substack.com/p/from-papers-to-fields-2026-hydrogen |
+| 2026-11-04 (Martin 亲示「先养号，别一上来让社区给咱封了」) | Quora | ✅ 5 篇纯科普答案上线（Martin Chen / Martin-Chen-169）：**零品牌、零链接、零产品、零自引案例、零「免费送样」**，一律以「机制 / 剂量 / 稳定性 / 证据分级」立论，带 Ohsawa 2007 Nature Medicine 与系统性综述引用。首版曾带公司名与官网，已按 Martin 指示全量改写为纯科普口径并复核通过 | https://www.quora.com/profile/Martin-Chen-169/answers |
+
+### Quora 养号五答链谱（2026-11-04 · 纯科普口径）
+
+1. Is hydrogen water good for our health?（4467 字符 · 机制/剂量/稳定性/证据三分法）— https://www.quora.com/Is-hydrogen-water-good-for-our-health/answer/Martin-Chen-169
+2. What is hydrogen water?（3271 字符 · 化学定义 / 溶解度 / 与碱性水区分）— https://www.quora.com/What-is-hydrogen-water/answer/Martin-Chen-169
+3. Is hydrogen water backed by science?（3752 字符 · 四层证据分级）— https://www.quora.com/Is-hydrogen-water-backed-by-science/answer/Martin-Chen-169
+4. Is hydrogen water a gimmick?（3032 字符 · 科学与营销分离）— https://www.quora.com/Is-hydrogen-water-a-gimmick/answer/Martin-Chen-169
+5. If hydrogen water is boiled, will it degrade...?（2883 字符 · 物理化学 / 气体溶解度）— https://www.quora.com/If-hydrogen-water-is-boiled-will-it-degrade-to-the-point-of-losing-its-therapeutic-benefits/answer/Martin-Chen-169
+
+> **养号纪律（Martin 2026-11-04 亲立）**：Quora 等海外社区前期的目标是可信度而非曝光，**不得出现公司名、产品名、官网链接、自有案例自引、样品话术**；价值锚点只落在公开文献、机制解释与证据边界。凭据弹窗一律 `Done` 跳过，不选带公司头衔的 credential。
 
 ### X 串推六条链谱（存档）
 1. https://x.com/MARTINPARK111/status/2117659600485003541
