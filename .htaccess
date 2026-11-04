@@ -67,6 +67,7 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1,L]
     ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType image/x-icon "access plus 1 year"
     ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/xml "access plus 5 minutes"
 </IfModule>
 
 # Crawl hygiene: never index dotfiles
@@ -89,6 +90,12 @@ Require all denied
     </FilesMatch>
     <FilesMatch "\.(html|htm)$">
         Header set Cache-Control "max-age=0, must-revalidate"
+    </FilesMatch>
+
+    # Crawl-critical freshness: sitemap & robots must not inherit the 1-month ExpiresDefault
+    <FilesMatch "^(sitemap.*\.xml|robots\.txt)$">
+        Header set Cache-Control "public, max-age=300, must-revalidate"
+        Header unset Expires
     </FilesMatch>
 
     # High-Performance PDF Streaming & Direct Downloads for /h2report/

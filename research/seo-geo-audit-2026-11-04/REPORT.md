@@ -31,6 +31,16 @@
 | sitemap | 1 | 新中文正文 URL 入图，存根 URL 不入图 |
 | 英文页语言提示 | 1 | 版权页中文切换项 tooltip 改为英文表述 |
 
+## 线上复验追加发现（第二轮，同批提交）
+
+第一轮修完立即做线上取证（`curl` 逐条核状态与正文），发现三处静态扫描规则本身覆盖不到的问题，均已修复；审计脚本同时新增 M/N 两条规则，用修复前的树做过反向验证，两条规则都能命中：
+
+1. **`zh/blog/hydrogen-patch-opportunity.html` 头图 404** —— 文件从 `blog/` 迁到 `zh/blog/` 后相对深度 +1，`href`/`src` 已批量改成 `../../`，但内联 `<style>` 里的 `url('../assets/...')` 不在替换模式里，hero 背景图实际指向 `/zh/assets/...`。改为 `../../assets/...`。**教训：迁移自检必须包含 CSS `url()`，不能只看 `href`/`src`。**
+2. **中文树页面却是英文标题与英文 H1** —— 该文实为“中文导语 + 英文正文”的双语稿，`<title>`、description、og 与 hero H1 全英文，与 `/zh/` 位置和 `zh/blog/index.html` 的中文卡片（「膏药贴牌大厂新风口：为什么必须布局固态氢敷贴？」）自相矛盾，百度/搜狗拿到的是英文快照。已把 title/description/og/H1/日期栏统一为中文（正文双语结构不动）。
+3. **`sitemap.xml` 与 `robots.txt` 被缓存 30 天** —— `.htaccess` 的 `ExpiresDefault "access plus 1 month"` 兜到了这两类文件，实测响应头 `cache-control: public, max-age=2592000`、`cf-cache-status: HIT`、`age: 32418`。新页面发布后爬虫最长可能 30 天看不到更新 sitemap。已加 `FilesMatch "^(sitemap.*\.xml|robots\.txt)$"` → `max-age=300, must-revalidate` 并 `unset Expires`，同时给 `application/xml` 单独设 5 分钟 Expires。
+
+**仍需人工处理的一项（不在仓库内）：** Cloudflare 边缘已经缓存过 30 天的 `robots.txt`/`sitemap.xml`，源站头改了也救不了已命中的副本。需要在 Cloudflare 控制台对 `www.emuqi.com/robots.txt`、`/sitemap.xml` 执行 Purge（或 Custom Cache Rule 把这两个路径设为 Cache-Control: no-cache / 短 TTL），否则新 URL 的发现延迟照旧。
+
 ## 剩余 4 项：均为有意，不改
 
 1. `h2report/reader/index.html` 不在 sitemap —— 该页 canonical 已指向 `/h2report/`，交互式阅读器不单独参与收录，属预期。
