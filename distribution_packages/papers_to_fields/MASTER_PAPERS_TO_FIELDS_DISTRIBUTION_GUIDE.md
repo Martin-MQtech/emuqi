@@ -51,6 +51,9 @@
 | 2026-11-04 01:40 | Substack | 📦 Newsletter 资产就绪（广播需 Martin 授权后发送） | — |
 | 2026-11-04 01:40 | 知乎 / 头条 / 搜狐 | 📦 中文资产就绪（头条标题 22 字合规；拟人化发布留待人工或后续会话） | — |
 | 2026-11-03 | 微信公众号 | ✅ 原文即本篇公众号头条 | （公众号后台） |
+| 2026-11-04 (用户在线指令) | 知乎专栏 | ✅ 上线（Draft.js 编辑器 HTML paste 注入，28 块结构完整） | https://zhuanlan.zhihu.com/p/2101226470999863502 |
+| 2026-11-04 (用户在线指令) | 微博 | ✅ 上线（@Martin木齐科技CEO，208 字 + emuqi 链接 + 双话题，sinaurl 包装） | https://weibo.com/u/1671664707 |
+| 2026-11-04 (用户在线指令) | Substack | ⏸ 草稿 223407258 内容完整（标题/副标/正文/SEO 全注入，受众=Everyone）。用户改口「不群发」→ 含邮件的发布已及时取消（回到草稿态），改 web-only 重发时 Substack 触发安全门并临时拒绝连接；恢复后最后一步=Continue → 取消勾选 "Send via email and the Substack app" → Publish（按钮自动变为 web-only） | — |
 
 ### X 串推六条链谱（存档）
 1. https://x.com/MARTINPARK111/status/2117659600485003541
