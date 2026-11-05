@@ -100,6 +100,8 @@ User-agent: ImagesiftBot
 Disallow: /
 
 # ── AI-readable site map for LLMs ─────────────────────────────────────
-# llmstxt.org convention: https://www.emuqi.com/llms.txt
+# llmstxt.org convention:
+# https://www.emuqi.com/llms.txt
+# https://www.emuqi.com/llms-full.txt
 
 Sitemap: https://www.emuqi.com/sitemap.xml

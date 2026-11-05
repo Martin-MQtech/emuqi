@@ -2,7 +2,7 @@
 
 > **文档性质**: 项目唯一根控制指导手册 (Single Source of Truth)  
 > **管理方**: Martin Chen & ZCode / Antigravity AI Agent 协同运维小组  
-> **更新时间**: 2026-11-05 (V4.0 全行业首份 GEO 事实底册与 20 问标准知识库上线 + T/CAPT 026—2026 团体标准实战落地 + 中英双轨常青专页与旗舰博客双发 + GitHub Actions 部署链路收敛与竞争锁排障归档 + llms.txt & sitemap.xml 全链路同步)
+> **更新时间**: 2026-11-05 (V4.1 国际市场 GEO / AEO / SEO 全链路矩阵升级 + llms-full.txt 独立全知底册落地 + 英文事实底册交互化搜索与 Speakable Schema 赋能 + 全站英文导航与页脚分流升级 + 知识图谱实体闭环)
 > **内容来源**: 已吸收合并五份企业档案（国际市场执行手册 v3.0 / 项目背景与产品服务汇总 v2.1 / 固态氢产品合规策略报告 PDF / 出海专栏全自动托管实战方案与避坑手册 v3.0 / 全站 SEO/GEO/AEO 协同标准规范）  
 > **精简原则**: 项目根目录下严禁创建多余、临时或重复的 `.md` 文件。所有背景、环境配置、部署 SOP、企业情报与重要里程碑统一收拢归档于本手册。
 
@@ -2407,4 +2407,17 @@ Legend — **Intent**: S = search, Q = conversational AI, B = buyer/RFP.
 | **全站 XML 站点地图** | 双语 | https://www.emuqi.com/sitemap.xml | ✅ 注入 4 大新 URL，优先级 0.90~0.95 |
 | **大模型站点指南** | 双语 | https://www.emuqi.com/llms.txt | ✅ 注入新底册索引与摘要，更新时间戳 2026-11-05 |
 | **GitHub Pages 镜像备份** | 双语 | https://martin-mqtech.github.io/emuqi/zh/facts/ · https://martin-mqtech.github.io/emuqi/facts/ | ✅ 100% 200 OK · Actions 原生工作流全绿标部署 (Run ID 41880076969) |
+### 20.8 本次全球化战报（2026-11-05 · 国际市场 GEO / AEO / SEO 全链路矩阵升级）
 
+| 资产 / 基础设施 | 类型 / 协议 | 生产环境 URL / 文件路径 | 升级成果与功能亮点 |
+|---|---|---|---|
+| **单点请求全知底册** | llmstxt.org Full Spec | `https://www.emuqi.com/llms-full.txt` | ✅ 新增 2.5万字符独立全文本知识底册 · 8 大事实 + 20 问 + 9 维对比表 + B2B 采购基准 |
+| **大模型站点索引** | llmstxt.org Index | `https://www.emuqi.com/llms.txt` | ✅ 顶部注入 `llms-full.txt` 权威单点请求入口声明 |
+| **搜索引擎爬虫规则** | robots.txt 规范 | `https://www.emuqi.com/robots.txt` | ✅ 明确声明并放行 `llms.txt` 与 `llms-full.txt` |
+| **英文核心底册交互升级** | AEO / GEO Landing Page | `https://www.emuqi.com/facts/` | ✅ 注入 Speakable Schema · 毫秒级前端实时搜索 · 4 大分类 Pill · 20 组一键复制引文 + Toast · 8 大证据可点击外链 |
+| **全站英文统一导航模版** | Header Template | `emuqi/templates/canonical_header_en.html` | ✅ H2 Wellness Hub 升级为 5 项高科技交互下拉菜单（含 /facts/、/h2report/、/buyer-benchmark.html） |
+| **全站英文统一页脚模版** | Footer Template | `emuqi/templates/canonical_footer_en.html` | ✅ Explore 注入底册与研报 · 底部工具条注入 `llms.txt` 与 `llms-full.txt` |
+| **全站博客头部页脚同步** | Python 自动化脚本 | `emuqi/scripts/unify_blog_headers_footers.py` | ✅ 100% 同步全站所有中英文博客文章，无破坏性替换 |
+| **英文官网主页实体图谱** | Schema.org Linked Data | `https://www.emuqi.com/index.html` | ✅ Organization & Person 注入 Medium / Substack / Quora / knowsAbout · 页脚注入底册与 llms 链接 |
+| **固态氢对比与采购基准页** | 权重互链与实体引文 | `buyer-benchmark.html` · `solid-state-hydrogen-vs-pem-electrolysis.html` | ✅ 注入 /facts/、/h2report/ 与 /llms-full.txt 互链横幅，形成闭环流量网络 |
+| **自动化测试与断言门禁** | Python 验证脚本 | `scratch/verify_english_geo_aeo.py` | ✅ 5 大维度（文件、爬虫、DOM、模版、Schema）100% 断言通过 |
