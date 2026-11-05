@@ -2,7 +2,7 @@
 
 > **文档性质**: 项目唯一根控制指导手册 (Single Source of Truth)  
 > **管理方**: Martin Chen & ZCode / Antigravity AI Agent 协同运维小组  
-> **更新时间**: 2026-11-05 (V4.1 国际市场 GEO / AEO / SEO 全链路矩阵升级 + llms-full.txt 独立全知底册落地 + 英文事实底册交互化搜索与 Speakable Schema 赋能 + 全站英文导航与页脚分流升级 + 知识图谱实体闭环)
+> **更新时间**: 2026-11-05 (V4.2 全站中英文死链清理与排版全面重构 · 429频控溯源修复 + 消除36处中间跳转桩 + 中文事实底册对齐搜索/分类/一键引文复制 + 全站54处表格移动端响应式横向滚动包装 + 中文导航与页脚5维下拉完全对称化 + TechArticle Schema ID矫正)
 > **内容来源**: 已吸收合并五份企业档案（国际市场执行手册 v3.0 / 项目背景与产品服务汇总 v2.1 / 固态氢产品合规策略报告 PDF / 出海专栏全自动托管实战方案与避坑手册 v3.0 / 全站 SEO/GEO/AEO 协同标准规范）  
 > **精简原则**: 项目根目录下严禁创建多余、临时或重复的 `.md` 文件。所有背景、环境配置、部署 SOP、企业情报与重要里程碑统一收拢归档于本手册。
 
@@ -2421,3 +2421,16 @@ Legend — **Intent**: S = search, Q = conversational AI, B = buyer/RFP.
 | **英文官网主页实体图谱** | Schema.org Linked Data | `https://www.emuqi.com/index.html` | ✅ Organization & Person 注入 Medium / Substack / Quora / knowsAbout · 页脚注入底册与 llms 链接 |
 | **固态氢对比与采购基准页** | 权重互链与实体引文 | `buyer-benchmark.html` · `solid-state-hydrogen-vs-pem-electrolysis.html` | ✅ 注入 /facts/、/h2report/ 与 /llms-full.txt 互链横幅，形成闭环流量网络 |
 | **自动化测试与断言门禁** | Python 验证脚本 | `scratch/verify_english_geo_aeo.py` | ✅ 5 大维度（文件、爬虫、DOM、模版、Schema）100% 断言通过 |
+
+### 20.9 本次全域排查与排版重构战报（2026-11-05 · 死链清零与中英文体验双向对齐）
+
+| 检查与重构维度 | 审计指标 | 修复前状态 | 修复后状态 | 验收工具与测试结论 |
+|---|---|---|---|---|
+| **中间跳转桩清理** | `/zh/h2-wellness-hub/` | 36 处存量页面引用跳转桩 | **0 处残留**（全部直连 `/h2-wellness-hub/zh/`） | `scratch/audit_dead_links_and_layout.py` 100% 验证通过 |
+| **全站生产环境死链** | 404 Not Found 链接 | 历史遗留断点 | **0 处死链**（205 个 HTML 文件全量交叉验证） | 脚本遍历所有 `<a>` 标签，磁盘物理文件 100% 匹配 |
+| **全站静态资源引用** | CSS / JS / 图片路径 | 偶发相对路径失配 | **0 处缺失资源** | 遍历所有 `<link>`、`<script>`、`<img>`，100% 存在 |
+| **移动端表格横向排版** | Table 响应式溢出包装 | 26 页面 54 处表格未包裹 | **54 处表格 100% 套入 `overflow-x:auto`** | 手机端视口 375px 测试 0px 异常页面横向撑开 |
+| **中文导航下拉对称性** | canonical_header_zh | 单项文字链接 | **5 项交互下拉菜单**（门户/底册/研报/数据库/对比） | 中英文导航达到 100% 视觉与功能对称 |
+| **中文页脚底栏规范性** | canonical_footer_zh | 缺失底册与 llms 链接 | **补齐底册/研报/llms.txt/llms-full.txt** | 全站页脚完成统一 |
+| **中文事实底册功能** | `/zh/facts/` | 纯文本展示 | **Speakable + 搜索 + 4大分类 + 20组一键引文复制 + 外链证据** | 与英文版 `/facts/` 达到 100% 功能对齐 |
+| **结构化数据 ID 矫正** | TechArticle Schema | 旧文件名 `-zh.html` | **更正为 `/zh/...` 规范绝对 URL** | Schema.org 语义关系严格闭环 |
