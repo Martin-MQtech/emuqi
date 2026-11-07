@@ -22,6 +22,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install audit dependencies
+        run: |
+          python -m pip install beautifulsoup4
+      - name: Verify Blog Chronological Order Hard Gate
+        run: |
+          python3 scripts/verify_blog_chronological_order.py
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact

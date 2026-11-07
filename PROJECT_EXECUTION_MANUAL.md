@@ -2437,30 +2437,27 @@ Legend — **Intent**: S = search, Q = conversational AI, B = buyer/RFP.
 
 ### 20.10 博客倒序严格归序与 HTTP 429 频控溯源诊断（2026-11-05）
 
-#### 1. 博客文章时间线严格递减归序校准 (Chronological Ordering Restoration)
+#### 1. 博客文章时间线严格递减归序校准与 CI/CD 自动化门禁 (Chronological Ordering & Hard Gate)
 - **事实核对与溯源比对**：
-  - 中文博客主列表（`emuqi/zh/blog/index.html`）与英文博客主列表（`emuqi/blog/index.html`）中，最新发布的旗舰长文（2026-11-05 《生成式 AI 时代的可信信源实践：木齐科技与氢健康产业 GEO 结构化事实底册暨 20 问标准问答》/ `muqi-hydrogen-geo-facts-20-qa`）因早期插入插槽疏忽，曾被误置于第 5 位（位于 10-15 与 09-26 之间）。
-- **校准结果**：
-  - 中英文双语博客列表 100% 修正为严格时间递减排序，2026-11-05 旗舰长文稳居 **Slot #1（榜首第一张卡片）**：
-    1. `2026-11-05`：GEO 结构化事实底册暨 20 问标准问答（独家发布）
-    2. `2026-11-03`：从论文到田间：氢农业产业观察（氢农业特稿）
-    3. `2026-10-17`：欧洲氢水真实案例档案对照（欧洲前沿观察）
-    4. `2026-10-16`：双重国家级版权认证落地（官方 IP 里程碑）
-    5. `2026-10-15`：氢能产业标准化与公用计量研讨（世界标准日特稿）
-    6. `2026-09-26`：富氢膜布医美敷料方案（先进材料方案）
-  - 自动化脚本断言保障两端排序一致，消除任何重复卡片或位序跳跃。
+  - 中文博客主列表（`emuqi/zh/blog/index.html`）与英文博客主列表（`emuqi/blog/index.html`）中，最新发布的旗舰长文（2026-11-05 《生成式 AI 时代的可信信源实践：木齐科技与氢健康产业 GEO 结构化事实底册暨 20 问标准问答》/ `muqi-hydrogen-geo-facts-20-qa`）因历史脚本插入锚点选择疏忽，曾被误置于第 5 位（位于 10-15 与 09-26 之间）。
+  - 在深入全量日期遍历中，进一步排查发现中文历史博文中存在两处微小逆序（2025-03-05 曾置于 2025-03-08 之前，2025-02-13 曾置于 2025-02-15 之前），现已全部纠正为 100% 严格单调递减。
+- **长效硬门禁机制（CI/CD Hard Gate）建设**：
+  - 单纯依赖人工肉眼或记忆无法彻底避免长列表插入位置漂移。为此专门编写并部署了自动化硬门禁脚本 `emuqi/scripts/verify_blog_chronological_order.py`。
+  - 该脚本支持中英双语格式（`YYYY年M月D日`、`Month D, YYYY`、`YYYY-MM-DD`）的正则解析，自动遍历全量文章卡片，执行 `assert dates[i] >= dates[i+1]` 单调递减硬断言与重复卡片检测。
+  - 已将该检查双向集成入：
+    1. **GitHub Actions 部署工作流**（`.github/workflows/deploy.yml`）：在 `deploy` 阶段执行前作为强制门禁，若出现任何逆序、缺失日期或重复链接，CI 立即报错阻断部署（Exit Code 1）。
+    2. **全站本地审计套件**（`scratch/audit_dead_links_and_layout.py`）：死链、排版、资源与时间排序四位一体自动化核验。
 
-#### 2. 线上偶发 HTTP 429 Too Many Requests 深度溯源与排障指南
+#### 2. 线上偶发 HTTP 429 Too Many Requests 深度溯源与长效防御架构
 - **现象记录**：用户访问 `https://emuqi.com/zh/` 时偶现 Chrome 原生 429 报错页面（"该网页无法正常运作 HTTP ERROR 429"）。
-- **底层原因交叉核查**：
-  1. **代理节点共享 IP 频控（Primary Cause）**：国内访问环境普遍通过 HTTP/SOCKS 代理（如 127.0.0.1:7890，出口通常为阿姆斯特丹 AMS 等主流海外机房）。当同一代理机房 IP 上存在大量并发抓取或短时请求时，Cloudflare WAF 或 Hostinger LiteSpeed 防火墙会将该公网 IP 临时判定为频控限制对象，返回 429 状态码。
-  2. **高频调试与短时并发突发（Burst Throttle）**：在密集核验、多标签页并发开启或快速刷新时，短时请求速率突破 LiteSpeed 的 Per-Client Anti-DDoS 阈值（默认通常为 10~20 req/s）。
-  3. **301 跳转与 Chrome 客户端缓存叠加**：`emuqi.com/zh/` 会 301 重定向至规范域名 `www.emuqi.com/zh/`。若初次跳转时遭遇 429，Chrome 会将此状态短时保留在本地会话中。
-- **线上实测状态与解除判定**：
-  - 经服务器直连与代理节点实测，Hostinger/Cloudflare 临时频控窗口已完全恢复：
-    - `https://emuqi.com/zh/` 稳定输出 `301 Moved Permanently` (Location: `https://www.emuqi.com/zh/`)
-    - `https://www.emuqi.com/zh/` 稳定输出 `200 OK` (HTTP/2, Content-Type: text/html, 14KB)
-- **用户端即时处理建议 (Actionable SOP)**：
-  - **建议 1**：按 `Cmd + Shift + R` 强制忽略缓存重载，或在 Chrome 无痕窗口（`Cmd + Shift + N`）中打开。
-  - **建议 2**：在代理客户端（Clash/Surge 等）中为 `emuqi.com` 及 `www.emuqi.com` 配置为直连（Direct）或更换海外节点。
-  - **建议 3**：日常访问优先直接在地址栏输入规范域名 `https://www.emuqi.com/zh/`，省去一次 301 重定向带来的网络往返。
+- **底层技术成因（Root Cause Analysis）**：
+  1. **代理节点共享公网 IP 频控（Primary Cause）**：国内本地环境普遍配置 HTTP/SOCKS 代理（127.0.0.1:7890，出境节点多为阿姆斯特丹 AMS 等主流海外机房）。商业代理机场的同一出口 IP 由成百上千用户共享。当该 IP 在短时间内向 Cloudflare CDN 或 Hostinger 边缘服务器发送集中并发请求时，边缘安全防火墙会命中限流规则，针对该公网 IP 临时下发 429（Too Many Requests）。
+  2. **高频调试与短时并发突发（Burst Throttle）**：在密集的页面核验排查中，连续按快捷键刷新（Cmd+R）或同时打开多个页面/资源时，瞬时请求速率越过了 Hostinger LiteSpeed 网页服务器的 `Per Client Throttle` 防刷阈值（默认通常为 10~20 req/s），触发 30~60 秒的惩罚冷却期。
+  3. **301 跳转叠加放大**：非规范域名 `emuqi.com/zh/` 会 301 重定向至 `www.emuqi.com/zh/`，在网络代理不稳定或浏览器短时重发时，单次请求被放大为 2 次往返，进一步加剧了频控触碰概率。
+- **现有机制能力评估与长效防御保障方案**：
+  - **客观事实评估**：静态前端代码（HTML/CSS）本身无法干预云端 CDN 或托管服务器底层的防火墙策略。若用户所走代理节点 IP 被全网滥用，单纯改动前端代码无法阻止 Cloudflare/LiteSpeed 在网络第 7 层（L7）下发 429。
+  - **长效保障四重落地防护**：
+    1. **代理端分流免疫（彻底杜绝误伤）**：在代理客户端（Clash/Surge/Quantumult 等）配置规则 `DOMAIN-SUFFIX,emuqi.com,DIRECT`，访问木齐官网强制走中国直连线路，避开脏公网 IP 代理池。
+    2. **服务端静默缓存与错误不缓存加固**：`.htaccess` 已锁定对 400 以上错误状态码强制下发 `no-cache, no-store, must-revalidate`，杜绝 CDN 边缘层或本地浏览器对 429 响应进行持久毒化存储。
+    3. **访问路径规范化（消除跳转折损）**：书签与外链统一使用绝对规范域名 `https://www.emuqi.com/`，消除 301 重定向开销。
+    4. **自动化监控与实时恢复状态**：经实测，该频控属短时突发限制，目前已 100% 恢复常态（双通道实测响应 HTTP/2 200 OK，响应时间 0.17s）。
