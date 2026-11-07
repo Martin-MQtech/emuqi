@@ -93,7 +93,7 @@ Require all denied
     </FilesMatch>
 
     # Crawl-critical freshness: sitemap & robots must not inherit the 1-month ExpiresDefault
-    <FilesMatch "^(sitemap.*\.xml|robots\.txt)$">
+    <FilesMatch "^(sitemap.*\.xml|robots\.txt|llms(-full)?\.txt)$">
         Header set Cache-Control "public, max-age=300, must-revalidate"
         Header unset Expires
     </FilesMatch>

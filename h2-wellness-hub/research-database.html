@@ -88,10 +88,10 @@
         <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
           <input id="paper-search" type="text" placeholder="Search conditions, mechanisms, authors, keywords (e.g. lactate, diabetes, Nrf2)..." 
             style="flex: 1; min-width: 260px; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff; font-size: 14px;"
-            oninput="filterPapers()">
+            oninput="filterPapers()" aria-label="Search clinical studies and papers">
           
           <select id="track-filter" onchange="filterPapers()" 
-            style="padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1e293b; color: #fff; font-size: 14px;">
+            style="padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1e293b; color: #fff; font-size: 14px;" aria-label="Filter by application track">
             <option value="all">All Research Tracks</option>
             <option value="mechanism">Mechanisms & Antioxidant Pathways</option>
             <option value="sports">Athletic Recovery & Performance</option>
@@ -101,7 +101,7 @@
           </select>
 
           <select id="type-filter" onchange="filterPapers()"
-            style="padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1e293b; color: #fff; font-size: 14px;">
+            style="padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1e293b; color: #fff; font-size: 14px;" aria-label="Filter by publication type">
             <option value="all">All Study Types</option>
             <option value="rct">Human Controlled Trials (Human RCT)</option>
             <option value="trial">Clinical Registries (Protocols)</option>
@@ -868,5 +868,6 @@
     }
   </script>
 
+<script src="../script.js"></script>
 </body>
 </html>

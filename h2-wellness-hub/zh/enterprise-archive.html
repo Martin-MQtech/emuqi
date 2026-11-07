@@ -88,10 +88,10 @@
         <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
           <input id="ent-search" type="text" placeholder="输入企业名称、技术、产品关键词检索..." 
             style="flex: 1; min-width: 260px; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: #fff; font-size: 14px;"
-            oninput="filterCompanies()">
+            oninput="filterCompanies()" aria-label="搜索企业、技术与产品">
           
           <select id="region-filter" onchange="filterCompanies()" 
-            style="padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1e293b; color: #fff; font-size: 14px;">
+            style="padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1e293b; color: #fff; font-size: 14px;" aria-label="按地区筛选">
             <option value="all">全部区域 / All Regions</option>
             <option value="cn">中国 (China)</option>
             <option value="us">美国 (United States)</option>
@@ -100,7 +100,7 @@
           </select>
 
           <select id="sector-filter" onchange="filterCompanies()"
-            style="padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1e293b; color: #fff; font-size: 14px;">
+            style="padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: #1e293b; color: #fff; font-size: 14px;" aria-label="按行业筛选">
             <option value="all">全部产业链环节 / All Sectors</option>
             <option value="hardware">智能硬件与消费设备</option>
             <option value="rtd">预包装即饮快消品</option>
@@ -591,5 +591,6 @@
     }
   </script>
 
+<script src="../../script.js"></script>
 </body>
 </html>

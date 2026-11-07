@@ -123,12 +123,20 @@ for p in FILES:
 def meta(doc, pat):
     m = re.search(pat, doc, re.I|re.S)
     return m.group(m.lastindex) if m else None
+
+def meta_by_name(doc, name):
+    # 逐标签解析, 防跨标签回溯误配 (2026-11-07 修复)
+    for t in re.findall(r'<meta\b[^>]*>', doc, re.I):
+        if re.search(r'name=["\']' + name + r'["\']', t, re.I):
+            c = re.search(r'content=(["\'])(.*?)\1', t, re.S)
+            if c: return c.group(2)
+    return None
 titles, descs = {}, {}
 for p in FILES:
     rel = rel_of(p); doc = DOCS[p]
     if not real_page(p): continue
     t = meta(doc, r'<title[^>]*>(.*?)</title>')
-    d = meta(doc, r'<meta\s+name=["\']description["\']\s+content=(["\'])(.*?)\1')
+    d = meta_by_name(doc, 'description')
     if not t: log('E 缺title', rel)
     elif len(t) > 65 or len(t) < 25: log('E title长度', f'{rel} ({len(t)}) {t[:70]}')
     if not d: log('E 缺description', rel)

@@ -11,7 +11,7 @@
 <meta property="og:title" content="Contact MUQI | OEM/ODM Hydrogen & Ceramic Media Inquiries">
 <meta property="og:description" content="Contact MUQI for hydrogen health products, functional ceramic materials, and partnership inquiries.">
 <meta property="og:url" content="https://www.emuqi.com/contact-mqtech-hydrogen-health.html">
-<meta property="og:image" content="https://www.emuqi.com/assets/images/logo.jpg">
+<meta property="og:image" content="https://www.emuqi.com/assets/images/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -129,7 +129,7 @@
 <header style="background:linear-gradient(180deg,#e8eaed 0%,#d8dadf 40%,#cfd2d7 70%,#c5c8cd 100%);border-bottom:1px solid #b8bbc0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.06),inset 0 1px 0 rgba(255,255,255,0.65)">
   <div style="display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 24px;min-height:72px">
     <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0">
-      <img src="assets/images/logo.jpg" alt="MUQI" height="38" style="border-radius:3px">
+      <img src="assets/images/logo.jpg" alt="MUQI" height="38" style="border-radius:3px" width="45">
       <span style="font-size:17px;font-weight:700;color:#1a1a2e">MQ TECH</span>
     </a>
     <nav style="display:flex;align-items:center;gap:3px;flex-wrap:nowrap;flex-shrink:0">
@@ -180,6 +180,7 @@
     </nav>
   </div>
 </header>
+<main id="main-content">
 
 
 
@@ -701,7 +702,7 @@
   line-height: 1.2;
 }
 .mq-s-note {
-  font-size: 10px;
+  font-size: 11px;
   color: #94a3b8;
 }
 .in-btn:hover { border-color: #0077b5; color: #0077b5; }
@@ -730,7 +731,7 @@
           </p>
         </div>
 
-        <form id="b2bInquiryForm" onsubmit="event.preventDefault(); try{dataLayer.push({event:'generate_lead',form:'contact_b2b'});}catch(e){} document.getElementById('formSuccessMsg').style.display='block'; this.reset();">
+        <form id="b2bInquiryForm" onsubmit="event.preventDefault(); var hp=this.querySelector('.mq-hp-field'); if(hp&&hp.value){this.reset();return;}var f=document.getElementById('firstName').value||'', l=document.getElementById('lastName').value||'',em=document.getElementById('workEmail').value||'', co=document.getElementById('companyName').value||'',ph=document.getElementById('phoneWhatsApp').value||'', ic=document.getElementById('interestCategory').value||'',msg=document.getElementById('inquiryMessage').value||'';var body='Name: '+f+' '+l+'\nEmail: '+em+'\nCompany: '+co+'\nWhatsApp/Phone: '+ph+'\nInterest: '+ic+'\n\nRequirements:\n'+msg;window.location.href='mailto:muqizb@gmail.com?subject='+encodeURIComponent('B2B Inquiry: '+((co||(f+' '+l))||'MUQI Ceramics'))+'&body='+encodeURIComponent(body);try{dataLayer.push({event:'generate_lead',form:'contact_b2b'});}catch(e){}document.getElementById('formSuccessMsg').style.display='block'; this.reset();">
           <div class="mq-form-row">
             <div class="mq-form-group">
               <label for="firstName">First Name <span class="req">*</span></label>
@@ -778,7 +779,7 @@
             <textarea id="inquiryMessage" name="message" rows="4" placeholder="Detail your project requirements: desired dissolved H2 concentration (ppb/ppm), ORP target (mV), water flow rate, packaging specs, or target launch timeline..." required></textarea>
           </div>
 
-          <label style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#475569;margin-bottom:16px"><input type="checkbox" required style="margin-top:3px"> I agree to the <a href="privacy-policy.html" style="color:#f47b20">Privacy Policy</a> and consent to MUQI contacting me about this inquiry.</label>
+          <label style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#475569;margin-bottom:16px"><input type="checkbox" required style="margin-top:3px" aria-label="I agree to be contacted per the privacy policy"> I agree to the <a href="privacy-policy.html" style="color:#f47b20">Privacy Policy</a> and consent to MUQI contacting me about this inquiry.</label>
 
           <button type="submit" class="mq-submit-btn">
             <span>Submit B2B Project Inquiry</span>
@@ -791,9 +792,10 @@
           </div>
 
           <div id="formSuccessMsg" style="display:none; margin-top:16px; padding:14px; background:#ecfdf5; border:1px solid #10b981; border-radius:8px; color:#065f46; font-size:13.5px; line-height:1.5;">
-            ✓ <strong>Inquiry received!</strong> Our executive engineering team will review your specs and respond within 12 business hours. For urgent sampling, feel free to chat directly via WhatsApp on the right.
+            ✓ <strong>Your email client has opened with your inquiry pre-filled — just hit Send to reach us.</strong> If it didn't open, email us directly at <a href="mailto:muqizb@gmail.com" style="color:#065f46;text-decoration:underline">muqizb@gmail.com</a> or WhatsApp <a href="https://wa.me/8613964416725" target="_blank" rel="noopener noreferrer" style="color:#065f46;text-decoration:underline">+86 139 6441 6725</a>. Our executive engineering team typically responds within 12 business hours.
           </div>
-        </form>
+        <input type="text" name="company_website_hp" class="mq-hp-field" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
+      </form>
       </div>
 
       <!-- ================================================================
@@ -1039,10 +1041,11 @@
   </div>
 </section>
 
+</main>
 <footer style="background:#0a1628;margin-top:80px">
   <div style="max-width:1200px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px">
     <div>
-      <div style="font-size:18px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="assets/images/logo.jpg" alt="MUQI" height="38" style="border-radius:4px"> MQ <span style='color:#f47b20'>·</span> TECH</div>
+      <div style="font-size:18px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="assets/images/logo.jpg" alt="MUQI" height="38" style="border-radius:4px" width="45"> MQ <span style='color:#f47b20'>·</span> TECH</div>
       <p style="font-size:14px;color:#94a3b8;line-height:1.7">Leading manufacturer of functional mineral ceramic water media and solid-state hydrogen products for health and eco applications worldwide.</p>
       <div style="display:flex;gap:12px;margin-top:20px">
         <a href="https://x.com/MARTINPARK111" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>

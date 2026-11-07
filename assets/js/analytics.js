@@ -17,6 +17,8 @@ var MUQI_ANALYTICS = {
 };
 
 (function () {
+  if (window.__muqiAnalyticsLoaded) { return; }
+  window.__muqiAnalyticsLoaded = true;
   var id = MUQI_ANALYTICS.ga4MeasurementId;
   if (!id || !/^G-[A-Z0-9]+$/i.test(id)) return; // not configured yet → no-op
   window.dataLayer = window.dataLayer || [];

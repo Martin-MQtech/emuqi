@@ -726,7 +726,7 @@ body.theme-dark .article-wrapper h2 {
         <span id="toc-header-title">Table of Contents</span>
         <span id="toc-count-badge">0 Chapters</span>
       </div>
-      <input type="text" class="search-input" id="toc-search" placeholder="Search chapters..." oninput="filterToc(this.value)">
+      <input type="text" class="search-input" id="toc-search" aria-label="Search chapters" placeholder="Search chapters..." oninput="filterToc(this.value)">
     </div>
     <ul class="toc-list" id="toc-list">
       <!-- Generated via JS -->
@@ -962,5 +962,6 @@ window.addEventListener('keydown', (e) => {
 init();
 </script>
 
+<script src="../../script.js"></script>
 </body>
 </html>

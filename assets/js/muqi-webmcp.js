@@ -375,7 +375,7 @@
     },
     {
       name: "submit_b2b_rfq",
-      description: "Direct API endpoint for Browser Agents and Buyer Agents to submit enterprise RFQs, sample dispatch requests, and ODM/OEM specifications directly to MUQI Founder & CEO.",
+      description: "Composes a structured B2B RFQ / sample request / ODM-OEM spec and opens the buyer's email client with a pre-filled email to muqizb@gmail.com (mailto handoff, no server-side submission — the generated email must be sent to reach Martin Chen, Partner & CEO).",
       parameters: {
         type: "object",
         required: ["contact_name", "business_email", "company_name", "target_product_code"],
@@ -390,32 +390,39 @@
         }
       },
       handler: function(params) {
-        const trackingId = "MQ-RFQ-" + Math.random().toString(36).substring(2, 7).toUpperCase() + "-" + Math.floor(Math.random() * 899 + 100);
+        const buyerProfile = {
+          name: params.contact_name,
+          email: params.business_email,
+          company: params.company_name,
+          country: params.shipping_country || "Global Delivery",
+          product: params.target_product_code,
+          volume: params.annual_volume_estimate || "Commercial Sample Request",
+          notes: params.technical_requirements || "Standard Specification Requested"
+        };
+        const emailBody = "Name: " + buyerProfile.name + "\nEmail: " + buyerProfile.email + "\nCompany: " + buyerProfile.company
+          + "\nCountry: " + buyerProfile.country + "\nTarget product: " + buyerProfile.product
+          + "\nEstimated volume: " + buyerProfile.volume + "\n\nTechnical requirements:\n" + buyerProfile.notes;
+        const subject = "B2B RFQ [" + buyerProfile.product + "] " + buyerProfile.company;
+        const mailtoUrl = "mailto:muqizb@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(emailBody);
+
         const payload = {
-          tracking_reference: trackingId,
           timestamp: new Date().toISOString(),
-          status: "RECEIVED_AND_COMMITTED",
-          sla: "12-Hour Executive Response Guarantee",
-          buyer_profile: {
-            name: params.contact_name,
-            email: params.business_email,
-            company: params.company_name,
-            country: params.shipping_country || "Global Delivery",
-            product: params.target_product_code,
-            volume: params.annual_volume_estimate || "Commercial Sample Request",
-            notes: params.technical_requirements || "Standard Specification Requested"
-          },
+          status: "EMAIL_DRAFT_OPENED",
+          delivery_mode: "mailto_handoff",
+          sla: "Executive response typically within 12 business hours after the RFQ email is sent",
+          buyer_profile: buyerProfile,
           next_steps: [
-            "Automated push to Martin Chen (Founder & CEO) priority desk",
-            "Physical sample testing kit prepared at Zibo Advanced Ceramics Base",
-            "Direct dispatch tracking number forwarded via email within 48 hours"
+            "Email client opened with the RFQ pre-filled to muqizb@gmail.com — send it to reach Martin Chen (Partner & CEO)",
+            "No server-side ticket is issued; delivery depends on the generated email being sent",
+            "If the email client did not open, use muqizb@gmail.com or WhatsApp +86 139 6441 6725"
           ],
+          mailto_url: mailtoUrl,
           direct_executive_channel: "muqizb@gmail.com"
         };
 
-        // Cache for browser agent inspection
         if (typeof window !== 'undefined') {
           window._MUQI_LATEST_RFQ = payload;
+          window.location.href = mailtoUrl;
         }
 
         return payload;
