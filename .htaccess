@@ -34,6 +34,8 @@ RewriteRule ^blog/hydrogen-water-technology-comparison\.html$ /zh/blog/hydrogen-
 RewriteRule ^blog/gary-brecka-hydrogen-water-solid-state-breakthrough\.html$ /zh/blog/gary-brecka-hydrogen-water-solid-state-breakthrough.html [R=301,L]
 RewriteRule ^blog/sac-tc621-national-antimicrobial-standard-committee\.html$ /zh/blog/sac-tc621-national-antimicrobial-standard-committee.html [R=301,L]
 RewriteRule ^blog/antimicrobial-ceramic-balls-home-appliances-icr-technology\.html$ /zh/blog/antimicrobial-ceramic-balls-home-appliances-icr-technology.html [R=301,L]
+RewriteRule ^blog/hydrogen-industry-standardization-metrology-quality-symposium\.html$ /zh/blog/hydrogen-industry-standardization-metrology-quality-symposium.html [R=301,L]
+RewriteRule ^blog/hydrogen-infused-membrane-dressings-womens-health\.html$ /zh/blog/hydrogen-infused-membrane-dressings-womens-health.html [R=301,L]
 
 RewriteRule ^blog/hydrogen-patch-opportunity\.html$ /zh/blog/hydrogen-patch-opportunity.html [R=301,L]
 

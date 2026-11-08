@@ -48,7 +48,7 @@ PERSON_SCHEMA = {
     "@type": "Person",
     "@id": "https://emuqi.com/#author-martin",
     "name": "Martin Chen",
-    "alternateName": ["Martin", "陈滨", "Martin Bin Chen"],
+    "alternateName": ["Martin",  "Martin Bin Chen"],
     "jobTitle": "Partner & CEO · Chief Materials Engineer",
     "worksFor": {"@id": "https://emuqi.com/#organization"},
     "url": "https://martinbinchen.github.io/",

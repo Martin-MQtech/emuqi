@@ -28,7 +28,7 @@ Entirely **built with AI Agents & OpenAI Codex**, this repository serves dual ro
 
 For decades, international trade has faced a persistent divide: **"Those who understand technology rarely understand complex commercial workflows, and those who master global trade cannot write code."**
 
-### The Founder's Perspective
+### Partner & CEO's Perspective (Martin Chen)
 This project was conceived and created by a builder with a **Tsinghua MBA background and 20+ years of deep experience in global B2B trade**. 
 
 In traditional enterprise environments:
