@@ -64,3 +64,35 @@ document.addEventListener('DOMContentLoaded', () => {
   mcpScript.defer = true;
   document.head.appendChild(mcpScript);
 })();
+
+// Cookie Consent Banner Management (W-15)
+(function() {
+  function initCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    try {
+      if (localStorage.getItem('mq_cookie_consent') === 'accepted') {
+        banner.classList.add('hidden');
+        return;
+      }
+    } catch (e) {}
+
+    const acceptBtn = document.getElementById('cookieAcceptBtn');
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => {
+        try {
+          localStorage.setItem('mq_cookie_consent', 'accepted');
+        } catch (e) {}
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateY(16px)';
+        setTimeout(() => banner.classList.add('hidden'), 300);
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCookieBanner);
+  } else {
+    initCookieBanner();
+  }
+})();

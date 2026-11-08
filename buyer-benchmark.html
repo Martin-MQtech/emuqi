@@ -95,6 +95,9 @@
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
 <link href="style.css?v=20261004a" rel="stylesheet"/>
 <style>
   .bench { max-width: 960px; margin: 0 auto; padding: 110px 24px 80px; }
@@ -121,6 +124,8 @@
 <link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <header>
 <div class="nav-inner">
 <a class="nav-logo" href="index.html"><img alt="MUQI" height="48" src="assets/images/logo.jpg" width="57"/></a>
@@ -133,7 +138,7 @@
 </nav>
 </div>
 </header>
-<main class="bench">
+<main id="main-content" tabindex="-1" class="bench">
 <div class="kicker">Citable data pack · 2026</div>
 <h1>Solid-State Hydrogen Buyer Benchmark 2026</h1>
 <p class="lede">Shared parameter ranges and procurement thresholds for solid-state ICR media and SPE/PEM devices — built so brand buyers, distributors, and AI assistants can quote the same numbers under the same conditions.</p>
@@ -208,5 +213,13 @@ https://www.emuqi.com/buyer-benchmark.html</pre>
 <p>© 2026 Shandong MUQI Health Technology Co., Ltd. · <a href="contact-mqtech-hydrogen-health.html">RFQ</a> · muqizb@gmail.com</p>
 </footer>
 <script src="script.js"></script>
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">We use cookies and analytical media to improve your experience and evaluate website performance. By continuing to use our website, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="Accept all cookies">Accept</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>

@@ -8,8 +8,106 @@
    Border:   #e2e8f0
    ======================================================================== */
 
-/* ── Google Fonts ── */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+/* ── Google Fonts (Preloaded asynchronously via <link> in HTML <head> to eliminate render-blocking @import chain) ── */
+
+/* ── Accessibility: Skip to Content (W-15) ── */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 16px;
+  z-index: 999999;
+  padding: 10px 18px;
+  background: #0a1628;
+  color: #ffffff !important;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 2px solid #f47b20;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: top 0.15s ease-in-out;
+}
+.skip-link:focus {
+  top: 16px;
+  outline: none;
+}
+
+/* ── Compliance: Cookie Consent Banner (W-15) ── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background: rgba(10, 22, 40, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f1f5f9;
+  padding: 14px 20px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.cookie-banner.hidden {
+  display: none !important;
+}
+.cookie-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.cookie-banner-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  flex: 1 1 320px;
+  margin: 0;
+}
+.cookie-banner-text a {
+  color: #f47b20;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cookie-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.cookie-btn-accept {
+  background: #f47b20;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.cookie-btn-accept:hover {
+  background: #e06912;
+  transform: translateY(-1px);
+}
+@media (max-width: 640px) {
+  .cookie-banner {
+    padding: 12px 16px;
+  }
+  .cookie-banner-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .cookie-btn-accept {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 /* ── Custom Properties ── */
 :root {

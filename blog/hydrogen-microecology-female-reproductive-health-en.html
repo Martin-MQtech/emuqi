@@ -214,6 +214,9 @@
 }
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../style.css?v=20261004a">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
@@ -402,6 +405,8 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 
 <!-- Global Header -->
 <header style="background:linear-gradient(180deg,#e8eaed 0%,#d8dadf 40%,#cfd2d7 70%,#c5c8cd 100%);border-bottom:1px solid #b8bbc0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.06),inset 0 1px 0 rgba(255,255,255,0.65)">
@@ -482,7 +487,7 @@
 
 
 
-<main class="article-container">
+<main id="main-content" tabindex="-1" class="article-container">
 
   <!-- Header & Metadata -->
   <div class="article-meta-badge">
@@ -1107,5 +1112,13 @@ function mqShareToEnXhs(title, url) {
 
 
 <script src="../script.js"></script>
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">We use cookies and analytical media to improve your experience and evaluate website performance. By continuing to use our website, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="Accept all cookies">Accept</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>

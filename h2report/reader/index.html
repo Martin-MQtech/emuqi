@@ -665,8 +665,13 @@ body.theme-dark .article-wrapper h2 {
   }
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
 </head>
 <body class="theme-light">
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 
 <div id="reading-progress"></div>
 
@@ -734,7 +739,7 @@ body.theme-dark .article-wrapper h2 {
   </aside>
 
   <!-- Center Reading Canvas -->
-  <main class="content-canvas" id="canvas" onclick="closeSidebarOnMobile()">
+  <main class="content-canvas" id="canvas"><div id="main-content" tabindex="-1"></div> onclick="closeSidebarOnMobile()">
     <article class="article-wrapper" id="article-content">
       <!-- Chapter Content Rendered Here -->
     </article>
@@ -963,5 +968,13 @@ init();
 </script>
 
 <script src="../../script.js"></script>
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">We use cookies and analytical media to improve your experience and evaluate website performance. By continuing to use our website, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="Accept all cookies">Accept</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>

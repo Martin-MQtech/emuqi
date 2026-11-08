@@ -27,6 +27,9 @@
 <link href="../assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link href="../assets/icons/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="../assets/icons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
 <link href="../style.css?v=20261016a" rel="stylesheet"/>
 <!-- JSON-LD Structured Data (NewsArticle, Organization, BreadcrumbList, FAQPage) -->
 <script type="application/ld+json">
@@ -736,6 +739,8 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <!-- Top Language Switcher Bar -->
 <div class="top-lang-bar">
 <span>🌐 Language:</span>
@@ -836,7 +841,7 @@
 </div>
 </section>
 <!-- Main Article Body -->
-<main class="article-container">
+<main id="main-content" tabindex="-1" class="article-container">
 <!-- Key Takeaway Intro -->
 <div class="callout-intro">
 <h3>💡 Executive Summary &amp; Strategic Context</h3>
@@ -1200,5 +1205,13 @@ function mqShareToEnXhs(title, url) {
 </div>
 </footer>
 <script src="../script.js"></script>
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">We use cookies and analytical media to improve your experience and evaluate website performance. By continuing to use our website, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="Accept all cookies">Accept</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
