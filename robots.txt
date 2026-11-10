@@ -1,10 +1,12 @@
 # MUQI Tech (emuqi.com) — robots.txt
 # Search engines: full access
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, use=reference
 Allow: /
 Disallow: /templates/
 Disallow: /distribution_packages/
 Disallow: /scripts/
+Disallow: /research/
 
 # ── Generative AI crawlers (GEO): welcome ─────────────────────────────
 # We WANT our technical content cited by AI answer engines.

@@ -45,3 +45,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .cache/
+
+# Internal omnichannel drafts & ops manuals (kept outside git repo)
+distribution_packages/
+PROJECT_EXECUTION_MANUAL.md

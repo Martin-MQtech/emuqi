@@ -349,7 +349,7 @@ Structure (top to bottom):
 4. **Feature sections** (4 total, alternating left/right):
    - 01 / Company platform — Hydrogen+ strategy, subsidiaries, industry positions.
    - 02 / Research foundation — CAS collaboration, 2017/2019/2021 milestones.
-   - 03 / Manufacturing discipline — 8000-ton production, ISO 9000, Jinan/Zibo/Hangzhou offices.
+   - 03 / Manufacturing discipline — 8000-ton production, ISO 9001, Jinan/Zibo/Hangzhou offices.
    - 04 / Global reach — international partners and channels.
 5. **Capabilities row** — three small cards with colored top borders (blue, orange, light blue).
 6. **Mission block** — full-width dark gradient panel with five horizontal rows (Mission, Vision, Values, Philosophy, Slogan). Each row: label (120px) + text (single-line, nowrap on desktop).

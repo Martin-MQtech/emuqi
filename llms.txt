@@ -24,6 +24,7 @@ Schema.org Linked Data Graph: Rooted at `https://www.emuqi.com/#organization` wi
 
 ## Core Products (B2B materials & components)
 
+- [Solid-State Hydrogen Water Media Taxonomy](https://www.emuqi.com/solid-state-hydrogen-water-media.html): category disambiguation distinguishing food-contact sintered ICR ceramic media (1,000–1,500 ppb, 0 W, pH 7.5–8.5) from active SPE/PEM electrolysis, uncoated metallic magnesium granules, and fuel-cell metal hydride storage alloys.
 - [Hydrogen Generate Ceramic Ball](https://www.emuqi.com/hydrogen-generate-ceramic-ball.html): magnesium-based ceramic media that infuses water with dissolved hydrogen without electricity; 1,000–1,500 ppb with ORP of −400 to −800 mV.
 - [MACA-KDF Antibacterial Ceramic Ball](https://www.emuqi.com/maca-kdf-antibacterial-ceramic-ball.html): microporous ceramic alloy with lattice-bonded nano-silver; >99.9% antibacterial rate, 12–24 months controlled release.
 - [MPH+ Condensate Neutralizer](https://www.emuqi.com/mph-condensate-neutralizer.html): long-life alkaline mineral media; passes SGS 19-item drinking-water hygiene standard.

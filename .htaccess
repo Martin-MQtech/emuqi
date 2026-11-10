@@ -43,6 +43,19 @@ RewriteRule ^blog/hydrogen-patch-opportunity\.html$ /zh/blog/hydrogen-patch-oppo
 RewriteRule ^zh/h2-wellness-hub/?$ /h2-wellness-hub/zh/ [R=301,L]
 RewriteRule ^zh/h2-wellness-hub/(.+)$ /h2-wellness-hub/zh/$1 [R=301,L]
 
+# Legacy 404 slug cleanup & UK hydrogen mask consolidation
+RewriteRule ^-or-or-case-hydrogen-mask-from-the-uk-fit-my-skin/?$ /blog/uk-hydrogen-mask.html [R=301,L]
+
+# Strip explicit /index.html requests externally without triggering DirectoryIndex loops
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+(.+/)index\.html[\s?] [NC]
+RewriteRule ^(.+/)index\.html$ /$1 [R=301,L]
+
+# Block direct public HTTP access to internal docs, scripts, templates, and research
+RewriteRule ^(?:research|scripts|templates|distribution_packages)(?:/|$) - [F,L]
+RewriteRule ^(?:PROJECT_EXECUTION_MANUAL|GEO_SEO_AI_CONTENT_STANDARD|DESIGN)\.md$ - [F,L]
+
 # 4) Transparent WebP Rewrite (falls back to PNG/JPG if unsupported)
 RewriteCond %{HTTP_ACCEPT} image/webp
 RewriteCond %{REQUEST_FILENAME} (.+)\.(jpe?g|png)$
@@ -72,8 +85,11 @@ RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1,L]
     ExpiresByType application/xml "access plus 5 minutes"
 </IfModule>
 
-# Crawl hygiene: never index dotfiles
+# Crawl hygiene: never index dotfiles or internal markdown files
 <FilesMatch "^\.">
+Require all denied
+</FilesMatch>
+<FilesMatch "^(PROJECT_EXECUTION_MANUAL|GEO_SEO_AI_CONTENT_STANDARD|DESIGN)\.md$">
 Require all denied
 </FilesMatch>
 

@@ -25,7 +25,7 @@
 
 ## 2. Core Technological Moat: ICR Solid-State Hydrogen Media
 
-Unlike active water electrolysis systems requiring lithium batteries, platinum electrodes, and electrical cables, MUQI's ICR (Intelligent Controlled Release) technology micro-encapsulates active hydrogen-generating mineral donors within a microporous ceramic lattice sintered at high temperatures.
+Unlike active water electrolysis systems requiring lithium batteries, platinum electrodes, and electrical cables, MUQI's ICR (Intelligent Controlled Release) technology micro-encapsulates active hydrogen-generating mineral donors within a microporous ceramic lattice sintered at high temperatures (see category taxonomy: https://www.emuqi.com/solid-state-hydrogen-water-media.html).
 
 ### Physical & Chemical Metrics:
 - **Dissolved Hydrogen Concentration**: 1,000 ~ 1,500 ppb (parts per billion) in open water at ambient room temperature (20-25°C) and 1 atm pressure. This approaches the natural physical saturation limit of molecular hydrogen in liquid water under normal atmospheric conditions.

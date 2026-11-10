@@ -27,121 +27,135 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
 <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.emuqi.com/#organization",
+      "name": "山东木齐健康科技有限公司",
+      "alternateName": [
+        "MUQI Tech",
+        "木齐科技",
+        "Shandong MUQI Health Technology Co., Ltd."
+      ],
+      "url": "https://www.emuqi.com",
+      "logo": "https://www.emuqi.com/assets/images/logo.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/company/72043164",
+        "https://h2welltech.substack.com",
+        "https://medium.com/@h2welltech",
+        "https://h2welltech.wordpress.com"
+      ],
+      "memberOf": {
         "@type": "Organization",
-        "@id": "https://www.emuqi.com/#organization",
-        "name": "山东木齐健康科技有限公司",
-        "alternateName": ["MUQI Tech", "木齐科技", "Shandong MUQI Health Technology Co., Ltd."],
-        "url": "https://www.emuqi.com",
-        "logo": "https://www.emuqi.com/assets/images/logo.jpg",
-        "sameAs": [
-          "https://www.linkedin.com/company/72043164",
-          "https://x.com/MARTINPARK111",
-          "https://www.youtube.com/@Martinchen1234"
-        ],
-        "memberOf": {
-          "@type": "Organization",
-          "name": "全国抗菌表面性能标准化技术委员会 (SAC/TC621)"
-        }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://www.emuqi.com/#author-martin",
-        "name": "Martin Chen",
-        "alternateName": ["Martin", "Martin Bin Chen"],
-        "jobTitle": "合伙人兼 CEO",
-        "worksFor": { "@id": "https://www.emuqi.com/#organization" },
-        "hasCredential": [
-          {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "第一届委员",
-            "recognizedBy": {
-              "@type": "Organization",
-              "name": "全国抗菌表面性能标准化技术委员会 (SAC/TC621)"
-            }
-          }
-        ]
-      },
-      {
-        "@type": "TechArticle",
-        "@id": "https://www.emuqi.com/zh/blog/hydrogen-infused-membrane-dressings-womens-health.html#article",
-        "headline": "富氢膜布：一块“会呼吸的布”，正在打开医美敷料与女性健康的第二战场",
-        "description": "木齐科技将固态氢做成可裁剪打卷的纺织材料形态——富氢膜布。宽150cm卷材供料、遇湿释氢30分钟以上（>1300ppb）、零改动产线嵌入富氢芯片，开启医美敷料与女性健康高毛利新赛道。",
-        "datePublished": "2026-09-26",
-        "dateModified": "2026-09-30",
-        "author": { "@id": "https://www.emuqi.com/#author-martin" },
-        "publisher": { "@id": "https://www.emuqi.com/#organization" },
-        "image": "https://www.emuqi.com/assets/images/blog/hydrogen-membrane/hero-hydrogen-membrane.jpg",
-        "inLanguage": "zh-CN"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://www.emuqi.com/zh/blog/hydrogen-infused-membrane-dressings-womens-health.html#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "首页",
-            "item": "https://www.emuqi.com/zh/index.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "技术博客",
-            "item": "https://www.emuqi.com/zh/blog/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "富氢膜布解决方案",
-            "item": "https://www.emuqi.com/zh/blog/hydrogen-infused-membrane-dressings-womens-health.html"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.emuqi.com/zh/blog/hydrogen-infused-membrane-dressings-womens-health.html#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "富氢膜布在常温仓储中会提前漏氢或失效吗？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "不会。传统富氢水面膜由于采用液体灌装，极易通过包装微孔散逸失效。而木齐富氢膜布采用离子镀特殊工艺将固态氢素（HI）稳定固化于干纤维或夹层中，在干燥常态下处于化学休眠状态，只有接触到液体或湿润环境时才被即时激发，因此拥有极佳的常温仓储稳定性与保质期。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "卫生用品工厂引入富氢芯片是否需要推倒重来改动产线？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "完全不需要。卫生巾行业在负离子芯片、远红外芯片等功能芯的集成上已有超过十年的成熟自动化设备基础。木齐提供预分切芯片规格或宽150cm卷材，工厂只需利用现有的旋转切刀与贴片工位，在现有高速流水线上增加一道复合工序即可完成加氢升级。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "富氢膜布的释氢性能是否有客观可检测的数据支撑？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "有完备的实验室检测数据。在1张膜布放入50ml常温纯净水的测试条件下，5分钟便携测氢笔检测溶氢浓度即可超过1300 ppb；持续动力学测试显示，在5/10/30分钟分别测得1885 / 1774 / 1648 ppb，30分钟持续释放且伴随氧化还原电位显著下降形成负电位水，测试数据全面开放打样复测。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "B端品牌在推广富氢膜布或卫生巾产品时的合规宣称边界是什么？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "合规底线必须严格遵守：材料层可宣称材料组成、遇湿触发、氢气控释及实测ppb释放曲线；产品层可按国标或行标宣称吸收性、透气性、柔软度与亲肤贴合度；严禁承诺止痛、抗炎、治疗疾病或调理身体等医疗功效。Ohsawa等学者2007年发表在Nature Medicine的基础研究属于科学文献探讨，基础研究价值不等于产品人体效果，敷料类产品如申请医械备案需按国家药监法规取得相应资质。"
-            }
-          }
-        ]
+        "name": "全国抗菌表面性能标准化技术委员会 (SAC/TC621)"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.emuqi.com/#author-martin",
+      "name": "Martin Chen",
+      "alternateName": [
+        "Martin",
+        "Martin Bin Chen"
+      ],
+      "jobTitle": "合伙人兼 CEO",
+      "worksFor": {
+        "@id": "https://www.emuqi.com/#organization"
+      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "第一届委员",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "全国抗菌表面性能标准化技术委员会 (SAC/TC621)"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.emuqi.com/zh/blog/hydrogen-infused-membrane-dressings-womens-health.html#article",
+      "headline": "富氢膜布：一块“会呼吸的布”，正在打开医美敷料与女性健康的第二战场",
+      "description": "木齐科技将固态氢做成可裁剪打卷的纺织材料形态——富氢膜布。宽150cm卷材供料、遇湿释氢30分钟以上（>1300ppb）、零改动产线嵌入富氢芯片，开启医美敷料与女性健康高毛利新赛道。",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-30",
+      "author": {
+        "@id": "https://www.emuqi.com/#author-martin"
+      },
+      "publisher": {
+        "@id": "https://www.emuqi.com/#organization"
+      },
+      "image": "https://www.emuqi.com/assets/images/blog/hydrogen-membrane/hero-hydrogen-membrane.jpg",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.emuqi.com/zh/blog/hydrogen-infused-membrane-dressings-womens-health.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://www.emuqi.com/zh/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "技术博客",
+          "item": "https://www.emuqi.com/zh/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "富氢膜布解决方案",
+          "item": "https://www.emuqi.com/zh/blog/hydrogen-infused-membrane-dressings-womens-health.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.emuqi.com/zh/blog/hydrogen-infused-membrane-dressings-womens-health.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "富氢膜布在常温仓储中会提前漏氢或失效吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不会。传统富氢水面膜由于采用液体灌装，极易通过包装微孔散逸失效。而木齐富氢膜布采用离子镀特殊工艺将固态氢素（HI）稳定固化于干纤维或夹层中，在干燥常态下处于化学休眠状态，只有接触到液体或湿润环境时才被即时激发，因此拥有极佳的常温仓储稳定性与保质期。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "卫生用品工厂引入富氢芯片是否需要推倒重来改动产线？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "完全不需要。卫生巾行业在负离子芯片、远红外芯片等功能芯的集成上已有超过十年的成熟自动化设备基础。木齐提供预分切芯片规格或宽150cm卷材，工厂只需利用现有的旋转切刀与贴片工位，在现有高速流水线上增加一道复合工序即可完成加氢升级。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "富氢膜布的释氢性能是否有客观可检测的数据支撑？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "有完备的实验室检测数据。在1张膜布放入50ml常温纯净水的测试条件下，5分钟便携测氢笔检测溶氢浓度即可超过1300 ppb；持续动力学测试显示，在5/10/30分钟分别测得1885 / 1774 / 1648 ppb，30分钟持续释放且伴随氧化还原电位显著下降形成负电位水，测试数据全面开放打样复测。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "B端品牌在推广富氢膜布或卫生巾产品时的合规宣称边界是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "合规底线必须严格遵守：材料层可宣称材料组成、遇湿触发、氢气控释及实测ppb释放曲线；产品层可按国标或行标宣称吸收性、透气性、柔软度与亲肤贴合度；严禁承诺止痛、抗炎、治疗疾病或调理身体等医疗功效。Ohsawa等学者2007年发表在Nature Medicine的基础研究属于科学文献探讨，基础研究价值不等于产品人体效果，敷料类产品如申请医械备案需按国家药监法规取得相应资质。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: "Noto Sans SC", "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f6f8; color: #1a1a2e; -webkit-font-smoothing: antialiased; }
