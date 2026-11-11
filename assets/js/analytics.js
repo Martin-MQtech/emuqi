@@ -18,6 +18,11 @@ var MUQI_ANALYTICS = {
 
 (function () {
   if (window.__muqiAnalyticsLoaded) { return; }
+  // W-07 consent gate (GDPR): load GA4 only after explicit cookie acceptance.
+  // Self-guards even if this file is included directly, bypassing script.js.
+  try {
+    if (localStorage.getItem('mq_cookie_consent') !== 'accepted') { return; }
+  } catch (e) { return; }
   window.__muqiAnalyticsLoaded = true;
   var id = MUQI_ANALYTICS.ga4MeasurementId;
   if (!id || !/^G-[A-Z0-9]+$/i.test(id)) return; // not configured yet → no-op
