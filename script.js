@@ -109,7 +109,7 @@
         // W-07: consent given mid-session → load GA4 immediately, not on next page
         if (!window.__muqiAnalyticsLoaded && !document.querySelector('script[src$="/assets/js/analytics.js"], script[src$="analytics.js"]')) {
           var ga = document.createElement('script');
-          ga.src = '/assets/js/analytics.js';
+          ga.src = '/assets/js/analytics.js?v=20261112';
           ga.defer = true;
           document.head.appendChild(ga);
         }
@@ -227,7 +227,7 @@
   try { consent = localStorage.getItem('mq_cookie_consent'); } catch (e) {}
   if (consent !== 'accepted') { return; }
   var analyticsScript = document.createElement('script');
-  analyticsScript.src = '/assets/js/analytics.js';
+  analyticsScript.src = '/assets/js/analytics.js?v=20261112';
   analyticsScript.defer = true;
   document.head.appendChild(analyticsScript);
 })();
