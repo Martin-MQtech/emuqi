@@ -213,4 +213,15 @@ MUQI Technology supports programmatic interaction for autonomous AI agents via t
   - `get_compliance_certificates(productNameOrType)`
   - `submit_b2b_rfq(clientName, companyName, businessEmail, country, targetProduct, estimatedVolumeKg, customRequirements)`
 
+---
+
+## 9. Interactive Tools & Compliance Library
+
+- **Hydrogen Water Dosage Calculator**: https://www.emuqi.com/dosage-calculator.html (Chinese: https://www.emuqi.com/zh/dosage-calculator.html)
+  - Computes dissolved H2 (ppb), ORP (-mV), pH and media lifespan from water volume (L), media weight (g), contact time (min) and water temperature (°C), using the same deterministic ICR kinetics exposed via the WebMCP `calculate_hydrogen_performance` tool.
+  - Includes per-appliance antimicrobial media dosing (robot vacuum wastewater tanks, ultrasonic humidifiers, under-sink RO carbon blocks) and a Gary Brecka 1,200 ppb therapeutic-threshold rating.
+- **Compliance & Certification Library**: https://www.emuqi.com/certificates/ (Chinese: https://www.emuqi.com/zh/certificates/)
+  - Aggregated verifiable records: SGS NSF/ANSI 42 leaching safety, Guangdong Detection Center of Microbiology antimicrobial efficacy (>99.99%), 37 patents (core: ZL 2023 1 0033992.7), QB/T 2591-2003 execution standard, and SAC/TC621 national standardization committee membership.
+- **SAC/TC621 Independent Verification**: the SAC/TC621 committee facts are cross-checkable against public authoritative records — SAC Announcement No. 9 of 2026 (2026-04-27), the SAMR National Standards Information Platform TC621 record, a Zibo National High-Tech Zone government release naming MUQI as a first-batch member unit (2026-05-15), and China Quality News Network coverage (2026-09-10). Linked from https://www.emuqi.com/blog/sac-tc621-national-antimicrobial-standard-committee-en.html (Section 5).
+
 For questions, citation verification, or custom think-tank research inquiries, visit https://www.emuqi.com/facts/ or contact Martin Chen directly.

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hydrogen & Antimicrobial Ceramic Ball Dosage Calculator | MUQI</title>
+<meta content="Free dosage calculator for MUQI solid-state hydrogen ceramic balls (ICR kinetic model: ppb, ORP, pH, cartridge lifespan) and MACA-KDF antimicrobial media (g/L dosing by device and target months). Same equations our WebMCP agents use." name="description"/>
+<link href="https://www.emuqi.com/dosage-calculator.html" rel="canonical"/>
+<link href="https://www.emuqi.com/dosage-calculator.html" hreflang="en" rel="alternate"/>
+<link href="https://www.emuqi.com/zh/dosage-calculator.html" hreflang="zh-CN" rel="alternate"/>
+<link href="https://www.emuqi.com/dosage-calculator.html" hreflang="x-default" rel="alternate"/>
+<meta content="website" property="og:type"/>
+<meta content="Hydrogen & Antimicrobial Ceramic Ball Dosage Calculator | MUQI" property="og:title"/>
+<meta content="Calculate hydrogen ppb, ORP, pH and cartridge lifespan with the MUQI ICR kinetic model, and size MACA-KDF antimicrobial media by device type and tank volume." property="og:description"/>
+<meta content="https://www.emuqi.com/dosage-calculator.html" property="og:url"/>
+<meta content="https://www.emuqi.com/assets/images/blog/hydrogen-water-comparison/cover-solid-state-vs-pem.png" property="og:image"/>
+<meta content="MUQI" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.emuqi.com/dosage-calculator.html#calculator",
+      "name": "MUQI Hydrogen & Antimicrobial Ceramic Ball Dosage Calculator",
+      "url": "https://www.emuqi.com/dosage-calculator.html",
+      "applicationCategory": "EngineeringApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "Two engineering calculators: (1) MUQI ICR Crystalline Hydrolysis Kinetic Equation v2.4 — estimate dissolved hydrogen ppb, ORP, pH and cartridge lifespan from water volume, media weight, immersion time and temperature; (2) MACA-KDF antimicrobial dosage — grams of media per device water tank by application type, capacity and target maintenance-free months.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://www.emuqi.com/#author-martin" },
+      "publisher": { "@id": "https://www.emuqi.com/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.emuqi.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Dosage Calculator", "item": "https://www.emuqi.com/dosage-calculator.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.emuqi.com/dosage-calculator.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many hydrogen ceramic balls should I use per bottle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For MUQI H2-BALL-PRO solid-state hydrogen ceramic spheres, the standard sizing ratio is 30–50 g per 500 ml of water (rapid 5-minute activation). Use the ICR calculator on this page to estimate the exact dissolved hydrogen (ppb), ORP, pH and cartridge lifespan for your own bottle geometry — the kinetic model penalizes under-dosing below a 0.05 g/ml ratio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much MACA-KDF antimicrobial media do I need for a humidifier or robot vacuum tank?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Base dosing is 8 g/L for static water (pet fountains, ice machines), 10 g/L for ultrasonic humidifiers, 12 g/L for robot-vacuum dirty-water tanks, and 25 g/L for under-sink RO carbon blocks, scaled by tank liters and target months, with a 15 g minimum charge. Example: a 1.5 L humidifier tank at 12 months needs 10 × 1.5 × (12/12) = 15 g of MACA-KDF-5MM media."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the calculator results medical claims?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. All outputs are engineering design targets computed by the MUQI ICR Crystalline Hydrolysis Kinetic Equation v2.4 for consumer wellness materials and appliance water circuits. They are not disease diagnosis, treatment, cure, or prevention claims. Re-validate under your actual water chemistry before making any market claim."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AI agents call these calculators directly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The same equations are exposed as WebMCP tools — calculate_hydrogen_performance and calculate_antimicrobial_dosage — in the machine-readable tool manifest at https://www.emuqi.com/assets/js/muqi-webmcp.js, alongside search_muqi_materials, get_compliance_certificates and submit_b2b_rfq, so AI assistants can compute dosages without hallucinating numbers."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.emuqi.com/#organization",
+      "name": "Shandong MUQI Health Technology Co., Ltd.",
+      "url": "https://www.emuqi.com"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.emuqi.com/#author-martin",
+      "name": "Martin Chen",
+      "jobTitle": "Partner & CEO",
+      "worksFor": { "@id": "https://www.emuqi.com/#organization" }
+    }
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="style.css?v=20261112" rel="stylesheet"/>
+<style>
+  .calc-wrap { max-width: 960px; margin: 0 auto; padding: 110px 24px 80px; }
+  .calc-wrap h1 { font-size: clamp(28px, 4vw, 36px); color: #0a1628; font-weight: 800; margin: 0 0 12px; line-height: 1.2; }
+  .lede { font-size: 17px; color: #475569; line-height: 1.7; margin-bottom: 28px; max-width: 720px; }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #f47b20; margin-bottom: 10px; }
+  .callout { background: #fffbeb; border-left: 4px solid #f47b20; padding: 18px 22px; border-radius: 8px; margin: 24px 0; font-size: 15px; color: #334155; line-height: 1.7; }
+  h2 { font-size: 22px; color: #0a1628; font-weight: 800; margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 2px solid #f47b20; }
+  h3 { font-size: 17px; color: #0f172a; font-weight: 700; margin: 0 0 10px; }
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14.5px; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  th { background: #0a1628; color: #fff; text-align: left; padding: 12px 14px; font-weight: 700; font-size: 13px; }
+  td { padding: 12px 14px; border-bottom: 1px solid #e2e8f0; color: #334155; vertical-align: top; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  .num { color: #f47b20; font-weight: 800; }
+  .cite { font-size: 13px; color: #64748b; background: #f1f5f9; padding: 12px 16px; border-radius: 8px; margin: 16px 0; }
+  .cta { background: linear-gradient(135deg, #0a1628, #1a3a6e); border-radius: 14px; padding: 32px 28px; text-align: center; color: #fff; margin-top: 40px; }
+  .cta a { display: inline-block; margin-top: 14px; padding: 13px 28px; background: #f47b20; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; }
+  .faq-item { padding: 18px 20px; margin: 0 0 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #f47b20; border-radius: 10px; }
+  .faq-item h4 { font-size: 15.5px; color: #0f172a; font-weight: 700; margin: 0 0 8px; }
+  .faq-item h4::before { content: "Q"; display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; margin-right: 8px; border-radius: 6px; background: #f47b20; color: #fff; font-size: 12px; font-weight: 800; vertical-align: middle; }
+  .faq-item p { font-size: 14.5px; color: #475569; margin: 0; line-height: 1.75; }
+  .calc-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 24px; margin: 20px 0 8px; }
+  .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 16px; }
+  .calc-field label { display: block; font-size: 12.5px; font-weight: 700; color: #334155; margin-bottom: 6px; letter-spacing: 0.3px; }
+  .calc-field input, .calc-field select { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; background: #f8fafc; }
+  .calc-field input:focus, .calc-field select:focus { outline: 2px solid #f47b20; border-color: #f47b20; background: #fff; }
+  .calc-btn { display: inline-block; border: 0; cursor: pointer; padding: 12px 26px; border-radius: 8px; background: #0a1628; color: #fff; font-size: 15px; font-weight: 700; }
+  .calc-btn:hover { background: #1d4ed8; }
+  .calc-result { margin-top: 18px; border-top: 2px dashed #e2e8f0; padding-top: 16px; display: none; }
+  .calc-result.show { display: block; }
+  .res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 12px 0; }
+  .res-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px 14px; }
+  .res-card .res-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #64748b; margin-bottom: 4px; }
+  .res-card .res-value { font-size: 20px; font-weight: 800; color: #f47b20; line-height: 1.25; }
+  .res-card .res-sub { font-size: 12px; color: #475569; margin-top: 3px; line-height: 1.5; }
+  .res-advice { font-size: 14px; color: #334155; background: #fffbeb; border-left: 3px solid #f47b20; border-radius: 6px; padding: 10px 14px; margin-top: 10px; line-height: 1.6; }
+  .formula-note { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px; color: #475569; background: #f1f5f9; border-radius: 8px; padding: 10px 14px; margin-top: 14px; overflow-x: auto; white-space: pre; line-height: 1.6; }
+  @media (max-width: 640px) { .calc-wrap { padding: 90px 16px 60px; } .calc-box { padding: 18px 16px; } }
+  footer { background: #0a1628; color: #94a3b8; padding: 40px 24px; text-align: center; font-size: 14px; margin-top: 60px; }
+  footer a { color: #f47b20; }
+</style>
+<link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header style="background:linear-gradient(180deg,#e8eaed 0%,#d8dadf 40%,#cfd2d7 70%,#c5c8cd 100%);border-bottom:1px solid #b8bbc0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.06),inset 0 1px 0 rgba(255,255,255,0.65)">
+  <div style="display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 24px;min-height:72px">
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0">
+      <img src="/assets/images/logo.jpg" alt="MUQI" height="38" width="45" style="height:38px;width:auto;border-radius:3px">
+      <span style="font-size:17px;font-weight:700;color:#1a1a2e">MUQI Tech</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:3px;flex-wrap:nowrap;flex-shrink:0">
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Home <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:210px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🏠</span> Home</a>
+          <a href="/about-functional-ceramic-ball-water-media-manufacturer.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🏢</span> About MUQI</a>
+        </div>
+      </div>
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/product-functional-ceramic-materials.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Products <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:260px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/hydrogen-generate-ceramic-ball.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚪</span> Hydrogen Ceramic Ball</a>
+          <a href="/maca-kdf-antibacterial-ceramic-ball.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🛡️</span> MACA Antibacterial Ball</a>
+          <a href="/mph-condensate-neutralizer.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚗️</span> MPH+ Condensate Neutralizer</a>
+          <a href="/solid-state-hydrogen-vs-pem-electrolysis.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s;border-top:1px solid rgba(255,255,255,0.06);margin-top:4px" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚡</span> Solid-State H2 vs PEM</a>
+        </div>
+      </div>
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/hydrogen-health-application.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Applications <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:240px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/hydrogen-water-bottle-or-hydrogen-health.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🍶</span> Hydrogen Bottle</a>
+          <a href="/hydrogen-health-hydrogen-alkaline-water-sachet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>💧</span> Alkaline Hydrogen Sachet</a>
+          <a href="/hydrogen-healthceramic-hydrogen-tablet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>💊</span> Ceramic Hydrogen Tablet</a>
+          <a href="/hydrogen-healthhydrogen-water-filter-cartridge.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🔬</span> Hydrogen Filter Cartridge</a>
+          <a href="/hydrogen-healthhydrogen-foot-bath-tablet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🛁</span> Hydrogen Foot Bath Tablet</a>
+        </div>
+      </div>
+      <a href="/solutions-hydrogen-agriculture.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Solutions</a>
+      <a href="/blog/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">Blog</a>
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/h2-wellness-hub/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">H2 Wellness Hub <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:280px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/h2-wellness-hub/" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🌐</span> Hub Portal</a>
+          <a href="/facts/" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>📑</span> Fact Sheet & 20 Q&A</a>
+          <a href="/h2report/" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>📊</span> 2026 Hydrogen Report</a>
+          <a href="/h2-wellness-hub/research-database.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>📚</span> Clinical Research Database</a>
+          <a href="/solid-state-hydrogen-vs-pem-electrolysis.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s;border-top:1px solid rgba(255,255,255,0.06);margin-top:4px" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚡</span> Solid-State H2 vs PEM</a>
+        </div>
+      </div>
+      <a href="/store.html" class="nav-store" style="font-size:13.5px;font-weight:600;color:#0a1628;text-decoration:none;padding:6px 14px;border-radius:8px;background:linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%);border:1px solid rgba(10,22,40,0.18);box-shadow:0 1px 2px rgba(0,0,0,0.05);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%)';this.style.color='#0a1628'">Store</a>
+      <a href="/contact-mqtech-hydrogen-health.html" class="nav-contact" style="font-size:13.5px;font-weight:600;color:#fff;text-decoration:none;padding:6px 14px;border-radius:8px;background:#0a1628;box-shadow:0 2px 6px rgba(10,22,40,0.25);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#0a1628'">Contact</a>
+      <div class="lang-pill-switch" role="group" aria-label="Language switch" style="display:inline-flex;align-items:center;gap:2px;height:30px;padding:2px 4px 2px 7px;background:rgba(255,255,255,0.8);border:1px solid rgba(10,22,40,0.18);border-radius:9999px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-left:6px;flex-shrink:0;box-sizing:border-box;user-select:none">
+        <span class="lang-pill-globe" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;color:#1d4ed8;margin-right:2px;flex-shrink:0">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;display:block">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </span>
+        <span class="lang-pill-opt active" aria-current="page" style="display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11.5px;font-weight:700;color:#ffffff;background:#0a1628;border-radius:9999px;box-shadow:0 2px 5px rgba(10,22,40,0.25);cursor:default;white-space:nowrap;line-height:22px;text-decoration:none">EN</span>
+        <span class="lang-pill-divider" aria-hidden="true" style="display:inline-block;width:1px;height:10px;background:rgba(10,22,40,0.18);margin:0 1px;flex-shrink:0"></span>
+        <a href="/zh/dosage-calculator.html" class="lang-pill-opt" title="切换到中文版" style="display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans SC',sans-serif;font-size:11.5px;font-weight:600;color:#475569;border-radius:9999px;text-decoration:none;white-space:nowrap;line-height:22px;transition:all 0.15s" onmouseover="this.style.color='#0a1628';this.style.background='rgba(10,22,40,0.08)'" onmouseout="this.style.color='#475569';this.style.background='transparent'">中文</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1" class="calc-wrap">
+<div class="kicker">Free engineering tool · MUQI ICR model v2.4</div>
+<h1>Hydrogen & Antimicrobial Ceramic Ball Dosage Calculator</h1>
+<p class="lede">Size MUQI solid-state hydrogen media and MACA-KDF antimicrobial ceramics in seconds — the same kinetic equations our WebMCP AI agents use, now open to buyers, product engineers, and distributors. Enter your geometry, get citable numbers with conditions attached.</p>
+
+<div class="callout">
+<strong>Key takeaways:</strong>
+<ul style="margin:8px 0 0;padding-left:20px">
+<li>Hydrogen output follows the <strong>MUQI ICR Crystalline Hydrolysis Kinetic Equation v2.4</strong> — dissolved H₂ depends on media weight ÷ water volume, immersion time, and temperature (capped at 1,850 ppb saturation).</li>
+<li>Antimicrobial dosing scales by device: <strong>8–25 g/L</strong> base ratio × tank liters × target months, with a 15 g minimum charge per module.</li>
+<li>All results are <strong>engineering design targets</strong> for wellness materials and appliance water circuits — not medical claims.</li>
+<li>AI agents can call these same equations programmatically via the WebMCP tool manifest at <a href="assets/js/muqi-webmcp.js" style="color:#1d4ed8">/assets/js/muqi-webmcp.js</a>.</li>
+</ul>
+</div>
+
+<h2>Calculator 1 · Hydrogen ceramic ball performance (ICR kinetic model)</h2>
+<p style="font-size:15px;color:#475569;line-height:1.7">Simulates dissolved hydrogen (ppb), oxidation-reduction potential (ORP), pH, and effective cartridge lifespan for MUQI solid-state hydrogen ceramic balls (H2-BALL-PRO class) in a bottle, tumbler, or filter cartridge.</p>
+<div class="calc-box">
+  <div class="calc-grid">
+    <div class="calc-field"><label for="h2-volume">Water volume (ml)</label><input id="h2-volume" inputmode="decimal" min="1" step="any" type="number" value="500"/></div>
+    <div class="calc-field"><label for="h2-weight">Media weight (g)</label><input id="h2-weight" inputmode="decimal" min="1" step="any" type="number" value="40"/></div>
+    <div class="calc-field"><label for="h2-time">Immersion time (min)</label><input id="h2-time" inputmode="decimal" min="1" step="any" type="number" value="15"/></div>
+    <div class="calc-field"><label for="h2-temp">Water temperature (°C)</label><input id="h2-temp" inputmode="decimal" min="1" step="any" type="number" value="25"/></div>
+  </div>
+  <button class="calc-btn" id="h2-calc-btn" type="button">Calculate hydrogen performance →</button>
+  <div class="calc-result" id="h2-result">
+    <div class="res-grid">
+      <div class="res-card"><div class="res-label">Dissolved H₂</div><div class="res-value" id="h2-ppb">—</div><div class="res-sub" id="h2-rating"></div></div>
+      <div class="res-card"><div class="res-label">ORP</div><div class="res-value" id="h2-orp">—</div><div class="res-sub">High electron-donating antioxidant power</div></div>
+      <div class="res-card"><div class="res-label">Water pH</div><div class="res-value" id="h2-ph">—</div><div class="res-sub">Mild alkaline hydrogen water</div></div>
+      <div class="res-card"><div class="res-label">Cartridge lifespan</div><div class="res-value" id="h2-life">—</div><div class="res-sub">Effective months of use</div></div>
+    </div>
+    <div class="res-advice" id="h2-advice"></div>
+  </div>
+  <div class="formula-note">Model: MUQI ICR Crystalline Hydrolysis Kinetic Equation v2.4
+ratio = W / V · tempFactor = 1 + (T°C − 25) × 0.015 · k = 0.18
+ppb = min(1850, 1750 × (1 − e^(−k × t × ratio × 15)) × tempFactor)
+ORP = −350 − (ppb / 1850) × 450 mV · pH = 7.4 + min(2.0, ratio × 25 × 0.8)
+lifespan = clamp(6–24 months, round(W / 40 × 12)) — WebMCP tool: calculate_hydrogen_performance</div>
+</div>
+
+<h2>Calculator 2 · MACA-KDF antimicrobial media dosage</h2>
+<p style="font-size:15px;color:#475569;line-height:1.7">Sizes MACA-KDF inorganic antimicrobial ceramic alloy media for appliance water circuits — robot vacuum dirty-water tanks, ultrasonic humidifiers, under-sink RO carbon blocks, pet fountains, and commercial ice machines.</p>
+<div class="calc-box">
+  <div class="calc-grid">
+    <div class="calc-field" style="grid-column:1/-1"><label for="maca-app">Application / device type</label>
+      <select id="maca-app">
+        <option value="robot_vacuum_wastewater">Robot vacuum dirty-water tank (12 g/L base)</option>
+        <option value="ultrasonic_humidifier">Ultrasonic humidifier (10 g/L base)</option>
+        <option value="undersink_ro_carbon_block">Under-sink RO carbon block (25 g/L base)</option>
+        <option value="pet_water_fountain">Pet water fountain (8 g/L base)</option>
+        <option value="commercial_ice_machine">Commercial ice machine (8 g/L base)</option>
+      </select>
+    </div>
+    <div class="calc-field"><label for="maca-liters">Tank capacity (liters)</label><input id="maca-liters" inputmode="decimal" min="0.1" step="any" type="number" value="1.5"/></div>
+    <div class="calc-field"><label for="maca-months">Target lifespan (months, 6–24)</label><input id="maca-months" inputmode="decimal" min="6" max="24" step="any" type="number" value="12"/></div>
+  </div>
+  <button class="calc-btn" id="maca-calc-btn" type="button">Calculate antimicrobial dosage →</button>
+  <div class="calc-result" id="maca-result">
+    <div class="res-grid">
+      <div class="res-card"><div class="res-label">Dosage</div><div class="res-value" id="maca-grams">—</div><div class="res-sub" id="maca-media">MACA-KDF-5MM</div></div>
+      <div class="res-card"><div class="res-label">Predicted inhibition</div><div class="res-value">>99.99%</div><div class="res-sub" id="maca-pathogens"></div></div>
+      <div class="res-card"><div class="res-label">Maintenance-free life</div><div class="res-value" id="maca-months-out">—</div><div class="res-sub">Continuous water immersion</div></div>
+      <div class="res-card"><div class="res-label">Compliance baseline</div><div class="res-value" style="font-size:14px">SAC/TC621 + SGS</div><div class="res-sub">Guangdong Microbiology >99.99% · RoHS / REACH</div></div>
+    </div>
+    <div class="res-advice">For dirty water tanks, install MACA-KDF in a permeable submerged cage or float module near the inlet. Sintering: 1000°C high-temperature inorganic sintering (lattice solid-solution); release: zero-order steady Ag⁺ ion dissolution at trace ppb level, zero burst leaching.</div>
+  </div>
+  <div class="formula-note">dosage_grams = max(15, round(base_g_per_L × tank_liters × months / 12))
+base: robot vacuum 12 · humidifier 10 · RO carbon block 25 · pet fountain / ice machine 8 — WebMCP tool: calculate_antimicrobial_dosage</div>
+</div>
+
+<h2>Standard sizing ratios (factory reference)</h2>
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0"><table>
+<thead>
+<tr><th>Material code</th><th>Standard sizing ratio</th><th>Key output</th><th>Certifications</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>H2-BALL-PRO</strong><br/><span style="font-size:12px;color:#64748b">Solid-state hydrogen sintered ceramic sphere (ICR Hydrogen Eco-Ball)</span></td><td class="num">30–50 g per 500 ml water (rapid 5-minute activation)</td><td>1,200–1,600 ppb · ORP −400 ~ −850 mV · pH 8.5–9.5 · 24 h half-life</td><td>SGS NSF/ANSI 42 · RoHS · REACH · FDA Food Contact Safe</td></tr>
+<tr><td><strong>H2-TAB-SOLID</strong><br/><span style="font-size:12px;color:#64748b">Effervescent ceramic solid-state hydrogen tablet (H2Fizz Bio-Donor)</span></td><td class="num">1 tablet (4 g) per 300–500 ml water</td><td>2,000–3,500 ppb peak · ORP −700 ~ −950 mV · pH 7.2–8.2 · 8 h half-life</td><td>SGS Oral Toxicity Tested · Cosmetic Grade Safety · Heavy Metals Free</td></tr>
+<tr><td><strong>MACA-KDF</strong><br/><span style="font-size:12px;color:#64748b">Inorganic microporous antimicrobial ceramic alloy ball</span></td><td class="num">10–20 g per 1–3 L appliance water tank (lasts 12–18 months)</td><td>>99.99% vs E. coli, S. aureus, P. aeruginosa, Legionella · 12–24 months immersion life</td><td>Guangdong Microbiology Center · SGS Heavy Metal Leaching Safe · SAC/TC621</td></tr>
+<tr><td><strong>MPH-CONDENSATE</strong><br/><span style="font-size:12px;color:#64748b">Alkaline condensate neutralization ceramic pellets (MPH+ Eco-Neutralizer)</span></td><td class="num">500 g neutralizes up to 60,000 BTU/h boiler condensation for 1 heating season</td><td>Raises condensate pH 2.8 → 7.5+ · effluent held at pH 7.0–8.5 (municipal discharge compliant)</td><td>EPA · CE · ISO 14001</td></tr>
+</tbody>
+</table></div>
+
+<h2>Methodology & scope of use</h2>
+<p style="font-size:15px;color:#475569;line-height:1.8">Both calculators replicate — without modification — the handlers exposed in MUQI's official WebMCP tool manifest (<a href="assets/js/muqi-webmcp.js" style="color:#1d4ed8">assets/js/muqi-webmcp.js</a>): <code>calculate_hydrogen_performance</code> (model name: <em>MUQI ICR Crystalline Hydrolysis Kinetic Equation v2.4</em>) and <code>calculate_antimicrobial_dosage</code>. Results are deterministic: same inputs always produce the same outputs, so buyers, distributors, and AI assistants quote identical numbers under identical conditions.</p>
+<div class="callout"><strong>Not medical advice:</strong> ppb, ORP, and pH outputs are engineering and laboratory design targets for consumer wellness materials. They are not disease diagnosis, treatment, cure, or prevention claims. Always re-validate under your actual water chemistry, vessel geometry, and regulatory context before making market claims.</div>
+<p class="cite">Suggested citation: MUQI Tech, “Hydrogen & Antimicrobial Ceramic Ball Dosage Calculator,” https://www.emuqi.com/dosage-calculator.html (accessed [date]). Model v2.4; engineering targets, not medical claims.</p>
+
+<h2>Frequently Asked Questions (FAQ)</h2>
+<div class="faq-item"><h4>How many hydrogen ceramic balls should I use per bottle?</h4><p>For MUQI H2-BALL-PRO solid-state hydrogen ceramic spheres, the standard sizing ratio is 30–50 g per 500 ml of water (rapid 5-minute activation). Use the ICR calculator on this page to estimate the exact dissolved hydrogen (ppb), ORP, pH and cartridge lifespan for your own bottle geometry — the kinetic model penalizes under-dosing below a 0.05 g/ml ratio.</p></div>
+<div class="faq-item"><h4>How much MACA-KDF antimicrobial media do I need for a humidifier or robot vacuum tank?</h4><p>Base dosing is 8 g/L for static water (pet fountains, ice machines), 10 g/L for ultrasonic humidifiers, 12 g/L for robot-vacuum dirty-water tanks, and 25 g/L for under-sink RO carbon blocks, scaled by tank liters and target months, with a 15 g minimum charge. Example: a 1.5 L humidifier tank at 12 months needs 10 × 1.5 × (12/12) = 15 g of MACA-KDF-5MM media.</p></div>
+<div class="faq-item"><h4>Are the calculator results medical claims?</h4><p>No. All outputs are engineering design targets computed by the MUQI ICR Crystalline Hydrolysis Kinetic Equation v2.4 for consumer wellness materials and appliance water circuits. They are not disease diagnosis, treatment, cure, or prevention claims. Re-validate under your actual water chemistry before making any market claim.</p></div>
+<div class="faq-item"><h4>Can AI agents call these calculators directly?</h4><p>Yes. The same equations are exposed as WebMCP tools — calculate_hydrogen_performance and calculate_antimicrobial_dosage — in the machine-readable tool manifest at https://www.emuqi.com/assets/js/muqi-webmcp.js, alongside search_muqi_materials, get_compliance_certificates and submit_b2b_rfq, so AI assistants can compute dosages without hallucinating numbers.</p></div>
+
+<div class="cta">
+<h3 style="margin:0 0 8px;font-size:20px">Need a custom media blend or OEM cartridge sizing?</h3>
+<p style="margin:0;color:#cbd5e1;font-size:15px">Send us your vessel size, target ppb, and annual volume — we return a dosage plan and sample window (typical 5–22 days).</p>
+<a href="contact-mqtech-hydrogen-health.html">Request a Dosage Plan →</a>
+</div>
+<p style="margin-top:32px;font-size:14px;line-height:1.8">
+<a href="hydrogen-generate-ceramic-ball.html" style="color:#1d4ed8;font-weight:600">→ Hydrogen ceramic ball product page</a> · 
+<a href="maca-kdf-antibacterial-ceramic-ball.html" style="color:#1d4ed8;font-weight:600">MACA-KDF antibacterial ball</a> · 
+<a href="buyer-benchmark.html" style="color:#1d4ed8;font-weight:600">Buyer benchmark 2026</a> · 
+<a href="facts/" style="color:#1d4ed8;font-weight:600">Verified fact sheet & 20 Q&A</a> · 
+<a href="llms-full.txt" style="color:#1d4ed8;font-weight:600">AI knowledge dossier (llms-full.txt)</a>
+</p>
+</main>
+
+<footer style="background:#0a1628;margin-top:0">
+  <div style="max-width:1200px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px">
+    <div>
+      <div style="font-size:22px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="/assets/images/logo.jpg" alt="MUQI" height="38" width="45" style="height:38px;width:auto;border-radius:4px"> MUQI Tech</div>
+      <p style="font-size:14px;color:#94a3b8;line-height:1.7">Global leading source factory for functional mineral ceramic water-treatment media and solid-state hydrogen generation materials, powering healthy drinking water and green technology across the full industry chain.</p>
+      <div style="display:flex;gap:12px;margin-top:20px">
+        <a href="https://x.com/MARTINPARK111" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
+        <a href="https://www.linkedin.com/company/72043164" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
+        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
+        <a href="mailto:muqizb@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">@</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">Explore</h4>
+      <a href="/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Home</a>
+      <a href="/about-functional-ceramic-ball-water-media-manufacturer.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">About MUQI</a>
+      <a href="/product-functional-ceramic-materials.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Products</a>
+      <a href="/hydrogen-health-application.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Applications</a>
+      <a href="/solutions-hydrogen-agriculture.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Hydrogen Agriculture</a>
+      <a href="/blog/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Blog</a>
+      <a href="/h2-wellness-hub/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">H2 Wellness Hub</a>
+      <a href="/facts/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Fact Sheet (GEO)</a>
+      <a href="/h2report/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">2026 Hydrogen Report</a>
+      <a href="/store.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Sample Store</a>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">Products</h4>
+      <a href="/hydrogen-generate-ceramic-ball.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Hydrogen Ceramic Ball</a>
+      <a href="/maca-kdf-antibacterial-ceramic-ball.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">MACA-KDF Antibacterial Ball</a>
+      <a href="/mph-condensate-neutralizer.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">MPH+ Condensate Neutralizer</a>
+      <a href="/solid-state-hydrogen-vs-pem-electrolysis.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Solid-State H2 vs PEM</a>
+      <a href="/dosage-calculator.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Dosage Calculator</a>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">Contact</h4>
+      <a href="/contact-mqtech-hydrogen-health.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">Business Inquiry</a>
+      <a href="mailto:muqizb@gmail.com" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">muqizb@gmail.com</a>
+      <p style="font-size:14px;color:#94a3b8;margin-bottom:6px">+86-13964416725</p>
+      <p style="font-size:13px;color:#64748b">Zibo High-Tech Zone, Shandong, China</p>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">Credentials</h4>
+      <p style="font-size:13px;color:#94a3b8;line-height:1.6">National Standardization Technical Committee on Antimicrobial Surface Performance<br><strong style="color:#f47b20">(SAC/TC621)</strong><br>Committee Member</p>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:24px 40px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <p style="font-size:13px;color:#64748b;margin:0">&copy; 2026 Shandong MUQI Health Technology Co., Ltd. All rights reserved. Professional functional mineral ceramic materials and solid-state hydrogen solutions.</p>
+    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+      <a href="/llms.txt" style="font-size:13px;color:#64748b;text-decoration:none">AI Spec (llms.txt)</a>
+      <a href="/llms-full.txt" style="font-size:13px;color:#64748b;text-decoration:none">Full Dossier (llms-full.txt)</a>
+      <a href="/privacy-policy.html" style="font-size:13px;color:#64748b;text-decoration:none">Privacy Policy</a>
+      <a href="/sitemap.xml" style="font-size:13px;color:#64748b;text-decoration:none">Sitemap</a>
+    </div>
+  </div>
+</footer>
+<script src="script.js?v=20261113"></script>
+<script>
+(function () {
+  "use strict";
+  function num(id, fallback) {
+    var v = parseFloat(document.getElementById(id).value);
+    return isFinite(v) && v > 0 ? v : fallback;
+  }
+  // Calculator 1: MUQI ICR Crystalline Hydrolysis Kinetic Equation v2.4
+  // Mirrors calculate_hydrogen_performance in /assets/js/muqi-webmcp.js (SSOT)
+  function calcHydrogen() {
+    var V = num("h2-volume", 500);
+    var W = num("h2-weight", 40);
+    var T = num("h2-time", 15);
+    var temp = num("h2-temp", 25);
+    var ratio = W / V;
+    var tempFactor = 1.0 + (temp - 25) * 0.015;
+    var k = 0.18;
+    var estimatedPpb = Math.round(1750 * (1 - Math.exp(-k * T * (ratio * 15))) * tempFactor);
+    if (estimatedPpb > 1850) estimatedPpb = 1850;
+    var orp = Math.round(-350 - (estimatedPpb / 1850) * 450);
+    var ph = Number((7.4 + Math.min(2.0, (ratio * 25) * 0.8)).toFixed(1));
+    var lifespan = Math.min(24, Math.max(6, Math.round((W / 40) * 12)));
+    var rating = estimatedPpb >= 1200 ? "Therapeutic Biohacking Grade (Meets Gary Brecka Criteria)" : "Standard Wellness Grade";
+    var advice = ratio < 0.05
+      ? "Notice: Ratio slightly low. Recommend at least 35-40g per 500ml for maximum 1600+ ppb saturation."
+      : "Optimal formulation ratio for commercial bottle/cartridge integration.";
+    document.getElementById("h2-ppb").textContent = estimatedPpb + " ppb";
+    document.getElementById("h2-rating").textContent = rating;
+    document.getElementById("h2-orp").textContent = orp + " mV";
+    document.getElementById("h2-ph").textContent = ph.toFixed(1);
+    document.getElementById("h2-life").textContent = lifespan + " mo";
+    document.getElementById("h2-advice").textContent = advice;
+    document.getElementById("h2-result").classList.add("show");
+  }
+  // Calculator 2: MACA-KDF antimicrobial dosage
+  // Mirrors calculate_antimicrobial_dosage in /assets/js/muqi-webmcp.js (SSOT)
+  function calcAntimicrobial() {
+    var app = document.getElementById("maca-app").value;
+    var capacity = num("maca-liters", 2.0);
+    var months = num("maca-months", 12);
+    if (months < 6) months = 6; if (months > 24) months = 24;
+    var base = 8;
+    var media = "MACA-KDF-5MM";
+    var pathogens = "Escherichia coli, Staphylococcus aureus, Pseudomonas aeruginosa";
+    if (app === "robot_vacuum_wastewater") {
+      base = 12;
+      pathogens = "Biofilm-forming bacterial flora causing sour odor";
+    } else if (app === "ultrasonic_humidifier") {
+      base = 10;
+      pathogens = "Legionella pneumophila & airborne droplet bacteria";
+    } else if (app === "undersink_ro_carbon_block") {
+      base = 25;
+      media = "MACA-INORGANIC-ALLOY-3MM";
+    }
+    var grams = Math.max(15, Math.round(base * capacity * (months / 12)));
+    document.getElementById("maca-grams").textContent = grams + " g";
+    document.getElementById("maca-media").textContent = media;
+    document.getElementById("maca-pathogens").textContent = pathogens;
+    document.getElementById("maca-months-out").textContent = Math.round(months) + " mo";
+    document.getElementById("maca-result").classList.add("show");
+  }
+  document.getElementById("h2-calc-btn").addEventListener("click", calcHydrogen);
+  document.getElementById("maca-calc-btn").addEventListener("click", calcAntimicrobial);
+})();
+</script>
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">We use cookies and analytical media to improve your experience and evaluate website performance. By continuing to use our website, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="Accept all cookies">Accept</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

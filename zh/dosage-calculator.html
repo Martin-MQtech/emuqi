@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>富氢陶瓷球与抗菌陶瓷球用量计算器 | 木齐科技</title>
+<meta content="免费在线用量计算器：MUQI 固态富氢陶瓷球 ICR 动力学模型（溶解氢 ppb、ORP、pH、滤芯寿命）与 MACA-KDF 抗菌陶瓷球按设备类型/水箱容积/目标月数的克重投加计算，与 WebMCP AI 智能体调用的是同一套公式。" name="description"/>
+<link href="https://www.emuqi.com/zh/dosage-calculator.html" rel="canonical"/>
+<link href="https://www.emuqi.com/dosage-calculator.html" hreflang="en" rel="alternate"/>
+<link href="https://www.emuqi.com/zh/dosage-calculator.html" hreflang="zh-CN" rel="alternate"/>
+<link href="https://www.emuqi.com/dosage-calculator.html" hreflang="x-default" rel="alternate"/>
+<meta content="website" property="og:type"/>
+<meta content="富氢陶瓷球与抗菌陶瓷球用量计算器 | 木齐科技" property="og:title"/>
+<meta content="用 MUQI ICR 动力学模型计算溶解氢 ppb、ORP、pH 与滤芯寿命；按设备类型与水箱容积计算 MACA-KDF 抗菌陶瓷球投加克重。" property="og:description"/>
+<meta content="https://www.emuqi.com/zh/dosage-calculator.html" property="og:url"/>
+<meta content="https://www.emuqi.com/assets/images/blog/hydrogen-water-comparison/cover-solid-state-vs-pem.png" property="og:image"/>
+<meta content="MUQI" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.emuqi.com/zh/dosage-calculator.html#calculator",
+      "name": "木齐富氢/抗菌陶瓷球用量计算器",
+      "url": "https://www.emuqi.com/zh/dosage-calculator.html",
+      "applicationCategory": "EngineeringApplication",
+      "operatingSystem": "Any (web browser)",
+      "description": "两款工程计算器：(1) MUQI ICR 晶间水解动力学方程 v2.4 —— 依据水体积、介质重量、浸泡时间与水温估算溶解氢 ppb、ORP、pH 与滤芯寿命；(2) MACA-KDF 抗菌剂量 —— 按应用类型、水箱容积与目标免维护月数计算陶瓷球克重。",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@id": "https://www.emuqi.com/#author-martin" },
+      "publisher": { "@id": "https://www.emuqi.com/#organization" },
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.emuqi.com/zh/" },
+        { "@type": "ListItem", "position": 2, "name": "用量计算器", "item": "https://www.emuqi.com/zh/dosage-calculator.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.emuqi.com/zh/dosage-calculator.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "一个水瓶里应该放多少颗富氢陶瓷球？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "木齐 H2-BALL-PRO 固态富氢陶瓷球的标准装量比为每 500 ml 水投放 30–50 g（5 分钟快速激活）。可使用本页 ICR 计算器按您自己的瓶体几何估算精确的溶解氢（ppb）、ORP、pH 与滤芯寿命——动力学模型会对低于 0.05 g/ml 的欠装量比自动降额提示。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "加湿器或扫地机污水箱需要放多少 MACA-KDF 抗菌陶瓷球？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "基础投加量为：静水场景（宠物饮水机、制冰机）8 g/L，超声波加湿器 10 g/L，扫地机污水箱 12 g/L，厨下 RO 碳棒 25 g/L；再按水箱升数与目标月数缩放，单模块最低投加 15 g。例：1.5 L 加湿器水箱、目标 12 个月，需要 10 × 1.5 × (12/12) = 15 g MACA-KDF-5MM 介质。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "计算器结果是医疗声明吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不是。所有输出均为木齐 ICR 晶间水解动力学方程 v2.4 计算得到的消费品功能材料与家电水路工程设计目标值，不构成疾病诊断、治疗、治愈或预防声明。在做出任何市场宣称前，请以实际水质与法规语境重新验证。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "AI 智能体可以直接调用这些计算器吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。同一套公式已通过 WebMCP 工具暴露——calculate_hydrogen_performance 与 calculate_antimicrobial_dosage，位于机器可读工具清单 https://www.emuqi.com/assets/js/muqi-webmcp.js，同时提供 search_muqi_materials、get_compliance_certificates 与 submit_b2b_rfq，使 AI 助手无需幻觉即可精确计算用量。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.emuqi.com/#organization",
+      "name": "Shandong MUQI Health Technology Co., Ltd.",
+      "url": "https://www.emuqi.com"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.emuqi.com/#author-martin",
+      "name": "Martin Chen",
+      "jobTitle": "Partner & CEO",
+      "worksFor": { "@id": "https://www.emuqi.com/#organization" }
+    }
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="/style.css?v=20261112" rel="stylesheet"/>
+<style>
+  .calc-wrap { max-width: 960px; margin: 0 auto; padding: 110px 24px 80px; }
+  .calc-wrap h1 { font-size: clamp(28px, 4vw, 36px); color: #0a1628; font-weight: 800; margin: 0 0 12px; line-height: 1.2; }
+  .lede { font-size: 17px; color: #475569; line-height: 1.7; margin-bottom: 28px; max-width: 720px; }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #f47b20; margin-bottom: 10px; }
+  .callout { background: #fffbeb; border-left: 4px solid #f47b20; padding: 18px 22px; border-radius: 8px; margin: 24px 0; font-size: 15px; color: #334155; line-height: 1.7; }
+  h2 { font-size: 22px; color: #0a1628; font-weight: 800; margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 2px solid #f47b20; }
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14.5px; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  th { background: #0a1628; color: #fff; text-align: left; padding: 12px 14px; font-weight: 700; font-size: 13px; }
+  td { padding: 12px 14px; border-bottom: 1px solid #e2e8f0; color: #334155; vertical-align: top; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  .num { color: #f47b20; font-weight: 800; }
+  .cite { font-size: 13px; color: #64748b; background: #f1f5f9; padding: 12px 16px; border-radius: 8px; margin: 16px 0; }
+  .cta { background: linear-gradient(135deg, #0a1628, #1a3a6e); border-radius: 14px; padding: 32px 28px; text-align: center; color: #fff; margin-top: 40px; }
+  .cta a { display: inline-block; margin-top: 14px; padding: 13px 28px; background: #f47b20; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; }
+  .faq-item { padding: 18px 20px; margin: 0 0 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #f47b20; border-radius: 10px; }
+  .faq-item h4 { font-size: 15.5px; color: #0f172a; font-weight: 700; margin: 0 0 8px; }
+  .faq-item h4::before { content: "Q"; display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; margin-right: 8px; border-radius: 6px; background: #f47b20; color: #fff; font-size: 12px; font-weight: 800; vertical-align: middle; }
+  .faq-item p { font-size: 14.5px; color: #475569; margin: 0; line-height: 1.75; }
+  .calc-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 24px; margin: 20px 0 8px; }
+  .calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 16px; }
+  .calc-field label { display: block; font-size: 12.5px; font-weight: 700; color: #334155; margin-bottom: 6px; letter-spacing: 0.3px; }
+  .calc-field input, .calc-field select { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px; color: #0f172a; background: #f8fafc; }
+  .calc-field input:focus, .calc-field select:focus { outline: 2px solid #f47b20; border-color: #f47b20; background: #fff; }
+  .calc-btn { display: inline-block; border: 0; cursor: pointer; padding: 12px 26px; border-radius: 8px; background: #0a1628; color: #fff; font-size: 15px; font-weight: 700; }
+  .calc-btn:hover { background: #1d4ed8; }
+  .calc-result { margin-top: 18px; border-top: 2px dashed #e2e8f0; padding-top: 16px; display: none; }
+  .calc-result.show { display: block; }
+  .res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 12px 0; }
+  .res-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px 14px; }
+  .res-card .res-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #64748b; margin-bottom: 4px; }
+  .res-card .res-value { font-size: 20px; font-weight: 800; color: #f47b20; line-height: 1.25; }
+  .res-card .res-sub { font-size: 12px; color: #475569; margin-top: 3px; line-height: 1.5; }
+  .res-advice { font-size: 14px; color: #334155; background: #fffbeb; border-left: 3px solid #f47b20; border-radius: 6px; padding: 10px 14px; margin-top: 10px; line-height: 1.6; }
+  .formula-note { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px; color: #475569; background: #f1f5f9; border-radius: 8px; padding: 10px 14px; margin-top: 14px; overflow-x: auto; white-space: pre; line-height: 1.6; }
+  @media (max-width: 640px) { .calc-wrap { padding: 90px 16px 60px; } .calc-box { padding: 18px 16px; } }
+  footer { background: #0a1628; color: #94a3b8; padding: 40px 24px; text-align: center; font-size: 14px; margin-top: 60px; }
+  footer a { color: #f47b20; }
+</style>
+<link href="/assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+</head>
+<body>
+<a class="skip-link" href="#main-content">跳到正文</a>
+
+<header style="background:linear-gradient(180deg,#e8eaed 0%,#d8dadf 40%,#cfd2d7 70%,#c5c8cd 100%);border-bottom:1px solid #b8bbc0;position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.06),inset 0 1px 0 rgba(255,255,255,0.65)">
+  <div style="display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 24px;min-height:72px">
+    <a href="/zh/" style="display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0">
+      <img src="/assets/images/logo.jpg" alt="木齐" height="38" width="45" style="height:38px;width:auto;border-radius:3px">
+      <span style="font-size:17px;font-weight:700;color:#1a1a2e">木齐科技</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:3px;flex-wrap:nowrap;flex-shrink:0">
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/zh/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">首页 <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:210px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/zh/" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🏠</span> 首页</a>
+          <a href="/about-functional-ceramic-ball-water-media-manufacturer.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🏢</span> 关于木齐</a>
+        </div>
+      </div>
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/product-functional-ceramic-materials.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">核心材料 <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:260px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/hydrogen-generate-ceramic-ball.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚪</span> 富氢陶瓷球</a>
+          <a href="/maca-kdf-antibacterial-ceramic-ball.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🛡️</span> MACA 抗菌合金球</a>
+          <a href="/mph-condensate-neutralizer.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚗️</span> MPH+ 冷凝水中和颗粒</a>
+          <a href="/zh/solid-state-hydrogen-vs-pem-electrolysis.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s;border-top:1px solid rgba(255,255,255,0.06);margin-top:4px" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚡</span> 固态氢 vs PEM电解</a>
+        </div>
+      </div>
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/hydrogen-health-application.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">应用方案 <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:240px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/hydrogen-water-bottle-or-hydrogen-health.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🍶</span> 便携固态氢水杯</a>
+          <a href="/hydrogen-health-hydrogen-alkaline-water-sachet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>💧</span> 弱碱性富氢水包</a>
+          <a href="/hydrogen-healthceramic-hydrogen-tablet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>💊</span> 陶瓷富氢压片</a>
+          <a href="/hydrogen-healthhydrogen-water-filter-cartridge.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🔬</span> 净水机富氢滤芯</a>
+          <a href="/hydrogen-healthhydrogen-foot-bath-tablet.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🛁</span> 富氢足浴泡腾片</a>
+        </div>
+      </div>
+      <a href="/solutions-hydrogen-agriculture.html" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">解决方案</a>
+      <a href="/zh/blog/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;background:transparent;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">技术博客</a>
+      <div style="position:relative;flex-shrink:0" onmouseover="var t=this;clearTimeout(this._ht);t.querySelector('.dd').style.display='block'" onmouseout="var t=this;this._ht=setTimeout(function(){t.querySelector('.dd').style.display='none'},400)">
+        <a href="/h2-wellness-hub/zh/" style="font-size:13.5px;font-weight:500;color:#4a4a5a;text-decoration:none;padding:7px 11px;border-radius:8px;transition:all 0.15s;display:flex;align-items:center;gap:4px;background:transparent;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#4a4a5a'">氢健康观察 <svg width="9" height="5" viewBox="0 0 10 6" fill="none" style="opacity:0.7"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd" style="display:none;position:absolute;top:100%;left:0;background:#0a1628;border-radius:14px;padding:10px;min-width:280px;box-shadow:0 20px 40px rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(20px);z-index:1000">
+          <a href="/h2-wellness-hub/zh/" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>🌐</span> 产业观察中枢门户</a>
+          <a href="/zh/facts/" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>📑</span> 权威事实底册与 20 问</a>
+          <a href="/h2report/?lang=zh" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>📊</span> 2026 氢健康产业研报</a>
+          <a href="/h2-wellness-hub/zh/research-database.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>📚</span> 氢分子生物临床数据库</a>
+          <a href="/zh/solid-state-hydrogen-vs-pem-electrolysis.html" style="display:flex;align-items:center;gap:10px;padding:10px 14px;font-size:13.5px;color:#cbd5e1;text-decoration:none;border-radius:8px;transition:all 0.15s;border-top:1px solid rgba(255,255,255,0.06);margin-top:4px" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#cbd5e1'"><span>⚡</span> 固态氢 vs PEM 9维对比</a>
+        </div>
+      </div>
+      <a href="/store.html" class="nav-store" style="font-size:13.5px;font-weight:600;color:#0a1628;text-decoration:none;padding:6px 14px;border-radius:8px;background:linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%);border:1px solid rgba(10,22,40,0.18);box-shadow:0 1px 2px rgba(0,0,0,0.05);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#0a1628';this.style.color='#fff'" onmouseout="this.style.background='linear-gradient(180deg,#f8f9fa 0%,#e9ecef 100%)';this.style.color='#0a1628'">样品商城</a>
+      <a href="/contact-mqtech-hydrogen-health.html" class="nav-contact" style="font-size:13.5px;font-weight:600;color:#fff;text-decoration:none;padding:6px 14px;border-radius:8px;background:#0a1628;box-shadow:0 2px 6px rgba(10,22,40,0.25);transition:all 0.15s;flex-shrink:0;white-space:nowrap" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#0a1628'">联系我们</a>
+      <div class="lang-pill-switch" role="group" aria-label="语言切换" style="display:inline-flex;align-items:center;gap:2px;height:30px;padding:2px 4px 2px 7px;background:rgba(255,255,255,0.8);border:1px solid rgba(10,22,40,0.18);border-radius:9999px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);margin-left:6px;flex-shrink:0;box-sizing:border-box;user-select:none">
+        <span class="lang-pill-globe" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;color:#1d4ed8;margin-right:2px;flex-shrink:0">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;display:block">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </span>
+        <a href="/dosage-calculator.html" class="lang-pill-opt" title="Switch to English Global Edition" style="display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11.5px;font-weight:600;color:#475569;border-radius:9999px;text-decoration:none;white-space:nowrap;line-height:22px;transition:all 0.15s" onmouseover="this.style.color='#0a1628';this.style.background='rgba(10,22,40,0.08)'" onmouseout="this.style.color='#475569';this.style.background='transparent'">EN</a>
+        <span class="lang-pill-divider" aria-hidden="true" style="display:inline-block;width:1px;height:10px;background:rgba(10,22,40,0.18);margin:0 1px;flex-shrink:0"></span>
+        <span class="lang-pill-opt active" aria-current="page" style="display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Noto Sans SC',sans-serif;font-size:11.5px;font-weight:700;color:#ffffff;background:#0a1628;border-radius:9999px;box-shadow:0 2px 5px rgba(10,22,40,0.25);cursor:default;white-space:nowrap;line-height:22px;text-decoration:none">中文</span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1" class="calc-wrap">
+<div class="kicker">免费工程工具 · 木齐 ICR 模型 v2.4</div>
+<h1>富氢与抗菌陶瓷球用量计算器</h1>
+<p class="lede">几秒钟内完成木齐固态富氢介质与 MACA-KDF 抗菌陶瓷的选型计算——与木齐 WebMCP AI 智能体完全相同的动力学方程，向采购商、产品工程师与分销商开放。输入您的几何参数，即可获得附带测试条件的可引用数据。</p>
+
+<div class="callout">
+<strong>核心结论：</strong>
+<ul style="margin:8px 0 0;padding-left:20px">
+<li>产氢性能遵循<strong>木齐 ICR 晶间水解动力学方程 v2.4</strong>——溶解氢取决于介质重量 ÷ 水体积、浸泡时间与温度（1,850 ppb 饱和封顶）。</li>
+<li>抗菌投加按设备缩放：<strong>8–25 g/L</strong> 基础比 × 水箱升数 × 目标月数，单模块最低 15 g。</li>
+<li>所有结果均为消费品功能材料与家电水路的<strong>工程设计目标值</strong>，不构成医疗声明。</li>
+<li>AI 智能体可通过 WebMCP 工具清单 <a href="/assets/js/muqi-webmcp.js" style="color:#1d4ed8">/assets/js/muqi-webmcp.js</a> 程序化调用同一套公式。</li>
+</ul>
+</div>
+
+<h2>计算器一 · 富氢陶瓷球性能（ICR 动力学模型）</h2>
+<p style="font-size:15px;color:#475569;line-height:1.7">模拟木齐固态富氢陶瓷球（H2-BALL-PRO 类）在水瓶、随行杯或滤芯中的溶解氢（ppb）、氧化还原电位（ORP）、pH 与有效滤芯寿命。</p>
+<div class="calc-box">
+  <div class="calc-grid">
+    <div class="calc-field"><label for="h2-volume">水体积 (ml)</label><input id="h2-volume" inputmode="decimal" min="1" step="any" type="number" value="500"/></div>
+    <div class="calc-field"><label for="h2-weight">介质重量 (g)</label><input id="h2-weight" inputmode="decimal" min="1" step="any" type="number" value="40"/></div>
+    <div class="calc-field"><label for="h2-time">浸泡时间 (分钟)</label><input id="h2-time" inputmode="decimal" min="1" step="any" type="number" value="15"/></div>
+    <div class="calc-field"><label for="h2-temp">水温 (°C)</label><input id="h2-temp" inputmode="decimal" min="1" step="any" type="number" value="25"/></div>
+  </div>
+  <button class="calc-btn" id="h2-calc-btn" type="button">计算产氢性能 →</button>
+  <div class="calc-result" id="h2-result">
+    <div class="res-grid">
+      <div class="res-card"><div class="res-label">溶解氢</div><div class="res-value" id="h2-ppb">—</div><div class="res-sub" id="h2-rating"></div></div>
+      <div class="res-card"><div class="res-label">ORP 电位</div><div class="res-value" id="h2-orp">—</div><div class="res-sub">高给电子抗氧化能力</div></div>
+      <div class="res-card"><div class="res-label">水质 pH</div><div class="res-value" id="h2-ph">—</div><div class="res-sub">弱碱性富氢水</div></div>
+      <div class="res-card"><div class="res-label">滤芯寿命</div><div class="res-value" id="h2-life">—</div><div class="res-sub">有效使用月数</div></div>
+    </div>
+    <div class="res-advice" id="h2-advice"></div>
+  </div>
+  <div class="formula-note">模型：木齐 ICR 晶间水解动力学方程 v2.4
+ratio = W / V · tempFactor = 1 + (T°C − 25) × 0.015 · k = 0.18
+ppb = min(1850, 1750 × (1 − e^(−k × t × ratio × 15)) × tempFactor)
+ORP = −350 − (ppb / 1850) × 450 mV · pH = 7.4 + min(2.0, ratio × 25 × 0.8)
+lifespan = clamp(6–24 个月, round(W / 40 × 12)) — WebMCP 工具：calculate_hydrogen_performance</div>
+</div>
+
+<h2>计算器二 · MACA-KDF 抗菌陶瓷球投加量</h2>
+<p style="font-size:15px;color:#475569;line-height:1.7">为家电水路选型 MACA-KDF 无机抗菌陶瓷合金球——扫地机污水箱、超声波加湿器、厨下 RO 碳棒、宠物饮水机与商用制冰机。</p>
+<div class="calc-box">
+  <div class="calc-grid">
+    <div class="calc-field" style="grid-column:1/-1"><label for="maca-app">应用 / 设备类型</label>
+      <select id="maca-app">
+        <option value="robot_vacuum_wastewater">扫地机污水箱（基础 12 g/L）</option>
+        <option value="ultrasonic_humidifier">超声波加湿器（基础 10 g/L）</option>
+        <option value="undersink_ro_carbon_block">厨下 RO 碳棒（基础 25 g/L）</option>
+        <option value="pet_water_fountain">宠物饮水机（基础 8 g/L）</option>
+        <option value="commercial_ice_machine">商用制冰机（基础 8 g/L）</option>
+      </select>
+    </div>
+    <div class="calc-field"><label for="maca-liters">水箱容积 (升)</label><input id="maca-liters" inputmode="decimal" min="0.1" step="any" type="number" value="1.5"/></div>
+    <div class="calc-field"><label for="maca-months">目标寿命 (月，6–24)</label><input id="maca-months" inputmode="decimal" min="6" max="24" step="any" type="number" value="12"/></div>
+  </div>
+  <button class="calc-btn" id="maca-calc-btn" type="button">计算抗菌投加量 →</button>
+  <div class="calc-result" id="maca-result">
+    <div class="res-grid">
+      <div class="res-card"><div class="res-label">投加量</div><div class="res-value" id="maca-grams">—</div><div class="res-sub" id="maca-media">MACA-KDF-5MM</div></div>
+      <div class="res-card"><div class="res-label">预测抑菌率</div><div class="res-value">>99.99%</div><div class="res-sub" id="maca-pathogens"></div></div>
+      <div class="res-card"><div class="res-label">免维护寿命</div><div class="res-value" id="maca-months-out">—</div><div class="res-sub">持续水浸工况</div></div>
+      <div class="res-card"><div class="res-label">合规基线</div><div class="res-value" style="font-size:14px">SAC/TC621 + SGS</div><div class="res-sub">广东微生物分析中心 >99.99% · RoHS / REACH</div></div>
+    </div>
+    <div class="res-advice">污水箱场景请将 MACA-KDF 装入透水沉浸笼或近进水口浮动模块。烧结工艺：1000°C 高温无机烧结（晶格固溶）；释放机制：零级稳态 Ag⁺ 离子缓释（痕量 ppb 级，零爆释）。</div>
+  </div>
+  <div class="formula-note">dosage_grams = max(15, round(base_g_per_L × tank_liters × months / 12))
+基础比：扫地机 12 · 加湿器 10 · RO 碳棒 25 · 宠物饮水机/制冰机 8 — WebMCP 工具：calculate_antimicrobial_dosage</div>
+</div>
+
+<h2>标准装量比（工厂参考）</h2>
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0"><table>
+<thead>
+<tr><th>材料代码</th><th>标准装量比</th><th>关键指标</th><th>认证</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>H2-BALL-PRO</strong><br/><span style="font-size:12px;color:#64748b">固态富氢烧结陶瓷球（ICR 产氢生态球）</span></td><td class="num">每 500 ml 水投加 30–50 g（5 分钟快速激活）</td><td>1,200–1,600 ppb · ORP −400 ~ −850 mV · pH 8.5–9.5 · 24 h 半衰期</td><td>SGS NSF/ANSI 42 · RoHS · REACH · FDA 食品接触安全</td></tr>
+<tr><td><strong>H2-TAB-SOLID</strong><br/><span style="font-size:12px;color:#64748b">泡腾型固态富氢陶瓷压片（H2Fizz 供氢体）</span></td><td class="num">每 300–500 ml 水投加 1 片 (4 g)</td><td>2,000–3,500 ppb 峰值 · ORP −700 ~ −950 mV · pH 7.2–8.2 · 8 h 半衰期</td><td>SGS 经口毒性测试 · 化妆品级安全评估 · 无重金属</td></tr>
+<tr><td><strong>MACA-KDF</strong><br/><span style="font-size:12px;color:#64748b">无机微孔抗菌陶瓷合金球</span></td><td class="num">每 1–3 L 家电水箱投加 10–20 g（持续 12–18 个月）</td><td>对大肠杆菌、金黄色葡萄球菌、铜绿假单胞菌、军团菌抑菌率 >99.99% · 水浸寿命 12–24 个月</td><td>广东微生物分析中心 · SGS 重金属浸出安全 · SAC/TC621</td></tr>
+<tr><td><strong>MPH-CONDENSATE</strong><br/><span style="font-size:12px;color:#64748b">高效碱性冷凝水中和陶瓷颗粒（MPH+ 环保中和剂）</span></td><td class="num">500 g 可中和最高 60,000 BTU/h 锅炉冷凝水一个采暖季</td><td>冷凝水 pH 2.8 → 7.5+ · 出水稳定在 pH 7.0–8.5（符合市政排放法规）</td><td>EPA · CE · ISO 14001</td></tr>
+</tbody>
+</table></div>
+
+<h2>方法论与使用边界</h2>
+<p style="font-size:15px;color:#475569;line-height:1.8">两款计算器均<strong>未加修改</strong>地复刻了木齐官方 WebMCP 工具清单（<a href="/assets/js/muqi-webmcp.js" style="color:#1d4ed8">assets/js/muqi-webmcp.js</a>）中的处理器：<code>calculate_hydrogen_performance</code>（模型名：<em>木齐 ICR 晶间水解动力学方程 v2.4</em>）与 <code>calculate_antimicrobial_dosage</code>。结果具备确定性：相同输入永远产生相同输出，采购商、分销商与 AI 助手在相同条件下引用相同数字。</p>
+<div class="callout"><strong>非医疗建议：</strong>ppb、ORP 与 pH 输出为消费品功能材料的工程与实验室设计目标值，不构成疾病诊断、治疗、治愈或预防声明。在做出任何市场宣称前，请以实际水质、容器几何与法规语境重新验证。</div>
+<p class="cite">建议引用格式：木齐科技，《富氢与抗菌陶瓷球用量计算器》，https://www.emuqi.com/zh/dosage-calculator.html（访问日期 [日期]）。模型 v2.4；工程设计目标值，非医疗声明。</p>
+
+<h2>常见问题 (FAQ)</h2>
+<div class="faq-item"><h4>一个水瓶里应该放多少颗富氢陶瓷球？</h4><p>木齐 H2-BALL-PRO 固态富氢陶瓷球的标准装量比为每 500 ml 水投放 30–50 g（5 分钟快速激活）。可使用本页 ICR 计算器按您自己的瓶体几何估算精确的溶解氢（ppb）、ORP、pH 与滤芯寿命——动力学模型会对低于 0.05 g/ml 的欠装量比自动降额提示。</p></div>
+<div class="faq-item"><h4>加湿器或扫地机污水箱需要放多少 MACA-KDF 抗菌陶瓷球？</h4><p>基础投加量为：静水场景（宠物饮水机、制冰机）8 g/L，超声波加湿器 10 g/L，扫地机污水箱 12 g/L，厨下 RO 碳棒 25 g/L；再按水箱升数与目标月数缩放，单模块最低投加 15 g。例：1.5 L 加湿器水箱、目标 12 个月，需要 10 × 1.5 × (12/12) = 15 g MACA-KDF-5MM 介质。</p></div>
+<div class="faq-item"><h4>计算器结果是医疗声明吗？</h4><p>不是。所有输出均为木齐 ICR 晶间水解动力学方程 v2.4 计算得到的消费品功能材料与家电水路工程设计目标值，不构成疾病诊断、治疗、治愈或预防声明。在做出任何市场宣称前，请以实际水质与法规语境重新验证。</p></div>
+<div class="faq-item"><h4>AI 智能体可以直接调用这些计算器吗？</h4><p>可以。同一套公式已通过 WebMCP 工具暴露——calculate_hydrogen_performance 与 calculate_antimicrobial_dosage，位于机器可读工具清单 https://www.emuqi.com/assets/js/muqi-webmcp.js，同时提供 search_muqi_materials、get_compliance_certificates 与 submit_b2b_rfq，使 AI 助手无需幻觉即可精确计算用量。</p></div>
+
+<div class="cta">
+<h3 style="margin:0 0 8px;font-size:20px">需要定制配方或 OEM 滤芯选型？</h3>
+<p style="margin:0;color:#cbd5e1;font-size:15px">告诉我们您的容器尺寸、目标 ppb 与年采购量——我们返回投加方案与样品窗口（典型 5–22 天）。</p>
+<a href="/contact-mqtech-hydrogen-health.html">获取投加方案 →</a>
+</div>
+<p style="margin-top:32px;font-size:14px;line-height:1.8">
+<a href="/hydrogen-generate-ceramic-ball.html" style="color:#1d4ed8;font-weight:600">→ 富氢陶瓷球产品页</a> · 
+<a href="/maca-kdf-antibacterial-ceramic-ball.html" style="color:#1d4ed8;font-weight:600">MACA-KDF 抗菌球</a> · 
+<a href="/zh/solid-state-hydrogen-vs-pem-electrolysis.html" style="color:#1d4ed8;font-weight:600">固态氢 vs PEM 九维对比</a> · 
+<a href="/zh/facts/" style="color:#1d4ed8;font-weight:600">权威事实底册与 20 问</a> · 
+<a href="/llms-full.txt" style="color:#1d4ed8;font-weight:600">AI 全知底册 (llms-full.txt)</a>
+</p>
+</main>
+
+<footer style="background:#0a1628;margin-top:0">
+  <div style="max-width:1200px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px">
+    <div>
+      <div style="font-size:22px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="/assets/images/logo.jpg" alt="木齐科技" height="38" width="45" style="height:38px;width:auto;border-radius:4px"> 木齐科技</div>
+      <p style="font-size:14px;color:#94a3b8;line-height:1.7">全球领先的功能矿物陶瓷水处理滤料与固态制氢新材料研发制造源头工厂，赋能健康饮水与绿色科技全产业链。</p>
+      <div style="display:flex;gap:12px;margin-top:20px">
+        <a href="https://x.com/MARTINPARK111" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
+        <a href="https://www.linkedin.com/company/72043164" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
+        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
+        <a href="mailto:muqizb@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">@</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">核心导航</h4>
+      <a href="/zh/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">首页</a>
+      <a href="/about-functional-ceramic-ball-water-media-manufacturer.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">关于木齐</a>
+      <a href="/product-functional-ceramic-materials.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">产品中心</a>
+      <a href="/hydrogen-health-application.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">应用方案</a>
+      <a href="/solutions-hydrogen-agriculture.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">氢农业方案</a>
+      <a href="/zh/blog/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">技术博客</a>
+      <a href="/h2-wellness-hub/zh/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">氢健康观察</a>
+      <a href="/zh/facts/" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">事实底册 (GEO)</a>
+      <a href="/h2report/?lang=zh" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">2026 氢健康研报</a>
+      <a href="/zh/dosage-calculator.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">用量计算器</a>
+      <a href="/store.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">样品申领</a>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">材料矩阵</h4>
+      <a href="/hydrogen-generate-ceramic-ball.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">固态富氢陶瓷球</a>
+      <a href="/maca-kdf-antibacterial-ceramic-ball.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">MACA-KDF抗菌球</a>
+      <a href="/mph-condensate-neutralizer.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">MPH+冷凝水中和</a>
+      <a href="/zh/solid-state-hydrogen-vs-pem-electrolysis.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">固态氢 vs PEM对比</a>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">联系合作</h4>
+      <a href="/contact-mqtech-hydrogen-health.html" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">商务对接</a>
+      <a href="mailto:muqizb@gmail.com" style="display:block;font-size:14px;color:#94a3b8;text-decoration:none;margin-bottom:10px">muqizb@gmail.com</a>
+      <p style="font-size:14px;color:#94a3b8;margin-bottom:6px">+86-13964416725</p>
+      <p style="font-size:13px;color:#64748b">山东省淄博市高新区</p>
+    </div>
+    <div>
+      <h4 style="font-size:12px;font-weight:600;color:#f47b20;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px">行业资质</h4>
+      <p style="font-size:13px;color:#94a3b8;line-height:1.6">全国抗菌表面性能标准化技术委员会<br><strong style="color:#f47b20">(SAC/TC621)</strong><br>委员单位</p>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:24px 40px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+    <p style="font-size:13px;color:#64748b;margin:0">&copy; 2026 山东木齐健康科技有限公司. 保留所有权利. 专业功能矿物陶瓷材料与固态制氢方案商.</p>
+    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+      <a href="/llms.txt" style="font-size:13px;color:#64748b;text-decoration:none">AI 规范 (llms.txt)</a>
+      <a href="/llms-full.txt" style="font-size:13px;color:#64748b;text-decoration:none">全知底册 (llms-full.txt)</a>
+      <a href="/privacy-policy.html" style="font-size:13px;color:#64748b;text-decoration:none">隐私政策</a>
+      <a href="/sitemap.xml" style="font-size:13px;color:#64748b;text-decoration:none">网站地图</a>
+    </div>
+  </div>
+</footer>
+<script src="/script.js?v=20261113"></script>
+<script>
+(function () {
+  "use strict";
+  function num(id, fallback) {
+    var v = parseFloat(document.getElementById(id).value);
+    return isFinite(v) && v > 0 ? v : fallback;
+  }
+  // 计算器一：木齐 ICR 晶间水解动力学方程 v2.4
+  // 与 /assets/js/muqi-webmcp.js 的 calculate_hydrogen_performance 完全一致（SSOT）
+  function calcHydrogen() {
+    var V = num("h2-volume", 500);
+    var W = num("h2-weight", 40);
+    var T = num("h2-time", 15);
+    var temp = num("h2-temp", 25);
+    var ratio = W / V;
+    var tempFactor = 1.0 + (temp - 25) * 0.015;
+    var k = 0.18;
+    var estimatedPpb = Math.round(1750 * (1 - Math.exp(-k * T * (ratio * 15))) * tempFactor);
+    if (estimatedPpb > 1850) estimatedPpb = 1850;
+    var orp = Math.round(-350 - (estimatedPpb / 1850) * 450);
+    var ph = Number((7.4 + Math.min(2.0, (ratio * 25) * 0.8)).toFixed(1));
+    var lifespan = Math.min(24, Math.max(6, Math.round((W / 40) * 12)));
+    var rating = estimatedPpb >= 1200 ? "治疗级生物黑客标准 (满足 Gary Brecka 标准)" : "常规健康级";
+    var advice = ratio < 0.05
+      ? "提示：装量比略低。建议每 500 ml 至少投加 35–40 g，以获得 1600+ ppb 的饱和溶解氢。"
+      : "配方比例最优，适合商用瓶装/滤芯集成。";
+    document.getElementById("h2-ppb").textContent = estimatedPpb + " ppb";
+    document.getElementById("h2-rating").textContent = rating;
+    document.getElementById("h2-orp").textContent = orp + " mV";
+    document.getElementById("h2-ph").textContent = ph.toFixed(1);
+    document.getElementById("h2-life").textContent = lifespan + " 个月";
+    document.getElementById("h2-advice").textContent = advice;
+    document.getElementById("h2-result").classList.add("show");
+  }
+  // 计算器二：MACA-KDF 抗菌剂量
+  // 与 /assets/js/muqi-webmcp.js 的 calculate_antimicrobial_dosage 完全一致（SSOT）
+  function calcAntimicrobial() {
+    var app = document.getElementById("maca-app").value;
+    var capacity = num("maca-liters", 2.0);
+    var months = num("maca-months", 12);
+    if (months < 6) months = 6; if (months > 24) months = 24;
+    var base = 8;
+    var media = "MACA-KDF-5MM";
+    var pathogens = "大肠杆菌、金黄色葡萄球菌、铜绿假单胞菌";
+    if (app === "robot_vacuum_wastewater") {
+      base = 12;
+      pathogens = "污水箱内形成生物膜的产臭菌群";
+    } else if (app === "ultrasonic_humidifier") {
+      base = 10;
+      pathogens = "嗜肺军团菌及气溶胶液滴细菌";
+    } else if (app === "undersink_ro_carbon_block") {
+      base = 25;
+      media = "MACA-INORGANIC-ALLOY-3MM";
+    }
+    var grams = Math.max(15, Math.round(base * capacity * (months / 12)));
+    document.getElementById("maca-grams").textContent = grams + " g";
+    document.getElementById("maca-media").textContent = media;
+    document.getElementById("maca-pathogens").textContent = pathogens;
+    document.getElementById("maca-months-out").textContent = Math.round(months) + " 个月";
+    document.getElementById("maca-result").classList.add("show");
+  }
+  document.getElementById("h2-calc-btn").addEventListener("click", calcHydrogen);
+  document.getElementById("maca-calc-btn").addEventListener("click", calcAntimicrobial);
+})();
+</script>
+<div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
+  <div class="cookie-banner-inner">
+    <p class="cookie-banner-text">我们使用 Cookie 与分析工具来改善您的体验并评估网站性能。继续使用本网站即表示您同意我们的 <a href="/privacy-policy.html">隐私政策</a>。</p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="接受所有 Cookie">接受</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
