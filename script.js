@@ -153,8 +153,8 @@
     var anchor = document.getElementById('b2bInquiryForm') || document.getElementById('homeRfqForm');
     if (!anchor || document.getElementById('mqDecisionFacts')) return;
     var facts = isZh
-      ? ['⚡ 12 个工作小时内响应', '🧪 样品窗口 5–22 天', '🏭 OEM 批量 20–25 个工作日发货', '🧾 SGS 等第三方检测报告可提供']
-      : ['⚡ Response within 12 business hours', '🧪 Sample window 5–22 days', '🏭 OEM batches dispatched in 20–25 business days', '🧾 SGS third-party test reports available'];
+      ? ['⚡ 12 个工作小时内响应', '🧪 样品窗口 5–22 天', '🏭 OEM 批量 20–25 个工作日发货', '🧾 SGS 等第三方检测报告可提供', '💰 最小起订金额 10,000 美元', '📅 产品有效期 12–60 个月（因产品而异）']
+      : ['⚡ Response within 12 business hours', '🧪 Sample window 5–22 days', '🏭 OEM batches dispatched in 20–25 business days', '🧾 SGS third-party test reports available', '💰 Minimum order value USD 10,000', '📅 Product validity 12–60 months (varies by product)'];
     var strip = document.createElement('div');
     strip.id = 'mqDecisionFacts';
     strip.setAttribute('role', 'list');

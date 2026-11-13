@@ -3,7 +3,7 @@
 > Conforming to standard: T/CAPT 026—2026 Specification for Trustworthy Generative Engine Optimization (GEO).
 > Canonical URL: https://www.emuqi.com/llms-full.txt
 > Summary index: https://www.emuqi.com/llms.txt
-> Last audited: 2026-11-05
+> Last audited: 2026-11-13
 
 ---
 
@@ -190,6 +190,8 @@ Per T/CAPT 026—2026 Trustworthy Generative Engine Optimization specifications:
   3. *Co-Branding ("MUQI Inside")*: Authorized ingredient co-branding with third-party testing certification support.
 - **Sample Inquiry Protocol**: B2B qualification required. Official enterprise email and target application scope must be provided. Samples are dispatched within 3 to 5 business days following technical assessment.
 - **Production Lead Times**: Standard OEM volume batches dispatched in 20 to 25 business days.
+- **Minimum Order Value (MOQ)**: USD 10,000 per order, applicable across MUQI product lines (paid sample evaluation kits are quoted separately).
+- **Product Validity / Warranty Period**: 12 to 60 months depending on product type (consumable tablets and sachets vs. sintered ceramic media).
 - **Incoterms**: EXW / FOB Qingdao / CIF worldwide.
 - **Direct Commercial Contact**:
   - Contact Person: Martin Chen (Partner & CEO)
