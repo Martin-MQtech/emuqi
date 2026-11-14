@@ -135,8 +135,8 @@
 .hub-nav-btn {
   display: inline-flex;
   align-items: center;
-  height: 34px;
-  padding: 0 14px;
+  height: 44px;
+  padding: 0 18px;
   color: #fff !important;
   background: var(--hub-navy);
   font-family: var(--font-heading);
