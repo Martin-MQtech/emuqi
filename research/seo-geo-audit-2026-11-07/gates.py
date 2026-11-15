@@ -5,7 +5,7 @@
 """
 import re, os, sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-SKIP = ('/templates/', '/scripts/', '/distribution_packages/', '/.git/', '/.freebuff/', '/emuqi/', '/research/')
+SKIP = ('/templates/', '/scripts/', '/distribution_packages/', '/.git/', '/.freebuff/', '/emuqi/', '/research/', '/scratch/')
 VERIFY_FILES = ('baidu_verify_codeva-DhmQrr2FTg.html', 'baidu_verify_codeva-K8eoRfjsrG.html',
                 'ByteDanceVerify.html', 'sogousiteverification.txt', '531ba2233ce04366bbfc10fa232651b5.txt')
 INTENTIONAL_NO_H1 = {'h2report/reader/index.html'}          # 11-04 定性: 交互式阅读器
