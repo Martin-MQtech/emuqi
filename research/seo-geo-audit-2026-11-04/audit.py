@@ -402,6 +402,65 @@ for rel, info in PAGE_INFO.items():
         if canonical not in text:
             log('P AI知识库缺文章', f'{name} 缺 {rel} -> {canonical}')
 
+# ================= Q. 博客列表卡片语言 / 唯一性 / 时间顺序 =================
+from datetime import datetime
+month_map = {
+    'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6,
+    'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12,
+    'january': 1, 'february': 2, 'march': 3, 'april': 4, 'june': 6,
+    'july': 7, 'august': 8, 'september': 9, 'october': 10,
+    'november': 11, 'december': 12,
+}
+for rel in ('blog/index.html', 'zh/blog/index.html'):
+    doc = DOCS.get(ROOT / rel, '')
+    zh = rel.startswith('zh/')
+    expected_prefix = '/zh/blog/' if zh else '/blog/'
+    seen_slugs = set()
+    previous_date = None
+    for m in re.finditer(r'<a\b([^>]*)>(.*?)</a>', doc, re.S|re.I):
+        body = m.group(2)
+        if not re.search(r'<h3\b', body, re.I):
+            continue
+        a = attrs('<a ' + m.group(1) + '>')
+        href = a.get('href', '').strip()
+        if not href:
+            log('Q 博客卡片缺链接', rel)
+            continue
+        path = href if href.startswith('/') else '/' + PurePosixPath(
+            PurePosixPath(rel).parent.as_posix(), href
+        ).as_posix()
+        path = norm_path(path)
+        if not path.startswith(expected_prefix):
+            target_rel = PATH_PAGE.get(path)
+            target_alts = PAGE_INFO.get(target_rel, {}).get('alts', {})
+            expected_lang = 'zh-CN' if zh else 'en'
+            if expected_lang in target_alts:
+                log('Q1 博客卡片语言树错链', f'{rel}: {href} 应位于 {expected_prefix}')
+        slug = PurePosixPath(path).name
+        if slug in seen_slugs:
+            log('Q2 博客卡片重复', f'{rel}: {slug}')
+        seen_slugs.add(slug)
+        card_text = html.unescape(re.sub(r'<[^>]+>', ' ', body))
+        card_text = re.sub(r'\s+', ' ', card_text)
+        date = None
+        dm = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日', card_text)
+        if dm:
+            date = datetime(int(dm.group(1)), int(dm.group(2)), int(dm.group(3))).date()
+        else:
+            dm = re.search(r'([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})', card_text)
+            if dm and dm.group(1).lower() in month_map:
+                date = datetime(int(dm.group(3)), month_map[dm.group(1).lower()], int(dm.group(2))).date()
+            else:
+                dm = re.search(r'(\d{4})-(\d{2})-(\d{2})', card_text)
+                if dm:
+                    date = datetime(int(dm.group(1)), int(dm.group(2)), int(dm.group(3))).date()
+        if not date:
+            log('Q3 博客卡片日期缺失', f'{rel}: {slug}')
+        elif previous_date and previous_date < date:
+            log('Q3 博客卡片时间倒序', f'{rel}: {slug} {date} 晚于前卡 {previous_date}')
+        if date:
+            previous_date = date
+
 # ================= 输出 =================
 total = 0
 print(f'扫描 HTML: {len(FILES)} | sitemap URL: {len(urls)} | 301 规则: {len(rules)}+prefix')
