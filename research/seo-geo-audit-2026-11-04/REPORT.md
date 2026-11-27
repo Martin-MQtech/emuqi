@@ -17,7 +17,7 @@
 - 判定前先消误报：原始命中 239 项，其中 164 项属 robots 禁抓目录、存根页与资源文件，真实问题 75 项，修复后剩 4 项。
 - 基线以 `git fetch` 后远端 `main` 为准（本地工作副本曾落后 2 个月，期间并行 Agent 推入 12 个提交，含日文 v1.1 全本与四语 PDF 压缩）。补丁在 `18c7902` 工作树逐文件复核后落地，未回退任何他人改动。
 - 结构校验：56 个变更文件无 `/zh/zh/` 双前缀、无 `emuqi.com/https://` 双协议、无空 title、html/body/script 标签配平一致。
-- **本目录附带 `audit.py`**，在仓库根目录执行 `python3 research/seo-geo-audit-2026-11-04/audit.py` 即可复跑全部规则（A 断链 / B sitemap 双向 / E 元数据长度 / G OG / H 语言码 / I lang / J1 英文页中文残留 / L 存根一致性 / M CSS `url()` / N 中文树标题语言），当前输出为 4 项且均为上文的有意项。下次发布前直接跑它，别再靠肉眼。
+- **本目录附带 `audit.py`**，在仓库根目录执行 `python3 research/seo-geo-audit-2026-11-04/audit.py` 即可复跑全部规则（A 断链 / B sitemap 双向 / C-D canonical 与 hreflang / E-G 元数据 / H JSON-LD / I-J 语言 / K-L 列表与迁移 / M-N 资源与标题 / O 可见语言切换器）。2026-11-04 当时输出为 4 项且均为有意项；2026-11-27 的 V3 复检结果见文末追加记录。
 
 ## 本轮改了什么
 
@@ -62,3 +62,25 @@ git add <本次 56 个文件> && git commit && git push origin main
 推送后 Hostinger 自动同步（1–2 分钟），GitHub Pages 由 `deploy.yml` 构建（数分钟，`gh api repos/Martin-MQtech/emuqi/pages --jq .status` 读到 `built` 为准）。落地验收：`/blog/hydrogen-patch-opportunity.html` 应 301 到 `/zh/blog/…`（`curl -I` 看 `location`）；全站 `grep -rl 'zh-Hans' --include='*.html' .` 应为 0；`sitemap.xml` 应包含新中文正文 URL 且不含存根 URL；`blog/index.html` 的对应卡片应指向 `/zh/blog/…` 并标注 Chinese edition。
 
 **存根页在 GitHub Pages 上的注意点：** Pages 不解析 `.htaccess`，旧中文 URL 在镜像上靠存根页的 `meta refresh` + JS 跳转兜底，不是 301。因此新加中文文章迁移时，存根 HTML 与 `.htaccess` 规则必须同批提交，缺一个镜像就会露 404 或重复内容。
+
+---
+
+## 2026-11-27 V3 复检与修复追加记录
+
+**基线**：`git fetch` 后 `HEAD = origin/main = f278c5d`。本轮只检查生产页面，排除 `scratch/`、`research/`、`scripts/`、`distribution_packages/`、模板与验证文件；并行 Agent 的未跟踪 `scratch/w14/` 未改动、未提交。
+
+**审计范围**：196 个生产 HTML、191 个 sitemap URL、17 条显式 301 规则 + 1 条 Hub 前缀规则。V3 新增 canonical 当前页校验、hreflang 互指/重复/x-default 一致性、JSON-LD `inLanguage`、可见语言切换器对照、301 源内链检测和 `llms.txt` / `llms-full.txt` 文章覆盖检测，并把 5 个有意保留中文的英文页列入显式豁免：双语视频、版权证书原文、SAC 公告原文、企业注册名目录、方法论双语提示。
+
+| 修复类别 | 数量 | 处置 |
+|---|---:|---|
+| 英文博客重复 hreflang | 18 页 | 保留首组 EN/ZH/x-default，删除后续重复 EN/x-default |
+| 中文博客 JSON-LD 语言码 | 17 页 | 文章 `inLanguage` 由 `en` 改为 `zh-CN` |
+| 可见语言切换器错链 | 21 处 | 18 个中文页 EN 胶囊改指对应英文文章；3 个英文页中文胶囊改指对应中文文章 |
+| 旧 Hub / 旧文章内链 | 20 处 | 18 个 `/zh/h2-wellness-hub/` 改指 `/h2-wellness-hub/zh/`；视频页 2 个旧英文 URL 改指 `-en.html` |
+| x-default | 3 处 | 视频与植物蛋白两组统一指向英文 canonical；农业英文页补 x-default |
+| 隐私页虚假中文 hreflang | 1 处 | 删除指向中文首页的 `zh-CN` alternate；站点无中文隐私政策译文，不制造假配对 |
+| 元数据超长 | 6 项 | 3 个 title、3 个 description 收敛，并同步 OG / JSON-LD headline / H1 |
+| AI 知识库覆盖 | 15 + 64 URL | `llms.txt` 补 15 个缺失文章 URL；`llms-full.txt` 增加 65 篇完整双语文章索引 |
+| 当前架构文档 | 3 处 | 手册目录树与 §12.1 更新为 33 篇中文正文、32 篇英文正文、11 个存根桩 |
+
+**复检结果**：生产静态审计 `问题总数: 0`。本轮未改 `.htaccess`、未改产品参数、未触碰站外账号或缓存配置；线上部署状态在提交推送后另行复核。

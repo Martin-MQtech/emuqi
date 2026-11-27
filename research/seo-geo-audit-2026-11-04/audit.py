@@ -1,13 +1,23 @@
 #!/usr/bin/env python3
-"""MUQI emuqi 全站审计 V2 —— 适配 /zh/ 分支迁移后架构 (2026-11-04)"""
-import os, re, json, glob
+"""MUQI emuqi 全站审计 V3 —— 生产页面审计与双语配对 (2026-11-27)"""
+import os, re, json, glob, html
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlparse, unquote
 
 import sys
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else '.').resolve()
-SKIP_DIRS = ('templates/', 'node_modules/', '.github/')
+SKIP_DIRS = ('templates/', 'node_modules/', '.github/', 'scratch/', 'research/',
+             'scripts/', 'distribution_packages/', 'emuqi/')
+SKIP_FILES = ('404.html', 'baidu_verify_', 'ByteDanceVerify', 'sogousiteverification')
 STUB = re.compile(r'http-equiv=["\']refresh["\'][^>]*content=["\']\s*\d+\s*;\s*url=', re.I)
+# 这些英文页有意保留中文：双语视频、证书/公告原文、企业注册名与方法论双语提示。
+INTENTIONAL_CJK = {
+    'blog/hydrogen-ten-questions-video-series-en.html',
+    'blog/muqi-solid-hydrogen-lab-icr-copyright-certificates-en.html',
+    'blog/sac-tc621-national-antimicrobial-standard-committee-en.html',
+    'h2-wellness-hub/enterprise-archive.html',
+    'h2-wellness-hub/methodology.html',
+}
 
 # ---- .htaccess 301 规则 (源路径 -> 目标) ----
 HT = (ROOT / '.htaccess').read_text(encoding='utf-8', errors='ignore') if (ROOT / '.htaccess').exists() else ''
@@ -31,7 +41,8 @@ def redirect_target(rel):
 
 # ---- 收集文件 ----
 ALL = sorted(Path(f) for f in glob.glob(str(ROOT / '**' / '*.html'), recursive=True))
-FILES = [p for p in ALL if not any(s in str(p.relative_to(ROOT)) for s in SKIP_DIRS)]
+FILES = [p for p in ALL if not any(s in str(p.relative_to(ROOT)) for s in SKIP_DIRS)
+         and not p.name.startswith(SKIP_FILES)]
 DOCS = {p: p.read_text(encoding='utf-8', errors='ignore') for p in FILES}
 
 def rel_of(p): return p.relative_to(ROOT).as_posix()
@@ -68,14 +79,17 @@ for p in FILES:
         else:
             path = unquote(l)
             if not path: continue
+            trailing_slash = path.endswith('/')
             path = path if path.startswith('/') else PurePosixPath(base.relative_to(ROOT).as_posix(), path).as_posix()
+            if trailing_slash and not path.endswith('/'):
+                path += '/'
         if path.endswith('/'): path = path + 'index.html'
         if not path.startswith('/'): path = '/' + path
-        cand = [str(ROOT) + path, str(ROOT) + path + '.html', os.path.join(str(ROOT) + path, 'index.html')]
-        if any(os.path.isfile(c) for c in cand): continue
-        if redirect_target(path.lstrip('/')):   # 有 301 规则 -> 不算断链
+        if redirect_target(path.lstrip('/')):   # 即使存根文件存在，也应直接链接最终 URL
             log('A2 内链指向301源(应改最终URL)', f'{rel} -> {l}')
             continue
+        cand = [str(ROOT) + path, str(ROOT) + path + '.html', os.path.join(str(ROOT) + path, 'index.html')]
+        if any(os.path.isfile(c) for c in cand): continue
         # webp rewrite 兜底
         if re.search(r'\.(jpe?g|png)$', path) and os.path.isfile(str(str(ROOT) + path).rsplit('.', 1)[0] + '.webp'): continue
         log('A 断链', f'{rel} -> {l}')
@@ -94,30 +108,110 @@ for u in urls:
     if not ok: log('B1 sitemap死URL', u)
 for p in FILES:
     rel = rel_of(p)
-    if rel in ('404.html',): continue
+    if rel in ('404.html', 'h2report/reader/index.html'): continue
     if rel in in_sm or ( '/' + rel) in in_sm: continue
     stem = rel[:-5] if rel.endswith('.html') else rel
     if stem + '/' in in_sm or (rel == 'index.html') or (stem in in_sm): continue
     if real_page(p): log('B2 页面未收录sitemap', rel)
 
-# ================= C. canonical / hreflang 落在 301 源 =================
+# ================= C/D. canonical / hreflang 完整性、互指与重复 =================
+def attrs(tag):
+    return {m.group(1).lower(): html.unescape(m.group(2))
+            for m in re.finditer(r'([\w:-]+)\s*=\s*["\']([^"\']*)["\']', tag)}
+
+def norm_path(path):
+    path = unquote(urlparse(path).path or '/')
+    if path != '/':
+        path = path.rstrip('/')
+        if path.endswith('/index.html'):
+            path = path[:-10]
+    return path or '/'
+
+def rel_url_path(rel):
+    return '/' + (rel[:-10] if rel.endswith('index.html') else rel)
+
+PAGE_INFO = {}
+PATH_PAGE = {}
+checked_xdefault = set()
 for p in FILES:
-    rel = rel_of(p); doc = DOCS[p]
-    if STUB.search(doc[:3000]): continue
-    for m in re.finditer(r'<link[^>]+rel=["\']canonical["\'][^>]*>', doc, re.I):
-        h = re.search(r'href=["\']([^"\']+)', m.group(0))
-        if h:
-            path = urlparse(h.group(1)).path
-            if redirect_target(path.lstrip('/')):
-                log('C canonical指向301源', f'{rel} -> {h.group(1)}')
-            if urlparse(h.group(1)).netloc not in ('www.emuqi.com',):
-                log('C canonical主机非www', f'{rel} -> {h.group(1)}')
-    for m in re.finditer(r'<link[^>]+rel=["\']alternate["\'][^>]+hreflang=["\']([^"\']+)["\'][^>]*>', doc, re.I):
-        tag = m.group(1); h = re.search(r'href=["\']([^"\']+)', m.group(0))
-        if not h: continue
-        path = urlparse(h.group(1)).path
-        if tag in ('en', 'zh-CN', 'x-default') and redirect_target(path.lstrip('/')) and tag == 'zh-CN':
-            log('D hreflang指向301源', f'{rel} [{tag}] -> {h.group(1)}')
+    rel = rel_of(p)
+    if not real_page(p):
+        continue
+    doc = DOCS[p]
+    links = [attrs(t) for t in re.findall(r'<link\b[^>]*>', doc, re.I)]
+    canonical = next((a.get('href') for a in links if 'canonical' in a.get('rel', '').lower().split()), None)
+    lang_m = re.search(r'<html\b[^>]*\blang=["\']([^"\']+)', doc, re.I)
+    alts = {}
+    duplicates = []
+    for a in links:
+        if 'alternate' not in a.get('rel', '').lower().split() or not a.get('hreflang') or not a.get('href'):
+            continue
+        lang = a['hreflang']
+        if lang in alts:
+            duplicates.append(lang)
+        alts[lang] = a['href']
+    info = {'canonical': canonical, 'lang': (lang_m.group(1) if lang_m else ''),
+            'alts': alts, 'duplicates': duplicates}
+    PAGE_INFO[rel] = info
+    if canonical:
+        PATH_PAGE[norm_path(canonical)] = rel
+
+for rel, info in PAGE_INFO.items():
+    doc = DOCS[ROOT / rel]
+    canonical = info['canonical']
+    if not canonical:
+        log('C 缺canonical', rel)
+    else:
+        cp = urlparse(canonical)
+        cpath = norm_path(canonical)
+        if cp.netloc != 'www.emuqi.com':
+            log('C canonical主机非www', f'{rel} -> {canonical}')
+        if redirect_target(cp.path.lstrip('/')):
+            log('C canonical指向301源', f'{rel} -> {canonical}')
+        if rel != 'h2report/reader/index.html' and cpath != norm_path(rel_url_path(rel)):
+            log('C canonical非当前页', f'{rel} -> {canonical}')
+    if info['duplicates']:
+        log('D hreflang重复声明', f"{rel}: {info['duplicates']}")
+    for lang, href in info['alts'].items():
+        hp = urlparse(href)
+        path = norm_path(href)
+        if hp.netloc != 'www.emuqi.com':
+            log('D hreflang主机非www', f'{rel} [{lang}] -> {href}')
+        if redirect_target(hp.path.lstrip('/')):
+            log('D hreflang指向301源', f'{rel} [{lang}] -> {href}')
+        target_rel = PATH_PAGE.get(path)
+        if not target_rel:
+            candidate = ROOT / path.lstrip('/')
+            if path.endswith('/'):
+                candidate = candidate / 'index.html'
+            elif not candidate.suffix:
+                candidate = Path(str(candidate) + '.html')
+            if candidate.is_file():
+                target_rel = rel_of(candidate)
+        if not target_rel or target_rel not in PAGE_INFO:
+            log('D hreflang目标非正式页面', f'{rel} [{lang}] -> {href}')
+            continue
+        if lang in ('en', 'zh-CN'):
+            current_path = norm_path(rel_url_path(rel))
+            if path == current_path:
+                continue
+            back_lang = 'zh-CN' if lang == 'en' else 'en'
+            back = PAGE_INFO[target_rel]['alts'].get(back_lang)
+            if not back or norm_path(back) != current_path:
+                log('D hreflang未互指', f'{rel} [{lang}] -> {href}; 回链={back or "缺失"}')
+        if lang == 'x-default':
+            en_href = info['alts'].get('en')
+            zh_href = info['alts'].get('zh-CN')
+            if en_href and zh_href:
+                pair = tuple(sorted((norm_path(en_href), norm_path(zh_href))))
+                if pair not in checked_xdefault:
+                    checked_xdefault.add(pair)
+                    en_rel = PATH_PAGE.get(norm_path(en_href))
+                    zh_rel = PATH_PAGE.get(norm_path(zh_href))
+                    en_x = PAGE_INFO.get(en_rel, {}).get('alts', {}).get('x-default')
+                    zh_x = PAGE_INFO.get(zh_rel, {}).get('alts', {}).get('x-default')
+                    if not en_x or not zh_x or norm_path(en_x) != norm_path(zh_x):
+                        log('D x-default双语不一致', f'{en_rel} [{en_x or "缺失"}] vs {zh_rel} [{zh_x or "缺失"}]')
 
 # ================= E/F/G. meta 质量 =================
 def meta(doc, pat):
@@ -137,8 +231,12 @@ for p in FILES:
     if not real_page(p): continue
     t = meta(doc, r'<title[^>]*>(.*?)</title>')
     d = meta_by_name(doc, 'description')
+    t = html.unescape(re.sub(r'\s+', ' ', t)).strip() if t else None
+    d = html.unescape(re.sub(r'\s+', ' ', d)).strip() if d else None
+    zh = is_zh(rel)
     if not t: log('E 缺title', rel)
-    elif len(t) > 65 or len(t) < 25: log('E title长度', f'{rel} ({len(t)}) {t[:70]}')
+    elif len(t) > (60 if zh else 65) or len(t) < (12 if zh else 25):
+        log('E title长度', f'{rel} ({len(t)}) {t[:70]}')
     if not d: log('E 缺description', rel)
     elif len(d) > 165: log('E desc过长', f'{rel} ({len(d)})')
     if t: titles.setdefault(t, []).append(rel)
@@ -155,11 +253,36 @@ for p in FILES:
     if need: log('G OG/Twitter缺失', f'{rel} 缺 {need}')
 
 # ================= H. JSON-LD =================
+def walk_json(value):
+    if isinstance(value, dict):
+        yield value
+        for child in value.values():
+            yield from walk_json(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from walk_json(child)
+
 for p in FILES:
     rel = rel_of(p); doc = DOCS[p]
     for m in re.finditer(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>', doc, re.S|re.I):
-        try: json.loads(m.group(1))
-        except Exception as e: log('H JSON-LD解析失败', f'{rel}: {e}')
+        try:
+            data = json.loads(m.group(1))
+        except Exception as e:
+            log('H JSON-LD解析失败', f'{rel}: {e}')
+            continue
+        if not real_page(p):
+            continue
+        expected = 'zh-CN' if is_zh(rel) else 'en'
+        for node in walk_json(data):
+            types = node.get('@type', [])
+            types = [types] if isinstance(types, str) else types
+            if any(t in ('Article', 'BlogPosting', 'TechArticle') for t in types):
+                actual = node.get('inLanguage')
+                values = actual if isinstance(actual, list) else [actual]
+                valid = any(v == expected or (expected == 'en' and isinstance(v, str) and v.startswith('en-'))
+                            for v in values)
+                if actual and not valid:
+                    log('H JSON-LD语言不符', f'{rel}: inLanguage={actual} 期望={expected}')
     if 'zh-Hans' in doc and real_page(p): log('H inLanguage旧码zh-Hans', rel)
 
 # ================= I/J. lang 属性 & 混排 =================
@@ -177,7 +300,7 @@ for p in FILES:
         n = 0
     if exp == 'en':
         n = cjk_count(vis)
-        if n > 30:
+        if n > 30 and rel not in INTENTIONAL_CJK:
             samp = re.findall(r'[\u4e00-\u9fff]{2,12}', vis)[:4]
             log('J1 EN页含中文', f'{rel}: {n} 处 | 例: {samp}')
     else:
@@ -207,14 +330,23 @@ for p in FILES:
         norm = lambda x: (x or '').replace('https://www.emuqi.com', '').replace('http://www.emuqi.com', '').split('#')[0].rstrip('/').removesuffix('/index.html').rstrip('/')
         if not c or 'noindex' not in doc or norm(c.group(1)) != norm(tgt) or (m and norm(m.group(1)) != norm(tgt)):
             log('L 存根页canonical/跳转不一致', rel)
-# 同名 slug 双语共存但无规则
+# 同名 slug 双语共存：仅语言、canonical 与互链都正确时视为合法双语对
 zh_slugs = {f.stem for f in (ROOT / 'zh' / 'blog').glob('*.html')} if (ROOT / 'zh' / 'blog').exists() else set()
 for s in sorted(zh_slugs):
     if s == 'index': continue
-    old = ROOT / 'blog' / f'{s}.html'
-    old = ROOT / 'blog' / f'{s}.html'
-    if old.is_file() and not redirect_target(f'blog/{s}.html') and not is_stub_page(old) and '/blog/index' not in s:
-        log('L2 中文页无301且非存根(重复内容)', f'blog/{s}.html vs zh/blog/{s}.html')
+    old_rel, zh_rel = f'blog/{s}.html', f'zh/blog/{s}.html'
+    old = ROOT / old_rel
+    if not old.is_file() or redirect_target(old_rel) or is_stub_page(old):
+        continue
+    en_info, zh_info = PAGE_INFO.get(old_rel, {}), PAGE_INFO.get(zh_rel, {})
+    en_ok = (en_info.get('lang') == 'en' and
+             norm_path(en_info.get('canonical') or '') == norm_path(rel_url_path(old_rel)) and
+             norm_path(en_info.get('alts', {}).get('zh-CN') or '') == norm_path(rel_url_path(zh_rel)))
+    zh_ok = (zh_info.get('lang') == 'zh-CN' and
+             norm_path(zh_info.get('canonical') or '') == norm_path(rel_url_path(zh_rel)) and
+             norm_path(zh_info.get('alts', {}).get('en') or '') == norm_path(rel_url_path(old_rel)))
+    if not (en_ok and zh_ok):
+        log('L2 同slug双语对未正确隔离', f'{old_rel} vs {zh_rel}')
 
 # ================= M/N 迁移后遗症：CSS url() 断链 与 中文树标题语言 =================
 import posixpath
@@ -236,6 +368,39 @@ for p_ in FILES:
     for tag, m in (('<title>', t), ('<h1>', h)):
         if m and not re.search(r'[\u4e00-\u9fff]', m.group(1)):
             log('N 中文树页面标题无中文', f'{rel} {tag}: {re.sub(chr(60)+"[^>]+"+chr(62), " ", m.group(1)).strip()[:50]}')
+
+# ================= O. 可见语言切换器与 hreflang 一致性 =================
+for rel, info in PAGE_INFO.items():
+    doc = DOCS[ROOT / rel]
+    zh = is_zh(rel)
+    expected = info['alts'].get('en' if zh else 'zh-CN')
+    if not expected:
+        continue
+    for m in re.finditer(r'<a\b([^>]*)>(.*?)</a>', doc, re.S|re.I):
+        a = attrs('<a ' + m.group(1) + '>')
+        if 'lang-pill-opt' not in a.get('class', '').split() or not a.get('href'):
+            continue
+        label = html.unescape(re.sub(r'<[^>]+>', '', m.group(2))).strip()
+        if (zh and label == 'EN') or ((not zh) and '中文' in label):
+            if norm_path(a['href']) != norm_path(expected):
+                log('O 语言切换器错链', f'{rel}: {label} -> {a["href"]}; 应为 {expected}')
+
+# ================= P. AI 知识库文章覆盖 =================
+ai_indexes = {}
+for name in ('llms.txt', 'llms-full.txt'):
+    path = ROOT / name
+    ai_indexes[name] = path.read_text(encoding='utf-8', errors='ignore') if path.exists() else ''
+for rel, info in PAGE_INFO.items():
+    if rel in ('blog/index.html', 'zh/blog/index.html'):
+        continue
+    if not (rel.startswith('blog/') or rel.startswith('zh/blog/')):
+        continue
+    canonical = info.get('canonical')
+    if not canonical:
+        continue
+    for name, text in ai_indexes.items():
+        if canonical not in text:
+            log('P AI知识库缺文章', f'{name} 缺 {rel} -> {canonical}')
 
 # ================= 输出 =================
 total = 0
