@@ -85,3 +85,19 @@ git add <本次 56 个文件> && git commit && git push origin main
 | 中文博客列表 | 16 张重复英文卡 | 删除已有中文译文的英文目标重复卡，33 张中文卡按发布日期降序重排；V3 增加卡片语言树、重复与日期顺序检查 |
 
 **复检结果**：生产静态审计 `问题总数: 0`；博客 chronological hard gate 中英文各 33 张卡片全部通过。首次推送后 GitHub Pages 构建被既有中文列表乱序阻断，已修复并重新提交。本轮未改 `.htaccess`、未改产品参数、未触碰站外账号或缓存配置；线上部署状态在提交推送后另行复核。
+
+## 2026-11-27 V3.1 可见语言切换补齐与边缘缓存收尾
+
+**触发原因**：V3 的 O 段原先只能发现“已有语言胶囊指错”，不能发现“整页没有语言切换”。本轮把 O 段升级为同时检查错链与缺失，并过滤 YouTube 等外部链接，避免把播放列表名称里的“中文 / English”误判为站内切换器。
+
+| 修复类别 | 数量 | 处置 |
+|---|---:|---|
+| 旧英文博客缺中文入口 | 15 页 | 在导航 Contact 后补统一 EN / 中文语言胶囊，中文目标逐页对应 `/zh/blog/<slug>.html` |
+| 主题地图语言链接回错首页 | 2 页 | 英文与中文 topics 页互指对应孪生页，不再只回 Hub 首页 |
+| 中文 SAC 文章缺英文入口 | 1 页 | 无导航头页面补固定右上角 English 入口，指向对应 `-en.html` 正文 |
+| Hub 页脚语言链接回错首页 | 6 页 | methodology、enterprise-archive、research-database 三组中英文页互指对应孪生页 |
+| sitemap 时戳 | 9 条 | 上述 Hub / topics / SAC 页面 `lastmod` 更新为 `2026-11-27`；15 个英文博客此前已是该日期 |
+
+**边缘缓存处置**：正常 URL 的旧 Cloudflare HIT 已通过 Purge Everything 清除，抽检 `/blog/hydrogen-soap.html`、`/zh/blog/hydrogen-soap.html`、`/zh/blog/` 均返回 200 / MISS 与新版内容。AI 索引规则 `Edge Cache AI Spec Files (llms.txt)` 已从“忽略源站头、固定 2 小时”改为“源站有 Cache-Control 则遵循，否则 bypass”，保存后重新打开规则确认目标选项仍为选中状态，使 `.htaccess` 的 `max-age=300, must-revalidate` 可以实际生效。
+
+**门禁结果**：修复后生产静态审计恢复 `问题总数: 0`，中英文博客各 33 张卡片 chronological hard gate 全部通过，`git diff --check` 通过。本次 24 个生产页面与审计脚本随本轮提交推送，部署后再做正常 URL 线上复验与 Purge Everything。

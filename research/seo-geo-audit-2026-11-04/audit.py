@@ -376,14 +376,27 @@ for rel, info in PAGE_INFO.items():
     expected = info['alts'].get('en' if zh else 'zh-CN')
     if not expected:
         continue
+    found = False
     for m in re.finditer(r'<a\b([^>]*)>(.*?)</a>', doc, re.S|re.I):
         a = attrs('<a ' + m.group(1) + '>')
-        if 'lang-pill-opt' not in a.get('class', '').split() or not a.get('href'):
+        classes = a.get('class', '').split()
+        if not a.get('href'):
+            continue
+        href = a.get('href', '')
+        hp = urlparse(href)
+        if hp.scheme in ('http', 'https') and 'emuqi.com' not in hp.netloc:
             continue
         label = html.unescape(re.sub(r'<[^>]+>', '', m.group(2))).strip()
-        if (zh and label == 'EN') or ((not zh) and '中文' in label):
-            if norm_path(a['href']) != norm_path(expected):
+        target_lang_label = (zh and ('EN' in label or 'English' in label)) or ((not zh) and '中文' in label)
+        if not target_lang_label:
+            continue
+        if 'lang-pill-opt' in classes or 'hub-language-link' in classes or target_lang_label:
+            if norm_path(a['href']) == norm_path(expected):
+                found = True
+            else:
                 log('O 语言切换器错链', f'{rel}: {label} -> {a["href"]}; 应为 {expected}')
+    if not found:
+        log('O2 双语页缺可见语言切换', f'{rel}: 应显示指向 {expected} 的语言链接')
 
 # ================= P. AI 知识库文章覆盖 =================
 ai_indexes = {}
