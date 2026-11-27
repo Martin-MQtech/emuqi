@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""MUQI emuqi 全站审计 V3 —— 生产页面审计与双语配对 (2026-11-27)"""
-import os, re, json, glob, html
+"""MUQI emuqi 全站审计 V3.2 —— 生产页面审计与双语配对 (2026-11-27)"""
+import os, re, json, glob, html, posixpath
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlparse, unquote
 
@@ -73,18 +73,20 @@ for p in FILES:
         l = l.strip()
         if not l or l.startswith(('mailto:', 'tel:', 'javascript:', 'data:', '#')): continue
         pr = urlparse(l)
+        trailing_slash = unquote(pr.path if pr.scheme in ('http', 'https') else l).endswith('/')
         if pr.scheme in ('http', 'https'):
             if 'emuqi.com' not in pr.netloc: continue
             path = unquote(pr.path)
         else:
             path = unquote(l)
             if not path: continue
-            trailing_slash = path.endswith('/')
             path = path if path.startswith('/') else PurePosixPath(base.relative_to(ROOT).as_posix(), path).as_posix()
-            if trailing_slash and not path.endswith('/'):
-                path += '/'
+        # 浏览器会把 ../ 折叠为父级；审计必须先做同样的 POSIX 规范化，
+        # 否则 zh/blog/../h2-wellness-hub/ 会漏报为旧 /zh/h2-wellness-hub/ 301 源。
+        path = posixpath.normpath('/' + path.lstrip('/'))
+        if trailing_slash and path != '/':
+            path += '/'
         if path.endswith('/'): path = path + 'index.html'
-        if not path.startswith('/'): path = '/' + path
         if redirect_target(path.lstrip('/')):   # 即使存根文件存在，也应直接链接最终 URL
             log('A2 内链指向301源(应改最终URL)', f'{rel} -> {l}')
             continue

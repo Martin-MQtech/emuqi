@@ -101,3 +101,16 @@ git add <本次 56 个文件> && git commit && git push origin main
 **边缘缓存处置**：正常 URL 的旧 Cloudflare HIT 已通过 Purge Everything 清除，抽检 `/blog/hydrogen-soap.html`、`/zh/blog/hydrogen-soap.html`、`/zh/blog/` 均返回 200 / MISS 与新版内容。AI 索引规则 `Edge Cache AI Spec Files (llms.txt)` 已从“忽略源站头、固定 2 小时”改为“源站有 Cache-Control 则遵循，否则 bypass”，保存后重新打开规则确认目标选项仍为选中状态，使 `.htaccess` 的 `max-age=300, must-revalidate` 可以实际生效。
 
 **门禁结果**：修复后生产静态审计恢复 `问题总数: 0`，中英文博客各 33 张卡片 chronological hard gate 全部通过，`git diff --check` 通过。本次 24 个生产页面与审计脚本随本轮提交推送，部署后再做正常 URL 线上复验与 Purge Everything。
+
+## 2026-11-27 V3.2 相对路径规范化与旧 Hub 内链清零
+
+**触发原因**：V3.1 推送后的浏览器实测发现，中文氢皂文章“探索相关主题”中的 `../h2-wellness-hub/` 会被浏览器解析为旧路径 `/zh/h2-wellness-hub/`，继而触发 301。V3.1 的静态规则只拼接相对路径、没有折叠 `..`，因此漏报；这是审计规则盲区，不是页面偶发错误。
+
+**审计升级**：A 段先按页面所在目录解析相对路径，再用 `posixpath.normpath` 执行与浏览器一致的 POSIX 规范化，保留结尾斜杠语义后检查 301 源。升级后反向命中 9 个中文博客页面，确认规则能够发现该类问题。
+
+| 修复类别 | 数量 | 处置 |
+|---|---:|---|
+| 中文文章旧 Hub 相对链接 | 9 处 | `../h2-wellness-hub/` 统一改为 `/h2-wellness-hub/zh/`，直接进入中文 Hub，不再经过旧路径 301 |
+| sitemap 时戳复核 | 9 条 | 对应中文正文 `lastmod` 已全部为 `2026-11-27`，无需重复修改 |
+
+**门禁结果**：生产静态审计 `问题总数: 0`；中英文博客各 33 张卡片 chronological hard gate 全部通过；`git diff --check` 通过。本轮生产修改为 9 个中文博客页面，另同步升级审计脚本至 V3.2。
