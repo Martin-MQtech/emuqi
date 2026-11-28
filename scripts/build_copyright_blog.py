@@ -72,7 +72,7 @@ def build():
   <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="/style.css?v=20261016b">
+  <link rel="stylesheet" href="/style.css?v=20261128">
 
   <!-- JSON-LD Structured Data (TechArticle, BreadcrumbList, FAQPage, Organization) -->
   <script type="application/ld+json">
@@ -1318,7 +1318,7 @@ def build():
   <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="/style.css?v=20261016b">
+  <link rel="stylesheet" href="/style.css?v=20261128">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">

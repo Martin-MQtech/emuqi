@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../style.css?v=20261114">
+<link rel="stylesheet" href="../style.css?v=20261128">
 <style>
 /* Critical Language Pill Switch Styles */
 .lang-pill-switch { display: inline-flex !important; align-items: center !important; gap: 2px !important; height: 30px !important; padding: 2px 4px 2px 7px !important; background: rgba(255,255,255,0.8) !important; border: 1px solid rgba(10,22,40,0.18) !important; border-radius: 9999px !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06) !important; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; margin-left: 6px !important; flex-shrink: 0 !important; box-sizing: border-box !important; user-select: none !important; }
@@ -157,7 +157,7 @@
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
-<script src="../assets/js/analytics.js" defer></script>
+
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -641,14 +641,14 @@
 <!-- FOOTER -->
 </main>
 <footer style="background:#0a1628;margin-top:0">
-  <div style="max-width:1200px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px">
+  <div class="site-footer-grid">
     <div>
       <div style="font-size:22px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="/assets/images/logo.jpg" alt="木齐科技" height="38" width="45" style="height:38px;width:auto;border-radius:4px"> 木齐科技</div>
       <p style="font-size:14px;color:#94a3b8;line-height:1.7">全球领先的功能矿物陶瓷水处理滤料与固态制氢新材料研发制造源头工厂，赋能健康饮水与绿色科技全产业链。</p>
       <div style="display:flex;gap:12px;margin-top:20px">
-        <a href="https://x.com/MARTINPARK111" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
-        <a href="https://www.linkedin.com/company/72043164" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
-        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
+        <a href="https://x.com/MARTINPARK111" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
+        <a href="https://www.linkedin.com/company/72043164" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
+        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
         <a href="mailto:muqizb@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">@</a>
       </div>
     </div>
@@ -697,11 +697,12 @@
 </footer>
 
 
-<script src="../script.js?v=20261113"></script>
+<script src="../script.js?v=20261128"></script>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie 声明">
   <div class="cookie-banner-inner">
-    <p class="cookie-banner-text">我们使用必要的 Cookie 和匿名分析以提升您的访问体验与网站服务。继续浏览即表示您同意我们的<a href="/privacy-policy.html">隐私政策</a>。</p>
+    <p class="cookie-banner-text">我们使用网站运行所必需的 Cookie。只有您选择<strong>接受</strong>后，才会启用分析与广告服务；您也可以选择<strong>拒绝</strong>。详见<a href="/privacy-policy.html">隐私政策</a>。</p>
     <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-reject" id="cookieRejectBtn" aria-label="拒绝非必要 Cookie（分析与广告将保持关闭）">拒绝</button>
       <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="接受全部 Cookie">接受并继续</button>
     </div>
   </div>

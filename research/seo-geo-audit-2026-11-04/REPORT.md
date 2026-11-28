@@ -114,3 +114,126 @@ git add <本次 56 个文件> && git commit && git push origin main
 | sitemap 时戳复核 | 9 条 | 对应中文正文 `lastmod` 已全部为 `2026-11-27`，无需重复修改 |
 
 **门禁结果**：生产静态审计 `问题总数: 0`；中英文博客各 33 张卡片 chronological hard gate 全部通过；`git diff --check` 通过。本轮生产修改为 9 个中文博客页面，另同步升级审计脚本至 V3.2。
+
+## 2026-11-28 V4 全站深度审计与优化路线图
+
+### 1. 审计范围与总体判断
+
+本轮在 V3.2 链接与 SEO/GEO 门禁通过的基础上，扩大到性能、移动端、可访问性、隐私与安全、表单转化、双语商务路径、内容可信度和部署韧性。审计时仓库与远端 `main` 均为 `48527f7`；未回退并行 Agent 成果，`scratch/w14/` 保持未跟踪且未提交。
+
+扫描覆盖生产 HTML 200 个（V3 审计脚本纳入 196 个）、图片 753 张、脚本与样式引用、`.htaccess`、GitHub Actions、公开仓库凭据风险、Cloudflare 响应头和 6 类代表页面的真实浏览器运行数据。
+
+**总体判断**：SEO、canonical、hreflang、sitemap、历史 URL 兼容等基础层已经稳定；当前主要矛盾不再是“搜索引擎能否找到页面”，而是“页面是否足够快、移动端是否可用、第三方脚本是否尊重同意、询盘是否安全且可追踪，以及内容数字是否可信”。建议保持现有静态站架构，不引入大型前端框架，按 P0 → P3 分批治理。
+
+**边界说明**：PageSpeed Insights API 本轮返回 HTTP 429，未取得官方 PSI / Core Web Vitals 分数。以下浏览器数据来自 274 px 视口的单次运行，仅用于定位方向性问题，不等同于官方实验室分数。本轮未修改生产代码、未轮换凭据、未改写 Git 历史、未调整 Cloudflare 规则。
+
+### 2. 关键页面运行时基线
+
+| 页面 | DCL | load | 主要观察 |
+|---|---:|---:|---|
+| 英文首页 | 1,988 ms | 2,570 ms | TTFB 616 ms；21 图，4 eager / 17 lazy；资源传输约 444 KB；无失败请求或控制台错误 |
+| 中文氢皂文章 | 773 ms | 4,625 ms | GA4 `ERR_CONNECTION_CLOSED`；AdSense QUIC timeout |
+| 中文 H2 Wellness Hub | 878 ms | 937 ms | 18 图全部 lazy；无失败请求 |
+| 英文产品页 | 219 ms | 4,211 ms | AdSense timeout 拉长 load |
+| 英文联系页 | 186 ms | 354 ms | 无失败请求，是当前性能较好的承接页 |
+| 氢健康应用页 | — | 4,353 ms | 22 图，17 eager；大 PNG 与广告脚本共同拖慢 |
+| 中文采购决策树 | 623 ms | 4,277 ms | HTML 传输 1,016,648 B；base64 图片与广告脚本是主要负担 |
+
+这些数据说明：联系页证明静态轻量页面可以很快；文章、产品、应用和决策树页的 4.2–4.6 秒 load 主要来自第三方脚本和图片策略，而不是静态架构本身。
+
+### 3. P0：立即处理的安全、隐私与发布可靠性问题
+
+| 编号 | 问题与证据 | 影响 | 修复方案 | 验收标准 |
+|---|---|---|---|---|
+| P0-1 | 公开仓库 `Martin-MQtech/emuqi` 仍跟踪 `scripts/publish_devto_steamer.py` 与 `scripts/submit_chinese_engines.py`，其中分别含明文 `api_key` 与 `DEFAULT_BAIDU_TOKEN`；未读取或输出实际值 | 凭据泄露、第三方账号滥用、推送接口被阻断 | 立即吊销/轮换两个凭据；改为环境变量或 GitHub Secrets；启用 secret scanning / push protection；必要时清理 Git 历史。轮换必须先于历史清理，因为旧提交中的值不会因删文件自动失效 | 旧凭据失效；新代码无明文值；无 Secrets 时脚本明确失败；推送含疑似 Secret 被拦截 |
+| P0-2 | Cloudflare 正常根 URL 仍返回 `HIT`、`age: 32299`，同 URL 加查询参数才为 `MISS`；源站 HTML 已设置 `max-age=0, must-revalidate` | 发布后可能继续向用户与搜索引擎提供旧 HTML，双语修复和内容更新延迟可见 | 调整 Cache Rule 顺序与表达式，让 HTML 始终 bypass；保留图片/指纹资源的长期缓存；发布后自动 Purge Everything；用正常 URL 而不是查询参数验证 | 首页、中文首页、博客、产品页的正常 URL 在部署后均为 `MISS`/`DYNAMIC`，`age` 不大于可接受范围；强刷不复用旧 HTML |
+| P0-3 | 64 个生产 HTML、共 67 处直接加载 `adsbygoogle.js`；Cookie 逻辑只门禁 GA4，不门禁广告 | 用户同意前已向 Google 发起广告请求；隐私政策与实际行为不一致；广告网络失败会拉长 load | 删除硬编码广告脚本，统一由 Consent Manager 在 opt-in 后加载；启用 Google Consent Mode v2；Decline 后广告和 GA4 均不初始化、不发非必要请求 | 新会话未同意时网络记录中广告与 GA4 请求为 0；接受后正常加载；拒绝后刷新仍保持关闭 |
+| P0-4 | 首页与联系页表单无 `action/method`，只由内联 `onsubmit` 打开 `mailto`；JS 失效时会默认 GET 到当前 URL，姓名、邮箱、电话等可能进入地址栏、历史和日志；打开邮件客户端即记 `generate_lead` | PII 泄露、线索统计虚高、邮件客户端未配置时用户流失 | 主站新增受保护的 POST 接口；前端仅做即时校验；服务端再次校验并加蜜罐/限流/Turnstile；接口接受后才记线索；无 JS 时提供明确 mailto/WhatsApp 降级，不提交到当前 URL | 禁用 JS 后 URL 不含 PII；正常提交产生服务端接收回执；只有接收成功才触发线索事件；重复提交与机器人请求被拦截 |
+
+> P0-1、P0-2 涉及账号凭据、Git 历史和 Cloudflare 配置，属于高风险动作，必须获得明确授权后执行。P0-3、P0-4 可先准备代码变更和测试方案，再按发布窗口上线。
+
+### 4. P1：高影响性能、移动体验、可访问性与转化问题
+
+| 编号 | 问题与证据 | 影响 | 修复方案 | 验收标准 |
+|---|---|---|---|---|
+| P1-1 | 中英文采购决策树页各约 1.47–1.48 MB；各内嵌 5 张 base64 图片，base64 字符 1,407,588，解码后约 1,055,691 B；中文页线上 HTML 传输 1,016,648 B | HTML 无法被图片缓存复用；移动端解析、传输和内存成本高；每次内容更新都重复传输图片 | 图片解码后外置为 WebP/AVIF；使用 `<picture>`、`srcset/sizes`；仅首屏图 preload/fetchpriority，其余 lazy；CSS 提取共享版本化文件 | 决策树 HTML 传输降至约 200 KB 以内；图片可独立缓存；页面功能与视觉回归通过 |
+| P1-2 | 应用页仍引用 `app-overview.png`（2,093,587 B）、`water-bottle-1.png`（1,265,743 B）、`water-bottle-2.png`（1,177,546 B）、`water-bottle-3.png`（2,113,954 B）；对应 WebP 已存在，合计仅 336,630 B | 单组图片从约 6.65 MB 降至约 337 KB 的空间很大；当前 22 图中 17 张 eager | 引用已有 WebP；非首屏全部 lazy；首屏只保留 1 张高优先级图；为产品/应用主图增加响应式尺寸 | 首屏图片传输显著下降；除首屏必要图外无 eager 图片；缩略图点击和主图功能不回归 |
+| P1-3 | 753 张图片中 471 张非 lazy，`srcset=0`、`sizes=0`；虽然全部有 alt 和宽高属性，但缺少分辨率适配 | 手机下载桌面尺寸图片，流量和 LCP 成本偏高 | 建立图片模板规范：`width/height` 保留；首屏 `loading=eager fetchpriority=high`；其余 `loading=lazy decoding=async`；大图增加 `srcset/sizes` | 所有非首屏图片 lazy；核心 hero/product 图具备至少 2 档响应式资源；无 CLS 回归 |
+| P1-4 | 文章/产品/应用/决策树页 load 4.2–4.6 秒并出现 AdSense QUIC timeout；124 个页面同时直接包含 `analytics.js` 与 `script.js`，存在重复 loader 请求 | 第三方网络故障拖慢 `load`，控制台报错，影响质量感知和转化 | 统一为一个 consent-aware loader；删除重复入口；广告/分析非关键化并隔离失败；评估是否减少广告位或改为用户触发 | 关键页面无脚本错误；第三方失败不再决定页面 load；每个第三方脚本只有一个加载入口 |
+| P1-5 | `style.css` 用 `html/body overflow-x:hidden` 掩盖溢出；多处网格含 `minmax(320px, ...)`，375 px 视口加 gap/padding 后超宽；氢水袋页有 `minmax(320px,440px)` + `56px` gap | 内容被裁切、横向滚动被隐藏、移动端布局不可用 | 窄屏改单列；网格统一 `minmax(0,1fr)`；审查固定宽度、白空间和长英文串；修复后移除全局 overflow 遮蔽 | 360 / 390 / 768 px 视口横向溢出为 0；首页、氢水袋页、产品页、决策树页无裁切 |
+| P1-6 | 缩略图使用带 `onclick` 的 `img`，无 `tabindex/role`/键盘处理；报告封面使用 `div onclick`；至少 31 个交互目标键盘不可达；语言按钮有 `outline:none`，全局 `:focus-visible` 不完整；灯箱缺少完整 dialog 与焦点管理 | 键盘和辅助技术用户无法完成关键操作，存在 WCAG 2.2 AA 风险 | 交互元素改为原生 `button`；灯箱使用 `<dialog>` 或 `role=dialog aria-modal=true`，支持 Esc、焦点陷阱和关闭后焦点返回；统一 `:focus-visible`；下拉按钮补 `aria-expanded` | 所有交互可用 Tab/Enter/Space 完成；焦点始终可见；灯箱打开、关闭和焦点返回测试通过 |
+| P1-7 | 中文首页首屏主 CTA 是白皮书和博客；合作区只有电话/邮箱/地址与说明，没有询价或样品按钮；页头页脚虽有入口，但高意向用户主路径不连续；部分核心商务页仍落到英文页 | 中文高意向流量需要多次寻找入口，报价/样品转化率受损 | 首屏增加“获取报价 / 申请样品”主 CTA；合作区加入同页 RFQ 或明确按钮；补齐中文 Contact / Sample Request / Products 承接；电话、邮箱、WhatsApp 均可点击并预填产品上下文 | 从中文首页到询盘不超过 2 次点击；主要商务页面有中文版本；移动端 CTA 固定可达且不遮挡 Cookie 横幅 |
+| P1-8 | 203 处 CSS/JS 引用无版本参数，却与图片一样享受一年 `immutable`；GitHub Actions 曾出现 artifact 元数据竞争和重跑后同名 artifact 重复 | 用户长期使用旧 CSS/JS；部署成功不代表浏览器已更新；回滚也缺少清晰版本 | 为 CSS/JS 增加内容哈希或发布版本；同步更新全站引用；HTML 保持短缓存/bypass；artifact 名称包含 run id，发布步骤清理旧 artifact | CSS/JS URL 随内容变化；旧资源仍可回滚；同一 run 只有一个部署 artifact；部署后静态与线上 smoke test 通过 |
+| P1-9 | 中文首页仍写“全 24 篇”（实际中文博客 33 篇）和“17 个真实商业案例”（Hub 已为 18 个唯一案例）；“35% 全球份额”在中文首页作为事实展示，而英文 benchmark 标为 company-reported / verify | 内容数字漂移损害信任与 GEO 一致性；无来源的市场份额声明存在合规风险 | 从结构化内容清单生成文章/案例数量；建立“声明—对象—指标类型—方法—来源—日期—负责人”证据台账；未核实声明降级为“公司自述”或删除；中文首页与英文 benchmark 口径一致 | 文章/案例数量由清单自动生成；35% 份额有可审计来源或改为公司自述；关键数字在中英文页一致 |
+
+### 5. P2/P3：工程化、可发现性与长期治理
+
+| 编号 | 问题与证据 | 影响 | 修复方案 | 验收标准 |
+|---|---|---|---|---|
+| P2-1 | 线上 CSP 只有 `upgrade-insecure-requests`；`.htaccess` 未配置完整 CSP | XSS、数据外发和第三方注入缺少浏览器层防线 | 先上线 `Content-Security-Policy-Report-Only`，收集破坏项；广告/分析域名白名单；内联脚本逐步 nonce/hash 化；稳定后强制 | Report-Only 无意外阻断；强制模式关键页面无功能回归；违规报告可监控 |
+| P2-2 | 272 个 `target=_blank` 链接缺 `noopener`；174 页加载 Google Fonts CSS，存在多种 URL 变体 | reverse-tabnabbing 风险与首屏阻塞；字体请求变多 | 外链统一 `target=_blank rel="noopener noreferrer"`；自托管并子集化实际使用字体；统一字体 URL 与 `font-display` | 外链属性扫描为 0 缺失；字体自托管；关键页面无字体阻塞 |
+| P2-3 | 20/200 页无 `<main>`；19/200 页非单一 H1；67 个无角色的 `div aria-label` | 语义结构和屏幕阅读器导航不一致 | 模板化补齐 main/H1；无效 ARIA 删除或改为合适语义；加入自动语义门禁 | 所有生产页有唯一 main 和 H1；ARIA 扫描无无效用法 |
+| P2-4 | Store 明示 `COMING SOON`，8 张产品卡不可点击，只有底部统一 Contact；博客/Hub 缺搜索、筛选与相关推荐 | 用户无法按型号或主题继续探索，内容流量承接弱 | Store 改名为“样品申请/产品询价”或让产品卡深链到预填询盘；博客增加轻量静态搜索/主题筛选；文章末增加相关产品/文章与 CTA；Hub 增加案例筛选和商务出口 | 每个产品卡可进入询盘或详情；博客/Hub 可按主题筛选；内容页有下一步商务动作 |
+| P2-5 | 导航项较多，部分下拉在移动端依赖 hover/click 混合行为；中文与英文信息架构不完全对称 | 移动端找产品/应用/联系路径不稳定 | 顶层收敛为 Products / Applications / Research / About / Contact；移动端子菜单点击展开；桌面保留 hover + focus；双语导航映射成一张清单 | 中英文主导航一一对应；触屏与键盘均可展开；无悬停-only 操作 |
+| P2-6 | 部署 workflow 有 chronological gate，但无 smoke test、告警、自动 purge、回滚；曾因 artifact 竞争失败并重跑产生重复 artifact | 发布失败发现晚、双层缓存不同步、回滚成本高 | 明确唯一发布 workflow；artifact 名称包含 run id；发布后对 Hostinger 和 GitHub Pages 做 URL/标题/hreflang/表单 smoke test；失败告警；记录上一个已知良好 commit；自动或半自动 purge | 失败 run 有告警；发布后 smoke test 全绿；可快速回滚到上一个 commit；缓存复验通过 |
+
+### 6. 建议实施顺序
+
+**阶段 0：24 小时内止血（P0）**
+
+先轮换并吊销泄露凭据，再处理历史；修正 Cloudflare HTML bypass 并 Purge；停止同意前广告/分析请求；为表单提供不泄露 PII 的降级路径。此阶段以减少安全暴露和发布不确定性为目标，不做视觉改版。
+
+**阶段 1：1 周内低风险性能与内容快赢（P1）**
+
+决策树 base64 外置；应用页 PNG 换已有 WebP；非首屏 lazy；核心图加 `srcset/sizes`；合并 analytics loader；资源版本化；外链补 `noopener`；修正 24/33、17/18 和 35% 口径。每批上线后用相同页面、相同视口复测，避免把第三方网络波动误判为优化收益。
+
+**阶段 2：2–4 周移动端、可访问性与询盘重构（P1/P2）**
+
+重构窄屏网格和全局溢出遮蔽；把图像/Div 点击改成按钮；完成灯箱焦点管理；建立中文首屏报价/样品 CTA；上线受保护 POST 表单与 Consent Manager。表单建议主站使用 Cloudflare Worker + Turnstile，GitHub Pages 镜像保留 mailto/WhatsApp 降级；若团队更倾向传统运维，也可采用 Hostinger PHP，但需同时设计跨源站的一致性。
+
+**阶段 3：1–2 个月工程化与内容治理（P2/P3）**
+
+引入结构化内容清单、声明证据台账、搜索/筛选、相关推荐、CSP Report-Only、字体自托管和完整 CI smoke test。此阶段重点是防止问题再次产生，而不是继续堆页面功能。
+
+### 7. 推荐技术边界
+
+- **不重写为 SPA 或 React**：现有静态页、SEO/GEO 和 GitHub Pages 镜像已经稳定，重构收益低于风险。
+- **表单后端与静态镜像解耦**：主站 `/api/inquiry` 只接受 POST，返回 JSON；前端根据 HTTP 状态显示成功/失败；镜像无后端时明确降级。
+- **同意状态只有一个事实源**：`mq_cookie_consent` 只负责 accepted/rejected；GA4 和广告都由同一 loader 按状态初始化。
+- **资源更新必须可观测**：CSS/JS 用内容哈希；HTML 用短缓存；部署后检查实际响应头，而不是只看源站配置。
+- **内容数字必须可生成**：文章数、案例数、企业数、文献数来自清单；营销页面只引用清单，不再手写。
+- **声明必须带证据类型**：设备氢气纯度、材料抑菌率、检测方法、市场份额是不同指标，不能因为都接近 99% 或 35% 而混用。
+
+### 8. 验收目标
+
+| 维度 | 当前证据 | 建议目标 |
+|---|---|---|
+| 决策树 HTML | 中文页传输 1,016,648 B | ≤200 KB，图片独立缓存 |
+| 应用页四张大图 | PNG 合计 6,650,830 B；已有 WebP 合计 336,630 B | 首屏图片总传输 ≤500 KB，非首屏 lazy |
+| 图片策略 | 471 张非 lazy；0 srcset | 非首屏全部 lazy；核心主图有响应式资源 |
+| 隐私同意 | 广告在同意前加载 | 未同意时广告/GA4 请求为 0 |
+| 表单隐私 | JS 失效可能 GET 到当前 URL | 任何情况下 PII 不进入 URL；服务端成功后才记线索 |
+| 移动布局 | 固定最小宽度 + overflow 隐藏 | 360/390/768 px 横向溢出为 0 |
+| 键盘可用性 | 至少 31 个交互目标不可达 | 所有交互可键盘完成，灯箱焦点闭环 |
+| 中文转化 | 首屏无报价/样品主 CTA | 首页到询盘 ≤2 次点击 |
+| 内容一致性 | 24/33、17/18、35% 口径漂移 | 数量由清单生成；声明有证据或标公司自述 |
+| 发布可靠性 | HTML 正常 URL 仍 HIT；workflow 无 smoke test | 正常 URL 部署后 MISS/DYNAMIC；smoke test、告警、回滚齐备 |
+| 可访问性 | 20 页无 main，19 页多 H1 | 所有生产页唯一 main/H1，自动门禁通过 |
+
+### 9. 仍未执行的外部高风险动作
+
+未轮换或吊销凭据，未改写 Git 历史，未修改 Cloudflare Cache Rule。当前树中的明文凭据已移除，但旧提交中的历史值仍然有效，直至账号侧完成轮换/吊销；Cloudflare 正常 URL 的 HTML bypass 与部署后 Purge 仍需在控制台复核。以上动作不属于本轮代码授权范围。
+
+### 10. 2026-11-28 授权实施结果（V4.1）
+
+用户明确授权“实施、修改、优化、推送”后，已完成以下代码与本地验证：
+
+- **凭据与隐私**：两个运维脚本改为读取环境变量，当前树不再包含明文密钥；178 个 Cookie 横幅均提供 Accept / Decline；静态 HTML 中 GA4 与 AdSense loader 均为 0，统一由 `script.js` 在 accepted 后加载，Consent Mode v2 默认 denied。
+- **表单与中文转化**：首页和联系页移除内联 `onsubmit`，增加 `mailto` POST / `text/plain` 无 JS 降级与 `<noscript>` 联系方式；不再提前触发 `generate_lead`，仅在同意后发送不含 PII 的 `rfq_email_intent`；`?intent=sample#b2bInquiryForm` 自动选择样品申请；中文首页补齐报价/样品 CTA、可点击联系方式、18/33 数字与公司自述式份额表述；Store 八个产品均可进入对应询盘。
+- **性能与缓存**：中英文决策树各 5 张 base64 图片外置，HTML 从约 1.47 MB 降至 68,890 B / 74,301 B；应用页改用已有 WebP，19 张非首屏图 lazy；共享 CSS/JS 加 `?v=20261128`；`.htaccess` 对 200 静态资源长期缓存、错误响应不缓存、HTML `no-store`。
+- **移动端与可访问性**：修复首页、产品详情、证书页等固定网格；移除相关页面的全局 `overflow-x:hidden`；产品/应用缩略图改为原生 button，并修复应用页缩略图命中区域、产品页图集事件和移动端子菜单状态；补齐焦点可见、下拉键盘操作、18 个报告灯箱触发的 dialog/焦点闭环、Reader 原生 TOC button / `inert` / `aria-expanded`；1,196 个 `target=_blank` 链接均含 `noopener`。
+- **发布门禁**：审计脚本发现问题即非零退出；workflow 增加 chronological gate、严格 SEO/GEO 审计、凭据扫描、`git diff --check`、生产入口检查和发布后 smoke test；安全头增加 CSP、COOP、跨域策略、HSTS、权限策略与引用策略。
+
+**本地验收**：严格审计扫描 196 个 HTML、181 个 sitemap URL、22 条以上重定向规则，`问题总数: 0`；中英文博客各 33 张卡片通过日期严格递减门禁；JavaScript / Python 语法与 `git diff --check` 通过；应用页 5 个图集共 14 个原生按钮、0 个直接图片子节点、0 个嵌套按钮；5 个产品页 13 个原生缩略图全部修复。使用本机 Chrome + Playwright 对首页、氢水瓶产品页、应用页、报告页、Reader 页执行 360 / 390 / 768 / 1280 px 回归，横向溢出均为 0；应用缩略图均为 122 × 92 px，产品图集点击后主图切换且仅一个 pressed；移动端菜单/子菜单开关与 Escape、报告灯箱焦点闭环、Reader `inert`、同意拒绝/接受脚本加载行为全部通过；关键页无控制台错误或 HTTP 失败。
+
+**验证边界与后续项**：PageSpeed Insights API 仍受 429 限制，未取得官方 CWV 分数。尚未建设服务端 POST / Turnstile，尚未全站增加 `srcset/sizes`、自托管字体或补齐全部页面 main/H1；这些属于后续阶段，不冒充本轮已完成。推送后仍需复验 GitHub Actions、Hostinger、GitHub Pages 及 Cloudflare 实际响应头。

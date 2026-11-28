@@ -112,7 +112,6 @@ body {
   background-position: 0 0, 0 0, 18px 18px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
   width: 100%;
 }
 
@@ -1653,6 +1652,14 @@ footer {
 }
 </script>
 <link rel="preload" as="image" href="/assets/images/hero-bg.png" fetchpriority="high">
+<style>
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid #00d4ff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #0a1628;
+}
+[onclick*="openLightbox("] { cursor: pointer; }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -1678,10 +1685,10 @@ footer {
       
       <!-- Multilingual Switcher -->
       <div class="lang-selector" role="group" aria-label="Language Selector">
-        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" data-lang="ja" onclick="setLanguage('ja')">JA</button>
-        <button class="lang-btn" data-lang="ko" onclick="setLanguage('ko')">KO</button>
-        <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">ZH</button>
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true" onclick="setLanguage('en')">EN</button>
+        <button type="button" class="lang-btn" data-lang="ja" aria-pressed="false" onclick="setLanguage('ja')">JA</button>
+        <button type="button" class="lang-btn" data-lang="ko" aria-pressed="false" onclick="setLanguage('ko')">KO</button>
+        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false" onclick="setLanguage('zh')">ZH</button>
       </div>
     </div>
   </div>
@@ -1730,7 +1737,7 @@ footer {
 
     <!-- Right 3D Monograph Showcase (Enlarged, Interactive & Majestic) -->
     <div class="hero-visual" id="hero-visual-box">
-      <div class="book-mockup-wrapper" id="book-mockup-wrap" onclick="openLightbox('assets/covers/cover_en.webp', '2026 China Hydrogen Health Industry Research Report')">
+      <div class="book-mockup-wrapper" id="book-mockup-wrap" onclick="openLightbox('assets/covers/cover_en.webp', '2026 China Hydrogen Health Industry Research Report')" role="button" tabindex="0" aria-label="Open full-resolution preview">
         <img width="1240" height="1754" src="assets/covers/cover_en.webp" alt="China Hydrogen Report 3D Cover" class="book-cover-3d" id="hero-book-img">
         <div class="book-sheen-sweep"></div>
         <div class="book-badge-subtle">
@@ -1788,7 +1795,7 @@ footer {
   <div class="grid-4">
     <!-- Card 1 -->
     <div class="card">
-      <div class="card-chart-wrap" id="card1-wrap" onclick="openLightbox('assets/charts/chart_pubmed_hydrogen_literature_en.webp', 'Fig 1-2: PubMed Global Literature (5,120 papers) & China 22.3% Share')">
+      <div class="card-chart-wrap" id="card1-wrap" onclick="openLightbox('assets/charts/chart_pubmed_hydrogen_literature_en.webp', 'Fig 1-2: PubMed Global Literature (5,120 papers) & China 22.3% Share')" role="button" tabindex="0" aria-label="Open full-resolution preview">
         <img width="3600" height="2025" id="card1-img" src="assets/charts/chart_pubmed_hydrogen_literature_en.webp" alt="PubMed Literature Trend" class="card-chart-img">
         <span class="card-chart-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zoom</span>
       </div>
@@ -1802,7 +1809,7 @@ footer {
 
     <!-- Card 2 -->
     <div class="card">
-      <div class="card-chart-wrap" id="card2-wrap" onclick="openLightbox('assets/charts/chart_unit_economics_hardware_vs_consumable_trim_en.webp', 'Fig 4-1: Unit Economics: Hardware vs Consumables')">
+      <div class="card-chart-wrap" id="card2-wrap" onclick="openLightbox('assets/charts/chart_unit_economics_hardware_vs_consumable_trim_en.webp', 'Fig 4-1: Unit Economics: Hardware vs Consumables')" role="button" tabindex="0" aria-label="Open full-resolution preview">
         <img width="3498" height="1981" id="card2-img" src="assets/charts/chart_unit_economics_hardware_vs_consumable_trim_en.webp" alt="Hardware vs Consumables Economics" class="card-chart-img">
         <span class="card-chart-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zoom</span>
       </div>
@@ -1816,7 +1823,7 @@ footer {
 
     <!-- Card 3 -->
     <div class="card">
-      <div class="card-chart-wrap" id="card3-wrap" onclick="openLightbox('assets/charts/emuqi_product_wheel_en.webp', 'Fig 5-2: E-MUQI Hydrogen Consumer Product Matrix')">
+      <div class="card-chart-wrap" id="card3-wrap" onclick="openLightbox('assets/charts/emuqi_product_wheel_en.webp', 'Fig 5-2: E-MUQI Hydrogen Consumer Product Matrix')" role="button" tabindex="0" aria-label="Open full-resolution preview">
         <img width="1712" height="1616" id="card3-img" src="assets/charts/emuqi_product_wheel_en.webp" alt="Hydrogen Consumer Product Wheel" class="card-chart-img">
         <span class="card-chart-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zoom</span>
       </div>
@@ -1830,7 +1837,7 @@ footer {
 
     <!-- Card 4 -->
     <div class="card">
-      <div class="card-chart-wrap" id="card4-wrap" onclick="openLightbox('assets/charts/chart_market_size_tam_sam_som_light_trim_en.webp', 'Fig 3-1: Market Size & Regulatory Benchmarks')">
+      <div class="card-chart-wrap" id="card4-wrap" onclick="openLightbox('assets/charts/chart_market_size_tam_sam_som_light_trim_en.webp', 'Fig 3-1: Market Size & Regulatory Benchmarks')" role="button" tabindex="0" aria-label="Open full-resolution preview">
         <img width="3538" height="1841" id="card4-img" src="assets/charts/chart_market_size_tam_sam_som_light_trim_en.webp" alt="TAM SAM SOM Market Size" class="card-chart-img">
         <span class="card-chart-zoom-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Zoom</span>
       </div>
@@ -1854,7 +1861,7 @@ footer {
     <div class="chapters-grid">
       <!-- Chapter 1 -->
       <div class="chapter-card">
-        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/03_mechanism.webp', 'Chapter 1: Academic Science & Mitochondrial Mechanism')">
+        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/03_mechanism.webp', 'Chapter 1: Academic Science & Mitochondrial Mechanism')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1500" height="720" src="assets/chapter_art/03_mechanism.webp" alt="Chapter 1 Art">
           <span class="chapter-tag-pill">CH-01 // EVIDENCE</span>
         </div>
@@ -1872,7 +1879,7 @@ footer {
 
       <!-- Chapter 2 -->
       <div class="chapter-card">
-        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/04_lattice.webp', 'Chapter 2: Solid-State Lattice & Microporous Engineering')">
+        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/04_lattice.webp', 'Chapter 2: Solid-State Lattice & Microporous Engineering')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1500" height="720" src="assets/chapter_art/04_lattice.webp" alt="Chapter 2 Art">
           <span class="chapter-tag-pill">CH-02 // MATERIALS</span>
         </div>
@@ -1890,7 +1897,7 @@ footer {
 
       <!-- Chapter 3 -->
       <div class="chapter-card">
-        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/05_molecule.webp', 'Chapter 3: Consumer Demand & FMCG Expansion')">
+        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/05_molecule.webp', 'Chapter 3: Consumer Demand & FMCG Expansion')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1500" height="720" src="assets/chapter_art/05_molecule.webp" alt="Chapter 3 Art">
           <span class="chapter-tag-pill">CH-03 // FMCG</span>
         </div>
@@ -1908,7 +1915,7 @@ footer {
 
       <!-- Chapter 4 -->
       <div class="chapter-card">
-        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/06_ceramic.webp', 'Chapter 4: Enterprise Benchmark & Value Creation')">
+        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/06_ceramic.webp', 'Chapter 4: Enterprise Benchmark & Value Creation')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1500" height="720" src="assets/chapter_art/06_ceramic.webp" alt="Chapter 4 Art">
           <span class="chapter-tag-pill">CH-04 // BENCHMARKS</span>
         </div>
@@ -1926,7 +1933,7 @@ footer {
 
       <!-- Chapter 5 -->
       <div class="chapter-card">
-        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/07_strata.webp', 'Chapter 5: Full Supply Chain Ecosystem & Strata')">
+        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/07_strata.webp', 'Chapter 5: Full Supply Chain Ecosystem & Strata')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1500" height="720" src="assets/chapter_art/07_strata.webp" alt="Chapter 5 Art">
           <span class="chapter-tag-pill">CH-05 // SUPPLY CHAIN</span>
         </div>
@@ -1944,7 +1951,7 @@ footer {
 
       <!-- Chapter 6 -->
       <div class="chapter-card">
-        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/08_contrast.webp', 'Chapter 6: Competitive Matrix: Hardware vs Consumables')">
+        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/08_contrast.webp', 'Chapter 6: Competitive Matrix: Hardware vs Consumables')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1500" height="720" src="assets/chapter_art/08_contrast.webp" alt="Chapter 6 Art">
           <span class="chapter-tag-pill">CH-06 // COMPETITION</span>
         </div>
@@ -1962,7 +1969,7 @@ footer {
 
       <!-- Chapter 7 -->
       <div class="chapter-card">
-        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/09_interface.webp', 'Chapter 7: Regulatory Interface, NMPA & Insurance Codes')">
+        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/09_interface.webp', 'Chapter 7: Regulatory Interface, NMPA & Insurance Codes')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1500" height="720" src="assets/chapter_art/09_interface.webp" alt="Chapter 7 Art">
           <span class="chapter-tag-pill">CH-07 // REGULATION</span>
         </div>
@@ -1980,7 +1987,7 @@ footer {
 
       <!-- Chapter 8 -->
       <div class="chapter-card">
-        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/10_vortex.webp', 'Chapter 8: 2026-2030 Strategic Horizons')">
+        <div class="chapter-media" onclick="openLightbox('assets/chapter_art/10_vortex.webp', 'Chapter 8: 2026-2030 Strategic Horizons')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1500" height="720" src="assets/chapter_art/10_vortex.webp" alt="Chapter 8 Art">
           <span class="chapter-tag-pill">CH-08 // HORIZONS</span>
         </div>
@@ -2001,7 +2008,7 @@ footer {
   <!-- 3. PANORAMIC SUPPLY CHAIN & PRODUCT CASES SECTION (STRICTLY CONNECTING & EVALUATING, USING '链接研判') -->
   <div class="panoramic-banner">
     <div class="panoramic-grid">
-      <div class="panoramic-media" onclick="openLightbox('assets/charts/industry_product_cases_grid.webp', 'China Hydrogen Health Supply Chain & Enterprise Product Cases (200+ Enterprise Audits)')">
+      <div class="panoramic-media" onclick="openLightbox('assets/charts/industry_product_cases_grid.webp', 'China Hydrogen Health Supply Chain & Enterprise Product Cases (200+ Enterprise Audits)')" role="button" tabindex="0" aria-label="Open full-resolution preview">
         <img width="1506" height="966" src="assets/charts/industry_product_cases_grid.webp" alt="Enterprise Products & Supply Chain Case Matrix" id="pano-img">
         <div class="panoramic-media-caption">
           <span id="pano-img-caption">Representative Enterprise Products & Supply Chain Cases: Core Electrolyzers, Ceramic Media Cartridges, FMCG Hydrogen Drinks & Beauty Care</span>
@@ -2042,7 +2049,7 @@ footer {
       <!-- 1. English Master Card -->
       <div class="card-download featured">
         <div class="badge-edition en" id="badge-en">ENGLISH MASTER</div>
-        <div class="card-download-preview" onclick="openLightbox('assets/covers/cover_en.webp', 'English Master Edition Cover')">
+        <div class="card-download-preview" onclick="openLightbox('assets/covers/cover_en.webp', 'English Master Edition Cover')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1240" height="1754" src="assets/covers/cover_en.webp" alt="English Master Cover" class="dl-card-thumb">
         </div>
         <h4 id="dl-en-title">English Master Monograph</h4>
@@ -2068,7 +2075,7 @@ footer {
       <!-- 2. Japanese Edition Card -->
       <div class="card-download">
         <div class="badge-edition ja" id="badge-ja">JAPANESE COMPLETE</div>
-        <div class="card-download-preview" onclick="openLightbox('assets/covers/cover_ja.webp', 'Japanese Edition Cover')">
+        <div class="card-download-preview" onclick="openLightbox('assets/covers/cover_ja.webp', 'Japanese Edition Cover')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1240" height="1754" src="assets/covers/cover_ja.webp" alt="Japanese Edition Cover" class="dl-card-thumb">
         </div>
         <h4 id="dl-ja-title">Japanese Complete Monograph (日本語版)</h4>
@@ -2094,7 +2101,7 @@ footer {
       <!-- 3. Korean Edition Card -->
       <div class="card-download">
         <div class="badge-edition ko" id="badge-ko">SOUTH KOREA EDITION</div>
-        <div class="card-download-preview" onclick="openLightbox('assets/covers/cover_kr.webp', 'Korean Edition Cover')">
+        <div class="card-download-preview" onclick="openLightbox('assets/covers/cover_kr.webp', 'Korean Edition Cover')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1240" height="1752" src="assets/covers/cover_kr.webp" alt="Korean Edition Cover" class="dl-card-thumb">
         </div>
         <h4 id="dl-ko-title">Korean Complete Monograph (한국어판)</h4>
@@ -2120,7 +2127,7 @@ footer {
       <!-- 4. Chinese Edition Card -->
       <div class="card-download">
         <div class="badge-edition zh" id="badge-zh">CHINA DOMESTIC EDITION</div>
-        <div class="card-download-preview" onclick="openLightbox('assets/covers/cover_zh.webp', 'Chinese Edition Cover')">
+        <div class="card-download-preview" onclick="openLightbox('assets/covers/cover_zh.webp', 'Chinese Edition Cover')" role="button" tabindex="0" aria-label="Open full-resolution preview">
           <img width="1240" height="1754" src="assets/covers/cover_zh.webp" alt="Chinese Edition Cover" class="dl-card-thumb">
         </div>
         <h4 id="dl-zh-title">Chinese Complete Monograph (中文版)</h4>
@@ -2240,9 +2247,9 @@ footer {
 </footer>
 
 <!-- 4K LIGHTBOX MODAL -->
-<div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox(event)">
+<div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" tabindex="-1" onclick="closeLightbox(event)">
   <div class="lightbox-content" onclick="event.stopPropagation()">
-    <button class="lightbox-close" onclick="closeLightbox(event)" title="Close">&times;</button>
+    <button type="button" class="lightbox-close" aria-label="Close image preview" onclick="closeLightbox(event)" title="Close">&times;</button>
     <img src="" alt="High Resolution Figure" class="lightbox-img" id="lightbox-img">
     <div class="lightbox-caption" id="lightbox-caption"></div>
   </div>
@@ -2841,7 +2848,9 @@ function setLanguage(lang) {
   
   // Update toggle buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    const active = btn.getAttribute('data-lang') === lang;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
 
   // Update html lang attribute
@@ -3072,24 +3081,55 @@ function setLanguage(lang) {
 }
 
 // 4K Lightbox Functionality
+let lightboxReturnFocus = null;
 function openLightbox(src, caption) {
   const modal = document.getElementById('lightbox-modal');
   const img = document.getElementById('lightbox-img');
   const cap = document.getElementById('lightbox-caption');
+  lightboxReturnFocus = document.activeElement;
   img.src = src;
   cap.innerText = caption || '';
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
+  const closeBtn = modal.querySelector('.lightbox-close');
+  if (closeBtn) closeBtn.focus();
 }
 
 function closeLightbox(e) {
   const modal = document.getElementById('lightbox-modal');
   modal.classList.remove('active');
   document.body.style.overflow = '';
+  if (lightboxReturnFocus && typeof lightboxReturnFocus.focus === 'function') lightboxReturnFocus.focus();
+  lightboxReturnFocus = null;
 }
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeLightbox();
+  const modal = document.getElementById('lightbox-modal');
+  const trigger = e.target.closest ? e.target.closest('[onclick*="openLightbox("]') : null;
+  if (trigger && (e.key === 'Enter' || e.key === ' ')) {
+    e.preventDefault();
+    trigger.click();
+    return;
+  }
+  if (!modal || !modal.classList.contains('active')) return;
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    closeLightbox();
+    return;
+  }
+  if (e.key === 'Tab') {
+    const focusable = Array.from(modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'));
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
 });
 
 // Copy URL functionality
@@ -3141,11 +3181,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script src="../script.js?v=20261113"></script>
+<script src="../script.js?v=20261128"></script>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
   <div class="cookie-banner-inner">
-    <p class="cookie-banner-text">We use cookies and analytical media to improve your experience and evaluate website performance. By continuing to use our website, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <p class="cookie-banner-text">We use essential cookies for the site to work. Analytics and advertising load only if you choose <strong>Accept</strong>; you can also choose <strong>Decline</strong>. Read our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
     <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-reject" id="cookieRejectBtn" aria-label="Decline non-essential cookies (analytics and ads stay off)">Decline</button>
       <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="Accept all cookies">Accept</button>
     </div>
   </div>

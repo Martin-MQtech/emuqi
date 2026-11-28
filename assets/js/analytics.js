@@ -19,7 +19,7 @@ var MUQI_ANALYTICS = {
 (function () {
   if (window.__muqiAnalyticsLoaded) { return; }
   // W-07 consent gate (GDPR): load GA4 only after explicit cookie acceptance.
-  // Self-guards even if this file is included directly, bypassing script.js.
+  // Self-guards even if this file is included directly, bypassing script.js?v=20261128.
   try {
     if (localStorage.getItem('mq_cookie_consent') !== 'accepted') { return; }
   } catch (e) { return; }

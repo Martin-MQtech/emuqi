@@ -41,7 +41,7 @@ zh_html = f"""<!DOCTYPE html>
   <meta name="twitter:description" content="零改动底座电路，外置固态氢反应仓，打造美业硬件‘剃刀+刀片’长效收益模型。">
   <meta name="twitter:image" content="https://www.emuqi.com/assets/images/blog/steamer/hero-steamer-concept.png">
   
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css?v=20261128">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -644,7 +644,7 @@ en_html = f"""<!DOCTYPE html>
   <meta name="twitter:description" content="Zero electrical modification, external solid-state hydrogen chamber, and razor-and-blade economics for personal care appliances.">
   <meta name="twitter:image" content="https://www.emuqi.com/assets/images/blog/steamer/hero-steamer-concept.png">
   
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css?v=20261128">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">

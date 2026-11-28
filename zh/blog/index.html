@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css?v=20261114">
+<link rel="stylesheet" href="../../style.css?v=20261128">
 <style>
 /* Critical Language Pill Switch Styles */
 .lang-pill-switch { display: inline-flex !important; align-items: center !important; gap: 2px !important; height: 30px !important; padding: 2px 4px 2px 7px !important; background: rgba(255,255,255,0.8) !important; border: 1px solid rgba(10,22,40,0.18) !important; border-radius: 9999px !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06) !important; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; margin-left: 6px !important; flex-shrink: 0 !important; box-sizing: border-box !important; user-select: none !important; }
@@ -31,7 +31,7 @@ body { font-family: -apple-system, "Noto Sans SC", "PingFang SC", "Microsoft YaH
 header { min-height: 72px !important; box-sizing: border-box; }
 </style>
 <link rel="canonical" href="https://www.emuqi.com/zh/blog/">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8740168077394877" crossorigin="anonymous"></script>
+
 <link rel="alternate" hreflang="zh-CN" href="https://www.emuqi.com/zh/blog/">
 <link rel="alternate" hreflang="en" href="https://www.emuqi.com/blog/">
 <link rel="alternate" hreflang="x-default" href="https://www.emuqi.com/blog/">
@@ -141,7 +141,7 @@ header { min-height: 72px !important; box-sizing: border-box; }
 <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32.png">
 <link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
 
-<script src="../../assets/js/analytics.js" defer></script>
+
 <link rel="preload" as="image" href="../../assets/images/hero-bg.png" fetchpriority="high">
 </head>
 <body>
@@ -235,7 +235,12 @@ header { min-height: 72px !important; box-sizing: border-box; }
 
 <!-- ARTICLES GRID -->
 <section style="max-width:1200px;margin:0 auto;padding:60px 40px 80px">
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px">
+    <label for="blogSearch" style="font-size:14px;font-weight:700;color:#0a1628">搜索技术文章</label>
+    <input id="blogSearch" type="search" placeholder="按主题、产品或关键词搜索" autocomplete="off" style="width:min(100%,420px);padding:11px 14px;border:1px solid #cbd5e1;border-radius:10px;font-size:14px">
+  </div>
+  <p id="blogSearchStatus" role="status" aria-live="polite" style="margin:0 0 18px;color:#64748b;font-size:13px">显示全部 33 篇文章</p>
+  <div id="blogArticleGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:28px">
 <a href="hydrogen-ten-questions-video-series.html" style="text-decoration:none;color:inherit;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;border:2px solid #fed7aa" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(244,123,32,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow='0 1px 4px rgba(0,0,0,0.06)'">
       <div style="aspect-ratio:16/10;overflow:hidden;background:#0a1628"><img width="1920" height="1080" src="/assets/images/blog/hydrogen-ten-questions/hero-zh-1920x1080.jpg" alt="氢健康十问视频系列" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>
       <div style="padding:24px;flex:1;display:flex;flex-direction:column">
@@ -662,6 +667,26 @@ header { min-height: 72px !important; box-sizing: border-box; }
       </div>
     </a>
   </div>
+  <script>
+    (function () {
+      var input = document.getElementById('blogSearch');
+      var grid = document.getElementById('blogArticleGrid');
+      var status = document.getElementById('blogSearchStatus');
+      if (!input || !grid || !status) return;
+      var cards = Array.prototype.slice.call(grid.children).filter(function (node) { return node.tagName === 'A'; });
+      function applyFilter() {
+        var query = input.value.trim().toLowerCase();
+        var visible = 0;
+        cards.forEach(function (card) {
+          var match = !query || card.textContent.toLowerCase().indexOf(query) !== -1;
+          card.hidden = !match;
+          if (match) visible += 1;
+        });
+        status.textContent = query ? '显示 ' + visible + ' / ' + cards.length + ' 篇文章' : '显示全部 ' + cards.length + ' 篇文章';
+      }
+      input.addEventListener('input', applyFilter);
+    }());
+  </script>
 
   <div style="text-align:center;margin-top:48px">
     <p style="color:#94a3b8;font-size:14px">共收录 33 篇深度技术文献与行业研报</p>
@@ -681,14 +706,14 @@ header { min-height: 72px !important; box-sizing: border-box; }
 <!-- FOOTER -->
 </main>
 <footer style="background:#0a1628;margin-top:0">
-  <div style="max-width:1200px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px">
+  <div class="site-footer-grid">
     <div>
       <div style="font-size:22px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="/assets/images/logo.jpg" alt="木齐科技" height="38" width="45" style="height:38px;width:auto;border-radius:4px"> 木齐科技</div>
       <p style="font-size:14px;color:#94a3b8;line-height:1.7">全球领先的功能矿物陶瓷水处理滤料与固态制氢新材料研发制造源头工厂，赋能健康饮水与绿色科技全产业链。</p>
       <div style="display:flex;gap:12px;margin-top:20px">
-        <a href="https://x.com/MARTINPARK111" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
-        <a href="https://www.linkedin.com/company/72043164" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
-        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
+        <a href="https://x.com/MARTINPARK111" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
+        <a href="https://www.linkedin.com/company/72043164" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
+        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
         <a href="mailto:muqizb@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">@</a>
       </div>
     </div>
@@ -737,11 +762,12 @@ header { min-height: 72px !important; box-sizing: border-box; }
 </footer>
 
 
-<script src="/script.js?v=20261113"></script>
+<script src="/script.js?v=20261128"></script>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie 声明">
   <div class="cookie-banner-inner">
-    <p class="cookie-banner-text">我们使用必要的 Cookie 和匿名分析以提升您的访问体验与网站服务。继续浏览即表示您同意我们的<a href="/privacy-policy.html">隐私政策</a>。</p>
+    <p class="cookie-banner-text">我们使用网站运行所必需的 Cookie。只有您选择<strong>接受</strong>后，才会启用分析与广告服务；您也可以选择<strong>拒绝</strong>。详见<a href="/privacy-policy.html">隐私政策</a>。</p>
     <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-reject" id="cookieRejectBtn" aria-label="拒绝非必要 Cookie（分析与广告将保持关闭）">拒绝</button>
       <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="接受全部 Cookie">接受并继续</button>
     </div>
   </div>

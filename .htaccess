@@ -107,6 +107,9 @@ Require all denied
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Content-Security-Policy "object-src 'none'; base-uri 'self'; frame-ancestors 'self'"
 
     <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|js|css|svg|woff2)$">
         # Only cache 200 OK responses; never cache errors or rate limits (429/404/500)
@@ -114,7 +117,8 @@ Require all denied
         Header set Cache-Control "no-cache, no-store, must-revalidate" "expr=%{REQUEST_STATUS} >= 400"
     </FilesMatch>
     <FilesMatch "\.(html|htm)$">
-        Header set Cache-Control "max-age=0, must-revalidate"
+        Header set Cache-Control "no-store, max-age=0, must-revalidate"
+        Header set CDN-Cache-Control "no-store"
     </FilesMatch>
 
     # Crawl-critical freshness: sitemap & robots must not inherit the 1-month ExpiresDefault

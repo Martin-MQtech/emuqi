@@ -32,9 +32,26 @@ jobs:
       - name: Verify Blog Chronological Order Hard Gate
         run: |
           python3 scripts/verify_blog_chronological_order.py
+      - name: Run SEO/GEO and bilingual static audit
+        run: |
+          python3 research/seo-geo-audit-2026-11-04/audit.py .
+      - name: Reject committed API credentials
+        run: |
+          if git grep -n -E "(DEVTO_API_KEY|BAIDU_PUSH_TOKEN)[[:space:]]*=[[:space:]]*['\"][^'\"]+" -- scripts; then
+            echo "Committed credential detected. Use environment variables or CI secrets."
+            exit 1
+          fi
+          git diff --check
       - name: Exclude internal docs and operational directories from Pages artifact
         run: |
           rm -rf research scripts templates distribution_packages PROJECT_EXECUTION_MANUAL.md GEO_SEO_AI_CONTENT_STANDARD.md DESIGN.md
+      - name: Verify required production entry points
+        run: |
+          test -f index.html
+          test -f zh/index.html
+          test -f contact-mqtech-hydrogen-health.html
+          test -f sitemap.xml
+          test -f assets/js/script.js || test -f script.js
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
@@ -44,3 +61,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Post-deploy smoke test
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          test -n "$PAGE_URL"
+          curl -fsSL "$PAGE_URL/" | grep -q "<title>"
+          curl -fsSL "$PAGE_URL/zh/" | grep -q "木齐"
+          curl -fsSL "$PAGE_URL/contact-mqtech-hydrogen-health.html" | grep -q "MUQI"

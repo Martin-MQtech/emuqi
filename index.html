@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="style.css?v=20261114">
+<link rel="stylesheet" href="style.css?v=20261128">
 <style>
 /* Critical Language Pill Switch Styles */
 .lang-pill-switch { display: inline-flex !important; align-items: center !important; gap: 2px !important; height: 30px !important; padding: 2px 4px 2px 7px !important; background: rgba(255,255,255,0.8) !important; border: 1px solid rgba(10,22,40,0.18) !important; border-radius: 9999px !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06) !important; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; margin-left: 6px !important; flex-shrink: 0 !important; box-sizing: border-box !important; user-select: none !important; }
@@ -289,7 +289,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 
-<script src="assets/js/analytics.js" defer></script>
+
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -720,7 +720,7 @@
       <p style="color:#64748b;font-size:15px;max-width:640px;margin:0 auto">Direct engineering insights into MUQI solid-state ICR hydrogen generation, antibacterial standards, and custom manufacturing capabilities.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:24px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:24px">
       <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:28px;box-shadow:0 4px 12px rgba(10,22,40,0.03)">
         <h3 style="font-size:16.5px;font-weight:700;color:#0a1628;margin-bottom:10px;display:flex;align-items:flex-start;gap:10px">
           <span style="color:#f47b20;font-size:18px">Q:</span>
@@ -773,26 +773,26 @@
       <p style="color:#94a3b8;font-size:15px;line-height:1.6;max-width:600px;margin:0 auto">Speak directly with Martin Chen (CEO) & our material engineering team. Direct factory turnaround with complete SGS & SAC/TC621 documentation.</p>
     </div>
 
-    <form id="homeRfqForm" onsubmit="event.preventDefault(); var hp=this.querySelector('.mq-hp-field'); if(hp&&hp.value){this.reset();return;}window.location.href='mailto:muqizb@gmail.com?subject=' + encodeURIComponent('B2B Inquiry: ' + (document.getElementById('rfqMaterial').value || 'MUQI Ceramics')) + '&body=' + encodeURIComponent('Name: ' + document.getElementById('rfqName').value + '\nEmail: ' + document.getElementById('rfqEmail').value + '\nCompany: ' + document.getElementById('rfqCompany').value + '\nMaterial: ' + document.getElementById('rfqMaterial').value + '\nRequirements: ' + document.getElementById('rfqMessage').value);try{dataLayer.push({event:'generate_lead',form:'home_rfq'});}catch(e){}document.getElementById('homeRfqSuccess').style.display='block'; this.reset();" style="background:#0f1d32;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:36px 32px;box-shadow:0 20px 50px rgba(0,0,0,0.4)">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+    <form id="homeRfqForm" action="mailto:muqizb@gmail.com" method="post" enctype="text/plain" style="background:#0f1d32;border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:36px 32px;box-shadow:0 20px 50px rgba(0,0,0,0.4)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px;margin-bottom:20px">
         <div>
-          <label style="display:block;font-size:13.5px;font-weight:600;color:#e2e8f0;margin-bottom:6px">Your Name <span style="color:#f47b20">*</span></label>
-          <input type="text" id="rfqName" required placeholder="e.g. David Miller" style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:#07111f;color:#fff;font-size:14px" aria-label="Your full name">
+          <label for="rfqName" style="display:block;font-size:13.5px;font-weight:600;color:#e2e8f0;margin-bottom:6px">Your Name <span style="color:#f47b20">*</span></label>
+          <input type="text" id="rfqName" name="name" required placeholder="e.g. David Miller" style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:#07111f;color:#fff;font-size:14px" aria-label="Your full name">
         </div>
         <div>
-          <label style="display:block;font-size:13.5px;font-weight:600;color:#e2e8f0;margin-bottom:6px">Business Email <span style="color:#f47b20">*</span></label>
-          <input type="email" id="rfqEmail" required placeholder="name@company.com" style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:#07111f;color:#fff;font-size:14px" aria-label="Your business email">
+          <label for="rfqEmail" style="display:block;font-size:13.5px;font-weight:600;color:#e2e8f0;margin-bottom:6px">Business Email <span style="color:#f47b20">*</span></label>
+          <input type="email" id="rfqEmail" name="email" required placeholder="name@company.com" style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:#07111f;color:#fff;font-size:14px" aria-label="Your business email">
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px;margin-bottom:20px">
         <div>
-          <label style="display:block;font-size:13.5px;font-weight:600;color:#e2e8f0;margin-bottom:6px">Company / Country</label>
-          <input type="text" id="rfqCompany" placeholder="e.g. Apex Health Ltd. (Germany)" style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:#07111f;color:#fff;font-size:14px" aria-label="Your company name">
+          <label for="rfqCompany" style="display:block;font-size:13.5px;font-weight:600;color:#e2e8f0;margin-bottom:6px">Company / Country</label>
+          <input type="text" id="rfqCompany" name="company" placeholder="e.g. Apex Health Ltd. (Germany)" style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:#07111f;color:#fff;font-size:14px" aria-label="Your company name">
         </div>
         <div>
-          <label style="display:block;font-size:13.5px;font-weight:600;color:#e2e8f0;margin-bottom:6px">Material / Interest <span style="color:#f47b20">*</span></label>
-          <select id="rfqMaterial" required style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:#07111f;color:#fff;font-size:14px" aria-label="Material or product of interest">
+          <label for="rfqMaterial" style="display:block;font-size:13.5px;font-weight:600;color:#e2e8f0;margin-bottom:6px">Material / Interest <span style="color:#f47b20">*</span></label>
+          <select id="rfqMaterial" name="material" required style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:#07111f;color:#fff;font-size:14px" aria-label="Material or product of interest">
             <option value="" disabled selected>Select Material / Product</option>
             <option value="ORP Hydrogen-Generating Ceramic Balls">ORP Hydrogen-Generating Ceramic Balls</option>
             <option value="MACA Microporous Antibacterial Ceramic Balls">MACA Antibacterial Ceramic Balls</option>
@@ -805,8 +805,8 @@
       </div>
 
       <div style="margin-bottom:24px">
-        <label style="display:block;font-size:13.5px;font-weight:600;color:#e2e8f0;margin-bottom:6px">Project Requirements & Sample Specs</label>
-        <textarea id="rfqMessage" rows="3" placeholder="Specify ball diameter (e.g. 2-3mm), dissolved H2 targets (ppb), annual estimated volume, or sample delivery destination..." style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:#07111f;color:#fff;font-size:14px;resize:vertical" aria-label="Project requirements"></textarea>
+        <label for="rfqMessage" style="display:block;font-size:13.5px;font-weight:600;color:#e2e8f0;margin-bottom:6px">Project Requirements & Sample Specs</label>
+        <textarea id="rfqMessage" name="message" rows="3" placeholder="Specify ball diameter (e.g. 2-3mm), dissolved H2 targets (ppb), annual estimated volume, or sample delivery destination..." style="width:100%;box-sizing:border-box;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.15);background:#07111f;color:#fff;font-size:14px;resize:vertical" aria-label="Project requirements"></textarea>
       </div>
 
       <label style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#94a3b8;margin-bottom:16px"><input type="checkbox" required style="margin-top:3px" aria-label="I agree to be contacted per the privacy policy"> I agree to the <a href="privacy-policy.html" style="color:#f47b20">Privacy Policy</a> and consent to MUQI contacting me about this inquiry.</label>
@@ -822,25 +822,28 @@
         <span>✓ Non-Disclosure Agreement (NDA) Protected</span>
       </div>
 
-      <div id="homeRfqSuccess" style="display:none;margin-top:20px;padding:16px;border-radius:8px;background:rgba(16,185,129,0.15);border:1px solid #10b981;color:#6ee7b7;font-size:14px;text-align:center">
+      <div id="homeRfqSuccess" role="status" aria-live="polite" style="display:none;margin-top:20px;padding:16px;border-radius:8px;background:rgba(16,185,129,0.15);border:1px solid #10b981;color:#6ee7b7;font-size:14px;text-align:center">
         Your email client has opened with your RFQ pre-filled — just hit Send to reach <strong>muqizb@gmail.com</strong>. If it didn't open, email us directly at <a href="mailto:muqizb@gmail.com" style="color:#6ee7b7;text-decoration:underline">muqizb@gmail.com</a> or WhatsApp <a href="https://wa.me/8613964416725" target="_blank" rel="noopener noreferrer" style="color:#6ee7b7;text-decoration:underline">+86 139 6441 6725</a>.
       </div>
     <input type="text" name="company_website_hp" class="mq-hp-field" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
       </form>
+      <noscript>
+        <p style="text-align:center;color:#cbd5e1;font-size:14px;line-height:1.7;margin:20px 0 0">JavaScript is off. Email your inquiry directly to <a href="mailto:muqizb@gmail.com" style="color:#f47b20">muqizb@gmail.com</a> or contact <a href="https://wa.me/8613964416725" target="_blank" rel="noopener noreferrer" style="color:#f47b20">WhatsApp +86 139 6441 6725</a>.</p>
+      </noscript>
   </div>
 </section>
 
 <!-- FOOTER -->
 </main>
 <footer style="background:#0a1628;margin-top:80px">
-  <div style="max-width:1200px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px">
+  <div class="site-footer-grid">
     <div>
       <div style="font-size:18px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="assets/images/logo.jpg" alt="MUQI Tech logo" height="38" width="45" style="height:38px;width:auto;border-radius:4px"> MQ <span style='color:#f47b20'>·</span> TECH</div>
       <p style="font-size:14px;color:#94a3b8;line-height:1.7">Leading manufacturer of functional mineral ceramic water media and solid-state hydrogen products for health and eco applications worldwide.</p>
       <div style="display:flex;gap:12px;margin-top:20px">
-        <a href="https://x.com/MARTINPARK111" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
-        <a href="https://www.linkedin.com/company/72043164" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
-        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
+        <a href="https://x.com/MARTINPARK111" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
+        <a href="https://www.linkedin.com/company/72043164" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
+        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
         <a href="mailto:muqizb@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">@</a>
       </div>
     </div>
@@ -897,11 +900,12 @@
 @keyframes pulseWa { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1); } }
 </style>
 
-<script src="script.js?v=20261113"></script>
+<script src="script.js?v=20261128"></script>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
   <div class="cookie-banner-inner">
-    <p class="cookie-banner-text">We use cookies and analytical media to improve your experience and evaluate website performance. By continuing to use our website, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <p class="cookie-banner-text">We use essential cookies for the site to work. Analytics and advertising load only if you choose <strong>Accept</strong>; you can also choose <strong>Decline</strong>. Read our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
     <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-reject" id="cookieRejectBtn" aria-label="Decline non-essential cookies (analytics and ads stay off)">Decline</button>
       <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="Accept all cookies">Accept</button>
     </div>
   </div>

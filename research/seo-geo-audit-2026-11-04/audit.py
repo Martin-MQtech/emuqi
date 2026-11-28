@@ -485,3 +485,4 @@ for k in sorted(out):
     if len(out[k]) > 25: print(f'  ... 共 {len(out[k])} 项')
     total += len(out[k])
 print(f'\n>>> 问题总数: {total}')
+raise SystemExit(1 if total else 0)

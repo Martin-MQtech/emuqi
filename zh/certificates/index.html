@@ -99,7 +99,7 @@
 </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="/style.css?v=20261114" rel="stylesheet"/>
+<link href="/style.css?v=20261128" rel="stylesheet"/>
 <style>
   .cert-wrap { max-width: 960px; margin: 0 auto; padding: 110px 24px 80px; }
   .cert-wrap h1 { font-size: clamp(28px, 4vw, 36px); color: #0a1628; font-weight: 800; margin: 0 0 12px; line-height: 1.2; }
@@ -284,14 +284,14 @@
 </main>
 
 <footer style="background:#0a1628;margin-top:0">
-  <div style="max-width:1200px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px">
+  <div class="site-footer-grid">
     <div>
       <div style="font-size:22px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="/assets/images/logo.jpg" alt="木齐科技" height="38" width="45" style="height:38px;width:auto;border-radius:4px"> 木齐科技</div>
       <p style="font-size:14px;color:#94a3b8;line-height:1.7">全球领先的功能矿物陶瓷水处理滤料与固态制氢新材料研发制造源头工厂，赋能健康饮水与绿色科技全产业链。</p>
       <div style="display:flex;gap:12px;margin-top:20px">
-        <a href="https://x.com/MARTINPARK111" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
-        <a href="https://www.linkedin.com/company/72043164" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
-        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
+        <a href="https://x.com/MARTINPARK111" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
+        <a href="https://www.linkedin.com/company/72043164" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
+        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
         <a href="mailto:muqizb@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">@</a>
       </div>
     </div>
@@ -339,11 +339,12 @@
     </div>
   </div>
 </footer>
-<script src="/script.js?v=20261113"></script>
+<script src="/script.js?v=20261128"></script>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
   <div class="cookie-banner-inner">
-    <p class="cookie-banner-text">我们使用 Cookie 与分析工具来改善您的体验并评估网站性能。继续使用本网站即表示您同意我们的 <a href="/privacy-policy.html">隐私政策</a>。</p>
+    <p class="cookie-banner-text">我们使用网站运行所必需的 Cookie。只有您选择<strong>接受</strong>后，才会启用分析与广告服务；您也可以选择<strong>拒绝</strong>。详见<a href="/privacy-policy.html">隐私政策</a>。</p>
     <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-reject" id="cookieRejectBtn" aria-label="拒绝非必要 Cookie（分析与广告将保持关闭）">拒绝</button>
       <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="接受所有 Cookie">接受</button>
     </div>
   </div>

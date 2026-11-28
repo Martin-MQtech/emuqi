@@ -22,6 +22,7 @@
 
     if (window.innerWidth <= 820 && overflows) {
       document.body.classList.add('mq-mobilenav');
+      if (!nav.id) nav.id = 'mqPrimaryNav';
       var btn = document.getElementById('mqNavToggle');
       if (!btn) {
         btn = document.createElement('button');
@@ -29,6 +30,7 @@
         btn.type = 'button';
         btn.className = 'mq-nav-toggle';
         btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-controls', nav.id);
         btn.setAttribute('aria-label', isZh ? '打开导航菜单' : 'Open navigation menu');
         btn.innerHTML = '<span class="mq-nav-burger" aria-hidden="true"><i></i><i></i><i></i></span>' +
           '<span class="mq-nav-toggle-label">' + (isZh ? '菜单' : 'Menu') + '</span>';
@@ -38,6 +40,7 @@
           btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
         nav.addEventListener('click', function (e) {
+          if (e.defaultPrevented) return;
           if (e.target && e.target.closest && e.target.closest('a')) {
             document.body.classList.remove('mq-nav-open');
             btn.setAttribute('aria-expanded', 'false');
@@ -66,16 +69,80 @@
   }
 
   /* ---------------- W-07: Cookie consent (accept OR decline) ----------------
-     GDPR: analytics loads only after explicit acceptance (see loader below).
-     The static banner ships with an implied-consent sentence and an Accept
-     button only; both are upgraded here idempotently on every page. */
+     Optional analytics and advertising stay blocked until explicit consent.
+     Loaders are centralized here so no page can bypass the consent gate. */
+  var analyticsVersion = '20261128';
+  var adsPublisherId = 'ca-pub-8740168077394877';
+  var currentScriptUrl = document.currentScript && document.currentScript.src ? document.currentScript.src : null;
+
+  function siteAsset(path) {
+    if (!currentScriptUrl) return path;
+    try { return new URL(path, currentScriptUrl).href; } catch (e) { return path; }
+  }
+
+  function getConsent() {
+    try { return localStorage.getItem('mq_cookie_consent'); } catch (e) { return null; }
+  }
+
+  function setConsentMode(granted) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    if (granted) {
+      window.gtag('consent', 'update', {
+        analytics_storage: 'granted',
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted'
+      });
+    }
+  }
+
+  function loadAnalytics() {
+    if (getConsent() !== 'accepted' || window.__muqiAnalyticsLoaderAdded) return;
+    if (document.querySelector('script[src*="/assets/js/analytics.js"]')) return;
+    window.__muqiAnalyticsLoaderAdded = true;
+    var ga = document.createElement('script');
+    ga.src = siteAsset('assets/js/analytics.js') + '?v=' + analyticsVersion;
+    ga.defer = true;
+    document.head.appendChild(ga);
+  }
+
+  function loadAds() {
+    if (getConsent() !== 'accepted' || window.__muqiAdsLoaderAdded) return;
+    if (document.querySelector('script[src*="adsbygoogle.js"]')) return;
+    window.__muqiAdsLoaderAdded = true;
+    var ads = document.createElement('script');
+    ads.async = true;
+    ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(adsPublisherId);
+    ads.crossOrigin = 'anonymous';
+    document.head.appendChild(ads);
+  }
+
+  function loadOptionalServices() {
+    var accepted = getConsent() === 'accepted';
+    setConsentMode(accepted);
+    if (accepted) {
+      loadAnalytics();
+      loadAds();
+    }
+  }
+
   function initCookieBanner() {
+    loadOptionalServices();
     var banner = document.getElementById('cookie-banner');
     if (!banner) return;
-    var consent = null;
-    try { consent = localStorage.getItem('mq_cookie_consent'); } catch (e) {}
+    var consent = getConsent();
     function hide() { banner.classList.add('hidden'); }
-    if (consent === 'accepted' || consent === 'rejected') { hide(); return; }
+    if (consent === 'accepted' || consent === 'rejected') {
+      hide();
+      return;
+    }
 
     var textEl = banner.querySelector('.cookie-banner-text');
     if (textEl) {
@@ -88,16 +155,22 @@
 
     var actions = banner.querySelector('.cookie-banner-actions');
     var acceptBtn = document.getElementById('cookieAcceptBtn');
-    if (actions && acceptBtn && !document.getElementById('cookieRejectBtn')) {
-      var rb = document.createElement('button');
-      rb.type = 'button';
-      rb.id = 'cookieRejectBtn';
-      rb.className = 'cookie-btn-reject';
-      rb.textContent = isZh ? '拒绝' : 'Decline';
-      rb.setAttribute('aria-label', isZh ? '拒绝非必要 Cookie（分析统计将保持关闭）' : 'Decline non-essential cookies (analytics stays off)');
-      actions.insertBefore(rb, acceptBtn);
-      rb.addEventListener('click', function () {
+    var rejectBtn = document.getElementById('cookieRejectBtn');
+    if (actions && acceptBtn && !rejectBtn) {
+      rejectBtn = document.createElement('button');
+      rejectBtn.type = 'button';
+      rejectBtn.id = 'cookieRejectBtn';
+      rejectBtn.className = 'cookie-btn-reject';
+      rejectBtn.textContent = isZh ? '拒绝' : 'Decline';
+      rejectBtn.setAttribute('aria-label', isZh ? '拒绝非必要 Cookie（分析统计将保持关闭）' : 'Decline non-essential cookies (analytics stays off)');
+      actions.insertBefore(rejectBtn, acceptBtn);
+    }
+
+    if (rejectBtn && !rejectBtn.dataset.mqBound) {
+      rejectBtn.dataset.mqBound = '1';
+      rejectBtn.addEventListener('click', function () {
         try { localStorage.setItem('mq_cookie_consent', 'rejected'); } catch (e) {}
+        setConsentMode(false);
         hide();
       });
     }
@@ -106,13 +179,7 @@
       acceptBtn.dataset.mqBound = '1';
       acceptBtn.addEventListener('click', function () {
         try { localStorage.setItem('mq_cookie_consent', 'accepted'); } catch (e) {}
-        // W-07: consent given mid-session → load GA4 immediately, not on next page
-        if (!window.__muqiAnalyticsLoaded && !document.querySelector('script[src$="/assets/js/analytics.js"], script[src$="analytics.js"]')) {
-          var ga = document.createElement('script');
-          ga.src = '/assets/js/analytics.js?v=20261112';
-          ga.defer = true;
-          document.head.appendChild(ga);
-        }
+        loadOptionalServices();
         banner.style.opacity = '0';
         banner.style.transform = 'translateY(16px)';
         setTimeout(hide, 300);
@@ -164,22 +231,132 @@
     anchor.parentNode.insertBefore(strip, anchor);
   }
 
+  /* ---------------- RFQ privacy-safe email intent ---------------- */
+  function initRfqForms() {
+    var contactForm = document.getElementById('b2bInquiryForm');
+    if (contactForm) {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var category = document.getElementById('interestCategory');
+        if (params.get('intent') === 'sample' && category && !category.value) {
+          category.value = 'Sample / Evaluation Request';
+        }
+      } catch (e) {}
+    }
+
+    document.querySelectorAll('#homeRfqForm, #b2bInquiryForm').forEach(function (form) {
+      if (!form || form.dataset.mqRfqBound) return;
+      form.dataset.mqRfqBound = '1';
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var honeypot = form.querySelector('.mq-hp-field');
+        if (honeypot && honeypot.value) { form.reset(); return; }
+
+        var value = function (id) {
+          var field = document.getElementById(id);
+          return field ? field.value.trim() : '';
+        };
+        var isHome = form.id === 'homeRfqForm';
+        var name = isHome ? value('rfqName') : (value('firstName') + ' ' + value('lastName')).trim();
+        var email = value(isHome ? 'rfqEmail' : 'workEmail');
+        var company = value(isHome ? 'rfqCompany' : 'companyName');
+        var phone = isHome ? '' : value('phoneWhatsApp');
+        var interest = value(isHome ? 'rfqMaterial' : 'interestCategory');
+        var message = value(isHome ? 'rfqMessage' : 'inquiryMessage');
+        var lines = ['Name: ' + name, 'Email: ' + email, 'Company: ' + company];
+        if (phone) lines.push('WhatsApp/Phone: ' + phone);
+        lines.push('Interest: ' + interest, '', 'Requirements:', message);
+        var subject = 'B2B Inquiry: ' + (company || name || 'MUQI Ceramics');
+        var mailto = 'mailto:muqizb@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+
+        if (getConsent() === 'accepted') {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'rfq_email_intent', form: form.id, interest: interest });
+        }
+        var success = document.getElementById(isHome ? 'homeRfqSuccess' : 'formSuccessMsg');
+        if (success) success.style.display = 'block';
+        window.location.href = mailto;
+        form.reset();
+      });
+    });
+  }
+
   function initAll() {
     initMobileNav();
     initCookieBanner();
+    initRfqForms();
     initWhatsAppWidget();
     initDecisionFacts();
 
-    // Mobile dropdown support (pre-existing behavior)
-    document.querySelectorAll('.dropdown > a').forEach(function (dropLink) {
-      if (dropLink.dataset.mqDropBound) return;
-      dropLink.dataset.mqDropBound = '1';
-      dropLink.addEventListener('click', function (e) {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          var menu = dropLink.nextElementSibling;
-          if (menu) menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    // Unified dropdown support for canonical .dd menus and legacy .dropdown-menu menus.
+    document.querySelectorAll('header nav > div').forEach(function (group, index) {
+      var trigger = null;
+      Array.prototype.forEach.call(group.children, function (child) {
+        if (!trigger && child.tagName === 'A') trigger = child;
+      });
+      var menu = group.querySelector('.dd, .dropdown-menu');
+      if (!trigger || !menu || group.dataset.mqDdBound) return;
+      group.dataset.mqDdBound = '1';
+      var isCanonical = menu.classList.contains('dd');
+      if (!menu.id) menu.id = 'mq-dd-menu-' + index;
+
+      function setOpen(open, force) {
+        group.classList.toggle('is-open', open);
+        if (isCanonical && (window.innerWidth <= 820 || force)) {
+          menu.style.display = open ? 'block' : 'none';
         }
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
+      trigger.setAttribute('aria-haspopup', 'true');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.setAttribute('aria-controls', menu.id);
+      trigger.addEventListener('click', function (e) {
+        if (window.innerWidth <= 820) {
+          e.preventDefault();
+          setOpen(!group.classList.contains('is-open'));
+        }
+      });
+      trigger.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          setOpen(true, true);
+          var first = menu.querySelector('a');
+          if (first) first.focus();
+        }
+      });
+      group.addEventListener('focusin', function () {
+        if (window.innerWidth > 820) trigger.setAttribute('aria-expanded', 'true');
+      });
+      group.addEventListener('focusout', function (e) {
+        if (!group.contains(e.relatedTarget)) {
+          trigger.setAttribute('aria-expanded', 'false');
+          group.classList.remove('is-open');
+          if (isCanonical && window.innerWidth <= 820) menu.style.display = 'none';
+        }
+      });
+      group.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          setOpen(false, true);
+          trigger.focus();
+        }
+      });
+    });
+
+    // Product-detail galleries use native buttons and keep alt text in sync.
+    document.querySelectorAll('#gallery-thumbs').forEach(function (strip) {
+      var heroImg = document.getElementById('gallery-hero');
+      if (!heroImg) return;
+      strip.querySelectorAll('.gallery-thumb').forEach(function (thumb) {
+        thumb.addEventListener('click', function () {
+          var image = thumb.querySelector('img');
+          if (!image) return;
+          heroImg.src = image.src;
+          heroImg.alt = image.alt;
+          strip.querySelectorAll('.gallery-thumb').forEach(function (item) {
+            item.setAttribute('aria-pressed', item === thumb ? 'true' : 'false');
+          });
+        });
       });
     });
 
@@ -187,12 +364,16 @@
     document.querySelectorAll('.application-thumbs').forEach(function (strip) {
       var heroImg = strip.closest('.application-product-bg') ? strip.closest('.application-product-bg').querySelector('img') : null;
       if (!heroImg) return;
-      strip.querySelectorAll('img').forEach(function (thumb) {
+      strip.querySelectorAll('.gallery-thumb').forEach(function (thumb) {
         thumb.addEventListener('click', function () {
-          heroImg.src = thumb.src;
-          heroImg.alt = thumb.alt;
-          strip.querySelectorAll('img').forEach(function (t) { t.classList.remove('active'); });
-          thumb.classList.add('active');
+          var image = thumb.querySelector('img');
+          if (!image) return;
+          heroImg.src = image.src;
+          heroImg.alt = image.alt;
+          strip.querySelectorAll('.gallery-thumb').forEach(function (item) {
+            item.classList.toggle('active', item === thumb);
+            item.setAttribute('aria-pressed', item === thumb ? 'true' : 'false');
+          });
         });
       });
     });
@@ -221,21 +402,17 @@
   });
 })();
 
-// Load MUQI Analytics Engine (GA4) — W-07: only after explicit cookie acceptance
+// Load MUQI WebMCP Agentic Web Engine once (root-relative for nested pages).
 (function () {
-  var consent = null;
-  try { consent = localStorage.getItem('mq_cookie_consent'); } catch (e) {}
-  if (consent !== 'accepted') { return; }
-  var analyticsScript = document.createElement('script');
-  analyticsScript.src = '/assets/js/analytics.js?v=20261112';
-  analyticsScript.defer = true;
-  document.head.appendChild(analyticsScript);
-})();
-
-// Load MUQI WebMCP Agentic Web Engine (Root-relative path to ensure support in /blog/ and subdirectories)
-(function () {
+  if (document.querySelector('script[src*="/assets/js/muqi-webmcp.js"], script[src*="muqi-webmcp.js"]')) return;
   var mcpScript = document.createElement('script');
-  mcpScript.src = '/assets/js/muqi-webmcp.js';
+  var mcpBase = document.currentScript && document.currentScript.src ? document.currentScript.src : null;
+  try {
+    mcpScript.src = mcpBase ? new URL('assets/js/muqi-webmcp.js', mcpBase).href : 'assets/js/muqi-webmcp.js';
+  } catch (e) {
+    mcpScript.src = 'assets/js/muqi-webmcp.js';
+  }
+  mcpScript.src += '?v=20261128';
   mcpScript.defer = true;
   document.head.appendChild(mcpScript);
 })();

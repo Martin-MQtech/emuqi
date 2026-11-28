@@ -75,7 +75,7 @@ def audit_file(filepath):
     for sc in scripts:
         src = sc['src']
         depth = filepath.count('/') - 1
-        if depth > 0 and (src.startswith('assets/') or src == 'script.js' or src == 'style.css'):
+        if depth > 0 and (src.startswith('assets/') or src == 'script.js?v=20261128' or src == 'style.css?v=20261128'):
             issues.append(f'Potentially broken relative asset path: {src} in depth {depth}')
 
     # 9. AEO checks for blog articles (/blog/...)

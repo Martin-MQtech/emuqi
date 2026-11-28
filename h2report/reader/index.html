@@ -86,7 +86,6 @@ body {
   background: var(--bg-page);
   color: var(--text-main);
   transition: background 0.25s ease, color 0.25s ease;
-  overflow-x: hidden;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -250,7 +249,6 @@ body {
   background: var(--bg-card);
   color: var(--text-main);
   font-size: 0.82rem;
-  outline: none;
 }
 .search-input:focus {
   border-color: var(--accent);
@@ -265,9 +263,14 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 10px;
+  width: 100%;
   padding: 8px 12px;
   margin-bottom: 2px;
+  border: 0;
   border-radius: 6px;
+  background: transparent;
+  text-align: left;
+  font: inherit;
   cursor: pointer;
   text-decoration: none;
   color: var(--text-sub);
@@ -668,6 +671,14 @@ body.theme-dark .article-wrapper h2 {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid #00d4ff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #0a1628;
+}
+.search-input:focus { border-color: var(--accent); }
+</style>
 </head>
 <body class="theme-light">
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -678,7 +689,7 @@ body.theme-dark .article-wrapper h2 {
 <!-- Top Bar -->
 <header class="reader-header">
   <div class="header-left">
-    <button class="btn-icon toc-toggle-btn" id="btn-toggle-toc" onclick="toggleSidebar()">
+    <button type="button" class="btn-icon toc-toggle-btn" id="btn-toggle-toc" aria-expanded="false" aria-controls="reader-sidebar" onclick="toggleSidebar()">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       <span>TOC</span>
     </button>
@@ -696,17 +707,17 @@ body.theme-dark .article-wrapper h2 {
   <div class="header-right">
     <!-- Language -->
     <div class="tool-group lang-tools" role="group" aria-label="Language Selector">
-      <button class="tool-btn active" data-lang="en" onclick="setReaderLang('en')">EN</button>
-      <button class="tool-btn" data-lang="ja" onclick="setReaderLang('ja')">JA</button>
-      <button class="tool-btn" data-lang="ko" onclick="setReaderLang('ko')">KO</button>
-      <button class="tool-btn" data-lang="zh" onclick="setReaderLang('zh')">ZH</button>
+      <button type="button" class="tool-btn active" data-lang="en" aria-pressed="true" onclick="setReaderLang('en')">EN</button>
+      <button type="button" class="tool-btn" data-lang="ja" aria-pressed="false" onclick="setReaderLang('ja')">JA</button>
+      <button type="button" class="tool-btn" data-lang="ko" aria-pressed="false" onclick="setReaderLang('ko')">KO</button>
+      <button type="button" class="tool-btn" data-lang="zh" aria-pressed="false" onclick="setReaderLang('zh')">ZH</button>
     </div>
 
     <!-- Theme Switcher -->
     <div class="tool-group theme-tools" role="group" aria-label="Theme Selector">
-      <button class="tool-btn active" id="theme-light" onclick="setTheme('light')" title="Light Paper">☀️</button>
-      <button class="tool-btn" id="theme-sepia" onclick="setTheme('sepia')" title="Sepia Parchment">📜</button>
-      <button class="tool-btn" id="theme-dark" onclick="setTheme('dark')" title="Night Dark">🌙</button>
+      <button type="button" class="tool-btn active" id="theme-light" aria-label="Light paper theme" aria-pressed="true" onclick="setTheme('light')" title="Light Paper">☀️</button>
+      <button type="button" class="tool-btn" id="theme-sepia" aria-label="Sepia parchment theme" aria-pressed="false" onclick="setTheme('sepia')" title="Sepia Parchment">📜</button>
+      <button type="button" class="tool-btn" id="theme-dark" aria-label="Night dark theme" aria-pressed="false" onclick="setTheme('dark')" title="Night Dark">🌙</button>
     </div>
 
     <!-- Font Size -->
@@ -801,6 +812,7 @@ function init() {
   // Restore saved theme
   const savedTheme = localStorage.getItem('emuqi_reader_theme') || 'light';
   setTheme(savedTheme);
+  syncSidebarAccess();
 
   renderReader();
 }
@@ -825,7 +837,9 @@ function renderReader() {
 
   // Update Buttons
   document.querySelectorAll('[data-lang]').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
+    const active = btn.getAttribute('data-lang') === currentLang;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
 
   // Update Labels
@@ -842,9 +856,13 @@ function renderReader() {
   tocList.innerHTML = '';
   chapters.forEach((ch, idx) => {
     const li = document.createElement('li');
-    li.className = 'toc-item' + (idx === currentChapterIdx ? ' active' : '');
-    li.innerHTML = `<span class="toc-num">${idx + 1}</span><span>${ch.title}</span>`;
-    li.onclick = () => loadChapter(idx);
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'toc-item' + (idx === currentChapterIdx ? ' active' : '');
+    button.innerHTML = `<span class="toc-num">${idx + 1}</span><span>${ch.title}</span>`;
+    button.setAttribute('aria-current', idx === currentChapterIdx ? 'page' : 'false');
+    button.addEventListener('click', () => loadChapter(idx));
+    li.appendChild(button);
     tocList.appendChild(li);
   });
 
@@ -863,6 +881,7 @@ function loadChapter(idx, smoothScroll = true) {
   // Update TOC active state
   document.querySelectorAll('.toc-item').forEach((item, i) => {
     item.classList.toggle('active', i === idx);
+    item.setAttribute('aria-current', i === idx ? 'page' : 'false');
   });
 
   // Update breadcrumb
@@ -922,7 +941,10 @@ function setTheme(theme) {
   document.body.className = `theme-${theme}`;
   ['light', 'sepia', 'dark'].forEach(t => {
     const btn = document.getElementById(`theme-${t}`);
-    if (btn) btn.classList.toggle('active', t === theme);
+    if (btn) {
+      btn.classList.toggle('active', t === theme);
+      btn.setAttribute('aria-pressed', t === theme ? 'true' : 'false');
+    }
   });
   localStorage.setItem('emuqi_reader_theme', theme);
 }
@@ -941,20 +963,48 @@ function filterToc(query) {
   });
 }
 
+function syncSidebarAccess() {
+  const sidebar = document.getElementById('reader-sidebar');
+  const toggle = document.getElementById('btn-toggle-toc');
+  if (!sidebar || !toggle) return;
+  const mobileClosed = window.innerWidth <= 900 && !sidebar.classList.contains('open');
+  sidebar.inert = mobileClosed;
+  toggle.setAttribute('aria-expanded', sidebar.classList.contains('open') ? 'true' : 'false');
+}
+
 function toggleSidebar() {
   const sidebar = document.getElementById('reader-sidebar');
   sidebar.classList.toggle('open');
+  syncSidebarAccess();
+  if (sidebar.classList.contains('open')) {
+    const first = sidebar.querySelector('button, a, input');
+    if (first) first.focus();
+  }
 }
 
 function closeSidebarOnMobile() {
   if (window.innerWidth <= 900) {
     const sidebar = document.getElementById('reader-sidebar');
-    if (sidebar) sidebar.classList.remove('open');
+    if (sidebar) {
+      const focusWasInside = sidebar.contains(document.activeElement);
+      sidebar.classList.remove('open');
+      syncSidebarAccess();
+      if (focusWasInside) {
+        const main = document.getElementById('main-content');
+        if (main) main.focus();
+      }
+    }
   }
 }
 
+window.addEventListener('resize', syncSidebarAccess);
+
 // Keyboard arrow navigation
 window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeSidebarOnMobile();
+    return;
+  }
   if (e.target.tagName === 'INPUT') return;
   if (e.key === 'ArrowRight') {
     loadChapter(currentChapterIdx + 1);
@@ -967,11 +1017,12 @@ window.addEventListener('keydown', (e) => {
 init();
 </script>
 
-<script src="../../script.js?v=20261113"></script>
+<script src="../../script.js?v=20261128"></script>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
   <div class="cookie-banner-inner">
-    <p class="cookie-banner-text">We use cookies and analytical media to improve your experience and evaluate website performance. By continuing to use our website, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <p class="cookie-banner-text">We use essential cookies for the site to work. Analytics and advertising load only if you choose <strong>Accept</strong>; you can also choose <strong>Decline</strong>. Read our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
     <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-reject" id="cookieRejectBtn" aria-label="Decline non-essential cookies (analytics and ads stay off)">Decline</button>
       <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="Accept all cookies">Accept</button>
     </div>
   </div>

@@ -35,7 +35,7 @@ for tag in tags:
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{tag} - 氢健康科普与研究专题 | 木齐科技</title>
-<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/style.css?v=20261128">
 <meta name="description" content="木齐科技氢健康知识库：{tag}专题研究与应用案例。">
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 40px auto; padding: 0 20px;">

@@ -19,7 +19,7 @@ template = """<!DOCTYPE html>
     <meta name="description" content="木齐科技 H2 Wellness Hub 汇集关于 {name_cn} ({name_en}) 的全球前沿研究、临床案例与创新产品解决方案。">
     <meta name="keywords" content="{name_cn}, {name_en}, 氢健康, 木齐科技, 富氢水, 固态氢">
     <link rel="canonical" href="https://www.emuqi.com/h2-wellness-hub/zh/tags/{filename}">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css?v=20261128">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="application/ld+json">
     {{

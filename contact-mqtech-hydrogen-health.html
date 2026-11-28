@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="style.css?v=20261114">
+<link rel="stylesheet" href="style.css?v=20261128">
 <style>
 /* Critical Language Pill Switch Styles */
 .lang-pill-switch { display: inline-flex !important; align-items: center !important; gap: 2px !important; height: 30px !important; padding: 2px 4px 2px 7px !important; background: rgba(255,255,255,0.8) !important; border: 1px solid rgba(10,22,40,0.18) !important; border-radius: 9999px !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06) !important; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; margin-left: 6px !important; flex-shrink: 0 !important; box-sizing: border-box !important; user-select: none !important; }
@@ -122,7 +122,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 
-<script src="assets/js/analytics.js" defer></script>
+
 <link rel="preload" as="image" href="assets/images/hero-bg.png" fetchpriority="high">
 </head>
 <body>
@@ -734,7 +734,7 @@
           </p>
         </div>
 
-        <form id="b2bInquiryForm" onsubmit="event.preventDefault(); var hp=this.querySelector('.mq-hp-field'); if(hp&&hp.value){this.reset();return;}var f=document.getElementById('firstName').value||'', l=document.getElementById('lastName').value||'',em=document.getElementById('workEmail').value||'', co=document.getElementById('companyName').value||'',ph=document.getElementById('phoneWhatsApp').value||'', ic=document.getElementById('interestCategory').value||'',msg=document.getElementById('inquiryMessage').value||'';var body='Name: '+f+' '+l+'\nEmail: '+em+'\nCompany: '+co+'\nWhatsApp/Phone: '+ph+'\nInterest: '+ic+'\n\nRequirements:\n'+msg;window.location.href='mailto:muqizb@gmail.com?subject='+encodeURIComponent('B2B Inquiry: '+((co||(f+' '+l))||'MUQI Ceramics'))+'&body='+encodeURIComponent(body);try{dataLayer.push({event:'generate_lead',form:'contact_b2b'});}catch(e){}document.getElementById('formSuccessMsg').style.display='block'; this.reset();">
+        <form id="b2bInquiryForm" action="mailto:muqizb@gmail.com" method="post" enctype="text/plain">
           <div class="mq-form-row">
             <div class="mq-form-group">
               <label for="firstName">First Name <span class="req">*</span></label>
@@ -766,6 +766,7 @@
               <label for="interestCategory">Project Sector / Interest <span class="req">*</span></label>
               <select id="interestCategory" name="category" required>
                 <option value="" disabled selected>Select Primary Category</option>
+                <option value="Sample / Evaluation Request">Sample / Evaluation Request</option>
                 <option value="Water Filtration & Mineral Media OEM">Water Filtration & Mineral Media OEM</option>
                 <option value="Solid-State Hydrogen Cosmetics & Skincare">Solid-State Hydrogen Cosmetics & Skincare</option>
                 <option value="Bulk Functional Ceramic Media (Alkaline/ORP/Antibacterial)">Bulk Ceramic Media (Alkaline / ORP / Antibacterial)</option>
@@ -794,11 +795,14 @@
             <span>Direct SLA: Executive response within 12 business hours &bull; NDA protected</span>
           </div>
 
-          <div id="formSuccessMsg" style="display:none; margin-top:16px; padding:14px; background:#ecfdf5; border:1px solid #10b981; border-radius:8px; color:#065f46; font-size:13.5px; line-height:1.5;">
+          <div id="formSuccessMsg" role="status" aria-live="polite" style="display:none; margin-top:16px; padding:14px; background:#ecfdf5; border:1px solid #10b981; border-radius:8px; color:#065f46; font-size:13.5px; line-height:1.5;">
             ✓ <strong>Your email client has opened with your inquiry pre-filled — just hit Send to reach us.</strong> If it didn't open, email us directly at <a href="mailto:muqizb@gmail.com" style="color:#065f46;text-decoration:underline">muqizb@gmail.com</a> or WhatsApp <a href="https://wa.me/8613964416725" target="_blank" rel="noopener noreferrer" style="color:#065f46;text-decoration:underline">+86 139 6441 6725</a>. Our executive engineering team typically responds within 12 business hours.
           </div>
         <input type="text" name="company_website_hp" class="mq-hp-field" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
       </form>
+      <noscript>
+        <p style="font-size:13.5px;line-height:1.7;color:#475569;margin:16px 0 0">JavaScript is off. Email your inquiry directly to <a href="mailto:muqizb@gmail.com" style="color:#0f172a;text-decoration:underline">muqizb@gmail.com</a> or contact <a href="https://wa.me/8613964416725" target="_blank" rel="noopener noreferrer" style="color:#0f172a;text-decoration:underline">WhatsApp +86 139 6441 6725</a>.</p>
+      </noscript>
       </div>
 
       <!-- ================================================================
@@ -1046,15 +1050,15 @@
 
 </main>
 <footer style="background:#0a1628;margin-top:80px">
-  <div style="max-width:1200px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px">
+  <div class="site-footer-grid">
     <div>
       <div style="font-size:18px;font-weight:700;color:#f0ece4;margin-bottom:12px;display:flex;align-items:center;gap:12px"><img src="assets/images/logo.jpg" alt="MUQI Tech logo" height="38" style="border-radius:4px" width="45"> MQ <span style='color:#f47b20'>·</span> TECH</div>
       <p style="font-size:14px;color:#94a3b8;line-height:1.7">Leading manufacturer of functional mineral ceramic water media and solid-state hydrogen products for health and eco applications worldwide.</p>
       <div style="display:flex;gap:12px;margin-top:20px">
-        <a href="https://x.com/MARTINPARK111" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
-        <a href="https://www.facebook.com/martinchen2010/" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">f</a>
-        <a href="https://www.linkedin.com/company/72043164" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
-        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
+        <a href="https://x.com/MARTINPARK111" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
+        <a href="https://www.facebook.com/martinchen2010/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">f</a>
+        <a href="https://www.linkedin.com/company/72043164" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
+        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
         <a href="https://martinbinchen.github.io/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:13px;font-weight:600;color:#94a3b8;text-decoration:none" title="Martin Chen Personal Portal">GH</a>
         <a href="mailto:muqizb@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">@</a>
       </div>
@@ -1094,11 +1098,12 @@
   <div style="border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:24px;font-size:13px;color:#475569;margin-top:48px">&copy; 2025–2026 MUQI &middot; <a href="https://www.emuqi.com" style="color:#f47b20;text-decoration:none">www.emuqi.com</a></div>
 </footer>
 
-<script src="script.js?v=20261113"></script>
+<script src="script.js?v=20261128"></script>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
   <div class="cookie-banner-inner">
-    <p class="cookie-banner-text">We use cookies and analytical media to improve your experience and evaluate website performance. By continuing to use our website, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <p class="cookie-banner-text">We use essential cookies for the site to work. Analytics and advertising load only if you choose <strong>Accept</strong>; you can also choose <strong>Decline</strong>. Read our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
     <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-reject" id="cookieRejectBtn" aria-label="Decline non-essential cookies (analytics and ads stay off)">Decline</button>
       <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="Accept all cookies">Accept</button>
     </div>
   </div>

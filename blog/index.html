@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../style.css?v=20261114">
+<link rel="stylesheet" href="../style.css?v=20261128">
 <style>
 /* Critical Language Pill Switch Styles */
 .lang-pill-switch { display: inline-flex !important; align-items: center !important; gap: 2px !important; height: 30px !important; padding: 2px 4px 2px 7px !important; background: rgba(255,255,255,0.8) !important; border: 1px solid rgba(10,22,40,0.18) !important; border-radius: 9999px !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.95),0 2px 6px rgba(10,22,40,0.06) !important; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; margin-left: 6px !important; flex-shrink: 0 !important; box-sizing: border-box !important; user-select: none !important; }
@@ -20,7 +20,7 @@
 .lang-pill-opt:not(.active):hover { color: #0a1628 !important; background: rgba(10,22,40,0.08) !important; }
 .lang-pill-divider { display: inline-block !important; width: 1px !important; height: 10px !important; background: rgba(10,22,40,0.18) !important; margin: 0 1px !important; flex-shrink: 0 !important; }
 </style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8740168077394877" crossorigin="anonymous"></script>
+
   <link rel="canonical" href="https://www.emuqi.com/blog/">
   <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
@@ -122,7 +122,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
 <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
 
-<script src="../assets/js/analytics.js" defer></script>
+
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -212,7 +212,12 @@
 
 <section class="section">
   <div class="container">
-    <div class="blog-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px">
+      <label for="blogSearch" style="font-size:14px;font-weight:700;color:#0a1628">Search articles</label>
+      <input id="blogSearch" type="search" placeholder="Search by topic, product, or keyword" autocomplete="off" style="width:min(100%,420px);padding:11px 14px;border:1px solid #cbd5e1;border-radius:10px;font-size:14px">
+    </div>
+    <p id="blogSearchStatus" role="status" aria-live="polite" style="margin:0 0 18px;color:#64748b;font-size:13px">Showing all 33 articles</p>
+    <div id="blogArticleGrid" class="blog-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:28px">
 <!-- 00. Ten Questions, One Industry — 2026-11-12 (VIDEO SERIES) -->
       <a href="hydrogen-ten-questions-video-series-en.html" style="text-decoration:none;color:inherit;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,0.06);transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;border-top:4px solid #f47b20" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 25px rgba(244,123,32,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.06)'">
         <div style="aspect-ratio:16/10;overflow:hidden;background:#0a1628">
@@ -619,6 +624,26 @@
         </div>
       </a>
     </div>
+    <script>
+      (function () {
+        var input = document.getElementById('blogSearch');
+        var grid = document.getElementById('blogArticleGrid');
+        var status = document.getElementById('blogSearchStatus');
+        if (!input || !grid || !status) return;
+        var cards = Array.prototype.slice.call(grid.children).filter(function (node) { return node.tagName === 'A'; });
+        function applyFilter() {
+          var query = input.value.trim().toLowerCase();
+          var visible = 0;
+          cards.forEach(function (card) {
+            var match = !query || card.textContent.toLowerCase().indexOf(query) !== -1;
+            card.hidden = !match;
+            if (match) visible += 1;
+          });
+          status.textContent = query ? 'Showing ' + visible + ' of ' + cards.length + ' articles' : 'Showing all ' + cards.length + ' articles';
+        }
+        input.addEventListener('input', applyFilter);
+      }());
+    </script>
     <div class="text-center" style="margin-top:40px;color:var(--text-light)">
       <p>Page 1 of 1 · <a href="/blog/">Blog Home</a></p>
     </div>
@@ -638,14 +663,14 @@
 
 </main>
 <footer style="background:#0a1628;margin-top:80px">
-  <div style="max-width:1200px;margin:0 auto;padding:60px 40px 0;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:36px">
+  <div class="site-footer-grid">
     <div>
       <div style="font-size:26px;font-weight:800;color:#ffffff;letter-spacing:1.5px;margin-bottom:12px">MUQI</div>
       <p style="font-size:14px;color:#94a3b8;line-height:1.7">Leading manufacturer of functional mineral ceramic water media and solid-state hydrogen products for health and eco applications worldwide.</p>
       <div style="display:flex;gap:12px;margin-top:20px">
-        <a href="https://x.com/MARTINPARK111" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
-        <a href="https://www.linkedin.com/company/72043164" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
-        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
+        <a href="https://x.com/MARTINPARK111" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">X</a>
+        <a href="https://www.linkedin.com/company/72043164" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">in</a>
+        <a href="https://www.youtube.com/@Martinchen1234" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">YT</a>
         <a href="mailto:muqizb@gmail.com" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);font-size:14px;color:#94a3b8;text-decoration:none">@</a>
       </div>
     </div>
@@ -683,11 +708,12 @@
   </div>
   <div style="border-top:1px solid rgba(255,255,255,0.06);text-align:center;padding:24px;font-size:13px;color:#475569;margin-top:48px">&copy; 2025–2026 MUQI &middot; <a href="https://www.emuqi.com" style="color:#f47b20;text-decoration:none">emuqi.com</a></div>
 </footer>
-<script src="../script.js?v=20261113"></script>
+<script src="../script.js?v=20261128"></script>
 <div id="cookie-banner" class="cookie-banner" role="region" aria-label="Cookie consent">
   <div class="cookie-banner-inner">
-    <p class="cookie-banner-text">We use cookies and analytical media to improve your experience and evaluate website performance. By continuing to use our website, you agree to our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+    <p class="cookie-banner-text">We use essential cookies for the site to work. Analytics and advertising load only if you choose <strong>Accept</strong>; you can also choose <strong>Decline</strong>. Read our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
     <div class="cookie-banner-actions">
+      <button type="button" class="cookie-btn-reject" id="cookieRejectBtn" aria-label="Decline non-essential cookies (analytics and ads stay off)">Decline</button>
       <button type="button" class="cookie-btn-accept" id="cookieAcceptBtn" aria-label="Accept all cookies">Accept</button>
     </div>
   </div>

@@ -1,3 +1,14 @@
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #00d4ff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #0a1628;
+}
+
 :root {
   --hub-ink: #0a1628;
   --hub-navy: #1a3a6e;
