@@ -236,4 +236,6 @@ git add <本次 56 个文件> && git commit && git push origin main
 
 **本地验收**：严格审计扫描 196 个 HTML、181 个 sitemap URL、22 条以上重定向规则，`问题总数: 0`；中英文博客各 33 张卡片通过日期严格递减门禁；JavaScript / Python 语法与 `git diff --check` 通过；应用页 5 个图集共 14 个原生按钮、0 个直接图片子节点、0 个嵌套按钮；5 个产品页 13 个原生缩略图全部修复。使用本机 Chrome + Playwright 对首页、氢水瓶产品页、应用页、报告页、Reader 页执行 360 / 390 / 768 / 1280 px 回归，横向溢出均为 0；应用缩略图均为 122 × 92 px，产品图集点击后主图切换且仅一个 pressed；移动端菜单/子菜单开关与 Escape、报告灯箱焦点闭环、Reader `inert`、同意拒绝/接受脚本加载行为全部通过；关键页无控制台错误或 HTTP 失败。
 
-**验证边界与后续项**：PageSpeed Insights API 仍受 429 限制，未取得官方 CWV 分数。尚未建设服务端 POST / Turnstile，尚未全站增加 `srcset/sizes`、自托管字体或补齐全部页面 main/H1；这些属于后续阶段，不冒充本轮已完成。推送后仍需复验 GitHub Actions、Hostinger、GitHub Pages 及 Cloudflare 实际响应头。
+**推送与线上复验（2026-11-28）**：代码提交 `5fc8082` 已推送 `main`；GitHub Actions Run `46098256003` 的审计、凭据扫描、部署与 smoke test 全部通过。Hostinger 主站首页、联系页、应用页已确认加载新 Consent/Decline 与 `v=20261128`，静态 GA4/AdSense loader 为 0；HTML 返回 `no-store`，CSP、COOP、nosniff、referrer/permissions/cross-domain 策略生效，CSS/JS 为一年 immutable，Cloudflare 对 HTML 返回 MISS/DYNAMIC。GitHub Pages 首页、中文首页、联系页、应用页、产品页和英文决策树页均通过内容与资源检查。随后对主站报告页和 sitemap/404 的连续实测触发 Cloudflare HTTP 429，未完成主站全量浏览器复验；该限流不是页面断言失败，本地五页回归与 Pages 检查均已通过。
+
+**验证边界与后续项**：PageSpeed Insights API 仍受 429 限制，未取得官方 CWV 分数；GitHub Pages 由平台返回 `max-age=600`，不读取 Hostinger `.htaccess`。尚未建设服务端 POST / Turnstile，尚未全站增加 `srcset/sizes`、自托管字体或补齐全部页面 main/H1；这些属于后续阶段，不冒充本轮已完成。凭据吊销、Git 历史清理和 Cloudflare bypass/Purge 仍需另行授权执行。
