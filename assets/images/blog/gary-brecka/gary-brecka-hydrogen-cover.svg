@@ -58,7 +58,7 @@
       <circle cx="50" cy="45" r="28" fill="url(#neonCyan)"/>
       <text x="50" y="54" fill="#070d18" font-size="22" font-weight="900" font-family="system-ui, sans-serif" text-anchor="middle">H₂</text>
       <text x="90" y="38" fill="#ffffff" font-size="14" font-weight="bold" font-family="system-ui, sans-serif">MOLECULAR HYDROGEN</text>
-      <text x="90" y="60" fill="#38bdf8" font-size="12" font-family="system-ui, sans-serif">ORP -800mV · 1600+ ppb · Biohack</text>
+      <text x="90" y="60" fill="#38bdf8" font-size="12" font-family="system-ui, sans-serif">Negative ORP · 1600+ ppb · Biohack</text>
     </g>
   </g>
 

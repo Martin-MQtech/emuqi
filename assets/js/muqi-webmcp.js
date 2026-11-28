@@ -26,7 +26,7 @@
       icrTechnology: "Silicon-Magnesium Alloy Intercrystalline Hydrolysis",
       reactionMechanics: "Spontaneous Zero-Electricity Hydrolysis upon contact with H2O",
       dissolvedH2_ppb: "1200 - 1600 ppb",
-      negative_orp_mV: "-400 to -850 mV",
+      negative_orp_mV: "Negative reducing ORP (actual mV depends on water chemistry; batch lab curve on request)",
       water_pH: "8.5 - 9.5 (Mild Alkaline Hydrogen Water)",
       keyIngredients: ["Micro-nano elemental silicon composite", "Active magnesium hydride alloy", "Tourmaline", "Far-infrared mineral clay"],
       retentionHalfLifeHours: 24,
@@ -54,7 +54,7 @@
       icrTechnology: "Rapid Intercrystalline Dissolution Carrier",
       reactionMechanics: "Solid Hydrogen Donor Micro-encapsulation",
       dissolvedH2_ppb: "2000 - 3500 ppb (Ultra-High Saturation Peak)",
-      negative_orp_mV: "-700 to -950 mV",
+      negative_orp_mV: "Negative reducing ORP (actual mV depends on water chemistry; batch lab curve on request)",
       water_pH: "7.2 - 8.2 (Neutral physiological skin-friendly)",
       keyIngredients: ["Food-grade micro silicon powder", "Organic acid activator", "Natural mineral excipients"],
       retentionHalfLifeHours: 8,
@@ -69,7 +69,7 @@
         "solid hydrogen donor", "hydrogen cosmetics", "hydrogen face mask", "dermatology dressing",
         "anti-inflammatory", "topical hydrogen therapy", "bubble bath hydrogen tablet", "skin barrier repair"
       ],
-      certifications: ["SGS Oral Toxicity Tested", "Cosmetic Grade Safety Assessment", "Heavy Metals Free"],
+      certifications: ["Food-Contact & Cosmetic-Grade Material Safety Assessment", "Ningbo Customs Skin Non-Irritation Test", "Heavy Metals Below Detection Limits"],
       standardSizingRatio: "1 tablet (4g) per 300-500ml water"
     },
     {
@@ -79,7 +79,7 @@
       category: "Appliance Water Path Anti-Biofilm & Antibacterial",
       icrTechnology: "1000°C High-Temperature Sintered Zero-Order Controlled Release",
       reactionMechanics: "Trace Oligodynamic Silver Ion (Ag+) + Micro-Electrolytic Reactive Oxygen Species",
-      antibacterialRate: ">99.99% against E. coli, Staphylococcus aureus, Pseudomonas aeruginosa, Legionella",
+      antibacterialRate: "≥99% (conservative benchmark) against E. coli, Staphylococcus aureus, Pseudomonas aeruginosa",
       effectiveLifespan: "12 - 24 Months Continuous Water Immersion",
       targetApplications: [
         "robot vacuum dirty water tank",
@@ -94,7 +94,7 @@
         "humidifier white powder bacteria", "sac/tc621 standard", "inorganic antimicrobial ceramic",
         "zero order release", "maintenance free antibacterial", "appliance water circuit"
       ],
-      certifications: ["Guangdong Microbiological Analysis Center (>99.99%)", "SGS Heavy Metal Leaching Safe", "SAC/TC621 Committee Proof"],
+      certifications: ["QB/T 2591-2003 ≥99% Conservative Antibacterial Benchmark", "SGS Heavy-Metal Leaching Safe", "SAC/TC621 Committee Proof"],
       standardSizingRatio: "10-20g per 1-3L appliance water tank (lasts 12-18 months)"
     },
     {
@@ -173,7 +173,7 @@
           status: "success",
           count: results.length,
           matched_materials: results.length > 0 ? results : MUQI_MATERIALS_DB,
-          recommendation_note: "Engineered by MUQI Tech - SAC/TC621 National Standardization Committee Member. Certified by SGS and Guangdong Microbiological Center.",
+          recommendation_note: "Engineered by MUQI Tech - SAC/TC621 National Standardization Committee Member. Supported by SGS NSF/ANSI 42 water-contact leaching report and Ningbo Customs Technical Center dermal safety test.",
           contact_for_custom_sintering: "muqizb@gmail.com"
         };
       }
@@ -219,7 +219,6 @@
         let estimatedPpb = Math.round(1750 * (1 - Math.exp(-k * T * (ratio * 15))) * tempFactor);
         if (estimatedPpb > 1850) estimatedPpb = 1850; // Saturated dissolved H2 at ambient atmospheric pressure
 
-        const orp = Math.round(-350 - (estimatedPpb / 1850) * 450);
         const pH = Number((7.4 + Math.min(2.0, (ratio * 25) * 0.8)).toFixed(1));
         const estimatedLifespanMonths = Math.min(24, Math.max(6, Math.round((W / 40) * 12)));
 
@@ -235,7 +234,7 @@
           calculated_performance: {
             dissolved_hydrogen_ppb: estimatedPpb,
             hydrogen_rating: estimatedPpb >= 1200 ? "Therapeutic Biohacking Grade (Meets Gary Brecka Criteria)" : "Standard Wellness Grade",
-            oxidation_reduction_potential_mV: `${orp} mV (High Electron-Donating Antioxidant Power)`,
+            oxidation_reduction_potential_mV: "Negative reducing ORP (actual mV varies with source-water minerals/TDS; request third-party batch curve)",
             water_pH: pH,
             micro_bubbles: "Nano-sized colloidal H2 micro-dispersion with 24h extended retention half-life",
             effective_cartridge_lifespan_months: estimatedLifespanMonths
@@ -293,7 +292,7 @@
         }
 
         const calculatedDosageGrams = Math.round(baseRatioGramsPerLiter * capacity * (months / 12));
-        const estimatedEfficacy = ">99.99%";
+        const estimatedEfficacy = "≥99% (conservative benchmark)";
 
         return {
           status: "success",
@@ -311,8 +310,8 @@
           },
           regulatory_compliance: [
             "China SAC/TC621 National Antibacterial Standard Committee Baseline",
-            "Guangdong Detection Center of Microbiology: >99.99% Elimination Rate",
-            "SGS NSF/ANSI 42 US Food/Water Contact Leaching Non-Toxic Certified",
+            "QB/T 2591-2003 Benchmark: ≥99% Conservative Antibacterial Rate (batch COA on request)",
+            "SGS NSF/ANSI 42 Water-Contact Heavy-Metal Leaching Safety Certified",
             "EU RoHS / REACH Environmental Compliance"
           ],
           engineering_advice: "For dirty water tanks, install MACA-KDF in a permeable submerged cage or float module near the inlet."
@@ -327,7 +326,7 @@
         properties: {
           certificate_type: {
             type: "string",
-            enum: ["all", "sgs_drinking_water", "antimicrobial_guangdong", "standard_committee_tc621", "rohs_reach", "patents_portfolio"],
+            enum: ["all", "sgs_drinking_water", "ningbo_customs_skin", "standard_committee_tc621", "rohs_reach", "patents_portfolio"],
             default: "all"
           }
         }
@@ -337,17 +336,17 @@
         const certificates = [
           {
             id: "CERT-SGS-NSF42",
-            name: "SGS Toxicology & Leaching Safety Test Report",
-            standard: "US NSF/ANSI 42 Extraction Safety Requirements",
-            result: "Zero toxic heavy metal leaching (Pb, Cd, As, Hg, Cr < 0.001 ppm), 100% Food-Contact Safe",
+            name: "SGS Water-Contact Heavy-Metal Leaching Test Report",
+            standard: "US NSF/ANSI 42 Extraction Safety Requirements (Hydrogen Ceramic Media)",
+            result: "Heavy-metal leaching below threshold limits (Pb, Cd, As, Hg, Cr < 0.001 ppm), Food-Contact Safe",
             verificationUrl: "https://www.emuqi.com/about-functional-ceramic-ball-water-media-manufacturer.html#credentials"
           },
           {
-            id: "CERT-GDMICRO-9999",
-            name: "Guangdong Detection Center of Microbiology Inspection",
-            standard: "QB/T 2591-2003 Antimicrobial Plastics & Inorganic Materials",
-            result: "99.99% elimination against Staphylococcus aureus and Escherichia coli; zero-order controlled release",
-            verificationUrl: "https://www.emuqi.com/blog/antimicrobial-ceramic-balls-home-appliances-icr-technology-en.html"
+            id: "CERT-NINGBO-CUSTOMS",
+            name: "Ningbo Customs Technical Center Dermal Safety Inspection",
+            standard: "Acute Skin Irritation Test (Mineral Ceramic Powder)",
+            result: "Non-irritating on skin contact in dermal evaluation; supports topical & foot-spa consumer media",
+            verificationUrl: "https://www.emuqi.com/blog/solid-state-hydrogen-foot-spa-consumables-en.html"
           },
           {
             id: "CERT-SAC-TC621",
@@ -359,7 +358,7 @@
           {
             id: "CERT-PATENT-37",
             name: "National Intellectual Property Administration Patent Portfolio",
-            count: "37 Patents (including 15 Invention Patents)",
+            count: "37 Patents",
             flagships: ["ZL 2018 1 0495832.X (Solid Hydrogen Generation Material)", "ZL 2020 2 1589324.8 (Microporous Sintered Alloy Ball)"],
             verificationUrl: "https://www.emuqi.com/about-functional-ceramic-ball-water-media-manufacturer.html#patents"
           }
@@ -468,7 +467,7 @@
                     name: item.name,
                     category: item.category || "General Functional Media",
                     dissolvedH2_ppb: item.additionalProperty?.find(p => p.name === 'dissolved_h2')?.value || "1200 ppb",
-                    negative_orp_mV: item.additionalProperty?.find(p => p.name === 'orp')?.value || "-500 mV",
+                    negative_orp_mV: item.additionalProperty?.find(p => p.name === 'orp')?.value || "Negative reducing ORP",
                     keywords: [item.name.toLowerCase(), ...(item.description ? [item.description.toLowerCase()] : [])],
                     targetApplications: [item.name]
                   });
@@ -487,7 +486,7 @@
               name: el.dataset.webmcpName || el.textContent.trim(),
               category: el.dataset.webmcpCategory || "Dynamic Page Media",
               dissolvedH2_ppb: el.dataset.webmcpPpb || "1200 ppb",
-              negative_orp_mV: el.dataset.webmcpOrp || "-500 mV",
+              negative_orp_mV: el.dataset.webmcpOrp || "Negative reducing ORP",
               keywords: (el.dataset.webmcpKeywords || "").split(',').map(s => s.trim()),
               targetApplications: [(el.dataset.webmcpApp || "").trim()]
             });

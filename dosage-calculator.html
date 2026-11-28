@@ -243,7 +243,7 @@
   <div class="formula-note">Model: MUQI ICR Crystalline Hydrolysis Kinetic Equation v2.4
 ratio = W / V · tempFactor = 1 + (T°C − 25) × 0.015 · k = 0.18
 ppb = min(1850, 1750 × (1 − e^(−k × t × ratio × 15)) × tempFactor)
-ORP = −350 − (ppb / 1850) × 450 mV · pH = 7.4 + min(2.0, ratio × 25 × 0.8)
+ORP = Qualitative negative reducing tendency (actual mV depends on water chemistry; request batch curve) · pH = 7.4 + min(2.0, ratio × 25 × 0.8)
 lifespan = clamp(6–24 months, round(W / 40 × 12)) — WebMCP tool: calculate_hydrogen_performance</div>
 </div>
 
@@ -267,9 +267,9 @@ lifespan = clamp(6–24 months, round(W / 40 × 12)) — WebMCP tool: calculate_
   <div class="calc-result" id="maca-result">
     <div class="res-grid">
       <div class="res-card"><div class="res-label">Dosage</div><div class="res-value" id="maca-grams">—</div><div class="res-sub" id="maca-media">MACA-KDF-5MM</div></div>
-      <div class="res-card"><div class="res-label">Predicted inhibition</div><div class="res-value">>99.99%</div><div class="res-sub" id="maca-pathogens"></div></div>
+      <div class="res-card"><div class="res-label">Predicted inhibition</div><div class="res-value">≥99%</div><div class="res-sub" id="maca-pathogens"></div></div>
       <div class="res-card"><div class="res-label">Maintenance-free life</div><div class="res-value" id="maca-months-out">—</div><div class="res-sub">Continuous water immersion</div></div>
-      <div class="res-card"><div class="res-label">Compliance baseline</div><div class="res-value" style="font-size:14px">SAC/TC621 + SGS</div><div class="res-sub">Guangdong Microbiology >99.99% · RoHS / REACH</div></div>
+      <div class="res-card"><div class="res-label">Compliance baseline</div><div class="res-value" style="font-size:14px">SAC/TC621 + SGS</div><div class="res-sub">QB/T 2591-2003 ≥99% benchmark · RoHS / REACH</div></div>
     </div>
     <div class="res-advice">For dirty water tanks, install MACA-KDF in a permeable submerged cage or float module near the inlet. Sintering: 1000°C high-temperature inorganic sintering (lattice solid-solution); release: zero-order steady Ag⁺ ion dissolution at trace ppb level, zero burst leaching.</div>
   </div>
@@ -283,9 +283,9 @@ base: robot vacuum 12 · humidifier 10 · RO carbon block 25 · pet fountain / i
 <tr><th>Material code</th><th>Standard sizing ratio</th><th>Key output</th><th>Certifications</th></tr>
 </thead>
 <tbody>
-<tr><td><strong>H2-BALL-PRO</strong><br/><span style="font-size:12px;color:#64748b">Solid-state hydrogen sintered ceramic sphere (ICR Hydrogen Eco-Ball)</span></td><td class="num">30–50 g per 500 ml water (rapid 5-minute activation)</td><td>1,200–1,600 ppb · ORP −400 ~ −850 mV · pH 8.5–9.5 · 24 h half-life</td><td>SGS NSF/ANSI 42 · RoHS · REACH · FDA Food Contact Safe</td></tr>
-<tr><td><strong>H2-TAB-SOLID</strong><br/><span style="font-size:12px;color:#64748b">Effervescent ceramic solid-state hydrogen tablet (H2Fizz Bio-Donor)</span></td><td class="num">1 tablet (4 g) per 300–500 ml water</td><td>2,000–3,500 ppb peak · ORP −700 ~ −950 mV · pH 7.2–8.2 · 8 h half-life</td><td>SGS Oral Toxicity Tested · Cosmetic Grade Safety · Heavy Metals Free</td></tr>
-<tr><td><strong>MACA-KDF</strong><br/><span style="font-size:12px;color:#64748b">Inorganic microporous antimicrobial ceramic alloy ball</span></td><td class="num">10–20 g per 1–3 L appliance water tank (lasts 12–18 months)</td><td>>99.99% vs E. coli, S. aureus, P. aeruginosa, Legionella · 12–24 months immersion life</td><td>Guangdong Microbiology Center · SGS Heavy Metal Leaching Safe · SAC/TC621</td></tr>
+<tr><td><strong>H2-BALL-PRO</strong><br/><span style="font-size:12px;color:#64748b">Solid-state hydrogen sintered ceramic sphere (ICR Hydrogen Eco-Ball)</span></td><td class="num">30–50 g per 500 ml water (rapid 5-minute activation)</td><td>1,200–1,600 ppb · Negative ORP (batch curve on request) · pH 8.5–9.5 · 24 h half-life</td><td>SGS NSF/ANSI 42 · RoHS · REACH · FDA Food Contact Safe</td></tr>
+<tr><td><strong>H2-TAB-SOLID</strong><br/><span style="font-size:12px;color:#64748b">Effervescent ceramic solid-state hydrogen tablet (H2Fizz Bio-Donor)</span></td><td class="num">1 tablet (4 g) per 300–500 ml water</td><td>2,000–3,500 ppb peak · Negative ORP (batch curve on request) · pH 7.2–8.2 · 8 h half-life</td><td>Food-Contact &amp; Cosmetic-Grade Safety Assessment · Ningbo Customs Skin Test · Heavy Metals Free</td></tr>
+<tr><td><strong>MACA-KDF</strong><br/><span style="font-size:12px;color:#64748b">Inorganic microporous antimicrobial ceramic alloy ball</span></td><td class="num">10–20 g per 1–3 L appliance water tank (lasts 12–18 months)</td><td>≥99% (conservative benchmark vs E. coli, S. aureus, P. aeruginosa) · 12–24 months immersion life</td><td>QB/T 2591-2003 ≥99% Benchmark · SGS Heavy Metal Leaching Safe · SAC/TC621</td></tr>
 <tr><td><strong>MPH-CONDENSATE</strong><br/><span style="font-size:12px;color:#64748b">Alkaline condensate neutralization ceramic pellets (MPH+ Eco-Neutralizer)</span></td><td class="num">500 g neutralizes up to 60,000 BTU/h boiler condensation for 1 heating season</td><td>Raises condensate pH 2.8 → 7.5+ · effluent held at pH 7.0–8.5 (municipal discharge compliant)</td><td>EPA · CE · ISO 14001</td></tr>
 </tbody>
 </table></div>
@@ -390,7 +390,6 @@ base: robot vacuum 12 · humidifier 10 · RO carbon block 25 · pet fountain / i
     var k = 0.18;
     var estimatedPpb = Math.round(1750 * (1 - Math.exp(-k * T * (ratio * 15))) * tempFactor);
     if (estimatedPpb > 1850) estimatedPpb = 1850;
-    var orp = Math.round(-350 - (estimatedPpb / 1850) * 450);
     var ph = Number((7.4 + Math.min(2.0, (ratio * 25) * 0.8)).toFixed(1));
     var lifespan = Math.min(24, Math.max(6, Math.round((W / 40) * 12)));
     var rating = estimatedPpb >= 1200 ? "Therapeutic Biohacking Grade (Meets Gary Brecka Criteria)" : "Standard Wellness Grade";
@@ -399,7 +398,7 @@ base: robot vacuum 12 · humidifier 10 · RO carbon block 25 · pet fountain / i
       : "Optimal formulation ratio for commercial bottle/cartridge integration.";
     document.getElementById("h2-ppb").textContent = estimatedPpb + " ppb";
     document.getElementById("h2-rating").textContent = rating;
-    document.getElementById("h2-orp").textContent = orp + " mV";
+    document.getElementById("h2-orp").textContent = "Negative (reducing)";
     document.getElementById("h2-ph").textContent = ph.toFixed(1);
     document.getElementById("h2-life").textContent = lifespan + " mo";
     document.getElementById("h2-advice").textContent = advice;

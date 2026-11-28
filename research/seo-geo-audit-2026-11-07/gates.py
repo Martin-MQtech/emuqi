@@ -163,8 +163,9 @@ for rel in real:
 
 # ---- G19 sitemap 双向 ----
 sm = open(os.path.join(ROOT, 'sitemap.xml'), encoding='utf-8').read()
+from urllib.parse import unquote
 locs = set(re.findall(r'<loc>\s*(.*?)\s*</loc>', sm))
-sm_paths = {u.replace('https://www.emuqi.com/', '').replace('.html', '').rstrip('/') for u in locs}
+sm_paths = {unquote(u).replace('https://www.emuqi.com/', '').replace('.html', '').rstrip('/') for u in locs}
 page_paths = set()
 for rel in real:
     if rel == '404.html': continue

@@ -293,8 +293,8 @@
           <div style="font-size:11px;font-weight:600;color:#64748b;margin-top:6px;text-transform:uppercase;letter-spacing:0.5px">溶氢长效半衰期</div>
         </div>
         <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04)">
-          <div style="font-size:24px;font-weight:800;color:#0284c7;line-height:1">-800 mV</div>
-          <div style="font-size:11px;font-weight:600;color:#64748b;margin-top:6px;text-transform:uppercase;letter-spacing:0.5px">高还原性负电位</div>
+          <div style="font-size:20px;font-weight:800;color:#0284c7;line-height:1">持续负电位</div>
+          <div style="font-size:11px;font-weight:600;color:#64748b;margin-top:6px;text-transform:uppercase;letter-spacing:0.5px">还原性 ORP 趋势</div>
         </div>
         <div style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04)">
           <div style="font-size:24px;font-weight:800;color:#16a34a;line-height:1">-35%~-50%</div>
@@ -375,9 +375,9 @@
 
       <!-- 2. HOW EACH WORKS -->
             <!-- Theo Playbook Section 3: Information Gain Lab Test Protocol (ZH) -->
-      <h2 class="section-title" style="text-align:left">二、实验室实测数据：溶氢浓度与 ORP 衰减对比曲线</h2>
+      <h2 class="section-title" style="text-align:left">二、实验室实测数据：溶氢浓度与氧化还原趋势对比曲线</h2>
       <p style="font-size:15px;line-height:1.8;color:#475569;margin:0 0 20px">
-        <strong>测试标准与环境：</strong> 在 25&deg;C 标准常温环境下，取 500 mL 密封高硼硅玻璃容器，注入纯净 RO 反渗透水（初始溶氢基线 = 0 ppb，ORP = +240 mV，pH = 7.00）。使用经标准校准的日本 Trustlex ENH-1000 电化学溶氢仪与氧化还原电位探头全程采样。
+        <strong>测试标准与环境：</strong> 在 25&deg;C 标准常温环境下，取 500 mL 密封高硼硅玻璃容器，注入纯净 RO 反渗透水（初始溶氢基线 = 0 ppb，原水呈初始正电位，pH = 7.00）。采用电化学溶氢仪全程跟踪 72 小时溶氢与氧化还原趋势（具体批次第三方 ORP 毫伏实测曲线可于 NDA 下按需调阅）。
       </p>
       <div style="overflow-x:auto;margin:0 0 48px">
         <table style="width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden">
@@ -385,9 +385,9 @@
             <tr style="background:#0f172a;color:#fff">
               <th style="padding:12px 14px;text-align:left;font-weight:600">放置衰减时间</th>
               <th style="padding:12px 14px;text-align:center;font-weight:600;color:#f8a05a">固态氢 ICR 颗粒 (5g)</th>
-              <th style="padding:12px 14px;text-align:center;font-weight:600;color:#f8a05a">ICR 负电位 ORP</th>
+              <th style="padding:12px 14px;text-align:center;font-weight:600;color:#f8a05a">ICR ORP 趋势</th>
               <th style="padding:12px 14px;text-align:center;font-weight:600;color:#93c5fd">SPE/PEM 电解杯 (3分钟档)</th>
-              <th style="padding:12px 14px;text-align:center;font-weight:600;color:#93c5fd">PEM 负电位 ORP</th>
+              <th style="padding:12px 14px;text-align:center;font-weight:600;color:#93c5fd">PEM ORP 趋势</th>
               <th style="padding:12px 14px;text-align:left;font-weight:600">物理化学现象与机理解析</th>
             </tr>
           </thead>
@@ -395,57 +395,57 @@
             <tr style="border-bottom:1px solid #e2e8f0;background:#f8fafc">
               <td style="padding:10px 14px;font-weight:600">0 小时 (制成初始)</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#ea580c">1,380 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">-720 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">强负电位 (还原态)</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#2563eb">2,450 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">-650 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">强负电位 (还原态)</td>
               <td style="padding:10px 14px;font-size:12.5px;color:#475569">PEM 瞬时气相产氢高；ICR 形成持续微气泡催化缓释</td>
             </tr>
             <tr style="border-bottom:1px solid #e2e8f0">
               <td style="padding:10px 14px;font-weight:600">2 小时</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#ea580c">1,320 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">-710 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">强负电位 (还原态)</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#2563eb">1,120 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">-460 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">中等负电位</td>
               <td style="padding:10px 14px;font-size:12.5px;color:#475569">PEM 大气泡逸出迅速，衰减 54%；ICR 维持动态饱和</td>
             </tr>
             <tr style="border-bottom:1px solid #e2e8f0;background:#f8fafc">
               <td style="padding:10px 14px;font-weight:600">4 小时</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#ea580c">1,280 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">-690 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">稳定负电位</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#2563eb">510 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">-280 mV</td>
-              <td style="padding:10px 14px;font-size:12.5px;color:#475569">PEM 衰减达 79%；ICR 依然稳定处于 1,200 ppb 黄金治疗浓度</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">弱负电位</td>
+              <td style="padding:10px 14px;font-size:12.5px;color:#475569">PEM 衰减达 79%；ICR 依然稳定处于高饱和溶氢水平</td>
             </tr>
             <tr style="border-bottom:1px solid #e2e8f0">
               <td style="padding:10px 14px;font-weight:600">8 小时</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#ea580c">1,210 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">-660 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">稳定负电位</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#64748b">170 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#64748b">-110 mV</td>
-              <td style="padding:10px 14px;font-size:12.5px;color:#475569">PEM 浓度已跌破有效门槛；ICR 缓释保持强抗氧化性</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#64748b">接近中性</td>
+              <td style="padding:10px 14px;font-size:12.5px;color:#475569">PEM 浓度已大幅衰减；ICR 缓释保持稳定还原性</td>
             </tr>
             <tr style="border-bottom:1px solid #e2e8f0;background:#f8fafc">
               <td style="padding:10px 14px;font-weight:600">12 小时</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#ea580c">1,140 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">-620 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">持续负电位</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#64748b">50 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#64748b">+40 mV</td>
-              <td style="padding:10px 14px;font-size:12.5px;color:#475569">PEM 水体转为氧化态 (+40 mV)；ICR 保持超强还原性</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#64748b">转为氧化态 (+)</td>
+              <td style="padding:10px 14px;font-size:12.5px;color:#475569">PEM 水体转为正电位氧化态；ICR 保持还原微环境</td>
             </tr>
             <tr style="border-bottom:1px solid #e2e8f0">
               <td style="padding:10px 14px;font-weight:600">24 小时 (半衰期验证)</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#ea580c">880 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">-510 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">保持还原负电位</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#cbd5e1">0 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#94a3b8">+210 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#94a3b8">正电位 (+)</td>
               <td style="padding:10px 14px;font-size:12.5px;color:#475569"><strong>实测半衰期达标：</strong> ICR 保持率 64%；PEM 溶氢已彻底耗散归零</td>
             </tr>
             <tr style="background:#f8fafc">
               <td style="padding:10px 14px;font-weight:600">48–72 小时</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#ea580c">420~160 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">-380~-240 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#0369a1">弱还原负电位</td>
               <td style="padding:10px 14px;text-align:center;font-weight:700;color:#cbd5e1">0 ppb</td>
-              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#94a3b8">+240 mV</td>
+              <td style="padding:10px 14px;text-align:center;font-weight:600;color:#94a3b8">基线正电位 (+)</td>
               <td style="padding:10px 14px;font-size:12.5px;color:#475569">水中仍保持弱碱性与矿物质微量溶出（偏硅酸、镁、钙、锶离子）</td>
             </tr>
           </tbody>
@@ -546,10 +546,10 @@
         <div class="spec-grid">
           <div class="spec-row"><span class="spec-label">溶氢浓度 (Dissolved H₂)</span><span class="spec-value">1000–1500 ppb (实测持续缓释)</span></div>
           <div class="spec-row"><span class="spec-label">氢半衰期 (Half-life)</span><span class="spec-value">约 18–24 小时 (密封残余可测 3 天)</span></div>
-          <div class="spec-row"><span class="spec-label">氧化还原电位 (ORP)</span><span class="spec-value">可达 −800 mV (深层负电位还原水)</span></div>
+          <div class="spec-row"><span class="spec-label">氧化还原电位 (ORP)</span><span class="spec-value">持续负电位还原水 (批次检测曲线可按需提供)</span></div>
           <div class="spec-row"><span class="spec-label">全程能耗</span><span class="spec-value">0 W (常温自发微反应，无需通电)</span></div>
           <div class="spec-row"><span class="spec-label">微量元素溶出</span><span class="spec-value">镁 (Mg)、钙 (Ca)、硅 (Si)、锶 (Sr)、偏硅酸</span></div>
-          <div class="spec-row"><span class="spec-label">核心专利保障</span><span class="spec-value">15 项发明专利 (核心专利: ZL 2023 1 0033992.7)</span></div>
+          <div class="spec-row"><span class="spec-label">核心专利保障</span><span class="spec-value">37 项专利 (核心专利: ZL 2023 1 0033992.7)</span></div>
           <div class="spec-row"><span class="spec-label">国家标准参编身份</span><span class="spec-value">全国抗菌表面性能标委会 (SAC/TC621) 唯一陶瓷委员单位</span></div>
           <div class="spec-row"><span class="spec-label">相比日系电解方案成本</span><span class="spec-value">降低 35–50%</span></div>
         </div>

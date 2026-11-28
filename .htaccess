@@ -43,6 +43,13 @@ RewriteRule ^blog/hydrogen-patch-opportunity\.html$ /zh/blog/hydrogen-patch-oppo
 RewriteRule ^zh/h2-wellness-hub/?$ /h2-wellness-hub/zh/ [R=301,L]
 RewriteRule ^zh/h2-wellness-hub/(.+)$ /h2-wellness-hub/zh/$1 [R=301,L]
 
+# Index-less content directories -> 301 to canonical hub/landing pages (prevents Hostinger 403)
+RewriteRule ^h2-wellness-hub/tags/?$ /h2-wellness-hub/topics.html [R=301,L]
+RewriteRule ^h2-wellness-hub/zh/tags/?$ /h2-wellness-hub/zh/topics.html [R=301,L]
+RewriteRule ^h2-wellness-hub/cases/?$ /h2-wellness-hub/ [R=301,L]
+RewriteRule ^h2-wellness-hub/zh/cases/?$ /h2-wellness-hub/zh/ [R=301,L]
+RewriteRule ^solutions-hydrogen-agriculture/?$ /solutions-hydrogen-agriculture.html [R=301,L]
+
 # Legacy 404 slug cleanup & UK hydrogen mask consolidation
 RewriteRule ^-or-or-case-hydrogen-mask-from-the-uk-fit-my-skin/?$ /blog/uk-hydrogen-mask.html [R=301,L]
 
